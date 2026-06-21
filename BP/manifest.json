@@ -1,0 +1,64 @@
+{
+  "format_version": 2,
+  "metadata": {
+    "authors": [
+      "Dorios Studios"
+    ],
+    "product_type": "addon"
+  },
+  "header": {
+    "name": "AGE OF CHEMICAL",
+    "description": "v0.0.1 §6Dorios Studios",
+    "min_engine_version": [
+      1,
+      21,
+      120
+    ],
+    "uuid": "7c8b9a44-53a6-4c8e-bcc3-7c4c9d6d4f11",
+    "version": [
+      0,
+      8,
+      5
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "3f1f9d3a-1b73-4fd7-a3d0-c5f0e6a9c8e2",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js",
+      "uuid": "e2c4a7f9-8d14-4c79-9f0b-2d6a8e5f7c31",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.4.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.0.0"
+    },
+    {
+      "uuid": "a5d2c6f8-4e7b-4f19-bb6e-8c3d9f2a1e55",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}

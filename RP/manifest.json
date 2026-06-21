@@ -1,0 +1,35 @@
+{
+  "format_version": 2,
+  "metadata": {
+    "authors": [
+      "Dorios Studios"
+    ],
+    "product_type": "addon"
+  },
+  "header": {
+    "name": "AGE OF CHEMICAL",
+    "description": "v0.0.1 §6Dorios Studios",
+    "min_engine_version": [
+      1,
+      19,
+      60
+    ],
+    "uuid": "a5d2c6f8-4e7b-4f19-bb6e-8c3d9f2a1e55",
+    "version": [
+      0,
+      1,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "f9e1b7c3-2d84-4a56-a0c9-7e5d3f8b1a22",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

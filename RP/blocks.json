@@ -1,0 +1,22 @@
+{
+    "format_version": [ 1, 1, 0 ],
+    "utilitycraft:fermenter": {
+        "sound": "stone"
+    },
+    "utilitycraft:fuel_mixer": {
+        "sound": "stone"
+    },
+    "utilitycraft:fluid_storage_monitor": {
+        "sound": "stone"
+    },
+    "utilitycraft:fuel_burner_monitor": {
+        "sound": "stone"
+    },
+    "utilitycraft:fluid_storage_casing": {
+        "sound": "stone"
+    },
+    "utilitycraft:fuel_burner_casing": {
+        "sound": "stone"
+    }
+}
+

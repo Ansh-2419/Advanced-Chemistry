@@ -1,0 +1,52 @@
+{
+  "namespace": "chest",
+  "small_chest_screen": {
+    "$temp_container_title|default": "$container_title",
+    "modifications": [
+      {
+        "array_name": "variables",
+        "operation": "insert_back",
+        "value": [
+          {
+            "requires": "($temp_container_title = 'entity.utilitycraft:fermenter.name')",
+            "$screen_content": "fermenter.utility_panel",
+            "$screen_bg_content": "common.screen_background"
+          }
+        ]
+      },
+      {
+        "array_name": "variables",
+        "operation": "insert_back",
+        "value": [
+          {
+            "requires": "($temp_container_title = 'entity.utilitycraft:fuel_mixer.name')",
+            "$screen_content": "fuel_mixer.utility_panel",
+            "$screen_bg_content": "common.screen_background"
+          }
+        ]
+      },
+      {
+        "array_name": "variables",
+        "operation": "insert_back",
+        "value": [
+          {
+            "requires": "($temp_container_title = 'entity.utilitycraft:fuel_burner_monitor.name')",
+            "$screen_content": "fuel_burner.utility_panel",
+            "$screen_bg_content": "common.screen_background"
+          }
+        ]
+      },
+      {
+        "array_name": "variables",
+        "operation": "insert_back",
+        "value": [
+          {
+            "requires": "($temp_container_title = 'entity.utilitycraft:chemical_reactor.name')",
+            "$screen_content": "chemical_reactor.utility_panel",
+            "$screen_bg_content": "common.screen_background"
+          }
+        ]
+      }
+    ]
+  }
+}

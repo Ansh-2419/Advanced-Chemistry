@@ -1,0 +1,41 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "utilitycraft:common_energy_output_valve",
+      "menu_category": {
+        "category": "construction"
+      },
+      "states": {
+        "utilitycraft:active": [
+          0,
+          1
+        ]
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.utilitycraft_block",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "energy_output_port",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "tag:dorios:multiblock.port": {},
+      "tag:dorios:multiblock.case.fuel_burner": {}
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('utilitycraft:active') == 1",
+        "components": {
+          "tag:dorios:energy": {},
+          "tag:dorios:multiblock.port": {},
+          "minecraft:light_emission": 4
+        }
+      }
+    ]
+  }
+}

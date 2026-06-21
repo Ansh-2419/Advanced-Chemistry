@@ -1,0 +1,71 @@
+{
+    "num_mip_levels": 4,
+    "padding": 8,
+    "resource_pack_name": "UtilityCraft Expanded",
+    "texture_name": "atlas.terrain",
+    "texture_data": {
+        "common": {
+            "textures": "textures/blocks/common"
+        },
+        "fluid_monitor": {
+            "textures": "textures/blocks/fluid_monitor"
+        },
+        "reactor_monitor": {
+            "textures": "textures/blocks/reactor_monitor"
+        },
+        "electromagnetic_coil": {
+            "textures": "textures/blocks/electromagnetic_coil"
+        },
+        "energy_input_port": {
+            "textures": "textures/blocks/energy_input_port"
+        },
+        "energy_output_port": {
+            "textures": "textures/blocks/energy_output_port"
+        },
+        "fluid_input_port": {
+            "textures": "textures/blocks/fluid_input_port"
+        },
+        "fluid_mixer": {
+            "textures": "textures/blocks/fluid_mixer"
+        },
+        "reactor_casing": {
+            "textures": "textures/blocks/reactor_casing"
+        },
+        "fermentor": {
+            "textures": "textures/blocks/fermentor"
+        },
+        "fuel_mixer": {
+            "textures": "textures/blocks/fluid_mixer"
+        },
+        "utilitycraft_liquifier_on": {
+            "textures": "textures/blocks/fermentor"
+        },
+        "utilitycraft_fuel_mixer_on": {
+            "textures": "textures/blocks/fluid_mixer"
+        },
+        "reactor_caseing": {
+            "textures": "textures/blocks/reactor_caseing"
+        },
+        "reactor_controller": {
+            "textures": "textures/blocks/reactor_controller"
+        },
+        "fuel_burner_casing": {
+            "textures": "textures/blocks/reactor_casing"
+        },
+        "fuel_burner_monitor": {
+            "textures": "textures/blocks/reactor_controller"
+        },
+        "fuel_burner_input": {
+            "textures": "textures/blocks/fluid_input_port"
+        },
+        "fuel_burner_output": {
+            "textures": "textures/blocks/energy_output_port"
+        },
+        "reactor_caseing": {
+            "textures": "textures/blocks/reactor_caseing"
+        },
+        "reactor_monitor": {
+            "textures": "textures/blocks/reactor_monitor"
+        }
+    }
+}
