@@ -25,7 +25,8 @@
         "seconds_to_destroy": 1
       },
       "tag:dorios:multiblock.port": {},
-      "tag:dorios:multiblock.case.fuel_burner": {}
+      "tag:dorios:multiblock.case.fuel_burner": {},
+      "tag:dorios:multiblock.case.fluid_storage": {}
     },
     "permutations": [
       {

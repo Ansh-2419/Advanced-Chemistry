@@ -93,7 +93,8 @@ DoriosAPI.register.blockComponent('chemical_reactor', {
                 const srcEnt = dim.getEntitiesAtBlockLocation(srcBlock.location)[0];
                 if (!srcEnt || srcEnt === entity) continue;
 
-                // Check all indices on source for a matching fluid
+                // Only pull fluid types that match a registered recipe input.
+                const validTypes = new Set(getChemicalReactorRecipes().map(r => r.input.type));
                 for (let idx = 0; idx < 4; idx++) {
                     let src;
                     try { src = new FluidManager(srcEnt, idx); } catch { break; }
@@ -101,7 +102,8 @@ DoriosAPI.register.blockComponent('chemical_reactor', {
                     if (src.get() <= 0)    continue;
 
                     const incoming = src.getType();
-                    if (!incoming || incoming === 'empty') continue;
+                    if (!incoming || incoming === 'empty')          continue;
+                    if (!validTypes.has(incoming))                   continue;
                     if (tankIn.getType() !== 'empty' && tankIn.getType() !== incoming) continue;
 
                     const amount = Math.min(src.get(), tankIn.getFreeSpace(), 1000);

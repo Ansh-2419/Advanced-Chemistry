@@ -64,6 +64,9 @@ export const VALVE_IDS = Object.freeze({
     /** Fluid pipe network connects here; controller pulls fluid inward. */
     FLUID_INPUT:    'utilitycraft:common_fluid_input_valve',
 
+    /** Same valve used for fluid output — fluid storage uses input valves bidirectionally. */
+    FLUID_OUTPUT:   'utilitycraft:common_fluid_input_valve',
+
     /** Energy network connects here; external machines push DE in. */
     ENERGY_INPUT:   'utilitycraft:common_energy_input_valve',
 
@@ -169,6 +172,65 @@ export function pushEnergyThroughOutputValves(entity, energyStore, maxTransfer, 
             tgt.add(toSend);
             energyStore.add(-toSend);
             remaining -= toSend;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Fluid output push
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Push fluid from an array of tanks outward through every fluid valve port.
+ *
+ * For each fluid valve port:
+ *   • Scan all 6 face-adjacent blocks.
+ *   • If a block has a fluid-holding entity (getCap > 0) with free space
+ *     and matching fluid type (or empty), transfer up to `maxPerPort` mB.
+ *   • Each tank pushes its own fluid type — type mismatches are skipped.
+ *
+ * @param {Entity}        entity      Controller entity.
+ * @param {FluidManager[]} tanks      Array of source tanks to push from.
+ * @param {number}        maxPerPort  Max mB per valve per call.
+ * @param {typeof FluidManager} FluidManagerClass
+ */
+export function pushFluidThroughValves(entity, tanks, maxPerPort, FluidManagerClass) {
+    const dim   = entity.dimension;
+    const ports = getPortBlocks(entity, VALVE_IDS.FLUID_INPUT);
+
+    for (const port of ports) {
+        const { x, y, z } = port.location;
+
+        for (const off of FACE_OFFSETS) {
+            const adj = dim.getBlock({ x: x + off.x, y: y + off.y, z: z + off.z });
+            if (!adj?.hasTag?.('dorios:fluid')) continue;
+
+            const adjEnt = dim.getEntitiesAtBlockLocation(adj.location)[0];
+            if (!adjEnt || adjEnt === entity) continue;
+
+            for (const srcTank of tanks) {
+                if (srcTank.get() <= 0) continue;
+                const srcType = srcTank.getType();
+                if (!srcType || srcType === 'empty') continue;
+
+                let tgt;
+                try { tgt = new FluidManagerClass(adjEnt, 0); } catch { continue; }
+                if (tgt.getCap() <= 0) continue;
+                if (tgt.getFreeSpace() <= 0) continue;
+
+                const tgtType = tgt.getType();
+                if (tgtType !== 'empty' && tgtType !== srcType) continue;
+
+                const amount = Math.min(srcTank.get(), tgt.getFreeSpace(), maxPerPort);
+                if (amount <= 0) continue;
+
+                srcTank.add(-amount);
+                if (srcTank.get() <= 0) srcTank.setType('empty');
+                if (tgtType === 'empty') tgt.setType(srcType);
+                tgt.add(amount);
+                break; // one tank per adjacent entity per tick
+            }
         }
     }
 }

@@ -48,7 +48,7 @@
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ -22, 0 ],
+                    "offset": [ -16, 0 ],
                     "controls": [
                         {
                             "fluid_bar_in@machineryCommon.vertical_single": {
@@ -77,9 +77,9 @@
 
             {
                 "progress_arrow@common_machines.machinery": {
-                    "anchor_from": "center",
-                    "anchor_to": "center",
-                    "offset": [ 18, 3 ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "offset": [ 20, 28 ],
                     "collection_index": 2,
                     "$cell_image_size": [ 24, 24 ],
                     "size": [ 24, 24 ]
@@ -91,7 +91,7 @@
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ 56, -8 ],
+                    "offset": [ 56, 0 ],
                     "controls": [
                         {
                             "fluid_bar_out@machineryCommon.vertical_single": {
@@ -120,9 +120,9 @@
 
             {
                 "byproduct_slot@common.container_item": {
-                    "anchor_from": "center",
-                    "anchor_to": "center",
-                    "offset": [ 78, 18 ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "offset": [ 82, 28 ],
                     "collection_index": 6,
                     "$cell_image_size": [ 18, 18 ],
                     "size": [ 18, 18 ],

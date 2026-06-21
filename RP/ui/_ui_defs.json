@@ -4,7 +4,7 @@
         "ui/fermenter.json",
         "ui/fuel_mixer.json",
         "ui/fuel_burner.json",
-        "ui/chemical_reactor.json",
-        "ui/manual_implementation.json"
+        "ui/manual_implementation.json",
+        "ui/fluid_storage_monitor.json"
     ]
 }
