@@ -1,0 +1,30 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                "category_name": "construction",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "utilitycraft:fermenter",
+                            "name": "aoc:itemGroup.name.machines"
+                        },
+                        "items": [
+                            "utilitycraft:fermenter",
+                            "utilitycraft:fuel_mixer",
+                            "utilitycraft:chemical_reactor",
+                            "utilitycraft:fuel_burner_monitor",
+                            "utilitycraft:fuel_burner_casing",
+                            "utilitycraft:fluid_storage_monitor",
+                            "utilitycraft:fluid_storage_casing",
+                            "utilitycraft:common_fluid_valve",
+                            "utilitycraft:common_energy_input_valve",
+                            "utilitycraft:common_energy_output_valve"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

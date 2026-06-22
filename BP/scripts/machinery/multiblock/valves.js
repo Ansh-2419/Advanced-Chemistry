@@ -62,10 +62,10 @@ import { Energy } from '../../DoriosCore/index.js';
 
 export const VALVE_IDS = Object.freeze({
     /** Fluid pipe network connects here; controller pulls fluid inward. */
-    FLUID_INPUT:    'utilitycraft:common_fluid_input_valve',
+    FLUID_INPUT:    'utilitycraft:common_fluid_valve',
 
     /** Same valve used for fluid output — fluid storage uses input valves bidirectionally. */
-    FLUID_OUTPUT:   'utilitycraft:common_fluid_input_valve',
+    FLUID_OUTPUT:   'utilitycraft:common_fluid_valve',
 
     /** Energy network connects here; external machines push DE in. */
     ENERGY_INPUT:   'utilitycraft:common_energy_input_valve',

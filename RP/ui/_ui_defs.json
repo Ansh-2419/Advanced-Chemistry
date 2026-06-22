@@ -5,6 +5,7 @@
         "ui/fuel_mixer.json",
         "ui/fuel_burner.json",
         "ui/manual_implementation.json",
-        "ui/fluid_storage_monitor.json"
+        "ui/fluid_storage_monitor.json",
+        "ui/chemical_reactor.json"
     ]
 }

@@ -7,7 +7,7 @@
     "product_type": "addon"
   },
   "header": {
-    "name": "AGE OF CHEMICAL",
+    "name": "Advanced Chemistry",
     "description": "v0.0.1 §6Dorios Studios",
     "min_engine_version": [
       1,
@@ -17,8 +17,8 @@
     "uuid": "7c8b9a44-53a6-4c8e-bcc3-7c4c9d6d4f11",
     "version": [
       0,
-      8,
-      5
+      1,
+      0
     ]
   },
   "modules": [

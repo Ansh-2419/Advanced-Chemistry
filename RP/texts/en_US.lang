@@ -1,190 +1,12 @@
 ## Age of Chemical — en_US.lang
 
 #catalog
-itemGroup.name.utilitycraft_or=OIL REVOLUTION
+itemGroup.name.machines=Advanced Chemistry
 
-## Blocks
+## ── Singleblock Machines ─────────────────────────────────────────────────────
 tile.utilitycraft:fermenter.name=Fermenter
 tile.utilitycraft:fuel_mixer.name=Fluid Mixer
-
-## Ethanol Capsules
-item.utilitycraft:ethanol_liquid_capsule_1.name=Ethanol Capsule (1000 mB)
-item.utilitycraft:ethanol_liquid_capsule_2.name=Ethanol Capsule (2000 mB)
-item.utilitycraft:ethanol_liquid_capsule_3.name=Ethanol Capsule (3000 mB)
-item.utilitycraft:ethanol_liquid_capsule_4.name=Ethanol Capsule (4000 mB)
-item.utilitycraft:ethanol_liquid_capsule_5.name=Ethanol Capsule (5000 mB)
-item.utilitycraft:ethanol_liquid_capsule_6.name=Ethanol Capsule (6000 mB)
-item.utilitycraft:ethanol_liquid_capsule_7.name=Ethanol Capsule (7000 mB)
-item.utilitycraft:ethanol_liquid_capsule_8.name=Ethanol Capsule (8000 mB)
-
-## Plant Oil Capsules
-item.utilitycraft:plant_oil_liquid_capsule_1.name=Plant Oil Capsule (1000 mB)
-item.utilitycraft:plant_oil_liquid_capsule_2.name=Plant Oil Capsule (2000 mB)
-item.utilitycraft:plant_oil_liquid_capsule_3.name=Plant Oil Capsule (3000 mB)
-item.utilitycraft:plant_oil_liquid_capsule_4.name=Plant Oil Capsule (4000 mB)
-item.utilitycraft:plant_oil_liquid_capsule_5.name=Plant Oil Capsule (5000 mB)
-item.utilitycraft:plant_oil_liquid_capsule_6.name=Plant Oil Capsule (6000 mB)
-item.utilitycraft:plant_oil_liquid_capsule_7.name=Plant Oil Capsule (7000 mB)
-item.utilitycraft:plant_oil_liquid_capsule_8.name=Plant Oil Capsule (8000 mB)
-
-## Biofuel Capsules
-item.utilitycraft:biofuel_liquid_capsule_1.name=Biofuel Capsule (1000 mB)
-item.utilitycraft:biofuel_liquid_capsule_2.name=Biofuel Capsule (2000 mB)
-item.utilitycraft:biofuel_liquid_capsule_3.name=Biofuel Capsule (3000 mB)
-item.utilitycraft:biofuel_liquid_capsule_4.name=Biofuel Capsule (4000 mB)
-item.utilitycraft:biofuel_liquid_capsule_5.name=Biofuel Capsule (5000 mB)
-item.utilitycraft:biofuel_liquid_capsule_6.name=Biofuel Capsule (6000 mB)
-item.utilitycraft:biofuel_liquid_capsule_7.name=Biofuel Capsule (7000 mB)
-item.utilitycraft:biofuel_liquid_capsule_8.name=Biofuel Capsule (8000 mB)
-
-## UI Bar Items (hidden display elements)
-item.utilitycraft:ethanol_bar_00.name=
-item.utilitycraft:ethanol_bar_01.name=
-item.utilitycraft:ethanol_bar_02.name=
-item.utilitycraft:ethanol_bar_03.name=
-item.utilitycraft:ethanol_bar_04.name=
-item.utilitycraft:ethanol_bar_05.name=
-item.utilitycraft:ethanol_bar_06.name=
-item.utilitycraft:ethanol_bar_07.name=
-item.utilitycraft:ethanol_bar_08.name=
-item.utilitycraft:ethanol_bar_09.name=
-item.utilitycraft:ethanol_bar_10.name=
-item.utilitycraft:ethanol_bar_11.name=
-item.utilitycraft:ethanol_bar_12.name=
-item.utilitycraft:ethanol_bar_13.name=
-item.utilitycraft:ethanol_bar_14.name=
-item.utilitycraft:ethanol_bar_15.name=
-item.utilitycraft:ethanol_bar_16.name=
-item.utilitycraft:ethanol_bar_17.name=
-item.utilitycraft:ethanol_bar_18.name=
-item.utilitycraft:ethanol_bar_19.name=
-item.utilitycraft:ethanol_bar_20.name=
-item.utilitycraft:ethanol_bar_21.name=
-item.utilitycraft:ethanol_bar_22.name=
-item.utilitycraft:ethanol_bar_23.name=
-item.utilitycraft:ethanol_bar_24.name=
-item.utilitycraft:ethanol_bar_25.name=
-item.utilitycraft:ethanol_bar_26.name=
-item.utilitycraft:ethanol_bar_27.name=
-item.utilitycraft:ethanol_bar_28.name=
-item.utilitycraft:ethanol_bar_29.name=
-item.utilitycraft:ethanol_bar_30.name=
-item.utilitycraft:ethanol_bar_31.name=
-item.utilitycraft:ethanol_bar_32.name=
-item.utilitycraft:ethanol_bar_33.name=
-item.utilitycraft:ethanol_bar_34.name=
-item.utilitycraft:ethanol_bar_35.name=
-item.utilitycraft:ethanol_bar_36.name=
-item.utilitycraft:ethanol_bar_37.name=
-item.utilitycraft:ethanol_bar_38.name=
-item.utilitycraft:ethanol_bar_39.name=
-item.utilitycraft:ethanol_bar_40.name=
-item.utilitycraft:ethanol_bar_41.name=
-item.utilitycraft:ethanol_bar_42.name=
-item.utilitycraft:ethanol_bar_43.name=
-item.utilitycraft:ethanol_bar_44.name=
-item.utilitycraft:ethanol_bar_45.name=
-item.utilitycraft:ethanol_bar_46.name=
-item.utilitycraft:ethanol_bar_47.name=
-item.utilitycraft:ethanol_bar_48.name=
-item.utilitycraft:biofuel_bar_00.name=
-item.utilitycraft:biofuel_bar_01.name=
-item.utilitycraft:biofuel_bar_02.name=
-item.utilitycraft:biofuel_bar_03.name=
-item.utilitycraft:biofuel_bar_04.name=
-item.utilitycraft:biofuel_bar_05.name=
-item.utilitycraft:biofuel_bar_06.name=
-item.utilitycraft:biofuel_bar_07.name=
-item.utilitycraft:biofuel_bar_08.name=
-item.utilitycraft:biofuel_bar_09.name=
-item.utilitycraft:biofuel_bar_10.name=
-item.utilitycraft:biofuel_bar_11.name=
-item.utilitycraft:biofuel_bar_12.name=
-item.utilitycraft:biofuel_bar_13.name=
-item.utilitycraft:biofuel_bar_14.name=
-item.utilitycraft:biofuel_bar_15.name=
-item.utilitycraft:biofuel_bar_16.name=
-item.utilitycraft:biofuel_bar_17.name=
-item.utilitycraft:biofuel_bar_18.name=
-item.utilitycraft:biofuel_bar_19.name=
-item.utilitycraft:biofuel_bar_20.name=
-item.utilitycraft:biofuel_bar_21.name=
-item.utilitycraft:biofuel_bar_22.name=
-item.utilitycraft:biofuel_bar_23.name=
-item.utilitycraft:biofuel_bar_24.name=
-item.utilitycraft:biofuel_bar_25.name=
-item.utilitycraft:biofuel_bar_26.name=
-item.utilitycraft:biofuel_bar_27.name=
-item.utilitycraft:biofuel_bar_28.name=
-item.utilitycraft:biofuel_bar_29.name=
-item.utilitycraft:biofuel_bar_30.name=
-item.utilitycraft:biofuel_bar_31.name=
-item.utilitycraft:biofuel_bar_32.name=
-item.utilitycraft:biofuel_bar_33.name=
-item.utilitycraft:biofuel_bar_34.name=
-item.utilitycraft:biofuel_bar_35.name=
-item.utilitycraft:biofuel_bar_36.name=
-item.utilitycraft:biofuel_bar_37.name=
-item.utilitycraft:biofuel_bar_38.name=
-item.utilitycraft:biofuel_bar_39.name=
-item.utilitycraft:biofuel_bar_40.name=
-item.utilitycraft:biofuel_bar_41.name=
-item.utilitycraft:biofuel_bar_42.name=
-item.utilitycraft:biofuel_bar_43.name=
-item.utilitycraft:biofuel_bar_44.name=
-item.utilitycraft:biofuel_bar_45.name=
-item.utilitycraft:biofuel_bar_46.name=
-item.utilitycraft:biofuel_bar_47.name=
-item.utilitycraft:biofuel_bar_48.name=
-item.utilitycraft:plant_oil_bar_00.name=
-item.utilitycraft:plant_oil_bar_01.name=
-item.utilitycraft:plant_oil_bar_02.name=
-item.utilitycraft:plant_oil_bar_03.name=
-item.utilitycraft:plant_oil_bar_04.name=
-item.utilitycraft:plant_oil_bar_05.name=
-item.utilitycraft:plant_oil_bar_06.name=
-item.utilitycraft:plant_oil_bar_07.name=
-item.utilitycraft:plant_oil_bar_08.name=
-item.utilitycraft:plant_oil_bar_09.name=
-item.utilitycraft:plant_oil_bar_10.name=
-item.utilitycraft:plant_oil_bar_11.name=
-item.utilitycraft:plant_oil_bar_12.name=
-item.utilitycraft:plant_oil_bar_13.name=
-item.utilitycraft:plant_oil_bar_14.name=
-item.utilitycraft:plant_oil_bar_15.name=
-item.utilitycraft:plant_oil_bar_16.name=
-item.utilitycraft:plant_oil_bar_17.name=
-item.utilitycraft:plant_oil_bar_18.name=
-item.utilitycraft:plant_oil_bar_19.name=
-item.utilitycraft:plant_oil_bar_20.name=
-item.utilitycraft:plant_oil_bar_21.name=
-item.utilitycraft:plant_oil_bar_22.name=
-item.utilitycraft:plant_oil_bar_23.name=
-item.utilitycraft:plant_oil_bar_24.name=
-item.utilitycraft:plant_oil_bar_25.name=
-item.utilitycraft:plant_oil_bar_26.name=
-item.utilitycraft:plant_oil_bar_27.name=
-item.utilitycraft:plant_oil_bar_28.name=
-item.utilitycraft:plant_oil_bar_29.name=
-item.utilitycraft:plant_oil_bar_30.name=
-item.utilitycraft:plant_oil_bar_31.name=
-item.utilitycraft:plant_oil_bar_32.name=
-item.utilitycraft:plant_oil_bar_33.name=
-item.utilitycraft:plant_oil_bar_34.name=
-item.utilitycraft:plant_oil_bar_35.name=
-item.utilitycraft:plant_oil_bar_36.name=
-item.utilitycraft:plant_oil_bar_37.name=
-item.utilitycraft:plant_oil_bar_38.name=
-item.utilitycraft:plant_oil_bar_39.name=
-item.utilitycraft:plant_oil_bar_40.name=
-item.utilitycraft:plant_oil_bar_41.name=
-item.utilitycraft:plant_oil_bar_42.name=
-item.utilitycraft:plant_oil_bar_43.name=
-item.utilitycraft:plant_oil_bar_44.name=
-item.utilitycraft:plant_oil_bar_45.name=
-item.utilitycraft:plant_oil_bar_46.name=
-item.utilitycraft:plant_oil_bar_47.name=
-item.utilitycraft:plant_oil_bar_48.name=
+tile.utilitycraft:chemical_reactor.name=Chemical Reactor
 
 ## Fluid display names
 fluid.utilitycraft.ethanol=Ethanol
@@ -192,7 +14,7 @@ fluid.utilitycraft.biofuel=Biofuel
 fluid.utilitycraft.plant_oil=Plant Oil
 
 ## ── Common Multiblock Valves ─────────────────────────────────────────────────
-tile.utilitycraft:common_fluid_input_valve.name=Fluid Valve
+tile.utilitycraft:common_fluid_valve.name=Fluid Valve
 tile.utilitycraft:common_energy_input_valve.name=Energy Input Valve
 tile.utilitycraft:common_energy_output_valve.name=Energy Output Valve
 
@@ -203,3 +25,12 @@ tile.utilitycraft:fluid_storage_monitor.name=Fluid Storage Monitor
 ## ── Fuel Burner Multiblock ───────────────────────────────────────────────────
 tile.utilitycraft:fuel_burner_casing.name=Fuel Burner Casing
 tile.utilitycraft:fuel_burner_monitor.name=Fuel Burner Monitor
+
+## ── UI Entity Names ──────────────────────────────────────────────────────────
+entity.utilitycraft:machine.name=Machine
+entity.utilitycraft:multiblock_machine.name=Multiblock Machine
+entity.utilitycraft:fermenter.name=Fermenter
+entity.utilitycraft:fuel_mixer.name=Fluid Mixer
+entity.utilitycraft:chemical_reactor.name=Chemical Reactor
+entity.utilitycraft:fuel_burner_monitor.name=Fuel Burner
+entity.utilitycraft:fluid_storage_monitor.name=Fluid Storage

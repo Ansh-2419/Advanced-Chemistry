@@ -66,6 +66,9 @@
         },
         "reactor_monitor": {
             "textures": "textures/blocks/reactor_monitor"
+        },
+        "chemical_reactor": {
+            "textures": "textures/blocks/chemical_reactor"
         }
     }
 }
