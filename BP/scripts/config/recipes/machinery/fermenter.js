@@ -17,45 +17,45 @@ const DEFAULT_PROCESS_SECONDS = 6;
 const nativeFermentationRecipes = [
     defineFermentationRecipe({
         id: "utilitycraft:plant_oil_from_wheat_seeds",
-        input: { id: "minecraft:wheat_seeds", amount: 1 },
-        fluid: { type: "plant_oil", amount: 150 },
-        energyCost: 2400,
+        input: { id: "minecraft:wheat_seeds", amount: 64 },
+        fluid: { type: "plant_oil", amount: 1000 },
+        energyCost: 6400,
         seconds: 6,
         description: "Presses wheat seeds into plant oil."
     }),
     defineFermentationRecipe({
         id: "utilitycraft:plant_oil_from_beetroot_seeds",
-        input: { id: "minecraft:beetroot_seeds", amount: 1 },
-        fluid: { type: "plant_oil", amount: 150 },
-        energyCost: 2400,
+        input: { id: "minecraft:beetroot_seeds", amount: 64 },
+        fluid: { type: "plant_oil", amount: 1000 },
+        energyCost: 6400,
         seconds: 6,
         description: "Presses beetroot seeds into plant oil."
     }),
     defineFermentationRecipe({
         id: "utilitycraft:plant_oil_from_melon_seeds",
-        input: { id: "minecraft:melon_seeds", amount: 1 },
-        fluid: { type: "plant_oil", amount: 150 },
-        energyCost: 2400,
+        input: { id: "minecraft:melon_seeds", amount: 64 },
+        fluid: { type: "plant_oil", amount: 1000 },
+        energyCost: 6400,
         seconds: 6,
         description: "Presses melon seeds into plant oil."
     }),
     defineFermentationRecipe({
         id: "utilitycraft:plant_oil_from_pumpkin_seeds",
-        input: { id: "minecraft:pumpkin_seeds", amount: 1 },
-        fluid: { type: "plant_oil", amount: 150 },
-        energyCost: 2400,
+        input: { id: "minecraft:pumpkin_seeds", amount: 64 },
+        fluid: { type: "plant_oil", amount: 1000 },
+        energyCost: 6400,
         seconds: 6,
         description: "Presses pumpkin seeds into plant oil."
     }),
     defineFermentationRecipe({
         id: "utilitycraft:ethanol_from_sugarcane",
-        input: { id: "minecraft:sugar_cane", amount: 8 },
+        input: { id: "minecraft:sugar_cane", amount: 64 },
         fluid: { type: "ethanol", amount: 1000 },
-        energyCost: 4800,
+        energyCost: 7800,
         seconds: 10,
         byproduct: {
             id: "minecraft:sugar",
-            amount: 2,
+            amount: 15,
             chance: 0.4
         },
         description: "Ferments sugarcane into a full bucket of ethanol."

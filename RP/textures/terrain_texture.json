@@ -55,11 +55,8 @@
         "fuel_burner_monitor": {
             "textures": "textures/blocks/reactor_controller"
         },
-        "fuel_burner_input": {
-            "textures": "textures/blocks/fluid_input_port"
-        },
-        "fuel_burner_output": {
-            "textures": "textures/blocks/energy_output_port"
+        "fluid_output_port": {
+            "textures": "textures/blocks/fluid_output_port"
         },
         "reactor_caseing": {
             "textures": "textures/blocks/reactor_caseing"

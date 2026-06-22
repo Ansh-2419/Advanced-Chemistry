@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "utilitycraft:fuel_mixer"
+		},
+		"tags": [
+			"utilitycraft_workbench"
+		],
+		"pattern": [
+			"SBS",
+			"RCR",
+			"MAM"
+		],
+		"key": {
+			"A": {
+				"item": "utilitycraft:machine_case"
+			},
+			"R": {
+				"item": "utilitycraft:advanced_fluid_tank"
+			},
+			"S": {
+				"item": "utilitycraft:Duranium_ingot"
+			},
+			"M": {
+				"item": "utilitycraft:advanced_chip"
+			},
+			"B": {
+				"item": "utilitycraft:energized_iron_block"
+			},
+			"C": {
+				"item": "utilitycraft:machine_case"
+			}
+		},
+		"result": {
+			"item": "utilitycraft:fuel_mixer",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "utilitycraft:Duranium_ingot"
+			}
+		]
+	}
+}

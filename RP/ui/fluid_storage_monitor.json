@@ -58,7 +58,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        -64,
+                        -80,
                         0
                     ],
                     "controls": [
@@ -98,7 +98,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        -48,
+                        -60,
                         0
                     ],
                     "controls": [
@@ -138,7 +138,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        -32,
+                        -40,
                         0
                     ],
                     "controls": [
@@ -178,7 +178,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        -16,
+                        -20,
                         0
                     ],
                     "controls": [
@@ -258,7 +258,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        16,
+                        20,
                         0
                     ],
                     "controls": [
@@ -298,7 +298,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        32,
+                        40,
                         0
                     ],
                     "controls": [
@@ -338,7 +338,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        48,
+                        60,
                         0
                     ],
                     "controls": [
@@ -378,7 +378,7 @@
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [
-                        64,
+                        80,
                         0
                     ],
                     "controls": [

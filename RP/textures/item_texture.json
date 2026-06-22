@@ -1204,6 +1204,9 @@
         },
         "utilitycraft:petrol_bar_48": {
             "textures": "textures/items/ui/petrol_bar/petrol_bar_48"
+        },
+        "Duranium_ingot":{
+          "textures": "textures/items/ingot/Duranium_ingot"
         }
     }
 }

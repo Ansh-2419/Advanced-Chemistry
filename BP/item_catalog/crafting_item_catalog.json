@@ -20,7 +20,8 @@
                             "utilitycraft:fluid_storage_casing",
                             "utilitycraft:common_fluid_valve",
                             "utilitycraft:common_energy_input_valve",
-                            "utilitycraft:common_energy_output_valve"
+                            "utilitycraft:common_energy_output_valve",
+                            "utilitycraft:separator"
                         ]
                     }
                 ]

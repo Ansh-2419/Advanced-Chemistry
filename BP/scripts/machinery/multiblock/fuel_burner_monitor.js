@@ -21,7 +21,7 @@ import {
 
 const BIOFUEL_TYPE            = 'biofuel';
 const CAPACITY_PER_AIR_BLOCK  = 64_000;
-const DE_PER_MB               = 8_000;
+const DE_PER_MB               = 40;
 const BURN_RATE_MB_PER_TICK   = 20;
 const ENERGY_CAP              = 2_000_000;
 const PUSH_RATE_MAX           = ENERGY_CAP;

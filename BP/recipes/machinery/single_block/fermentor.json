@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "utilitycraft:fermentor"
+		},
+		"tags": [
+			"utilitycraft_workbench"
+		],
+		"pattern": [
+			"SBS",
+			"RCR",
+			"MAM"
+		],
+		"key": {
+			"A": {
+				"item": "utilitycraft:machine_case"
+			},
+			"B": {
+				"item": "utilitycraft:advanced_fluid_tank"
+			},
+			"S": {
+				"item": "utilitycraft:Duranium_ingot"
+			},
+			"M": {
+				"item": "utilitycraft:advanced_chip"
+			},
+			"R": {
+				"item": "utilitycraft:steel_block"
+			},
+			"C": {
+				"item": "utilitycraft:machine_case"
+			}
+		},
+		"result": {
+			"item": "utilitycraft:fermentor",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "utilitycraft:Duranium_ingot"
+			}
+		]
+	}
+}

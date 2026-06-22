@@ -8,9 +8,9 @@ import { system } from "@minecraft/server";
 const nativeFuelMixerRecipes = [
     defineFuelMixerRecipe({
         id: "utilitycraft:biofuel_from_ethanol_plant_oil",
-        input1: { type: "ethanol",   amount: 500 },
-        input2: { type: "plant_oil", amount: 500 },
-        output: { type: "biofuel",   amount: 800 },
+        input1: { type: "ethanol",   amount: 1000 },
+        input2: { type: "plant_oil", amount: 1000 },
+        output: { type: "biofuel",   amount: 500 },
         energyCost: 6400,
         seconds: 10,
         description: "Mixes ethanol and plant oil into biofuel."

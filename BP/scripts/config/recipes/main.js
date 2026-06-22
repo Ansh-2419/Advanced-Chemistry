@@ -12,3 +12,5 @@ import './added/insert_press.js';
 // ── Age of Chemical machine recipes ─────────────────────────
 import './machinery/fermenter.js';
 import './machinery/fuel_mixer.js';
+import './machinery/chemical_reactor.js';
+import './machinery/separator.js';

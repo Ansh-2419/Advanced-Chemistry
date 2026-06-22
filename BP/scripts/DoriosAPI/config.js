@@ -32,7 +32,7 @@
  * ```js
  * const addonData = {
  *     name: "UtilityCraft: Heavy Machinery",
- *     author: "Dorios Studios",
+ *     author: "Rudransh",
  *     identifier: "utilitycraft_heavy_machinery",
  *     version: "0.3.0",
  *     dependencies: {
@@ -46,15 +46,15 @@
  * ```
  */
 export const addonData = {
-    name: "UtilityCraft: Ascendant Technology",
-    author: "Dorios Studios",
-    identifier: "uc_ascendant_technology",
-    version: "0.8.0",
+    name: "Advanced Chemistry",
+    author: "Rudransh",
+    identifier: "utilitycraft",
+    version: "0.1.0",
     dependencies: {
         "utilitycraft": {
             name: "UtilityCraft",
             version: "3.3.6",
-            warning: "UtilityCraft: Ascendant Technology is an expansion for UtilityCraft, so it requires UtilityCraft to be installed. Machines and features from UtilityCraft won't work without it."
+            warning: "UtilityCraft: Advanced Chemistry is an expansion for UtilityCraft, so it requires UtilityCraft to be installed. Machines and features from UtilityCraft won't work without it."
         }
     }
 }
