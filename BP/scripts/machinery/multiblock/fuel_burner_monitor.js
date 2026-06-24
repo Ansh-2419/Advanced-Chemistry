@@ -5,14 +5,13 @@ import {
     Multiblock,
     MultiblockGenerator,
     tickGate,
-    collectFluidNetworkNodes,
-    canFluidNodeProvide,
-    isFluidNodeEnabled,
-    updatePipes,
 } from '../../DoriosCore/index.js';
 import { BLOCKED_SLOT_ITEM_ID } from '../../DoriosCore/machinery/constants.js';
 import {
     pushEnergyThroughOutputValves,
+    refreshFluidInputNetworks,
+    pullFluidThroughInputValves,
+    validateValves,
     getPortBlocks,
     VALVE_IDS,
 } from './valves.js';
@@ -21,7 +20,7 @@ import {
 
 const BIOFUEL_TYPE            = 'biofuel';
 const CAPACITY_PER_AIR_BLOCK  = 64_000;
-const DE_PER_MB               = 40;
+const DE_PER_MB               = 8_000;
 const BURN_RATE_MB_PER_TICK   = 20;
 const ENERGY_CAP              = 2_000_000;
 const PUSH_RATE_MAX           = ENERGY_CAP;
@@ -41,7 +40,6 @@ const CAPSULE_OUTPUT_SLOT     = 4;
 
 const PROP_LIFETIME_BURN      = 'fb:lifetime_mb';
 const PROP_FLUID_CAP          = 'fb:fluid_cap';
-const PROP_FLUID_NODES_PFX    = 'fb:fnodes_';  // fb:fnodes_0, fb:fnodes_1, … per valve
 
 // ── Multiblock config ─────────────────────────────────────────────────────────
 
@@ -83,28 +81,9 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
 
             // Called each time the wrench validates and activates the structure.
             onActivate({ entity, structure, player, block }) {
-                // ── Validate valves (they're casing-edge blocks, not 'components') ──
-                const dim = block.dimension;
-                let fluidInputCount   = 0;
-                let energyOutputCount = 0;
-
-                for (const tag of (structure.inputBlocks ?? [])) {
-                    const coordStr = tag.slice('input:['.length, -1);
-                    const [x, y, z] = coordStr.split(',').map(Number);
-                    const b = dim.getBlock({ x, y, z });
-                    if (!b) continue;
-                    if (b.typeId === VALVE_IDS.FLUID_INPUT)    fluidInputCount++;
-                    if (b.typeId === VALVE_IDS.ENERGY_OUTPUT)  energyOutputCount++;
-                }
-
-                if (fluidInputCount < 1) {
-                    player.sendMessage('§c[Fuel Burner] At least 1 Fluid Input Valve required.');
-                    return false;
-                }
-                if (energyOutputCount < 1) {
-                    player.sendMessage('§c[Fuel Burner] At least 1 Energy Output Valve required.');
-                    return false;
-                }
+                // ── Validate required valves ─────────────────────────────────────
+                const valveError = validateValves(entity, { fluidInput: 1, energyOutput: 1 });
+                if (valveError) { player.sendMessage(valveError); return false; }
 
                 // ── Set fluid capacity based on interior air block count ──────
                 const fluidCap = _calcFluidCap(structure);
@@ -122,7 +101,7 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
                 // ── Discover fluid pipe networks from each fluid input valve ──
                 // Cache each valve's network node list on the entity so onTick
                 // doesn't re-traverse the graph every tick.
-                _refreshFluidNetworks(entity, block);
+                refreshFluidInputNetworks(entity);
 
                 _blockSlots(entity);
             },
@@ -160,7 +139,7 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
 
         // ── Pull biofuel through fluid input valves from the pipe network ─────
         if (tickGate(entity, 'fb:pipe_in', 2)) {
-            _pullBiofuelFromNetwork(entity, tank);
+            pullFluidThroughInputValves(entity, [tank], new Set(['biofuel']));
         }
 
         // ── Burn biofuel → produce DE ─────────────────────────────────────────
@@ -168,13 +147,13 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
 
         // ── Push DE through energy output valves ──────────────────────────────
         if (tickGate(entity, 'fb:energy_out', PUSH_INTERVAL) && energy.get() > 0) {
-            pushEnergyThroughOutputValves(entity, energy, PUSH_RATE_MAX, Energy);
+            pushEnergyThroughOutputValves(entity, energy, PUSH_RATE_MAX);
         }
 
         // ── Refresh pipe network cache occasionally ───────────────────────────
         // Re-scan every ~200 ticks in case pipes or sources changed.
         if (tickGate(entity, 'fb:net_refresh', 200)) {
-            _refreshFluidNetworks(entity, block);
+            refreshFluidInputNetworks(entity);
         }
 
         // ── Display bars ──────────────────────────────────────────────────────
@@ -189,99 +168,7 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
 // Internal helpers
 // ─────────────────────────────────────────────────────────────────────────────
 
-/**
- * Walk the fluid pipe network from every fluid input valve and pull
- * biofuel from any source machine we find into the tank.
- *
- * Network topology:
- *   [Fermenter] ──pipe──> [Fluid Input Valve] ──casing──> [Controller]
- *
- * `collectFluidNetworkNodes` traverses outward from the valve block
- * through pipes and returns the position of each source machine.
- * We then find the entity at that position and drain it.
- */
-function _pullBiofuelFromNetwork(entity, tank) {
-    if (tank.getFreeSpace() <= 0) return;
 
-    const dim   = entity.dimension;
-    const ports = getPortBlocks(entity, VALVE_IDS.FLUID_INPUT);
-
-    for (let i = 0; i < ports.length; i++) {
-        const valveBlock = ports[i];
-
-        // Read cached node list for this valve (stored as JSON on the entity).
-        let nodes = [];
-        try {
-            const raw = entity.getDynamicProperty(PROP_FLUID_NODES_PFX + i);
-            if (raw) nodes = JSON.parse(raw);
-        } catch { /* ignore */ }
-
-        if (!Array.isArray(nodes) || nodes.length === 0) continue;
-
-        for (const node of nodes) {
-            if (!canFluidNodeProvide(node))  continue;
-            if (!isFluidNodeEnabled(node))   continue;
-            if (tank.getFreeSpace() <= 0)    break;
-
-            const srcBlock = dim.getBlock({ x: node.x, y: node.y, z: node.z });
-            if (!srcBlock?.hasTag?.('dorios:fluid')) continue;
-
-            // Find the fluid-holding entity at this source position.
-            const srcEnt = dim.getEntitiesAtBlockLocation(srcBlock.location)[0];
-            if (!srcEnt || srcEnt === entity) continue;
-
-            // Scan all tank indices — the fuel mixer stores biofuel at
-            // index 2 (output tank), not index 0.
-            let srcFluid = null;
-            for (let idx = 0; idx < 4; idx++) {
-                try {
-                    const candidate = new FluidManager(srcEnt, idx);
-                    if (candidate.getCap() <= 0) break;
-                    if (candidate.get() > 0 && candidate.getType() === BIOFUEL_TYPE) {
-                        srcFluid = candidate;
-                        break;
-                    }
-                } catch { break; }
-            }
-            if (!srcFluid) continue;
-
-            const amount = Math.min(
-                srcFluid.get(),
-                tank.getFreeSpace(),
-                MAX_PULL_PER_PORT,
-            );
-            if (amount <= 0) continue;
-
-            srcFluid.add(-amount);
-            if (srcFluid.get() <= 0) srcFluid.setType('empty');
-            if (tank.getType() === 'empty') tank.setType(BIOFUEL_TYPE);
-            tank.add(amount);
-        }
-    }
-}
-
-/**
- * Traverse the pipe network from each fluid input valve and cache
- * the discovered source-node positions on the controller entity.
- * Called once on activation and periodically during onTick.
- */
-function _refreshFluidNetworks(entity, block) {
-    const ports = getPortBlocks(entity, VALVE_IDS.FLUID_INPUT);
-
-    for (let i = 0; i < ports.length; i++) {
-        const valveBlock = ports[i];
-        try {
-            // Walk pipes outward from the valve block to find source machines.
-            const nodes = collectFluidNetworkNodes(valveBlock);
-            entity.setDynamicProperty(
-                PROP_FLUID_NODES_PFX + i,
-                JSON.stringify(nodes),
-            );
-        } catch {
-            // Ignore traversal errors (e.g. chunk not loaded).
-        }
-    }
-}
 
 function _calcFluidCap(structure) {
     const airBlocks = structure?.components?.air ?? 1;

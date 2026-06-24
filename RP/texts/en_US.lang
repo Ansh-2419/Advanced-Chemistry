@@ -7,6 +7,7 @@ itemGroup.name.machines=Advanced Chemistry
 tile.utilitycraft:fermenter.name=Fermenter
 tile.utilitycraft:fuel_mixer.name=Fluid Mixer
 tile.utilitycraft:chemical_reactor.name=Chemical Reactor
+tile.utilitycraft:separator.name=Separator
 
 ## Fluid display names
 fluid.utilitycraft.ethanol=Ethanol
@@ -14,9 +15,8 @@ fluid.utilitycraft.biofuel=Biofuel
 fluid.utilitycraft.plant_oil=Plant Oil
 
 ## ── Common Multiblock Valves ─────────────────────────────────────────────────
-tile.utilitycraft:common_fluid_valve.name=Fluid Valve
-tile.utilitycraft:common_energy_input_valve.name=Energy Input Valve
-tile.utilitycraft:common_energy_output_valve.name=Energy Output Valve
+tile.utilitycraft:fluid_valve.name=Fluid Valve
+tile.utilitycraft:energy_valve.name=Energy Valve
 
 ## ── Fluid Storage Multiblock ─────────────────────────────────────────────────
 tile.utilitycraft:fluid_storage_casing.name=Fluid Storage Casing
@@ -34,3 +34,4 @@ entity.utilitycraft:fuel_mixer.name=Fluid Mixer
 entity.utilitycraft:chemical_reactor.name=Chemical Reactor
 entity.utilitycraft:fuel_burner_monitor.name=Fuel Burner
 entity.utilitycraft:fluid_storage_monitor.name=Fluid Storage
+entity.utilitycraft:separator.name=Separator

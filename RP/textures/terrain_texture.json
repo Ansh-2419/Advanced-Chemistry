@@ -7,11 +7,11 @@
         "common": {
             "textures": "textures/blocks/common"
         },
-        "fluid_monitor": {
-            "textures": "textures/blocks/fluid_monitor"
+        "burner_monitor": {
+            "textures": "textures/blocks/burner_monitor"
         },
-        "reactor_monitor": {
-            "textures": "textures/blocks/reactor_monitor"
+        "chemical_reactor": {
+            "textures": "textures/blocks/chemical_reactor"
         },
         "electromagnetic_coil": {
             "textures": "textures/blocks/electromagnetic_coil"
@@ -22,50 +22,48 @@
         "energy_output_port": {
             "textures": "textures/blocks/energy_output_port"
         },
+        "fermentor": {
+            "textures": "textures/blocks/fermentor"
+        },
         "fluid_input_port": {
             "textures": "textures/blocks/fluid_input_port"
         },
         "fluid_mixer": {
             "textures": "textures/blocks/fluid_mixer"
         },
+        "fluid_monitor": {
+            "textures": "textures/blocks/fluid_monitor"
+        },
+        "fluid_output_port": {
+            "textures": "textures/blocks/fluid_output_port"
+        },
         "reactor_casing": {
             "textures": "textures/blocks/reactor_casing"
         },
-        "fermentor": {
-            "textures": "textures/blocks/fermentor"
+        "reactor_caseing": {
+            "textures": "textures/blocks/reactor_caseing"
         },
+        "refinery_caseing": {
+            "textures": "textures/blocks/refinery_caseing"
+        },
+
         "fuel_mixer": {
+            "textures": "textures/blocks/fluid_mixer"
+        },
+        "utilitycraft_fuel_mixer_on": {
             "textures": "textures/blocks/fluid_mixer"
         },
         "utilitycraft_liquifier_on": {
             "textures": "textures/blocks/fermentor"
         },
-        "utilitycraft_fuel_mixer_on": {
-            "textures": "textures/blocks/fluid_mixer"
-        },
-        "reactor_caseing": {
-            "textures": "textures/blocks/reactor_caseing"
-        },
         "reactor_controller": {
-            "textures": "textures/blocks/reactor_controller"
+            "textures": "textures/blocks/chemical_reactor"
         },
         "fuel_burner_casing": {
             "textures": "textures/blocks/reactor_casing"
         },
-        "fuel_burner_monitor": {
-            "textures": "textures/blocks/reactor_controller"
-        },
-        "fluid_output_port": {
-            "textures": "textures/blocks/fluid_output_port"
-        },
-        "reactor_caseing": {
-            "textures": "textures/blocks/reactor_caseing"
-        },
-        "reactor_monitor": {
-            "textures": "textures/blocks/reactor_monitor"
-        },
-        "chemical_reactor": {
-            "textures": "textures/blocks/chemical_reactor"
+        "separator": {
+            "textures": "textures/blocks/separator"
         }
     }
 }

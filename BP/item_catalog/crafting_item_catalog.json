@@ -18,9 +18,8 @@
                             "utilitycraft:fuel_burner_casing",
                             "utilitycraft:fluid_storage_monitor",
                             "utilitycraft:fluid_storage_casing",
-                            "utilitycraft:common_fluid_valve",
-                            "utilitycraft:common_energy_input_valve",
-                            "utilitycraft:common_energy_output_valve",
+                            "utilitycraft:fluid_valve",
+                            "utilitycraft:energy_valve",
                             "utilitycraft:separator"
                         ]
                     }

@@ -1,0 +1,30 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:fuel_burner_monitor"
+        },
+        "tags": ["utilitycraft_workbench"],
+        "pattern": ["ABA", "BRB", "ABA"],
+        "key": {
+            "R": {
+                "item": "utilitycraft:machine_case"
+            },
+            "B": {
+                "item": "utilitycraft:duranium_ingot"
+            },
+            "A": {
+                "item": "utilitycraft:fuel_burner_casing"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:fuel_burner_monitor",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:Duranium_ingot"
+            }
+        ]
+    }
+}

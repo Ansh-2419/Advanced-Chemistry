@@ -9,10 +9,10 @@
     },
     "components": {
       "utilitycraft:fuel_burner_monitor": {},
-      "minecraft:geometry": "geometry.utilitycraft_block",
+      "minecraft:geometry": "geometry.utilitycraft_block_2",
       "minecraft:material_instances": {
         "*": {
-          "texture": "common",
+          "texture": "burner_monitor",
           "render_method": "opaque"
         }
       },

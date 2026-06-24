@@ -8,4 +8,5 @@ import "./singleblock/chemical_reactor.js";
 import "./singleblock/separator.js";
 
 //multiblock
+import "./multiblock/valves.js";
 import "./multiblock/index.js";

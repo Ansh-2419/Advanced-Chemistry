@@ -53,23 +53,43 @@
                 }
             },
             {
-                "tank_panel_0": {
-                    "type": "panel",
+                "tank_cp_0": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        -80,
-                        0
+                        6,
+                        -22
                     ],
                     "controls": [
                         {
-                            "bar_0@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 0,
+                            "bar_0@machineryCommon.container_item_3": {
+                                "collection_index": 0,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -79,8 +99,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -93,23 +113,43 @@
                 }
             },
             {
-                "tank_panel_1": {
-                    "type": "panel",
+                "tank_cp_1": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        -60,
-                        0
+                        28,
+                        -22
                     ],
                     "controls": [
                         {
-                            "bar_1@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 1,
+                            "bar_1@machineryCommon.container_item_3": {
+                                "collection_index": 1,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -119,8 +159,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -133,23 +173,43 @@
                 }
             },
             {
-                "tank_panel_2": {
-                    "type": "panel",
+                "tank_cp_2": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        -40,
-                        0
+                        50,
+                        -22
                     ],
                     "controls": [
                         {
-                            "bar_2@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 2,
+                            "bar_2@machineryCommon.container_item_3": {
+                                "collection_index": 2,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -159,8 +219,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -173,23 +233,43 @@
                 }
             },
             {
-                "tank_panel_3": {
-                    "type": "panel",
+                "tank_cp_3": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        -20,
+                        6,
                         0
                     ],
                     "controls": [
                         {
-                            "bar_3@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 3,
+                            "bar_3@machineryCommon.container_item_3": {
+                                "collection_index": 3,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -199,8 +279,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -213,23 +293,43 @@
                 }
             },
             {
-                "tank_panel_4": {
-                    "type": "panel",
+                "tank_cp_4": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        0,
+                        28,
                         0
                     ],
                     "controls": [
                         {
-                            "bar_4@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 4,
+                            "bar_4@machineryCommon.container_item_3": {
+                                "collection_index": 4,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -239,8 +339,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -253,23 +353,43 @@
                 }
             },
             {
-                "tank_panel_5": {
-                    "type": "panel",
+                "tank_cp_5": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [
+                    "size": [
                         20,
+                        52
+                    ],
+                    "offset": [
+                        50,
                         0
                     ],
                     "controls": [
                         {
-                            "bar_5@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 5,
+                            "bar_5@machineryCommon.container_item_3": {
+                                "collection_index": 5,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -279,8 +399,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -293,23 +413,43 @@
                 }
             },
             {
-                "tank_panel_6": {
-                    "type": "panel",
+                "tank_cp_6": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        40,
-                        0
+                        6,
+                        22
                     ],
                     "controls": [
                         {
-                            "bar_6@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 6,
+                            "bar_6@machineryCommon.container_item_3": {
+                                "collection_index": 6,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -319,8 +459,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -333,23 +473,43 @@
                 }
             },
             {
-                "tank_panel_7": {
-                    "type": "panel",
+                "tank_cp_7": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        60,
-                        0
+                        28,
+                        22
                     ],
                     "controls": [
                         {
-                            "bar_7@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 7,
+                            "bar_7@machineryCommon.container_item_3": {
+                                "collection_index": 7,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -359,8 +519,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,
@@ -373,23 +533,43 @@
                 }
             },
             {
-                "tank_panel_8": {
-                    "type": "panel",
+                "tank_cp_8": {
+                    "type": "collection_panel",
+                    "collection_name": "container_items",
+                    "$item_collection_name": "container_items",
                     "anchor_from": "center",
                     "anchor_to": "center",
+                    "size": [
+                        20,
+                        52
+                    ],
                     "offset": [
-                        80,
-                        0
+                        50,
+                        22
                     ],
                     "controls": [
                         {
-                            "bar_8@machineryCommon.vertical_single": {
-                                "$has_bg": false,
-                                "$collection_index": 8,
+                            "bar_8@machineryCommon.container_item_3": {
+                                "collection_index": 8,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "layer": 0,
-                                "$is_fluid": true
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "$cell_image_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_panel_size": [
+                                    16,
+                                    48
+                                ],
+                                "$item_renderer_size": [
+                                    14,
+                                    46
+                                ],
+                                "layer": 1
                             }
                         },
                         {
@@ -399,8 +579,8 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    50,
-                                    50
+                                    16,
+                                    48
                                 ],
                                 "offset": [
                                     0,

@@ -21,12 +21,13 @@ import {
     Multiblock,
     MultiblockMachine,
     tickGate,
-    collectFluidNetworkNodes,
     formatFluidDisplayName,
 } from '../../DoriosCore/index.js';
 import {
-    getPortBlocks,
-    pushFluidThroughValves,
+    pushFluidThroughOutputValves,
+    pullFluidThroughInputValves,
+    refreshFluidInputNetworks,
+    validateValves,
     VALVE_IDS,
 } from './valves.js';
 
@@ -39,7 +40,6 @@ const LABEL_SLOT           = 9;
 const MAX_PULL_PER_PORT    = 2_000;   // mB pulled per valve per tick window
 const MAX_PUSH_PER_VALVE   = 2_000;   // mB pushed per valve per tick window
 const PROP_CAP             = 'fs:cap';
-const PROP_NODES_PFX       = 'fs:nodes_';  // fs:nodes_0, fs:nodes_1, ... per valve
 
 // ── Multiblock config ─────────────────────────────────────────────────────────
 
@@ -66,27 +66,15 @@ DoriosAPI.register.blockComponent('fluid_storage_monitor', {
             },
 
             onActivate({ entity, structure, player, block }) {
-                // Validate at least one fluid valve exists
-                const dim = block.dimension;
-                let valveCount = 0;
-                for (const tag of (structure.inputBlocks ?? [])) {
-                    const coordStr = tag.slice('input:['.length, -1);
-                    const [x, y, z] = coordStr.split(',').map(Number);
-                    const b = dim.getBlock({ x, y, z });
-                    if (b?.typeId === VALVE_IDS.FLUID_INPUT) valveCount++;
-                }
-
-                if (valveCount < 1) {
-                    player.sendMessage('§c[Fluid Storage] At least 1 Fluid Valve required.');
-                    return false;
-                }
+                const valveError = validateValves(entity, { fluidInput: 1 });
+                if (valveError) { player.sendMessage(valveError); return false; }
 
                 const cap = (structure.components?.air ?? 1) * CAPACITY_PER_AIR;
                 _initTanks(entity, cap);
                 entity.setDynamicProperty(PROP_CAP, cap);
 
                 // Cache pipe network nodes from each valve
-                _refreshNetworks(entity, block);
+                refreshFluidInputNetworks(entity);
             },
 
             successMessages({ structure }) {
@@ -115,17 +103,17 @@ DoriosAPI.register.blockComponent('fluid_storage_monitor', {
 
         // ── Pull fluid IN from pipe network through valves ────────────────
         if (tickGate(entity, 'fs:in', 2)) {
-            _pullFromNetwork(entity, tanks);
+            pullFluidThroughInputValves(entity, tanks, null);
         }
 
         // ── Push fluid OUT to adjacent machines through valves ────────────
         if (tickGate(entity, 'fs:out', 4)) {
-            pushFluidThroughValves(entity, tanks, MAX_PUSH_PER_VALVE, FluidManager);
+            pushFluidThroughOutputValves(entity, tanks, MAX_PUSH_PER_VALVE);
         }
 
         // ── Refresh network cache periodically ────────────────────────────
         if (tickGate(entity, 'fs:net_refresh', 200)) {
-            _refreshNetworks(entity, block);
+            refreshFluidInputNetworks(entity);
         }
 
         // ── Display all tank bars ─────────────────────────────────────────
@@ -157,74 +145,6 @@ function _getTanks(entity) {
     const tanks = FluidManager.initializeMultiple(entity, TANK_COUNT);
     tanks.forEach(t => { if (t.getCap() <= 0) t.setCap(defaultCap); });
     return tanks;
-}
-
-/**
- * Walk the pipe network from each fluid valve and cache source node positions.
- * Called once on activation and every ~200 ticks.
- */
-function _refreshNetworks(entity, block) {
-    const ports = getPortBlocks(entity, VALVE_IDS.FLUID_INPUT);
-    for (let i = 0; i < ports.length; i++) {
-        try {
-            const nodes = collectFluidNetworkNodes(ports[i]);
-            entity.setDynamicProperty(PROP_NODES_PFX + i, JSON.stringify(nodes));
-        } catch { }
-    }
-}
-
-/**
- * Pull fluid from pipe network source machines into the first tank
- * that accepts that fluid type (matches type or is empty).
- */
-function _pullFromNetwork(entity, tanks) {
-    const dim   = entity.dimension;
-    const ports = getPortBlocks(entity, VALVE_IDS.FLUID_INPUT);
-
-    for (let i = 0; i < ports.length; i++) {
-        let nodes = [];
-        try {
-            const raw = entity.getDynamicProperty(PROP_NODES_PFX + i);
-            if (raw) nodes = JSON.parse(raw);
-        } catch { }
-        if (!nodes.length) continue;
-
-        for (const node of nodes) {
-            if (!Number.isFinite(node?.x)) continue;
-
-            const srcBlock = dim.getBlock({ x: node.x, y: node.y, z: node.z });
-            if (!srcBlock?.hasTag?.('dorios:fluid')) continue;
-
-            const srcEnt = dim.getEntitiesAtBlockLocation(srcBlock.location)[0];
-            if (!srcEnt || srcEnt === entity) continue;
-
-            // Try all tank indices on the source
-            for (let idx = 0; idx < 4; idx++) {
-                let src;
-                try { src = new FluidManager(srcEnt, idx); } catch { break; }
-                if (src.getCap() <= 0) break;
-                if (src.get() <= 0)    continue;
-
-                const incoming = src.getType();
-                if (!incoming || incoming === 'empty') continue;
-
-                // Find the best target tank — prefer one already holding this type
-                const target =
-                    tanks.find(t => t.getType() === incoming && t.getFreeSpace() > 0) ??
-                    tanks.find(t => t.getType() === 'empty'  && t.getFreeSpace() > 0);
-                if (!target) continue;
-
-                const amount = Math.min(src.get(), target.getFreeSpace(), MAX_PULL_PER_PORT);
-                if (amount <= 0) continue;
-
-                src.add(-amount);
-                if (src.get() <= 0) src.setType('empty');
-                if (target.getType() === 'empty') target.setType(incoming);
-                target.add(amount);
-                break;
-            }
-        }
-    }
 }
 
 /**
