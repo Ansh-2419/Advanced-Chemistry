@@ -42,7 +42,7 @@
             },
             {
                 "hud_label@machineryCommon.item_label": {
-                    "collection_index": 9,
+                    "collection_index": 7,
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
                     "$text_scale": 0.55,
@@ -53,43 +53,23 @@
                 }
             },
             {
-                "tank_cp_0": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
+                "tank_panel_0": {
+                    "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
                     "offset": [
-                        6,
-                        -22
+                        -2,
+                        0
                     ],
                     "controls": [
                         {
-                            "bar_0@machineryCommon.container_item_3": {
-                                "collection_index": 0,
+                            "bar_0@machineryCommon.vertical_single": {
+                                "$is_liquid": true,
+                                "$has_bg": false,
+                                "$collection_index": 0,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
+                                "layer": 0
                             }
                         },
                         {
@@ -99,12 +79,12 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    16,
-                                    48
+                                    50,
+                                    50
                                 ],
                                 "offset": [
-                                    0,
-                                    0
+                                    10,
+                                    3
                                 ],
                                 "layer": 13
                             }
@@ -113,43 +93,23 @@
                 }
             },
             {
-                "tank_cp_1": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
+                "tank_panel_1": {
+                    "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
                     "offset": [
-                        28,
-                        -22
+                        12,
+                        0
                     ],
                     "controls": [
                         {
-                            "bar_1@machineryCommon.container_item_3": {
-                                "collection_index": 1,
+                            "bar_1@machineryCommon.vertical_single": {
+                                "$is_liquid": true,
+                                "$has_bg": false,
+                                "$collection_index": 1,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
+                                "layer": 0
                             }
                         },
                         {
@@ -159,12 +119,12 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    16,
-                                    48
+                                    50,
+                                    50
                                 ],
                                 "offset": [
-                                    0,
-                                    0
+                                    10,
+                                    3
                                 ],
                                 "layer": 13
                             }
@@ -173,43 +133,23 @@
                 }
             },
             {
-                "tank_cp_2": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
+                "tank_panel_2": {
+                    "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
                     "offset": [
-                        50,
-                        -22
+                        26,
+                        0
                     ],
                     "controls": [
                         {
-                            "bar_2@machineryCommon.container_item_3": {
-                                "collection_index": 2,
+                            "bar_2@machineryCommon.vertical_single": {
+                                "$is_liquid": true,
+                                "$has_bg": false,
+                                "$collection_index": 2,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
+                                "layer": 0
                             }
                         },
                         {
@@ -219,12 +159,12 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    16,
-                                    48
+                                    50,
+                                    50
                                 ],
                                 "offset": [
-                                    0,
-                                    0
+                                    10,
+                                    3
                                 ],
                                 "layer": 13
                             }
@@ -233,43 +173,23 @@
                 }
             },
             {
-                "tank_cp_3": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
+                "tank_panel_3": {
+                    "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
                     "offset": [
-                        6,
+                        40,
                         0
                     ],
                     "controls": [
                         {
-                            "bar_3@machineryCommon.container_item_3": {
-                                "collection_index": 3,
+                            "bar_3@machineryCommon.vertical_single": {
+                                "$is_liquid": true,
+                                "$has_bg": false,
+                                "$collection_index": 3,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
+                                "layer": 0
                             }
                         },
                         {
@@ -279,12 +199,12 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    16,
-                                    48
+                                    50,
+                                    50
                                 ],
                                 "offset": [
-                                    0,
-                                    0
+                                    10,
+                                    3
                                 ],
                                 "layer": 13
                             }
@@ -293,43 +213,23 @@
                 }
             },
             {
-                "tank_cp_4": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
+                "tank_panel_4": {
+                    "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
                     "offset": [
-                        28,
+                        54,
                         0
                     ],
                     "controls": [
                         {
-                            "bar_4@machineryCommon.container_item_3": {
-                                "collection_index": 4,
+                            "bar_4@machineryCommon.vertical_single": {
+                                "$is_liquid": true,
+                                "$has_bg": false,
+                                "$collection_index": 4,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
+                                "layer": 0
                             }
                         },
                         {
@@ -339,12 +239,12 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    16,
-                                    48
+                                    50,
+                                    50
                                 ],
                                 "offset": [
-                                    0,
-                                    0
+                                    10,
+                                    3
                                 ],
                                 "layer": 13
                             }
@@ -353,43 +253,23 @@
                 }
             },
             {
-                "tank_cp_5": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
+                "tank_panel_5": {
+                    "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
                     "offset": [
-                        50,
+                        68,
                         0
                     ],
                     "controls": [
                         {
-                            "bar_5@machineryCommon.container_item_3": {
-                                "collection_index": 5,
+                            "bar_5@machineryCommon.vertical_single": {
+                                "$is_liquid": true,
+                                "$has_bg": false,
+                                "$collection_index": 5,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
+                                "layer": 0
                             }
                         },
                         {
@@ -399,12 +279,12 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    16,
-                                    48
+                                    50,
+                                    50
                                 ],
                                 "offset": [
-                                    0,
-                                    0
+                                    10,
+                                    3
                                 ],
                                 "layer": 13
                             }
@@ -413,43 +293,23 @@
                 }
             },
             {
-                "tank_cp_6": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
+                "tank_panel_6": {
+                    "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
                     "offset": [
-                        6,
-                        22
+                        82,
+                        0
                     ],
                     "controls": [
                         {
-                            "bar_6@machineryCommon.container_item_3": {
-                                "collection_index": 6,
+                            "bar_6@machineryCommon.vertical_single": {
+                                "$is_liquid": true,
+                                "$has_bg": false,
+                                "$collection_index": 6,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
+                                "layer": 0
                             }
                         },
                         {
@@ -459,132 +319,12 @@
                                 "anchor_from": "center",
                                 "anchor_to": "center",
                                 "size": [
-                                    16,
-                                    48
+                                    50,
+                                    50
                                 ],
                                 "offset": [
-                                    0,
-                                    0
-                                ],
-                                "layer": 13
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "tank_cp_7": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
-                    "anchor_from": "center",
-                    "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
-                    "offset": [
-                        28,
-                        22
-                    ],
-                    "controls": [
-                        {
-                            "bar_7@machineryCommon.container_item_3": {
-                                "collection_index": 7,
-                                "anchor_from": "center",
-                                "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
-                            }
-                        },
-                        {
-                            "border_7": {
-                                "type": "image",
-                                "texture": "textures/ui/liquid_border",
-                                "anchor_from": "center",
-                                "anchor_to": "center",
-                                "size": [
-                                    16,
-                                    48
-                                ],
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "layer": 13
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "tank_cp_8": {
-                    "type": "collection_panel",
-                    "collection_name": "container_items",
-                    "$item_collection_name": "container_items",
-                    "anchor_from": "center",
-                    "anchor_to": "center",
-                    "size": [
-                        20,
-                        52
-                    ],
-                    "offset": [
-                        50,
-                        22
-                    ],
-                    "controls": [
-                        {
-                            "bar_8@machineryCommon.container_item_3": {
-                                "collection_index": 8,
-                                "anchor_from": "center",
-                                "anchor_to": "center",
-                                "offset": [
-                                    0,
-                                    0
-                                ],
-                                "$cell_image_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_panel_size": [
-                                    16,
-                                    48
-                                ],
-                                "$item_renderer_size": [
-                                    14,
-                                    46
-                                ],
-                                "layer": 1
-                            }
-                        },
-                        {
-                            "border_8": {
-                                "type": "image",
-                                "texture": "textures/ui/liquid_border",
-                                "anchor_from": "center",
-                                "anchor_to": "center",
-                                "size": [
-                                    16,
-                                    48
-                                ],
-                                "offset": [
-                                    0,
-                                    0
+                                    10,
+                                    3
                                 ],
                                 "layer": 13
                             }

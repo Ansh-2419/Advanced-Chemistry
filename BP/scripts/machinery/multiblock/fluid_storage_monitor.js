@@ -33,10 +33,10 @@ import {
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const TANK_COUNT           = 9;
+const TANK_COUNT           = 7;
 const CAPACITY_PER_AIR     = 64_000;
-const DISPLAY_SLOTS        = [0,1,2,3,4,5,6,7,8];
-const LABEL_SLOT           = 9;
+const DISPLAY_SLOTS        = [0,1,2,3,4,5,6];
+const LABEL_SLOT           = 7;
 const MAX_PULL_PER_PORT    = 2_000;   // mB pulled per valve per tick window
 const MAX_PUSH_PER_VALVE   = 2_000;   // mB pushed per valve per tick window
 const PROP_CAP             = 'fs:cap';
@@ -47,7 +47,7 @@ const MULTIBLOCK_CONFIG = {
     required_case:  'dorios:multiblock.case.fluid_storage',
     entity: {
         type:           'simple_container',
-        inventory_size: 10,   // slots 0-8 = tanks, slot 9 = label
+        inventory_size: 8,    // slots 0-6 = tanks, slot 7 = label
         identifier:     'utilitycraft:multiblock_machine',
     },
     machine: { rate_speed_base: 0, energy_cap: 0 },
