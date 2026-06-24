@@ -1,12 +1,14 @@
-Age of Chemical
+<div align="center">⚗️ AGE OF CHEMICAL
 
-Age of Chemical is an industrial expansion add-on for UtilityCraft, focused on chemical processing, fluid logistics, fuel production, and advanced materials.
+Industrial Chemistry Expansion for UtilityCraft
+
+Transform crops into fuels, fuels into hydrocarbons, and hydrocarbons into advanced industrial materials.
+
+</div>---
 
 Features
 
-Chemical Processing
-
-Build complete industrial production chains:
+🧪 Chemical Processing
 
 Sugar Cane
 ↓
@@ -20,7 +22,7 @@ Crude Oil
 ↓
 Refined Products
 
-New Machines
+⚙️ Machines
 
 - Fermentor
 - Oil Press
@@ -33,7 +35,7 @@ New Machines
 - Infuser
 - Fuel Burner
 
-New Fluids
+🛢️ Fluids
 
 - Ethanol
 - Plant Oil
@@ -46,50 +48,26 @@ New Fluids
 - Petrol
 - Naphtha
 
-New Materials
+🔩 Materials
 
 - Duranium Ingot
-- Lithium Dust
-- Lithium Catalyst
 - Technite Ingot
 - Voltanium Ingot
+- Lithium Dust
+- Lithium Catalyst
 
-Fluid Networks
+🌍 OneBlock Friendly
 
-Transport and automate fluids using:
+Designed to work well in OneBlock and SkyBlock worlds through automation and processing chains.
 
-- Fluid Pipes
-- Fluid Tanks
-- Input Valves
-- Output Valves
+🚧 Development Status
 
-End-Game Progression
+Age of Chemical is currently in active development.
 
-Age of Chemical extends UtilityCraft with advanced industrial systems, chemical manufacturing, powerful materials, and large-scale automation.
+Expect new machines, fluids, materials, and end-game technologies in future updates.
 
-OneBlock Friendly
+---
 
-The addon is designed to work well in OneBlock and SkyBlock environments, allowing progression through automation and processing rather than world exploration.
+Created by Dorios Studios
 
-Status
-
-⚠️ Currently in active development.
-
-Features, recipes, balancing, textures, and machines may change between versions.
-
-Planned Features
-
-- Plastic Production
-- Synthetic Rubber
-- Advanced Generators
-- Industrial Armor
-- Industrial Tools
-- Advanced Chemical Machines
-- More Fluids and Chemicals
-- End-Game Energy Systems
-
-Credits
-
-js lib Created by Dorios Studios.To help other 
-
-dev Built there own expansion for UtilityCraft.
+Expansion Add-on for UtilityCraft
