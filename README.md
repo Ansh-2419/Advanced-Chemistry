@@ -90,6 +90,6 @@ Planned Features
 
 Credits
 
-Created by Dorios Studios.
+js lib Created by Dorios Studios.To help other 
 
-Built as an expansion for UtilityCraft.
+dev Built there own expansion for UtilityCraft.
