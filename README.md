@@ -1,22 +1,39 @@
 Age of Chemical
 
-An official expansion add-on for UtilityCraft, focused on industrial chemistry, advanced fluids, energy production, and end-game progression.
-
-This project was created to expand UtilityCraft's technology tree with deeper production chains, realistic chemical processing, and powerful industrial machinery. What started as a small idea quickly grew into a massive industrial expansion built with passion and countless hours of development.
+Age of Chemical is an industrial expansion add-on for UtilityCraft, focused on chemical processing, fluid logistics, fuel production, and advanced materials.
 
 Features
 
-Advanced Chemical Industry
+Chemical Processing
 
-Transform simple resources into valuable chemicals through a complete processing chain:
+Build complete industrial production chains:
 
-Sugar Cane → Ethanol → Biofuel → Hydrocarbon Slurry → Crude Oil → Refined Products
+Sugar Cane
+↓
+Ethanol
+↓
+Biofuel
+↓
+Hydrocarbon Slurry
+↓
+Crude Oil
+↓
+Refined Products
 
-Build large production facilities using pipes, tanks, valves, reactors, separators, and processors.
+New Machines
+
+- Fermentor
+- Oil Press
+- Fuel Mixer
+- Chemical Reactor
+- Separator
+- Chemical Processor
+- Refinery
+- Crystallizer
+- Infuser
+- Fuel Burner
 
 New Fluids
-
-Discover and process many industrial fluids:
 
 - Ethanol
 - Plant Oil
@@ -28,29 +45,8 @@ Discover and process many industrial fluids:
 - Diesel
 - Petrol
 - Naphtha
-- Industrial Coolant
-- And more planned fluids
-
-Industrial Machines
-
-Expand your factory with powerful machines:
-
-- Fermentor
-- Oil Press
-- Fuel Mixer
-- Chemical Reactor
-- Separator
-- Refinery
-- Crystallizer
-- Infuser
-- Fuel Burner
-- Advanced Fluid Systems
-
-Each machine is designed to integrate seamlessly with UtilityCraft's energy and fluid networks.
 
 New Materials
-
-Create advanced industrial materials:
 
 - Duranium Ingot
 - Lithium Dust
@@ -58,50 +54,42 @@ Create advanced industrial materials:
 - Technite Ingot
 - Voltanium Ingot
 
-These materials are used to craft stronger machines, better storage systems, and future end-game equipment.
+Fluid Networks
 
-Fluid Logistics
-
-Build automated fluid networks using:
+Transport and automate fluids using:
 
 - Fluid Pipes
 - Fluid Tanks
 - Input Valves
 - Output Valves
-- Smart Fluid Routing
-
-Move liquids efficiently across your factory and automate complex production lines.
 
 End-Game Progression
 
-Age of Chemical introduces a completely new industrial path beyond basic UtilityCraft machinery.
+Age of Chemical extends UtilityCraft with advanced industrial systems, chemical manufacturing, powerful materials, and large-scale automation.
 
-Refine fuels, create advanced alloys, optimize energy production, and unlock powerful technologies through increasingly complex chemical processes.
+OneBlock Friendly
 
-OneBlock Compatible
+The addon is designed to work well in OneBlock and SkyBlock environments, allowing progression through automation and processing rather than world exploration.
 
-Designed to work well in OneBlock and Skyblock-style worlds.
+Status
 
-Most resources can be obtained through processing, automation, and industrial production without requiring extensive world exploration.
+⚠️ Currently in active development.
 
-Current Status
-
-Age of Chemical is currently in active development.
-
-You may encounter unfinished features, balancing changes, missing textures, and occasional bugs while new content is being added.
+Features, recipes, balancing, textures, and machines may change between versions.
 
 Planned Features
 
+- Plastic Production
+- Synthetic Rubber
 - Advanced Generators
 - Industrial Armor
-- Advanced Tools
-- More Chemicals
-- Plastic Production
-- Synthetic Materials
-- Tiered Chemical Machines
-- Advanced Storage Systems
-- End-Game Energy Technology
+- Industrial Tools
+- Advanced Chemical Machines
+- More Fluids and Chemicals
+- End-Game Energy Systems
 
-And much more to come.
+Credits
 
-Thank you for supporting the development of Age of Chemical.
+Created by Dorios Studios.
+
+Built as an expansion for UtilityCraft.
