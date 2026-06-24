@@ -68,6 +68,6 @@ Expect new machines, fluids, materials, and end-game technologies in future upda
 
 ---
 
-Created by Dorios Studios
+Created by RUDRANSH(DEV ANSH)
 
 Expansion Add-on for UtilityCraft
