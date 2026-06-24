@@ -2,7 +2,7 @@
 	"format_version": "1.20.80",
 	"minecraft:recipe_shaped": {
 		"description": {
-			"identifier": "utilitycraft:fermentor"
+			"identifier": "utilitycraft:fermenter"
 		},
 		"tags": [
 			"utilitycraft_workbench"
@@ -33,7 +33,7 @@
 			}
 		},
 		"result": {
-			"item": "utilitycraft:fermentor",
+			"item": "utilitycraft:fermenter",
 			"count": 1
 		},
 		"unlock": [

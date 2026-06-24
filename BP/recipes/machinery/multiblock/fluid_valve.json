@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:recipe_shaped": {
         "description": {
-            "identifier": "utilitycraft:energy_valve"
+            "identifier": "utilitycraft:fluid_valve"
         },
         "tags": ["utilitycraft_workbench"],
         "pattern": ["ABA", "BRB", "CBC"],
@@ -18,7 +18,7 @@
             }
         },
         "result": {
-            "item": "utilitycraft:energy_valve",
+            "item": "utilitycraft:fluid_valve",
             "count": 1
         },
         "unlock": [

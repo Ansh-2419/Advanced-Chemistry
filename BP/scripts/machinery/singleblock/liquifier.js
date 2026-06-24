@@ -83,7 +83,7 @@ DoriosAPI.register.blockComponent('fermenter', {
             return;
         }
 
-        // Find first occupied input slot with a matching recipe
+        // Find first occupied input slot with a matching recipe (single-pass)
         const { inputStack, inputSlot } = getActiveInputSlot(machine, recipes);
         if (!inputStack) {
             fail('Insert Item');
@@ -92,11 +92,78 @@ DoriosAPI.register.blockComponent('fermenter', {
 
         const recipe = matchRecipe(recipes, inputStack);
         if (!recipe) {
-            fail('Invalid Item');
+            // When there are items but none meet the recipe's required amount
+            fail('Missing Items');
             return;
         }
 
-        const fluidType = recipe.fluid.type ?? DEFAULT_FLUID_TYPE;
+        // Determine per-recipe batch defaults (batches normalized in recipes)
+        const batches = recipe.batches ?? recipe.batch ?? {
+            small: { size: 8, seconds: 6, fluidAmount: 150 },
+            large: { size: Math.max(1, recipe.input?.amount ?? 64), seconds: 8 }
+        };
+
+        const smallSize = Math.max(1, batches.small?.size ?? 8);
+        const smallSeconds = Math.max(1, batches.small?.seconds ?? 6);
+        const smallFluidAmountOverride = (Number.isFinite(batches.small?.fluidAmount) ? Math.max(0, Math.floor(batches.small.fluidAmount)) : null);
+
+        const largeSize = Math.max(1, batches.large?.size ?? (recipe.input?.amount ?? 64));
+        const largeSeconds = Math.max(1, batches.large?.seconds ?? 8);
+        const largeFluidAmountOverride = (Number.isFinite(batches.large?.fluidAmount) ? Math.max(0, Math.floor(batches.large.fluidAmount)) : null);
+
+        // Choose batch based on available items
+        const availableStackAmount = inputStack.amount ?? 0;
+        let chosenBatchSize = null;
+        let chosenBatchSeconds = null;
+        let chosenIsSmall = false;
+        if (availableStackAmount >= largeSize) {
+            chosenBatchSize = largeSize;
+            chosenBatchSeconds = largeSeconds;
+        } else if (availableStackAmount >= smallSize) {
+            chosenBatchSize = smallSize;
+            chosenBatchSeconds = smallSeconds;
+            chosenIsSmall = true;
+        } else {
+            fail('Missing Items');
+            return;
+        }
+
+        // Scale effective recipe to the chosen batch size.
+        // Baseline is the canonical recipe.input.amount (large canonical).
+        const baseline = Math.max(1, recipe.input?.amount ?? largeSize);
+        const scale = chosenBatchSize / baseline;
+
+        // Determine fluid amount:
+        // - If chosen is small and recipe provides small.fluidAmount, use it.
+        // - Else, if chosen is small and no override, default small production = 150 mB.
+        // - For large (or fallback), use either large override or scaled recipe.fluid.amount.
+        let effectiveFluidAmount;
+        if (chosenIsSmall) {
+            if (smallFluidAmountOverride !== null) {
+                effectiveFluidAmount = smallFluidAmountOverride;
+            } else {
+                effectiveFluidAmount = 150; // default small-batch fluid amount per your request
+            }
+        } else {
+            if (largeFluidAmountOverride !== null) {
+                effectiveFluidAmount = largeFluidAmountOverride;
+            } else {
+                effectiveFluidAmount = Math.max(1, Math.floor((recipe.fluid?.amount ?? 1) * scale));
+            }
+        }
+
+        const effectiveRecipe = {
+            ...recipe,
+            input: { ...recipe.input, amount: chosenBatchSize },
+            fluid: {
+                ...recipe.fluid,
+                amount: effectiveFluidAmount
+            },
+            energyCost: Math.max(1, Math.floor((recipe.energyCost ?? (settings.machine?.energy_cost ?? 2000)) * scale)),
+            seconds: chosenBatchSeconds
+        };
+
+        const fluidType = effectiveRecipe.fluid.type ?? DEFAULT_FLUID_TYPE;
         const tankType = tank.getType();
 
         if (tankType !== 'empty' && tankType !== fluidType) {
@@ -105,21 +172,21 @@ DoriosAPI.register.blockComponent('fermenter', {
         }
 
         const byproductSlot = machine.inv.getItem(RESIDUE_SLOT);
-        if (recipe.byproduct && byproductSlot && byproductSlot.typeId !== recipe.byproduct.id) {
+        if (effectiveRecipe.byproduct && byproductSlot && byproductSlot.typeId !== effectiveRecipe.byproduct.id) {
             fail('Residue Slot Busy');
             return;
         }
 
-        const crafts = calculateCrafts(machine, tank, recipe, inputStack, byproductSlot, machine.boosts.overclockYield ?? 1);
+        const crafts = calculateCrafts(machine, tank, effectiveRecipe, inputStack, byproductSlot, machine.boosts.overclockYield ?? 1);
         if (crafts.max <= 0) {
             fail(crafts.reason ?? 'Missing Items');
             return;
         }
 
-        const configuredCost = recipe.energyCost ?? settings.machine.energy_cost ?? 2000;
+        const configuredCost = effectiveRecipe.energyCost ?? settings.machine.energy_cost ?? 2000;
         machine.setEnergyCost(configuredCost);
         if (settings?.machine?.dynamic_rate === true) {
-            applyDynamicRecipeRate(machine, recipe, { energyCost: configuredCost });
+            applyDynamicRecipeRate(machine, effectiveRecipe, { energyCost: configuredCost });
         }
         const energyAvailable = machine.energy.get();
         if (energyAvailable <= 0) {
@@ -133,7 +200,7 @@ DoriosAPI.register.blockComponent('fermenter', {
         if (progress >= energyCost) {
             const craftRuns = Math.min(crafts.max, Math.floor(progress / energyCost));
             if (craftRuns > 0) {
-                processCraft(machine, recipe, craftRuns, tank, inputSlot);
+                processCraft(machine, effectiveRecipe, craftRuns, tank, inputSlot);
                 machine.addProgress(-(craftRuns * energyCost));
             }
         } else {
@@ -146,7 +213,7 @@ DoriosAPI.register.blockComponent('fermenter', {
             }
         }
 
-        updateHud(machine, recipe, tank, crafts.max);
+        updateHud(machine, effectiveRecipe, tank, crafts.max);
         tank.display(FLUID_DISPLAY_SLOT);
         machine.displayEnergy();
         machine.displayProgress();
@@ -158,9 +225,12 @@ DoriosAPI.register.blockComponent('fermenter', {
     }
 });
 
+/* Helpers */
+
 function resolveRecipes(block, settings) {
     const component = block.getComponent('utilitycraft:machine_recipes')?.customComponentParameters?.params;
-    if (component?.type === 'liquifier') return getFermentationRecipes();
+    // Accept both "liquifier" and "fermenter" as component.type to be robust to JSON variations.
+    if (component?.type === 'liquifier' || component?.type === 'fermenter') return getFermentationRecipes();
     if (Array.isArray(component)) return component;
     if (settings?.machine?.recipes && Array.isArray(settings.machine.recipes)) {
         return settings.machine.recipes;
@@ -169,22 +239,45 @@ function resolveRecipes(block, settings) {
 }
 
 function getActiveInputSlot(machine, recipes) {
+    // Single pass: remember first occupied for fallback, and return first slot
+    // whose stack matches a recipe (matchRecipe ensures amount is respected).
+    let firstOccupied = null;
+
     for (const slot of INPUT_SLOTS) {
         const stack = machine.inv.getItem(slot);
-        if (stack && matchRecipe(recipes, stack)) {
-            return { inputStack: stack, inputSlot: slot };
-        }
+        if (!stack) continue;
+
+        if (!firstOccupied) firstOccupied = { inputStack: stack, inputSlot: slot };
+
+        const r = matchRecipe(recipes, stack);
+        if (r) return { inputStack: stack, inputSlot: slot };
     }
-    // Fallback: return first occupied slot even if no recipe match (for error display)
-    for (const slot of INPUT_SLOTS) {
-        const stack = machine.inv.getItem(slot);
-        if (stack) return { inputStack: stack, inputSlot: slot };
-    }
-    return { inputStack: null, inputSlot: INPUT_SLOTS[0] };
+
+    return firstOccupied ?? { inputStack: null, inputSlot: INPUT_SLOTS[0] };
 }
 
 function matchRecipe(recipes, stack) {
-    return recipes.find(recipe => recipe.input?.id === stack.typeId);
+    if (!stack) return null;
+
+    const inputId = stack.typeId;
+    const candidates = recipes.filter(r => r.input?.id === inputId);
+    if (!candidates.length) return null;
+
+    // Prefer the candidate with largest required input.amount that is <= stack.amount.
+    const available = stack.amount ?? 0;
+    let chosen = null;
+    let chosenAmount = -1;
+
+    for (const r of candidates) {
+        const required = Math.max(1, r.input?.amount ?? 1);
+        if (available >= required && required > chosenAmount) {
+            chosen = r;
+            chosenAmount = required;
+        }
+    }
+
+    // If nothing fits (stack smaller than all recipe.required amounts) return null
+    return chosen;
 }
 
 function calculateCrafts(machine, tank, recipe, inputStack, byproductSlot, yieldBoost = 1) {
@@ -248,13 +341,21 @@ function updateHud(machine, recipe, tank, maxCrafts) {
     const fluidPerCraft = recipe.fluid.amount;
     const tankAmount = FluidManager.formatFluid(tank.get());
     const tankCap = FluidManager.formatFluid(tank.getCap());
+
+    const batchLine = (() => {
+        const batchSize = recipe.input?.amount ?? '—';
+        const seconds = recipe.seconds ?? '—';
+        return `§7Batch: §f${batchSize} items §7/ §f${seconds}s`;
+    })();
+
     const lore = [
         `§bInput: §f${formatItemName(recipe.input.id)}`,
         `§dFerment: §f${formatFluidDisplayName(fluidType)}`,
         `§7Yield: §f${FluidManager.formatFluid(fluidPerCraft)} each`,
         `§7Tank: §f${tankAmount} §7/ §f${tankCap}`,
         `§cCost: §f${Energy.formatEnergyToText(machine.getEnergyCost())}`,
-        `§7Queued Crafts: §f${maxCrafts}`
+        `§7Queued Crafts: §f${maxCrafts}`,
+        batchLine
     ];
 
     const overclockLine = buildOverclockLoreLine(machine);
