@@ -2,7 +2,6 @@ import { system } from "@minecraft/server";
 
 /**
  * Separator recipes — one fluid in → two fluids out.
- *
  * @typedef {{ type:string, amount:number }} FluidIO
  * @typedef {{ id:string, input:FluidIO, output1:FluidIO, output2:FluidIO, energyCost:number }} SepRecipe
  */
@@ -10,11 +9,11 @@ import { system } from "@minecraft/server";
 /** @type {SepRecipe[]} */
 const nativeRecipes = [
     defineRecipe({
-        id:          "aoc:separate_hydrocarbon_slurry",
-        input:       { type: "hydrocarbon_slurry",  amount: 1000 },
-        output1:     { type: "heavy_hydrocarbon",   amount: 400  },
-        output2:     { type: "reactive_fluid",      amount: 250  },
-        energyCost:  8000,
+        id:         "aoc:separate_hydrocarbon_slurry",
+        input:      { type: "hydrocarbon_slurry",  amount: 1000 },
+        output1:    { type: "heavy_hydrocarbon",   amount: 600  },
+        output2:    { type: "reactive_fluid",      amount: 350  },
+        energyCost: 8000,
     }),
 ];
 
@@ -31,7 +30,6 @@ function defineRecipe(r) {
     };
 }
 
-// ── ScriptEvent injection ────────────────────────────────────────────────────
 system.afterEvents.scriptEventReceive.subscribe(({ id, message }) => {
     if (id !== "utilitycraft:register_separator_recipe") return;
     try {

@@ -34,78 +34,106 @@
  *   OUTPUT valves → controller pushes DE OUT to adjacent energy containers
  */
 
-import { Energy, FluidManager, collectFluidNetworkNodes } from '../../DoriosCore/index.js';
-import { ActionFormData } from '@minecraft/server-ui';
+import { world } from "@minecraft/server";
+import {
+    Energy,
+    FluidManager,
+    collectFluidNetworkNodes
+} from "../../DoriosCore/index.js";
+import { ActionFormData } from "@minecraft/server-ui";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const VALVE_IDS = Object.freeze({
-    FLUID:  'utilitycraft:fluid_valve',
-    ENERGY: 'utilitycraft:energy_valve',
+    FLUID: "utilitycraft:fluid_valve",
+    ENERGY: "utilitycraft:energy_valve"
 });
 
-const MODE_INPUT  = 0;
+const MODE_INPUT = 0;
 const MODE_OUTPUT = 1;
-const INPUT_TAG_PREFIX = 'input:[';
+const INPUT_TAG_PREFIX = "input:[";
 
 const FACE_OFFSETS = Object.freeze([
-    { x:  1, y: 0, z:  0 }, { x: -1, y: 0, z:  0 },
-    { x:  0, y: 1, z:  0 }, { x:  0, y:-1, z:  0 },
-    { x:  0, y: 0, z:  1 }, { x:  0, y: 0, z: -1 },
+    { x: 1, y: 0, z: 0 },
+    { x: -1, y: 0, z: 0 },
+    { x: 0, y: 1, z: 0 },
+    { x: 0, y: -1, z: 0 },
+    { x: 0, y: 0, z: 1 },
+    { x: 0, y: 0, z: -1 }
 ]);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Block components — mode toggle via block interact
 // ─────────────────────────────────────────────────────────────────────────────
 
-DoriosAPI.register.blockComponent('fluid_valve', {
+DoriosAPI.register.blockComponent("fluid_valve", {
     onPlayerInteract(e) {
         const { block, player } = e;
         if (!player?.isValid) return;
 
-        const current = block.permutation.getState('utilitycraft:mode') ?? MODE_INPUT;
+        const current =
+            block.permutation.getState("utilitycraft:mode") ?? MODE_INPUT;
 
         new ActionFormData()
-            .title('§bFluid Valve')
-            .body(`Current: §e${current === MODE_OUTPUT ? 'Output ▶' : '◀ Input'}`)
-            .button('§aSet Input §7(pull fluid in)')
-            .button('§eSet Output §7(push fluid out)')
-            .show(player).then(result => {
+            .title("§bFluid Valve")
+            .body(
+                `Current: §e${current === MODE_OUTPUT ? "Output ▶" : "◀ Input"}`
+            )
+            .button("§aSet Input §7(pull fluid in)")
+            .button("§eSet Output §7(push fluid out)")
+            .show(player)
+            .then(result => {
                 if (result.canceled || result.selection == null) return;
                 if (!block.isValid) return;
-                const newMode = result.selection === 0 ? MODE_INPUT : MODE_OUTPUT;
-                block.setPermutation(block.permutation.withState('utilitycraft:mode', newMode));
-                player.sendMessage(newMode === MODE_INPUT
-                    ? '§b[Fluid Valve] §aInput mode'
-                    : '§b[Fluid Valve] §eOutput mode');
-            }).catch(() => {});
-    },
+                const newMode =
+                    result.selection === 0 ? MODE_INPUT : MODE_OUTPUT;
+                block.setPermutation(
+                    block.permutation.withState("utilitycraft:mode", newMode)
+                );
+                player.sendMessage(
+                    newMode === MODE_INPUT
+                        ? "§b[Fluid Valve] §aInput mode"
+                        : "§b[Fluid Valve] §eOutput mode"
+                );
+            })
+            .catch(() => {});
+    }
 });
 
-DoriosAPI.register.blockComponent('energy_valve', {
+DoriosAPI.register.blockComponent("energy_valve", {
     onPlayerInteract(e) {
         const { block, player } = e;
         if (!player?.isValid) return;
 
-        const current = block.permutation.getState('utilitycraft:mode') ?? MODE_INPUT;
+        const current =
+            block.permutation.getState("utilitycraft:mode") ?? MODE_INPUT;
 
         new ActionFormData()
-            .title('§eEnergy Valve')
-            .body(`Current: §e${current === MODE_OUTPUT ? 'Output ▶' : '◀ Input'}`)
-            .button('§aSet Input §7(accept energy)')
-            .button('§6Set Output §7(push energy out)')
-            .show(player).then(result => {
+            .title("§eEnergy Valve")
+            .body(
+                `Current: §e${current === MODE_OUTPUT ? "Output ▶" : "◀ Input"}`
+            )
+            .button("§aSet Input §7(accept energy)")
+            .button("§6Set Output §7(push energy out)")
+            .show(player)
+            .then(result => {
                 if (result.canceled || result.selection == null) return;
                 if (!block.isValid) return;
-                const newMode = result.selection === 0 ? MODE_INPUT : MODE_OUTPUT;
-                block.setPermutation(block.permutation.withState('utilitycraft:mode', newMode));
-                player.sendMessage(newMode === MODE_INPUT
-                    ? '§e[Energy Valve] §aInput mode'
-                    : '§e[Energy Valve] §6Output mode');
-            }).catch(() => {});
-    },
+                const newMode =
+                    result.selection === 0 ? MODE_INPUT : MODE_OUTPUT;
+                block.setPermutation(
+                    block.permutation.withState("utilitycraft:mode", newMode)
+                );
+                player.sendMessage(
+                    newMode === MODE_INPUT
+                        ? "§e[Energy Valve] §aInput mode"
+                        : "§e[Energy Valve] §6Output mode"
+                );
+            })
+            .catch(() => {});
+    }
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -122,13 +150,13 @@ DoriosAPI.register.blockComponent('energy_valve', {
  * @returns {Block[]}
  */
 export function getPortBlocks(entity, typeId, mode = null) {
-    const dim  = entity.dimension;
+    const dim = entity.dimension;
     const tags = entity.getTags().filter(t => t.startsWith(INPUT_TAG_PREFIX));
-    const out  = [];
+    const out = [];
 
     for (const tag of tags) {
-        const inner  = tag.slice(INPUT_TAG_PREFIX.length, -1);
-        const coords = inner.split(',').map(Number);
+        const inner = tag.slice(INPUT_TAG_PREFIX.length, -1);
+        const coords = inner.split(",").map(Number);
         if (coords.length !== 3 || coords.some(isNaN)) continue;
 
         const [x, y, z] = coords;
@@ -136,7 +164,8 @@ export function getPortBlocks(entity, typeId, mode = null) {
         if (!block || block.typeId !== typeId) continue;
 
         if (mode !== null) {
-            const blockMode = block.permutation.getState('utilitycraft:mode') ?? MODE_INPUT;
+            const blockMode =
+                block.permutation.getState("utilitycraft:mode") ?? MODE_INPUT;
             if (blockMode !== mode) continue;
         }
         out.push(block);
@@ -156,16 +185,21 @@ export function getPortBlocks(entity, typeId, mode = null) {
  * @param {Entity}  entity      Controller entity.
  * @param {string}  nodesPropPfx  Dynamic property prefix e.g. 'fs:nodes_'.
  */
-export function refreshFluidInputNetworks(entity, nodesPropPfx = 'valve:fnodes_') {
+export function refreshFluidInputNetworks(
+    entity,
+    nodesPropPfx = "valve:fnodes_"
+) {
     const ports = getPortBlocks(entity, VALVE_IDS.FLUID, MODE_INPUT);
     for (let i = 0; i < ports.length; i++) {
         try {
             const nodes = collectFluidNetworkNodes(ports[i]);
             entity.setDynamicProperty(nodesPropPfx + i, JSON.stringify(nodes));
-        } catch { /* chunk not loaded etc. */ }
+        } catch {
+            /* chunk not loaded etc. */
+        }
     }
     // Store count so callers know how many slots to read
-    entity.setDynamicProperty(nodesPropPfx + 'count', ports.length);
+    entity.setDynamicProperty(nodesPropPfx + "count", ports.length);
 }
 
 /**
@@ -182,23 +216,29 @@ export function refreshFluidInputNetworks(entity, nodesPropPfx = 'valve:fnodes_'
  * @param {string}        nodesPropPfx Dynamic property prefix used in refreshFluidInputNetworks.
  * @param {number}        maxPerPort   Max mB pulled per input port per call.
  */
-export function pullFluidThroughInputValves(entity, tanks, validTypes = null, nodesPropPfx = 'valve:fnodes_', maxPerPort = 2000) {
-    const dim        = entity.dimension;
-    const portCount  = entity.getDynamicProperty(nodesPropPfx + 'count') ?? 0;
+export function pullFluidThroughInputValves(
+    entity,
+    tanks,
+    validTypes = null,
+    nodesPropPfx = "valve:fnodes_",
+    maxPerPort = 2000
+) {
+    const dim = entity.dimension;
+    const portCount = entity.getDynamicProperty(nodesPropPfx + "count") ?? 0;
 
     for (let i = 0; i < portCount; i++) {
         let nodes = [];
         try {
             const raw = entity.getDynamicProperty(nodesPropPfx + i);
             if (raw) nodes = JSON.parse(raw);
-        } catch { }
+        } catch {}
         if (!nodes.length) continue;
 
         for (const node of nodes) {
             if (!Number.isFinite(node?.x)) continue;
 
             const srcBlock = dim.getBlock({ x: node.x, y: node.y, z: node.z });
-            if (!srcBlock?.hasTag?.('dorios:fluid')) continue;
+            if (!srcBlock?.hasTag?.("dorios:fluid")) continue;
 
             const srcEnt = dim.getEntitiesAtBlockLocation(srcBlock.location)[0];
             if (!srcEnt || srcEnt === entity) continue;
@@ -206,26 +246,38 @@ export function pullFluidThroughInputValves(entity, tanks, validTypes = null, no
             // Scan all tank indices on the source
             for (let idx = 0; idx < 4; idx++) {
                 let src;
-                try { src = new FluidManager(srcEnt, idx); } catch { break; }
+                try {
+                    src = new FluidManager(srcEnt, idx);
+                } catch {
+                    break;
+                }
                 if (src.getCap() <= 0) break;
-                if (src.get()   <= 0) continue;
+                if (src.get() <= 0) continue;
 
                 const incoming = src.getType();
-                if (!incoming || incoming === 'empty')               continue;
+                if (!incoming || incoming === "empty") continue;
                 if (validTypes !== null && !validTypes.has(incoming)) continue;
 
                 // Find best destination tank
                 const target =
-                    tanks.find(t => t.getType() === incoming && t.getFreeSpace() > 0) ??
-                    tanks.find(t => t.getType() === 'empty'  && t.getFreeSpace() > 0);
+                    tanks.find(
+                        t => t.getType() === incoming && t.getFreeSpace() > 0
+                    ) ??
+                    tanks.find(
+                        t => t.getType() === "empty" && t.getFreeSpace() > 0
+                    );
                 if (!target) continue;
 
-                const amount = Math.min(src.get(), target.getFreeSpace(), maxPerPort);
+                const amount = Math.min(
+                    src.get(),
+                    target.getFreeSpace(),
+                    maxPerPort
+                );
                 if (amount <= 0) continue;
 
                 src.add(-amount);
-                if (src.get() <= 0) src.setType('empty');
-                if (target.getType() === 'empty') target.setType(incoming);
+                if (src.get() <= 0) src.setType("empty");
+                if (target.getType() === "empty") target.setType(incoming);
                 target.add(amount);
                 break;
             }
@@ -241,16 +293,24 @@ export function pullFluidThroughInputValves(entity, tanks, validTypes = null, no
  * @param {FluidManager[]} tanks       Source tanks to drain.
  * @param {number}        maxPerValve  Max mB per output valve per call.
  */
-export function pushFluidThroughOutputValves(entity, tanks, maxPerValve = 2000) {
-    const dim   = entity.dimension;
+export function pushFluidThroughOutputValves(
+    entity,
+    tanks,
+    maxPerValve = 2000
+) {
+    const dim = entity.dimension;
     const ports = getPortBlocks(entity, VALVE_IDS.FLUID, MODE_OUTPUT);
 
     for (const port of ports) {
         const { x, y, z } = port.location;
 
         for (const off of FACE_OFFSETS) {
-            const adj = dim.getBlock({ x: x+off.x, y: y+off.y, z: z+off.z });
-            if (!adj?.hasTag?.('dorios:fluid')) continue;
+            const adj = dim.getBlock({
+                x: x + off.x,
+                y: y + off.y,
+                z: z + off.z
+            });
+            if (!adj?.hasTag?.("dorios:fluid")) continue;
 
             const adjEnt = dim.getEntitiesAtBlockLocation(adj.location)[0];
             if (!adjEnt || adjEnt === entity) continue;
@@ -258,22 +318,30 @@ export function pushFluidThroughOutputValves(entity, tanks, maxPerValve = 2000) 
             for (const srcTank of tanks) {
                 if (srcTank.get() <= 0) continue;
                 const srcType = srcTank.getType();
-                if (!srcType || srcType === 'empty') continue;
+                if (!srcType || srcType === "empty") continue;
 
                 let tgt;
-                try { tgt = new FluidManager(adjEnt, 0); } catch { continue; }
+                try {
+                    tgt = new FluidManager(adjEnt, 0);
+                } catch {
+                    continue;
+                }
                 if (tgt.getCap() <= 0) continue;
                 if (tgt.getFreeSpace() <= 0) continue;
 
                 const tgtType = tgt.getType();
-                if (tgtType !== 'empty' && tgtType !== srcType) continue;
+                if (tgtType !== "empty" && tgtType !== srcType) continue;
 
-                const amount = Math.min(srcTank.get(), tgt.getFreeSpace(), maxPerValve);
+                const amount = Math.min(
+                    srcTank.get(),
+                    tgt.getFreeSpace(),
+                    maxPerValve
+                );
                 if (amount <= 0) continue;
 
                 srcTank.add(-amount);
-                if (srcTank.get() <= 0) srcTank.setType('empty');
-                if (tgtType === 'empty') tgt.setType(srcType);
+                if (srcTank.get() <= 0) srcTank.setType("empty");
+                if (tgtType === "empty") tgt.setType(srcType);
                 tgt.add(amount);
                 break;
             }
@@ -293,10 +361,14 @@ export function pushFluidThroughOutputValves(entity, tanks, maxPerValve = 2000) 
  * @param {Energy}  energyStore  Bound Energy instance for the controller.
  * @param {number}  maxTransfer  Max DE to push this call.
  */
-export function pushEnergyThroughOutputValves(entity, energyStore, maxTransfer) {
-    const dim       = entity.dimension;
-    const ports     = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_OUTPUT);
-    let   remaining = Math.min(energyStore.get(), maxTransfer);
+export function pushEnergyThroughOutputValves(
+    entity,
+    energyStore,
+    maxTransfer
+) {
+    const dim = entity.dimension;
+    const ports = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_OUTPUT);
+    let remaining = Math.min(energyStore.get(), maxTransfer);
 
     for (const port of ports) {
         if (remaining <= 0) break;
@@ -305,21 +377,32 @@ export function pushEnergyThroughOutputValves(entity, energyStore, maxTransfer) 
         for (const off of FACE_OFFSETS) {
             if (remaining <= 0) break;
 
-            const adj = dim.getBlock({ x: x+off.x, y: y+off.y, z: z+off.z });
+            const adj = dim.getBlock({
+                x: x + off.x,
+                y: y + off.y,
+                z: z + off.z
+            });
             if (!adj) continue;
             // Skip own casing
-            if (adj.hasTag?.('dorios:multiblock.case.fuel_burner') ||
-                adj.hasTag?.('dorios:multiblock.case.fluid_storage')) continue;
+            if (
+                adj.hasTag?.("dorios:multiblock.case.fuel_burner") ||
+                adj.hasTag?.("dorios:multiblock.case.fluid_storage")
+            )
+                continue;
 
             const adjEnt = dim.getEntitiesAtBlockLocation(adj.location)[0];
             if (!adjEnt) continue;
 
             let tgt;
-            try { tgt = new Energy(adjEnt); } catch { continue; }
+            try {
+                tgt = new Energy(adjEnt);
+            } catch {
+                continue;
+            }
             if (tgt.getCap() <= 0) continue;
 
-            const space  = tgt.getCap() - tgt.get();
-            if (space   <= 0) continue;
+            const space = tgt.getCap() - tgt.get();
+            if (space <= 0) continue;
 
             const toSend = Math.min(remaining, space);
             tgt.add(toSend);
@@ -339,9 +422,13 @@ export function pushEnergyThroughOutputValves(entity, energyStore, maxTransfer) 
  * @param {number}  maxTransfer  Max DE to accept this call.
  */
 export function pullEnergyThroughInputValves(entity, energyStore, maxTransfer) {
-    const dim       = entity.dimension;
-    const ports     = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_INPUT);
-    let   remaining = Math.min(energyStore.getFreeSpace?.() ?? (energyStore.getCap() - energyStore.get()), maxTransfer);
+    const dim = entity.dimension;
+    const ports = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_INPUT);
+    let remaining = Math.min(
+        energyStore.getFreeSpace?.() ??
+            energyStore.getCap() - energyStore.get(),
+        maxTransfer
+    );
 
     for (const port of ports) {
         if (remaining <= 0) break;
@@ -350,16 +437,27 @@ export function pullEnergyThroughInputValves(entity, energyStore, maxTransfer) {
         for (const off of FACE_OFFSETS) {
             if (remaining <= 0) break;
 
-            const adj = dim.getBlock({ x: x+off.x, y: y+off.y, z: z+off.z });
+            const adj = dim.getBlock({
+                x: x + off.x,
+                y: y + off.y,
+                z: z + off.z
+            });
             if (!adj) continue;
-            if (adj.hasTag?.('dorios:multiblock.case.fuel_burner') ||
-                adj.hasTag?.('dorios:multiblock.case.fluid_storage')) continue;
+            if (
+                adj.hasTag?.("dorios:multiblock.case.fuel_burner") ||
+                adj.hasTag?.("dorios:multiblock.case.fluid_storage")
+            )
+                continue;
 
             const adjEnt = dim.getEntitiesAtBlockLocation(adj.location)[0];
             if (!adjEnt) continue;
 
             let src;
-            try { src = new Energy(adjEnt); } catch { continue; }
+            try {
+                src = new Energy(adjEnt);
+            } catch {
+                continue;
+            }
             if (src.get() <= 0) continue;
 
             const toTake = Math.min(src.get(), remaining);
@@ -384,16 +482,20 @@ export function pullEnergyThroughInputValves(entity, energyStore, maxTransfer) {
  * @returns {string|null}       Warning message on failure, null on success.
  */
 export function validateValves(entity, required = {}) {
-    const fluidIn    = getPortBlocks(entity, VALVE_IDS.FLUID,  MODE_INPUT).length;
-    const fluidOut   = getPortBlocks(entity, VALVE_IDS.FLUID,  MODE_OUTPUT).length;
-    const energyIn   = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_INPUT).length;
-    const energyOut  = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_OUTPUT).length;
+    const fluidIn = getPortBlocks(entity, VALVE_IDS.FLUID, MODE_INPUT).length;
+    const fluidOut = getPortBlocks(entity, VALVE_IDS.FLUID, MODE_OUTPUT).length;
+    const energyIn = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_INPUT).length;
+    const energyOut = getPortBlocks(
+        entity,
+        VALVE_IDS.ENERGY,
+        MODE_OUTPUT
+    ).length;
 
-    if (required.fluidInput   != null && fluidIn   < required.fluidInput)
+    if (required.fluidInput != null && fluidIn < required.fluidInput)
         return `§c[Valve] Need ${required.fluidInput}× Fluid Valve (Input mode). Found ${fluidIn}.`;
-    if (required.fluidOutput  != null && fluidOut  < required.fluidOutput)
+    if (required.fluidOutput != null && fluidOut < required.fluidOutput)
         return `§c[Valve] Need ${required.fluidOutput}× Fluid Valve (Output mode). Found ${fluidOut}.`;
-    if (required.energyInput  != null && energyIn  < required.energyInput)
+    if (required.energyInput != null && energyIn < required.energyInput)
         return `§c[Valve] Need ${required.energyInput}× Energy Valve (Input mode). Found ${energyIn}.`;
     if (required.energyOutput != null && energyOut < required.energyOutput)
         return `§c[Valve] Need ${required.energyOutput}× Energy Valve (Output mode). Found ${energyOut}.`;

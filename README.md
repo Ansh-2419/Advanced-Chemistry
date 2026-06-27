@@ -1,4 +1,4 @@
-<div align="center">⚗️ AGE OF CHEMICAL
+<div align="center">⚗️ Advanced Chemistry
 
 Industrial Chemistry Expansion for UtilityCraft
 
@@ -62,7 +62,7 @@ Designed to work well in OneBlock and SkyBlock worlds through automation and pro
 
 🚧 Development Status
 
-Age of Chemical is currently in active development.
+Advanced Chemistry is currently in active development.
 
 Expect new machines, fluids, materials, and end-game technologies in future updates.
 

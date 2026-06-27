@@ -12,7 +12,6 @@ import {
     refreshFluidInputNetworks,
     pullFluidThroughInputValves,
     validateValves,
-    getPortBlocks,
     VALVE_IDS,
 } from './valves.js';
 

@@ -18,7 +18,7 @@ world.afterEvents.worldLoad.subscribe(() => {
         },
 
         // Duranium Ingot
-        "utilitycraft:quartz_dust|minecraft:steel_ingot": {
+        "utilitycraft:quartz_dust|utilitycraft:steel_ingot": {
             output: "utilitycraft:duranium_ingot",
             required: 4
         }

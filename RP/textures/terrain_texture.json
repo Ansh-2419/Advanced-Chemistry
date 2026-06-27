@@ -46,6 +46,9 @@
         "refinery_caseing": {
             "textures": "textures/blocks/refinery_caseing"
         },
+        "refinery_monitor": {
+            "textures": "textures/blocks/refinery_monitor"
+        },
 
         "fuel_mixer": {
             "textures": "textures/blocks/fluid_mixer"

@@ -660,7 +660,8 @@ const fluidDisplayItemPrefixes = new Map([
     ["petrol", "utilitycraft:petrol_bar"],
     ["diesel", "utilitycraft:diesel_bar"],
     ["hydrocarbon_slurry", "utilitycraft:hydrocarbon_slurry_bar"],
-    ["hydrocarbon_blend", "utilitycraft:hydrocarbon_blend_bar"],
+    ["heavy_hydrocarbon", "utilitycraft:hydrocarbon_blend_bar"],
+    ["reactive_fluid", "utilitycraft:hydrocarbon_blend_bar"],
     ["crude_oil", "utilitycraft:crude_oil_bar"]
 ]);
 

@@ -1354,6 +1354,12 @@
         },
         "utilitycraft:overclock_48": {
             "textures": "textures/items/ui/overclock_bar/overclock_frame_48"
-        }
+        },
+        "lithium_dust": {
+            "textures": "textures/items/ingot/lithium_dust"
+        },
+        "electrum_ingot": {
+            "textures": "textures/items/ingot/electrum_ingot"
+        },
     }
 }

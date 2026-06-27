@@ -26,6 +26,10 @@ tile.utilitycraft:fluid_storage_monitor.name=Fluid Storage Monitor
 tile.utilitycraft:fuel_burner_casing.name=Fuel Burner Casing
 tile.utilitycraft:fuel_burner_monitor.name=Fuel Burner Monitor
 
+## ── refinery multiblock ──────────────────────────────────────────────────────────
+tile.utilitycraft:refinery_monitor.name=Refinery Monitor
+tile.utilitycraft:refinery_casing.name=Refinery Casing
+
 ## ── UI Entity Names ──────────────────────────────────────────────────────────
 entity.utilitycraft:machine.name=Machine
 entity.utilitycraft:multiblock_machine.name=Multiblock Machine
@@ -35,3 +39,4 @@ entity.utilitycraft:chemical_reactor.name=Chemical Reactor
 entity.utilitycraft:fuel_burner_monitor.name=Fuel Burner
 entity.utilitycraft:fluid_storage_monitor.name=Fluid Storage
 entity.utilitycraft:separator.name=Separator
+entity.utilitycraft:refinery_monitor.name=Refinery

@@ -45,6 +45,9 @@ DoriosAPI.register.blockComponent('separator', {
             tankOut2.display(FLUID_DISPLAY_OUT2);
 
             machine.blockSlots([FLUID_INPUT_CAPSULE]);
+
+            // Seed the fluid node cache immediately so first tick can pull
+            updatePipes(e.block, 'fluid');
         });
     },
 
@@ -160,21 +163,18 @@ DoriosAPI.register.blockComponent('separator', {
 function _pullFromNetwork(entity, block, tankIn) {
     if (tankIn.getFreeSpace() <= 0) return;
 
-    if (tickGate(entity, 'sep:net_refresh', 100)) updatePipes(block, 'fluid');
-
     let nodes = [];
     try {
         const raw = entity.getDynamicProperty('dorios:fluid_nodes');
         if (raw) nodes = JSON.parse(raw);
     } catch { }
 
-    if (!nodes.length) {
-        updatePipes(block, 'fluid');
-        try {
-            const raw = entity.getDynamicProperty('dorios:fluid_nodes');
-            if (raw) nodes = JSON.parse(raw);
-        } catch { }
-    }
+    // Always refresh pipe network every pull cycle
+    updatePipes(block, 'fluid');
+    try {
+        const raw2 = entity.getDynamicProperty('dorios:fluid_nodes');
+        if (raw2) nodes = JSON.parse(raw2);
+    } catch { }
 
     const validTypes = new Set(getSeparatorRecipes().map(r => r.input.type));
     const dim = block.dimension;

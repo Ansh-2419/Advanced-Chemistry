@@ -3,7 +3,6 @@ import {
     Machine, Energy, FluidManager,
     buildOverclockLoreLine, updatePipes,
     tickGate, formatFluidDisplayName,
-    feedFluidSlot, fillFluidSlot,
 } from '../../DoriosCore/index.js';
 import { getChemicalReactorRecipes } from '../../config/recipes/machinery/chemical_reactor.js';
 
