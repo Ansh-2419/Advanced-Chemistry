@@ -104,11 +104,11 @@
             },
             {
                 "progress_arrow@common_machines.machinery": {
-                    "anchor_from": "top_middle",
-                    "anchor_to": "top_middle",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
                     "offset": [
-                        20,
-                        24
+                        14,
+                        3
                     ],
                     "collection_index": 2,
                     "$cell_image_size": [

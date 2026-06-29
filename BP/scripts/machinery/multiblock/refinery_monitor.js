@@ -5,6 +5,7 @@ import {
     Multiblock,
     MultiblockMachine,
     tickGate,
+    formatFluidDisplayName,
 } from '../../DoriosCore/index.js';
 import {
     refreshFluidInputNetworks,
@@ -14,6 +15,7 @@ import {
 } from './valves.js';
 import { getRefineryRecipes } from '../../config/recipes/machinery/refinery.js';
 
+// ── Slot indices ──────────────────────────────────────────────────────────────
 const ENERGY_DISPLAY_SLOT  = 0;
 const LABEL_SLOT           = 1;
 const PROGRESS_SLOT        = 2;
@@ -22,9 +24,10 @@ const FLUID_DISPLAY_OUT1   = 4;
 const FLUID_DISPLAY_OUT2   = 5;
 const FLUID_DISPLAY_OUT3   = 6;
 
-const FLUID_CAP            = 256_000;
-const ENERGY_CAP           = 4_000_000;
-const ENERGY_COST          = 12_000;
+// ── Constants ─────────────────────────────────────────────────────────────────
+const FLUID_CAP   = 256_000;
+const ENERGY_CAP  = 4_000_000;
+const ENERGY_COST = 12_000;
 
 const MULTIBLOCK_CONFIG = {
     required_case: 'dorios:multiblock.case.refinery',
@@ -40,6 +43,8 @@ const MULTIBLOCK_CONFIG = {
     requirements: {},
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+
 DoriosAPI.register.blockComponent('refinery_monitor', {
 
     onPlayerInteract(e) {
@@ -50,6 +55,7 @@ DoriosAPI.register.blockComponent('refinery_monitor', {
                 const energy = new Energy(entity);
                 energy.setCap(ENERGY_CAP);
                 energy.display(ENERGY_DISPLAY_SLOT);
+                _writeProgressArrow(entity);
             },
 
             onActivate({ entity, player }) {
@@ -60,12 +66,13 @@ DoriosAPI.register.blockComponent('refinery_monitor', {
                 const energy = new Energy(entity);
                 energy.setCap(ENERGY_CAP);
                 energy.display(ENERGY_DISPLAY_SLOT);
+                _writeProgressArrow(entity);
                 refreshFluidInputNetworks(entity);
             },
 
             successMessages() {
                 return [
-                    '§a[Refinery] 3×3×3 structure validated and online!',
+                    '§a[Refinery] Structure validated and online!',
                     `§7Fluid Cap (each) : §b${FluidManager.formatFluid(FLUID_CAP)}`,
                     `§7Energy Buffer    : §e${Energy.formatEnergyToText(ENERGY_CAP)}`,
                     `§7Energy Cost      : §c${Energy.formatEnergyToText(ENERGY_COST)}§7/op`,
@@ -86,72 +93,85 @@ DoriosAPI.register.blockComponent('refinery_monitor', {
         const machine = new MultiblockMachine(block, MULTIBLOCK_CONFIG);
         if (!machine.valid) return;
 
-        const entity = machine.entity;
-
-        const tankIn   = new FluidManager(entity, 0);
+        const entity  = machine.entity;
+        const tankIn  = new FluidManager(entity, 0);
         const tankOut1 = new FluidManager(entity, 1);
         const tankOut2 = new FluidManager(entity, 2);
         const tankOut3 = new FluidManager(entity, 3);
-        const energy   = new Energy(entity);
+        const energy  = new Energy(entity);
 
         _restoreCaps(tankIn, tankOut1, tankOut2, tankOut3, energy);
 
+        // ── Fluid in ──────────────────────────────────────────────────────────
         if (tickGate(entity, 'ref:pipe_in', 2)) {
             const validTypes = new Set(getRefineryRecipes().map(r => r.input.type));
             pullFluidThroughInputValves(entity, [tankIn], validTypes);
         }
 
+        // ── Fluid out ─────────────────────────────────────────────────────────
         if (tickGate(entity, 'ref:pipe_out', 4)) {
-            for (const tank of [tankOut1, tankOut2, tankOut3]) {
-                if (tank.get() > 0) pushFluidThroughOutputValves(entity, tank);
-            }
+            pushFluidThroughOutputValves(entity, [tankOut1, tankOut2, tankOut3]);
         }
 
+        // ── Network refresh ───────────────────────────────────────────────────
         if (tickGate(entity, 'ref:net_refresh', 200)) {
             refreshFluidInputNetworks(entity);
         }
 
+        // ── Display ───────────────────────────────────────────────────────────
         tankIn.display(FLUID_DISPLAY_IN);
         tankOut1.display(FLUID_DISPLAY_OUT1);
         tankOut2.display(FLUID_DISPLAY_OUT2);
         tankOut3.display(FLUID_DISPLAY_OUT3);
         energy.display(ENERGY_DISPLAY_SLOT);
-        machine.displayProgress();
+        _writeProgressArrow(entity);
 
-        const fail = msg => { machine.showWarning(msg); machine.off(); };
-
+        // ── Recipe logic ──────────────────────────────────────────────────────
         const recipes = getRefineryRecipes();
-        if (!recipes.length) { fail('No Recipes'); return; }
+        if (!recipes.length) {
+            _setStatus(machine, '§cNo Recipes');
+            machine.off();
+            return;
+        }
 
         const inType = tankIn.getType();
-        if (!inType || inType === 'empty') { fail('No Input Fluid'); return; }
+        if (!inType || inType === 'empty') {
+            _setStatus(machine, '§eNo Input Fluid');
+            machine.off();
+            return;
+        }
 
         const recipe = recipes.find(r => r.input.type === inType) ?? null;
-        if (!recipe) { fail('Wrong Fluid'); return; }
+        if (!recipe) {
+            _setStatus(machine, `§cWrong Fluid: ${formatFluidDisplayName(inType)}`);
+            machine.off();
+            return;
+        }
 
-        const out1Type = tankOut1.getType();
-        const out2Type = tankOut2.getType();
-        const out3Type = tankOut3.getType();
-        if (out1Type !== 'empty' && out1Type !== recipe.output1.type) { fail('Out 1 Blocked'); return; }
-        if (out2Type !== 'empty' && out2Type !== recipe.output2.type) { fail('Out 2 Blocked'); return; }
-        if (out3Type !== 'empty' && out3Type !== recipe.output3.type) { fail('Out 3 Blocked'); return; }
-        if (tankOut1.getFreeSpace() <= 0) { fail('Diesel Tank Full'); return; }
-        if (tankOut2.getFreeSpace() <= 0) { fail('Petrol Tank Full'); return; }
-        if (tankOut3.getFreeSpace() <= 0) { fail('Naphtha Tank Full'); return; }
-        if (tankIn.get() < recipe.input.amount) { fail('Not Enough Crude Oil'); return; }
+        const out1T = tankOut1.getType();
+        const out2T = tankOut2.getType();
+        const out3T = tankOut3.getType();
+        if (out1T !== 'empty' && out1T !== recipe.output1.type) { _setStatus(machine, '§cOut 1 Blocked'); machine.off(); return; }
+        if (out2T !== 'empty' && out2T !== recipe.output2.type) { _setStatus(machine, '§cOut 2 Blocked'); machine.off(); return; }
+        if (out3T !== 'empty' && out3T !== recipe.output3.type) { _setStatus(machine, '§cOut 3 Blocked'); machine.off(); return; }
+        if (tankOut1.getFreeSpace() <= 0) { _setStatus(machine, '§6Out 1 Full'); machine.off(); return; }
+        if (tankOut2.getFreeSpace() <= 0) { _setStatus(machine, '§6Out 2 Full'); machine.off(); return; }
+        if (tankOut3.getFreeSpace() <= 0) { _setStatus(machine, '§6Out 3 Full'); machine.off(); return; }
+        if (tankIn.get() < recipe.input.amount) { _setStatus(machine, '§eNot Enough Input'); machine.off(); return; }
 
         const energyCost = recipe.energyCost ?? ENERGY_COST;
         machine.setEnergyCost(energyCost);
-        if (energy.get() <= 0) { fail('No Energy'); return; }
 
-        const yieldBoost = machine.boosts?.overclockYield ?? 1;
+        if (energy.get() <= 0) { _setStatus(machine, '§cNo Energy'); machine.off(); return; }
+
+        // ── Process ───────────────────────────────────────────────────────────
         const crafts = Math.min(
             Math.floor(tankIn.get()           / recipe.input.amount),
-            Math.floor(tankOut1.getFreeSpace() / Math.ceil(recipe.output1.amount * yieldBoost)),
-            Math.floor(tankOut2.getFreeSpace() / Math.ceil(recipe.output2.amount * yieldBoost)),
-            Math.floor(tankOut3.getFreeSpace() / Math.ceil(recipe.output3.amount * yieldBoost)),
+            Math.floor(tankOut1.getFreeSpace() / recipe.output1.amount),
+            Math.floor(tankOut2.getFreeSpace() / recipe.output2.amount),
+            Math.floor(tankOut3.getFreeSpace() / recipe.output3.amount),
         );
-        if (crafts <= 0) { fail('Tanks Full'); return; }
+        if (crafts <= 0) { _setStatus(machine, '§6Tanks Full'); machine.off(); return; }
 
         const progress = machine.getProgress();
         if (progress >= energyCost) {
@@ -160,24 +180,22 @@ DoriosAPI.register.blockComponent('refinery_monitor', {
                 tankIn.consume(recipe.input.amount * runs);
                 if (tankIn.get() <= 0) tankIn.setType('empty');
 
-                if (tankOut1.getType() === 'empty') tankOut1.setType(recipe.output1.type);
-                tankOut1.add(Math.floor(recipe.output1.amount * runs * yieldBoost));
+                if (out1T === 'empty') tankOut1.setType(recipe.output1.type);
+                tankOut1.add(recipe.output1.amount * runs);
 
-                if (tankOut2.getType() === 'empty') tankOut2.setType(recipe.output2.type);
-                tankOut2.add(Math.floor(recipe.output2.amount * runs * yieldBoost));
+                if (out2T === 'empty') tankOut2.setType(recipe.output2.type);
+                tankOut2.add(recipe.output2.amount * runs);
 
-                if (tankOut3.getType() === 'empty') tankOut3.setType(recipe.output3.type);
-                tankOut3.add(Math.floor(recipe.output3.amount * runs * yieldBoost));
+                if (out3T === 'empty') tankOut3.setType(recipe.output3.type);
+                tankOut3.add(recipe.output3.amount * runs);
 
                 machine.addProgress(-(runs * energyCost));
             }
         } else {
-            const consumption = machine.boosts?.consumption ?? 1;
-            const needed      = energyCost - progress;
-            const spendable   = Math.min(energy.get(), machine.rate, needed * consumption);
+            const spendable = Math.min(energy.get(), machine.rate, energyCost - progress);
             if (spendable > 0) {
                 energy.consume(spendable);
-                machine.addProgress(spendable / Math.max(consumption, Number.EPSILON));
+                machine.addProgress(spendable);
             }
         }
 
@@ -185,6 +203,20 @@ DoriosAPI.register.blockComponent('refinery_monitor', {
         machine.on();
     },
 });
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Helpers
+// ─────────────────────────────────────────────────────────────────────────────
+
+function _writeProgressArrow(entity) {
+    try {
+        const inv = entity.getComponent('inventory')?.container;
+        if (!inv) return;
+        if (!inv.getItem(PROGRESS_SLOT)) {
+            inv.setItem(PROGRESS_SLOT, new ItemStack('utilitycraft:arrow_right_0', 1));
+        }
+    } catch { }
+}
 
 function _initTanks(entity) {
     for (let i = 0; i < 4; i++) {
@@ -203,17 +235,19 @@ function _restoreCaps(tankIn, tankOut1, tankOut2, tankOut3, energy) {
     if (energy.getCap() <= 0) energy.setCap(ENERGY_CAP);
 }
 
+function _setStatus(machine, msg) {
+    machine.setLabel([msg], LABEL_SLOT);
+}
+
 function _updateHud(machine, recipe, tankIn, tankOut1, tankOut2, tankOut3, queued) {
     const fmt = FluidManager.formatFluid.bind(FluidManager);
     const cap = FLUID_CAP;
-    machine.setLabel({
-        lines: [
-            `§r§6⚗ Refinery  §7— §aProcessing`,
-            `§r§bIn:  §f${recipe.input.type} §7${fmt(tankIn.get())} / ${fmt(cap)}`,
-            `§r§aOut1:§f ${recipe.output1.type} §7${fmt(tankOut1.get())} / ${fmt(cap)}`,
-            `§r§aOut2:§f ${recipe.output2.type} §7${fmt(tankOut2.get())} / ${fmt(cap)}`,
-            `§r§aOut3:§f ${recipe.output3.type} §7${fmt(tankOut3.get())} / ${fmt(cap)}`,
-            `§r§cCost: §f${Energy.formatEnergyToText(recipe.energyCost ?? ENERGY_COST)} §7Queued: ${queued}`,
-        ],
-    });
+    machine.setLabel([
+        `§r§6⚗ Refinery  §7— §aProcessing`,
+        `§r§bIn:   §f${formatFluidDisplayName(recipe.input.type)}   §7${fmt(tankIn.get())} / ${fmt(cap)}`,
+        `§r§aOut1: §f${formatFluidDisplayName(recipe.output1.type)} §7${fmt(tankOut1.get())} / ${fmt(cap)}`,
+        `§r§aOut2: §f${formatFluidDisplayName(recipe.output2.type)} §7${fmt(tankOut2.get())} / ${fmt(cap)}`,
+        `§r§aOut3: §f${formatFluidDisplayName(recipe.output3.type)} §7${fmt(tankOut3.get())} / ${fmt(cap)}`,
+        `§r§cCost: §f${Energy.formatEnergyToText(recipe.energyCost ?? ENERGY_COST)}  §7Queued: §f${queued}`,
+    ], LABEL_SLOT);
 }

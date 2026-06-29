@@ -14,13 +14,15 @@
                             "utilitycraft:fermenter",
                             "utilitycraft:fuel_mixer",
                             "utilitycraft:chemical_reactor",
+                            "utilitycraft:separator",
+                            "utilitycraft:fluid_valve",
+                            "utilitycraft:energy_valve",
                             "utilitycraft:fuel_burner_monitor",
                             "utilitycraft:fuel_burner_casing",
                             "utilitycraft:fluid_storage_monitor",
                             "utilitycraft:fluid_storage_casing",
-                            "utilitycraft:fluid_valve",
-                            "utilitycraft:energy_valve",
-                            "utilitycraft:separator"
+                            "utilitycraft:refinery_monitor",
+                            "utilitycraft:refinery_casing"
                         ]
                     }
                 ]

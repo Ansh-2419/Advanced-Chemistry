@@ -1360,6 +1360,6 @@
         },
         "electrum_ingot": {
             "textures": "textures/items/ingot/electrum_ingot"
-        },
+        }
     }
 }
