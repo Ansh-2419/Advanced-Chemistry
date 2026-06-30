@@ -4,22 +4,16 @@ import { system, world } from "@minecraft/server";
 
 world.afterEvents.worldLoad.subscribe(() => {
     const addedRecipes = {
-        "minecraft:glowstone_dust|utilitycraft:crying_obsidian_dust": {
-            output: "utilitycraft:stabilized_obsidian_dust",
-            required: 4
-        },
-        "minecraft:blaze_powder|minecraft:obsidian": {
-            output: "minecraft:crying_obsidian",
-            required: 1
-        },
-        "minecraft:ender_eye|utilitycraft:chip": {
-            output: "utilitycraft:way_chip",
-            required: 1
-        },
-
-        // Duranium Ingot
         "utilitycraft:quartz_dust|utilitycraft:steel_ingot": {
             output: "utilitycraft:duranium_ingot",
+            required: 4
+        },
+        "minecraft:water_bucket|minecraft:brown_mushroom": {
+            output: "utilitycraft:water_bucket_custom",
+            required: 4
+        },
+        "minecraft:water_bucket|minecraft:red_mushroom": {
+            output: "utilitycraft:water_bucket_custom",
             required: 4
         }
     };

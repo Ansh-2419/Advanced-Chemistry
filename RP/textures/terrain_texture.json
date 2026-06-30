@@ -67,6 +67,24 @@
         },
         "separator": {
             "textures": "textures/blocks/separator"
+        },
+        "utilitycraft_endstone_gen_copper": {
+            "textures": "textures/blocks/utilitycraft_endstone_gen_copper"
+        },
+        "utilitycraft_endstone_gen_iron": {
+            "textures": "textures/blocks/utilitycraft_endstone_gen_iron"
+        },
+        "utilitycraft_endstone_gen_gold": {
+            "textures": "textures/blocks/utilitycraft_endstone_gen_gold"
+        },
+        "utilitycraft_endstone_gen_emerald": {
+            "textures": "textures/blocks/utilitycraft_endstone_gen_emerald"
+        },
+        "utilitycraft_endstone_gen_diamond": {
+            "textures": "textures/blocks/utilitycraft_endstone_gen_diamond"
+        },
+        "utilitycraft_endstone_gen_netherite": {
+            "textures": "textures/blocks/utilitycraft_endstone_gen_netherite"
         }
     }
 }

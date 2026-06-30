@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "utilitycraft:empty_water_bucket",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:hand_equipped": false,
+            "minecraft:max_stack_size": 16,
+            "minecraft:glint": false,
+            "minecraft:icon": "empty_bucket",
+            "minecraft:allow_off_hand": false
+        }
+    }
+}

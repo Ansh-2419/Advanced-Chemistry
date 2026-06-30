@@ -1360,6 +1360,12 @@
         },
         "electrum_ingot": {
             "textures": "textures/items/ingot/electrum_ingot"
+        },
+        "empty_water_bucket": {
+            "textures": "textures/items/item/bucket_empty"
+        },
+        "witch_water_bucket": {
+            "textures": "textures/items/item/bucket/bucket_witch_water"
         }
     }
 }

@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "utilitycraft:water_bucket_custom",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:hand_equipped": false,
+            "minecraft:max_stack_size": 16,
+            "minecraft:glint": false,
+            "minecraft:icon": "witch_water_bucket",
+            "minecraft:allow_off_hand": false,
+            "minecraft:tags": {
+                "tags": ["minecraft:transform_materials"]
+            }
+        }
+    }
+}

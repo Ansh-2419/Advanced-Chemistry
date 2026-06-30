@@ -307,11 +307,48 @@ function onCapsuleUse(event) {
     tryPlaceFluid(event, player, itemId, capsuleInfo, clickedBlock, clickedFace);
 }
 
-// Bucket-like behavior parity: raycast target + face from itemUse event.
-const capsuleUseEvent = world.afterEvents?.itemUse ?? world.beforeEvents?.itemUse;
+// Safely register itemUse event with proper null checks
+function registerCapsuleInteraction() {
+    // Check if world exists and has afterEvents
+    if (!world || typeof world !== "object") {
+        console.warn("[Advanced Chemistry] world object not available; capsule interaction disabled.");
+        return;
+    }
 
-if (capsuleUseEvent?.subscribe) {
-    capsuleUseEvent.subscribe(onCapsuleUse);
-} else {
-    console.warn("[Ascendant Technology] itemUse event is unavailable; capsule world interaction is disabled.");
+    // Try afterEvents.itemUse first (preferred)
+    if (world.afterEvents && typeof world.afterEvents === "object") {
+        const itemUseEvent = world.afterEvents.itemUse;
+        if (itemUseEvent && typeof itemUseEvent.subscribe === "function") {
+            try {
+                itemUseEvent.subscribe(onCapsuleUse);
+                console.log("[Advanced Chemistry] Capsule interaction registered via world.afterEvents.itemUse");
+                return;
+            } catch (error) {
+                console.warn("[Advanced Chemistry] Failed to subscribe to world.afterEvents.itemUse:", error);
+            }
+        }
+    }
+
+    // Fallback to beforeEvents.itemUse
+    if (world.beforeEvents && typeof world.beforeEvents === "object") {
+        const itemUseEvent = world.beforeEvents.itemUse;
+        if (itemUseEvent && typeof itemUseEvent.subscribe === "function") {
+            try {
+                itemUseEvent.subscribe(onCapsuleUse);
+                console.log("[Advanced Chemistry] Capsule interaction registered via world.beforeEvents.itemUse");
+                return;
+            } catch (error) {
+                console.warn("[Advanced Chemistry] Failed to subscribe to world.beforeEvents.itemUse:", error);
+            }
+        }
+    }
+
+    // If neither event is available, warn the user
+    console.warn(
+        "[Advanced Chemistry] itemUse event (afterEvents or beforeEvents) is unavailable; capsule world interaction is disabled. " +
+        "Ensure your world is using a compatible Minecraft version."
+    );
 }
+
+// Register when module loads
+registerCapsuleInteraction();
