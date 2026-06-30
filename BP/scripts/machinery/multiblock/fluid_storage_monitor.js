@@ -1,5 +1,5 @@
 // ════════════════════════════════════════════════════════════════════════════
-// Age of Chemical — Fluid Storage Monitor (9-Tank Multiblock)
+// Age of Chemical — Fluid Storage Monitor (7-Tank Multiblock)
 // ════════════════════════════════════════════════════════════════════════════
 //
 // Structure layout:
@@ -81,7 +81,7 @@ DoriosAPI.register.blockComponent('fluid_storage_monitor', {
                 const cap = (structure.components?.air ?? 1) * CAPACITY_PER_AIR;
                 return [
                     '§a[Fluid Storage] Structure validated!',
-                    `§79 tanks × §b${FluidManager.formatFluid(cap)} §7= §b${FluidManager.formatFluid(cap * TANK_COUNT)} §7total`,
+                    `§7${TANK_COUNT} tanks × §b${FluidManager.formatFluid(cap)} §7= §b${FluidManager.formatFluid(cap * TANK_COUNT)} §7total`,
                     '§7Connect pipes to the Fluid Valves to import/export fluid.',
                 ];
             },

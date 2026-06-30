@@ -2,11 +2,17 @@ import { system } from "@minecraft/server";
 
 /**
  * Chemical Reactor recipes.
- * One fluid input → one fluid output + optional item byproduct.
+ * One fluid input → one fluid output + optional byproduct(s).
+ *
+ * Byproducts may be:
+ *   - item only:  { item, count?, chance? }
+ *   - fluid only: { fluid: { type, amount }, chance? }
+ *   - both:       { item, count?, fluid: { type, amount }, chance? }
+ *   - an array of any mix of the above, for multiple independent byproducts
  *
  * @typedef {{ type:string, amount:number }} FluidIO
- * @typedef {{ item:string, count:number, chance:number }} Byproduct
- * @typedef {{ id:string, input:FluidIO, output:FluidIO, energyCost:number, seconds:number, byproduct?:Byproduct }} CRRecipe
+ * @typedef {{ item?:string, count?:number, fluid?:FluidIO, chance?:number }} Byproduct
+ * @typedef {{ id:string, input:FluidIO, output:FluidIO, energyCost:number, seconds:number, byproduct?:Byproduct|Byproduct[] }} CRRecipe
  */
 
 /** @type {CRRecipe[]} */
@@ -29,6 +35,26 @@ const nativeRecipes = [
         energyCost:  8400,
         seconds:     10,
         description: "Refines heavy hydrocarbon into crude oil.",
+    }),
+    // Example: fluid-only byproduct
+    defineRecipe({
+        id:          "utilitycraft:example_fluid_byproduct",
+        input:       { type: "crude_oil",  amount: 1000 },
+        output:      { type: "naphtha",    amount: 600  },
+        energyCost:  9000,
+        seconds:     10,
+        description: "Cracks crude oil into naphtha, releasing sulfuric acid as a byproduct.",
+        byproduct:   { fluid: { type: "sulfuric_acid", amount: 50 }, chance: 0.5 }
+    }),
+    // Example: item-only byproduct
+    defineRecipe({
+        id:          "utilitycraft:example_item_byproduct",
+        input:       { type: "hydrocarbon_slurry", amount: 800 },
+        output:      { type: "petrol",             amount: 500 },
+        energyCost:  8800,
+        seconds:     10,
+        description: "Distills hydrocarbon slurry into petrol, leaving behind soot.",
+        byproduct:   { item: "minecraft:gunpowder", count: 1, chance: 0.3 }
     })
 ];
 
@@ -53,14 +79,50 @@ function defineRecipe(r) {
         energyCost: Math.max(1, r.energyCost ?? 9600),
         seconds: Math.max(1, r.seconds ?? 12),
         description: r.description ?? null,
-        byproduct: r.byproduct
-            ? {
-                  item: r.byproduct.item,
-                  count: Math.max(1, r.byproduct.count ?? 1),
-                  chance: Math.min(1, Math.max(0, r.byproduct.chance ?? 1.0))
-              }
-            : undefined
+        byproduct: normalizeByproducts(r.byproduct)
     };
+}
+
+function normalizeByproducts(raw) {
+    if (!raw) return undefined;
+    const list = Array.isArray(raw) ? raw : [raw];
+    const normalized = list
+        .filter(Boolean)
+        .map(bp => normalizeByproduct(bp))
+        .filter(Boolean);
+    if (!normalized.length) return undefined;
+    return normalized.length === 1 ? normalized[0] : normalized;
+}
+
+function normalizeByproduct(bp) {
+    if (!bp || typeof bp !== "object") return null;
+
+    const hasItem = typeof bp.item === "string" && bp.item.length > 0;
+    const hasFluid =
+        bp.fluid &&
+        typeof bp.fluid.type === "string" &&
+        bp.fluid.type.length > 0 &&
+        (bp.fluid.amount ?? 0) > 0;
+
+    if (!hasItem && !hasFluid) return null; // nothing valid to add
+
+    const out = {
+        chance: Math.min(1, Math.max(0, bp.chance ?? 1.0))
+    };
+
+    if (hasItem) {
+        out.item = bp.item;
+        out.count = Math.max(1, bp.count ?? 1);
+    }
+
+    if (hasFluid) {
+        out.fluid = {
+            type: bp.fluid.type.toLowerCase(),
+            amount: Math.max(1, bp.fluid.amount)
+        };
+    }
+
+    return out;
 }
 
 // ── ScriptEvent injection ─────────────────────────────────────────────────────

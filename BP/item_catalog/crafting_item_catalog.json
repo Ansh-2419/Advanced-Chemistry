@@ -8,7 +8,7 @@
                     {
                         "group_identifier": {
                             "icon": "utilitycraft:fermenter",
-                            "name": "aoc:itemGroup.name.machines"
+                            "name": "ac:itemGroup.name.machines"
                         },
                         "items": [
                             "utilitycraft:fermenter",
@@ -23,6 +23,20 @@
                             "utilitycraft:fluid_storage_casing",
                             "utilitycraft:refinery_monitor",
                             "utilitycraft:refinery_casing"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "utilitycraft:endstone_gen_copper",
+                            "name": "ac:itemGroup.name.endstone_generators"
+                        },
+                        "items": [
+                            "utilitycraft:endstone_gen_copper",
+                            "utilitycraft:endstone_gen_iron",
+                            "utilitycraft:endstone_gen_gold",
+                            "utilitycraft:endstone_gen_emerald",
+                            "utilitycraft:endstone_gen_diamond",
+                            "utilitycraft:endstone_gen_netherite"
                         ]
                     }
                 ]

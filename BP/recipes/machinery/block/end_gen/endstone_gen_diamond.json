@@ -1,0 +1,35 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "utilitycraft:endstone_gen_diamond"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "key": {
+      "M": {
+        "item": "minecraft:diamond"
+      },
+      "G": {
+        "item": "utilitycraft:endstone_gen_emerald"
+      }
+    },
+    "pattern": [
+      "MMM",
+      "MGM",
+      "MMM"
+    ],
+    "result": {
+      "item": "utilitycraft:endstone_gen_diamond"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:diamond"
+      },
+      {
+        "item": "utilitycraft:endstone_gen_emerald"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.20.80",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "utilitycraft:endstone_gen_emerald"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "key": {
+      "M": {
+        "item": "minecraft:emerald"
+      },
+      "G": {
+        "item": "utilitycraft:endstone_gen_gold"
+      }
+    },
+    "pattern": [
+      "MMM",
+      "MGM",
+      "MMM"
+    ],
+    "result": {
+      "item": "utilitycraft:endstone_gen_emerald"
+    },
+    "unlock": [
+      {
+        "item": "minecraft:emerald"
+      },
+      {
+        "item": "utilitycraft:endstone_gen_gold"
+      }
+    ]
+  }
+}

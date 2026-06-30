@@ -1,6 +1,5 @@
 {
     "namespace": "fluid_storage_monitor",
-
     "fluid_storage_top": {
         "type": "collection_panel",
         "anchor_from": "center",
@@ -10,9 +9,11 @@
         "collection_name": "container_items",
         "$item_collection_name": "container_items",
         "controls": [
-
-            { "chest_label@chest.chest_label": { "offset": [ 10, 0 ] } },
-
+            {
+                "chest_label@chest.chest_label": {
+                    "offset": [ 10, 0 ]
+                }
+            },
             {
                 "screen": {
                     "type": "image",
@@ -24,7 +25,6 @@
                     "layer": 0
                 }
             },
-
             {
                 "hud_label@machineryCommon.item_label": {
                     "collection_index": 7,
@@ -34,15 +34,12 @@
                     "offset": [ -78, 2 ]
                 }
             },
-
             {
-                "tank_panel_0": {
+                "fluid_panel_0": {
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ -60, 0 ],
-                    "size": [ 18, 60 ],
-                    "clips_children": true,
+                    "offset": [ -66, 0 ],
                     "controls": [
                         {
                             "bar_0@machineryCommon.vertical_single": {
@@ -53,19 +50,27 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "border_0": {
+                                "type": "image",
+                                "texture": "textures/ui/liquid_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ 22, 50 ],
+                                "offset": [ 10, 3 ],
+                                "layer": 13
+                            }
                         }
                     ]
                 }
             },
-
             {
-                "tank_panel_1": {
+                "fluid_panel_1": {
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ -40, 0 ],
-                    "size": [ 18, 60 ],
-                    "clips_children": true,
+                    "offset": [ -44, 0 ],
                     "controls": [
                         {
                             "bar_1@machineryCommon.vertical_single": {
@@ -76,19 +81,27 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "border_1": {
+                                "type": "image",
+                                "texture": "textures/ui/liquid_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ 22, 50 ],
+                                "offset": [ 10, 3 ],
+                                "layer": 13
+                            }
                         }
                     ]
                 }
             },
-
             {
-                "tank_panel_2": {
+                "fluid_panel_2": {
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ -20, 0 ],
-                    "size": [ 18, 60 ],
-                    "clips_children": true,
+                    "offset": [ -22, 0 ],
                     "controls": [
                         {
                             "bar_2@machineryCommon.vertical_single": {
@@ -99,19 +112,27 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "border_2": {
+                                "type": "image",
+                                "texture": "textures/ui/liquid_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ 22, 50 ],
+                                "offset": [ 10, 3 ],
+                                "layer": 13
+                            }
                         }
                     ]
                 }
             },
-
             {
-                "tank_panel_3": {
+                "fluid_panel_3": {
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
                     "offset": [ 0, 0 ],
-                    "size": [ 18, 60 ],
-                    "clips_children": true,
                     "controls": [
                         {
                             "bar_3@machineryCommon.vertical_single": {
@@ -122,19 +143,27 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "border_3": {
+                                "type": "image",
+                                "texture": "textures/ui/liquid_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ 22, 50 ],
+                                "offset": [ 10, 3 ],
+                                "layer": 13
+                            }
                         }
                     ]
                 }
             },
-
             {
-                "tank_panel_4": {
+                "fluid_panel_4": {
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ 20, 0 ],
-                    "size": [ 18, 60 ],
-                    "clips_children": true,
+                    "offset": [ 22, 0 ],
                     "controls": [
                         {
                             "bar_4@machineryCommon.vertical_single": {
@@ -145,19 +174,27 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "border_4": {
+                                "type": "image",
+                                "texture": "textures/ui/liquid_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ 22, 50 ],
+                                "offset": [ 10, 3 ],
+                                "layer": 13
+                            }
                         }
                     ]
                 }
             },
-
             {
-                "tank_panel_5": {
+                "fluid_panel_5": {
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ 40, 0 ],
-                    "size": [ 18, 60 ],
-                    "clips_children": true,
+                    "offset": [ 44, 0 ],
                     "controls": [
                         {
                             "bar_5@machineryCommon.vertical_single": {
@@ -168,19 +205,27 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "border_5": {
+                                "type": "image",
+                                "texture": "textures/ui/liquid_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ 22, 50 ],
+                                "offset": [ 10, 3 ],
+                                "layer": 13
+                            }
                         }
                     ]
                 }
             },
-
             {
-                "tank_panel_6": {
+                "fluid_panel_6": {
                     "type": "panel",
                     "anchor_from": "center",
                     "anchor_to": "center",
-                    "offset": [ 60, 0 ],
-                    "size": [ 18, 60 ],
-                    "clips_children": true,
+                    "offset": [ 66, 0 ],
                     "controls": [
                         {
                             "bar_6@machineryCommon.vertical_single": {
@@ -191,31 +236,23 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "border_6": {
+                                "type": "image",
+                                "texture": "textures/ui/liquid_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [ 22, 50 ],
+                                "offset": [ 10, 3 ],
+                                "layer": 13
+                            }
                         }
-                    ]
-                }
-            },
-
-            {
-                "borders": {
-                    "type": "panel",
-                    "anchor_from": "center",
-                    "anchor_to": "center",
-                    "layer": 13,
-                    "controls": [
-                        { "b0": { "type": "image", "texture": "textures/ui/liquid_border", "anchor_from": "center", "anchor_to": "center", "size": [ 20, 62 ], "offset": [ -60, 0 ], "layer": 13 } },
-                        { "b1": { "type": "image", "texture": "textures/ui/liquid_border", "anchor_from": "center", "anchor_to": "center", "size": [ 20, 62 ], "offset": [ -40, 0 ], "layer": 13 } },
-                        { "b2": { "type": "image", "texture": "textures/ui/liquid_border", "anchor_from": "center", "anchor_to": "center", "size": [ 20, 62 ], "offset": [ -20, 0 ], "layer": 13 } },
-                        { "b3": { "type": "image", "texture": "textures/ui/liquid_border", "anchor_from": "center", "anchor_to": "center", "size": [ 20, 62 ], "offset": [ 0, 0 ], "layer": 13 } },
-                        { "b4": { "type": "image", "texture": "textures/ui/liquid_border", "anchor_from": "center", "anchor_to": "center", "size": [ 20, 62 ], "offset": [ 20, 0 ], "layer": 13 } },
-                        { "b5": { "type": "image", "texture": "textures/ui/liquid_border", "anchor_from": "center", "anchor_to": "center", "size": [ 20, 62 ], "offset": [ 40, 0 ], "layer": 13 } },
-                        { "b6": { "type": "image", "texture": "textures/ui/liquid_border", "anchor_from": "center", "anchor_to": "center", "size": [ 20, 62 ], "offset": [ 60, 0 ], "layer": 13 } }
                     ]
                 }
             }
         ]
     },
-
     "utility_panel": {
         "type": "panel",
         "controls": [
