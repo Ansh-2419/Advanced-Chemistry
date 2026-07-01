@@ -40,3 +40,14 @@ entity.utilitycraft:fuel_burner_monitor.name=Fuel Burner
 entity.utilitycraft:fluid_storage_monitor.name=Fluid Storage
 entity.utilitycraft:separator.name=Separator
 entity.utilitycraft:refinery_monitor.name=Refinery
+
+item.utilitycraft:duranium.name=Duranium
+item.utilitycraft:lithium_dust.name=Lithium Dust
+item.utilitycraft:voltanium_ingot.name=Voltanium Ingot
+
+tile.utilitycraft:endstone_gen_copper.name=Copper Endstone Generator
+tile.utilitycraft:endstone_gen_iron.name=Iron Endstone Generator
+tile.utilitycraft:endstone_gen_gold.name=Gold Endstone Generator
+tile.utilitycraft:endstone_gen_diamond.name=Diamond Endstone Generator
+tile.utilitycraft:endstone_gen_emerald.name=Emerald Endstone Generator
+tile.utilitycraft:endstone_gen_netherite.name=Netherite Endstone Generator

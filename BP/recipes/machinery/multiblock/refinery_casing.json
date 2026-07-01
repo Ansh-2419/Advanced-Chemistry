@@ -1,0 +1,30 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:refinery_casing"
+        },
+        "tags": ["utilitycraft_workbench"],
+        "pattern": ["ABA", "BRB", "ABA"],
+        "key": {
+            "R": {
+                "item": "utilitycraft:machine_case"
+            },
+            "B": {
+                "item": "utilitycraft:voltanium_Ingot"
+            },
+            "A": {
+                "item": "utilitycraft:fluid_pipe"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:refinery_casing",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:voltanium_Ingot"
+            }
+        ]
+    }
+}

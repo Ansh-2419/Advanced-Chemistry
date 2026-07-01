@@ -1358,11 +1358,11 @@
         "lithium_dust": {
             "textures": "textures/items/ingot/lithium_dust"
         },
-        "electrum_ingot": {
-            "textures": "textures/items/ingot/electrum_ingot"
+        "voltanium_ingot": {
+            "textures": "textures/items/ingot/voltanium_ingot"
         },
-        "witch_water_bucket": {
-            "textures": "textures/items/item/bucket_witch_water"
+        "bucket_witch_water": {
+            "textures": "textures/items/misc/bucket_witch_water"
         }
     }
 }

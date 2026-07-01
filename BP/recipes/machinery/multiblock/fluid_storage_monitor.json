@@ -1,0 +1,30 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:fluid_storage_monitor"
+        },
+        "tags": ["utilitycraft_workbench"],
+        "pattern": ["ABA", "BRB", "ABA"],
+        "key": {
+            "R": {
+                "item": "utilitycraft:machine_case"
+            },
+            "B": {
+                "item": "utilitycraft:voltanium_Ingot"
+            },
+            "A": {
+                "item": "utilitycraft:fluid_storage_casing"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:fluid_storage_monitor",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:voltanium_Ingot"
+            }
+        ]
+    }
+}

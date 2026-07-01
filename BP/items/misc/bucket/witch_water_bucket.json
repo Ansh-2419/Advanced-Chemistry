@@ -8,7 +8,7 @@
       }
     },
     "components": {
-      "minecraft:icon": "witch_water_bucket",
+      "minecraft:icon": "bucket_witch_water",
       "minecraft:max_stack_size": 16,
       "minecraft:allow_off_hand": false,
       "minecraft:hand_equipped": false,

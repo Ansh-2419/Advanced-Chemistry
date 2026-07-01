@@ -17,7 +17,7 @@ world.afterEvents.worldLoad.subscribe(() => {
             required: 4
         },
         "utilitycraft:lithium_dust|utilitycraft:steel_ingot": {
-            output: "utilitycraft:electrum_ingot",
+            output: "utilitycraft:voltanium_Ingot",
             required: 4
         }
     };

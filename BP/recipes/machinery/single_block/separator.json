@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "utilitycraft:separator"
+		},
+		"tags": [
+			"utilitycraft_workbench"
+		],
+		"pattern": [
+			"SBS",
+			"RCR",
+			"MAM"
+		],
+		"key": {
+			"A": {
+				"item": "utilitycraft:machine_case"
+			},
+			"R": {
+				"item": "utilitycraft:advanced_fluid_tank"
+			},
+			"S": {
+				"item": "utilitycraft:Duranium_ingot"
+			},
+			"M": {
+				"item": "utilitycraft:expert_chip"
+			},
+			"B": {
+				"item": "utilitycraft:energized_iron_block"
+			},
+			"C": {
+				"item": "utilitycraft:incinerator"
+			}
+		},
+		"result": {
+			"item": "utilitycraft:separator",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "utilitycraft:Duranium_ingot"
+			}
+		]
+	}
+}

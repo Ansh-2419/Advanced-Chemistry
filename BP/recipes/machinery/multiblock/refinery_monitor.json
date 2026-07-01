@@ -1,0 +1,30 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:refinery_monitor"
+        },
+        "tags": ["utilitycraft_workbench"],
+        "pattern": ["ABA", "BRB", "ABA"],
+        "key": {
+            "R": {
+                "item": "utilitycraft:machine_case"
+            },
+            "B": {
+                "item": "utilitycraft:voltanium_Ingot"
+            },
+            "A": {
+                "item": "utilitycraft:refinery_casing"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:refinery_monitor",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:voltanium_Ingot"
+            }
+        ]
+    }
+}
