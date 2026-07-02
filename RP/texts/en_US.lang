@@ -41,7 +41,7 @@ entity.utilitycraft:fluid_storage_monitor.name=Fluid Storage
 entity.utilitycraft:separator.name=Separator
 entity.utilitycraft:refinery_monitor.name=Refinery
 
-item.utilitycraft:duranium.name=Duranium
+item.utilitycraft:duranium_ingot.name=Duranium
 item.utilitycraft:lithium_dust.name=Lithium Dust
 item.utilitycraft:voltanium_ingot.name=Voltanium Ingot
 

@@ -55,6 +55,12 @@ const MODE_INPUT = 0;
 const MODE_OUTPUT = 1;
 const INPUT_TAG_PREFIX = "input:[";
 
+const MULTIBLOCK_CASE_TAGS = Object.freeze([
+    "dorios:multiblock.case.fuel_burner",
+    "dorios:multiblock.case.fluid_storage",
+    "dorios:multiblock.case.refinery"
+]);
+
 const FACE_OFFSETS = Object.freeze([
     { x: 1, y: 0, z: 0 },
     { x: -1, y: 0, z: 0 },
@@ -350,6 +356,90 @@ export function pushFluidThroughOutputValves(
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Energy entity resolution helpers
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Given a block adjacent to an energy OUTPUT valve, find the entity that
+ * should RECEIVE the energy.
+ *
+ * - If adj is an energy INPUT valve, its controller entity is the one that has
+ *   an "input:[x,y,z]" tag matching adj's coords — search nearby multiblock
+ *   machine entities for that tag.
+ * - Otherwise fall back to getEntitiesAtBlockLocation (single-block machines).
+ *
+ * @param {Dimension} dim
+ * @param {Block}     adj       Block adjacent to our output valve.
+ * @param {Entity}    self      Our own controller entity (excluded from results).
+ * @returns {Entity|null}
+ */
+function _resolveEnergyReceiverEntity(dim, adj, self) {
+    if (adj.typeId === VALVE_IDS.ENERGY) {
+        const mode = adj.permutation.getState("utilitycraft:mode") ?? MODE_INPUT;
+        if (mode === MODE_INPUT) {
+            return _findControllerByValveTag(dim, adj, self);
+        }
+        return null;
+    }
+    const ent = dim.getEntitiesAtBlockLocation(adj.location)[0];
+    return ent && ent !== self ? ent : null;
+}
+
+/**
+ * Given a block adjacent to an energy INPUT valve, find the entity that
+ * should SUPPLY the energy.
+ *
+ * - If adj is an energy OUTPUT valve, its controller entity is the one that has
+ *   an "input:[x,y,z]" tag matching adj's coords.
+ * - Otherwise fall back to getEntitiesAtBlockLocation.
+ *
+ * @param {Dimension} dim
+ * @param {Block}     adj       Block adjacent to our input valve.
+ * @param {Entity}    self      Our own controller entity (excluded from results).
+ * @returns {Entity|null}
+ */
+function _resolveEnergySourceEntity(dim, adj, self) {
+    if (adj.typeId === VALVE_IDS.ENERGY) {
+        const mode = adj.permutation.getState("utilitycraft:mode") ?? MODE_INPUT;
+        if (mode === MODE_OUTPUT) {
+            return _findControllerByValveTag(dim, adj, self);
+        }
+        return null;
+    }
+    const ent = dim.getEntitiesAtBlockLocation(adj.location)[0];
+    return ent && ent !== self ? ent : null;
+}
+
+/**
+ * Find the multiblock controller entity whose "input:[x,y,z]" tag matches
+ * the given valve block's location.
+ *
+ * Searches for utilitycraft:multiblock_machine entities within 32 blocks
+ * of the valve (enough to cover any multiblock we have).
+ *
+ * @param {Dimension} dim
+ * @param {Block}     valveBlock
+ * @param {Entity}    self   Excluded.
+ * @returns {Entity|null}
+ */
+function _findControllerByValveTag(dim, valveBlock, self) {
+    const { x, y, z } = valveBlock.location;
+    const tagToFind = `input:[${x},${y},${z}]`;
+
+    const candidates = dim.getEntities({
+        type: "utilitycraft:multiblock_machine",
+        location: { x, y, z },
+        maxDistance: 32
+    });
+
+    for (const ent of candidates) {
+        if (ent === self) continue;
+        if (ent.hasTag(tagToFind)) return ent;
+    }
+    return null;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Energy valve logic
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -383,14 +473,9 @@ export function pushEnergyThroughOutputValves(
                 z: z + off.z
             });
             if (!adj) continue;
-            // Skip own casing
-            if (
-                adj.hasTag?.("dorios:multiblock.case.fuel_burner") ||
-                adj.hasTag?.("dorios:multiblock.case.fluid_storage")
-            )
-                continue;
+            if (MULTIBLOCK_CASE_TAGS.some(t => adj.hasTag?.(t))) continue;
 
-            const adjEnt = dim.getEntitiesAtBlockLocation(adj.location)[0];
+            const adjEnt = _resolveEnergyReceiverEntity(dim, adj, entity);
             if (!adjEnt) continue;
 
             let tgt;
@@ -443,13 +528,9 @@ export function pullEnergyThroughInputValves(entity, energyStore, maxTransfer) {
                 z: z + off.z
             });
             if (!adj) continue;
-            if (
-                adj.hasTag?.("dorios:multiblock.case.fuel_burner") ||
-                adj.hasTag?.("dorios:multiblock.case.fluid_storage")
-            )
-                continue;
+            if (MULTIBLOCK_CASE_TAGS.some(t => adj.hasTag?.(t))) continue;
 
-            const adjEnt = dim.getEntitiesAtBlockLocation(adj.location)[0];
+            const adjEnt = _resolveEnergySourceEntity(dim, adj, entity);
             if (!adjEnt) continue;
 
             let src;
