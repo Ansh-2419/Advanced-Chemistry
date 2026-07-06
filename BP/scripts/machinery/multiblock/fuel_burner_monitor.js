@@ -8,11 +8,10 @@ import {
 } from '../../DoriosCore/index.js';
 import { BLOCKED_SLOT_ITEM_ID } from '../../DoriosCore/machinery/constants.js';
 import {
-    pushEnergyThroughOutputValves,
     refreshFluidInputNetworks,
     pullFluidThroughInputValves,
     validateValves,
-    VALVE_IDS,
+    pushEnergyFromValves,
 } from './valves.js';
 
 // ── Tuneable constants ────────────────────────────────────────────────────────
@@ -22,9 +21,6 @@ const CAPACITY_PER_AIR_BLOCK  = 64_000;
 const DE_PER_MB               = 8_000;
 const BURN_RATE_MB_PER_TICK   = 20;
 const ENERGY_CAP              = 2_000_000;
-const PUSH_RATE_MAX           = ENERGY_CAP;
-const PUSH_INTERVAL           = 4;
-const THROTTLE_THRESHOLD      = 0.90;
 const MAX_PULL_PER_PORT       = 2_000;   // mB pulled per fluid valve per tick window
 
 // ── Display slot indices ──────────────────────────────────────────────────────
@@ -45,7 +41,7 @@ const PROP_FLUID_CAP          = 'fb:fluid_cap';
 const MULTIBLOCK_CONFIG = {
     required_case:  'dorios:multiblock.case.fuel_burner',
     entity: {
-        type:           'simple_container',
+        type:           'simple_machine',
         inventory_size: 5,
         identifier:     'utilitycraft:multiblock_machine',
     },
@@ -144,9 +140,9 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
         // ── Burn biofuel → produce DE ─────────────────────────────────────────
         const status = _burn(entity, tank, energy);
 
-        // ── Push DE through energy output valves ──────────────────────────────
-        if (tickGate(entity, 'fb:energy_out', PUSH_INTERVAL) && energy.get() > 0) {
-            pushEnergyThroughOutputValves(entity, energy, PUSH_RATE_MAX);
+        // ── Push DE out through energy output valves ──────────────────────────
+        if (tickGate(entity, 'fb:energy_out', 2)) {
+            pushEnergyFromValves(entity, energy, ENERGY_CAP);
         }
 
         // ── Refresh pipe network cache occasionally ───────────────────────────

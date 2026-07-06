@@ -1,7 +1,8 @@
 ## Age of Chemical — en_US.lang
 
-#catalog
-itemGroup.name.machines=Advanced Chemistry
+##catalog
+ac:itemGroup.name.machines=Advanced Chemistry
+ac:itemGroup.name.endstone_generators=Endstone Generators
 
 ## ── Singleblock Machines ─────────────────────────────────────────────────────
 tile.utilitycraft:fermenter.name=Fermenter
