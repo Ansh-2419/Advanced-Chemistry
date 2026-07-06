@@ -17,6 +17,9 @@
     },
     "utilitycraft:fuel_burner_casing": {
         "sound": "stone"
-    }
+    },
+    "utilitycraft:energy_port": {
+		"sound": "copper",
+		"textures": "utilitycraft_bronze_energy_port"
 }
 

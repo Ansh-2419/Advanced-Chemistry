@@ -11,7 +11,7 @@ import {
     refreshFluidInputNetworks,
     pullFluidThroughInputValves,
     validateValves,
-    pushEnergyFromValves,
+    registerEnergyValves,
 } from './valves.js';
 
 // ── Tuneable constants ────────────────────────────────────────────────────────
@@ -97,6 +97,7 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
                 // Cache each valve's network node list on the entity so onTick
                 // doesn't re-traverse the graph every tick.
                 refreshFluidInputNetworks(entity);
+                registerEnergyValves(entity);
 
                 _blockSlots(entity);
             },
@@ -139,11 +140,6 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
 
         // ── Burn biofuel → produce DE ─────────────────────────────────────────
         const status = _burn(entity, tank, energy);
-
-        // ── Push DE out through energy output valves ──────────────────────────
-        if (tickGate(entity, 'fb:energy_out', 2)) {
-            pushEnergyFromValves(entity, energy, ENERGY_CAP);
-        }
 
         // ── Refresh pipe network cache occasionally ───────────────────────────
         // Re-scan every ~200 ticks in case pipes or sources changed.

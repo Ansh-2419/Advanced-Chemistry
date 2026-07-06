@@ -42,9 +42,9 @@ entity.utilitycraft:fluid_storage_monitor.name=Fluid Storage
 entity.utilitycraft:separator.name=Separator
 entity.utilitycraft:refinery_monitor.name=Refinery
 
-item.utilitycraft:duranium_ingot.name=Duranium
-item.utilitycraft:lithium_dust.name=Lithium Dust
-item.utilitycraft:voltanium_ingot.name=Voltanium Ingot
+item.utilitycraft:duranium_ingot=Duranium
+item.utilitycraft:lithium_dust=Lithium Dust
+item.utilitycraft:voltanium_ingot=Voltanium Ingot
 
 tile.utilitycraft:endstone_gen_copper.name=Copper Endstone Generator
 tile.utilitycraft:endstone_gen_iron.name=Iron Endstone Generator

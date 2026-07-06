@@ -1,9 +1,5 @@
 /**
- * machinery/multiblock/valves.js
- * Re-exports all valve utilities. Implementation split into:
- *   valve_shared.js  — shared constants, getPortBlocks, validateValves
- *   fluid_valves.js  — fluid block component + fluid transfer functions
- *   energy_valves.js — energy block component + energy transfer functions
+ * machinery/multiblock/valves.js — re-export barrel
  */
 
 export {
@@ -21,9 +17,3 @@ export {
     pullFluidThroughInputValves,
     pushFluidThroughOutputValves
 } from "./fluid_valves.js";
-
-export {
-    refreshEnergyInputNetworks,
-    pullEnergyFromValves,
-    pushEnergyFromValves
-} from "./energy_valves.js";

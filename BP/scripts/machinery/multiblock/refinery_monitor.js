@@ -12,7 +12,6 @@ import {
     pullFluidThroughInputValves,
     pushFluidThroughOutputValves,
     validateValves,
-    pullEnergyFromValves,
 } from "./valves.js";
 import { getRefineryRecipes } from "../../config/recipes/machinery/refinery.js";
 
@@ -33,12 +32,16 @@ const ENERGY_COST = 12_000;
 const MULTIBLOCK_CONFIG = {
     required_case: "dorios:multiblock.case.refinery",
     entity: {
-        type: "simple_machine",
-        inventory_size: 7,
-        identifier: "utilitycraft:multiblock_machine"
+        entity: {
+        type: 'complex_machine',
+        input_range: [4, 12],
+        output_range: [13, 27],
+        inventory_size: 28,
+        identifier: 'utilitycraft:multiblock_machine',
+    },
     },
     machine: {
-        rate_speed_base: ENERGY_COST,
+        rate_speed_base: BASE_RATE,
         energy_cap: ENERGY_CAP
     },
     requirements: {}
@@ -73,6 +76,7 @@ DoriosAPI.register.blockComponent("refinery_monitor", {
                 energy.display(ENERGY_DISPLAY_SLOT);
                 _writeProgressArrow(entity);
                 refreshFluidInputNetworks(entity);
+                registerEnergyValves(entity);
             },
 
             successMessages() {
@@ -130,9 +134,6 @@ DoriosAPI.register.blockComponent("refinery_monitor", {
         }
 
         // ── Pull energy in through energy input valves ────────────────────────
-
-        // ── Pull energy through input valves ──────────────────────────────────
-        pullEnergyFromValves(entity, energy, 40000);
 
         // ── Display ───────────────────────────────────────────────────────────
         tankIn.display(FLUID_DISPLAY_IN);

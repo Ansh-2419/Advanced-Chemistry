@@ -152,30 +152,6 @@
         "utilitycraft:ethanol_bar_48": {
             "textures": "textures/items/ui/ethanol_bar/ethanol_frame_48"
         },
-        "utilitycraft_ethanol_liquid_capsule_1": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_1"
-        },
-        "utilitycraft_ethanol_liquid_capsule_2": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_2"
-        },
-        "utilitycraft_ethanol_liquid_capsule_3": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_3"
-        },
-        "utilitycraft_ethanol_liquid_capsule_4": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_4"
-        },
-        "utilitycraft_ethanol_liquid_capsule_5": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_5"
-        },
-        "utilitycraft_ethanol_liquid_capsule_6": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_6"
-        },
-        "utilitycraft_ethanol_liquid_capsule_7": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_7"
-        },
-        "utilitycraft_ethanol_liquid_capsule_8": {
-            "textures": "textures/items/misc/ethanol_liquid_capsule_8"
-        },
         "utilitycraft:plant_oil_bar_00": {
             "textures": "textures/items/ui/plant_oil_bar/plant_oil_bar_00"
         },
