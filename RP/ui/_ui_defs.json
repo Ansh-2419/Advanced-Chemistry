@@ -8,6 +8,7 @@
         "ui/fluid_storage_monitor.json",
         "ui/chemical_reactor.json",
         "ui/separator.json",
-        "ui/refinery.json"
+        "ui/refinery.json",
+        "ui/recipes/infuser.json"
     ]
 }
