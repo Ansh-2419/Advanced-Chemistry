@@ -52,3 +52,4 @@ tile.utilitycraft:endstone_gen_gold.name=Gold Endstone Generator
 tile.utilitycraft:endstone_gen_diamond.name=Diamond Endstone Generator
 tile.utilitycraft:endstone_gen_emerald.name=Emerald Endstone Generator
 tile.utilitycraft:endstone_gen_netherite.name=Netherite Endstone Generator
+item.utilitycraft:water_bucket_custom=Witch Water Bucket
