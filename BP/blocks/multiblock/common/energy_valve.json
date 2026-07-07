@@ -18,6 +18,7 @@
             },
             "minecraft:destructible_by_mining": { "seconds_to_destroy": 1 },
             "tag:dorios:multiblock.port": {},
+            "tag:dorios:energy": {},
             "tag:dorios:multiblock.case.fuel_burner": {},
             "tag:dorios:multiblock.case.fluid_storage": {},
             "tag:dorios:multiblock.case.refinery": {}
@@ -34,16 +35,12 @@
             {
                 "condition": "q.block_state('utilitycraft:active') == 1",
                 "components": {
-                    "tag:dorios:energy": {},
                     "tag:dorios:multiblock.port": {},
                     "tag:dorios:multiblock.case.fuel_burner": {},
                     "tag:dorios:multiblock.case.fluid_storage": {},
-                    "tag:dorios:multiblock.case.refinery": {}
+                    "tag:dorios:multiblock.case.refinery": {},
+                    "minecraft:light_emission": 4
                 }
-            },
-            {
-                "condition": "q.block_state('utilitycraft:active') == 1",
-                "components": { "minecraft:light_emission": 4 }
             }
         ]
     }
