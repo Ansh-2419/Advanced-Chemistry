@@ -1,8 +1,7 @@
 /**
  * machinery/multiblock/valve_shared.js
  * ─────────────────────────────────────────────────────────────────────────────
- * Shared constants and port-resolution utilities used by both
- * fluid_valves.js and energy_valves.js.
+ * Shared constants and port-resolution utilities used by fluid_valves.js.
  */
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -75,26 +74,21 @@ export function getPortBlocks(entity, typeId, mode = null) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 /**
- * Validate that a multiblock has the required valve counts.
+ * Validate that a multiblock has the required fluid valve counts.
+ * Energy valves are passive and validated by the block tag system, not here.
  *
  * @param {Entity} entity    Controller entity.
- * @param {object} required  e.g. { fluidInput:1, energyOutput:1 }
+ * @param {object} required  e.g. { fluidInput: 1, fluidOutput: 1 }
  * @returns {string|null}    Error message or null on success.
  */
 export function validateValves(entity, required = {}) {
-    const fluidIn   = getPortBlocks(entity, VALVE_IDS.FLUID,  MODE_INPUT).length;
-    const fluidOut  = getPortBlocks(entity, VALVE_IDS.FLUID,  MODE_OUTPUT).length;
-    const energyIn  = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_INPUT).length;
-    const energyOut = getPortBlocks(entity, VALVE_IDS.ENERGY, MODE_OUTPUT).length;
+    const fluidIn  = getPortBlocks(entity, VALVE_IDS.FLUID, MODE_INPUT).length;
+    const fluidOut = getPortBlocks(entity, VALVE_IDS.FLUID, MODE_OUTPUT).length;
 
-    if (required.fluidInput  != null && fluidIn   < required.fluidInput)
+    if (required.fluidInput  != null && fluidIn  < required.fluidInput)
         return `§c[Valve] Need ${required.fluidInput}× Fluid Valve (Input). Found ${fluidIn}.`;
-    if (required.fluidOutput != null && fluidOut  < required.fluidOutput)
+    if (required.fluidOutput != null && fluidOut < required.fluidOutput)
         return `§c[Valve] Need ${required.fluidOutput}× Fluid Valve (Output). Found ${fluidOut}.`;
-    if (required.energyInput != null && energyIn  < required.energyInput)
-        return `§c[Valve] Need ${required.energyInput}× Energy Valve (Input). Found ${energyIn}.`;
-    if (required.energyOutput != null && energyOut < required.energyOutput)
-        return `§c[Valve] Need ${required.energyOutput}× Energy Valve (Output). Found ${energyOut}.`;
 
     return null;
 }

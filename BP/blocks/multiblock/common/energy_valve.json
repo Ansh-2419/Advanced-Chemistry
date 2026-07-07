@@ -1,22 +1,38 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.100",
     "minecraft:block": {
         "description": {
-            "identifier": "utilitycraft:bronze_energy_port",
+            "identifier": "utilitycraft:energy_valve",
             "menu_category": {
                 "category": "construction"
             },
             "states": {
-                "utilitycraft:active": [0, 1]
+                "utilitycraft:active": [0, 1],
+                "utilitycraft:mode": [0, 1]
             }
         },
         "components": {
+            "minecraft:geometry": "geometry.utilitycraft_block",
+            "minecraft:material_instances": {
+                "*": { "texture": "energy_input_port", "render_method": "opaque" }
+            },
+            "minecraft:destructible_by_mining": { "seconds_to_destroy": 1 },
             "tag:dorios:multiblock.port": {},
-            "tag:dorios:multiblock.case.bronze": {}
+            "tag:dorios:multiblock.case.fuel_burner": {},
+            "tag:dorios:multiblock.case.fluid_storage": {},
+            "tag:dorios:multiblock.case.refinery": {}
         },
         "permutations": [
             {
-                "condition": "q.block_state('utilitycraft:active') == 1 ",
+                "condition": "q.block_state('utilitycraft:mode') == 1",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": { "texture": "energy_output_port", "render_method": "opaque" }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('utilitycraft:active') == 1",
                 "components": {
                     "tag:dorios:energy": {},
                     "tag:dorios:multiblock.port": {},
@@ -24,6 +40,10 @@
                     "tag:dorios:multiblock.case.fluid_storage": {},
                     "tag:dorios:multiblock.case.refinery": {}
                 }
+            },
+            {
+                "condition": "q.block_state('utilitycraft:active') == 1",
+                "components": { "minecraft:light_emission": 4 }
             }
         ]
     }

@@ -11,7 +11,6 @@ import {
     refreshFluidInputNetworks,
     pullFluidThroughInputValves,
     validateValves,
-    registerEnergyValves,
 } from './valves.js';
 
 // ── Tuneable constants ────────────────────────────────────────────────────────
@@ -77,7 +76,7 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
             // Called each time the wrench validates and activates the structure.
             onActivate({ entity, structure, player, block }) {
                 // ── Validate required valves ─────────────────────────────────────
-                const valveError = validateValves(entity, { fluidInput: 1, energyOutput: 1 });
+                const valveError = validateValves(entity, { fluidInput: 1 });
                 if (valveError) { player.sendMessage(valveError); return false; }
 
                 // ── Set fluid capacity based on interior air block count ──────
@@ -97,7 +96,6 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
                 // Cache each valve's network node list on the entity so onTick
                 // doesn't re-traverse the graph every tick.
                 refreshFluidInputNetworks(entity);
-                registerEnergyValves(entity);
 
                 _blockSlots(entity);
             },
@@ -111,7 +109,7 @@ DoriosAPI.register.blockComponent('fuel_burner_monitor', {
                     `§7Energy Buffer : §e${Energy.formatEnergyToText(ENERGY_CAP)}`,
                     `§7Max Output    : §f${Energy.formatEnergyToText(ratePerSec)}§7/s`,
                     '§7Fuel In       : connect a pipe to the Fluid Input Valve',
-                    '§8Ports: 1× Fluid Input Valve · 1× Energy Output Valve',
+                    '§8Ports: 1× Fluid Input Valve · 1× Energy Port',
                 ];
             },
         });

@@ -29,16 +29,16 @@ const FLUID_CAP = 256_000;
 const ENERGY_CAP = 400_000;
 const ENERGY_COST = 12_000;
 
+const BASE_RATE = 100;
+
 const MULTIBLOCK_CONFIG = {
     required_case: "dorios:multiblock.case.refinery",
     entity: {
-        entity: {
         type: 'complex_machine',
         input_range: [4, 12],
         output_range: [13, 27],
         inventory_size: 28,
         identifier: 'utilitycraft:multiblock_machine',
-    },
     },
     machine: {
         rate_speed_base: BASE_RATE,
@@ -63,7 +63,6 @@ DoriosAPI.register.blockComponent("refinery_monitor", {
             onActivate({ entity, player }) {
                 const valveError = validateValves(entity, {
                     fluidInput: 1,
-                    energyInput: 1
                 });
                 if (valveError) {
                     player.sendMessage(valveError);
@@ -76,7 +75,6 @@ DoriosAPI.register.blockComponent("refinery_monitor", {
                 energy.display(ENERGY_DISPLAY_SLOT);
                 _writeProgressArrow(entity);
                 refreshFluidInputNetworks(entity);
-                registerEnergyValves(entity);
             },
 
             successMessages() {
@@ -85,7 +83,7 @@ DoriosAPI.register.blockComponent("refinery_monitor", {
                     `§7Fluid Cap (each) : §b${FluidManager.formatFluid(FLUID_CAP)}`,
                     `§7Energy Buffer    : §e${Energy.formatEnergyToText(ENERGY_CAP)}`,
                     `§7Energy Cost      : §c${Energy.formatEnergyToText(ENERGY_COST)}§7/op`,
-                    "§8Ports: 1× Fluid Input Valve · 1× Energy Input Valve",
+                    "§8Ports: 1× Fluid Input Valve · 1× Energy Port",
                     "§7Attach Fluid Output Valves to drain each product."
                 ];
             }
