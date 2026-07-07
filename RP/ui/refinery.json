@@ -71,6 +71,23 @@
                                 "anchor_to": "center",
                                 "layer": 0
                             }
+                        },
+                        {
+                            "energy_border": {
+                                "type": "image",
+                                "texture": "textures/ui/energy_border",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
+                                "size": [
+                                    50,
+                                    50
+                                ],
+                                "offset": [
+                                    10,
+                                    3
+                                ],
+                                "layer": 13
+                            }
                         }
                     ]
                 }
