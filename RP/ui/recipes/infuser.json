@@ -1,0 +1,192 @@
+﻿{
+  "namespace": "uc",
+  "ac_witch_water_catalyst_animation": {
+    "anim_type": "flip_book",
+    "frame_count": 2,
+    "frame_step": 0,
+    "fps": 1,
+    "easing": "linear",
+    "initial_uv": [0, 0]
+  },
+  "infuser_recipes_buttons/addon_recipe_rows": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "advanced_chemistry_recipe_rows@uc.ac_infuser_recipe_rows": {}
+          }
+        ]
+      }
+    ]
+  },
+  "infuser_recipes_panel/recipes_panel/addon_recipe_panels": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "advanced_chemistry_recipe_panels@uc.ac_infuser_recipe_panels": {}
+          }
+        ]
+      }
+    ]
+  },
+  "ac_infuser_recipe_rows": {
+    "type": "stack_panel",
+    "size": [126, "100%c"],
+    "orientation": "vertical",
+    "controls": [
+      {
+        "advanced_chemistry_separator@uc.addon_recipe_separator": {
+          "$separator_label": "Advanced Chemistry"
+        }
+      },
+      {
+        "advanced_chemistry_recipe_row_0": {
+          "type": "panel",
+          "size": [126, 18],
+          "controls": [
+            {
+              "ac_duranium_ingot_toggle@uc.infuser_recipe_toggle": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$toggle_index": 4000,
+                "$toggle_hover_text": "item.utilitycraft:duranium_ingot",
+                "$toggle_control_name": "ac_duranium_ingot_recipe",
+                "$recipe_icon": "textures/items/ingot/duranium_ingot",
+                "offset": [0, 0]
+              }
+            },
+            {
+              "ac_voltanium_ingot_toggle@uc.infuser_recipe_toggle": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$toggle_index": 4001,
+                "$toggle_hover_text": "item.utilitycraft:voltanium_ingot",
+                "$toggle_control_name": "ac_voltanium_ingot_recipe",
+                "$recipe_icon": "textures/items/ingot/voltanium_ingot",
+                "$toggle_icon_uv_size": [32, 32],
+                "offset": [18, 0]
+              }
+            },
+            {
+              "ac_witch_water_bucket_toggle@uc.infuser_recipe_toggle": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$toggle_index": 4002,
+                "$toggle_hover_text": "item.utilitycraft:water_bucket_custom",
+                "$toggle_control_name": "ac_witch_water_bucket_recipe",
+                "$recipe_icon": "textures/items/misc/bucket_witch_water",
+                "offset": [36, 0]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "ac_infuser_recipe_panels": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [80, 108],
+    "controls": [
+      {
+        "ac_duranium_ingot_panel@uc.recipe_panel": {
+          "$recipe_control_name": "ac_duranium_ingot_recipe",
+          "controls": [
+            {
+              "catalyst@uc.infuser_recipe_catalyst": {
+                "$slot_item_texture": "textures/items/dusts/quartz_dust",
+                "$slot_hover_text": "item.utilitycraft:quartz_dust",
+                "$has_slot_hover": true,
+                "$slot_count_text": "4",
+                "$has_slot_count": true
+              }
+            },
+            {
+              "input@uc.infuser_recipe_input": {
+                "$slot_item_texture": "textures/items/ores/steel_ingot",
+                "$slot_hover_text": "item.utilitycraft:steel_ingot",
+                "$has_slot_hover": true
+              }
+            },
+            {
+              "output@uc.infuser_recipe_output": {
+                "$slot_item_texture": "textures/items/ingot/duranium_ingot",
+                "$slot_hover_text": "item.utilitycraft:duranium_ingot",
+                "$has_slot_hover": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ac_voltanium_ingot_panel@uc.recipe_panel": {
+          "$recipe_control_name": "ac_voltanium_ingot_recipe",
+          "controls": [
+            {
+              "catalyst@uc.infuser_recipe_catalyst": {
+                "$slot_item_texture": "textures/items/ingot/lithium_dust",
+                "$slot_hover_text": "item.utilitycraft:lithium_dust",
+                "$has_slot_hover": true,
+                "$slot_count_text": "4",
+                "$has_slot_count": true
+              }
+            },
+            {
+              "input@uc.infuser_recipe_input": {
+                "$slot_item_texture": "textures/items/ores/steel_ingot",
+                "$slot_hover_text": "item.utilitycraft:steel_ingot",
+                "$has_slot_hover": true
+              }
+            },
+            {
+              "output@uc.infuser_recipe_output": {
+                "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
+                "$slot_hover_text": "item.utilitycraft:voltanium_ingot",
+                "$has_slot_hover": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ac_witch_water_bucket_panel@uc.recipe_panel": {
+          "$recipe_control_name": "ac_witch_water_bucket_recipe",
+          "controls": [
+            {
+              "catalyst@uc.infuser_recipe_catalyst": {
+                "$has_slot_item": false,
+                "$has_slot_flipbook": true,
+                "$slot_item_flipbook_texture": "textures/ui/recipes/witch_water_catalyst_flipbook",
+                "$slot_hover_text": "tile.brown_mushroom.name",
+                "$has_slot_hover": true,
+                "$slot_item_flipbook_uv": "@uc.ac_witch_water_catalyst_animation",
+                "$slot_count_text": "4",
+                "$has_slot_count": true
+              }
+            },
+            {
+              "input@uc.infuser_recipe_input": {
+                "$slot_item_texture": "textures/items/bucket_water",
+                "$slot_hover_text": "item.bucketWater.name",
+                "$has_slot_hover": true
+              }
+            },
+            {
+              "output@uc.infuser_recipe_output": {
+                "$slot_item_texture": "textures/items/misc/bucket_witch_water",
+                "$slot_hover_text": "item.utilitycraft:water_bucket_custom",
+                "$has_slot_hover": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

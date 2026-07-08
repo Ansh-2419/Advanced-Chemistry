@@ -4,87 +4,83 @@
     "resource_pack_name": "UtilityCraft Expanded",
     "texture_name": "atlas.terrain",
     "texture_data": {
-        "common": {
-            "textures": "textures/blocks/common"
+        //common in all singleblock machine
+        "common": {//only for test
+            "textures": "textures/blocks/base/common"
         },
-        "burner_monitor": {
-            "textures": "textures/blocks/burner_monitor"
+        "up": {
+            "textures": "textures/blocks/base/up"
         },
-        "chemical_reactor": {
-            "textures": "textures/blocks/chemical_reactor"
+        "down": {
+            "textures": "textures/blocks/base/down"
         },
-        "electromagnetic_coil": {
-            "textures": "textures/blocks/electromagnetic_coil"
+        "side": {
+            "textures": "textures/blocks/base/side"
         },
-        "energy_input_port": {
-            "textures": "textures/blocks/energy_input_port"
-        },
-        "energy_output_port": {
-            "textures": "textures/blocks/energy_output_port"
-        },
-        "fermentor": {
-            "textures": "textures/blocks/fermentor"
-        },
-        "fluid_input_port": {
-            "textures": "textures/blocks/fluid_input_port"
-        },
-        "fluid_mixer": {
-            "textures": "textures/blocks/fluid_mixer"
-        },
-        "fluid_monitor": {
-            "textures": "textures/blocks/fluid_monitor"
-        },
-        "fluid_output_port": {
-            "textures": "textures/blocks/fluid_output_port"
-        },
-        "reactor_casing": {
-            "textures": "textures/blocks/reactor_casing"
-        },
-        "reactor_caseing": {
-            "textures": "textures/blocks/reactor_caseing"
-        },
-        "refinery_caseing": {
-            "textures": "textures/blocks/refinery_caseing"
-        },
-        "refinery_monitor": {
-            "textures": "textures/blocks/refinery_monitor"
-        },
-
-        "fuel_mixer": {
-            "textures": "textures/blocks/fluid_mixer"
-        },
-        "utilitycraft_fuel_mixer_on": {
-            "textures": "textures/blocks/fluid_mixer"
-        },
-        "utilitycraft_liquifier_on": {
-            "textures": "textures/blocks/fermentor"
-        },
-        "reactor_controller": {
-            "textures": "textures/blocks/chemical_reactor"
-        },
-        "fuel_burner_casing": {
-            "textures": "textures/blocks/reactor_casing"
-        },
-        "separator": {
-            "textures": "textures/blocks/separator"
-        },
+        //endstone gen
         "utilitycraft_endstone_gen_copper": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_copper"
+            "textures": "textures/blocks/e_gen/utilitycraft_endstone_gen_copper"
         },
         "utilitycraft_endstone_gen_iron": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_iron"
+            "textures": "textures/blocks/e_gen/utilitycraft_endstone_gen_iron"
         },
         "utilitycraft_endstone_gen_gold": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_gold"
+            "textures": "textures/blocks/e_gen/utilitycraft_endstone_gen_gold"
         },
         "utilitycraft_endstone_gen_emerald": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_emerald"
+            "textures": "textures/blocks/e_gen/utilitycraft_endstone_gen_emerald"
         },
         "utilitycraft_endstone_gen_diamond": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_diamond"
+            "textures": "textures/blocks/e_gen/utilitycraft_endstone_gen_diamond"
         },
         "utilitycraft_endstone_gen_netherite": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_netherite"
+            "textures": "textures/blocks/e_gen/utilitycraft_endstone_gen_netherite"
+        },
+        //machine front
+        "chemical_reactor": {
+            "textures": "textures/blocks/front/chemical_reactor"
+        },
+        "fermentor": {
+            "textures": "textures/blocks/front/fermentor"
+        },
+        "fluid_mixer": {
+            "textures": "textures/blocks/front/fluid_mixer"
+        },
+        "separator": {
+            "textures": "textures/blocks/front/separator"
+        },
+        //port
+        "energy_input_port": {
+            "textures": "textures/blocks/port/energy_input_port"
+        },
+        "energy_outinput_port": {
+            "textures": "textures/blocks/port/energy_output_port"
+        },
+        "fluid_input_port": {
+            "textures": "textures/blocks/port/fluid_input_port"
+        },
+        "fluid_input_port": {
+            "textures": "textures/blocks/port/fluid_output_port"
+        },
+        //caseing
+        "reactor_caseing": {
+            "textures": "textures/blocks/caseing/reactor_caseing"
+        },
+        "reactor_casing": {
+            "textures": "textures/blocks/caseing/reactor_casing"
+        },
+        "refinery_caseing": {
+            "textures": "textures/blocks/caseing/refinery_caseing"
+        },
+        //monitor
+        "reactor_monitor": {
+            "textures": "textures/blocks/monitor/reactor_monitor"
+        },
+        "fluid_monitor": {
+            "textures": "textures/blocks/monitor/fluid_monitor"
+        },
+        "refinery_monitor": {
+            "textures": "textures/blocks/monitor/refinery_monitor"
         }
     }
 }
