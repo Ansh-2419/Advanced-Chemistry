@@ -10,8 +10,23 @@
         "burner_monitor": {
             "textures": "textures/blocks/burner_monitor"
         },
-        "chemical_reactor": {
-            "textures": "textures/blocks/chemical_reactor"
+        "chemical_reactor_north": {
+            "textures": "textures/blocks/chemical_reactor_north"
+        },
+        "chemical_reactor_south": {
+            "textures": "textures/blocks/chemical_reactor_south"
+        },
+        "chemical_reactor_east": {
+            "textures": "textures/blocks/chemical_reactor_east"
+        },
+        "chemical_reactor_west": {
+            "textures": "textures/blocks/chemical_reactor_west"
+        },
+        "chemical_reactor_up": {
+            "textures": "textures/blocks/chemical_reactor_up"
+        },
+        "chemical_reactor_down": {
+            "textures": "textures/blocks/chemical_reactor_down"
         },
         "electromagnetic_coil": {
             "textures": "textures/blocks/electromagnetic_coil"
@@ -22,14 +37,44 @@
         "energy_output_port": {
             "textures": "textures/blocks/energy_output_port"
         },
-        "fermentor": {
-            "textures": "textures/blocks/fermentor"
+        "fermentor_north": {
+            "textures": "textures/blocks/fermentor_north"
+        },
+        "fermentor_south": {
+            "textures": "textures/blocks/fermentor_south"
+        },
+        "fermentor_east": {
+            "textures": "textures/blocks/fermentor_east"
+        },
+        "fermentor_west": {
+            "textures": "textures/blocks/fermentor_west"
+        },
+        "fermentor_up": {
+            "textures": "textures/blocks/fermentor_up"
+        },
+        "fermentor_down": {
+            "textures": "textures/blocks/fermentor_down"
         },
         "fluid_input_port": {
             "textures": "textures/blocks/fluid_input_port"
         },
-        "fluid_mixer": {
-            "textures": "textures/blocks/fluid_mixer"
+        "fluid_mixer_north": {
+            "textures": "textures/blocks/fluid_mixer_north"
+        },
+        "fluid_mixer_south": {
+            "textures": "textures/blocks/fluid_mixer_south"
+        },
+        "fluid_mixer_east": {
+            "textures": "textures/blocks/fluid_mixer_east"
+        },
+        "fluid_mixer_west": {
+            "textures": "textures/blocks/fluid_mixer_west"
+        },
+        "fluid_mixer_up": {
+            "textures": "textures/blocks/fluid_mixer_up"
+        },
+        "fluid_mixer_down": {
+            "textures": "textures/blocks/fluid_mixer_down"
         },
         "fluid_monitor": {
             "textures": "textures/blocks/fluid_monitor"
@@ -50,23 +95,44 @@
             "textures": "textures/blocks/refinery_monitor"
         },
 
-        "fuel_mixer": {
-            "textures": "textures/blocks/fluid_mixer"
+        "fuel_mixer_north": {
+            "textures": "textures/blocks/fluid_mixer_north"
         },
-        "utilitycraft_fuel_mixer_on": {
-            "textures": "textures/blocks/fluid_mixer"
+        "fuel_mixer_south": {
+            "textures": "textures/blocks/fluid_mixer_south"
         },
-        "utilitycraft_liquifier_on": {
-            "textures": "textures/blocks/fermentor"
+        "fuel_mixer_east": {
+            "textures": "textures/blocks/fluid_mixer_east"
         },
-        "reactor_controller": {
-            "textures": "textures/blocks/chemical_reactor"
+        "fuel_mixer_west": {
+            "textures": "textures/blocks/fluid_mixer_west"
+        },
+        "fuel_mixer_up": {
+            "textures": "textures/blocks/fluid_mixer_up"
+        },
+        "fuel_mixer_down": {
+            "textures": "textures/blocks/fluid_mixer_down"
         },
         "fuel_burner_casing": {
             "textures": "textures/blocks/reactor_casing"
         },
-        "separator": {
-            "textures": "textures/blocks/separator"
+        "separator_north": {
+            "textures": "textures/blocks/separator_north"
+        },
+        "separator_south": {
+            "textures": "textures/blocks/separator_south"
+        },
+        "separator_east": {
+            "textures": "textures/blocks/separator_east"
+        },
+        "separator_west": {
+            "textures": "textures/blocks/separator_west"
+        },
+        "separator_up": {
+            "textures": "textures/blocks/separator_up"
+        },
+        "separator_down": {
+            "textures": "textures/blocks/separator_down"
         },
         "utilitycraft_endstone_gen_copper": {
             "textures": "textures/blocks/utilitycraft_endstone_gen_copper"

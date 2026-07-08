@@ -23,10 +23,34 @@
             "utilitycraft:machine_recipes": {
                 "type": "separator"
             },
-            "minecraft:geometry": "geometry.utilitycraft_block_2",
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "separator",
+                    "texture": "separator_north",
+                    "render_method": "alpha_test"
+                },
+                "north": {
+                    "texture": "separator_north",
+                    "render_method": "alpha_test"
+                },
+                "south": {
+                    "texture": "separator_south",
+                    "render_method": "alpha_test"
+                },
+                "east": {
+                    "texture": "separator_east",
+                    "render_method": "alpha_test"
+                },
+                "west": {
+                    "texture": "separator_west",
+                    "render_method": "alpha_test"
+                },
+                "up": {
+                    "texture": "separator_up",
+                    "render_method": "alpha_test"
+                },
+                "down": {
+                    "texture": "separator_down",
                     "render_method": "alpha_test"
                 }
             },
@@ -46,7 +70,7 @@
                 "entity": {
                     "type": "machine",
                     "input_type": "complex",
-                    "inventory_size": 20,
+                    "inventory_size": 15,
                     "fluid": true
                 },
                 "machine": {
@@ -55,8 +79,7 @@
                     "rate_speed_base": 6400,
                     "fluid_cap": 128000,
                     "fluid_rate": 128000,
-                    "upgrades": [7, 8],
-                    "hidden_slots": [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+                    "upgrades": [7, 8]
                 }
             }
         },

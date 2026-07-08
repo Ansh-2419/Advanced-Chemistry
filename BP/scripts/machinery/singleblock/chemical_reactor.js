@@ -1,4 +1,4 @@
-import { EnergyStorage, FluidStorage, Machine } from "../../DoriosCore/index.js";
+import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "../../DoriosCore/index.js";
 import { getChemicalReactorRecipes } from "../../config/recipes/machinery/chemical_reactor.js";
 import {
     EMPTY_FLUID,
@@ -19,9 +19,22 @@ const FLUID_DISPLAY_IN = 4;
 const FLUID_DISPLAY_OUT = 5;
 const FLUID_DISPLAY_BYPRODUCT = 6;
 const BYPRODUCT_SLOT = 7;
+const IO_ITEM_SLOTS = [10, 15];
+const IO_FLUID_SLOTS = [16, 21];
 
 const DEFAULT_ENERGY_COST = 7200;
 const DEFAULT_FLUID_CAP = 128000;
+
+registerIOInterface("utilitycraft:chemical_reactor", {
+    items: {
+        slots: IO_ITEM_SLOTS,
+        modes: ["disabled", "output"],
+    },
+    liquids: {
+        slots: IO_FLUID_SLOTS,
+        modes: ["disabled", "input", "output"],
+    },
+});
 
 DoriosAPI.register.blockComponent("chemical_reactor", {
     beforeOnPlayerPlace(event, { params: settings }) {

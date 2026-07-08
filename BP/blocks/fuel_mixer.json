@@ -18,16 +18,40 @@
         },
         "components": {
             "utilitycraft:special_container": {
-                "Fluid Input 1": 10,
-                "Fluid Input 2": 11
+                "Fluid Input 1": 5,
+                "Fluid Input 2": 6
             },
             "utilitycraft:machine_recipes": {
                 "type": "fuel_mixer"
             },
-            "minecraft:geometry": "geometry.utilitycraft_block_2",
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "fuel_mixer",
+                    "texture": "fuel_mixer_north",
+                    "render_method": "alpha_test"
+                },
+                "north": {
+                    "texture": "fuel_mixer_north",
+                    "render_method": "alpha_test"
+                },
+                "south": {
+                    "texture": "fuel_mixer_south",
+                    "render_method": "alpha_test"
+                },
+                "east": {
+                    "texture": "fuel_mixer_east",
+                    "render_method": "alpha_test"
+                },
+                "west": {
+                    "texture": "fuel_mixer_west",
+                    "render_method": "alpha_test"
+                },
+                "up": {
+                    "texture": "fuel_mixer_up",
+                    "render_method": "alpha_test"
+                },
+                "down": {
+                    "texture": "fuel_mixer_down",
                     "render_method": "alpha_test"
                 }
             },
@@ -48,9 +72,7 @@
                     "type": "machine",
                     "input_type": "complex",
                     "output_type": "simple",
-                    "inventory_size": 20,
-                    "input_slot": 3,
-                    "output_slot": 19,
+                    "inventory_size": 17,
                     "fluid": true
                 },
                 "machine": {
@@ -59,8 +81,7 @@
                     "rate_speed_base": 3600,
                     "fluid_cap": 128000,
                     "fluid_rate": 128000,
-                    "upgrades": [4, 5],
-                    "hidden_slots": [3, 6, 8, 9, 14, 15, 16, 17, 18, 19]
+                    "upgrades": [3, 4]
                 }
             }
         },
@@ -68,12 +89,6 @@
             {
                 "condition": "q.block_state('utilitycraft:on') == true",
                 "components": {
-                    "minecraft:material_instances": {
-                        "*": {
-                            "texture": "fuel_mixer",
-                            "render_method": "alpha_test"
-                        }
-                    },
                     "minecraft:light_emission": 4
                 }
             },

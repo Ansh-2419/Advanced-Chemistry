@@ -1,4 +1,4 @@
-import { EnergyStorage, FluidStorage, Machine } from "../../DoriosCore/index.js";
+import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "../../DoriosCore/index.js";
 import { getSeparatorRecipes } from "../../config/recipes/machinery/separator.js";
 import {
     EMPTY_FLUID,
@@ -17,9 +17,17 @@ const FLUID_INPUT_CAPSULE = 3;
 const FLUID_DISPLAY_IN = 4;
 const FLUID_DISPLAY_OUT1 = 5;
 const FLUID_DISPLAY_OUT2 = 6;
+const IO_FLUID_SLOTS = [9, 14];
 
 const DEFAULT_ENERGY_COST = 6400;
 const DEFAULT_FLUID_CAP = 128000;
+
+registerIOInterface("utilitycraft:separator", {
+    liquids: {
+        slots: IO_FLUID_SLOTS,
+        modes: ["disabled", "input", "output"],
+    },
+});
 
 DoriosAPI.register.blockComponent("separator", {
     beforeOnPlayerPlace(event, { params: settings }) {

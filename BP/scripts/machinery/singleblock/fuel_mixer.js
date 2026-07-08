@@ -1,4 +1,4 @@
-import { EnergyStorage, FluidStorage, Machine } from "../../DoriosCore/index.js";
+import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "../../DoriosCore/index.js";
 import { getFuelMixerRecipes } from "../../config/recipes/machinery/fuel_mixer.js";
 import {
     EMPTY_FLUID,
@@ -13,16 +13,24 @@ import {
     tryUseFluidItemInSlot,
 } from "./machine_helpers.js";
 
-const FLUID_INPUT_SLOT_1 = 10;
-const FLUID_INPUT_SLOT_2 = 11;
-const FLUID_DISPLAY_SLOT_1 = 12;
-const FLUID_DISPLAY_SLOT_2 = 13;
-const FLUID_OUTPUT_SLOT = 14;
-const FLUID_DISPLAY_OUTPUT = 15;
+const FLUID_INPUT_SLOT_1 = 5;
+const FLUID_INPUT_SLOT_2 = 6;
+const FLUID_DISPLAY_SLOT_1 = 7;
+const FLUID_DISPLAY_SLOT_2 = 8;
+const FLUID_OUTPUT_SLOT = 9;
+const FLUID_DISPLAY_OUTPUT = 10;
+const IO_FLUID_SLOTS = [11, 16];
 
 const DEFAULT_ENERGY_COST = 4800;
 const DEFAULT_FLUID_CAP = 128000;
 const MANUAL_TRANSFER_LIMIT = 1000;
+
+registerIOInterface("utilitycraft:fuel_mixer", {
+    liquids: {
+        slots: IO_FLUID_SLOTS,
+        modes: ["disabled", "input", "output"],
+    },
+});
 
 DoriosAPI.register.blockComponent("fuel_mixer", {
     beforeOnPlayerPlace(event, { params: settings }) {

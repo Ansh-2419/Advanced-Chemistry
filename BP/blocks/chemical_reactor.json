@@ -24,10 +24,34 @@
             "utilitycraft:machine_recipes": {
                 "type": "chemical_reactor"
             },
-            "minecraft:geometry": "geometry.utilitycraft_block_2",
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "chemical_reactor",
+                    "texture": "chemical_reactor_north",
+                    "render_method": "alpha_test"
+                },
+                "north": {
+                    "texture": "chemical_reactor_north",
+                    "render_method": "alpha_test"
+                },
+                "south": {
+                    "texture": "chemical_reactor_south",
+                    "render_method": "alpha_test"
+                },
+                "east": {
+                    "texture": "chemical_reactor_east",
+                    "render_method": "alpha_test"
+                },
+                "west": {
+                    "texture": "chemical_reactor_west",
+                    "render_method": "alpha_test"
+                },
+                "up": {
+                    "texture": "chemical_reactor_up",
+                    "render_method": "alpha_test"
+                },
+                "down": {
+                    "texture": "chemical_reactor_down",
                     "render_method": "alpha_test"
                 }
             },
@@ -47,7 +71,8 @@
                 "entity": {
                     "type": "machine",
                     "input_type": "complex",
-                    "inventory_size": 20,
+                    "inventory_size": 22,
+                    "output_slot": 7,
                     "fluid": true
                 },
                 "machine": {
@@ -56,8 +81,7 @@
                     "rate_speed_base": 7200,
                     "fluid_cap": 128000,
                     "fluid_rate": 128000,
-                    "upgrades": [8, 9],
-                    "hidden_slots": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+                    "upgrades": [8, 9]
                 }
             }
         },
@@ -65,12 +89,6 @@
             {
                 "condition": "q.block_state('utilitycraft:on') == true",
                 "components": {
-                    "minecraft:material_instances": {
-                        "*": {
-                            "texture": "chemical_reactor",
-                            "render_method": "alpha_test"
-                        }
-                    },
                     "minecraft:light_emission": 6
                 }
             },

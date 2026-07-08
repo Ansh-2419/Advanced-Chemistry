@@ -22,21 +22,21 @@
       },
       {
         "fluid_bar_1@uc.fluid_bar": {
-          "$collection_index": 12,
+          "$collection_index": 7,
           "$has_bg": false,
           "offset": [-38, 0]
         }
       },
       {
         "fluid_bar_2@uc.fluid_bar": {
-          "$collection_index": 13,
+          "$collection_index": 8,
           "$has_bg": false,
           "offset": [-16, 0]
         }
       },
       {
         "fluid_bar_3@uc.fluid_bar": {
-          "$collection_index": 15,
+          "$collection_index": 10,
           "$has_bg": false,
           "offset": [44, 0]
         }
@@ -65,8 +65,34 @@
       },
       {
         "upgrades_tab@uc.upgrades_tab": {
-          "$upgrade_index_1": 4,
-          "$upgrade_index_2": 5
+          "$upgrade_index_1": 3,
+          "$upgrade_index_2": 4
+        }
+      },
+      {
+        "io_tab@uc.io_tab": {
+          "$io_fluids_modes_description": "IO Modes:\n\u00a7r- \u00a79Input\n\u00a7r- \u00a7cOutput",
+          "$has_item_io": false,
+          "$has_fluid_io": true,
+          "$io_items_default": false,
+          "$io_fluids_default": true,
+          "$io_top_texture": "textures/blocks/fluid_mixer_up",
+          "$io_left_texture": "textures/blocks/fluid_mixer_west",
+          "$io_front_texture": "textures/blocks/fluid_mixer_north",
+          "$io_right_texture": "textures/blocks/fluid_mixer_east",
+          "$io_bottom_texture": "textures/blocks/fluid_mixer_down",
+          "$io_back_texture": "textures/blocks/fluid_mixer_south",
+          "$io_fluid_top_index": 11,
+          "$io_fluid_left_index": 12,
+          "$io_fluid_front_index": 13,
+          "$io_fluid_right_index": 14,
+          "$io_fluid_bottom_index": 15,
+          "$io_fluid_back_index": 16
+        }
+      },
+      {
+        "info_tab@uc.info_tab": {
+          "$info_description": "ui.utilitycraft:info.fuel_mixer"
         }
       }
     ]

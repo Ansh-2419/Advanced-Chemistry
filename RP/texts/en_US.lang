@@ -53,3 +53,8 @@ tile.utilitycraft:endstone_gen_diamond.name=Diamond Endstone Generator
 tile.utilitycraft:endstone_gen_emerald.name=Emerald Endstone Generator
 tile.utilitycraft:endstone_gen_netherite.name=Netherite Endstone Generator
 item.utilitycraft:water_bucket_custom=Witch Water Bucket
+
+ui.utilitycraft:info.fermenter=Ferments organic inputs into fluids.\n\nSlots:\n- Inputs: seeds or sugar cane.\n- Fluid: produced liquid storage.\n- Output: optional residue.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.utilitycraft:info.fuel_mixer=Mixes stored fluids into fuel blends.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: produced fuel.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.utilitycraft:info.separator=Separates one fluid into two output fluids.\n\nStorage:\n- Input: source fluid.\n- Outputs: separated fluids.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.utilitycraft:info.chemical_reactor=Processes fluids into chemical products.\n\nStorage:\n- Input: reagent fluid.\n- Output: main product.\n- Byproduct: optional item or fluid.\n\nAccepted Upgrades:\n- Speed\n- Energy

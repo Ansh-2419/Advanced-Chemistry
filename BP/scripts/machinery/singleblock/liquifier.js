@@ -1,4 +1,4 @@
-import { EnergyStorage, FluidStorage, Machine } from "../../DoriosCore/index.js";
+import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "../../DoriosCore/index.js";
 import { getFermentationRecipes } from "../../config/recipes/machinery/fermenter.js";
 import {
     EMPTY_FLUID,
@@ -16,13 +16,26 @@ import {
 } from "./machine_helpers.js";
 
 const INPUT_SLOTS = [3, 4, 5, 6];
-const FLUID_SLOT = 10;
-const FLUID_DISPLAY_SLOT = 11;
-const RESIDUE_SLOT = 19;
+const FLUID_SLOT = 9;
+const FLUID_DISPLAY_SLOT = 10;
+const RESIDUE_SLOT = 11;
+const IO_ITEM_SLOTS = [12, 17];
+const IO_FLUID_SLOTS = [18, 23];
 
 const DEFAULT_ENERGY_COST = 2000;
 const DEFAULT_FLUID_CAP = 128000;
 const DEFAULT_FLUID_TYPE = "ethanol";
+
+registerIOInterface("utilitycraft:fermenter", {
+    items: {
+        slots: IO_ITEM_SLOTS,
+        modes: ["disabled", "input", "output"],
+    },
+    liquids: {
+        slots: IO_FLUID_SLOTS,
+        modes: ["disabled", "input", "output"],
+    },
+});
 
 DoriosAPI.register.blockComponent("fermenter", {
     beforeOnPlayerPlace(event, { params: settings }) {
