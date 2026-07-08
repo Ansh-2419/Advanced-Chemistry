@@ -1,5 +1,5 @@
 import { system } from "@minecraft/server";
-import { Energy, FluidManager } from "../DoriosCore/index.js";
+import { EnergyStorage as Energy, FluidStorage as FluidManager } from "../DoriosCore/index.js";
 
 const REGISTRATION_MARKER = "__insightInjectorsAscendantRegistered";
 const REGISTRATION_RETRY_TICKS = 20;
@@ -110,9 +110,9 @@ function getFluidLines(context, machineEntity) {
     const lines = [];
 
     try {
-        for (let i = 0; ; i++) {
-            const fm = FluidManager.findType(machineEntity, i);
-            if (!fm) break;
+        const count = FluidManager.getMaxLiquids(machineEntity);
+        for (let i = 0; i < count; i++) {
+            const fm = new FluidManager(machineEntity, i);
 
             const stored = fm.get();
             const cap = fm.getCap();

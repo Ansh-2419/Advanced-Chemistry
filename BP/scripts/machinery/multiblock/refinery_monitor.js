@@ -1,12 +1,11 @@
 import { ItemStack } from "@minecraft/server";
 import {
-    Energy,
-    FluidManager,
+    EnergyStorage as Energy,
+    FluidStorage as FluidManager,
     Multiblock,
-    MultiblockMachine,
-    tickGate,
-    formatFluidDisplayName
+    MultiblockMachine
 } from "../../DoriosCore/index.js";
+import { tickGate, formatFluidDisplayName } from "./multiblock_helpers.js";
 import {
     refreshFluidInputNetworks,
     pullFluidThroughInputValves,

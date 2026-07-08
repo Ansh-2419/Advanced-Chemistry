@@ -1,277 +1,263 @@
-import { world, ItemStack } from "@minecraft/server";
-import {
-    Machine,
-    EnergyStorage,
-    FluidStorage,
-} from "../../DoriosCore/index.js";
+import { EnergyStorage, FluidStorage, Machine } from "../../DoriosCore/index.js";
 import { getChemicalReactorRecipes } from "../../config/recipes/machinery/chemical_reactor.js";
+import {
+    EMPTY_FLUID,
+    addItemToSlot,
+    chargeOrCraft,
+    displayMachine,
+    formatFluidType,
+    getMachineEnergyCost,
+    getMachineFluidCap,
+    getTank,
+    setupTanks,
+    stopMachine,
+    tryUseFluidItemInSlot,
+} from "./machine_helpers.js";
 
-// ── Slot indices ──────────────────────────────────────────────────────────────
-const ENERGY_DISPLAY_SLOT     = 0;
-const LABEL_SLOT              = 1;
-const PROGRESS_SLOT           = 2;
-const FLUID_INPUT_CAPSULE     = 3;  // blocked — IO system only
-const FLUID_DISPLAY_IN        = 4;
-const FLUID_DISPLAY_OUT       = 5;
-const FLUID_DISPLAY_BYPRODUCT = 6;  // fluid byproduct tank display
-const BYPRODUCT_SLOT          = 7;  // item byproduct — player collects
-const UPGRADE_SLOT_1          = 8;
-const UPGRADE_SLOT_2          = 9;
-const UPGRADE_SLOT_3          = 10;
+const FLUID_INPUT_CAPSULE = 3;
+const FLUID_DISPLAY_IN = 4;
+const FLUID_DISPLAY_OUT = 5;
+const FLUID_DISPLAY_BYPRODUCT = 6;
+const BYPRODUCT_SLOT = 7;
 
-const FLUID_CAP_DEFAULT = 128_000;
-
-// ─────────────────────────────────────────────────────────────────────────────
+const DEFAULT_ENERGY_COST = 7200;
+const DEFAULT_FLUID_CAP = 128000;
 
 DoriosAPI.register.blockComponent("chemical_reactor", {
-    beforeOnPlayerPlace(e, { params: settings }) {
-        Machine.spawnEntity(e, settings, (entity) => {
-            // ignoreTick: true so the placement-time Machine doesn't bail on scheduler
-            const machine = new Machine(e.block, { ...settings, ignoreTick: true });
-            if (!machine?.entity) return;
+    beforeOnPlayerPlace(event, { params: settings }) {
+        Machine.spawnEntity(event, settings, (entity) => {
+            const machine = new Machine(event.block, { ...settings, ignoreTick: true });
+            if (!machine.valid) return;
 
-            const fluidCap = settings.machine.fluid_cap ?? FLUID_CAP_DEFAULT;
-            machine.setEnergyCost(settings.machine.energy_cost ?? 7200);
-            machine.displayProgress();
-            machine.displayEnergy();
-
-            // Three independent tanks: 0 = input, 1 = output, 2 = fluid byproduct
-            const tankIn        = FluidStorage.initializeSingle(entity);
-            const tankOut       = new FluidStorage(entity, 1);
-            const tankByproduct = new FluidStorage(entity, 2);
-            tankIn.setCap(fluidCap);
-            tankOut.setCap(fluidCap);
-            tankByproduct.setCap(fluidCap);
-            tankIn.display(FLUID_DISPLAY_IN);
-            tankOut.display(FLUID_DISPLAY_OUT);
-            tankByproduct.display(FLUID_DISPLAY_BYPRODUCT);
-
+            const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
+            machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
             machine.blockSlots([
-                FLUID_INPUT_CAPSULE,
                 FLUID_DISPLAY_IN,
                 FLUID_DISPLAY_OUT,
                 FLUID_DISPLAY_BYPRODUCT,
             ]);
+            setupTanks(entity, fluidCap, [
+                FLUID_DISPLAY_IN,
+                FLUID_DISPLAY_OUT,
+                FLUID_DISPLAY_BYPRODUCT,
+            ]);
+            displayMachine(machine);
         });
     },
 
-    onTick(e, { params: settings }) {
+    onTick({ block }, { params: settings }) {
         if (!globalThis.worldLoaded) return;
 
-        const { block } = e;
         const machine = new Machine(block, settings);
         if (!machine.valid) return;
 
-        const fluidCap = settings.machine.fluid_cap ?? FLUID_CAP_DEFAULT;
-        const entity   = machine.entity;
+        const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
+        const tankIn = getTank(machine.entity, 0, fluidCap);
+        const tankOut = getTank(machine.entity, 1, fluidCap);
+        const tankByproduct = getTank(machine.entity, 2, fluidCap);
+        const displays = [
+            { tank: tankIn, slot: FLUID_DISPLAY_IN },
+            { tank: tankOut, slot: FLUID_DISPLAY_OUT },
+            { tank: tankByproduct, slot: FLUID_DISPLAY_BYPRODUCT },
+        ];
 
-        // Ensure caps survive world reload
-        const tankIn        = new FluidStorage(entity, 0);
-        const tankOut       = new FluidStorage(entity, 1);
-        const tankByproduct = new FluidStorage(entity, 2);
-        if (tankIn.getCap()        <= 0) tankIn.setCap(fluidCap);
-        if (tankOut.getCap()       <= 0) tankOut.setCap(fluidCap);
-        if (tankByproduct.getCap() <= 0) tankByproduct.setCap(fluidCap);
-
-        // ── Fluid IO (IO Interface system) ────────────────────────────────
-        // input face → tankIn; output faces → tankOut and tankByproduct
-        machine.processIO({
-            liquids: {
-                input:  tankIn,
-                output: tankOut,
-            },
-        });
-        // Push byproduct fluid via facing direction (output only)
-        tankByproduct.transferFluids(block, tankByproduct.get());
-
-        // ── Display ───────────────────────────────────────────────────────
         machine.blockSlots([
-            FLUID_INPUT_CAPSULE,
             FLUID_DISPLAY_IN,
             FLUID_DISPLAY_OUT,
             FLUID_DISPLAY_BYPRODUCT,
         ]);
-        tankIn.display(FLUID_DISPLAY_IN);
-        tankOut.display(FLUID_DISPLAY_OUT);
-        tankByproduct.display(FLUID_DISPLAY_BYPRODUCT);
-        machine.displayEnergy();
-        machine.displayProgress();
-
-        // ── Recipe matching ───────────────────────────────────────────────
-        const fail = msg => {
-            machine.showWarning(msg);
-            machine.off();
-        };
+        tryUseFluidItemInSlot(machine.container, FLUID_INPUT_CAPSULE, machine.entity);
+        machine.processIO({
+            liquids: {
+                input: tankIn,
+                output: tankOut,
+            },
+        });
+        tankByproduct.transferFluids(block, tankByproduct.get());
 
         const recipes = getChemicalReactorRecipes();
-        if (!recipes.length) { fail("No Recipes"); return; }
+        if (recipes.length === 0) return fail(machine, displays, "No Recipes");
 
-        const inType = tankIn.getType();
-        if (!inType || inType === "empty") { fail("No Input Fluid"); return; }
+        const inputType = tankIn.getType();
+        if (inputType === EMPTY_FLUID) return fail(machine, displays, "No Input Fluid");
 
-        const recipe = recipes.find(r => r.input.type === inType) ?? null;
-        if (!recipe) { fail("Wrong Fluid"); return; }
+        const recipe = recipes.find(entry => entry.input.type === inputType);
+        if (!recipe) return fail(machine, displays, "Wrong Fluid");
 
-        const hasFluidOutput = recipe.output.amount > 0;
+        const byproducts = getByproducts(recipe);
+        const validation = validateRecipe(machine, tankIn, tankOut, tankByproduct, recipe, byproducts);
+        if (!validation.ok) return fail(machine, displays, validation.reason);
 
-        const byproducts      = [].concat(recipe.byproduct ?? []).filter(Boolean);
-        const itemByproducts  = byproducts.filter(bp => bp.item);
-        const fluidByproducts = byproducts.filter(bp => bp.fluid?.type && bp.fluid?.amount > 0);
-        const hasFluidByproduct = fluidByproducts.length > 0;
+        const craftLimit = getCraftLimit(machine, tankIn, tankOut, tankByproduct, recipe, byproducts);
+        if (craftLimit.max <= 0) return fail(machine, displays, craftLimit.reason);
 
-        if (hasFluidOutput) {
-            const outType = tankOut.getType();
-            if (outType !== "empty" && outType !== recipe.output.type) { fail("Output Full"); return; }
-            if (tankOut.getFreeSpace() <= 0) { fail("Output Full"); return; }
+        const energyCost = getMachineEnergyCost(settings, recipe, DEFAULT_ENERGY_COST);
+        if (machine.energy.get() <= 0 && machine.getProgress() < energyCost) {
+            return fail(machine, displays, "No Energy", { resetProgress: false });
         }
 
-        if (hasFluidByproduct) {
-            for (const bp of fluidByproducts) {
-                const bpType = tankByproduct.getType();
-                if (bpType !== "empty" && bpType !== bp.fluid.type) { fail("Byproduct Tank Full"); return; }
-                if (tankByproduct.getFreeSpace() < bp.fluid.amount)  { fail("Byproduct Tank Full"); return; }
+        chargeOrCraft(machine, energyCost, craftLimit.max, (runs) => {
+            tankIn.consume(recipe.input.amount * runs);
+            if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
+
+            if (hasFluidOutput(recipe)) {
+                if (tankOut.getType() === EMPTY_FLUID) tankOut.setType(recipe.output.type);
+                tankOut.add(recipe.output.amount * runs);
             }
-        }
 
-        if (tankIn.get() < recipe.input.amount) { fail("Not Enough Input"); return; }
+            processByproducts(machine, tankByproduct, byproducts, runs);
+        });
 
-        const energyCost = recipe.energyCost ?? settings.machine.energy_cost ?? 7200;
-        machine.setEnergyCost(energyCost);
-
-        if (machine.energy.get() <= 0) { fail("No Energy"); return; }
-
-        // ── Process ───────────────────────────────────────────────────────
-        const inputLimited = Math.floor(tankIn.get() / recipe.input.amount);
-
-        const outputLimited = hasFluidOutput
-            ? Math.floor(tankOut.getFreeSpace() / Math.ceil(recipe.output.amount))
-            : Infinity;
-
-        const byproductLimited = hasFluidByproduct
-            ? Math.min(...fluidByproducts.map(bp =>
-                Math.floor(tankByproduct.getFreeSpace() / Math.ceil(bp.fluid.amount))
-            ))
-            : Infinity;
-
-        const crafts = Math.min(inputLimited, outputLimited, byproductLimited);
-        if (crafts <= 0) {
-            fail(hasFluidOutput ? "Tank Full" : hasFluidByproduct ? "Byproduct Tank Full" : "Not Enough Input");
-            return;
-        }
-
-        const progress = machine.getProgress();
-        if (progress >= energyCost) {
-            const runs = Math.min(crafts, Math.floor(progress / energyCost));
-            if (runs > 0) {
-                tankIn.consume(recipe.input.amount * runs);
-
-                if (hasFluidOutput) {
-                    if (tankOut.getType() === "empty") tankOut.setType(recipe.output.type);
-                    tankOut.add(Math.floor(recipe.output.amount * runs));
-                }
-
-                for (let i = 0; i < runs; i++) {
-                    for (const bp of itemByproducts) {
-                        if (Math.random() < (bp.chance ?? 1.0)) {
-                            _addByproduct(entity, BYPRODUCT_SLOT, bp.item, bp.count ?? 1);
-                        }
-                    }
-                    for (const bp of fluidByproducts) {
-                        if (Math.random() < (bp.chance ?? 1.0)) {
-                            if (tankByproduct.getType() === "empty") tankByproduct.setType(bp.fluid.type);
-                            tankByproduct.add(Math.floor(bp.fluid.amount));
-                        }
-                    }
-                }
-
-                machine.addProgress(-(runs * energyCost));
-            }
-        } else {
-            const consumption = machine.boosts?.consumption ?? 1;
-            const needed   = energyCost - progress;
-            const spendable = Math.min(machine.energy.get(), machine.rate, needed * consumption);
-            if (spendable > 0) {
-                machine.energy.consume(spendable);
-                machine.addProgress(spendable / Math.max(consumption, Number.EPSILON));
-            }
-        }
-
-        _updateHud(machine, recipe, tankIn, tankOut, tankByproduct, crafts);
+        updateHud(machine, recipe, tankIn, tankOut, tankByproduct, byproducts, craftLimit.max);
+        displayMachine(machine, displays);
         machine.on();
     },
 
-    onPlayerBreak(e) {
-        Machine.onDestroy(e);
+    onPlayerBreak(event) {
+        Machine.onDestroy(event);
     },
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Helpers
-// ─────────────────────────────────────────────────────────────────────────────
+function fail(machine, displays, message, options) {
+    stopMachine(machine, message, options);
+    displayMachine(machine, displays);
+}
 
-function _addByproduct(entity, slot, itemId, count) {
-    try {
-        const container = entity.getComponent("inventory")?.container;
-        if (!container) return;
-        const existing = container.getItem(slot);
-        if (existing && existing.typeId === itemId && existing.amount < existing.maxAmount) {
-            existing.amount = Math.min(existing.maxAmount, existing.amount + count);
-            container.setItem(slot, existing);
-        } else if (!existing) {
-            container.setItem(slot, new ItemStack(itemId, count));
+function getByproducts(recipe) {
+    const list = [].concat(recipe.byproduct ?? []).filter(Boolean);
+    return {
+        items: list.filter(byproduct => byproduct.item),
+        fluids: list.filter(byproduct => byproduct.fluid?.type && byproduct.fluid?.amount > 0),
+    };
+}
+
+function hasFluidOutput(recipe) {
+    return (recipe.output?.amount ?? 0) > 0;
+}
+
+function validateRecipe(machine, tankIn, tankOut, tankByproduct, recipe, byproducts) {
+    if (tankIn.get() < recipe.input.amount) return { ok: false, reason: "Not Enough Input" };
+
+    if (hasFluidOutput(recipe)) {
+        const outputType = tankOut.getType();
+        if (outputType !== EMPTY_FLUID && outputType !== recipe.output.type) {
+            return { ok: false, reason: "Output Full" };
         }
-    } catch {}
-}
-
-function _fmt(type) {
-    if (!type || type === "empty") return "Empty";
-    return type.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
-}
-
-function _updateHud(machine, recipe, tankIn, tankOut, tankByproduct, queued) {
-    const hasFluidOutput = recipe.output.amount > 0;
-    const byproducts     = [].concat(recipe.byproduct ?? []).filter(Boolean);
-    const itemBP         = byproducts.filter(bp => bp.item);
-    const fluidBP        = byproducts.filter(bp => bp.fluid?.type && bp.fluid?.amount > 0);
-
-    const lore = [
-        `§bInput:  §f${_fmt(recipe.input.type)} §7${FluidStorage.formatFluid(tankIn.get())} / ${FluidStorage.formatFluid(tankIn.getCap())}`,
-    ];
-    if (hasFluidOutput) {
-        lore.push(`§aOutput: §f${_fmt(recipe.output.type)} §7${FluidStorage.formatFluid(tankOut.get())} / ${FluidStorage.formatFluid(tankOut.getCap())}`);
+        if (tankOut.getFreeSpace() < recipe.output.amount) {
+            return { ok: false, reason: "Output Full" };
+        }
     }
-    lore.push(
+
+    const fluidByproductType = getSingleFluidByproductType(byproducts.fluids);
+    if (fluidByproductType === false) return { ok: false, reason: "Byproduct Conflict" };
+    if (fluidByproductType) {
+        const tankType = tankByproduct.getType();
+        if (tankType !== EMPTY_FLUID && tankType !== fluidByproductType) {
+            return { ok: false, reason: "Byproduct Tank Full" };
+        }
+    }
+
+    const itemValidation = validateItemByproductSlot(machine, byproducts.items);
+    if (!itemValidation.ok) return itemValidation;
+
+    return { ok: true };
+}
+
+function getCraftLimit(machine, tankIn, tankOut, tankByproduct, recipe, byproducts) {
+    const limits = [Math.floor(tankIn.get() / recipe.input.amount)];
+
+    if (hasFluidOutput(recipe)) {
+        limits.push(Math.floor(tankOut.getFreeSpace() / recipe.output.amount));
+    }
+
+    const fluidByproductAmount = byproducts.fluids.reduce((total, byproduct) => {
+        return total + Math.max(1, byproduct.fluid.amount);
+    }, 0);
+    if (fluidByproductAmount > 0) {
+        limits.push(Math.floor(tankByproduct.getFreeSpace() / fluidByproductAmount));
+    }
+
+    const possibleItemAmount = byproducts.items.reduce((total, byproduct) => {
+        return total + Math.max(1, byproduct.count ?? 1);
+    }, 0);
+    if (possibleItemAmount > 0) {
+        limits.push(Math.floor(getByproductItemSpace(machine) / possibleItemAmount));
+    }
+
+    const max = Math.min(...limits);
+    if (max > 0) return { max };
+    if (limits[0] <= 0) return { max: 0, reason: "Not Enough Input" };
+    return { max: 0, reason: "Tank Full" };
+}
+
+function getSingleFluidByproductType(fluidByproducts) {
+    if (fluidByproducts.length === 0) return undefined;
+
+    const types = new Set(fluidByproducts.map(byproduct => byproduct.fluid.type));
+    if (types.size > 1) return false;
+
+    return [...types][0];
+}
+
+function validateItemByproductSlot(machine, itemByproducts) {
+    if (itemByproducts.length === 0) return { ok: true };
+
+    const types = new Set(itemByproducts.map(byproduct => byproduct.item));
+    if (types.size > 1) return { ok: false, reason: "Byproduct Conflict" };
+
+    const itemType = [...types][0];
+    const slot = machine.container.getItem(BYPRODUCT_SLOT);
+    if (slot && slot.typeId !== itemType) return { ok: false, reason: "Byproduct Slot Busy" };
+
+    return { ok: true };
+}
+
+function getByproductItemSpace(machine) {
+    const slot = machine.container.getItem(BYPRODUCT_SLOT);
+    if (!slot) return 64;
+    return Math.max(0, (slot.maxAmount ?? 64) - slot.amount);
+}
+
+function processByproducts(machine, tankByproduct, byproducts, runs) {
+    for (let i = 0; i < runs; i++) {
+        for (const byproduct of byproducts.items) {
+            if (Math.random() <= (byproduct.chance ?? 1)) {
+                addItemToSlot(machine.container, BYPRODUCT_SLOT, byproduct.item, byproduct.count ?? 1);
+            }
+        }
+
+        for (const byproduct of byproducts.fluids) {
+            if (Math.random() > (byproduct.chance ?? 1)) continue;
+
+            if (tankByproduct.getType() === EMPTY_FLUID) tankByproduct.setType(byproduct.fluid.type);
+            if (tankByproduct.getType() === byproduct.fluid.type) {
+                tankByproduct.add(byproduct.fluid.amount);
+            }
+        }
+    }
+}
+
+function updateHud(machine, recipe, tankIn, tankOut, tankByproduct, byproducts, queued) {
+    const lines = [
+        `§bInput:  §f${formatFluidType(recipe.input.type)} §7${FluidStorage.formatFluid(tankIn.get())} / ${FluidStorage.formatFluid(tankIn.getCap())}`,
+    ];
+
+    if (hasFluidOutput(recipe)) {
+        lines.push(`§aOutput: §f${formatFluidType(recipe.output.type)} §7${FluidStorage.formatFluid(tankOut.get())} / ${FluidStorage.formatFluid(tankOut.getCap())}`);
+    }
+
+    lines.push(
         `§cCost:   §f${EnergyStorage.formatEnergyToText(machine.getEnergyCost())}`,
         `§7Queued: §f${queued}`,
     );
-    for (const bp of itemBP) {
-        lore.push(`§dByproduct: §f${bp.item} §7(${Math.round((bp.chance ?? 1) * 100)}%)`);
-    }
-    for (const bp of fluidBP) {
-        lore.push(`§dByproduct: §f${_fmt(bp.fluid.type)} §7${FluidStorage.formatFluid(tankByproduct.get())} / ${FluidStorage.formatFluid(tankByproduct.getCap())} §7(${Math.round((bp.chance ?? 1) * 100)}%)`);
+
+    for (const byproduct of byproducts.items) {
+        lines.push(`§dByproduct: §f${byproduct.item} §7(${Math.round((byproduct.chance ?? 1) * 100)}%)`);
     }
 
-    machine.setLabel(["§6Chemical Reactor", ...lore]);
+    for (const byproduct of byproducts.fluids) {
+        lines.push(`§dByproduct: §f${formatFluidType(byproduct.fluid.type)} §7${FluidStorage.formatFluid(tankByproduct.get())} / ${FluidStorage.formatFluid(tankByproduct.getCap())} §7(${Math.round((byproduct.chance ?? 1) * 100)}%)`);
+    }
+
+    machine.setLabel(["§6Chemical Reactor", ...lines]);
 }
-
-// ── Pipe-cache invalidation ───────────────────────────────────────────────────
-function _invalidateNeighbourCaches(block) {
-    const { x, y, z } = block.location;
-    const dim = block.dimension;
-    for (const o of [
-        { x: 1, y: 0, z: 0 }, { x: -1, y: 0, z: 0 },
-        { x: 0, y: 1, z: 0 }, { x: 0, y: -1, z: 0 },
-        { x: 0, y: 0, z: 1 }, { x: 0, y: 0, z: -1 },
-    ]) {
-        const nb  = dim.getBlock({ x: x + o.x, y: y + o.y, z: z + o.z });
-        const ent = nb && dim.getEntitiesAtBlockLocation(nb.location)?.[0];
-        if (ent) try { ent.setDynamicProperty("dorios:fluid_nodes", undefined); } catch {}
-    }
-}
-
-world.afterEvents.playerPlaceBlock.subscribe(({ block }) => {
-    if (block.hasTag("dorios:fluid")) _invalidateNeighbourCaches(block);
-});
-world.afterEvents.playerBreakBlock.subscribe(({ block }) => {
-    if (block.hasTag("dorios:fluid")) _invalidateNeighbourCaches(block);
-});
