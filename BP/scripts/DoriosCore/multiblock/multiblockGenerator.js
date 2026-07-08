@@ -1,7 +1,7 @@
 import { ItemStack, system } from "@minecraft/server";
 import { Generator } from "../machinery/generator.js";
-import { Energy as EnergyStorage } from "../machinery/energyStorage.js";
-import { FluidManager as FluidStorage } from "../machinery/fluidStorage.js";
+import { EnergyStorage } from "../machinery/energyStorage.js";
+import { FluidStorage } from "../machinery/fluidStorage.js";
 import { ActivationManager } from "./activationManager.js";
 import { DeactivationManager } from "./deactivationManager.js";
 import { StructureDetector } from "./structureDetection.js";
