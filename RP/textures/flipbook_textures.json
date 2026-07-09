@@ -1,0 +1,17 @@
+[
+    {
+        "flipbook_texture": "textures/blocks/chemical_reactor_on",
+        "atlas_tile": "chemical_reactor_on",
+        "ticks_per_frame": 5
+    },
+    {
+        "flipbook_texture": "textures/blocks/fermentor_on",
+        "atlas_tile": "fermentor_on",
+        "ticks_per_frame": 5
+    },
+    {
+        "flipbook_texture": "textures/blocks/separator_on",
+        "atlas_tile": "separator_on",
+        "ticks_per_frame": 5
+    }
+]

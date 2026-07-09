@@ -13,6 +13,9 @@
         "chemical_reactor_north": {
             "textures": "textures/blocks/chemical_reactor_north"
         },
+        "chemical_reactor_on": {
+            "textures": "textures/blocks/chemical_reactor_on"
+        },
         "chemical_reactor_south": {
             "textures": "textures/blocks/chemical_reactor_south"
         },
@@ -39,6 +42,9 @@
         },
         "fermentor_north": {
             "textures": "textures/blocks/fermentor_north"
+        },
+        "fermentor_on": {
+            "textures": "textures/blocks/fermentor_on"
         },
         "fermentor_south": {
             "textures": "textures/blocks/fermentor_south"
@@ -118,6 +124,9 @@
         },
         "separator_north": {
             "textures": "textures/blocks/separator_north"
+        },
+        "separator_on": {
+            "textures": "textures/blocks/separator_on"
         },
         "separator_south": {
             "textures": "textures/blocks/separator_south"
