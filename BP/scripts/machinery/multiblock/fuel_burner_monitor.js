@@ -1,12 +1,12 @@
 import { ItemStack } from '@minecraft/server';
 import {
-    Energy,
-    FluidManager,
+    EnergyStorage as Energy,
+    FluidStorage as FluidManager,
     Multiblock,
     MultiblockGenerator,
-    tickGate,
 } from '../../DoriosCore/index.js';
 import { BLOCKED_SLOT_ITEM_ID } from '../../DoriosCore/machinery/constants.js';
+import { tickGate } from './multiblock_helpers.js';
 import {
     refreshFluidInputNetworks,
     pullFluidThroughInputValves,
@@ -21,6 +21,7 @@ const DE_PER_MB               = 8_000;
 const BURN_RATE_MB_PER_TICK   = 20;
 const ENERGY_CAP              = 2_000_000;
 const MAX_PULL_PER_PORT       = 2_000;   // mB pulled per fluid valve per tick window
+const THROTTLE_THRESHOLD      = 0.9;
 
 // ── Display slot indices ──────────────────────────────────────────────────────
 

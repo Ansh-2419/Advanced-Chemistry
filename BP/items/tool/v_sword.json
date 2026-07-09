@@ -1,0 +1,41 @@
+{
+    "format_version": "1.26.30",
+    "minecraft:item": {
+        "description": {
+            "identifier": "utilitycraft:voltanium_sword",
+            "menu_category": {
+                "category": "equipment",
+                "group": "minecraft:itemGroup.name.sword"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            // Give the item the correct positioning in third person
+            "minecraft:hand_equipped": true,
+            "minecraft:durability": {
+                "max_durability": 4600
+            },
+            // How much additional damage this weapon will deal to entities
+            "minecraft:damage": 30,
+            // We also let it be enchantable in the "sword" slot
+            "minecraft:enchantable": {
+                "value": 10,
+                "slot": "sword"
+            },
+            // This texture is used for both inventory and the hand model
+            "minecraft:icon": "v_sword",
+            "minecraft:display_name": {
+                "value": "Voltanium Sword"
+            },
+            // Allow the sword to be repaired with sticks
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": ["minecraft:stick"],
+                        "repair_amount": "context.other->q.remaining_durability + 0.05 * context.other->q.max_durability"
+                    }
+                ]
+            }
+        }
+    }
+}

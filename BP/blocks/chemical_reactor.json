@@ -3,52 +3,55 @@
     "minecraft:block": {
         "description": {
             "identifier": "utilitycraft:chemical_reactor",
-            "menu_category": { "category": "construction" },
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": ["minecraft:cardinal_direction"],
+                    "y_rotation_offset": 180
+                }
+            },
             "states": {
-                "utilitycraft:on": [false, true],
-                "utilitycraft:axis": [
-                    "east",
-                    "west",
-                    "north",
-                    "south",
-                    "up",
-                    "down"
-                ],
-                "utilitycraft:rotation": [0, 1, 2, 3]
+                "utilitycraft:on": [false, true]
             }
         },
         "components": {
+            "utilitycraft:special_container": {
+                "Fluid Manual Input": 3,
+                "Byproduct Output": 7
+            },
             "utilitycraft:machine_recipes": {
                 "type": "chemical_reactor"
             },
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "chemical_reactor_off",
+                    "texture": "chemical_reactor_north",
                     "render_method": "alpha_test"
                 },
                 "north": {
-                    "texture": "chemical_reactor_off",
+                    "texture": "chemical_reactor_north",
                     "render_method": "alpha_test"
                 },
                 "south": {
-                    "texture": "side",
+                    "texture": "chemical_reactor_south",
                     "render_method": "alpha_test"
                 },
                 "east": {
-                    "texture": "side",
+                    "texture": "chemical_reactor_east",
                     "render_method": "alpha_test"
                 },
                 "west": {
-                    "texture": "side",
+                    "texture": "chemical_reactor_west",
                     "render_method": "alpha_test"
                 },
                 "up": {
-                    "texture": "up",
+                    "texture": "chemical_reactor_up",
                     "render_method": "alpha_test"
                 },
                 "down": {
-                    "texture": "down",
+                    "texture": "chemical_reactor_down",
                     "render_method": "alpha_test"
                 }
             },
@@ -65,11 +68,11 @@
             "tag:dorios:item": {},
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "utilitycraft:chemical_reactor": {
-                "rotation": "facing",
                 "entity": {
                     "type": "machine",
                     "input_type": "complex",
-                    "inventory_size": 20,
+                    "inventory_size": 22,
+                    "output_slot": 7,
                     "fluid": true
                 },
                 "machine": {
@@ -78,52 +81,19 @@
                     "rate_speed_base": 7200,
                     "fluid_cap": 128000,
                     "fluid_rate": 128000,
-                    "upgrades": [4, 5, 6],
-                    "hidden_slots": [
-                        3, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19
-                    ]
+                    "upgrades": [8, 9]
                 }
             }
         },
         "permutations": [
             {
-                "condition": "q.block_state('utilitycraft:on') == 1",
+                "condition": "q.block_state('utilitycraft:on') == true",
                 "components": {
-                    "minecraft:material_instances": {
-                        "*": {
-                            "texture": "chemical_reactor_off",
-                            "render_method": "alpha_test"
-                        },
-                        "north": {
-                            "texture": "chemical_reactor_off",
-                            "render_method": "alpha_test"
-                        },
-                        "south": {
-                            "texture": "side",
-                            "render_method": "alpha_test"
-                        },
-                        "east": {
-                            "texture": "side",
-                            "render_method": "alpha_test"
-                        },
-                        "west": {
-                            "texture": "side",
-                            "render_method": "alpha_test"
-                        },
-                        "up": {
-                            "texture": "up",
-                            "render_method": "alpha_test"
-                        },
-                        "down": {
-                            "texture": "down",
-                            "render_method": "alpha_test"
-                        }
-                    },
                     "minecraft:light_emission": 6
                 }
             },
             {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'north' ",
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
                 "components": {
                     "minecraft:transformation": {
                         "rotation": [0, 0, 0]
@@ -131,7 +101,7 @@
                 }
             },
             {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'south' ",
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
                 "components": {
                     "minecraft:transformation": {
                         "rotation": [0, 180, 0]
@@ -139,7 +109,7 @@
                 }
             },
             {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'east' ",
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
                 "components": {
                     "minecraft:transformation": {
                         "rotation": [0, -90, 0]
@@ -147,7 +117,7 @@
                 }
             },
             {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'west' ",
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
                 "components": {
                     "minecraft:transformation": {
                         "rotation": [0, 90, 0]

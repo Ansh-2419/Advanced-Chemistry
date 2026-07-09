@@ -17,12 +17,11 @@
 // ════════════════════════════════════════════════════════════════════════════
 
 import {
-    FluidManager,
+    FluidStorage as FluidManager,
     Multiblock,
     MultiblockMachine,
-    tickGate,
-    formatFluidDisplayName,
 } from '../../DoriosCore/index.js';
+import { tickGate, formatFluidDisplayName } from './multiblock_helpers.js';
 import {
     pushFluidThroughOutputValves,
     pullFluidThroughInputValves,

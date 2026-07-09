@@ -1,0 +1,47 @@
+{
+  "format_version": "1.21.110",
+  "minecraft:item": {
+    "description": {
+      "identifier": "utilitycraft:voltanium_helmet",
+      "menu_category": {
+        "category": "equipment",
+        "group": "minecraft:itemGroup.name.helmet"
+      }
+    },
+    "components": {
+      "minecraft:icon": "utilitycraft:voltanium_helmet",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "slot": "armor_head",
+        "value": 25
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.head",
+        "protection": 4
+      },
+      "minecraft:durability": {
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        },
+        "max_durability": 4221
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "utilitycraft:voltanium_ingot"
+            ],
+            "repair_amount": "q.max_durability * 0.25"
+          }
+        ]
+      },
+      "minecraft:tags": {
+        "tags": [
+          "minecraft:is_armor",
+          "minecraft:trimmable_armors"
+        ]
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
  *   OUTPUT valves → machine pushes fluid TO adjacent fluid containers each tick
  */
 
-import { FluidManager, collectFluidNetworkNodes } from "../../DoriosCore/index.js";
+import { FluidStorage as FluidManager } from "../../DoriosCore/index.js";
 import { ActionFormData } from "@minecraft/server-ui";
 import {
     VALVE_IDS,
@@ -16,6 +16,8 @@ import {
     FACE_OFFSETS,
     getPortBlocks
 } from "./valve_shared.js";
+
+const MAX_NETWORK_NODES = 128;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Block component
@@ -69,6 +71,40 @@ export function refreshFluidInputNetworks(entity, nodesPropPfx = "valve:fnodes_"
         } catch { /* chunk not loaded */ }
     }
     entity.setDynamicProperty(nodesPropPfx + "count", ports.length);
+}
+
+function collectFluidNetworkNodes(startBlock) {
+    const dim = startBlock.dimension;
+    const visited = new Set();
+    const nodes = [];
+    const queue = FACE_OFFSETS
+        .map(off => ({
+            x: startBlock.location.x + off.x,
+            y: startBlock.location.y + off.y,
+            z: startBlock.location.z + off.z,
+        }));
+
+    while (queue.length && nodes.length < MAX_NETWORK_NODES) {
+        const loc = queue.shift();
+        const key = `${loc.x},${loc.y},${loc.z}`;
+        if (visited.has(key)) continue;
+        visited.add(key);
+
+        const block = dim.getBlock(loc);
+        if (!block?.hasTag?.("dorios:fluid")) continue;
+
+        nodes.push({ x: loc.x, y: loc.y, z: loc.z });
+
+        for (const off of FACE_OFFSETS) {
+            queue.push({
+                x: loc.x + off.x,
+                y: loc.y + off.y,
+                z: loc.z + off.z,
+            });
+        }
+    }
+
+    return nodes;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
