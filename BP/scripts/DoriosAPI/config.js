@@ -31,13 +31,13 @@
  * Example:
  * ```js
  * const addonData = {
- *     name: "UtilityCraft: Heavy Machinery",
- *     author: "Rudransh",
- *     identifier: "utilitycraft_heavy_machinery",
- *     version: "0.3.0",
+ *     name: "UtilityCraft: Advanced Chemistry",
+ *     author: "Dorios Studios",
+ *     identifier: "uc_advanced_chemistry",
+ *     version: "0.1.0",
  *     dependencies: {
  *         "utilitycraft": {
- *             version: "3.3.5",  // Required version
+ *             version: "3.5.0",  // Required version
  *             name: "UtilityCraft",  // Custom name to display
  *             warning: "Please update to the latest version."  // Custom warning message
  *         }
@@ -46,15 +46,15 @@
  * ```
  */
 export const addonData = {
-    name: "Advanced Chemistry",
-    author: "Rudransh",
-    identifier: "utilitycraft",
+    name: "UtilityCraft: Advanced Chemistry",
+    author: "Dorios Studios",
+    identifier: "uc_advanced_chemistry",
     version: "0.1.0",
     dependencies: {
         "utilitycraft": {
             name: "UtilityCraft",
-            version: "3.3.6",
-            warning: "UtilityCraft: Advanced Chemistry is an expansion for UtilityCraft, so it requires UtilityCraft to be installed. Machines and features from UtilityCraft won't work without it."
+            version: "3.5.0",
+            warning: "Advanced Chemistry requires UtilityCraft 3.5.0 or newer. Machines and features from UtilityCraft won't work without it."
         }
     }
 }
@@ -84,43 +84,3 @@ import './modules/blockClass.js'
 import './modules/playerClass.js'
 import './modules/itemStackClass.js'
 import './modules/entityClass.js'
-
-import { world, system } from '@minecraft/server'
-import { dependenciesRegistry, compareDependencyVersion } from './dependencyChecker.js'
-
-// Checks if Heavy Machinery is present and if so, registers compatibility features.
-const heavyMachineryID = 'uc_heavy_machinery'
-
-export let isHeavyMachineryPresent = false
-export let heavyMachineryVersion = null
-
-export function isDependencyPresent(identifier) {
-    if (typeof identifier !== 'string' || identifier.length === 0) return false
-    return dependenciesRegistry.has(identifier)
-}
-
-export function refreshHeavyMachineryCompatibilityState() {
-    const heavyMachinery = dependenciesRegistry.get(heavyMachineryID) ?? null
-    isHeavyMachineryPresent = Boolean(heavyMachinery)
-    heavyMachineryVersion = heavyMachinery?.version ?? null
-    return heavyMachinery ?? null
-}
-
-world.afterEvents.worldLoad.subscribe(() => {
-    system.runTimeout(() => {
-        const heavyMachinery = refreshHeavyMachineryCompatibilityState()
-        if (!heavyMachinery) return
-
-        world.sendMessage("§bLooks like you're playing Ascendant Technology and Heavy Machinery together. You can use Ascendant's Cryofluid as a better coolant in Heavy Machinery!§r")
-
-        const detectedVersion = heavyMachinery.version ?? 'unknown'
-
-        const requiredVersion = addonData.dependencies?.[heavyMachineryID]?.version
-        if (requiredVersion && detectedVersion !== 'unknown') {
-            const state = compareDependencyVersion(requiredVersion, detectedVersion)
-            if (state === 'outdated') {
-                world.sendMessage(`§eHeavy Machinery version is outdated. Requires: §f${requiredVersion}§e, found: §f${detectedVersion}§e.`)
-            }
-        }
-    }, 340)
-})
