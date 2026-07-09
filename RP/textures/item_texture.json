@@ -1339,6 +1339,21 @@
         },
         "bucket_witch_water": {
             "textures": "textures/items/misc/bucket_witch_water"
+        },
+        "v_sword": {
+            "textures": "textures/items/tool/v_sword"
+        },
+        "utilitycraft:voltanium_helmet": {
+            "textures": "textures/items/armor/v_helmet"
+        },
+        "utilitycraft:voltanium_chestplate": {
+            "textures": "textures/items/armor/v_chestplate"
+        },
+        "utilitycraft:voltanium_leggings": {
+            "textures": "textures/items/armor/v_leggings"
+        },
+        "utilitycraft:voltanium_boots": {
+            "textures": "textures/items/armor/v_boots"
         }
     }
 }

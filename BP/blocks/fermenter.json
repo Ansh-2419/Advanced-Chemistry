@@ -94,7 +94,37 @@
             {
                 "condition": "q.block_state('utilitycraft:on') == true",
                 "components": {
-                    "minecraft:light_emission": 4
+                    "minecraft:light_emission": 4,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "fermentor_on",
+                            "render_method": "alpha_test"
+                        },
+                        "north": {
+                            "texture": "fermentor_on",
+                            "render_method": "alpha_test"
+                        },
+                        "south": {
+                            "texture": "fermentor_south",
+                            "render_method": "alpha_test"
+                        },
+                        "east": {
+                            "texture": "fermentor_east",
+                            "render_method": "alpha_test"
+                        },
+                        "west": {
+                            "texture": "fermentor_west",
+                            "render_method": "alpha_test"
+                        },
+                        "up": {
+                            "texture": "fermentor_up",
+                            "render_method": "alpha_test"
+                        },
+                        "down": {
+                            "texture": "fermentor_down",
+                            "render_method": "alpha_test"
+                        }
+                    }
                 }
             },
             {
