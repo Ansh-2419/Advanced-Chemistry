@@ -1354,7 +1354,9 @@
         },
         "utilitycraft:voltanium_boots": {
             "textures": "textures/items/armor/v_boots"
+        },
+        "industrial_chip": {
+            "textures": "textures/items/armor/industrial_chip"
         }
     }
 }
-

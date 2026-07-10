@@ -14,7 +14,8 @@
         "atlas_tile": "separator_on",
         "ticks_per_frame": 5
     },
-    "flipbook_texture": "textures/blocks/fluid_mixer_on",
+    {
+        "flipbook_texture": "textures/blocks/fluid_mixer_on",
         "atlas_tile": "fluid_mixer_on",
         "ticks_per_frame": 5
     }
