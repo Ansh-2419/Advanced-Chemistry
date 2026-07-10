@@ -9,7 +9,7 @@
             }
         },
         "components": {
-            "minecraft:icon": "steel_pickaxe",
+            "minecraft:icon": "v_pickaxe",
             "minecraft:tags": {
                 "tags": [
                     "minecraft:netherite_tier",

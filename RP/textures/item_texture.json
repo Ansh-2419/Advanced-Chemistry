@@ -1356,7 +1356,7 @@
             "textures": "textures/items/armor/v_boots"
         },
         "industrial_chip": {
-            "textures": "textures/items/armor/industrial_chip"
+            "textures": "textures/items/misc/industrial_chip"
         },
         "v_hoe": {
             "textures": "textures/items/tool/v_hoe"
