@@ -2,7 +2,11 @@
     "format_version": "1.21.70",
     "minecraft:item": {
         "description": {
-            "identifier": "utilitycraft:v_paxel"
+            "identifier": "utilitycraft:v_paxel",
+            "menu_category": {
+                "category": "equipment",
+                "group": "dorios:itemGroup.name.paxels"
+            }
         },
         "components": {
             "minecraft:tags": {
