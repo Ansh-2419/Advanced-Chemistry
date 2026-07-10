@@ -1,0 +1,45 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "utilitycraft:v_shovel",
+            "menu_category": {
+                "category": "equipment",
+                "group": "minecraft:itemGroup.name.shovel"
+            }
+        },
+        "components": {
+            "minecraft:icon": "v_shovel",
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:netherite_tier",
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool"
+                ]
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:durability": {
+                "max_durability": 3750
+            },
+            "minecraft:damage": {
+                "value": 5
+            },
+            "minecraft:enchantable": {
+                "slot": "shovel",
+                "value": 10
+            },
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [
+                    {
+                        "speed": 9,
+                        "block": {
+                            "tags": "q.any_tag('minecraft:is_shovel_item_destructible')"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

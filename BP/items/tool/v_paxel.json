@@ -1,0 +1,54 @@
+{
+    "format_version": "1.21.70",
+    "minecraft:item": {
+        "description": {
+            "identifier": "utilitycraft:v_paxel"
+        },
+        "components": {
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_axe",
+                    "minecraft:is_pickaxe",
+                    "minecraft:netherite_tier"
+                ]
+            },
+            "minecraft:fire_resistant": {
+                "value": true
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:durability": {
+                "max_durability": 8093
+            },
+            "minecraft:damage": 12,
+            "minecraft:icon": "v_paxel",
+            "minecraft:enchantable": {
+                "value": 16,
+                "slot": "axe"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": ["utilitycraft:voltanium_ingot"],
+                        "repair_amount": 800
+                    },
+                    {
+                        "items": ["utilitycraft:v_paxel"],
+                        "repair_amount": 2031
+                    }
+                ]
+            },
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [
+                    {
+                        "speed": 28,
+                        "block": {
+                            "tags": "q.any_tag('minecraft:is_pickaxe_item_destructible', 'minecraft:is_shovel_item_destructible', 'minecraft:is_axe_item_destructible')"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

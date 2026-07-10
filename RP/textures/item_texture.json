@@ -1357,6 +1357,27 @@
         },
         "industrial_chip": {
             "textures": "textures/items/armor/industrial_chip"
+        },
+        "v_hoe": {
+            "textures": "textures/items/tool/v_hoe"
+        },
+        "v_hammer": {
+            "textures": "textures/items/tool/v_hammer"
+        },
+        "v_pickaxe": {
+            "textures": "textures/items/tool/v_pickaxe"
+        },
+        "v_paxel": {
+            "textures": "textures/items/tool/v_paxel"
+        },
+        "v_aiot": {
+            "textures": "textures/items/tool/v_aiot"
+        },
+        "v_shovel": {
+            "textures": "textures/items/tool/v_shovel"
+        },
+        "v_axe": {
+            "textures": "textures/items/tool/v_axe"
         }
     }
 }
