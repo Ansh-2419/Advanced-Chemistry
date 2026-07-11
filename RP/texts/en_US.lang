@@ -5,7 +5,7 @@ ac:itemGroup.name.machines=Advanced Chemistry
 ac:itemGroup.name.endstone_generators=Endstone Generators
 
 ## ── Singleblock Machines ─────────────────────────────────────────────────────
-tile.utilitycraft:fermenter.name=Fermenter
+tile.utilitycraft:fermenter.name=Dissolution Chamber
 tile.utilitycraft:fuel_mixer.name=Fluid Mixer
 tile.utilitycraft:chemical_reactor.name=Chemical Reactor
 tile.utilitycraft:separator.name=Separator
@@ -34,7 +34,7 @@ tile.utilitycraft:refinery_casing.name=Refinery Casing
 ## ── UI Entity Names ──────────────────────────────────────────────────────────
 entity.utilitycraft:machine.name=Machine
 entity.utilitycraft:multiblock_machine.name=Multiblock Machine
-entity.utilitycraft:fermenter.name=Fermenter
+entity.utilitycraft:fermenter.name=Dissolution Chamber
 entity.utilitycraft:fuel_mixer.name=Fluid Mixer
 entity.utilitycraft:chemical_reactor.name=Chemical Reactor
 entity.utilitycraft:fuel_burner_monitor.name=Fuel Burner
@@ -54,7 +54,7 @@ tile.utilitycraft:endstone_gen_emerald.name=Emerald Endstone Generator
 tile.utilitycraft:endstone_gen_netherite.name=Netherite Endstone Generator
 item.utilitycraft:water_bucket_custom=Witch Water Bucket
 
-ui.utilitycraft:info.fermenter=Ferments organic inputs into fluids.\n\nSlots:\n- Inputs: seeds or sugar cane.\n- Fluid: produced liquid storage.\n- Output: optional residue.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.utilitycraft:info.fermenter=convert organic inputs into fluids.\n\nSlots:\n- Inputs: seeds or sugar cane.\n- Fluid: produced liquid storage.\n- Output: optional residue.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.fuel_mixer=Mixes stored fluids into fuel blends.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: produced fuel.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.separator=Separates one fluid into two output fluids.\n\nStorage:\n- Input: source fluid.\n- Outputs: separated fluids.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.chemical_reactor=Processes fluids into chemical products.\n\nStorage:\n- Input: reagent fluid.\n- Output: main product.\n- Byproduct: optional item or fluid.\n\nAccepted Upgrades:\n- Speed\n- Energy
