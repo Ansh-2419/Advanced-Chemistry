@@ -1181,6 +1181,447 @@
         "utilitycraft:petrol_48": {
             "textures": "textures/items/ui/petrol_bar/petrol_bar_48"
         },
+        "utilitycraft:naphtha_00": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_00"
+        },
+        "utilitycraft:naphtha_01": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_01"
+        },
+        "utilitycraft:naphtha_02": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_02"
+        },
+        "utilitycraft:naphtha_03": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_03"
+        },
+        "utilitycraft:naphtha_04": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_04"
+        },
+        "utilitycraft:naphtha_05": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_05"
+        },
+        "utilitycraft:naphtha_06": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_06"
+        },
+        "utilitycraft:naphtha_07": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_07"
+        },
+        "utilitycraft:naphtha_08": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_08"
+        },
+        "utilitycraft:naphtha_09": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_09"
+        },
+        "utilitycraft:naphtha_10": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_10"
+        },
+        "utilitycraft:naphtha_11": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_11"
+        },
+        "utilitycraft:naphtha_12": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_12"
+        },
+        "utilitycraft:naphtha_13": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_13"
+        },
+        "utilitycraft:naphtha_14": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_14"
+        },
+        "utilitycraft:naphtha_15": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_15"
+        },
+        "utilitycraft:naphtha_16": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_16"
+        },
+        "utilitycraft:naphtha_17": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_17"
+        },
+        "utilitycraft:naphtha_18": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_18"
+        },
+        "utilitycraft:naphtha_19": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_19"
+        },
+        "utilitycraft:naphtha_20": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_20"
+        },
+        "utilitycraft:naphtha_21": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_21"
+        },
+        "utilitycraft:naphtha_22": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_22"
+        },
+        "utilitycraft:naphtha_23": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_23"
+        },
+        "utilitycraft:naphtha_24": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_24"
+        },
+        "utilitycraft:naphtha_25": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_25"
+        },
+        "utilitycraft:naphtha_26": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_26"
+        },
+        "utilitycraft:naphtha_27": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_27"
+        },
+        "utilitycraft:naphtha_28": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_28"
+        },
+        "utilitycraft:naphtha_29": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_29"
+        },
+        "utilitycraft:naphtha_30": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_30"
+        },
+        "utilitycraft:naphtha_31": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_31"
+        },
+        "utilitycraft:naphtha_32": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_32"
+        },
+        "utilitycraft:naphtha_33": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_33"
+        },
+        "utilitycraft:naphtha_34": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_34"
+        },
+        "utilitycraft:naphtha_35": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_35"
+        },
+        "utilitycraft:naphtha_36": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_36"
+        },
+        "utilitycraft:naphtha_37": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_37"
+        },
+        "utilitycraft:naphtha_38": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_38"
+        },
+        "utilitycraft:naphtha_39": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_39"
+        },
+        "utilitycraft:naphtha_40": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_40"
+        },
+        "utilitycraft:naphtha_41": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_41"
+        },
+        "utilitycraft:naphtha_42": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_42"
+        },
+        "utilitycraft:naphtha_43": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_43"
+        },
+        "utilitycraft:naphtha_44": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_44"
+        },
+        "utilitycraft:naphtha_45": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_45"
+        },
+        "utilitycraft:naphtha_46": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_46"
+        },
+        "utilitycraft:naphtha_47": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_47"
+        },
+        "utilitycraft:naphtha_48": {
+            "textures": "textures/items/ui/petrol_bar/petrol_bar_48"
+        },
+        "utilitycraft:reactive_fluid_00": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_00"
+        },
+        "utilitycraft:reactive_fluid_01": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_01"
+        },
+        "utilitycraft:reactive_fluid_02": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_02"
+        },
+        "utilitycraft:reactive_fluid_03": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_03"
+        },
+        "utilitycraft:reactive_fluid_04": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_04"
+        },
+        "utilitycraft:reactive_fluid_05": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_05"
+        },
+        "utilitycraft:reactive_fluid_06": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_06"
+        },
+        "utilitycraft:reactive_fluid_07": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_07"
+        },
+        "utilitycraft:reactive_fluid_08": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_08"
+        },
+        "utilitycraft:reactive_fluid_09": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_09"
+        },
+        "utilitycraft:reactive_fluid_10": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_10"
+        },
+        "utilitycraft:reactive_fluid_11": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_11"
+        },
+        "utilitycraft:reactive_fluid_12": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_12"
+        },
+        "utilitycraft:reactive_fluid_13": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_13"
+        },
+        "utilitycraft:reactive_fluid_14": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_14"
+        },
+        "utilitycraft:reactive_fluid_15": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_15"
+        },
+        "utilitycraft:reactive_fluid_16": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_16"
+        },
+        "utilitycraft:reactive_fluid_17": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_17"
+        },
+        "utilitycraft:reactive_fluid_18": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_18"
+        },
+        "utilitycraft:reactive_fluid_19": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_19"
+        },
+        "utilitycraft:reactive_fluid_20": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_20"
+        },
+        "utilitycraft:reactive_fluid_21": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_21"
+        },
+        "utilitycraft:reactive_fluid_22": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_22"
+        },
+        "utilitycraft:reactive_fluid_23": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_23"
+        },
+        "utilitycraft:reactive_fluid_24": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_24"
+        },
+        "utilitycraft:reactive_fluid_25": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_25"
+        },
+        "utilitycraft:reactive_fluid_26": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_26"
+        },
+        "utilitycraft:reactive_fluid_27": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_27"
+        },
+        "utilitycraft:reactive_fluid_28": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_28"
+        },
+        "utilitycraft:reactive_fluid_29": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_29"
+        },
+        "utilitycraft:reactive_fluid_30": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_30"
+        },
+        "utilitycraft:reactive_fluid_31": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_31"
+        },
+        "utilitycraft:reactive_fluid_32": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_32"
+        },
+        "utilitycraft:reactive_fluid_33": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_33"
+        },
+        "utilitycraft:reactive_fluid_34": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_34"
+        },
+        "utilitycraft:reactive_fluid_35": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_35"
+        },
+        "utilitycraft:reactive_fluid_36": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_36"
+        },
+        "utilitycraft:reactive_fluid_37": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_37"
+        },
+        "utilitycraft:reactive_fluid_38": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_38"
+        },
+        "utilitycraft:reactive_fluid_39": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_39"
+        },
+        "utilitycraft:reactive_fluid_40": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_40"
+        },
+        "utilitycraft:reactive_fluid_41": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_41"
+        },
+        "utilitycraft:reactive_fluid_42": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_42"
+        },
+        "utilitycraft:reactive_fluid_43": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_43"
+        },
+        "utilitycraft:reactive_fluid_44": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_44"
+        },
+        "utilitycraft:reactive_fluid_45": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_45"
+        },
+        "utilitycraft:reactive_fluid_46": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_46"
+        },
+        "utilitycraft:reactive_fluid_47": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_47"
+        },
+        "utilitycraft:reactive_fluid_48": {
+            "textures": "textures/items/ui/hydrocarbon_slurry_bar/hydrocarbon_slurry_bar_48"
+        },
+        "utilitycraft:sulfuric_acid_00": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_00"
+        },
+        "utilitycraft:sulfuric_acid_01": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_01"
+        },
+        "utilitycraft:sulfuric_acid_02": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_02"
+        },
+        "utilitycraft:sulfuric_acid_03": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_03"
+        },
+        "utilitycraft:sulfuric_acid_04": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_04"
+        },
+        "utilitycraft:sulfuric_acid_05": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_05"
+        },
+        "utilitycraft:sulfuric_acid_06": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_06"
+        },
+        "utilitycraft:sulfuric_acid_07": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_07"
+        },
+        "utilitycraft:sulfuric_acid_08": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_08"
+        },
+        "utilitycraft:sulfuric_acid_09": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_09"
+        },
+        "utilitycraft:sulfuric_acid_10": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_10"
+        },
+        "utilitycraft:sulfuric_acid_11": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_11"
+        },
+        "utilitycraft:sulfuric_acid_12": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_12"
+        },
+        "utilitycraft:sulfuric_acid_13": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_13"
+        },
+        "utilitycraft:sulfuric_acid_14": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_14"
+        },
+        "utilitycraft:sulfuric_acid_15": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_15"
+        },
+        "utilitycraft:sulfuric_acid_16": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_16"
+        },
+        "utilitycraft:sulfuric_acid_17": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_17"
+        },
+        "utilitycraft:sulfuric_acid_18": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_18"
+        },
+        "utilitycraft:sulfuric_acid_19": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_19"
+        },
+        "utilitycraft:sulfuric_acid_20": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_20"
+        },
+        "utilitycraft:sulfuric_acid_21": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_21"
+        },
+        "utilitycraft:sulfuric_acid_22": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_22"
+        },
+        "utilitycraft:sulfuric_acid_23": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_23"
+        },
+        "utilitycraft:sulfuric_acid_24": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_24"
+        },
+        "utilitycraft:sulfuric_acid_25": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_25"
+        },
+        "utilitycraft:sulfuric_acid_26": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_26"
+        },
+        "utilitycraft:sulfuric_acid_27": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_27"
+        },
+        "utilitycraft:sulfuric_acid_28": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_28"
+        },
+        "utilitycraft:sulfuric_acid_29": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_29"
+        },
+        "utilitycraft:sulfuric_acid_30": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_30"
+        },
+        "utilitycraft:sulfuric_acid_31": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_31"
+        },
+        "utilitycraft:sulfuric_acid_32": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_32"
+        },
+        "utilitycraft:sulfuric_acid_33": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_33"
+        },
+        "utilitycraft:sulfuric_acid_34": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_34"
+        },
+        "utilitycraft:sulfuric_acid_35": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_35"
+        },
+        "utilitycraft:sulfuric_acid_36": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_36"
+        },
+        "utilitycraft:sulfuric_acid_37": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_37"
+        },
+        "utilitycraft:sulfuric_acid_38": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_38"
+        },
+        "utilitycraft:sulfuric_acid_39": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_39"
+        },
+        "utilitycraft:sulfuric_acid_40": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_40"
+        },
+        "utilitycraft:sulfuric_acid_41": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_41"
+        },
+        "utilitycraft:sulfuric_acid_42": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_42"
+        },
+        "utilitycraft:sulfuric_acid_43": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_43"
+        },
+        "utilitycraft:sulfuric_acid_44": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_44"
+        },
+        "utilitycraft:sulfuric_acid_45": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_45"
+        },
+        "utilitycraft:sulfuric_acid_46": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_46"
+        },
+        "utilitycraft:sulfuric_acid_47": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_47"
+        },
+        "utilitycraft:sulfuric_acid_48": {
+            "textures": "textures/items/ui/ethanol_bar/ethanol_bar_48"
+        },
         "duranium_ingot": {
             "textures": "textures/items/ingot/duranium_ingot"
         },

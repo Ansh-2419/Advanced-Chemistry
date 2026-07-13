@@ -14,6 +14,8 @@ tile.utilitycraft:separator.name=Separator
 fluid.utilitycraft.ethanol=Ethanol
 fluid.utilitycraft.biofuel=Biofuel
 fluid.utilitycraft.plant_oil=Plant Oil
+fluid.utilitycraft.reactive_fluid=Reactive Fluid
+fluid.utilitycraft.sulfuric_acid=Sulfuric Acid
 
 ## ── Common Multiblock Valves ─────────────────────────────────────────────────
 tile.utilitycraft:fluid_valve.name=Fluid Valve
@@ -33,7 +35,6 @@ tile.utilitycraft:refinery_casing.name=Refinery Casing
 
 ## ── UI Entity Names ──────────────────────────────────────────────────────────
 entity.utilitycraft:machine.name=Machine
-entity.utilitycraft:multiblock_machine.name=Multiblock Machine
 entity.utilitycraft:fermenter.name=Dissolution Chamber
 entity.utilitycraft:fuel_mixer.name=Fluid Mixer
 entity.utilitycraft:chemical_reactor.name=Chemical Reactor

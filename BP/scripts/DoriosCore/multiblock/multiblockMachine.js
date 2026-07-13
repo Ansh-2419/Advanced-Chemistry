@@ -30,7 +30,10 @@ export class MultiblockMachine extends BasicMachine {
    * @param {MachineSettings} config Multiblock machine configuration.
    */
   constructor(block, config) {
-    super(block, config?.machine?.rate_speed_base ?? 0);
+    super(block, {
+      rate: config?.machine?.rate_speed_base ?? 0,
+      ignoreTick: config?.ignoreTick,
+    });
     if (!this.valid) return;
 
     const state = this.entity.getDynamicProperty(Constants.STATE_PROPERTY_ID);
@@ -253,6 +256,9 @@ export class MultiblockMachine extends BasicMachine {
       DeactivationManager.deactivateMultiblock(block, player);
       return;
     }
+
+    const entityType = config.entity?.type;
+    if (entityType) entity.triggerEvent(`utilitycraft:${entityType}`);
 
     const energyCap = ActivationManager.activateMultiblock(entity, structure);
     const factoryData = this.computeMachineStats(structure.components);

@@ -44,11 +44,6 @@ DoriosAPI.register.blockComponent("chemical_reactor", {
 
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
-            machine.blockSlots([
-                FLUID_DISPLAY_IN,
-                FLUID_DISPLAY_OUT,
-                FLUID_DISPLAY_BYPRODUCT,
-            ]);
             setupTanks(entity, fluidCap, [
                 FLUID_DISPLAY_IN,
                 FLUID_DISPLAY_OUT,
@@ -74,19 +69,7 @@ DoriosAPI.register.blockComponent("chemical_reactor", {
             { tank: tankByproduct, slot: FLUID_DISPLAY_BYPRODUCT },
         ];
 
-        machine.blockSlots([
-            FLUID_DISPLAY_IN,
-            FLUID_DISPLAY_OUT,
-            FLUID_DISPLAY_BYPRODUCT,
-        ]);
         tryUseFluidItemInSlot(machine.container, FLUID_INPUT_CAPSULE, machine.entity);
-        machine.processIO({
-            liquids: {
-                input: tankIn,
-                output: tankOut,
-            },
-        });
-        tankByproduct.transferFluids(block, tankByproduct.get());
 
         const recipes = getChemicalReactorRecipes();
         if (recipes.length === 0) return fail(machine, displays, "No Recipes");

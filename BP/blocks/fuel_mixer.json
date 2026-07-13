@@ -69,7 +69,7 @@
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "utilitycraft:fuel_mixer": {
                 "entity": {
-                    "type": "machine",
+                    "type": "fluid_machine",
                     "input_type": "complex",
                     "output_type": "simple",
                     "inventory_size": 17,

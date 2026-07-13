@@ -45,7 +45,6 @@ DoriosAPI.register.blockComponent("fermenter", {
 
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
-            machine.blockSlots([FLUID_DISPLAY_SLOT]);
             setupTanks(entity, fluidCap, [FLUID_DISPLAY_SLOT]);
             displayMachine(machine);
         });
@@ -60,8 +59,6 @@ DoriosAPI.register.blockComponent("fermenter", {
         const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
         const tank = getTank(machine.entity, 0, fluidCap);
 
-        machine.transferItems();
-        tank.transferFluids(block, tank.get());
         tryUseFluidItemInSlot(machine.container, FLUID_SLOT, machine.entity);
 
         const recipes = resolveRecipes(block, settings);
