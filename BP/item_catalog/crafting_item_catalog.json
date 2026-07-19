@@ -12,6 +12,7 @@
                         },
                         "items": [
                             "utilitycraft:fermenter",
+                            "utilitycraft:polymerizer",
                             "utilitycraft:fuel_mixer",
                             "utilitycraft:chemical_reactor",
                             "utilitycraft:separator",

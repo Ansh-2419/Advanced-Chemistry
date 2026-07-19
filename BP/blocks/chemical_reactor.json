@@ -69,7 +69,7 @@
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "utilitycraft:chemical_reactor": {
                 "entity": {
-                    "type": "machine",
+                    "type": "fluid_machine",
                     "input_type": "complex",
                     "inventory_size": 22,
                     "output_slot": 7,

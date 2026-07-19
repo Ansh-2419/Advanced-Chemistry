@@ -45,7 +45,6 @@ DoriosAPI.register.blockComponent("fermenter", {
 
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
-            machine.blockSlots([FLUID_DISPLAY_SLOT]);
             setupTanks(entity, fluidCap, [FLUID_DISPLAY_SLOT]);
             displayMachine(machine);
         });
@@ -60,8 +59,6 @@ DoriosAPI.register.blockComponent("fermenter", {
         const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
         const tank = getTank(machine.entity, 0, fluidCap);
 
-        machine.transferItems();
-        tank.transferFluids(block, tank.get());
         tryUseFluidItemInSlot(machine.container, FLUID_SLOT, machine.entity);
 
         const recipes = resolveRecipes(block, settings);
@@ -72,6 +69,13 @@ DoriosAPI.register.blockComponent("fermenter", {
 
         const recipe = pickRecipeForStack(recipes, active.stack);
         if (!recipe) return fail(machine, tank, "Missing Items");
+
+        // Check secondary input if recipe requires it
+        const secondary = recipe.secondaryInput;
+        if (secondary) {
+            const secSlot = findSecondarySlot(machine, active.slot, secondary.id, secondary.amount);
+            if (secSlot === -1) return fail(machine, tank, `Also need: ${secondary.id.split(":")[1]} x${secondary.amount}`);
+        }
 
         const batch = pickBatch(recipe, active.stack.amount);
         if (!batch) return fail(machine, tank, "Missing Items");
@@ -93,8 +97,17 @@ DoriosAPI.register.blockComponent("fermenter", {
             return fail(machine, tank, "No Energy", { resetProgress: false });
         }
 
+        const secSlotIndex = recipe.secondaryInput
+            ? findSecondarySlot(machine, active.slot, recipe.secondaryInput.id, recipe.secondaryInput.amount)
+            : -1;
+
         chargeOrCraft(machine, energyCost, craftLimit.max, (runs) => {
             removeItemsFromSlot(machine.container, active.slot, runtimeRecipe.input.amount * runs);
+
+            // Consume secondary input if required
+            if (recipe.secondaryInput && secSlotIndex !== -1) {
+                removeItemsFromSlot(machine.container, secSlotIndex, recipe.secondaryInput.amount * runs);
+            }
 
             if (tank.getType() === EMPTY_FLUID) tank.setType(fluidType);
             tank.add(runtimeRecipe.fluid.amount * runs);
@@ -218,6 +231,15 @@ function processByproduct(machine, byproduct, runs) {
         if (Math.random() > chance) continue;
         addItemToSlot(machine.container, RESIDUE_SLOT, byproduct.id, amount);
     }
+}
+
+function findSecondarySlot(machine, primarySlot, itemId, minAmount) {
+    for (const slot of INPUT_SLOTS) {
+        if (slot === primarySlot) continue;
+        const stack = machine.container.getItem(slot);
+        if (stack?.typeId === itemId && stack.amount >= minAmount) return slot;
+    }
+    return -1;
 }
 
 function updateHud(machine, recipe, tank, queued) {

@@ -1,14 +1,13 @@
 {
     "ui_defs": [
-        "ui/ascendant_common.json",
         "ui/fermenter.json",
         "ui/fuel_mixer.json",
         "ui/fuel_burner.json",
-        "ui/manual_implementation.json",
         "ui/fluid_storage_monitor.json",
         "ui/chemical_reactor.json",
         "ui/separator.json",
         "ui/refinery.json",
-        "ui/recipes/infuser.json"
+        "ui/recipes/infuser.json",
+        "ui/polymerizer.json"
     ]
 }

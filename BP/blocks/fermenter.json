@@ -19,7 +19,7 @@
         "components": {
             "utilitycraft:fermenter": {
                 "entity": {
-                    "type": "machine",
+                    "type": "fluid_machine",
                     "input_type": "complex",
                     "output_type": "simple",
                     "inventory_size": 24,

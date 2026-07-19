@@ -37,7 +37,6 @@ DoriosAPI.register.blockComponent("separator", {
 
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
-            machine.blockSlots([FLUID_DISPLAY_IN, FLUID_DISPLAY_OUT1, FLUID_DISPLAY_OUT2]);
             setupTanks(entity, fluidCap, [
                 FLUID_DISPLAY_IN,
                 FLUID_DISPLAY_OUT1,
@@ -63,15 +62,7 @@ DoriosAPI.register.blockComponent("separator", {
             { tank: tankOut2, slot: FLUID_DISPLAY_OUT2 },
         ];
 
-        machine.blockSlots([FLUID_DISPLAY_IN, FLUID_DISPLAY_OUT1, FLUID_DISPLAY_OUT2]);
         tryUseFluidItemInSlot(machine.container, FLUID_INPUT_CAPSULE, machine.entity);
-        machine.processIO({
-            liquids: {
-                input: tankIn,
-                output: tankOut1,
-            },
-        });
-        tankOut2.transferFluids(block, tankOut2.get());
 
         const recipes = getSeparatorRecipes();
         if (recipes.length === 0) return fail(machine, displays, "No Recipes");

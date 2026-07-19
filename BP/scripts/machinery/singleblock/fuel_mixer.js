@@ -17,13 +17,11 @@ const FLUID_INPUT_SLOT_1 = 5;
 const FLUID_INPUT_SLOT_2 = 6;
 const FLUID_DISPLAY_SLOT_1 = 7;
 const FLUID_DISPLAY_SLOT_2 = 8;
-const FLUID_OUTPUT_SLOT = 9;
 const FLUID_DISPLAY_OUTPUT = 10;
 const IO_FLUID_SLOTS = [11, 16];
 
 const DEFAULT_ENERGY_COST = 4800;
 const DEFAULT_FLUID_CAP = 128000;
-const MANUAL_TRANSFER_LIMIT = 1000;
 
 registerIOInterface("utilitycraft:fuel_mixer", {
     liquids: {
@@ -40,12 +38,6 @@ DoriosAPI.register.blockComponent("fuel_mixer", {
 
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
-            machine.blockSlots([
-                FLUID_OUTPUT_SLOT,
-                FLUID_DISPLAY_SLOT_1,
-                FLUID_DISPLAY_SLOT_2,
-                FLUID_DISPLAY_OUTPUT,
-            ]);
             setupTanks(entity, fluidCap, [
                 FLUID_DISPLAY_SLOT_1,
                 FLUID_DISPLAY_SLOT_2,
@@ -71,11 +63,8 @@ DoriosAPI.register.blockComponent("fuel_mixer", {
             { tank: tankOut, slot: FLUID_DISPLAY_OUTPUT },
         ];
 
-        machine.blockSlots([FLUID_OUTPUT_SLOT, FLUID_DISPLAY_SLOT_1, FLUID_DISPLAY_SLOT_2, FLUID_DISPLAY_OUTPUT]);
         tryUseFluidItemInSlot(machine.container, FLUID_INPUT_SLOT_1, machine.entity);
         tryUseFluidItemInSlot(machine.container, FLUID_INPUT_SLOT_2, machine.entity);
-        pullAdjacentFluidInputs(machine.entity, block, [tank1, tank2]);
-        tankOut.transferFluids(block, tankOut.get());
 
         const recipes = getFuelMixerRecipes();
         if (recipes.length === 0) return fail(machine, displays, "No Recipes");
@@ -141,47 +130,6 @@ function getCraftLimit(inputA, inputB, tankOut, recipe) {
     if (max > 0) return { max };
     if (inputRuns <= 0 || secondaryRuns <= 0) return { max: 0, reason: "Not Enough Input" };
     return { max: 0, reason: "Output Full" };
-}
-
-function pullAdjacentFluidInputs(entity, block, tanks) {
-    const dimension = block.dimension;
-    const { x, y, z } = block.location;
-    const offsets = [
-        { x: 1, y: 0, z: 0 },
-        { x: -1, y: 0, z: 0 },
-        { x: 0, y: 1, z: 0 },
-        { x: 0, y: -1, z: 0 },
-        { x: 0, y: 0, z: 1 },
-        { x: 0, y: 0, z: -1 },
-    ];
-
-    for (const offset of offsets) {
-        const sourceBlock = dimension.getBlock({
-            x: x + offset.x,
-            y: y + offset.y,
-            z: z + offset.z,
-        });
-        if (!sourceBlock?.hasTag?.("dorios:fluid")) continue;
-
-        const sourceEntity = dimension.getEntitiesAtBlockLocation(sourceBlock.location)[0];
-        if (!sourceEntity || sourceEntity === entity) continue;
-
-        const sourceTank = new FluidStorage(sourceEntity, 0);
-        const sourceType = sourceTank.getType();
-        if (sourceType === EMPTY_FLUID || sourceTank.get() <= 0) continue;
-
-        const target = tanks.find(tank => tank.getType() === sourceType && tank.getFreeSpace() > 0)
-            ?? tanks.find(tank => tank.getType() === EMPTY_FLUID && tank.getFreeSpace() > 0);
-
-        if (!target) continue;
-
-        const amount = Math.min(sourceTank.get(), target.getFreeSpace(), MANUAL_TRANSFER_LIMIT);
-        if (amount <= 0) continue;
-
-        if (target.getType() === EMPTY_FLUID) target.setType(sourceType);
-        sourceTank.consume(amount);
-        target.add(amount);
-    }
 }
 
 function updateHud(machine, recipe, tank1, tank2, tankOut, queued) {

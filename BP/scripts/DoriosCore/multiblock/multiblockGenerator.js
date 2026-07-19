@@ -168,6 +168,9 @@ export class MultiblockGenerator extends Generator {
       return;
     }
 
+    const entityType = config.entity?.type;
+    if (entityType) entity.triggerEvent(`utilitycraft:${entityType}`);
+
     const energyCap = ActivationManager.activateMultiblock(entity, structure, fillBlocksConfig);
     if (missingEnergyWarning && energyCap <= 0) {
       player.sendMessage(missingEnergyWarning);

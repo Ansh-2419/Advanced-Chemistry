@@ -100,7 +100,6 @@
         "refinery_monitor": {
             "textures": "textures/blocks/refinery_monitor"
         },
-
         "fuel_mixer_north": {
             "textures": "textures/blocks/fluid_mixer_north"
         },
@@ -160,6 +159,30 @@
         },
         "utilitycraft_endstone_gen_netherite": {
             "textures": "textures/blocks/utilitycraft_endstone_gen_netherite"
+        },
+        "polymerizer_side": {
+            "textures": "textures/blocks/polymerizer_side"
+        },
+        "polymerizer_north": {
+            "textures": "textures/blocks/polymerizer_north"
+        },
+        "polymerizer_north_on": {
+            "textures": "textures/blocks/polymerizer_on"
+        },
+        "polymerizer_south": {
+            "textures": "textures/blocks/polymerizer_south"
+        },
+        "polymerizer_east": {
+            "textures": "textures/blocks/polymerizer_east"
+        },
+        "polymerizer_west": {
+            "textures": "textures/blocks/polymerizer_west"
+        },
+        "polymerizer_up": {
+            "textures": "textures/blocks/polymerizer_up"
+        },
+        "polymerizer_down": {
+            "textures": "textures/blocks/polymerizer_down"
         }
     }
 }

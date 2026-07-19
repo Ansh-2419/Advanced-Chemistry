@@ -69,7 +69,7 @@
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "utilitycraft:fuel_mixer": {
                 "entity": {
-                    "type": "machine",
+                    "type": "fluid_machine",
                     "input_type": "complex",
                     "output_type": "simple",
                     "inventory_size": 17,
@@ -87,6 +87,36 @@
         },
         "permutations": [
             {
+                "minecraft:material_instances": {
+                    "*": {
+                        "texture": "fuel_mixer_north",
+                        "render_method": "alpha_test"
+                    },
+                    "north": {
+                        "texture": "fuel_mixer_on",
+                        "render_method": "alpha_test"
+                    },
+                    "south": {
+                        "texture": "fuel_mixer_south",
+                        "render_method": "alpha_test"
+                    },
+                    "east": {
+                        "texture": "fuel_mixer_east",
+                        "render_method": "alpha_test"
+                    },
+                    "west": {
+                        "texture": "fuel_mixer_west",
+                        "render_method": "alpha_test"
+                    },
+                    "up": {
+                        "texture": "fuel_mixer_up",
+                        "render_method": "alpha_test"
+                    },
+                    "down": {
+                        "texture": "fuel_mixer_down",
+                        "render_method": "alpha_test"
+                    }
+                },
                 "condition": "q.block_state('utilitycraft:on') == true",
                 "components": {
                     "minecraft:light_emission": 4

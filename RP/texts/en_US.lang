@@ -14,6 +14,8 @@ tile.utilitycraft:separator.name=Separator
 fluid.utilitycraft.ethanol=Ethanol
 fluid.utilitycraft.biofuel=Biofuel
 fluid.utilitycraft.plant_oil=Plant Oil
+fluid.utilitycraft.reactive_fluid=Reactive Fluid
+fluid.utilitycraft.sulfuric_acid=Sulfuric Acid
 
 ## ── Common Multiblock Valves ─────────────────────────────────────────────────
 tile.utilitycraft:fluid_valve.name=Fluid Valve
@@ -33,7 +35,6 @@ tile.utilitycraft:refinery_casing.name=Refinery Casing
 
 ## ── UI Entity Names ──────────────────────────────────────────────────────────
 entity.utilitycraft:machine.name=Machine
-entity.utilitycraft:multiblock_machine.name=Multiblock Machine
 entity.utilitycraft:fermenter.name=Dissolution Chamber
 entity.utilitycraft:fuel_mixer.name=Fluid Mixer
 entity.utilitycraft:chemical_reactor.name=Chemical Reactor
@@ -58,6 +59,7 @@ ui.utilitycraft:info.fermenter=convert organic inputs into fluids.\n\nSlots:\n- 
 ui.utilitycraft:info.fuel_mixer=Mixes stored fluids into fuel blends.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: produced fuel.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.separator=Separates one fluid into two output fluids.\n\nStorage:\n- Input: source fluid.\n- Outputs: separated fluids.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.chemical_reactor=Processes fluids into chemical products.\n\nStorage:\n- Input: reagent fluid.\n- Output: main product.\n- Byproduct: optional item or fluid.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.aoc:info.polymerizer=Converts Plastic Resin into HDPE Pallets.\n\nInput: 250 mB Plastic Resin\nOutput: 1 HDPE Pallet\nEnergy: 10,000 kDE
 
 item.utilitycraft:voltanium_helmet=Voltanium Helmet
 item.utilitycraft:voltanium_chestplate=Voltanium Chestplate

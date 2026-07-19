@@ -26,35 +26,22 @@ const nativeRecipes = [
         description:
             "Chemically cracks biofuel into a thick hydrocarbon slurry."
         // No byproduct on base recipe — can be added via ScriptEvent
-    })
-,
-    defineRecipe({
-        id:          "utilitycraft:crude_oil_from_heavy_hydrocarbon",
-        input:       { type: "heavy_hydrocarbon",  amount: 400  },
-        output:      { type: "crude_oil",          amount: 250  },
-        energyCost:  8400,
-        seconds:     10,
-        description: "Refines heavy hydrocarbon into crude oil.",
     }),
-    // Example: fluid-only byproduct
     defineRecipe({
-        id:          "utilitycraft:example_fluid_byproduct",
-        input:       { type: "crude_oil",  amount: 1000 },
-        output:      { type: "naphtha",    amount: 600  },
-        energyCost:  9000,
-        seconds:     10,
-        description: "Cracks crude oil into naphtha, releasing sulfuric acid as a byproduct.",
-        byproduct:   { fluid: { type: "sulfuric_acid", amount: 50 }, chance: 0.5 }
+        id: "utilitycraft:crude_oil_from_heavy_hydrocarbon",
+        input: { type: "heavy_hydrocarbon", amount: 400 },
+        output: { type: "crude_oil", amount: 250 },
+        energyCost: 8400,
+        seconds: 10,
+        description: "Refines heavy hydrocarbon into crude oil."
     }),
-    // Example: item-only byproduct
     defineRecipe({
-        id:          "utilitycraft:example_item_byproduct",
-        input:       { type: "hydrocarbon_slurry", amount: 800 },
-        output:      { type: "petrol",             amount: 500 },
-        energyCost:  8800,
-        seconds:     10,
-        description: "Distills hydrocarbon slurry into petrol, leaving behind soot.",
-        byproduct:   { item: "minecraft:gunpowder", count: 1, chance: 0.3 }
+        id: "utilitycraft:naphtha_to_plastic_resin",
+        input: { type: "naphtha", amount: 1000 },
+        output: { type: "plastic_resin", amount: 750 },
+        energyCost: 10_000,
+        seconds: 12,
+        description: "Polymerises naphtha into liquid plastic resin."
     })
 ];
 

@@ -68,7 +68,7 @@
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "utilitycraft:separator": {
                 "entity": {
-                    "type": "machine",
+                    "type": "fluid_machine",
                     "input_type": "complex",
                     "inventory_size": 15,
                     "fluid": true
@@ -94,7 +94,7 @@
                             "render_method": "alpha_test"
                         },
                         "north": {
-                            "texture": "separator_north",
+                            "texture": "separator_on",
                             "render_method": "alpha_test"
                         },
                         "south": {
