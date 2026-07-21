@@ -6,15 +6,13 @@
     "texture_data": {
         "common": {
             "textures": "textures/blocks/common"
-        },
-        "burner_monitor": {
-            "textures": "textures/blocks/burner_monitor"
+            //chemical_reactor
         },
         "chemical_reactor_north": {
             "textures": "textures/blocks/chemical_reactor_north"
         },
         "chemical_reactor_on": {
-            "textures": "textures/blocks/chemical_reactor_on"
+            "textures": "textures/blocks/active/chemical_reactor_on"
         },
         "chemical_reactor_south": {
             "textures": "textures/blocks/chemical_reactor_south"
@@ -31,20 +29,12 @@
         "chemical_reactor_down": {
             "textures": "textures/blocks/chemical_reactor_down"
         },
-        "electromagnetic_coil": {
-            "textures": "textures/blocks/electromagnetic_coil"
-        },
-        "energy_input_port": {
-            "textures": "textures/blocks/energy_input_port"
-        },
-        "energy_output_port": {
-            "textures": "textures/blocks/energy_output_port"
-        },
+        //fermentor
         "fermentor_north": {
             "textures": "textures/blocks/fermentor_north"
         },
         "fermentor_on": {
-            "textures": "textures/blocks/fermentor_on"
+            "textures": "textures/blocks/active/fermentor_on"
         },
         "fermentor_south": {
             "textures": "textures/blocks/fermentor_south"
@@ -60,9 +50,7 @@
         },
         "fermentor_down": {
             "textures": "textures/blocks/fermentor_down"
-        },
-        "fluid_input_port": {
-            "textures": "textures/blocks/fluid_input_port"
+            //fluid_mixer
         },
         "fluid_mixer_north": {
             "textures": "textures/blocks/fluid_mixer_north"
@@ -85,8 +73,9 @@
         "fluid_monitor": {
             "textures": "textures/blocks/fluid_monitor"
         },
-        "fluid_output_port": {
-            "textures": "textures/blocks/fluid_output_port"
+        //multiblock
+        "fluid_port": {
+            "textures": "textures/blocks/multi/fluid_port"
         },
         "reactor_casing": {
             "textures": "textures/blocks/reactor_casing"
@@ -100,32 +89,24 @@
         "refinery_monitor": {
             "textures": "textures/blocks/refinery_monitor"
         },
-        "fuel_mixer_north": {
-            "textures": "textures/blocks/fluid_mixer_north"
+        "energy_port": {
+            "textures": "textures/blocks/multi/energy_port"
         },
-        "fuel_mixer_south": {
-            "textures": "textures/blocks/fluid_mixer_south"
+        "item_port": {
+            "textures": "textures/blocks/multi/item_port"
         },
-        "fuel_mixer_east": {
-            "textures": "textures/blocks/fluid_mixer_east"
-        },
-        "fuel_mixer_west": {
-            "textures": "textures/blocks/fluid_mixer_west"
-        },
-        "fuel_mixer_up": {
-            "textures": "textures/blocks/fluid_mixer_up"
-        },
-        "fuel_mixer_down": {
-            "textures": "textures/blocks/fluid_mixer_down"
+        "burner_monitor": {
+            "textures": "textures/blocks/burner_monitor"
         },
         "fuel_burner_casing": {
             "textures": "textures/blocks/reactor_casing"
         },
+        //separator
         "separator_north": {
             "textures": "textures/blocks/separator_north"
         },
         "separator_on": {
-            "textures": "textures/blocks/separator_on"
+            "textures": "textures/active/blocks/separator_on"
         },
         "separator_south": {
             "textures": "textures/blocks/separator_south"
@@ -142,32 +123,34 @@
         "separator_down": {
             "textures": "textures/blocks/separator_down"
         },
+        //Endstone genrator
         "utilitycraft_endstone_gen_copper": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_copper"
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_copper"
         },
         "utilitycraft_endstone_gen_iron": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_iron"
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_iron"
         },
         "utilitycraft_endstone_gen_gold": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_gold"
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_gold"
         },
         "utilitycraft_endstone_gen_emerald": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_emerald"
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_emerald"
         },
         "utilitycraft_endstone_gen_diamond": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_diamond"
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_diamond"
         },
         "utilitycraft_endstone_gen_netherite": {
-            "textures": "textures/blocks/utilitycraft_endstone_gen_netherite"
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_netherite"
         },
+        //polymerizer
         "polymerizer_side": {
             "textures": "textures/blocks/polymerizer_side"
         },
         "polymerizer_north": {
             "textures": "textures/blocks/polymerizer_north"
         },
-        "polymerizer_north_on": {
-            "textures": "textures/blocks/polymerizer_on"
+        "polymerizer_on": {
+            "textures": "textures/blocks/active/polymerizer_on"
         },
         "polymerizer_south": {
             "textures": "textures/blocks/polymerizer_south"

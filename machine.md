@@ -18,13 +18,6 @@ Functions
 Example Inputs
 
 - Sugar Cane
-- Apples
-- Sweet Berries
-- Beetroot
-- Potatoes
-- Wheat
-- Corn (Future)
-- Sugar Beet (Future)
 
 Outputs
 
@@ -32,33 +25,6 @@ Outputs
 - Biomass
 
 Ethanol is the primary ingredient for Biofuel, while Biomass is used in fertilizer production and future biological recipes.
-
----
-
-🌿 Plant Oil Extractor
-
-The Plant Oil Extractor processes seeds and oil-rich crops into Plant Oil.
-
-Functions
-
-- Extracts Plant Oil from seeds.
-- Supports future custom crops.
-- High efficiency compared to manual crafting.
-
-Example Inputs
-
-- Pumpkin Seeds
-- Melon Seeds
-- Beetroot Seeds
-- Soybeans (Future)
-- Canola (Future)
-
-Output
-
-- Plant Oil
-
-Plant Oil is the second main ingredient required for Biofuel production.
-
 ---
 
 🛢 Fuel Mixer

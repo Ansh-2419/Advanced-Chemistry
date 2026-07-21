@@ -1,26 +1,26 @@
 [
     {
-        "flipbook_texture": "textures/blocks/chemical_reactor_on",
+        "flipbook_texture": "textures/blocks/active/chemical_reactor_on",
         "atlas_tile": "chemical_reactor_on",
         "ticks_per_frame": 5
     },
     {
-        "flipbook_texture": "textures/blocks/fermentor_on",
+        "flipbook_texture": "textures/blocks/active/fermentor_on",
         "atlas_tile": "fermentor_on",
         "ticks_per_frame": 5
     },
     {
-        "flipbook_texture": "textures/blocks/separator_on",
+        "flipbook_texture": "textures/blocks/active/separator_on",
         "atlas_tile": "separator_on",
         "ticks_per_frame": 5
     },
     {
-        "flipbook_texture": "textures/blocks/fluid_mixer_on",
+        "flipbook_texture": "textures/blocks/active/fluid_mixer_on",
         "atlas_tile": "fluid_mixer_on",
         "ticks_per_frame": 5
     },
     {
-        "flipbook_texture": "textures/blocks/polymerizer_on",
+        "flipbook_texture": "textures/blocks/active/polymerizer_on",
         "atlas_tile": "polymerizer_on",
         "ticks_per_frame": 5
     }
