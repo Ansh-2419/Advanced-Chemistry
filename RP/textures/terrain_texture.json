@@ -50,30 +50,33 @@
         },
         "fermentor_down": {
             "textures": "textures/blocks/fermentor_down"
-            //fluid_mixer
+            //fuel_mixer
         },
-        "fluid_mixer_north": {
+        "fuel_mixer_north": {
             "textures": "textures/blocks/fluid_mixer_north"
         },
-        "fluid_mixer_south": {
+        "fuel_mixer_on": {
+            "textures": "textures/blocks/active/fluid_mixer_on"
+        },
+        "fuel_mixer_south": {
             "textures": "textures/blocks/fluid_mixer_south"
         },
-        "fluid_mixer_east": {
+        "fuel_mixer_east": {
             "textures": "textures/blocks/fluid_mixer_east"
         },
-        "fluid_mixer_west": {
+        "fuel_mixer_west": {
             "textures": "textures/blocks/fluid_mixer_west"
         },
-        "fluid_mixer_up": {
+        "fuel_mixer_up": {
             "textures": "textures/blocks/fluid_mixer_up"
         },
-        "fluid_mixer_down": {
+        "fuel_mixer_down": {
             "textures": "textures/blocks/fluid_mixer_down"
         },
+        //multiblock
         "fluid_monitor": {
             "textures": "textures/blocks/fluid_monitor"
         },
-        //multiblock
         "fluid_port": {
             "textures": "textures/blocks/multi/fluid_port"
         },

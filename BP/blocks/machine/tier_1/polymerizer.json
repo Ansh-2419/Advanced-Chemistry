@@ -96,7 +96,7 @@
                             "render_method": "alpha_test"
                         },
                         "north": {
-                            "texture": "polymerizer_north_on",
+                            "texture": "polymerizer_on",
                             "render_method": "alpha_test"
                         },
                         "south": {

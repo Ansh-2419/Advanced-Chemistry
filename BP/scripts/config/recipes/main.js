@@ -15,4 +15,4 @@ import './machinery/fuel_mixer.js';
 import './machinery/chemical_reactor.js';
 import './machinery/separator.js';
 export * from './machinery/refinery.js';
-import './machinery/polymerizer.js';
+import './machinery/crusher.js';

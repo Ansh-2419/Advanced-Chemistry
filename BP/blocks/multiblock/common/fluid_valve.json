@@ -14,7 +14,7 @@
             "minecraft:geometry": "geometry.utilitycraft_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "fluid_input_port",
+                    "texture": "fluid_port",
                     "render_method": "opaque"
                 }
             },

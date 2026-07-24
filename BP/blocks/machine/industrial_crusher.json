@@ -1,0 +1,176 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:block": {
+        "description": {
+            "identifier": "utilitycraft:industrial_crusher",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ],
+                    "y_rotation_offset": 180
+                }
+            },
+            "states": {
+                "utilitycraft:on": [
+                    false,
+                    true
+                ]
+            }
+        },
+        "components": {
+            "utilitycraft:special_container": {
+                "Item Input": 3,
+                "Item Output": 4
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "common",
+                    "render_method": "alpha_test"
+                },
+                "north": {
+                    "texture": "common",
+                    "render_method": "alpha_test"
+                },
+                "south": {
+                    "texture": "common",
+                    "render_method": "alpha_test"
+                },
+                "east": {
+                    "texture": "common",
+                    "render_method": "alpha_test"
+                },
+                "west": {
+                    "texture": "common",
+                    "render_method": "alpha_test"
+                },
+                "up": {
+                    "texture": "common",
+                    "render_method": "alpha_test"
+                },
+                "down": {
+                    "texture": "common",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:tick": {
+                "interval_range": [
+                    4,
+                    4
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2
+            },
+            "minecraft:destructible_by_explosion": false,
+            "tag:dorios:machine": {},
+            "tag:dorios:energy": {},
+            "tag:dorios:item": {},
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "utilitycraft:industrial_crusher": {
+                "entity": {
+                    "inventory_size": 27
+                },
+                "machine": {
+                    "energy_cap": 500000,
+                    "energy_cost": 2000,
+                    "rate_speed_base": 2000,
+                    "upgrades": [
+                        19,
+                        20
+                    ]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('utilitycraft:on') == true",
+                "components": {
+                    "minecraft:light_emission": 7,
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "common",
+                            "render_method": "alpha_test"
+                        },
+                        "north": {
+                            "texture": "common",
+                            "render_method": "alpha_test"
+                        },
+                        "south": {
+                            "texture": "common",
+                            "render_method": "alpha_test"
+                        },
+                        "east": {
+                            "texture": "common",
+                            "render_method": "alpha_test"
+                        },
+                        "west": {
+                            "texture": "common",
+                            "render_method": "alpha_test"
+                        },
+                        "up": {
+                            "texture": "common",
+                            "render_method": "alpha_test"
+                        },
+                        "down": {
+                            "texture": "common",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": {
+                        "rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
