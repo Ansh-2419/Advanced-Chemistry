@@ -82,7 +82,7 @@
         "output_grid@uc.slot_grid_3x3": {
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "offset": [40, 16],
+          "offset": [60, 9],
           "$slot_outline_texture": "textures/ui/slots/output_slot",
           "$collection_index_1": 7,
           "$collection_index_2": 8,
