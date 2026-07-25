@@ -5,46 +5,40 @@ import {
     MultiblockGenerator,
 } from "../../DoriosCore/index.js";
 
-// ── Fuel registry ────────────────────────────────────────────────────────────
-// energyPerMb : KDe per mB (1 bucket = 1000 mB)
-// burnRate    : mB consumed per tick  (Fast = 20, Medium = 10)
+// ── Fuel registry ─────────────────────────────────────────────────────────────
 const FUELS = {
     petrol:  { energyPerMb: 48, burnRate: 20 },   // 48,000 KDe/bucket, Fast
     diesel:  { energyPerMb: 72, burnRate: 10 },   // 72,000 KDe/bucket, Medium
     biofuel: { energyPerMb: 40, burnRate: 10 },   // 40,000 KDe/bucket, Medium
 };
-const FUEL_NAMES = Object.keys(FUELS);
 
-// ── Constants ────────────────────────────────────────────────────────────────
 const FLUID_CAPACITY_PER_AIR_BLOCK = 64_000;
 const ENERGY_CAPACITY               = 2_000_000;
 const THROTTLE_THRESHOLD            = 0.9;
 
-const ENERGY_SLOT            = 0;
-const LABEL_SLOT             = 1;
-const FLUID_SLOT             = 2;
+const ENERGY_SLOT             = 0;
+const LABEL_SLOT              = 1;
+const FLUID_SLOT              = 2;
 const FLUID_CAPACITY_PROPERTY = "ac:fuel_burner_fluid_capacity";
 const LIFETIME_PROPERTY       = "ac:fuel_burner_lifetime";
 
-// ── CONFIG ───────────────────────────────────────────────────────────────────
-// rate_speed_base uses the fastest possible output for the generator budget;
-// actual energy production is calculated per-tick in burnFuel().
 const CONFIG = {
     required_case: "dorios:multiblock.case.fuel_burner",
     entity: {
-        identifier: "utilitycraft:fuel_burner_multiblock",
-        name: "fuel_burner_monitor",
-        inventory_size: 3,
-        fixed_fluid_types: false,          // multi-fuel: don't lock type
+        identifier:        "utilitycraft:fuel_burner_multiblock",
+        name:              "fuel_burner_monitor",
+        inventory_size:    3,
+        fixed_fluid_types: true,   // keeps dorios:constant_fluid_type tag — prevents
+                                   // the tank type wiping when it empties between fuels
     },
     generator: {
-        rate_speed_base: 20 * 72,          // worst-case ceiling (diesel fast)
-        energy_cap: ENERGY_CAPACITY,
+        rate_speed_base: 20 * 72,
+        energy_cap:      ENERGY_CAPACITY,
     },
     requirements: {},
 };
 
-// ── Block component ──────────────────────────────────────────────────────────
+// ── Block component ───────────────────────────────────────────────────────────
 DoriosAPI.register.blockComponent("fuel_burner_monitor", {
     onPlayerInteract(event) {
         return MultiblockGenerator.handlePlayerInteract(event, CONFIG, {
@@ -92,14 +86,13 @@ DoriosAPI.register.blockComponent("fuel_burner_monitor", {
     },
 });
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────────────
 function getStructureCapacity(structure) {
     return Math.max(1, structure.components?.air ?? 0) * FLUID_CAPACITY_PER_AIR_BLOCK;
 }
 
 function configureStorage(entity, fluidCapacity) {
     const tank = FluidStorage.initializeSingle(entity);
-    // Do NOT lock type — let whatever fuel is present stay
     if (tank.getCap() !== fluidCapacity) tank.setCap(fluidCapacity);
 
     const energy = new EnergyStorage(entity);
@@ -108,7 +101,6 @@ function configureStorage(entity, fluidCapacity) {
     return { tank, energy };
 }
 
-/** Returns the FUELS entry for whatever fluid is in the tank, or null. */
 function getFuelConfig(tank) {
     const type = tank.getType();
     return FUELS[type] ?? null;
@@ -117,14 +109,14 @@ function getFuelConfig(tank) {
 function burnFuel(generator, tank, energy) {
     const fuelCfg = getFuelConfig(tank);
 
-    if (!fuelCfg)        return { status: "\u00A7cNo Valid Fuel", fuelCfg: null };
-    if (tank.get() <= 0) return { status: "\u00A7eNo Fuel",      fuelCfg };
-    if (energy.getFreeSpace() <= 0) return { status: "\u00A76Energy Full", fuelCfg };
+    if (!fuelCfg)                    return { status: "\u00A7cNo Valid Fuel", fuelCfg: null };
+    if (tank.get() <= 0)             return { status: "\u00A7eNo Fuel",       fuelCfg };
+    if (energy.getFreeSpace() <= 0)  return { status: "\u00A76Energy Full",   fuelCfg };
 
-    const interval   = Math.max(1, generator.processingInterval ?? 1);
-    const fillRatio  = energy.get() / Math.max(1, energy.getCap());
-    const throttled  = fillRatio >= THROTTLE_THRESHOLD;
-    const requested  = fuelCfg.burnRate * interval * (throttled ? 0.5 : 1);
+    const interval  = Math.max(1, generator.processingInterval ?? 1);
+    const fillRatio = energy.get() / Math.max(1, energy.getCap());
+    const throttled = fillRatio >= THROTTLE_THRESHOLD;
+    const requested = fuelCfg.burnRate * interval * (throttled ? 0.5 : 1);
 
     const amount = Math.min(
         tank.get(),
@@ -149,12 +141,12 @@ function burnFuel(generator, tank, energy) {
 }
 
 function updateLabel(generator, tank, energy, status, fuelCfg) {
-    const lifetime   = generator.entity.getDynamicProperty(LIFETIME_PROPERTY) ?? 0;
-    const fuelType   = tank.getType() ?? "none";
+    const lifetime    = generator.entity.getDynamicProperty(LIFETIME_PROPERTY) ?? 0;
+    const fuelType    = tank.getType() ?? "none";
     const displayName = fuelType.charAt(0).toUpperCase() + fuelType.slice(1);
     const outputRate  = fuelCfg
         ? EnergyStorage.formatEnergyToText(fuelCfg.burnRate * fuelCfg.energyPerMb)
-        : "—";
+        : "\u2014";
 
     generator.setLabel([
         `\u00A7r\u00A76Fuel Burner - ${status}`,
