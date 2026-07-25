@@ -169,6 +169,41 @@
         },
         "polymerizer_down": {
             "textures": "textures/blocks/polymerizer_down"
+        },
+        //generator
+        "ind_furnator_off": {
+            "textures": "textures/blocks/ind_furnator_off"
+        },
+        "ind_furnator_on": {
+            "textures": "textures/blocks/ind_furnator_on"
+        },
+
+        "ind_magmator_off": {
+            "textures": "textures/blocks/ind_magmator_off"
+        },
+        "ind_magmator_on": {
+            "textures": "textures/blocks/ind_magmator_on"
+        },
+
+        "ind_solarpanel_off": {
+            "textures": "textures/blocks/ind_solarpanel_off"
+        },
+        "ind_solarpanel_on": {
+            "textures": "textures/blocks/ind_solarpanel_on"
+        },
+
+        "ind_thermo_generator_off": {
+            "textures": "textures/blocks/ind_thermo_generator_off"
+        },
+        "ind_thermo_generator_on": {
+            "textures": "textures/blocks/ind_thermo_generator_on"
+        },
+
+        "ind_wind_turbine_off": {
+            "textures": "textures/blocks/ind_wind_turbine_off"
+        },
+        "ind_wind_turbine_on": {
+            "textures": "textures/blocks/generator/ind_wind_turbine_on"
         }
     }
 }
