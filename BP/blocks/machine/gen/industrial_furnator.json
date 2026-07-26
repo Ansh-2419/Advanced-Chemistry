@@ -1,8 +1,8 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.100",
     "minecraft:block": {
         "description": {
-            "identifier": "utilitycraft:ultimate_furnator",
+            "identifier": "utilitycraft:ind_furnator",
             "menu_category": {
                 "category": "construction",
                 "group": "dorios:itemGroup.name.generators"
@@ -33,34 +33,10 @@
             "utilitycraft:special_container": {
                 "Fuel Slot": 3
             },
-            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:geometry": "geometry.utilitycraft_block_2",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "utilitycraft_ultimate_furnator_off_north",
-                    "render_method": "alpha_test"
-                },
-                "north": {
-                    "texture": "utilitycraft_ultimate_furnator_off_north",
-                    "render_method": "alpha_test"
-                },
-                "south": {
-                    "texture": "utilitycraft_ultimate_furnator_off_south",
-                    "render_method": "alpha_test"
-                },
-                "east": {
-                    "texture": "utilitycraft_ultimate_furnator_off_east",
-                    "render_method": "alpha_test"
-                },
-                "west": {
-                    "texture": "utilitycraft_ultimate_furnator_off_west",
-                    "render_method": "alpha_test"
-                },
-                "up": {
-                    "texture": "utilitycraft_ultimate_furnator_off_up",
-                    "render_method": "alpha_test"
-                },
-                "down": {
-                    "texture": "utilitycraft_ultimate_furnator_off_down",
+                    "texture": "ind_furnator_off",
                     "render_method": "alpha_test"
                 }
             },
@@ -115,31 +91,7 @@
                 "components": {
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "utilitycraft_ultimate_furnator_on_north",
-                            "render_method": "alpha_test"
-                        },
-                        "north": {
-                            "texture": "utilitycraft_ultimate_furnator_on_north",
-                            "render_method": "alpha_test"
-                        },
-                        "south": {
-                            "texture": "utilitycraft_ultimate_furnator_on_south",
-                            "render_method": "alpha_test"
-                        },
-                        "east": {
-                            "texture": "utilitycraft_ultimate_furnator_on_east",
-                            "render_method": "alpha_test"
-                        },
-                        "west": {
-                            "texture": "utilitycraft_ultimate_furnator_on_west",
-                            "render_method": "alpha_test"
-                        },
-                        "up": {
-                            "texture": "utilitycraft_ultimate_furnator_on_up",
-                            "render_method": "alpha_test"
-                        },
-                        "down": {
-                            "texture": "utilitycraft_ultimate_furnator_on_down",
+                            "texture": "ind_furnator_on",
                             "render_method": "alpha_test"
                         }
                     },

@@ -1,6 +1,6 @@
 ## Age of Chemical — en_US.lang
 
-## ── Catalog ───────────────────────────────────────────────────────────────────
+## ── Item Groups ───────────────────────────────────────────────────────────────
 ac:itemGroup.name.machines=Advanced Chemistry
 ac:itemGroup.name.endstone_generators=Endstone Generators
 
@@ -11,6 +11,13 @@ tile.utilitycraft:chemical_reactor.name=Chemical Reactor
 tile.utilitycraft:separator.name=Separator
 tile.utilitycraft:polymerizer.name=Polymerizer
 tile.utilitycraft:industrial_crusher.name=Industrial Crusher
+
+## ── Industrial Generators ────────────────────────────────────────────────────
+tile.utilitycraft:ultimate_furnator.name=Industrial Furnator
+tile.utilitycraft:ind_magmator.name=Industrial Magmator
+tile.utilitycraft:ind_solar_panel.name=Industrial Solar Panel
+tile.utilitycraft:ind_thermo_generator.name=Industrial Thermo Generator
+tile.utilitycraft:ind_wind_turbine.name=Industrial Wind Turbine
 
 ## ── Multiblock Valves ────────────────────────────────────────────────────────
 tile.utilitycraft:fluid_valve.name=Fluid Valve
@@ -93,5 +100,5 @@ ui.utilitycraft:info.fermenter=Converts organic inputs into fluids.\n\nSlots:\n-
 ui.utilitycraft:info.fuel_mixer=Mixes stored fluids into fuel blends.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: produced fuel.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.separator=Separates one fluid into two output fluids.\n\nStorage:\n- Input: source fluid.\n- Outputs: separated fluids.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.chemical_reactor=Processes fluids into chemical products.\n\nStorage:\n- Input: reagent fluid.\n- Output: main product.\n- Byproduct: optional item or fluid.\n\nAccepted Upgrades:\n- Speed\n- Energy
-ui.aoc:info.polymerizer=Converts Plastic Resin into HDPE Pallets.\n\nInput: 250 mB Plastic Resin\nOutput: 1 HDPE Pallet\nEnergy: 10,000 kDE
+ui.aoc:info.polymerizer=Converts Plastic Resin into HDPE Pallets.\n\nInput: 250 mB Plastic Resin\nOutput: 1 HDPE Pallet\nEnergy: 10,000 KDe
 ui.aoc:info.industrial_crusher=Crushes items into processed outputs.\n\nInput: 2x2 item grid.\nOutput: 3x3 result grid.\n\nStages:\n- 1x: First breakdown\n- 2x: Second breakdown\n- 3x: Third breakdown\n\nAccepted Upgrades:\n- Speed\n- Energy

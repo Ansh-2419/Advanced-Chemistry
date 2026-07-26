@@ -6,7 +6,6 @@
     "texture_data": {
         "common": {
             "textures": "textures/blocks/common"
-            //chemical_reactor
         },
         "chemical_reactor_north": {
             "textures": "textures/blocks/chemical_reactor_north"
@@ -29,7 +28,6 @@
         "chemical_reactor_down": {
             "textures": "textures/blocks/chemical_reactor_down"
         },
-        //fermentor
         "fermentor_north": {
             "textures": "textures/blocks/fermentor_north"
         },
@@ -50,7 +48,6 @@
         },
         "fermentor_down": {
             "textures": "textures/blocks/fermentor_down"
-            //fuel_mixer
         },
         "fuel_mixer_north": {
             "textures": "textures/blocks/fluid_mixer_north"
@@ -73,7 +70,6 @@
         "fuel_mixer_down": {
             "textures": "textures/blocks/fluid_mixer_down"
         },
-        //multiblock
         "fluid_monitor": {
             "textures": "textures/blocks/fluid_monitor"
         },
@@ -104,7 +100,6 @@
         "fuel_burner_casing": {
             "textures": "textures/blocks/reactor_casing"
         },
-        //separator
         "separator_north": {
             "textures": "textures/blocks/separator_north"
         },
@@ -126,7 +121,6 @@
         "separator_down": {
             "textures": "textures/blocks/separator_down"
         },
-        //Endstone genrator
         "utilitycraft_endstone_gen_copper": {
             "textures": "textures/blocks/gen/utilitycraft_endstone_gen_copper"
         },
@@ -145,7 +139,6 @@
         "utilitycraft_endstone_gen_netherite": {
             "textures": "textures/blocks/gen/utilitycraft_endstone_gen_netherite"
         },
-        //polymerizer
         "polymerizer_side": {
             "textures": "textures/blocks/polymerizer_side"
         },
@@ -170,37 +163,32 @@
         "polymerizer_down": {
             "textures": "textures/blocks/polymerizer_down"
         },
-        //generator
         "ind_furnator_off": {
-            "textures": "textures/blocks/ind_furnator_off"
+            "textures": "textures/blocks/generator/ind_furnator_off"
         },
         "ind_furnator_on": {
-            "textures": "textures/blocks/ind_furnator_on"
+            "textures": "textures/blocks/generator/ind_furnator_on"
         },
-
         "ind_magmator_off": {
-            "textures": "textures/blocks/ind_magmator_off"
+            "textures": "textures/blocks/generator/ind_magmator_off"
         },
         "ind_magmator_on": {
-            "textures": "textures/blocks/ind_magmator_on"
+            "textures": "textures/blocks/generator/ind_magmator_on"
         },
-
         "ind_solarpanel_off": {
-            "textures": "textures/blocks/ind_solarpanel_off"
+            "textures": "textures/blocks/generator/ind_solarpanel_off"
         },
         "ind_solarpanel_on": {
-            "textures": "textures/blocks/ind_solarpanel_on"
+            "textures": "textures/blocks/generator/ind_solarpanel_on"
         },
-
         "ind_thermo_generator_off": {
-            "textures": "textures/blocks/ind_thermo_generator_off"
+            "textures": "textures/blocks/generator/ind_thermo_generator_off"
         },
         "ind_thermo_generator_on": {
-            "textures": "textures/blocks/ind_thermo_generator_on"
+            "textures": "textures/blocks/generator/ind_thermo_generator_on"
         },
-
         "ind_wind_turbine_off": {
-            "textures": "textures/blocks/ind_wind_turbine_off"
+            "textures": "textures/blocks/generator/ind_wind_turbine_off"
         },
         "ind_wind_turbine_on": {
             "textures": "textures/blocks/generator/ind_wind_turbine_on"

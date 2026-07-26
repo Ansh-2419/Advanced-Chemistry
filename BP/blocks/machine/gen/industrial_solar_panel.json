@@ -1,10 +1,13 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.100",
     "minecraft:block": {
         "description": {
             "identifier": "utilitycraft:ind_solar_panel",
             "states": {
-                "utilitycraft:on": [false, true]
+                "utilitycraft:on": [
+                    false,
+                    true
+                ]
             },
             "menu_category": {
                 "category": "construction",
@@ -23,7 +26,7 @@
                     "rate_speed_base": 3000
                 }
             },
-            "minecraft:geometry": "geometry.utilitycraft_block_2",
+            "minecraft:geometry": "geometry.utilitycraft_solar_panel",
             "minecraft:material_instances": {
                 "*": {
                     "texture": "ind_solarpanel_off",
@@ -31,15 +34,34 @@
                 }
             },
             "minecraft:tick": {
-                "interval_range": [4, 4]
+                "interval_range": [
+                    4,
+                    4
+                ]
             },
             "minecraft:selection_box": {
-                "origin": [-8, 0, -8],
-                "size": [16, 16, 16]
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    5,
+                    16
+                ]
             },
             "minecraft:collision_box": {
-                "origin": [-8, 0, -8],
-                "size": [16, 16, 16]
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    5,
+                    16
+                ]
             },
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 1

@@ -4,4 +4,3 @@ import "./DoriosCore/index.js";
 import "./config/main.js";
 import "./machinery/main.js";
 import "./block/index.js";
-import "./items/index.js";
