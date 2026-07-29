@@ -1,4 +1,5 @@
-import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "../../DoriosCore/index.js";
+import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "DoriosCore/index.js";
+import * as DoriosLib from "DoriosLib/index.js";
 import { getSeparatorRecipes } from "../../config/recipes/machinery/separator.js";
 import {
     EMPTY_FLUID,
@@ -24,14 +25,24 @@ const DEFAULT_FLUID_CAP = 128000;
 
 registerIOInterface("utilitycraft:separator", {
     liquids: {
-        slots: IO_FLUID_SLOTS,
-        modes: ["disabled", "input", "output"],
+        buttonSlots: IO_FLUID_SLOTS,
+        anyInputIndices: [0],
+        anyOutputIndices: [1, 2],
+        modes: [
+            { id: "disabled" },
+            { id: "input_1", inputIndices: [0] },
+            { id: "output_1", outputIndices: [1] },
+            { id: "output_2", outputIndices: [2] },
+        ],
     },
 });
 
-DoriosAPI.register.blockComponent("separator", {
+DoriosLib.registry.blockComponent("utilitycraft:separator", {
+    /** @param {import("@minecraft/server").BlockComponentPlayerPlaceBeforeEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     beforeOnPlayerPlace(event, { params: settings }) {
-        Machine.spawnEntity(event, settings, (entity) => {
+        if (!event.player) return;
+        const placementEvent = /** @type {import("DoriosCore/index.js").PlacementEventLike} */ (event);
+        Machine.spawnEntity(placementEvent, settings, (entity) => {
             const machine = new Machine(event.block, { ...settings, ignoreTick: true });
             if (!machine.valid) return;
 
@@ -46,11 +57,14 @@ DoriosAPI.register.blockComponent("separator", {
         });
     },
 
+    /** @param {import("@minecraft/server").BlockComponentTickEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     onTick({ block }, { params: settings }) {
         if (!globalThis.worldLoaded) return;
 
         const machine = new Machine(block, settings);
         if (!machine.valid) return;
+
+        machine.processIO();
 
         const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
         const tankIn = getTank(machine.entity, 0, fluidCap);

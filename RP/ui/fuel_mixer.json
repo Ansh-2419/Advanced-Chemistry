@@ -36,7 +36,7 @@
       },
       {
         "fluid_bar_3@uc.fluid_bar": {
-          "$collection_index": 10,
+          "$collection_index": 9,
           "$has_bg": false,
           "offset": [44, 0]
         }
@@ -71,7 +71,7 @@
       },
       {
         "io_tab@uc.io_tab": {
-          "$io_fluids_modes_description": "IO Modes:\n\u00a7r- \u00a79Input\n\u00a7r- \u00a7cOutput",
+          "$io_fluids_modes_description": "ui.aoc:io.fuel_mixer.liquids",
           "$has_item_io": false,
           "$has_fluid_io": true,
           "$io_items_default": false,
@@ -82,12 +82,12 @@
           "$io_right_texture": "textures/blocks/fluid_mixer_east",
           "$io_bottom_texture": "textures/blocks/fluid_mixer_down",
           "$io_back_texture": "textures/blocks/fluid_mixer_south",
-          "$io_fluid_top_index": 11,
-          "$io_fluid_left_index": 12,
-          "$io_fluid_front_index": 13,
-          "$io_fluid_right_index": 14,
-          "$io_fluid_bottom_index": 15,
-          "$io_fluid_back_index": 16
+          "$io_fluid_top_index": 10,
+          "$io_fluid_left_index": 11,
+          "$io_fluid_front_index": 12,
+          "$io_fluid_right_index": 13,
+          "$io_fluid_bottom_index": 14,
+          "$io_fluid_back_index": 15
         }
       },
       {

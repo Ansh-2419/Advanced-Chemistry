@@ -1,9 +1,8 @@
-import { system, world } from "@minecraft/server";
+import * as DoriosLib from "DoriosLib/index.js";
 
 // Additional Infuser recipes to be registered.
 
-world.afterEvents.worldLoad.subscribe(() => {
-    const addedRecipes = {
+const addedRecipes = {
         "utilitycraft:quartz_dust|utilitycraft:steel_ingot": {
             output: "utilitycraft:duranium_ingot",
             required: 4
@@ -20,10 +19,6 @@ world.afterEvents.worldLoad.subscribe(() => {
             output: "utilitycraft:voltanium_ingot",
             required: 4
         }
-    };
+};
 
-    system.sendScriptEvent(
-        "utilitycraft:register_infuser_recipe",
-        JSON.stringify(addedRecipes)
-    );
-});
+DoriosLib.registry.registerInfuserRecipe(addedRecipes);

@@ -1,4 +1,5 @@
-import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "../../DoriosCore/index.js";
+import { EnergyStorage, FluidStorage, Machine, registerIOInterface } from "DoriosCore/index.js";
+import * as DoriosLib from "DoriosLib/index.js";
 import { getFermentationRecipes } from "../../config/recipes/machinery/fermenter.js";
 import {
     EMPTY_FLUID,
@@ -28,18 +29,32 @@ const DEFAULT_FLUID_TYPE = "ethanol";
 
 registerIOInterface("utilitycraft:fermenter", {
     items: {
-        slots: IO_ITEM_SLOTS,
-        modes: ["disabled", "input", "output"],
+        buttonSlots: IO_ITEM_SLOTS,
+        anyInputSlots: INPUT_SLOTS,
+        anyOutputSlots: [RESIDUE_SLOT],
+        modes: [
+            { id: "disabled" },
+            { id: "input_1", inputSlots: INPUT_SLOTS },
+            { id: "output_1", outputSlots: [RESIDUE_SLOT] },
+        ],
     },
     liquids: {
-        slots: IO_FLUID_SLOTS,
-        modes: ["disabled", "input", "output"],
+        buttonSlots: IO_FLUID_SLOTS,
+        anyInputIndices: [],
+        anyOutputIndices: [0],
+        modes: [
+            { id: "disabled" },
+            { id: "output_1", outputIndices: [0] },
+        ],
     },
 });
 
-DoriosAPI.register.blockComponent("fermenter", {
+DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
+    /** @param {import("@minecraft/server").BlockComponentPlayerPlaceBeforeEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     beforeOnPlayerPlace(event, { params: settings }) {
-        Machine.spawnEntity(event, settings, (entity) => {
+        if (!event.player) return;
+        const placementEvent = /** @type {import("DoriosCore/index.js").PlacementEventLike} */ (event);
+        Machine.spawnEntity(placementEvent, settings, (entity) => {
             const machine = new Machine(event.block, { ...settings, ignoreTick: true });
             if (!machine.valid) return;
 
@@ -50,11 +65,14 @@ DoriosAPI.register.blockComponent("fermenter", {
         });
     },
 
+    /** @param {import("@minecraft/server").BlockComponentTickEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     onTick({ block }, { params: settings }) {
         if (!globalThis.worldLoaded) return;
 
         const machine = new Machine(block, settings);
         if (!machine.valid) return;
+
+        machine.processIO();
 
         const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
         const tank = getTank(machine.entity, 0, fluidCap);

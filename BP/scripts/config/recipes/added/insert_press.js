@@ -1,9 +1,7 @@
-import { system, world } from "@minecraft/server";
+import * as DoriosLib from "DoriosLib/index.js";
 
-world.afterEvents.worldLoad.subscribe(() => {
-    const newRecipes = {
-        "utilitycraft:hdpe_pellet" : { output: "utilitycraft:hdpe_sheet", required: 2 }
-    };
+const newRecipes = {
+    "utilitycraft:hdpe_pellet" : { output: "utilitycraft:hdpe_sheet", required: 2 }
+};
 
-    system.sendScriptEvent("utilitycraft:register_press_recipe", JSON.stringify(newRecipes));
-});
+DoriosLib.registry.registerPressRecipe(newRecipes);

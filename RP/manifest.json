@@ -8,11 +8,11 @@
   },
   "header": {
     "name": "Advanced Chemistry",
-    "description": "v1.0.0 §6Dorios Studios",
+    "description": "v0.1.0 §6Dorios Studios §aRequires UtilityCraft 3.5.0+",
     "min_engine_version": [
       1,
-      19,
-      60
+      21,
+      120
     ],
     "uuid": "a5d2c6f8-4e7b-4f19-bb6e-8c3d9f2a1e55",
     "version": [

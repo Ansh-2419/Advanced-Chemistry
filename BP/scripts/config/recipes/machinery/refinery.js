@@ -1,6 +1,16 @@
 import { system } from '@minecraft/server';
 
-/** @type {RefRecipe[]} */
+/**
+ * @typedef {Object} RefineryRecipe
+ * @property {string} id
+ * @property {{type: string, amount: number}} input
+ * @property {{type: string, amount: number}} output1
+ * @property {{type: string, amount: number}} output2
+ * @property {{type: string, amount: number}} output3
+ * @property {number} energyCost
+ */
+
+/** @type {RefineryRecipe[]} */
 const nativeRecipes = [
     defineRecipe({
         id:        'aoc:refine_crude_oil',

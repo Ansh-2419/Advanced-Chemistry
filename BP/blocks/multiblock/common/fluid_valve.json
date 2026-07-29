@@ -21,7 +21,8 @@
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 1
             },
-            "tag:dorios:multiblock.port": {},
+            "utilitycraft:link_node_io": {},
+            "tag:dorios:link_node": {},
             "tag:dorios:multiblock.case.fluid_storage": {},
             "tag:dorios:multiblock.case.fuel_burner": {},
             "tag:dorios:multiblock.case.refinery": {}
@@ -32,7 +33,7 @@
                 "components": {
                     "minecraft:light_emission": 4,
                     "tag:dorios:fluid": {},
-                    "tag:dorios:multiblock.port": {},
+                    "tag:dorios:link_node": {},
                     "tag:dorios:multiblock.case.fluid_storage": {},
                     "tag:dorios:multiblock.case.fuel_burner": {},
                     "tag:dorios:multiblock.case.refinery": {}

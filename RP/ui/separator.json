@@ -71,7 +71,7 @@
       },
       {
         "io_tab@uc.io_tab": {
-          "$io_fluids_modes_description": "IO Modes:\n\u00a7r- \u00a79Input\n\u00a7r- \u00a7cOutput",
+          "$io_fluids_modes_description": "ui.aoc:io.separator.liquids",
           "$has_item_io": false,
           "$has_fluid_io": true,
           "$io_items_default": false,

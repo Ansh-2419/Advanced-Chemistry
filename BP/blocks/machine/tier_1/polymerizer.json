@@ -17,10 +17,6 @@
             }
         },
         "components": {
-            "utilitycraft:special_container": {
-                "Fluid Input": 3,
-                "Item Output": 4
-            },
             "utilitycraft:machine_recipes": {
                 "type": "polymerizer"
             },
@@ -67,21 +63,22 @@
             "tag:dorios:fluid": {},
             "tag:dorios:item": {},
             "tag:minecraft:is_pickaxe_item_destructible": {},
+            "utilitycraft:machine_upgrades": [
+                { "type": "speed", "slot": 5 },
+                { "type": "energy", "slot": 6 }
+            ],
             "utilitycraft:polymerizer": {
                 "entity": {
                     "type": "fluid_machine",
-                    "input_type": "complex",
-                    "inventory_size": 19,
-                    "output_slot": 3,
-                    "fluid": true
+                    "inventory_size": 19
                 },
                 "machine": {
                     "energy_cap": 200000,
                     "energy_cost": 10000,
                     "rate_speed_base": 10000,
                     "fluid_cap": 16000,
-                    "fluid_rate": 16000,
-                    "upgrades": [6, 7]
+                    "fluid_types": 1,
+                    "upgrades": [5, 6]
                 }
             }
         },

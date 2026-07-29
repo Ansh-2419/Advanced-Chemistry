@@ -1,4 +1,5 @@
 import { ItemStack, world } from "@minecraft/server";
+import * as DoriosLib from "DoriosLib/index.js";
 
 const EMPTY_CAPSULE_ID = "utilitycraft:empty_liquid_capsule";
 const CAPSULE_MIN_TIER = 1;
@@ -176,14 +177,7 @@ function transformHeldCapsule(player, expectedTypeId, nextTypeId) {
         current.amount -= 1;
         inventory.setItem(slot, current);
 
-        if (typeof player.addItem === "function") {
-            player.addItem(nextTypeId, 1, true);
-        } else {
-            const overflow = inventory.addItem(new ItemStack(nextTypeId, 1));
-            if (overflow) {
-                player.dimension?.spawnItem?.(overflow, player.location);
-            }
-        }
+        DoriosLib.player.giveItem(player, { item: nextTypeId, amount: 1 });
         return true;
     }
 

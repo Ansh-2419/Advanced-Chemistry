@@ -513,4 +513,57 @@ world.afterEvents.entityItemDrop.subscribe((event) => {
   InterfaceManager.handleEntityItemDrop(event);
 });
 
-export { IOInterface, registerIOInterface } from "./IOInterface.js";
+export {
+  IOInterface,
+  ensureBlockIOInterface,
+  hasRegisteredIOInterface,
+  registerIOInterface,
+  registerIOInterfaceForBlockTag,
+} from "./IOInterface.js";
+export {
+  getLinkNodeIODefinition,
+  openLinkNodeIOForm,
+  registerLinkNodeIO,
+} from "./linkNodeIO.js";
+export {
+  DEFAULT_FLUID_IO_MODE,
+  FLUID_CONTAINER_FAMILY,
+  FLUID_CONFIG_EVENT_NAMESPACE,
+  FLUID_CONFIG_KEY,
+  FLUID_CONFIG_VERSION,
+  SET_FLUID_CONFIG_EVENT_ID,
+  cloneFluidConfig,
+  cycleFluidIODirectionMode,
+  ensureFluidIOConfig,
+  getFluidConfig,
+  getFluidConfigRevision,
+  getFluidIODefinition,
+  getFluidIODirectionMode,
+  getFluidStatus,
+  getInputFluidIndices,
+  getOutputFluidIndices,
+  normalizeFluidConfig,
+  registerFluidIODefinition,
+  setFluidConfig,
+} from "./fluidIO.js";
+export {
+  DEFAULT_GAS_IO_MODE,
+  GAS_CONTAINER_FAMILY,
+  GAS_CONFIG_EVENT_NAMESPACE,
+  GAS_CONFIG_KEY,
+  GAS_CONFIG_VERSION,
+  SET_GAS_CONFIG_EVENT_ID,
+  cloneGasConfig,
+  cycleGasIODirectionMode,
+  ensureGasIOConfig,
+  getGasConfig,
+  getGasConfigRevision,
+  getGasIODefinition,
+  getGasIODirectionMode,
+  getGasStatus,
+  getInputGasIndices,
+  getOutputGasIndices,
+  normalizeGasConfig,
+  registerGasIODefinition,
+  setGasConfig,
+} from "./gasIO.js";

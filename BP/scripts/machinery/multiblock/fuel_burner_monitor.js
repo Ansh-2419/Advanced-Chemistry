@@ -3,7 +3,9 @@ import {
     FluidStorage,
     Multiblock,
     MultiblockGenerator,
-} from "../../DoriosCore/index.js";
+    registerLinkNodeIO,
+} from "DoriosCore/index.js";
+import * as DoriosLib from "DoriosLib/index.js";
 
 // ── Fuel registry ─────────────────────────────────────────────────────────────
 const FUELS = {
@@ -39,9 +41,22 @@ const CONFIG = {
 };
 
 // ── Block component ───────────────────────────────────────────────────────────
-DoriosAPI.register.blockComponent("fuel_burner_monitor", {
+registerLinkNodeIO("utilitycraft:fuel_burner_monitor", {
+    liquids: {
+        anyInputIndices: [0],
+        anyOutputIndices: [],
+        inputs: [
+            { id: "fuel", label: "Fuel Tank", color: "§9", indices: [0] },
+        ],
+        outputs: [],
+    },
+});
+
+DoriosLib.registry.blockComponent("utilitycraft:fuel_burner_monitor", {
     onPlayerInteract(event) {
-        return MultiblockGenerator.handlePlayerInteract(event, CONFIG, {
+        if (!event.player) return;
+        const interactionEvent = /** @type {import("DoriosCore/index.js").InteractionEventLike} */ (event);
+        return MultiblockGenerator.handlePlayerInteract(interactionEvent, CONFIG, {
             initializeEntity(entity) {
                 configureStorage(entity, FLUID_CAPACITY_PER_AIR_BLOCK);
             },

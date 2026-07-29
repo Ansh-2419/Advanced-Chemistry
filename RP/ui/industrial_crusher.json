@@ -145,7 +145,7 @@
       },
       {
         "io_tab@uc.io_tab": {
-          "$io_items_modes_description": "IO Modes:\n\u00a7r- \u00a79Input\n\u00a7r- \u00a7cOutput",
+          "$io_items_modes_description": "ui.aoc:io.industrial_crusher.items",
           "$has_item_io": true,
           "$has_fluid_io": false,
           "$io_items_default": true,

@@ -1,9 +1,4 @@
-import { system, world } from "@minecraft/server";
-
-const RegisterContainer = "utilitycraft:register_fluid_container";
-const RegisterOutput = "utilitycraft:register_fluid_output";
-const RegisterLegacyContainer = "utilitycraft:register_fluid_item";
-const RegisterLegacyHolder = "utilitycraft:register_fluid_holder";
+import * as DoriosLib from "DoriosLib/index.js";
 
 const INFINITE_CAPSULE_FALLBACK_MB = 512000;
 
@@ -121,44 +116,5 @@ const ATLegacyHolders = Object.fromEntries(
         })
 );
 
-function sendRegistration(eventId, payload) {
-    if (!payload || payload.length === 0) return;
-    
-    // Check if system is available and has sendScriptEvent method
-    if (!system || typeof system.sendScriptEvent !== "function") {
-        console.warn(`[Advanced Chemistry] system.sendScriptEvent not available; skipping event '${eventId}'.`);
-        return;
-    }
-    
-    try {
-        system.sendScriptEvent(eventId, JSON.stringify(payload));
-    } catch (error) {
-        console.warn(`[Advanced Chemistry] Failed to send script event '${eventId}':`, error);
-    }
-}
-
-// Use world.afterEvents.worldLoad to ensure world is initialized
-if (world?.afterEvents?.worldLoad) {
-    world.afterEvents.worldLoad.subscribe(() => {
-        // Use system.run to defer execution and ensure system is ready
-        if (system?.run) {
-            system.run(() => {
-                sendRegistration(RegisterContainer, ATNewCapsules);
-                sendRegistration(RegisterOutput, ATNewContainers);
-                sendRegistration(RegisterLegacyContainer, ATLegacyCapsules);
-                sendRegistration(RegisterLegacyHolder, ATLegacyHolders);
-            });
-        } else if (system?.runTimeout) {
-            system.runTimeout(() => {
-                sendRegistration(RegisterContainer, ATNewCapsules);
-                sendRegistration(RegisterOutput, ATNewContainers);
-                sendRegistration(RegisterLegacyContainer, ATLegacyCapsules);
-                sendRegistration(RegisterLegacyHolder, ATLegacyHolders);
-            }, 0);
-        } else {
-            console.warn("[Advanced Chemistry] system.run/runTimeout not available; fluid registration may fail.");
-        }
-    });
-} else {
-    console.warn("[Advanced Chemistry] world.afterEvents.worldLoad not available; fluid registration disabled.");
-}
+DoriosLib.registry.registerFluidItem(ATLegacyCapsules);
+DoriosLib.registry.registerFluidHolder(ATLegacyHolders);
