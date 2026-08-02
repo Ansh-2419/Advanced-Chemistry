@@ -1,4 +1,4 @@
-import { world, system } from "@minecraft/server";
+import * as DoriosLib from "DoriosLib/index.js";
 
 const coolantsRegister = {
     "ethanol": {
@@ -7,9 +7,4 @@ const coolantsRegister = {
     }
 }
 
-world.afterEvents.worldLoad.subscribe(() => {
-    system.sendScriptEvent(
-        "utilitycraft:register_coolant",
-        JSON.stringify(coolantsRegister)
-    )
-})
+DoriosLib.registry.registerCoolant(coolantsRegister);

@@ -76,8 +76,31 @@ const RECIPES = [
         energyCost:     3600,
         seconds:        6,
         batches: {
-            small: { size: 4,  seconds: 4, fluidAmount: 250 },
-            large: { size: 8,  seconds: 6, fluidAmount: 500 },
+            small: { size: 4, seconds: 4, fluidAmount: 250 },
+            large: { size: 8, seconds: 6, fluidAmount: 500 },
+        },
+    },
+    // ── Lava & Water balls ────────────────────────────────────────────────────
+    {
+        id: "utilitycraft:lava_from_lava_ball",
+        input:      { id: "utilitycraft:lava_ball", amount: 1 },
+        fluid:      { type: "lava", amount: 1000 },
+        energyCost: 800,
+        seconds:    2,
+        batches: {
+            small: { size: 1, seconds: 2, fluidAmount: 1000 },
+            large: { size: 8, seconds: 5, fluidAmount: 8000 },
+        },
+    },
+    {
+        id: "utilitycraft:water_from_water_ball",
+        input:      { id: "utilitycraft:water_ball", amount: 1 },
+        fluid:      { type: "water", amount: 1000 },
+        energyCost: 400,
+        seconds:    2,
+        batches: {
+            small: { size: 1, seconds: 2, fluidAmount: 1000 },
+            large: { size: 8, seconds: 5, fluidAmount: 8000 },
         },
     },
 ];

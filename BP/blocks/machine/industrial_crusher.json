@@ -22,10 +22,6 @@
             }
         },
         "components": {
-            "utilitycraft:special_container": {
-                "Item Input": 3,
-                "Item Output": 4
-            },
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
@@ -71,6 +67,10 @@
             "tag:dorios:energy": {},
             "tag:dorios:item": {},
             "tag:minecraft:is_pickaxe_item_destructible": {},
+            "utilitycraft:machine_upgrades": [
+                { "type": "speed", "slot": 19 },
+                { "type": "energy", "slot": 20 }
+            ],
             "utilitycraft:industrial_crusher": {
                 "entity": {
                     "inventory_size": 27

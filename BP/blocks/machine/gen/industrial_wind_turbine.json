@@ -56,7 +56,6 @@
             },
             "minecraft:destructible_by_explosion": false,
             "tag:dorios:generator": {},
-            "tag:dorios:io": {},
             "tag:dorios:energy": {},
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "minecraft:selection_box": {

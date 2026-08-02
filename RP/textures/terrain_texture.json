@@ -192,6 +192,42 @@
         },
         "ind_wind_turbine_on": {
             "textures": "textures/blocks/generator/ind_wind_turbine_on"
+        },
+        "utilitycraft_biofuel_fluid": {
+            "textures": "textures/entity/biofuel"
+        },
+        "utilitycraft_crude_oil_fluid": {
+            "textures": "textures/entity/crude_oil"
+        },
+        "utilitycraft_diesel_fluid": {
+            "textures": "textures/entity/diesel"
+        },
+        "utilitycraft_ethanol_fluid": {
+            "textures": "textures/entity/ethanol"
+        },
+        "utilitycraft_heavy_hydrocarbon_fluid": {
+            "textures": "textures/entity/heavy_hydrocarbon"
+        },
+        "utilitycraft_hydrocarbon_slurry_fluid": {
+            "textures": "textures/entity/hydrocarbon_slurry"
+        },
+        "utilitycraft_naphtha_fluid": {
+            "textures": "textures/entity/naphtha"
+        },
+        "utilitycraft_petrol_fluid": {
+            "textures": "textures/entity/petrol"
+        },
+        "utilitycraft_plant_oil_fluid": {
+            "textures": "textures/entity/plant_oil"
+        },
+        "utilitycraft_fertilizer_enriched_fluid": {
+            "textures": "textures/entity/fertilizer_enriched"
+        },
+        "utilitycraft_fertilizer_industrial_fluid": {
+            "textures": "textures/entity/fertilizer_industrial"
+        },
+        "utilitycraft_fertilizer_org_fluid": {
+            "textures": "textures/entity/fertilizer_org"
         }
     }
 }

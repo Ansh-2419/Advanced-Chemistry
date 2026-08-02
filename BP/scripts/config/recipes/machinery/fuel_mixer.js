@@ -1,6 +1,17 @@
 import { system } from "@minecraft/server";
 
 /**
+ * @typedef {Object} FuelMixerRecipe
+ * @property {string} id
+ * @property {{type: string, amount: number}} input1
+ * @property {{type: string, amount: number}} input2
+ * @property {{type: string, amount: number}} output
+ * @property {number} energyCost
+ * @property {number} seconds
+ * @property {string|null} description
+ */
+
+/**
  * Fuel Mixer recipes — each recipe takes two fluid inputs
  * and produces one fluid output.
  * @type {FuelMixerRecipe[]}

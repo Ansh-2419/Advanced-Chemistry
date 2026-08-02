@@ -17,9 +17,6 @@
             }
         },
         "components": {
-            "utilitycraft:special_container": {
-                "Fluid Manual Input": 3
-            },
             "utilitycraft:machine_recipes": {
                 "type": "separator"
             },
@@ -66,19 +63,21 @@
             "tag:dorios:fluid": {},
             "tag:dorios:item": {},
             "tag:minecraft:is_pickaxe_item_destructible": {},
+            "utilitycraft:machine_upgrades": [
+                { "type": "speed", "slot": 7 },
+                { "type": "energy", "slot": 8 }
+            ],
             "utilitycraft:separator": {
                 "entity": {
                     "type": "fluid_machine",
-                    "input_type": "complex",
-                    "inventory_size": 15,
-                    "fluid": true
+                    "inventory_size": 15
                 },
                 "machine": {
                     "energy_cap": 8192000,
                     "energy_cost": 6400,
                     "rate_speed_base": 6400,
                     "fluid_cap": 128000,
-                    "fluid_rate": 128000,
+                    "fluid_types": 3,
                     "upgrades": [7, 8]
                 }
             }

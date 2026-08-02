@@ -17,10 +17,6 @@
             }
         },
         "components": {
-            "utilitycraft:special_container": {
-                "Fluid Input 1": 5,
-                "Fluid Input 2": 6
-            },
             "utilitycraft:machine_recipes": {
                 "type": "fuel_mixer"
             },
@@ -67,20 +63,21 @@
             "tag:dorios:fluid": {},
             "tag:dorios:item": {},
             "tag:minecraft:is_pickaxe_item_destructible": {},
+            "utilitycraft:machine_upgrades": [
+                { "type": "speed", "slot": 3 },
+                { "type": "energy", "slot": 4 }
+            ],
             "utilitycraft:fuel_mixer": {
                 "entity": {
                     "type": "fluid_machine",
-                    "input_type": "complex",
-                    "output_type": "simple",
-                    "inventory_size": 17,
-                    "fluid": true
+                    "inventory_size": 16
                 },
                 "machine": {
                     "energy_cap": 8192000,
                     "energy_cost": 3600,
                     "rate_speed_base": 3600,
                     "fluid_cap": 128000,
-                    "fluid_rate": 128000,
+                    "fluid_types": 3,
                     "upgrades": [3, 4]
                 }
             }

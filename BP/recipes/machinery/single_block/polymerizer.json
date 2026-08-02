@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "utilitycraft:polymerizer"
+		},
+		"tags": [
+			"utilitycraft_workbench"
+		],
+		"pattern": [
+			"SBS",
+			"RCR",
+			"MAM"
+		],
+		"key": {
+			"R": {
+				"item": "utilitycraft:machine_case"
+			},
+			"A": {
+				"item": "utilitycraft:advanced_fluid_tank"
+			},
+			"S": {
+				"item": "utilitycraft:Duranium_ingot"
+			},
+			"M": {
+				"item": "utilitycraft:expert_chip"
+			},
+			"B": {
+				"item": "utilitycraft:energized_iron_block"
+			},
+			"C": {
+				"item": "utilitycraft:electro_press"
+			}
+		},
+		"result": {
+			"item": "utilitycraft:polymerizer",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "utilitycraft:Duranium_ingot"
+			}
+		]
+	}
+}

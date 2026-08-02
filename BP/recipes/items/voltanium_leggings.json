@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:voltanium_leggings"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "VVV",
+            "V V",
+            "V V"
+        ],
+        "key": {
+            "V": {
+                "item": "utilitycraft:voltanium_ingot"
+            }
+        },
+        "result": [
+            {
+                "item": "utilitycraft:voltanium_leggings"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "utilitycraft:voltanium_ingot"
+            }
+        ],
+        "priority": 0
+    }
+}

@@ -26,15 +26,16 @@
  * @property {string} rotation Block rotation type.
  * 
  * @property {Object} entity Entity configuration of the machine.
+ * @property {string} [entity.identifier] Optional custom helper entity identifier.
  * @property {string} entity.name Internal machine name (e.g., "crusher").
- * @property {string} entity.input_type Type of input (e.g., "simple").
- * @property {string} entity.output_type Type of output (e.g., "complex").
+ * @property {string} [entity.type] Helper-entity capability event suffix.
  * @property {number} entity.inventory_size Number of inventory slots.
  * 
  * @property {Object} machine Machine operational settings.
  * @property {number} machine.energy_cap Maximum internal energy capacity.
  * @property {number} machine.energy_cost Energy consumed per operation.
- * @property {number} generator.fluidCap Maximum internal fluid capacity.
+ * @property {number} [machine.fluid_cap] Maximum internal fluid capacity.
+ * @property {number} [machine.fluid_types] Number of independent fluid tanks.
  * @property {number} machine.rate_speed_base Base processing rate (DE/t).
  * @property {number} [machine.fixed_rate] Optional fixed energy rate (DE per second). When set, the per-update cost scales with tick speed and ignores rate_speed_base.
  * @property {boolean} [machine.dynamic_rate] When true, derives the machine rate from recipe time fields (seconds/ticks) to make configured durations accurate.
@@ -205,13 +206,15 @@
  * @global
  * @typedef {Object} GeneratorSettings
  * @property {Object} entity Entity configuration of the generator.
+ * @property {string} [entity.identifier] Optional custom helper entity identifier.
  * @property {string} entity.name Internal generator name (e.g., "furnator").
  * @property {string} entity.type Type of generator (e.g., "simple").
  * @property {number} entity.inventory_size Number of inventory slots.
  * 
  * @property {Object} generator Generator operational settings.
  * @property {number} generator.energy_cap Maximum internal energy capacity.
- * @property {number} generator.fluidCap Maximum internal fluid capacity.
+ * @property {number} [generator.fluid_cap] Maximum internal fluid capacity.
+ * @property {number} [generator.fluid_types] Number of independent fluid tanks.
  * @property {number} generator.rate_speed_base Base processing rate (DE/t).
  */
 

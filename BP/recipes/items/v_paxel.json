@@ -1,0 +1,62 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:v_paxel"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "AXA",
+            "ZSC",
+            "DSD"
+        ],
+        "key": {
+            "A": {
+                "item": "minecraft:string"
+            },
+            "X": {
+                "item": "utilitycraft:v_shovel"
+            },
+            "Z": {
+                "item": "utilitycraft:v_axe"
+            },
+            "S": {
+                "item": "minecraft:stick"
+            },
+            "C": {
+                "item": "utilitycraft:v_pickaxe"
+            },
+            "D": {
+                "item": "utilitycraft:voltanium_ingot"
+            }
+        },
+        "result": [
+            {
+                "item": "utilitycraft:v_paxel"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "utilitycraft:v_shovel"
+            },
+            {
+                "item": "utilitycraft:v_axe"
+            },
+            {
+                "item": "minecraft:stick"
+            },
+            {
+                "item": "utilitycraft:v_pickaxe"
+            },
+            {
+                "item": "minecraft:string"
+            },
+            {
+                "item": "utilitycraft:voltanium_ingot"
+            }
+        ],
+        "priority": 0
+    }
+}

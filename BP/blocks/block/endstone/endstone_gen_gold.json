@@ -43,9 +43,8 @@
             }
         },
         "components": {
-            "utilitycraft:endstone_generators": {
-                "material": "minecraft:end_stone",
-                "amount": 4
+            "utilitycraft:block_generator": {
+                "material": "minecraft:end_stone"
             },
             "minecraft:material_instances": {
                 "*": {
@@ -63,8 +62,8 @@
             },
             "minecraft:tick": {
                 "interval_range": [
-                    40,
-                    40
+                    20,
+                    20
                 ]
             },
             "minecraft:destructible_by_mining": {

@@ -2,7 +2,9 @@ import {
     FluidStorage,
     Multiblock,
     MultiblockMachine,
-} from "../../DoriosCore/index.js";
+    registerLinkNodeIO,
+} from "DoriosCore/index.js";
+import * as DoriosLib from "DoriosLib/index.js";
 import { formatFluidDisplayName } from "./multiblock_helpers.js";
 
 const TANK_COUNT = 7;
@@ -25,9 +27,33 @@ const CONFIG = {
     requirements: {},
 };
 
-DoriosAPI.register.blockComponent("fluid_storage_monitor", {
+const ALL_TANK_INDICES = Array.from({ length: TANK_COUNT }, (_, index) => index);
+const TANK_GROUPS = ALL_TANK_INDICES.map(index => ({
+    id: `tank_${index + 1}`,
+    label: `Tank ${index + 1}`,
+    indices: [index],
+}));
+
+registerLinkNodeIO("utilitycraft:fluid_storage_monitor", {
+    liquids: {
+        anyInputIndices: ALL_TANK_INDICES,
+        anyOutputIndices: ALL_TANK_INDICES,
+        inputs: [
+            { id: "any_tank", label: "Any Tank", color: "§9", indices: ALL_TANK_INDICES },
+            ...TANK_GROUPS.map(group => ({ ...group, color: "§9" })),
+        ],
+        outputs: [
+            { id: "any_tank", label: "Any Tank", color: "§c", indices: ALL_TANK_INDICES },
+            ...TANK_GROUPS.map(group => ({ ...group, color: "§c" })),
+        ],
+    },
+});
+
+DoriosLib.registry.blockComponent("utilitycraft:fluid_storage_monitor", {
     onPlayerInteract(event) {
-        return MultiblockMachine.handlePlayerInteract(event, CONFIG, {
+        if (!event.player) return;
+        const interactionEvent = /** @type {import("DoriosCore/index.js").InteractionEventLike} */ (event);
+        return MultiblockMachine.handlePlayerInteract(interactionEvent, CONFIG, {
             initializeEntity(entity) {
                 configureTanks(entity, CAPACITY_PER_AIR_BLOCK);
             },

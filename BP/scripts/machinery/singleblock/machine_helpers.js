@@ -1,5 +1,5 @@
 import { ItemStack } from "@minecraft/server";
-import { FluidStorage } from "../../DoriosCore/index.js";
+import { FluidStorage } from "DoriosCore/index.js";
 
 export const EMPTY_FLUID = "empty";
 

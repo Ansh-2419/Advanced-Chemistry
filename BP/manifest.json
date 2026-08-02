@@ -8,7 +8,7 @@
   },
   "header": {
     "name": "Advanced Chemistry",
-    "description": "v1.0.0 §6Dorios Studios",
+    "description": "v0.2.0 §6Dorios Studios §aRequires UtilityCraft 3.5.0+",
     "min_engine_version": [
       1,
       21,
@@ -17,7 +17,7 @@
     "uuid": "7c8b9a44-53a6-4c8e-bcc3-7c4c9d6d4f11",
     "version": [
       0,
-      1,
+      2,
       0
     ]
   },
@@ -46,7 +46,7 @@
   "dependencies": [
     {
       "module_name": "@minecraft/server",
-      "version": "2.4.0"
+      "version": "2.8.0"
     },
     {
       "module_name": "@minecraft/server-ui",
@@ -56,8 +56,16 @@
       "uuid": "a5d2c6f8-4e7b-4f19-bb6e-8c3d9f2a1e55",
       "version": [
         0,
-        1,
+        2,
         0
+      ]
+    },
+    {
+      "uuid": "9d61a8df-7d50-4624-8bff-d2c90c52a5a0",
+      "version": [
+        3,
+        5,
+        1
       ]
     }
   ]

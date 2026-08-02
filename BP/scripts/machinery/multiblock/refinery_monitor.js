@@ -3,7 +3,9 @@ import {
     FluidStorage,
     Multiblock,
     MultiblockMachine,
-} from "../../DoriosCore/index.js";
+    registerLinkNodeIO,
+} from "DoriosCore/index.js";
+import * as DoriosLib from "DoriosLib/index.js";
 import { getRefineryRecipes } from "../../config/recipes/machinery/refinery.js";
 import { formatFluidDisplayName } from "./multiblock_helpers.js";
 
@@ -32,9 +34,27 @@ const CONFIG = {
     requirements: {},
 };
 
-DoriosAPI.register.blockComponent("refinery_monitor", {
+registerLinkNodeIO("utilitycraft:refinery_monitor", {
+    liquids: {
+        anyInputIndices: [0],
+        anyOutputIndices: [1, 2, 3],
+        inputs: [
+            { id: "feedstock", label: "Feedstock Tank", color: "§9", indices: [0] },
+        ],
+        outputs: [
+            { id: "all_products", label: "Any Product Tank", color: "§c", indices: [1, 2, 3] },
+            { id: "product_1", label: "Product Tank 1", color: "§c", indices: [1] },
+            { id: "product_2", label: "Product Tank 2", color: "§c", indices: [2] },
+            { id: "product_3", label: "Product Tank 3", color: "§c", indices: [3] },
+        ],
+    },
+});
+
+DoriosLib.registry.blockComponent("utilitycraft:refinery_monitor", {
     onPlayerInteract(event) {
-        return MultiblockMachine.handlePlayerInteract(event, CONFIG, {
+        if (!event.player) return;
+        const interactionEvent = /** @type {import("DoriosCore/index.js").InteractionEventLike} */ (event);
+        return MultiblockMachine.handlePlayerInteract(interactionEvent, CONFIG, {
             initializeEntity(entity) {
                 configureStorage(entity);
             },

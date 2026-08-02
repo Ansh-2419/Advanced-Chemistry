@@ -82,6 +82,28 @@
                                 "$recipe_icon": "textures/items/misc/bucket_witch_water",
                                 "offset": [36, 0]
                             }
+                        },
+                        {
+                            "ac_adamant_ingot_toggle@uc.infuser_recipe_toggle": {
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "$toggle_index": 4003,
+                                "$toggle_hover_text": "item.utilitycraft:adamant_ingot",
+                                "$toggle_control_name": "ac_adamant_ingot_recipe",
+                                "$recipe_icon": "textures/items/ingot/adamant_ingot",
+                                "offset": [54, 0]
+                            }
+                        },
+                        {
+                            "ac_industrial_chip_toggle@uc.infuser_recipe_toggle": {
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "$toggle_index": 4004,
+                                "$toggle_hover_text": "item.utilitycraft:industrial_chip",
+                                "$toggle_control_name": "ac_industrial_chip_recipe",
+                                "$recipe_icon": "textures/items/misc/industrial_chip",
+                                "offset": [72, 0]
+                            }
                         }
                     ]
                 }
@@ -181,6 +203,66 @@
                             "output@uc.infuser_recipe_output": {
                                 "$slot_item_texture": "textures/items/misc/bucket_witch_water",
                                 "$slot_hover_text": "item.utilitycraft:water_bucket_custom",
+                                "$has_slot_hover": true
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "ac_adamant_ingot_panel@uc.recipe_panel": {
+                    "$recipe_control_name": "ac_adamant_ingot_recipe",
+                    "controls": [
+                        {
+                            "catalyst@uc.infuser_recipe_catalyst": {
+                                "$slot_item_texture": "textures/items/misc/hdpe_sheet",
+                                "$slot_hover_text": "item.utilitycraft:hdpe_sheet",
+                                "$has_slot_hover": true,
+                                "$slot_count_text": "4",
+                                "$has_slot_count": true
+                            }
+                        },
+                        {
+                            "input@uc.infuser_recipe_input": {
+                                "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
+                                "$slot_hover_text": "item.utilitycraft:voltanium_ingot",
+                                "$has_slot_hover": true
+                            }
+                        },
+                        {
+                            "output@uc.infuser_recipe_output": {
+                                "$slot_item_texture": "textures/items/ingot/adamant_ingot",
+                                "$slot_hover_text": "item.utilitycraft:adamant_ingot",
+                                "$has_slot_hover": true
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "ac_industrial_chip_panel@uc.recipe_panel": {
+                    "$recipe_control_name": "ac_industrial_chip_recipe",
+                    "controls": [
+                        {
+                            "catalyst@uc.infuser_recipe_catalyst": {
+                                "$slot_item_texture": "textures/items/ingot/adamant_ingot",
+                                "$slot_hover_text": "item.utilitycraft:adamant_ingot",
+                                "$has_slot_hover": true,
+                                "$slot_count_text": "4",
+                                "$has_slot_count": true
+                            }
+                        },
+                        {
+                            "input@uc.infuser_recipe_input": {
+                                "$slot_item_texture": "textures/items/machinery/ultimate_chip",
+                                "$slot_hover_text": "item.utilitycraft:ultimate_chip",
+                                "$has_slot_hover": true
+                            }
+                        },
+                        {
+                            "output@uc.infuser_recipe_output": {
+                                "$slot_item_texture": "textures/items/misc/industrial_chip",
+                                "$slot_hover_text": "item.utilitycraft:industrial_chip",
                                 "$has_slot_hover": true
                             }
                         }

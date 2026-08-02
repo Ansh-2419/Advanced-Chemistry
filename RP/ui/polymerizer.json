@@ -62,6 +62,8 @@
       },
       {
         "io_tab@uc.io_tab": {
+          "$io_items_modes_description": "ui.aoc:io.polymerizer.items",
+          "$io_fluids_modes_description": "ui.aoc:io.polymerizer.liquids",
           "$has_item_io": true,
           "$has_fluid_io": true,
           "$io_top_texture":    "textures/blocks/polymerizer_up",
