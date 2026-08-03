@@ -4,8 +4,14 @@
     "resource_pack_name": "UtilityCraft Expanded",
     "texture_name": "atlas.terrain",
     "texture_data": {
-        "common": {
-            "textures": "textures/blocks/common"
+        "burner_monitor": {
+            "textures": "textures/blocks/burner_monitor"
+        },
+        "chemical_reactor_down": {
+            "textures": "textures/blocks/chemical_reactor_down"
+        },
+        "chemical_reactor_east": {
+            "textures": "textures/blocks/chemical_reactor_east"
         },
         "chemical_reactor_north": {
             "textures": "textures/blocks/chemical_reactor_north"
@@ -16,17 +22,23 @@
         "chemical_reactor_south": {
             "textures": "textures/blocks/chemical_reactor_south"
         },
-        "chemical_reactor_east": {
-            "textures": "textures/blocks/chemical_reactor_east"
+        "chemical_reactor_up": {
+            "textures": "textures/blocks/chemical_reactor_up"
         },
         "chemical_reactor_west": {
             "textures": "textures/blocks/chemical_reactor_west"
         },
-        "chemical_reactor_up": {
-            "textures": "textures/blocks/chemical_reactor_up"
+        "common": {
+            "textures": "textures/blocks/common"
         },
-        "chemical_reactor_down": {
-            "textures": "textures/blocks/chemical_reactor_down"
+        "energy_port": {
+            "textures": "textures/blocks/multi/energy_port"
+        },
+        "fermentor_down": {
+            "textures": "textures/blocks/fermentor_down"
+        },
+        "fermentor_east": {
+            "textures": "textures/blocks/fermentor_east"
         },
         "fermentor_north": {
             "textures": "textures/blocks/fermentor_north"
@@ -37,17 +49,26 @@
         "fermentor_south": {
             "textures": "textures/blocks/fermentor_south"
         },
-        "fermentor_east": {
-            "textures": "textures/blocks/fermentor_east"
+        "fermentor_up": {
+            "textures": "textures/blocks/fermentor_up"
         },
         "fermentor_west": {
             "textures": "textures/blocks/fermentor_west"
         },
-        "fermentor_up": {
-            "textures": "textures/blocks/fermentor_up"
+        "fluid_monitor": {
+            "textures": "textures/blocks/fluid_monitor"
         },
-        "fermentor_down": {
-            "textures": "textures/blocks/fermentor_down"
+        "fluid_port": {
+            "textures": "textures/blocks/multi/fluid_port"
+        },
+        "fuel_burner_casing": {
+            "textures": "textures/blocks/reactor_casing"
+        },
+        "fuel_mixer_down": {
+            "textures": "textures/blocks/fluid_mixer_down"
+        },
+        "fuel_mixer_east": {
+            "textures": "textures/blocks/fluid_mixer_east"
         },
         "fuel_mixer_north": {
             "textures": "textures/blocks/fluid_mixer_north"
@@ -58,110 +79,11 @@
         "fuel_mixer_south": {
             "textures": "textures/blocks/fluid_mixer_south"
         },
-        "fuel_mixer_east": {
-            "textures": "textures/blocks/fluid_mixer_east"
-        },
-        "fuel_mixer_west": {
-            "textures": "textures/blocks/fluid_mixer_west"
-        },
         "fuel_mixer_up": {
             "textures": "textures/blocks/fluid_mixer_up"
         },
-        "fuel_mixer_down": {
-            "textures": "textures/blocks/fluid_mixer_down"
-        },
-        "fluid_monitor": {
-            "textures": "textures/blocks/fluid_monitor"
-        },
-        "fluid_port": {
-            "textures": "textures/blocks/multi/fluid_port"
-        },
-        "reactor_casing": {
-            "textures": "textures/blocks/reactor_casing"
-        },
-        "reactor_caseing": {
-            "textures": "textures/blocks/reactor_caseing"
-        },
-        "refinery_caseing": {
-            "textures": "textures/blocks/refinery_caseing"
-        },
-        "refinery_monitor": {
-            "textures": "textures/blocks/refinery_monitor"
-        },
-        "energy_port": {
-            "textures": "textures/blocks/multi/energy_port"
-        },
-        "item_port": {
-            "textures": "textures/blocks/multi/item_port"
-        },
-        "burner_monitor": {
-            "textures": "textures/blocks/burner_monitor"
-        },
-        "fuel_burner_casing": {
-            "textures": "textures/blocks/reactor_casing"
-        },
-        "separator_north": {
-            "textures": "textures/blocks/separator_north"
-        },
-        "separator_on": {
-            "textures": "textures/active/blocks/separator_on"
-        },
-        "separator_south": {
-            "textures": "textures/blocks/separator_south"
-        },
-        "separator_east": {
-            "textures": "textures/blocks/separator_east"
-        },
-        "separator_west": {
-            "textures": "textures/blocks/separator_west"
-        },
-        "separator_up": {
-            "textures": "textures/blocks/separator_up"
-        },
-        "separator_down": {
-            "textures": "textures/blocks/separator_down"
-        },
-        "utilitycraft_endstone_gen_copper": {
-            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_copper"
-        },
-        "utilitycraft_endstone_gen_iron": {
-            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_iron"
-        },
-        "utilitycraft_endstone_gen_gold": {
-            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_gold"
-        },
-        "utilitycraft_endstone_gen_emerald": {
-            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_emerald"
-        },
-        "utilitycraft_endstone_gen_diamond": {
-            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_diamond"
-        },
-        "utilitycraft_endstone_gen_netherite": {
-            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_netherite"
-        },
-        "polymerizer_side": {
-            "textures": "textures/blocks/polymerizer_side"
-        },
-        "polymerizer_north": {
-            "textures": "textures/blocks/polymerizer_north"
-        },
-        "polymerizer_on": {
-            "textures": "textures/blocks/active/polymerizer_on"
-        },
-        "polymerizer_south": {
-            "textures": "textures/blocks/polymerizer_south"
-        },
-        "polymerizer_east": {
-            "textures": "textures/blocks/polymerizer_east"
-        },
-        "polymerizer_west": {
-            "textures": "textures/blocks/polymerizer_west"
-        },
-        "polymerizer_up": {
-            "textures": "textures/blocks/polymerizer_up"
-        },
-        "polymerizer_down": {
-            "textures": "textures/blocks/polymerizer_down"
+        "fuel_mixer_west": {
+            "textures": "textures/blocks/fluid_mixer_west"
         },
         "ind_furnator_off": {
             "textures": "textures/blocks/generator/ind_furnator_off"
@@ -193,41 +115,122 @@
         "ind_wind_turbine_on": {
             "textures": "textures/blocks/generator/ind_wind_turbine_on"
         },
+        "item_port": {
+            "textures": "textures/blocks/multi/item_port"
+        },
+        "polymerizer_down": {
+            "textures": "textures/blocks/polymerizer_down"
+        },
+        "polymerizer_east": {
+            "textures": "textures/blocks/polymerizer_east"
+        },
+        "polymerizer_north": {
+            "textures": "textures/blocks/polymerizer_north"
+        },
+        "polymerizer_on": {
+            "textures": "textures/blocks/active/polymerizer_on"
+        },
+        "polymerizer_side": {
+            "textures": "textures/blocks/polymerizer_side"
+        },
+        "polymerizer_south": {
+            "textures": "textures/blocks/polymerizer_south"
+        },
+        "polymerizer_up": {
+            "textures": "textures/blocks/polymerizer_up"
+        },
+        "polymerizer_west": {
+            "textures": "textures/blocks/polymerizer_west"
+        },
+        "reactor_caseing": {
+            "textures": "textures/blocks/reactor_caseing"
+        },
+        "reactor_casing": {
+            "textures": "textures/blocks/reactor_casing"
+        },
+        "refinery_caseing": {
+            "textures": "textures/blocks/refinery_caseing"
+        },
+        "refinery_monitor": {
+            "textures": "textures/blocks/refinery_monitor"
+        },
+        "separator_down": {
+            "textures": "textures/blocks/separator_down"
+        },
+        "separator_east": {
+            "textures": "textures/blocks/separator_east"
+        },
+        "separator_north": {
+            "textures": "textures/blocks/separator_north"
+        },
+        "separator_on": {
+            "textures": "textures/active/blocks/separator_on"
+        },
+        "separator_south": {
+            "textures": "textures/blocks/separator_south"
+        },
+        "separator_up": {
+            "textures": "textures/blocks/separator_up"
+        },
+        "separator_west": {
+            "textures": "textures/blocks/separator_west"
+        },
         "utilitycraft_biofuel_fluid": {
-            "textures": "textures/entity/biofuel"
+            "textures": "textures/blocks/creative/fluids/biofuel_fluid"
         },
         "utilitycraft_crude_oil_fluid": {
-            "textures": "textures/entity/crude_oil"
+            "textures": "textures/blocks/creative/fluids/crude_oil_fluid"
         },
         "utilitycraft_diesel_fluid": {
-            "textures": "textures/entity/diesel"
+            "textures": "textures/blocks/creative/fluids/diesel_fluid"
+        },
+        "utilitycraft_endstone_gen_copper": {
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_copper"
+        },
+        "utilitycraft_endstone_gen_diamond": {
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_diamond"
+        },
+        "utilitycraft_endstone_gen_emerald": {
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_emerald"
+        },
+        "utilitycraft_endstone_gen_gold": {
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_gold"
+        },
+        "utilitycraft_endstone_gen_iron": {
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_iron"
+        },
+        "utilitycraft_endstone_gen_netherite": {
+            "textures": "textures/blocks/gen/utilitycraft_endstone_gen_netherite"
         },
         "utilitycraft_ethanol_fluid": {
-            "textures": "textures/entity/ethanol"
+            "textures": "textures/blocks/creative/fluids/ethanol_fluid"
         },
         "utilitycraft_heavy_hydrocarbon_fluid": {
-            "textures": "textures/entity/heavy_hydrocarbon"
+            "textures": "textures/blocks/creative/fluids/heavy_hydrocarbon_fluid"
+        },
+        "utilitycraft_hydrocarbon_blend_fluid": {
+            "textures": "textures/blocks/creative/fluids/hydrocarbon_blend_fluid"
         },
         "utilitycraft_hydrocarbon_slurry_fluid": {
-            "textures": "textures/entity/hydrocarbon_slurry"
+            "textures": "textures/blocks/creative/fluids/hydrocarbon_slurry_fluid"
         },
         "utilitycraft_naphtha_fluid": {
-            "textures": "textures/entity/naphtha"
+            "textures": "textures/blocks/creative/fluids/naphtha_fluid"
         },
         "utilitycraft_petrol_fluid": {
-            "textures": "textures/entity/petrol"
+            "textures": "textures/blocks/creative/fluids/petrol_fluid"
         },
         "utilitycraft_plant_oil_fluid": {
-            "textures": "textures/entity/plant_oil"
+            "textures": "textures/blocks/creative/fluids/plant_oil_fluid"
         },
-        "utilitycraft_fertilizer_enriched_fluid": {
-            "textures": "textures/entity/fertilizer_enriched"
+        "utilitycraft_plastic_resin_fluid": {
+            "textures": "textures/blocks/creative/fluids/plastic_resin_fluid"
         },
-        "utilitycraft_fertilizer_industrial_fluid": {
-            "textures": "textures/entity/fertilizer_industrial"
+        "utilitycraft_reactive_fluid": {
+            "textures": "textures/blocks/creative/fluids/reactive_fluid"
         },
-        "utilitycraft_fertilizer_org_fluid": {
-            "textures": "textures/entity/fertilizer_org"
+        "utilitycraft_steam_fluid": {
+            "textures": "textures/blocks/creative/fluids/steam_fluid"
         }
     }
 }

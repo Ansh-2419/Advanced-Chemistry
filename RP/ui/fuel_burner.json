@@ -32,14 +32,14 @@
       {
         "energy_bar@uc.energy_bar": {
           "$has_bg": false,
-          "offset": [30, 0]
+          "offset": [-30, 0]
         }
       },
       {
         "biofuel_bar@uc.fluid_bar": {
           "$collection_index": 2,
           "$has_bg": false,
-          "offset": [-30, 0]
+          "offset": [30, 0]
         }
       },
       {

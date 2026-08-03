@@ -2,7 +2,7 @@
     "format_version": "1.26.30",
     "minecraft:item": {
         "description": {
-            "identifier": "utilitycraft:v_sword",
+            "identifier": "utilitycraft:voltanium_sword",
             "menu_category": {
                 "category": "equipment",
                 "group": "minecraft:itemGroup.name.sword"
