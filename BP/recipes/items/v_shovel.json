@@ -1,0 +1,38 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:v_shovel"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " V ",
+            " S ",
+            " S "
+        ],
+        "key": {
+            "V": {
+                "item": "utilitycraft:voltanium_ingot"
+            },
+            "S": {
+                "item": "minecraft:stick"
+            }
+        },
+        "result": [
+            {
+                "item": "utilitycraft:v_shovel"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "utilitycraft:voltanium_ingot"
+            },
+            {
+                "item": "minecraft:stick"
+            }
+        ],
+        "priority": 0
+    }
+}

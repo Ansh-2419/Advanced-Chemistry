@@ -1508,6 +1508,9 @@
         "hdpe_pellet": {
             "textures": "textures/items/misc/hdpe_pellet"
         },
+        "adamant_ingot": {
+            "textures": "textures/items/ingot/adamant_ingot"
+        },
         "hdpe_sheet": {
             "textures": "textures/items/misc/hdpe_sheet"
         },

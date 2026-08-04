@@ -2,7 +2,7 @@
 	"format_version": "1.19.20",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "utilitycraft:fluid_tank_liquified_ethanol",
+			"identifier": "utilitycraft:fluid_tank_liquified_steam",
 			"is_spawnable": false,
 			"is_summonable": true,
 			"is_experimental": false

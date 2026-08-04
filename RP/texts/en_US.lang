@@ -13,11 +13,11 @@ tile.utilitycraft:polymerizer.name=Polymerizer
 tile.utilitycraft:industrial_crusher.name=Industrial Crusher
 
 ## ── Industrial Generators ────────────────────────────────────────────────────
-tile.utilitycraft:ultimate_furnator.name=Industrial Furnator
 tile.utilitycraft:ind_magmator.name=Industrial Magmator
 tile.utilitycraft:ind_solar_panel.name=Industrial Solar Panel
 tile.utilitycraft:ind_thermo_generator.name=Industrial Thermo Generator
 tile.utilitycraft:ind_wind_turbine.name=Industrial Wind Turbine
+tile.utilitycraft:ind_furnator.name=Industrial Furnator
 
 ## ── Multiblock Valves ────────────────────────────────────────────────────────
 tile.utilitycraft:fluid_valve.name=Fluid Valve
@@ -63,13 +63,14 @@ item.utilitycraft:water_bucket_custom=Witch Water Bucket
 item.utilitycraft:hdpe_pellet=HDPE Pellet
 item.utilitycraft:hdpe_sheet=HDPE Sheet
 item.utilitycraft:industrial_chip=Industrial Chip
+item.utilitycraft:adamant_ingot=Adamant Ingot
 
 ## ── Voltanium Armor & Tools ──────────────────────────────────────────────────
 item.utilitycraft:voltanium_helmet=Voltanium Helmet
 item.utilitycraft:voltanium_chestplate=Voltanium Chestplate
 item.utilitycraft:voltanium_leggings=Voltanium Leggings
 item.utilitycraft:voltanium_boots=Voltanium Boots
-item.utilitycraft:voltanium_sword=Voltanium Sword
+item.utilitycraft:v_sword=Voltanium Sword
 item.utilitycraft:v_pickaxe=Voltanium Pickaxe
 item.utilitycraft:v_axe=Voltanium Axe
 item.utilitycraft:v_shovel=Voltanium Shovel
@@ -114,3 +115,22 @@ ui.aoc:io.separator.liquids=IO Modes:\n§r- §9Source Input\n§r- §cOutput Tank
 ui.aoc:io.polymerizer.items=IO Modes:\n§r- §cPallet Output
 ui.aoc:io.polymerizer.liquids=IO Modes:\n§r- §9Resin Input
 ui.aoc:io.industrial_crusher.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cOutputs 1-9
+
+## ── Creative Fluid Tanks ─────────────────────────────────────────────────────
+tile.utilitycraft:creative_ethanol_tank.name=Creative Ethanol Tank
+tile.utilitycraft:creative_plant_oil_tank.name=Creative Plant Oil Tank
+tile.utilitycraft:creative_biofuel_tank.name=Creative Biofuel Tank
+tile.utilitycraft:creative_hydrocarbon_slurry_tank.name=Creative Hydrocarbon Slurry Tank
+tile.utilitycraft:creative_heavy_hydrocarbon_tank.name=Creative Heavy Hydrocarbon Tank
+tile.utilitycraft:creative_reactive_fluid_tank.name=Creative Reactive Fluid Tank
+tile.utilitycraft:creative_crude_oil_tank.name=Creative Crude Oil Tank
+tile.utilitycraft:creative_diesel_tank.name=Creative Diesel Tank
+tile.utilitycraft:creative_petrol_tank.name=Creative Petrol Tank
+tile.utilitycraft:creative_naphtha_tank.name=Creative Naphtha Tank
+tile.utilitycraft:creative_plastic_resin_tank.name=Creative Plastic Resin Tank
+tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Creative Hydrocarbon Blend Tank
+tile.utilitycraft:creative_steam_tank.name=Creative Steam Tank
+
+## ── Missing Fluid Display Names ──────────────────────────────────────────────
+fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
+fluid.utilitycraft.steam=Steam

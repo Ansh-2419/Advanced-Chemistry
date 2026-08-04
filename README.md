@@ -6,21 +6,7 @@ Transform crops into fuels, fuels into hydrocarbons, and hydrocarbons into advan
 
 </div>---
 
-Features
-
-🧪 Chemical Processing
-
-Sugar Cane
-↓
-Ethanol
-↓
-Biofuel
-↓
-Hydrocarbon Slurry
-↓
-Crude Oil
-↓
-Refined Products
+Features:
 
 ⚙️ Machines
 
