@@ -14,11 +14,19 @@ const nativeRecipes = [
     defineRecipe({
         id:          "ac:hdpe_pallet_from_plastic_resin",
         input:       { type: "plastic_resin", amount: 250 },
-        output:      { item: "ac:hdpe_pallet", count: 1 },
+        output:      { item: "utilitycraft:hdpe_pallet", count: 1 },
         energyCost:  10_000,
         seconds:     5,          // 100t ÷ 20t/s
         description: "Polymerises plastic resin into an HDPE pallet.",
     }),
+    defineRecipe({
+        id:          "ac:lithum_from_reactive_fluid",
+        input:       { type: "reactive_fluid", amount: 250 },
+        output:      { item: "utilitycraft:lithium_dust", count: 1 },
+        energyCost:  10_000,
+        seconds:     5,          // 100t ÷ 20t/s
+        description: "Polymerises plastic resin into an HDPE pallet.",
+    })
 ];
 
 export const polymerizerRecipes = nativeRecipes;

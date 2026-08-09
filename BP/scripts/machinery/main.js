@@ -6,7 +6,7 @@ import "./singleblock/fuel_mixer.js";
 import "./singleblock/chemical_reactor.js";
 import "./singleblock/separator.js";
 import "./singleblock/polymerizer.js";
-import "./singleblock/industrial_crusher.js";
+import "./singleblock/relic_synthesizer.js";
 
 //multiblock
 import "./multiblock/index.js";

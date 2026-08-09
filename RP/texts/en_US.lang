@@ -54,6 +54,7 @@ entity.utilitycraft:separator.name=Separator
 entity.utilitycraft:refinery_monitor.name=Refinery
 entity.utilitycraft:polymerizer.name=Polymerizer
 entity.utilitycraft:industrial_crusher.name=Industrial Crusher
+entity.utilitycraft:relic_synthesizer.name=Relic Synthesizer
 
 ## ── Items ────────────────────────────────────────────────────────────────────
 item.utilitycraft:duranium_ingot=Duranium Ingot
@@ -95,6 +96,7 @@ fluid.utilitycraft.plastic_resin=Plastic Resin
 fluid.utilitycraft.fertilizer_org=Organic Fertilizer
 fluid.utilitycraft.fertilizer_enriched=Enriched Fertilizer
 fluid.utilitycraft.fertilizer_industrial=Industrial Fertilizer
+fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
 
 ## ── Machine Info Panels ──────────────────────────────────────────────────────
 ui.utilitycraft:info.fermenter=Converts organic inputs into fluids.\n\nSlots:\n- Inputs: seeds or sugar cane.\n- Fluid: produced liquid storage.\n- Output: optional residue.\n\nAccepted Upgrades:\n- Speed\n- Energy
@@ -130,7 +132,7 @@ tile.utilitycraft:creative_naphtha_tank.name=Creative Naphtha Tank
 tile.utilitycraft:creative_plastic_resin_tank.name=Creative Plastic Resin Tank
 tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Creative Hydrocarbon Blend Tank
 tile.utilitycraft:creative_steam_tank.name=Creative Steam Tank
+tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer
 
-## ── Missing Fluid Display Names ──────────────────────────────────────────────
-fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
-fluid.utilitycraft.steam=Steam
+
+

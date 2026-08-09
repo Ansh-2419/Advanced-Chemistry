@@ -10,5 +10,6 @@
         "ui/industrial_crusher.json",
         "ui/recipes/infuser.json",
         "ui/polymerizer.json"
+        "ui/relic_synthesizer.json"
     ]
 }
