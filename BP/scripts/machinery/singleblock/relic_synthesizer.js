@@ -21,7 +21,7 @@ import {
 const PROGRESS_SLOT = 2;
 const INPUT_SLOT    = 3;
 const OUTPUT_SLOTS  = [4, 5, 6, 7, 8, 9, 10, 11, 12];
-const IO_SLOTS      = [15, 16, 17, 18, 19, 19]; // exactly 6: top/left/front/right/bottom/back (back shares 19)
+const IO_SLOTS      = [15, 20]; // inclusive range → slots 15,16,17,18,19,20 (6 faces)
 
 const MACHINE_ID     = "utilitycraft:relic_synthesizer";
 const DEFAULT_ENERGY = 25_000;

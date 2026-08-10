@@ -81,18 +81,18 @@
           "$has_item_io": true,
           "$has_fluid_io": false,
           "$io_items_default": true,
-          "$io_top_texture":    "textures/blocks/relic_synthesizer/relic_synthesizer_up",
-          "$io_left_texture":   "textures/blocks/relic_synthesizer/relic_synthesizer_west",
-          "$io_front_texture":  "textures/blocks/relic_synthesizer/relic_synthesizer_north",
-          "$io_right_texture":  "textures/blocks/relic_synthesizer/relic_synthesizer_east",
-          "$io_bottom_texture": "textures/blocks/relic_synthesizer/relic_synthesizer_down",
-          "$io_back_texture":   "textures/blocks/relic_synthesizer/relic_synthesizer_south",
+          "$io_top_texture":    "textures/blocks/common",
+          "$io_left_texture":   "textures/blocks/common",
+          "$io_front_texture":  "textures/blocks/common",
+          "$io_right_texture":  "textures/blocks/common",
+          "$io_bottom_texture": "textures/blocks/common",
+          "$io_back_texture":   "textures/blocks/common",
           "$io_item_top_index":    15,
           "$io_item_left_index":   16,
           "$io_item_front_index":  17,
           "$io_item_right_index":  18,
           "$io_item_bottom_index": 19,
-          "$io_item_back_index":   19
+          "$io_item_back_index":   20
         }
       },
       {

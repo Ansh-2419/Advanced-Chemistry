@@ -4,8 +4,7 @@
         "description": {
             "identifier": "utilitycraft:creative_reactive_fluid_tank",
             "menu_category": {
-                "category": "construction",
-                "group": "dorios:itemGroup.name.tanks"
+                "category": "construction"
             }
         },
         "components": {
@@ -29,12 +28,28 @@
                 }
             },
             "minecraft:collision_box": {
-                "origin": [-6, 0, -6],
-                "size": [12, 16, 12]
+                "origin": [
+                    -6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    12,
+                    16,
+                    12
+                ]
             },
             "minecraft:selection_box": {
-                "origin": [-6, 0, -6],
-                "size": [12, 16, 12]
+                "origin": [
+                    -6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    12,
+                    16,
+                    12
+                ]
             },
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 1.1
