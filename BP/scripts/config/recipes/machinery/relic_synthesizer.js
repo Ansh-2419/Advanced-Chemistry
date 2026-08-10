@@ -19,35 +19,34 @@
 
 // ── Trim Template IDs ─────────────────────────────────────────────────────────
 const T = {
-    COAST:     "minecraft:coast_armor_trim_smithing_template",
-    DUNE:      "minecraft:dune_armor_trim_smithing_template",
-    EYE:       "minecraft:eye_armor_trim_smithing_template",
-    FLOW:      "minecraft:flow_armor_trim_smithing_template",
-    HOST:      "minecraft:host_armor_trim_smithing_template",
-    RIB:       "minecraft:rib_armor_trim_smithing_template",
-    SENTRY:    "minecraft:sentry_armor_trim_smithing_template",
-    SHAPER:    "minecraft:shaper_armor_trim_smithing_template",
-    SILENCE:   "minecraft:silence_armor_trim_smithing_template",
-    SNOUT:     "minecraft:snout_armor_trim_smithing_template",
-    SPIRE:     "minecraft:spire_armor_trim_smithing_template",
-    TIDE:      "minecraft:tide_armor_trim_smithing_template",
-    VEX:       "minecraft:vex_armor_trim_smithing_template",
-    WARD:      "minecraft:ward_armor_trim_smithing_template",
+    COAST: "minecraft:coast_armor_trim_smithing_template",
+    DUNE: "minecraft:dune_armor_trim_smithing_template",
+    EYE: "minecraft:eye_armor_trim_smithing_template",
+    FLOW: "minecraft:flow_armor_trim_smithing_template",
+    HOST: "minecraft:host_armor_trim_smithing_template",
+    RIB: "minecraft:rib_armor_trim_smithing_template",
+    SENTRY: "minecraft:sentry_armor_trim_smithing_template",
+    SHAPER: "minecraft:shaper_armor_trim_smithing_template",
+    SILENCE: "minecraft:silence_armor_trim_smithing_template",
+    SNOUT: "minecraft:snout_armor_trim_smithing_template",
+    SPIRE: "minecraft:spire_armor_trim_smithing_template",
+    TIDE: "minecraft:tide_armor_trim_smithing_template",
+    VEX: "minecraft:vex_armor_trim_smithing_template",
+    WARD: "minecraft:ward_armor_trim_smithing_template",
     WAYFINDER: "minecraft:wayfinder_armor_trim_smithing_template",
-    WILD:      "minecraft:wild_armor_trim_smithing_template",
+    WILD: "minecraft:wild_armor_trim_smithing_template",
     // Nether-exclusive rare trims (Bolt / Raiser exist in 1.21 but may be
     // unavailable on older Bedrock; aliased to SILENCE as safe fallback)
-    BOLT:      "minecraft:bolt_armor_trim_smithing_template",
-    RAISER:    "minecraft:raiser_armor_trim_smithing_template",
+    BOLT: "minecraft:bolt_armor_trim_smithing_template",
+    RAISER: "minecraft:raiser_armor_trim_smithing_template",
+    SMITHING: "minecraft:smithing_template"
 };
-
-const SMITHING_TABLE = "minecraft:smithing_table";
 
 // ── Dimension ID constants ────────────────────────────────────────────────────
 export const DIM = {
     OVERWORLD: "minecraft:overworld",
-    NETHER:    "minecraft:nether",
-    END:       "minecraft:the_end",
+    NETHER: "minecraft:nether",
+    END: "minecraft:the_end"
 };
 
 // ── Pools (weights = exact % values from design doc, sum to 100) ──────────────
@@ -57,13 +56,13 @@ export const DIM = {
  * Sentry 25 | Coast 20 | Dune 18 | Wild 15 | Wayfinder 10 | Shaper 7 | Host 5
  */
 const OVERWORLD_POOL = [
-    { id: T.SENTRY,    weight: 25 },
-    { id: T.COAST,     weight: 20 },
-    { id: T.DUNE,      weight: 18 },
-    { id: T.WILD,      weight: 15 },
+    { id: T.SENTRY, weight: 25 },
+    { id: T.COAST, weight: 20 },
+    { id: T.DUNE, weight: 18 },
+    { id: T.WILD, weight: 15 },
     { id: T.WAYFINDER, weight: 10 },
-    { id: T.SHAPER,    weight:  7 },
-    { id: T.HOST,      weight:  5 },
+    { id: T.SHAPER, weight: 7 },
+    { id: T.HOST, weight: 5 }
 ];
 
 /**
@@ -72,14 +71,14 @@ const OVERWORLD_POOL = [
  * "Netherite-related rare trim" rolls equally between Bolt and Raiser.
  */
 const NETHER_POOL = [
-    { id: T.RIB,    weight: 30 },
-    { id: T.SNOUT,  weight: 25 },
-    // "Netherite-related rare trim" 15% — split evenly between Bolt & Raiser
-    { id: T.BOLT,   weight:  8 },
-    { id: T.RAISER, weight:  7 },
-    { id: T.COAST,  weight: 10 },
-    { id: T.DUNE,   weight: 10 },
+    { id: T.RIB, weight: 18 },
+    { id: T.SNOUT, weight: 15 },
+    { id: T.BOLT, weight: 10 },
+    { id: T.RAISER, weight: 9 },
+    { id: T.COAST, weight: 9 },
+    { id: T.DUNE, weight: 9 },
     { id: T.SENTRY, weight: 10 },
+    { id: T.SMITHING, weight: 20 }
 ];
 
 /**
@@ -87,13 +86,13 @@ const NETHER_POOL = [
  * Spire 35 | Silence 20 | Ward 15 | Vex 10 | Eye 10 | Tide 5 | Flow 5
  */
 const END_POOL = [
-    { id: T.SPIRE,   weight: 35 },
+    { id: T.SPIRE, weight: 35 },
     { id: T.SILENCE, weight: 20 },
-    { id: T.WARD,    weight: 15 },
-    { id: T.VEX,     weight: 10 },
-    { id: T.EYE,     weight: 10 },
-    { id: T.TIDE,    weight:  5 },
-    { id: T.FLOW,    weight:  5 },
+    { id: T.WARD, weight: 15 },
+    { id: T.VEX, weight: 10 },
+    { id: T.EYE, weight: 10 },
+    { id: T.TIDE, weight: 5 },
+    { id: T.FLOW, weight: 5 }
 ];
 
 // ── Build pools ───────────────────────────────────────────────────────────────
@@ -104,8 +103,8 @@ function buildPool(entries) {
 
 const POOLS = {
     overworld: buildPool(OVERWORLD_POOL),
-    nether:    buildPool(NETHER_POOL),
-    end:       buildPool(END_POOL),
+    nether: buildPool(NETHER_POOL),
+    end: buildPool(END_POOL)
 };
 
 // ── Fuel configs per dimension ────────────────────────────────────────────────
@@ -116,42 +115,29 @@ const POOLS = {
 /** Keyed by dimension ID. */
 const DIMENSION_FUEL = {
     [DIM.OVERWORLD]: {
-        fuelId:     "minecraft:diamond_block",
+        fuelId: "minecraft:diamond_block",
         fuelAmount: 1,
         energyCost: 25_000,
-        seconds:    20,
-        pool:       "overworld",
-        dimLabel:   "🟢 Overworld",
+        seconds: 20,
+        pool: "overworld",
+        dimLabel: "🟢 Overworld"
     },
     [DIM.NETHER]: {
-        fuelId:     "minecraft:netherite_ingot",
+        fuelId: "minecraft:netherite_ingot",
         fuelAmount: 1,
         energyCost: 50_000,
-        seconds:    20,
-        pool:       "nether",
-        dimLabel:   "🔴 Nether",
+        seconds: 20,
+        pool: "nether",
+        dimLabel: "🔴 Nether"
     },
     [DIM.END]: {
-        fuelId:     "minecraft:netherite_ingot",
+        fuelId: "minecraft:netherite_ingot",
         fuelAmount: 1,
         energyCost: 60_000,
-        seconds:    20,
-        pool:       "end",
-        dimLabel:   "🟣 End",
-    },
-};
-
-/**
- * Special recipe: Smithing Table.
- * Costs 2× Netherite Ingot regardless of dimension.
- * Guaranteed output (no roll).
- */
-export const SMITHING_TABLE_RECIPE = {
-    fuelId:     "minecraft:netherite_ingot",
-    fuelAmount: 2,
-    energyCost: 80_000,
-    seconds:    20,
-    outputId:   SMITHING_TABLE,
+        seconds: 20,
+        pool: "end",
+        dimLabel: "🟣 End"
+    }
 };
 
 // ── Public API ────────────────────────────────────────────────────────────────
@@ -173,8 +159,10 @@ export function getDimFuel(dimensionId) {
  * @returns {boolean}
  */
 export function isSmithingTableRecipe(typeId, amount) {
-    return typeId === SMITHING_TABLE_RECIPE.fuelId
-        && amount >= SMITHING_TABLE_RECIPE.fuelAmount;
+    return (
+        typeId === SMITHING_TABLE_RECIPE.fuelId &&
+        amount >= SMITHING_TABLE_RECIPE.fuelAmount
+    );
 }
 
 /**

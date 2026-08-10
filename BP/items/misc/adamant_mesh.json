@@ -1,0 +1,23 @@
+{
+	"format_version": "1.21.110",
+	"minecraft:item": {
+		"description": {
+			"identifier": "utilitycraft:adamant_mesh",
+			"menu_category": {
+				"category": "construction",
+				"group": "dorios:itemGroup.name.meshes"
+			}
+		},
+		"components": {
+			"minecraft:icon": "adamant_mesh",
+			"utilitycraft:mesh": {
+				"tier": 9,
+				"multiplier": 10,
+				"amount_multiplier": 2
+			},
+			"minecraft:fire_resistant": {
+				"value": true
+			}
+		}
+	}
+}

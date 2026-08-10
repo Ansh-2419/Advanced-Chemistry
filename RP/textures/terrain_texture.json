@@ -176,13 +176,13 @@
             "textures": "textures/blocks/separator_west"
         },
         "utilitycraft_biofuel_fluid": {
-            "textures": "textures/blocks/entity/fluids/biofuel_fluid"
+            "textures": "textures/entity/fluids/biofuel"
         },
         "utilitycraft_crude_oil_fluid": {
-            "textures": "textures/blocks/entity/fluids/crude_oil_fluid"
+            "textures": "textures/entity/fluids/crude_oil"
         },
         "utilitycraft_diesel_fluid": {
-            "textures": "textures/blocks/entity/fluids/diesel_fluid"
+            "textures": "textures/entity/fluids/diesel"
         },
         "utilitycraft_endstone_gen_copper": {
             "textures": "textures/blocks/gen/utilitycraft_endstone_gen_copper"
@@ -227,7 +227,7 @@
             "textures": "textures/entity/fluids/plastic_resin"
         },
         "utilitycraft_reactive_fluid": {
-            "textures": "textures/entity/fluids/reactive"
+            "textures": "textures/entity/fluids/reactive_fluid"
         },
         "ind_crusher_on": {
             "textures": "textures/blocks/active/ind_crusher_on"
@@ -243,6 +243,15 @@
         },
         "ind_crusher": {
             "textures": "textures/blocks/front/ind_crusher"
+        },
+        "ind_up": {
+            "textures": "textures/blocks/common/ind_top"
+        },
+        "utilitycraft_steam_fluid": {
+            "textures": "textures/entity/fluids/steam"
+        },
+        "utilitycraft_reactive_fluid_fluid": {
+            "textures": "textures/entity/fluids/reactive_fluid"
         }
     }
 }

@@ -4,7 +4,6 @@ import { getFermentationRecipes } from "../../config/recipes/machinery/fermenter
 import {
     EMPTY_FLUID,
     addItemToSlot,
-    chargeOrCraft,
     displayMachine,
     formatFluidType,
     getMachineEnergyCost,
@@ -16,16 +15,16 @@ import {
     tryUseFluidItemInSlot,
 } from "./machine_helpers.js";
 
-const INPUT_SLOTS = [3, 4, 5, 6];
-const FLUID_SLOT = 9;
+const INPUT_SLOTS        = [3, 4, 5, 6];
+const FLUID_SLOT         = 9;
 const FLUID_DISPLAY_SLOT = 10;
-const RESIDUE_SLOT = 11;
-const IO_ITEM_SLOTS = [12, 17];
-const IO_FLUID_SLOTS = [18, 23];
+const RESIDUE_SLOT       = 11;
+const IO_ITEM_SLOTS      = [12, 17];
+const IO_FLUID_SLOTS     = [18, 23];
 
 const DEFAULT_ENERGY_COST = 2000;
-const DEFAULT_FLUID_CAP = 128000;
-const DEFAULT_FLUID_TYPE = "ethanol";
+const DEFAULT_FLUID_CAP   = 128000;
+const DEFAULT_FLUID_TYPE  = "ethanol";
 
 registerIOInterface("utilitycraft:fermenter", {
     items: {
@@ -75,7 +74,7 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
         machine.processIO();
 
         const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
-        const tank = getTank(machine.entity, 0, fluidCap);
+        const tank     = getTank(machine.entity, 0, fluidCap);
 
         tryUseFluidItemInSlot(machine.container, FLUID_SLOT, machine.entity);
 
@@ -89,49 +88,75 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
         if (!recipe) return fail(machine, tank, "Missing Items");
 
         // Check secondary input if recipe requires it
-        const secondary = recipe.secondaryInput;
-        if (secondary) {
-            const secSlot = findSecondarySlot(machine, active.slot, secondary.id, secondary.amount);
-            if (secSlot === -1) return fail(machine, tank, `Also need: ${secondary.id.split(":")[1]} x${secondary.amount}`);
-        }
+        const secondary    = recipe.secondaryInput;
+        const secSlotIndex = secondary
+            ? findSecondarySlot(machine, active.slot, secondary.id, secondary.amount)
+            : -1;
+        if (secondary && secSlotIndex === -1)
+            return fail(machine, tank, `Also need: ${secondary.id.split(":")[1]} x${secondary.amount}`);
 
         const batch = pickBatch(recipe, active.stack.amount);
         if (!batch) return fail(machine, tank, "Missing Items");
 
         const runtimeRecipe = applyBatch(recipe, batch, settings);
-        const fluidType = runtimeRecipe.fluid.type ?? DEFAULT_FLUID_TYPE;
-        const tankType = tank.getType();
+        const fluidType     = runtimeRecipe.fluid.type ?? DEFAULT_FLUID_TYPE;
+        const tankType      = tank.getType();
 
-        if (tankType !== EMPTY_FLUID && tankType !== fluidType) {
+        if (tankType !== EMPTY_FLUID && tankType !== fluidType)
             return fail(machine, tank, `Wrong Fluid\n§7Need ${formatFluidType(fluidType)}`);
-        }
 
         const residueSlot = machine.container.getItem(RESIDUE_SLOT);
-        const craftLimit = getCraftLimit(tank, runtimeRecipe, active.stack, residueSlot);
+        const craftLimit  = getCraftLimit(tank, runtimeRecipe, active.stack, residueSlot);
         if (craftLimit.max <= 0) return fail(machine, tank, craftLimit.reason ?? "Missing Items");
 
         const energyCost = getMachineEnergyCost(settings, runtimeRecipe, DEFAULT_ENERGY_COST);
+        machine.setEnergyCost(energyCost);
+
         if (machine.energy.get() <= 0 && machine.getProgress() < energyCost) {
             return fail(machine, tank, "No Energy", { resetProgress: false });
         }
 
-        const secSlotIndex = recipe.secondaryInput
-            ? findSecondarySlot(machine, active.slot, recipe.secondaryInput.id, recipe.secondaryInput.amount)
-            : -1;
+        // ── Gradual energy drain → progress (same pattern as double_machine) ──
+        let progress = machine.getProgress();
 
-        chargeOrCraft(machine, energyCost, craftLimit.max, (runs) => {
-            removeItemsFromSlot(machine.container, active.slot, runtimeRecipe.input.amount * runs);
+        // Rate = energy per second so craft takes the full batch duration
+        const seconds = runtimeRecipe.seconds ?? 8;
+        machine.setRate(energyCost / Math.max(1, seconds * 20));
 
-            // Consume secondary input if required
-            if (recipe.secondaryInput && secSlotIndex !== -1) {
-                removeItemsFromSlot(machine.container, secSlotIndex, recipe.secondaryInput.amount * runs);
-            }
+        const processBatch     = Math.max(1, Math.floor(machine.boosts.process_batch));
+        const consumption      = machine.boosts.consumption;
+        const maxProgress      = Math.ceil(craftLimit.max / processBatch) * energyCost;
+        const progressCapacity = Math.max(0, maxProgress - progress);
+        const energyToConsume  = Math.min(machine.energy.get(), machine.rate, progressCapacity * consumption);
+
+        if (energyToConsume > 0) {
+            machine.energy.consume(energyToConsume);
+            progress += energyToConsume / consumption;
+            machine.setProgress(progress, { display: false });
+        }
+
+        // ── Craft when a full cycle completes ──────────────────────────────────
+        const completedProcesses = Math.floor(progress / energyCost);
+        const processCount = Math.min(
+            completedProcesses * processBatch,
+            craftLimit.max
+        );
+
+        if (processCount > 0) {
+            removeItemsFromSlot(machine.container, active.slot, runtimeRecipe.input.amount * processCount);
+
+            if (secondary && secSlotIndex !== -1)
+                removeItemsFromSlot(machine.container, secSlotIndex, secondary.amount * processCount);
 
             if (tank.getType() === EMPTY_FLUID) tank.setType(fluidType);
-            tank.add(runtimeRecipe.fluid.amount * runs);
+            tank.add(runtimeRecipe.fluid.amount * processCount);
 
-            processByproduct(machine, runtimeRecipe.byproduct, runs);
-        });
+            processByproduct(machine, runtimeRecipe.byproduct, processCount);
+
+            // Deduct progress, preserve leftover
+            progress -= Math.ceil(processCount / processBatch) * energyCost;
+            machine.setProgress(progress, { display: false });
+        }
 
         updateHud(machine, runtimeRecipe, tank, craftLimit.max);
         displayMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }]);
@@ -142,6 +167,8 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
         Machine.onDestroy(event);
     },
 });
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
 
 function fail(machine, tank, message, options) {
     stopMachine(machine, message, options);
@@ -195,38 +222,38 @@ function pickBatch(recipe, availableItems) {
 
 function normalizeBatch(batch, fallbackSize, fallbackSeconds, fallbackFluid) {
     return {
-        size: Math.max(1, Math.floor(batch?.size ?? fallbackSize)),
-        seconds: Math.max(1, Math.floor(batch?.seconds ?? fallbackSeconds)),
+        size:        Math.max(1, Math.floor(batch?.size        ?? fallbackSize)),
+        seconds:     Math.max(1, Math.floor(batch?.seconds     ?? fallbackSeconds)),
         fluidAmount: Math.max(0, Math.floor(batch?.fluidAmount ?? batch?.fluid ?? fallbackFluid)),
     };
 }
 
 function applyBatch(recipe, batch, settings) {
     const baseInput = Math.max(1, recipe.input?.amount ?? batch.size);
-    const scale = batch.size / baseInput;
-    const baseCost = getMachineEnergyCost(settings, recipe, DEFAULT_ENERGY_COST);
+    const scale     = batch.size / baseInput;
+    const baseCost  = getMachineEnergyCost(settings, recipe, DEFAULT_ENERGY_COST);
 
     return {
         ...recipe,
-        input: { ...recipe.input, amount: batch.size },
-        fluid: { ...recipe.fluid, amount: batch.fluidAmount },
+        input:      { ...recipe.input, amount: batch.size },
+        fluid:      { ...recipe.fluid, amount: batch.fluidAmount },
         energyCost: Math.max(1, Math.floor(baseCost * scale)),
-        seconds: batch.seconds,
+        seconds:    batch.seconds,
     };
 }
 
 function getCraftLimit(tank, recipe, inputStack, residueSlot) {
-    const inputAmount = Math.max(1, recipe.input?.amount ?? 1);
-    const fluidAmount = Math.max(1, recipe.fluid?.amount ?? 1);
-    const itemRuns = Math.floor(inputStack.amount / inputAmount);
-    const fluidRuns = Math.floor(tank.getFreeSpace() / fluidAmount);
-    const residueRuns = getResidueLimit(recipe, residueSlot);
-    const max = Math.min(itemRuns, fluidRuns, residueRuns);
+    const inputAmount  = Math.max(1, recipe.input?.amount ?? 1);
+    const fluidAmount  = Math.max(1, recipe.fluid?.amount ?? 1);
+    const itemRuns     = Math.floor(inputStack.amount / inputAmount);
+    const fluidRuns    = Math.floor(tank.getFreeSpace() / fluidAmount);
+    const residueRuns  = getResidueLimit(recipe, residueSlot);
+    const max          = Math.min(itemRuns, fluidRuns, residueRuns);
 
-    if (max > 0) return { max };
-    if (itemRuns <= 0) return { max: 0, reason: "Missing Items" };
+    if (max > 0)       return { max };
+    if (itemRuns  <= 0) return { max: 0, reason: "Missing Items" };
     if (fluidRuns <= 0) return { max: 0, reason: "Tank Full" };
-    return { max: 0, reason: "Residue Full" };
+    return              { max: 0, reason: "Residue Full" };
 }
 
 function getResidueLimit(recipe, residueSlot) {

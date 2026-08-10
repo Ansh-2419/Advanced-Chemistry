@@ -1,7 +1,9 @@
 ## Age of Chemical — en_US.lang
 
 ## ── Item Groups ───────────────────────────────────────────────────────────────
-ac:itemGroup.name.machines=Advanced Chemistry
+ac:itemGroup.name.machines=Petrochemical machines
+ac:itemGroup.name.machines=Industrial machines
+ac:itemGroup.name.aoc_tank=Creative tanks
 ac:itemGroup.name.endstone_generators=Endstone Generators
 
 ## ── Singleblock Machines ─────────────────────────────────────────────────────

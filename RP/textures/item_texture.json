@@ -2269,6 +2269,12 @@
         },
         "utilitycraft:plastic_resin_bar_48": {
             "textures": "textures/items/ui/plastic_resin_bar/plastic_resin_bar_48"
+        },
+        "thorium_concentrate": {
+            "textures": "textures/items/ingot/thorium_concentrate"
+        },
+        "adamant_mesh": {
+            "textures": "textures/items/misc/adamant_mesh"
         }
     }
 }
