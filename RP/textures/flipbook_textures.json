@@ -23,5 +23,10 @@
         "flipbook_texture": "textures/blocks/active/polymerizer_on",
         "atlas_tile": "polymerizer_on",
         "ticks_per_frame": 5
+    },
+    {
+        "flipbook_texture": "textures/blocks/active/ind_crusher_on",
+        "atlas_tile": "ind_crusher_on",
+        "ticks_per_frame": 5
     }
 ]

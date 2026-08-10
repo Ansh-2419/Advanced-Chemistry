@@ -25,31 +25,31 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "common",
+                    "texture": "ind_crusher",
                     "render_method": "alpha_test"
                 },
                 "north": {
-                    "texture": "common",
+                    "texture": "ind_crusher",
                     "render_method": "alpha_test"
                 },
                 "south": {
-                    "texture": "common",
+                    "texture": "ind_side",
                     "render_method": "alpha_test"
                 },
                 "east": {
-                    "texture": "common",
+                    "texture": "ind_side",
                     "render_method": "alpha_test"
                 },
                 "west": {
-                    "texture": "common",
+                    "texture": "ind_side",
                     "render_method": "alpha_test"
                 },
                 "up": {
-                    "texture": "common",
+                    "texture": "ind_up",
                     "render_method": "alpha_test"
                 },
                 "down": {
-                    "texture": "common",
+                    "texture": "ind_bottom",
                     "render_method": "alpha_test"
                 }
             },
@@ -77,10 +77,11 @@
                     "slot": 20
                 }
             ],
+            "utilitycraft:machine_recipes": {},
             "utilitycraft:industrial_crusher": {
                 "entity": {
-                    "inventory_size": 27,
-                    "type": "machine"
+                    "type": "machine",
+                    "inventory_size": 27
                 },
                 "machine": {
                     "energy_cap": 500000,
@@ -100,31 +101,31 @@
                     "minecraft:light_emission": 7,
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "common",
+                            "texture": "ind_crusher_on",
                             "render_method": "alpha_test"
                         },
                         "north": {
-                            "texture": "common",
+                            "texture": "ind_crusher_on",
                             "render_method": "alpha_test"
                         },
                         "south": {
-                            "texture": "common",
+                            "texture": "ind_side",
                             "render_method": "alpha_test"
                         },
                         "east": {
-                            "texture": "common",
+                            "texture": "ind_side",
                             "render_method": "alpha_test"
                         },
                         "west": {
-                            "texture": "common",
+                            "texture": "ind_side",
                             "render_method": "alpha_test"
                         },
                         "up": {
-                            "texture": "common",
+                            "texture": "ind_up",
                             "render_method": "alpha_test"
                         },
                         "down": {
-                            "texture": "common",
+                            "texture": "ind_bottom",
                             "render_method": "alpha_test"
                         }
                     }

@@ -164,7 +164,7 @@
             "textures": "textures/blocks/separator_north"
         },
         "separator_on": {
-            "textures": "textures/active/blocks/separator_on"
+            "textures": "textures/blocks/active/separator_on"
         },
         "separator_south": {
             "textures": "textures/blocks/separator_south"
@@ -176,13 +176,13 @@
             "textures": "textures/blocks/separator_west"
         },
         "utilitycraft_biofuel_fluid": {
-            "textures": "textures/blocks/creative/fluids/biofuel_fluid"
+            "textures": "textures/blocks/entity/fluids/biofuel_fluid"
         },
         "utilitycraft_crude_oil_fluid": {
-            "textures": "textures/blocks/creative/fluids/crude_oil_fluid"
+            "textures": "textures/blocks/entity/fluids/crude_oil_fluid"
         },
         "utilitycraft_diesel_fluid": {
-            "textures": "textures/blocks/creative/fluids/diesel_fluid"
+            "textures": "textures/blocks/entity/fluids/diesel_fluid"
         },
         "utilitycraft_endstone_gen_copper": {
             "textures": "textures/blocks/gen/utilitycraft_endstone_gen_copper"
@@ -203,34 +203,46 @@
             "textures": "textures/blocks/gen/utilitycraft_endstone_gen_netherite"
         },
         "utilitycraft_ethanol_fluid": {
-            "textures": "textures/blocks/creative/fluids/ethanol_fluid"
+            "textures": "textures/entity/fluids/ethanol"
         },
         "utilitycraft_heavy_hydrocarbon_fluid": {
-            "textures": "textures/blocks/creative/fluids/heavy_hydrocarbon_fluid"
+            "textures": "textures/entity/fluids/heavy_hydrocarbon"
         },
         "utilitycraft_hydrocarbon_blend_fluid": {
-            "textures": "textures/blocks/creative/fluids/hydrocarbon_blend_fluid"
+            "textures": "textures/entity/fluids/hydrocarbon_blend"
         },
         "utilitycraft_hydrocarbon_slurry_fluid": {
-            "textures": "textures/blocks/creative/fluids/hydrocarbon_slurry_fluid"
+            "textures": "textures/entity/fluids/hydrocarbon_slurry"
         },
         "utilitycraft_naphtha_fluid": {
-            "textures": "textures/blocks/creative/fluids/naphtha_fluid"
+            "textures": "textures/entity/fluids/naphtha"
         },
         "utilitycraft_petrol_fluid": {
-            "textures": "textures/blocks/creative/fluids/petrol_fluid"
+            "textures": "textures/entity/fluids/petrol"
         },
         "utilitycraft_plant_oil_fluid": {
-            "textures": "textures/blocks/creative/fluids/plant_oil_fluid"
+            "textures": "textures/entity/fluids/plant_oil"
         },
         "utilitycraft_plastic_resin_fluid": {
-            "textures": "textures/blocks/creative/fluids/plastic_resin_fluid"
+            "textures": "textures/entity/fluids/plastic_resin"
         },
         "utilitycraft_reactive_fluid": {
-            "textures": "textures/blocks/creative/fluids/reactive_fluid"
+            "textures": "textures/entity/fluids/reactive"
         },
-        "utilitycraft_steam_fluid": {
-            "textures": "textures/blocks/creative/fluids/steam_fluid"
+        "ind_crusher_on": {
+            "textures": "textures/blocks/active/ind_crusher_on"
+        },
+        "ind_top": {
+            "textures": "textures/blocks/common/ind_top"
+        },
+        "ind_side": {
+            "textures": "textures/blocks/common/ind_side"
+        },
+        "ind_bottom": {
+            "textures": "textures/blocks/common/ind_bottom"
+        },
+        "ind_crusher": {
+            "textures": "textures/blocks/front/ind_crusher"
         }
     }
 }
