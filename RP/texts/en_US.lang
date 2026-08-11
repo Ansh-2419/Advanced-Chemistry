@@ -136,5 +136,113 @@ tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Creative Hydrocarbon Blen
 tile.utilitycraft:creative_steam_tank.name=Creative Steam Tank
 tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer
 
+## ══════════════════════════════════════════════════════════
+## Age of Chemical — How To Play
+## ══════════════════════════════════════════════════════════
 
+## ── Category & button text keys (these fix the UI codes) ─
+howtoplay.category.age_of_chemical=Age of Chemical
+howtoplay.aoc:getting_started=Getting Started
+howtoplay.aoc:getting_started.title=Age of Chemical - Getting Started
+howtoplay.aoc:tier1_machines=Tier 1 Machines
+howtoplay.aoc:tier1_machines.title=Age of Chemical - Tier 1 Machines
+howtoplay.aoc:industrial_machines=Industrial Machinery
+howtoplay.aoc:industrial_machines.title=Age of Chemical - Industrial Machinery
+howtoplay.aoc:multiblock_machines=Multiblock Systems
+howtoplay.aoc:multiblock_machines.title=Age of Chemical - Multiblock Systems
+howtoplay.aoc:generators=Generators
+howtoplay.aoc:generators.title=Age of Chemical - Generators
 
+## ══════════════════════════════════════════════════════════
+## GETTING STARTED
+## ══════════════════════════════════════════════════════════
+
+howtoplay.aoc.getting_started.p1=§bAge of Chemical§r is a chemistry and industrial addon built on §6UtilityCraft§r and §6DoriosCore§r.\n\nAll machines run on §eDE (Dorios Energy)§r — the shared energy system from DoriosCore used across UtilityCraft and all compatible addons. Place a generator nearby and connect it using §bEnergy Valves§r or UtilityCraft conduits.
+howtoplay.aoc.getting_started.h1=Production chain
+howtoplay.aoc.getting_started.p2=The intended processing flow:\n\n§b1.§r §aFermenter§r — ferments organic items into §ePlant Oil§r or §aEthanol§r\n§b2.§r §6Fuel Mixer§r — blends two fluids into §6Biofuel§r\n§b3.§r §dChemical Reactor§r — converts fluids into §dHydrocarbon Slurry§r, §7Crude Oil§r, or §3Plastic Resin§r\n§b4.§r §bSeparator§r — splits Hydrocarbon Slurry into §7Heavy Hydrocarbon§r + §dReactive Fluid§r\n§b5.§r §cRefinery§r — distills Crude Oil into §cDiesel§r, §6Petrol§r, §7Naphtha§r\n§b6.§r §3Polymerizer§r — converts fluids into §3HDPE Pallets§r or §eLithium Dust§r
+howtoplay.aoc.getting_started.h2=Energy & Fluids
+howtoplay.aoc.getting_started.p3=§eDE (Dorios Energy)§r is produced by the §bIndustrial Generators§r included in this addon.\n\nFluids are moved between machines using §bFluid Valves§r. Each machine has a §7fluid tank§r shown in its UI.\n\nUse the §7IO tab§r in each machine's UI to configure which face accepts inputs and which exports outputs — enabling full pipe and hopper automation.
+howtoplay.aoc.getting_started.h3=IO Interface
+howtoplay.aoc.getting_started.p4=Every machine has an §bIO tab§r. Switch to it and assign each face:\n\n§a● Input§r — accepts items or fluids\n§c● Output§r — exports items or fluids\n§7● Disabled§r — blocks all transfer\n\nThe §eUpgrades tab§r lets you insert §aSpeed§r and §bEnergy§r upgrade modules to improve throughput.
+
+## ══════════════════════════════════════════════════════════
+## TIER 1 MACHINES
+## ══════════════════════════════════════════════════════════
+
+howtoplay.aoc.tier1.intro=Tier 1 machines are the core of the Age of Chemical production chain. Each one consumes §eDE§r and processes items or fluids into the next stage of the chain.
+
+## Fermenter
+howtoplay.aoc.tier1.h_fermenter=Fermenter
+howtoplay.aoc.tier1.p_fermenter=Converts organic items into §bfluids§r through fermentation.\n\n§eDE cost:§r 6 400 – 7 800 per batch\n§7Time:§r 6 – 10 seconds\n\n§lRecipes:§r\n\n§eWheat Seeds§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§eBeetseed§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§eMelon Seeds§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§ePumpkin Seeds§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§eSugar Cane§r ×64 → §aEthanol§r 1 200 mB + §740% chance§r §fSugar§r ×15 §7(or ×8 → 150 mB)\n§eBone Meal§r ×8 + §eOak Leaves§r ×4 → §aFertilizer Org§r 500 mB §7(or ×4 + ×2 → 250 mB)\n\n§7Batches:§r Insert a small amount for a quick batch, or a full 64 for maximum efficiency.
+
+## Fuel Mixer
+howtoplay.aoc.tier1.h_fuel_mixer=Fuel Mixer
+howtoplay.aoc.tier1.p_fuel_mixer=Blends two §bfluid inputs§r into a single §boutput fluid§r.\n\n§eDE cost:§r 6 400 per craft\n§7Time:§r 10 seconds\n\n§lRecipes:§r\n\n§aEthanol§r 1 000 mB + §aPlant Oil§r 1 000 mB → §6Biofuel§r 500 mB\n\n§7Both fluid tanks must be filled before processing begins.§r
+
+## Chemical Reactor
+howtoplay.aoc.tier1.h_chemical_reactor=Chemical Reactor
+howtoplay.aoc.tier1.p_chemical_reactor=Runs chemical reactions on §bfluids§r to produce new fluid outputs.\n\n§eDE cost:§r 8 400 – 10 000 per craft\n§7Time:§r 10 – 12 seconds\n\n§lRecipes:§r\n\n§6Biofuel§r 1 000 mB → §8Hydrocarbon Slurry§r 750 mB §7(12s, 9 600 DE)\n§7Heavy Hydrocarbon§r 400 mB → §7Crude Oil§r 250 mB §7(10s, 8 400 DE)\n§7Naphtha§r 1 000 mB → §3Plastic Resin§r 750 mB §7(12s, 10 000 DE)
+
+## Separator
+howtoplay.aoc.tier1.h_separator=Separator
+howtoplay.aoc.tier1.p_separator=Splits one §bfluid input§r into §btwo distinct fluid outputs§r.\n\n§eDE cost:§r 8 000 per craft\n\n§lRecipes:§r\n\n§8Hydrocarbon Slurry§r 1 000 mB → §7Heavy Hydrocarbon§r 600 mB + §dReactive Fluid§r 350 mB
+
+## Polymerizer
+howtoplay.aoc.tier1.h_polymerizer=Polymerizer
+howtoplay.aoc.tier1.p_polymerizer=Converts §bfluids§r into §bsolid item outputs§r using high pressure.\n\n§eDE cost:§r 10 000 per craft\n§7Time:§r 5 seconds\n\n§lRecipes:§r\n\n§3Plastic Resin§r 250 mB → §3HDPE Pallet§r ×1\n§dReactive Fluid§r 250 mB → §eLithium Dust§r ×1
+
+## ══════════════════════════════════════════════════════════
+## INDUSTRIAL MACHINERY
+## ══════════════════════════════════════════════════════════
+
+howtoplay.aoc.industrial.intro=Industrial Tier machines require more §eDE§r and produce more complex or rare outputs. They sit above Tier 1 in the progression chain.
+
+## Industrial Crusher
+howtoplay.aoc.industrial.h_crusher=Industrial Crusher
+howtoplay.aoc.industrial.p_crusher=Grinds items into crushed forms across §b3 selectable output stages§r. Each stage produces a different breakdown product from the same input.\n\n§eDE cost:§r 2 000 per craft\n§7Time:§r 2 seconds\n\n§lRecipes:§r\n\n§fCobblestone§r →\n  §7Stage 1:§r Gravel ×1\n  §7Stage 2:§r Dirt ×1\n  §7Stage 3:§r Sand ×1\n\n§7Use the stage selector buttons in the UI to switch output mode. The 3×3 output grid holds multiple results simultaneously.§r
+
+## Relic Synthesizer
+howtoplay.aoc.industrial.h_relic=Relic Synthesizer
+howtoplay.aoc.industrial.p_relic=Searches across §bdimensions§r to recover lost §5armor trim templates§r and §esmithing tables§r. Each craft is a §crandom chance roll§r from the pool of that dimension.\n\n§eDE cost:§r 25 000 – 80 000 per craft\n§7Time:§r 20 seconds per roll\n\n§lDimension pools:§r\n\n§2Overworld§r — Fuel: §bDiamond ×1§r — 25 000 DE\n§fSentry§r 25% · §fCoast§r 20% · §fDune§r 18% · §fWild§r 15% · §fWayfinder§r 10% · §fShaper§r 7% · §fHost§r 5%\n\n§cNether§r — Fuel: §bNetherite Ingot ×1§r — 50 000 DE\n§fRib§r 30% · §fSnout§r 25% · §fBolt/Raiser§r 15% · §fCoast§r 10% · §fDune§r 10% · §fSentry§r 10%\n\n§5End§r — Fuel: §bNetherite Ingot ×1§r — 60 000 DE\n§fSpire§r 35% · §fSilence§r 20% · §fWard§r 15% · §fVex§r 10% · §fEye§r 10% · §fTide§r 5% · §fFlow§r 5%\n\n§lSpecial recipe:§r\n§bNetherite Ingot ×2§r (any dimension) → §6Smithing Table§r §7(guaranteed, 80 000 DE)§r\n\n§7Place the machine in the dimension you want to draw from. Output lands in the 3×3 output grid.§r
+
+## ══════════════════════════════════════════════════════════
+## MULTIBLOCK SYSTEMS
+## ══════════════════════════════════════════════════════════
+
+howtoplay.aoc.multiblock.p1=Multiblock machines are large structures made of §bcasings§r controlled by a §bmonitor§r. Right-click the monitor with a §eWrench§r to activate. Pipe fluids and energy through §bFluid Valves§r and §bEnergy Valves§r.
+
+howtoplay.aoc.multiblock.h_fuel_burner=Fuel Burner
+howtoplay.aoc.multiblock.p_fuel_burner=Burns §bfluid fuels§r to generate large amounts of §eDE§r.\n\n§cFuel:§r Biofuel, Diesel, Petrol\n§aOutput:§r High DE generation\n§7Requires:§r Fuel Burner Casings + Monitor + Wrench activation
+
+howtoplay.aoc.multiblock.h_refinery=Refinery
+howtoplay.aoc.multiblock.p_refinery=Distills §7Crude Oil§r into multiple refined products.\n\n§eDE cost:§r 12 000 per craft\n\n§lRecipe:§r\n§7Crude Oil§r 1 000 mB → §cDiesel§r 350 mB + §6Petrol§r 300 mB + §7Naphtha§r 200 mB\n\n§7Requires:§r Refinery Casings + Monitor + Wrench activation
+
+howtoplay.aoc.multiblock.h_fluid_storage=Fluid Storage
+howtoplay.aoc.multiblock.p_fluid_storage=Large-capacity multiblock tank for storing a single fluid type.\n\n§aCapacity:§r Scales with structure size\n§7Requires:§r Fluid Storage Casings + Monitor\n\nConnect using §bFluid Valves§r on the monitor faces.
+
+howtoplay.aoc.multiblock.h_fluid_valve=Fluid Valve
+howtoplay.aoc.multiblock.p_fluid_valve=Controls fluid flow direction between machines and tanks.\n\nRight-click to cycle: §aInput§r → §cOutput§r → §7Disabled§r\nUse a §eWrench§r to set a fluid type filter.
+
+howtoplay.aoc.multiblock.h_energy_valve=Energy Valve
+howtoplay.aoc.multiblock.p_energy_valve=Controls §eDE§r flow direction between generators and machines.\n\nRight-click to set direction. Wrench to set a transfer rate limit.\n\n§7Use these to distribute power from generators without overloading connections.§r
+
+## ══════════════════════════════════════════════════════════
+## GENERATORS
+## ══════════════════════════════════════════════════════════
+
+howtoplay.aoc.generators.p1=Industrial generators produce §eDE§r to power all Age of Chemical and UtilityCraft machines. Each runs on a different fuel type.
+
+howtoplay.aoc.generators.h_furnator=Industrial Furnator
+howtoplay.aoc.generators.p_furnator=Burns §7solid fuel items§r (coal, charcoal, wood) to produce §eDE§r.\n\n§7Best for:§r early-game power before fluid fuels are available.\n§aOutput:§r Low–medium DE\n§cFuel:§r Solid burnables
+
+howtoplay.aoc.generators.h_magmator=Industrial Magmator
+howtoplay.aoc.generators.p_magmator=Uses §clava§r as fuel to convert thermal energy into §eDE§r.\n\n§7Best for:§r mid-game, near lava sources or with a lava farm.\n§aOutput:§r Medium DE\n§cFuel:§r Lava fluid
+
+howtoplay.aoc.generators.h_solar=Industrial Solar Panel
+howtoplay.aoc.generators.p_solar=Generates §eDE§r from sunlight. Zero fuel cost.\n\nMust have an unobstructed sky view. Only active during daytime.\n§aOutput:§r Low DE (passive)\n§cFuel:§r Sunlight
+
+howtoplay.aoc.generators.h_thermo=Industrial Thermo Generator
+howtoplay.aoc.generators.p_thermo=Converts temperature difference between a hot and cold fluid into §eDE§r.\n\nFeed hot fluid (e.g. §cSteam§r) on one side, cold on the other. Higher difference = more power.\n§aOutput:§r High DE\n§cFuel:§r Hot + cold fluid inputs
+
+howtoplay.aoc.generators.h_wind=Industrial Wind Turbine
+howtoplay.aoc.generators.p_wind=Generates §eDE§r from wind. Zero fuel cost.\n\nHigher placement altitude = more output. Best in open biomes at high elevation.\n§aOutput:§r Low–medium DE (passive)\n§cFuel:§r Wind (height dependent)

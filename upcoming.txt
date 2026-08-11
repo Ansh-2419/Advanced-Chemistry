@@ -1,4 +1,4 @@
-1)Relic Synthesizer
+1)Relic Synthesizer(half-done)
 find diffrent type of trim and template by consumeing
 diamond & nethrite
 

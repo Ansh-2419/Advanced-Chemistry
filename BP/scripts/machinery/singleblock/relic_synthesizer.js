@@ -4,9 +4,7 @@ import * as DoriosLib from "DoriosLib/index.js";
 import { displayMachine, stopMachine } from "./machine_helpers.js";
 import {
     getDimFuel,
-    isSmithingTableRecipe,
     rollRelicOutput,
-    SMITHING_TABLE_RECIPE,
 } from "../../config/recipes/machinery/relic_synthesizer.js";
 
 // ── Slot layout ────────────────────────────────────────────────────────────────
