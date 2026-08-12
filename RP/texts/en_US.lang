@@ -2,7 +2,7 @@
 
 ## ── Item Groups ───────────────────────────────────────────────────────────────
 ac:itemGroup.name.machines=Petrochemical machines
-ac:itemGroup.name.machines=Industrial machines
+ac:itemGroup.name.ind_machines=Industrial machines
 ac:itemGroup.name.aoc_tank=Creative tanks
 ac:itemGroup.name.endstone_generators=Endstone Generators
 
@@ -159,7 +159,7 @@ howtoplay.aoc:generators.title=Age of Chemical - Generators
 
 howtoplay.aoc.getting_started.p1=§bAge of Chemical§r is a chemistry and industrial addon built on §6UtilityCraft§r and §6DoriosCore§r.\n\nAll machines run on §eDE (Dorios Energy)§r — the shared energy system from DoriosCore used across UtilityCraft and all compatible addons. Place a generator nearby and connect it using §bEnergy Valves§r or UtilityCraft conduits.
 howtoplay.aoc.getting_started.h1=Production chain
-howtoplay.aoc.getting_started.p2=The intended processing flow:\n\n§b1.§r §aFermenter§r — ferments organic items into §ePlant Oil§r or §aEthanol§r\n§b2.§r §6Fuel Mixer§r — blends two fluids into §6Biofuel§r\n§b3.§r §dChemical Reactor§r — converts fluids into §dHydrocarbon Slurry§r, §7Crude Oil§r, or §3Plastic Resin§r\n§b4.§r §bSeparator§r — splits Hydrocarbon Slurry into §7Heavy Hydrocarbon§r + §dReactive Fluid§r\n§b5.§r §cRefinery§r — distills Crude Oil into §cDiesel§r, §6Petrol§r, §7Naphtha§r\n§b6.§r §3Polymerizer§r — converts fluids into §3HDPE Pallets§r or §eLithium Dust§r
+howtoplay.aoc.getting_started.p2=The intended processing flow:\n\n§b1.§r §aDissolution Chamber§r — ferments organic items into §ePlant Oil§r or §aEthanol§r\n§b2.§r §6Fuel Mixer§r — blends two fluids into §6Biofuel§r\n§b3.§r §dChemical Reactor§r — converts fluids into §dHydrocarbon Slurry§r, §7Crude Oil§r, or §3Plastic Resin§r\n§b4.§r §bSeparator§r — splits Hydrocarbon Slurry into §7Heavy Hydrocarbon§r + §dReactive Fluid§r\n§b5.§r §cRefinery§r — distills Crude Oil into §cDiesel§r, §6Petrol§r, §7Naphtha§r\n§b6.§r §3Polymerizer§r — converts fluids into §3HDPE Pallets§r or §eLithium Dust§r
 howtoplay.aoc.getting_started.h2=Energy & Fluids
 howtoplay.aoc.getting_started.p3=§eDE (Dorios Energy)§r is produced by the §bIndustrial Generators§r included in this addon.\n\nFluids are moved between machines using §bFluid Valves§r. Each machine has a §7fluid tank§r shown in its UI.\n\nUse the §7IO tab§r in each machine's UI to configure which face accepts inputs and which exports outputs — enabling full pipe and hopper automation.
 howtoplay.aoc.getting_started.h3=IO Interface
@@ -171,8 +171,8 @@ howtoplay.aoc.getting_started.p4=Every machine has an §bIO tab§r. Switch to it
 
 howtoplay.aoc.tier1.intro=Tier 1 machines are the core of the Age of Chemical production chain. Each one consumes §eDE§r and processes items or fluids into the next stage of the chain.
 
-## Fermenter
-howtoplay.aoc.tier1.h_fermenter=Fermenter
+## Dissolution Chamber
+howtoplay.aoc.tier1.h_fermenter=Dissolution Chamber
 howtoplay.aoc.tier1.p_fermenter=Converts organic items into §bfluids§r through fermentation.\n\n§eDE cost:§r 6 400 – 7 800 per batch\n§7Time:§r 6 – 10 seconds\n\n§lRecipes:§r\n\n§eWheat Seeds§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§eBeetseed§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§eMelon Seeds§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§ePumpkin Seeds§r ×64 → §aPlant Oil§r 1 200 mB §7(or ×8 → 150 mB)\n§eSugar Cane§r ×64 → §aEthanol§r 1 200 mB + §740% chance§r §fSugar§r ×15 §7(or ×8 → 150 mB)\n§eBone Meal§r ×8 + §eOak Leaves§r ×4 → §aFertilizer Org§r 500 mB §7(or ×4 + ×2 → 250 mB)\n\n§7Batches:§r Insert a small amount for a quick batch, or a full 64 for maximum efficiency.
 
 ## Fuel Mixer

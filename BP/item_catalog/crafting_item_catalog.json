@@ -42,7 +42,7 @@
                     },
                     {
                         "group_identifier": {
-                            "icon": "utilitycraft:endstone_gen_copper",
+                            "icon": "utilitycraft:industrial_crusher",
                             "name": "ac:itemGroup.name.ind_machines"
                         },
                         "items": [
@@ -52,7 +52,7 @@
                     },
                     {
                         "group_identifier": {
-                            "icon": "utilitycraft:endstone_gen_copper",
+                            "icon": "utilitycraft:creative_biofuel_tank",
                             "name": "ac:itemGroup.name.aoc_tank"
                         },
                         "items": [

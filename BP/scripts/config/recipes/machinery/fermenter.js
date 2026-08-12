@@ -19,8 +19,8 @@ const RECIPES = [
         energyCost: 6400,
         seconds:    8,
         batches: {
-            small: { size: 8,  seconds: 6, fluidAmount: 150  },
-            large: { size: 64, seconds: 8, fluidAmount: 1200 },
+            small: { size: 8,  seconds: 3, fluidAmount: 150  },
+            large: { size: 64, seconds: 6, fluidAmount: 1200 },
         },
     },
     {
@@ -30,8 +30,8 @@ const RECIPES = [
         energyCost: 6400,
         seconds:    8,
         batches: {
-            small: { size: 8,  seconds: 6, fluidAmount: 150  },
-            large: { size: 64, seconds: 8, fluidAmount: 1200 },
+            small: { size: 8,  seconds: 3, fluidAmount: 150  },
+            large: { size: 64, seconds: 6, fluidAmount: 1200 },
         },
     },
     {
@@ -41,8 +41,8 @@ const RECIPES = [
         energyCost: 6400,
         seconds:    8,
         batches: {
-            small: { size: 8,  seconds: 6, fluidAmount: 150  },
-            large: { size: 64, seconds: 8, fluidAmount: 1200 },
+            small: { size: 8,  seconds: 3, fluidAmount: 150  },
+            large: { size: 64, seconds: 6, fluidAmount: 1200 },
         },
     },
     {
@@ -50,10 +50,10 @@ const RECIPES = [
         input:     { id: "minecraft:pumpkin_seeds", amount: 64 },
         fluid:     { type: "plant_oil", amount: 1200 },
         energyCost: 6400,
-        seconds:    8,
+        seconds:    6,
         batches: {
-            small: { size: 8,  seconds: 6, fluidAmount: 150  },
-            large: { size: 64, seconds: 8, fluidAmount: 1200 },
+            small: { size: 8,  seconds: 3, fluidAmount: 150  },
+            large: { size: 64, seconds: 6, fluidAmount: 1200 },
         },
     },
     {
@@ -61,11 +61,11 @@ const RECIPES = [
         input:     { id: "minecraft:sugar_cane", amount: 64 },
         fluid:     { type: "ethanol", amount: 1200 },
         energyCost: 7800,
-        seconds:    10,
+        seconds:    6,
         byproduct:  { id: "minecraft:sugar", amount: 15, chance: 0.4 },
         batches: {
-            small: { size: 8,  seconds: 6,  fluidAmount: 150  },
-            large: { size: 64, seconds: 10, fluidAmount: 1200 },
+            small: { size: 8,  seconds: 3,  fluidAmount: 150  },
+            large: { size: 64, seconds: 6, fluidAmount: 1200 },
         },
     },
     {

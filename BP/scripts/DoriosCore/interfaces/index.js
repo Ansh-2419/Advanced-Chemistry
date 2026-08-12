@@ -7,8 +7,6 @@ import {
   SLOT_CODE_MARKER,
   SLOT_CODE_RESET,
 } from "./constants.js";
-import { openLinkNodeIOForm } from "./linkNodeIO.js";
-import { blockComponent } from "../../DoriosLib/registry/index.js";
 
 
 const interfaces = new Map();
@@ -570,9 +568,3 @@ export {
   registerGasIODefinition,
   setGasConfig,
 } from "./gasIO.js";
-blockComponent("utilitycraft:link_node_io", {
-  onPlayerInteract({ block, player }) {
-    if (!block || !player) return;
-    openLinkNodeIOForm(block, player);
-  }
-});
