@@ -2,7 +2,7 @@ import { ItemStack } from "@minecraft/server";
 import { ButtonManager, Machine, registerIOInterface } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
 import {
-    chargeOrCraft,
+    processMachine,
     displayMachine,
     getMachineEnergyCost,
     stopMachine,
@@ -176,12 +176,14 @@ DoriosLib.registry.blockComponent("utilitycraft:industrial_crusher", {
         if (machine.energy.get() <= 0 && machine.getProgress() < energyCost)
             return stopMachine(machine, "No Energy", { resetProgress: false });
 
-        if ((recipe.seconds ?? 0) > 0)
-            machine.setRate(energyCost / recipe.seconds);
-
-        chargeOrCraft(machine, energyCost, 1, () => {
-            removeFromInputSlot(machine.container, inputSlot, recipe.input.amount);
-            addToOutputSlots(machine.container, output.id, output.count);
+        processMachine(machine, {
+            energyCost,
+            seconds: recipe.seconds ?? 2,
+            maxRuns: 1,
+            craft: () => {
+                removeFromInputSlot(machine.container, inputSlot, recipe.input.amount);
+                addToOutputSlots(machine.container, output.id, output.count);
+            },
         });
 
         if (machine.shouldUpdateUI) {

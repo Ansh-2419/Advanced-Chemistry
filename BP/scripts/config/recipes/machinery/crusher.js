@@ -12,12 +12,12 @@
 const RECIPES = [
     {
         id:          "aoc:crush_cobblestone",
-        input:       { id: "minecraft:cobblestone", amount: 1 },
-        output_1:    { id: "minecraft:gravel", count: 1 },
-        output_2:    { id: "minecraft:dirt",   count: 1 },
-        output_3:    { id: "minecraft:sand",   count: 1 },
-        energyCost:  2_000,
-        seconds:     2,
+        input:       { id: "minecraft:cobblestone", amount: 16 },
+        output_1:    { id: "minecraft:gravel", count: 16 },
+        output_2:    { id: "minecraft:dirt",   count: 16 },
+        output_3:    { id: "minecraft:sand",   count: 16 },
+        energyCost:  26_000,
+        seconds:     3,
     },
     // Add more crushable recipes here following the same pattern.
     // If a recipe has no further breakdown, set output_2/output_3 to the

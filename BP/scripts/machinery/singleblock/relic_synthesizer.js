@@ -1,7 +1,7 @@
 import { ItemStack } from "@minecraft/server";
 import { Machine, registerIOInterface } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
-import { displayMachine, stopMachine } from "./machine_helpers.js";
+import { displayMachine, processMachine, stopMachine } from "./machine_helpers.js";
 import {
     getDimFuel,
     rollRelicOutput,
@@ -93,43 +93,28 @@ DoriosLib.registry.blockComponent(MACHINE_ID, {
             return machine.showWarning("Output Full");
         }
 
-        // ── Set up energy cost & rate for this recipe ───────────────────────
+        // ── Energy cost ───────────────────────────────────────────────────────
         const energyCost = recipe.energyCost ?? DEFAULT_ENERGY;
-        machine.setEnergyCost(energyCost);
+        const seconds    = recipe.seconds ?? 20;
 
-        if ((recipe.seconds ?? 0) > 0) {
-            machine.setRate(energyCost / recipe.seconds);
-        }
-
-        // ── No energy check ─────────────────────────────────────────────────
+        // ── No energy check ──────────────────────────────────────────────────
         if (machine.energy.get() <= 0 && machine.getProgress() < energyCost) {
             return machine.showWarning("No Energy", { resetProgress: false });
         }
 
-        // ── Consume energy into progress ────────────────────────────────────
-        const consumption  = machine.boosts?.consumption ?? 1;
-        const needed       = energyCost - machine.getProgress();
-        const spendable    = Math.min(machine.energy.get(), machine.rate, needed * consumption);
-
-        if (spendable > 0) {
-            machine.energy.consume(spendable);
-            machine.addProgress(spendable / Math.max(consumption, Number.EPSILON));
-        }
-
-        // ── Craft when progress is full ─────────────────────────────────────
-        if (machine.getProgress() >= energyCost) {
-            machine.addProgress(-energyCost);
-
-            // Consume fuel from input
-            consumeItem(machine.container, INPUT_SLOT, recipe.fuelAmount);
-
-            // Determine output
-            const outputId = isSmith
-                ? SMITHING_TABLE_RECIPE.outputId
-                : rollRelicOutput(dimId);
-
-            if (outputId) placeInOutputGrid(machine.container, outputId);
-        }
+        // ── Gradual drain + craft via processMachine ─────────────────────────
+        processMachine(machine, {
+            energyCost,
+            seconds,
+            maxRuns: 1,
+            craft: () => {
+                consumeItem(machine.container, INPUT_SLOT, recipe.fuelAmount);
+                const outputId = isSmith
+                    ? SMITHING_TABLE_RECIPE.outputId
+                    : rollRelicOutput(dimId);
+                if (outputId) placeInOutputGrid(machine.container, outputId);
+            },
+        });
 
         // ── HUD ─────────────────────────────────────────────────────────────
         if (machine.shouldUpdateUI) {

@@ -4,7 +4,7 @@ import { getChemicalReactorRecipes } from "../../config/recipes/machinery/chemic
 import {
     EMPTY_FLUID,
     addItemToSlot,
-    chargeOrCraft,
+    processMachine,
     displayMachine,
     formatFluidType,
     getMachineEnergyCost,
@@ -111,16 +111,21 @@ DoriosLib.registry.blockComponent("utilitycraft:chemical_reactor", {
             return fail(machine, displays, "No Energy", { resetProgress: false });
         }
 
-        chargeOrCraft(machine, energyCost, craftLimit.max, (runs) => {
-            tankIn.consume(recipe.input.amount * runs);
-            if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
+        processMachine(machine, {
+            energyCost,
+            seconds: recipe.seconds ?? 12,
+            maxRuns: craftLimit.max,
+            craft: (runs) => {
+                tankIn.consume(recipe.input.amount * runs);
+                if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
 
-            if (hasFluidOutput(recipe)) {
-                if (tankOut.getType() === EMPTY_FLUID) tankOut.setType(recipe.output.type);
-                tankOut.add(recipe.output.amount * runs);
-            }
+                if (hasFluidOutput(recipe)) {
+                    if (tankOut.getType() === EMPTY_FLUID) tankOut.setType(recipe.output.type);
+                    tankOut.add(recipe.output.amount * runs);
+                }
 
-            processByproducts(machine, tankByproduct, byproducts, runs);
+                processByproducts(machine, tankByproduct, byproducts, runs);
+            },
         });
 
         updateHud(machine, recipe, tankIn, tankOut, tankByproduct, byproducts, craftLimit.max);

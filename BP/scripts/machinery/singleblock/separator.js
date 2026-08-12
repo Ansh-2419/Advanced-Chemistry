@@ -3,7 +3,7 @@ import * as DoriosLib from "DoriosLib/index.js";
 import { getSeparatorRecipes } from "../../config/recipes/machinery/separator.js";
 import {
     EMPTY_FLUID,
-    chargeOrCraft,
+    processMachine,
     displayMachine,
     formatFluidType,
     getMachineEnergyCost,
@@ -98,15 +98,20 @@ DoriosLib.registry.blockComponent("utilitycraft:separator", {
             return fail(machine, displays, "No Energy", { resetProgress: false });
         }
 
-        chargeOrCraft(machine, energyCost, craftLimit.max, (runs) => {
-            tankIn.consume(recipe.input.amount * runs);
-            if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
+        processMachine(machine, {
+            energyCost,
+            seconds: recipe.seconds ?? 8,
+            maxRuns: craftLimit.max,
+            craft: (runs) => {
+                tankIn.consume(recipe.input.amount * runs);
+                if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
 
-            if (tankOut1.getType() === EMPTY_FLUID) tankOut1.setType(recipe.output1.type);
-            tankOut1.add(recipe.output1.amount * runs);
+                if (tankOut1.getType() === EMPTY_FLUID) tankOut1.setType(recipe.output1.type);
+                tankOut1.add(recipe.output1.amount * runs);
 
-            if (tankOut2.getType() === EMPTY_FLUID) tankOut2.setType(recipe.output2.type);
-            tankOut2.add(recipe.output2.amount * runs);
+                if (tankOut2.getType() === EMPTY_FLUID) tankOut2.setType(recipe.output2.type);
+                tankOut2.add(recipe.output2.amount * runs);
+            },
         });
 
         updateHud(machine, recipe, tankIn, tankOut1, tankOut2, craftLimit.max);

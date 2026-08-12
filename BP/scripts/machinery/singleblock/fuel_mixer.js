@@ -3,7 +3,7 @@ import * as DoriosLib from "DoriosLib/index.js";
 import { getFuelMixerRecipes } from "../../config/recipes/machinery/fuel_mixer.js";
 import {
     EMPTY_FLUID,
-    chargeOrCraft,
+    processMachine,
     displayMachine,
     formatFluidType,
     getMachineEnergyCost,
@@ -103,12 +103,17 @@ DoriosLib.registry.blockComponent("utilitycraft:fuel_mixer", {
             return fail(machine, displays, "No Energy", { resetProgress: false });
         }
 
-        chargeOrCraft(machine, energyCost, craftLimit.max, (runs) => {
-            inputA.consume(recipe.input1.amount * runs);
-            inputB.consume(recipe.input2.amount * runs);
+        processMachine(machine, {
+            energyCost,
+            seconds: recipe.seconds ?? 10,
+            maxRuns: craftLimit.max,
+            craft: (runs) => {
+                inputA.consume(recipe.input1.amount * runs);
+                inputB.consume(recipe.input2.amount * runs);
 
-            if (tankOut.getType() === EMPTY_FLUID) tankOut.setType(recipe.output.type);
-            tankOut.add(recipe.output.amount * runs);
+                if (tankOut.getType() === EMPTY_FLUID) tankOut.setType(recipe.output.type);
+                tankOut.add(recipe.output.amount * runs);
+            },
         });
 
         updateHud(machine, recipe, tank1, tank2, tankOut, craftLimit.max);

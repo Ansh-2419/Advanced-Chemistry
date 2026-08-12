@@ -21,8 +21,8 @@ const nativeRecipes = [
         id: "utilitycraft:hydrocarbon_slurry_from_biofuel",
         input: { type: "biofuel", amount: 1000 },
         output: { type: "hydrocarbon_slurry", amount: 750 },
-        energyCost: 9600,
-        seconds: 12,
+        energyCost: 12_600,
+        seconds: 6,
         description:
             "Chemically cracks biofuel into a thick hydrocarbon slurry."
         // No byproduct on base recipe — can be added via ScriptEvent
@@ -31,8 +31,8 @@ const nativeRecipes = [
         id: "utilitycraft:crude_oil_from_heavy_hydrocarbon",
         input: { type: "heavy_hydrocarbon", amount: 400 },
         output: { type: "crude_oil", amount: 250 },
-        energyCost: 8400,
-        seconds: 10,
+        energyCost: 9400,
+        seconds: 8,
         description: "Refines heavy hydrocarbon into crude oil."
     }),
     defineRecipe({
@@ -40,7 +40,7 @@ const nativeRecipes = [
         input: { type: "naphtha", amount: 1000 },
         output: { type: "plastic_resin", amount: 750 },
         energyCost: 10_000,
-        seconds: 12,
+        seconds: 10,
         description: "Polymerises naphtha into liquid plastic resin."
     })
 ];

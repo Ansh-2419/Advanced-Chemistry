@@ -8,7 +8,9 @@ import {
     formatFluidType,
     getMachineEnergyCost,
     getMachineFluidCap,
+    getMachineRate,
     getTank,
+    processMachine,
     removeItemsFromSlot,
     setupTanks,
     stopMachine,
@@ -116,47 +118,25 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
             return fail(machine, tank, "No Energy", { resetProgress: false });
         }
 
-        // ── Gradual energy drain → progress (same pattern as double_machine) ──
-        let progress = machine.getProgress();
-
-        // Rate = energy per second so craft takes the full batch duration
+        // ── Gradual energy drain + craft via processMachine ─────────────────────
         const seconds = runtimeRecipe.seconds ?? 8;
-        machine.setRate(energyCost / Math.max(1, seconds * 20));
 
-        const processBatch     = Math.max(1, Math.floor(machine.boosts.process_batch));
-        const consumption      = machine.boosts.consumption;
-        const maxProgress      = Math.ceil(craftLimit.max / processBatch) * energyCost;
-        const progressCapacity = Math.max(0, maxProgress - progress);
-        const energyToConsume  = Math.min(machine.energy.get(), machine.rate, progressCapacity * consumption);
+        processMachine(machine, {
+            energyCost,
+            seconds,
+            maxRuns: craftLimit.max,
+            craft: (runs) => {
+                removeItemsFromSlot(machine.container, active.slot, runtimeRecipe.input.amount * runs);
 
-        if (energyToConsume > 0) {
-            machine.energy.consume(energyToConsume);
-            progress += energyToConsume / consumption;
-            machine.setProgress(progress, { display: false });
-        }
+                if (secondary && secSlotIndex !== -1)
+                    removeItemsFromSlot(machine.container, secSlotIndex, secondary.amount * runs);
 
-        // ── Craft when a full cycle completes ──────────────────────────────────
-        const completedProcesses = Math.floor(progress / energyCost);
-        const processCount = Math.min(
-            completedProcesses * processBatch,
-            craftLimit.max
-        );
+                if (tank.getType() === EMPTY_FLUID) tank.setType(fluidType);
+                tank.add(runtimeRecipe.fluid.amount * runs);
 
-        if (processCount > 0) {
-            removeItemsFromSlot(machine.container, active.slot, runtimeRecipe.input.amount * processCount);
-
-            if (secondary && secSlotIndex !== -1)
-                removeItemsFromSlot(machine.container, secSlotIndex, secondary.amount * processCount);
-
-            if (tank.getType() === EMPTY_FLUID) tank.setType(fluidType);
-            tank.add(runtimeRecipe.fluid.amount * processCount);
-
-            processByproduct(machine, runtimeRecipe.byproduct, processCount);
-
-            // Deduct progress, preserve leftover
-            progress -= Math.ceil(processCount / processBatch) * energyCost;
-            machine.setProgress(progress, { display: false });
-        }
+                processByproduct(machine, runtimeRecipe.byproduct, runs);
+            },
+        });
 
         updateHud(machine, runtimeRecipe, tank, craftLimit.max);
         displayMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }]);

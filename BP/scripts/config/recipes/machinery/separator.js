@@ -14,6 +14,7 @@ const nativeRecipes = [
         output1:    { type: "heavy_hydrocarbon",   amount: 600  },
         output2:    { type: "reactive_fluid",      amount: 350  },
         energyCost: 8000,
+        seconds:    8,
     }),
 ];
 
@@ -27,6 +28,7 @@ function defineRecipe(r) {
         output1:    { type: r.output1.type.toLowerCase(), amount: Math.max(1, r.output1.amount)  },
         output2:    { type: r.output2.type.toLowerCase(), amount: Math.max(1, r.output2.amount)  },
         energyCost: Math.max(1, r.energyCost ?? 8000),
+        seconds:    Math.max(1, r.seconds ?? 8),
     };
 }
 

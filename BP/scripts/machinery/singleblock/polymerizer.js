@@ -4,7 +4,7 @@ import { getPolymerizerRecipes } from "../../config/recipes/machinery/polymerize
 import {
     EMPTY_FLUID,
     addItemToSlot,
-    chargeOrCraft,
+    processMachine,
     displayMachine,
     formatFluidType,
     getMachineEnergyCost,
@@ -106,15 +106,15 @@ DoriosLib.registry.blockComponent("utilitycraft:polymerizer", {
             return fail(machine, displays, "No Energy", { resetProgress: false });
         }
 
-        // Set rate so recipe.seconds controls processing time
-        if ((recipe.seconds ?? 0) > 0) {
-            machine.setRate(energyCost / recipe.seconds);
-        }
-
-        chargeOrCraft(machine, energyCost, craftLimit, (runs) => {
-            tankIn.consume(recipe.input.amount * runs);
-            if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
-            addItemToSlot(machine.container, OUTPUT_SLOT, recipe.output.item, recipe.output.count * runs);
+        processMachine(machine, {
+            energyCost,
+            seconds: recipe.seconds ?? 5,
+            maxRuns: craftLimit,
+            craft: (runs) => {
+                tankIn.consume(recipe.input.amount * runs);
+                if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
+                addItemToSlot(machine.container, OUTPUT_SLOT, recipe.output.item, recipe.output.count * runs);
+            },
         });
 
         updateHud(machine, recipe, tankIn, craftLimit);
