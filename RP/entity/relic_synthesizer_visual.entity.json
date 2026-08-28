@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "aoc:relic_synthesizer_visual",
+            "materials": {
+                "default": "entity_alphablend"
+            },
+            "textures": {
+                "default": "textures/entity/relic_entity"
+            },
+            "geometry": {
+                "default": "geometry.relic_entity"
+            },
+            "animations": {
+                "idle": "animation.relic_entity.idle"
+            },
+            "scripts": {
+                "animate": ["idle"]
+            },
+            "render_controllers": ["controller.render.relic_synthesizer_visual"]
+        }
+    }
+}

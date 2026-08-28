@@ -22,10 +22,10 @@
             }
         },
         "components": {
-            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:geometry": "geometry.relic_machine",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "common",
+                    "texture": "relic_machine",
                     "render_method": "opaque"
                 }
             },
@@ -63,7 +63,7 @@
                     "minecraft:light_emission": 10,
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "common",
+                            "texture": "relic_machine",
                             "render_method": "opaque"
                         }
                     }

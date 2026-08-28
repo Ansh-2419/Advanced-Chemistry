@@ -5,13 +5,16 @@
             "identifier": "utilitycraft:refinery_casing"
         },
         "tags": ["utilitycraft_workbench"],
-        "pattern": ["ABA", "BRB", "ABA"],
+        "pattern": ["ABA", "BFB", "ABA"],
         "key": {
             "R": {
                 "item": "utilitycraft:machine_case"
             },
             "B": {
                 "item": "utilitycraft:voltanium_Ingot"
+            },
+            "F": {
+                "item": "utilitycraft:magmatic_chamber"
             },
             "A": {
                 "item": "utilitycraft:fluid_pipe"

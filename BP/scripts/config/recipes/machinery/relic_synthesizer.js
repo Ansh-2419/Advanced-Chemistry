@@ -118,7 +118,7 @@ const DIMENSION_FUEL = {
         fuelId: "minecraft:diamond_block",
         fuelAmount: 1,
         energyCost: 25_000,
-        seconds: 20,
+        seconds: 5,
         pool: "overworld",
         dimLabel: "🟢 Overworld"
     },
@@ -126,7 +126,7 @@ const DIMENSION_FUEL = {
         fuelId: "minecraft:netherite_ingot",
         fuelAmount: 1,
         energyCost: 50_000,
-        seconds: 20,
+        seconds: 7,
         pool: "nether",
         dimLabel: "🔴 Nether"
     },
@@ -134,36 +134,11 @@ const DIMENSION_FUEL = {
         fuelId: "minecraft:netherite_ingot",
         fuelAmount: 1,
         energyCost: 60_000,
-        seconds: 20,
+        seconds: 5,
         pool: "end",
         dimLabel: "🟣 End"
     }
 };
-
-// ── Public API ────────────────────────────────────────────────────────────────
-
-/**
- * Get the fuel config for the current dimension.
- * Returns undefined if the dimension is not supported.
- * @param {string} dimensionId
- * @returns {RelicFuel|undefined}
- */
-export function getDimFuel(dimensionId) {
-    return DIMENSION_FUEL[dimensionId];
-}
-
-/**
- * Check whether the input item + amount matches the smithing table special recipe.
- * @param {string} typeId
- * @param {number} amount
- * @returns {boolean}
- */
-export function isSmithingTableRecipe(typeId, amount) {
-    return (
-        typeId === SMITHING_TABLE_RECIPE.fuelId &&
-        amount >= SMITHING_TABLE_RECIPE.fuelAmount
-    );
-}
 
 /**
  * Roll a random trim from the pool for the given dimension.
@@ -184,4 +159,13 @@ export function rollRelicOutput(dimensionId) {
         if (roll <= 0) return entry.id;
     }
     return pool.entries[pool.entries.length - 1].id;
+}
+
+/**
+ * Returns the fuel config for the given dimension, or null if unsupported.
+ * @param {string} dimensionId
+ * @returns {RelicFuel|null}
+ */
+export function getDimFuel(dimensionId) {
+    return DIMENSION_FUEL[dimensionId] ?? null;
 }

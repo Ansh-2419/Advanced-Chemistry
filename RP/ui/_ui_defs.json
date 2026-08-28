@@ -2,6 +2,7 @@
     "ui_defs": [
         "ui/how_to_play_screen.json",
         "ui/fermenter.json",
+        "ui/recipes/fermenter_recipes.json",
         "ui/fuel_mixer.json",
         "ui/fuel_burner.json",
         "ui/fluid_storage_monitor.json",
@@ -11,6 +12,7 @@
         "ui/industrial_crusher.json",
         "ui/recipes/infuser.json",
         "ui/polymerizer.json",
-        "ui/relic_synthesizer.json"
+        "ui/relic_synthesizer.json",
+        "ui/nuclear_processor.json"
     ]
 }

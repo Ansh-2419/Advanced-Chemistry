@@ -31,23 +31,23 @@
                     "render_method": "alpha_test"
                 },
                 "south": {
-                    "texture": "separator_south",
+                    "texture": "side",
                     "render_method": "alpha_test"
                 },
                 "east": {
-                    "texture": "separator_east",
+                    "texture": "side",
                     "render_method": "alpha_test"
                 },
                 "west": {
-                    "texture": "separator_west",
+                    "texture": "side",
                     "render_method": "alpha_test"
                 },
                 "up": {
-                    "texture": "separator_up",
+                    "texture": "top",
                     "render_method": "alpha_test"
                 },
                 "down": {
-                    "texture": "separator_down",
+                    "texture": "bottom",
                     "render_method": "alpha_test"
                 }
             },
@@ -97,23 +97,23 @@
                             "render_method": "alpha_test"
                         },
                         "south": {
-                            "texture": "separator_south",
+                            "texture": "side",
                             "render_method": "alpha_test"
                         },
                         "east": {
-                            "texture": "separator_east",
+                            "texture": "side",
                             "render_method": "alpha_test"
                         },
                         "west": {
-                            "texture": "separator_west",
+                            "texture": "side",
                             "render_method": "alpha_test"
                         },
                         "up": {
-                            "texture": "separator_up",
+                            "texture": "top",
                             "render_method": "alpha_test"
                         },
                         "down": {
-                            "texture": "separator_down",
+                            "texture": "bottom",
                             "render_method": "alpha_test"
                         }
                     }

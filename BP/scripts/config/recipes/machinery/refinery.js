@@ -20,6 +20,14 @@ const nativeRecipes = [
         output3:   { type: 'naphtha',   amount: 200  },
         energyCost: 12_000,
     }),
+    defineRecipe({
+        id:        'aoc:refine_thorium',
+        input:     { type: 'actinide_solution', amount: 1000 },
+        output1:   { type: 'thorium_solution',    amount: 250  },
+        output2:   { type: 'phosphate_solution',    amount: 300  },
+        output3:   { type: 'water',   amount: 450  },
+        energyCost: 12_000,
+    }),
 ];
 
 export const refineryRecipes = nativeRecipes;

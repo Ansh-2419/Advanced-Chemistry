@@ -46,6 +46,7 @@ tile.utilitycraft:endstone_gen_emerald.name=Emerald Endstone Generator
 tile.utilitycraft:endstone_gen_netherite.name=Netherite Endstone Generator
 
 ## ── UI Entity Names ──────────────────────────────────────────────────────────
+entity.utilitycraft:nuclear_processor.name=Nuclear Processor
 entity.utilitycraft:machine.name=Machine
 entity.utilitycraft:fermenter.name=Dissolution Chamber
 entity.utilitycraft:fuel_mixer.name=Fluid Mixer
@@ -59,6 +60,8 @@ entity.utilitycraft:industrial_crusher.name=Industrial Crusher
 entity.utilitycraft:relic_synthesizer.name=Relic Synthesizer
 
 ## ── Items ────────────────────────────────────────────────────────────────────
+item.utilitycraft:thorium_concentrate=Thorium Concentrate
+item.utilitycraft:adamant_mesh=Adamant Mesh
 item.utilitycraft:duranium_ingot=Duranium Ingot
 item.utilitycraft:lithium_dust=Lithium Dust
 item.utilitycraft:voltanium_ingot=Voltanium Ingot
@@ -83,6 +86,7 @@ item.utilitycraft:v_paxel=Voltanium Paxel
 item.utilitycraft:v_aiot=Voltanium AIOT
 
 ## ── Fluid Display Names ──────────────────────────────────────────────────────
+fluid.utilitycraft.actinide_solution=Actinide Solution
 fluid.utilitycraft.ethanol=Ethanol
 fluid.utilitycraft.biofuel=Biofuel
 fluid.utilitycraft.plant_oil=Plant Oil
@@ -101,6 +105,7 @@ fluid.utilitycraft.fertilizer_industrial=Industrial Fertilizer
 fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
 
 ## ── Machine Info Panels ──────────────────────────────────────────────────────
+ui.aoc:info.nuclear_processor=Converts Thorium Concentrate into Actinide Solution.\n\nInput: 20 Thorium Concentrate\nOutput: 100 mB Actinide Solution\nEnergy: 50,000 KDe\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.fermenter=Converts organic inputs into fluids.\n\nSlots:\n- Inputs: seeds or sugar cane.\n- Fluid: produced liquid storage.\n- Output: optional residue.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.fuel_mixer=Mixes stored fluids into fuel blends.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: produced fuel.\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.utilitycraft:info.separator=Separates one fluid into two output fluids.\n\nStorage:\n- Input: source fluid.\n- Outputs: separated fluids.\n\nAccepted Upgrades:\n- Speed\n- Energy
@@ -119,6 +124,8 @@ ui.aoc:io.separator.liquids=IO Modes:\n§r- §9Source Input\n§r- §cOutput Tank
 ui.aoc:io.polymerizer.items=IO Modes:\n§r- §cPallet Output
 ui.aoc:io.polymerizer.liquids=IO Modes:\n§r- §9Resin Input
 ui.aoc:io.industrial_crusher.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cOutputs 1-9
+ui.aoc:io.nuclear_processor.items=IO Modes:\n§r- §9Inputs 1-4
+ui.aoc:io.nuclear_processor.liquids=IO Modes:\n§r- §9Fluid Input\n§r- §cFluid Output
 
 ## ── Creative Fluid Tanks ─────────────────────────────────────────────────────
 tile.utilitycraft:creative_ethanol_tank.name=Creative Ethanol Tank

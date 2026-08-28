@@ -9,7 +9,7 @@
             }
         },
         "components": {
-            "minecraft:icon": "utilitycraft:sulfuric_acid_40",
+            "minecraft:icon": "utilitycraft:petrol_40",
             "minecraft:tags": {
                 "tags": [
                     "utilitycraft:ui_element"

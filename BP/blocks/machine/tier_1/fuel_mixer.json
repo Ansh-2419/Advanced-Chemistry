@@ -23,31 +23,31 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "fuel_mixer_north",
+                    "texture": "fluid_mixer_north",
                     "render_method": "alpha_test"
                 },
                 "north": {
-                    "texture": "fuel_mixer_north",
+                    "texture": "fluid_mixer_north",
                     "render_method": "alpha_test"
                 },
                 "south": {
-                    "texture": "fuel_mixer_south",
+                    "texture": "side",
                     "render_method": "alpha_test"
                 },
                 "east": {
-                    "texture": "fuel_mixer_east",
+                    "texture": "side",
                     "render_method": "alpha_test"
                 },
                 "west": {
-                    "texture": "fuel_mixer_west",
+                    "texture": "side",
                     "render_method": "alpha_test"
                 },
                 "up": {
-                    "texture": "fuel_mixer_up",
+                    "texture": "top",
                     "render_method": "alpha_test"
                 },
                 "down": {
-                    "texture": "fuel_mixer_down",
+                    "texture": "bottom",
                     "render_method": "alpha_test"
                 }
             },
@@ -86,7 +86,7 @@
             {
                 "minecraft:material_instances": {
                     "*": {
-                        "texture": "fuel_mixer_north",
+                        "texture": "fluid_mixer_north",
                         "render_method": "alpha_test"
                     },
                     "north": {
@@ -94,23 +94,23 @@
                         "render_method": "alpha_test"
                     },
                     "south": {
-                        "texture": "fuel_mixer_south",
+                        "texture": "side",
                         "render_method": "alpha_test"
                     },
                     "east": {
-                        "texture": "fuel_mixer_east",
+                        "texture": "side",
                         "render_method": "alpha_test"
                     },
                     "west": {
-                        "texture": "fuel_mixer_west",
+                        "texture": "side",
                         "render_method": "alpha_test"
                     },
                     "up": {
-                        "texture": "fuel_mixer_up",
+                        "texture": "top",
                         "render_method": "alpha_test"
                     },
                     "down": {
-                        "texture": "fuel_mixer_down",
+                        "texture": "bottom",
                         "render_method": "alpha_test"
                     }
                 },

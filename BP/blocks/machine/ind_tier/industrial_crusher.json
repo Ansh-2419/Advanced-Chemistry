@@ -45,7 +45,7 @@
                     "render_method": "alpha_test"
                 },
                 "up": {
-                    "texture": "ind_up",
+                    "texture": "ind_top",
                     "render_method": "alpha_test"
                 },
                 "down": {
@@ -121,7 +121,7 @@
                             "render_method": "alpha_test"
                         },
                         "up": {
-                            "texture": "ind_up",
+                            "texture": "ind_top",
                             "render_method": "alpha_test"
                         },
                         "down": {

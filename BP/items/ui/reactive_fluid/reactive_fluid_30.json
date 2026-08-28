@@ -9,7 +9,7 @@
             }
         },
         "components": {
-            "minecraft:icon": "utilitycraft:reactive_fluid_30",
+            "minecraft:icon": "utilitycraft:hydrocarbon_slurry_30",
             "minecraft:tags": {
                 "tags": [
                     "utilitycraft:ui_element"

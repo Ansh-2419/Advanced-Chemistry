@@ -1,0 +1,82 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:block": {
+        "description": {
+            "identifier": "utilitycraft:nuclear_processor",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [ "minecraft:cardinal_direction" ],
+                    "y_rotation_offset": 180
+                }
+            },
+            "states": {
+                "utilitycraft:on": [ false, true ]
+            }
+        },
+        "components": {
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": { "texture": "common", "render_method": "opaque" }
+            },
+            "minecraft:tick": {
+                "interval_range": [ 4, 4 ]
+            },
+            "minecraft:destructible_by_mining": { "seconds_to_destroy": 3 },
+            "minecraft:destructible_by_explosion": false,
+            "tag:dorios:machine": {},
+            "tag:dorios:energy": {},
+            "tag:dorios:item": {},
+            "tag:dorios:fluid": {},
+            "tag:minecraft:is_pickaxe_item_destructible": {},
+            "utilitycraft:machine_upgrades": [
+                { "type": "speed",  "slot": 10 },
+                { "type": "energy", "slot": 11 }
+            ],
+            "utilitycraft:machine_recipes": {},
+            "utilitycraft:nuclear_processor": {
+                "entity": {
+                    "type": "fluid_machine",
+                    "inventory_size": 24
+                },
+                "machine": {
+                    "energy_cap": 2000000,
+                    "energy_cost": 50000,
+                    "rate_speed_base": 50000,
+                    "fluid_cap": 128000,
+                    "fluid_types": 2,
+                    "upgrades": [ 10, 11 ]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('utilitycraft:on') == true",
+                "components": {
+                    "minecraft:light_emission": 10,
+                    "minecraft:material_instances": {
+                        "*": { "texture": "common", "render_method": "opaque" }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": { "minecraft:transformation": { "rotation": [ 0, 0, 0 ] } }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": { "minecraft:transformation": { "rotation": [ 0, 180, 0 ] } }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": { "minecraft:transformation": { "rotation": [ 0, -90, 0 ] } }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": { "minecraft:transformation": { "rotation": [ 0, 90, 0 ] } }
+            }
+        ]
+    }
+}
