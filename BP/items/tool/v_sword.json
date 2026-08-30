@@ -16,7 +16,7 @@
                 "max_durability": 4600
             },
             // How much additional damage this weapon will deal to entities
-            "minecraft:damage": 30,
+            "minecraft:damage": 16,
             // We also let it be enchantable in the "sword" slot
             "minecraft:enchantable": {
                 "value": 10,

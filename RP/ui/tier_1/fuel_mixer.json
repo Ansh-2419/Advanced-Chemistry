@@ -81,7 +81,7 @@
           "$io_front_texture": "textures/blocks/front/fluid_mixer_north",
           "$io_right_texture": "textures/blocks/common/side",
           "$io_bottom_texture": "textures/blocks/common/bottom",
-          "$io_back_texture": "textures/blocks/common/side",
+          "$io_back_texture": "textures/blocks/common/south",
           "$io_fluid_top_index": 10,
           "$io_fluid_left_index": 11,
           "$io_fluid_front_index": 12,

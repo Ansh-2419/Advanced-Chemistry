@@ -1,15 +1,15 @@
 {
   "namespace": "uc",
-  "fermenter_plant_oil_strip@uc.liquid_recipe_strip": {
-    "$liquid_texture": "textures/entity/fluids/plant_oil"
+  "cr_biofuel_strip@uc.liquid_recipe_strip": {
+    "$liquid_texture": "textures/entity/fluids/biofuel"
   },
-  "fermenter_ethanol_strip@uc.liquid_recipe_strip": {
-    "$liquid_texture": "textures/entity/fluids/ethanol"
+  "cr_heavy_hydrocarbon_strip@uc.liquid_recipe_strip": {
+    "$liquid_texture": "textures/entity/fluids/heavy_hydrocarbon"
   },
-  "fermenter_fertilizer_strip@uc.liquid_recipe_strip": {
-    "$liquid_texture": "textures/entity/fluids/fertilizer_org"
+  "cr_naphtha_strip@uc.liquid_recipe_strip": {
+    "$liquid_texture": "textures/entity/fluids/naphtha"
   },
-  "fermenter_recipe_content": {
+  "cr_recipe_content": {
     "type": "stack_panel",
     "anchor_from": "top_left",
     "anchor_to": "top_left",
@@ -29,49 +29,27 @@
     ],
     "controls": [
       {
-        "header@uc.liquid_recipe_header": {}
+        "header@uc.cr_liquid_recipe_header": {}
       },
       {
-        "wheat_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_wheat",
-          "$input_item_name": "Wheat Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
+        "biofuel_strip@uc.cr_biofuel_strip": {
+          "$input_item_texture": "textures/entity/fluids/hydrocarbon_slurry",
+          "$input_item_name": "Hydrocarbon Slurry",
+          "$liquid_amount_text": "1,000 mB \u2192 750 mB"
         }
       },
       {
-        "beetroot_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_beetroot",
-          "$input_item_name": "Beetroot Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
+        "heavy_hc_strip@uc.cr_heavy_hydrocarbon_strip": {
+          "$input_item_texture": "textures/entity/fluids/crude_oil",
+          "$input_item_name": "Crude Oil",
+          "$liquid_amount_text": "400 mB \u2192 250 mB"
         }
       },
       {
-        "melon_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_melon",
-          "$input_item_name": "Melon Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
-        }
-      },
-      {
-        "pumpkin_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_pumpkin",
-          "$input_item_name": "Pumpkin Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
-        }
-      },
-      {
-        "sugarcane_strip@uc.fermenter_ethanol_strip": {
-          "$input_item_texture": "textures/items/reeds",
-          "$input_item_name": "Sugar Cane \u00d764",
-          "$liquid_amount_text": "1,200 mB Ethanol"
-        }
-      },
-      {
-        "bone_meal_strip@uc.fermenter_wide_recipe_strip": {
-          "$liquid_texture": "textures/entity/fluids/fertilizer_org",
-          "$input_item_texture": "textures/items/dye_powder_white",
-          "$input_item_name": "Bone Meal \u00d78 + Oak Leaves \u00d74",
-          "$liquid_amount_text": "500 mB Organic Fertilizer"
+        "naphtha_strip@uc.cr_naphtha_strip": {
+          "$input_item_texture": "textures/entity/fluids/plastic_resin",
+          "$input_item_name": "Plastic Resin",
+          "$liquid_amount_text": "1,000 mB \u2192 750 mB"
         }
       },
       {
@@ -96,7 +74,7 @@
       }
     ]
   },
-  "fermenter_recipes_side_panel": {
+  "cr_recipes_side_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -270,13 +248,13 @@
           ],
           "$scroll_box_visible_touch": true,
           "$use_touch_mode": false,
-          "$scrolling_content": "uc.fermenter_recipe_content",
+          "$scrolling_content": "uc.cr_recipe_content",
           "$scroll_track_image_control": "common.empty_image"
         }
       }
     ]
   },
-  "fermenter_recipes_connector": {
+  "cr_recipes_connector": {
     "type": "panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -312,17 +290,12 @@
       }
     ]
   },
-  "fermenter_wide_recipe_strip": {
+  "cr_liquid_recipe_header": {
     "type": "panel",
     "size": [
       126,
       18
     ],
-    "$liquid_texture|default": "",
-    "$liquid_flipbook_uv|default": "",
-    "$input_item_texture|default": "",
-    "$input_item_name|default": "",
-    "$liquid_amount_text|default": "0 mB",
     "controls": [
       {
         "background": {
@@ -342,59 +315,44 @@
         }
       },
       {
-        "liquid_icon": {
-          "type": "image",
-          "texture": "$liquid_texture",
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "size": [
-            14,
-            14
-          ],
-          "uv_size": [
-            16,
-            16
-          ],
-          "uv": "$liquid_flipbook_uv",
-          "offset": [
-            59,
-            2
-          ],
-          "layer": 1
-        }
-      },
-      {
-        "input_item_icon": {
-          "type": "image",
-          "texture": "$input_item_texture",
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "size": [
-            14,
-            14
-          ],
-          "offset": [
-            78,
-            2
-          ],
-          "layer": 1
-        }
-      },
-      {
-        "input_item_name": {
+        "liquid": {
           "type": "label",
-          "text": "$input_item_name",
+          "text": "Input",
           "anchor_from": "center",
           "anchor_to": "center",
           "size": [
-            72,
+            22,
+            "default"
+          ],
+          "offset": [
+            2,
+            0
+          ],
+          "text_alignment": "center",
+          "color": [
+            0.3,
+            0.3,
+            0.3
+          ],
+          "font_scale_factor": 0.65,
+          "layer": 2
+        }
+      },
+      {
+        "input_item": {
+          "type": "label",
+          "text": "Output",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "size": [
+            66,
             "default"
           ],
           "offset": [
             47,
             0
           ],
-          "text_alignment": "left",
+          "text_alignment": "center",
           "color": [
             0.3,
             0.3,
@@ -407,7 +365,7 @@
       {
         "amount": {
           "type": "label",
-          "text": "$liquid_amount_text",
+          "text": "Amount",
           "anchor_from": "center",
           "anchor_to": "center",
           "size": [
@@ -415,7 +373,7 @@
             "default"
           ],
           "offset": [
-            106,
+            98,
             0
           ],
           "text_alignment": "center",

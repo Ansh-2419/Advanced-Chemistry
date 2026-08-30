@@ -49,7 +49,7 @@
                     "render_method": "alpha_test"
                 },
                 "south": {
-                    "texture": "side",
+                    "texture": "south",
                     "render_method": "alpha_test"
                 },
                 "east": {
@@ -89,27 +89,27 @@
                     "minecraft:light_emission": 4,
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "fermentor_on",
+                            "texture": "fermentor_north",
                             "render_method": "alpha_test"
                         },
                         "north": {
-                            "texture": "fermentor_on",
+                            "texture": "fermentor_north",
                             "render_method": "alpha_test"
                         },
                         "south": {
-                            "texture": "side",
+                            "texture": "south_on",
                             "render_method": "alpha_test"
                         },
                         "east": {
-                            "texture": "side",
+                            "texture": "side_on",
                             "render_method": "alpha_test"
                         },
                         "west": {
-                            "texture": "side",
+                            "texture": "side_on",
                             "render_method": "alpha_test"
                         },
                         "up": {
-                            "texture": "top",
+                            "texture": "top_on",
                             "render_method": "alpha_test"
                         },
                         "down": {

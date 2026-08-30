@@ -55,8 +55,20 @@
         "side": {
             "textures": "textures/blocks/common/side"
         },
+        "south": {
+            "textures": "textures/blocks/common/south"
+        },
         "top": {
             "textures": "textures/blocks/common/top"
+        },
+        "side_on": {
+            "textures": "textures/blocks/common/side_on"
+        },
+        "south_on": {
+            "textures_on": "textures/blocks/common/south_on"
+        },
+        "top_on": {
+            "textures": "textures/blocks/common/top_on"
         },
         "chemical_reactor_north": {
             "textures": "textures/blocks/front/chemical_reactor_north"
