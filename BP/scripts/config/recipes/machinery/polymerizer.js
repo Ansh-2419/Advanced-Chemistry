@@ -13,8 +13,8 @@ import { system } from "@minecraft/server";
 const nativeRecipes = [
     defineRecipe({
         id:          "ac:hdpe_pallet_from_plastic_resin",
-        input:       { type: "plastic_resin", amount: 250 },
-        output:      { item: "utilitycraft:utilitycraft:hdpe_pellet", count: 1 },
+        input:       { type: "plastic_resin", amount: 500 },
+        output:      { item: "utilitycraft:hdpe_pellet", count: 1 },
         energyCost:  10_000,
         seconds:     5,          // 100t ÷ 20t/s
         description: "Polymerises plastic resin into an HDPE pallet.",

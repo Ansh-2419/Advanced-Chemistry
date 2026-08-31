@@ -65,7 +65,7 @@
             "textures": "textures/blocks/common/side_on"
         },
         "south_on": {
-            "textures_on": "textures/blocks/common/south_on"
+            "textures": "textures/blocks/common/south_on"
         },
         "top_on": {
             "textures": "textures/blocks/common/top_on"

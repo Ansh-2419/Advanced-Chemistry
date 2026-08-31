@@ -13,6 +13,7 @@
         "ui/industrial_crusher.json",
         "ui/recipes/infuser.json",
         "ui/tier_1/polymerizer.json",
+        "ui/recipes/polymerizer_recipes.json",
         "ui/relic_synthesizer.json",
         "ui/nuclear_processor.json"
     ]
