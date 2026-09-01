@@ -1,0 +1,606 @@
+{
+  "namespace": "uc",
+  "relic_mesh_toggle@uc.recipe_toggle": {
+    "$toggle_name": "relic_meshes",
+    "$toggle_lost_reset": false
+  },
+  "relic_mesh_rows": {
+    "type": "stack_panel",
+    "size": [
+      126,
+      18
+    ],
+    "orientation": "vertical",
+    "controls": [
+      {
+        "mesh_row_0": {
+          "type": "panel",
+          "size": [
+            126,
+            18
+          ],
+          "controls": [
+            {
+              "grass_toggle@uc.relic_mesh_toggle": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$toggle_index": 0,
+                "$toggle_default_state": true,
+                "$toggle_hover_text": "tile.grass.name",
+                "$toggle_control_name": "relic_grass_recipe",
+                "$recipe_icon": "textures/blocks/grass_carried",
+                "offset": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "netherrack_toggle@uc.relic_mesh_toggle": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$toggle_index": 1,
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "tile.netherrack.name",
+                "$toggle_control_name": "relic_netherrack_recipe",
+                "$recipe_icon": "textures/blocks/netherrack",
+                "offset": [
+                  18,
+                  0
+                ]
+              }
+            },
+            {
+              "endstone_toggle@uc.relic_mesh_toggle": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$toggle_index": 2,
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "tile.endstone.name",
+                "$toggle_control_name": "relic_endstone_recipe",
+                "$recipe_icon": "textures/blocks/end_stone",
+                "offset": [
+                  36,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "relic_grass_results": {
+    "type": "stack_panel",
+    "size": [
+      126,
+      "100%c"
+    ],
+    "orientation": "vertical",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "relic_grass_recipe",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible",
+        "resolve_sibling_scope": false
+      }
+    ],
+    "controls": [
+      {
+        "sentry_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/sentry_armor_trim_smithing_template",
+          "$result_item_name": "Sentry Armor Trim",
+          "$result_chance_text": "25%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "coast_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/coast_armor_trim_smithing_template",
+          "$result_item_name": "Coast Armor Trim",
+          "$result_chance_text": "20%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "dune_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/dune_armor_trim_smithing_template",
+          "$result_item_name": "Dune Armor Trim",
+          "$result_chance_text": "18%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "wild_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/wild_armor_trim_smithing_template",
+          "$result_item_name": "Wild Armor Trim",
+          "$result_chance_text": "15%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "wayfinder_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/wayfinder_armor_trim_smithing_template",
+          "$result_item_name": "Wayfinder Armor Trim",
+          "$result_chance_text": "10%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "shaper_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/shaper_armor_trim_smithing_template",
+          "$result_item_name": "Shaper Armor Trim",
+          "$result_chance_text": "7%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "host_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/host_armor_trim_smithing_template",
+          "$result_item_name": "Host Armor Trim",
+          "$result_chance_text": "5%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "addon_recipe_rows": {
+          "type": "stack_panel",
+          "size": [
+            126,
+            "100%c"
+          ],
+          "orientation": "vertical",
+          "controls": []
+        }
+      }
+    ]
+  },
+  "relic_netherrack_results": {
+    "type": "stack_panel",
+    "size": [
+      126,
+      "100%c"
+    ],
+    "orientation": "vertical",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "relic_netherrack_recipe",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible",
+        "resolve_sibling_scope": false
+      }
+    ],
+    "controls": [
+      {
+        "rib_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/rib_armor_trim_smithing_template",
+          "$result_item_name": "Rib Armor Trim",
+          "$result_chance_text": "30%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "snout_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/snout_armor_trim_smithing_template",
+          "$result_item_name": "Snout Armor Trim",
+          "$result_chance_text": "25%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "bolt_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/bolt_armor_trim_smithing_template",
+          "$result_item_name": "Bolt Armor Trim",
+          "$result_chance_text": "7.5%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "raiser_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/raiser_armor_trim_smithing_template",
+          "$result_item_name": "Raiser Armor Trim",
+          "$result_chance_text": "7.5%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "coast_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/coast_armor_trim_smithing_template",
+          "$result_item_name": "Coast Armor Trim",
+          "$result_chance_text": "10%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "dune_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/dune_armor_trim_smithing_template",
+          "$result_item_name": "Dune Armor Trim",
+          "$result_chance_text": "10%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "sentry_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/sentry_armor_trim_smithing_template",
+          "$result_item_name": "Sentry Armor Trim",
+          "$result_chance_text": "10%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "addon_recipe_rows": {
+          "type": "stack_panel",
+          "size": [
+            126,
+            "100%c"
+          ],
+          "orientation": "vertical",
+          "controls": []
+        }
+      }
+    ]
+  },
+  "relic_endstone_results": {
+    "type": "stack_panel",
+    "size": [
+      126,
+      "100%c"
+    ],
+    "orientation": "vertical",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "relic_endstone_recipe",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible",
+        "resolve_sibling_scope": false
+      }
+    ],
+    "controls": [
+      {
+        "spire_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/spire_armor_trim_smithing_template",
+          "$result_item_name": "Spire Armor Trim",
+          "$result_chance_text": "35%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "silence_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/silence_armor_trim_smithing_template",
+          "$result_item_name": "Silence Armor Trim",
+          "$result_chance_text": "20%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "ward_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/ward_armor_trim_smithing_template",
+          "$result_item_name": "Ward Armor Trim",
+          "$result_chance_text": "15%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "vex_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/vex_armor_trim_smithing_template",
+          "$result_item_name": "Vex Armor Trim",
+          "$result_chance_text": "10%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "eye_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/eye_armor_trim_smithing_template",
+          "$result_item_name": "Eye Armor Trim",
+          "$result_chance_text": "10%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "tide_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/tide_armor_trim_smithing_template",
+          "$result_item_name": "Tide Armor Trim",
+          "$result_chance_text": "5%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "flow_strip@uc.sieve_result_strip": {
+          "$result_item_texture": "textures/items/flow_armor_trim_smithing_template",
+          "$result_item_name": "Flow Armor Trim",
+          "$result_chance_text": "5%%",
+          "$result_amount_text": "x1"
+        }
+      },
+      {
+        "addon_recipe_rows": {
+          "type": "stack_panel",
+          "size": [
+            126,
+            "100%c"
+          ],
+          "orientation": "vertical",
+          "controls": []
+        }
+      }
+    ]
+  },
+  "relic_recipe_content": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [
+      126,
+      "100%c"
+    ],
+    "orientation": "vertical",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "recipes_toggle_button",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible",
+        "resolve_sibling_scope": false
+      }
+    ],
+    "controls": [
+      {
+        "mesh_rows@uc.relic_mesh_rows": {}
+      },
+      {
+        "results_separator@uc.recipe_separator": {}
+      },
+      {
+        "results_header@uc.sieve_result_header": {}
+      },
+      {
+        "mesh_views": {
+          "type": "panel",
+          "size": [
+            126,
+            "100%c"
+          ],
+          "controls": [
+            {
+              "grass_results@uc.relic_grass_results": {}
+            },
+            {
+              "netherrack_results@uc.relic_netherrack_results": {}
+            },
+            {
+              "endstone_results@uc.relic_endstone_results": {}
+            }
+          ]
+        }
+      },
+      {
+        "bottom_padding": {
+          "type": "panel",
+          "size": [
+            126,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  "relic_recipes_side_panel": {
+    "type": "collection_panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [
+      154,
+      166
+    ],
+    "offset": [
+      -91,
+      0
+    ],
+    "layer": 10,
+    "collection_name": "container_items",
+    "$item_collection_name": "container_items",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "recipes_toggle_button",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible",
+        "resolve_sibling_scope": false
+      }
+    ],
+    "controls": [
+      {
+        "panel_bg": {
+          "type": "image",
+          "texture": "textures/ui/background/background_panel",
+          "size": [
+            140,
+            145
+          ],
+          "offset": [
+            7,
+            10.5
+          ],
+          "layer": -5
+        }
+      },
+      {
+        "top_bg": {
+          "type": "image",
+          "texture": "textures/ui/background/dark_top_tab",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "size": [
+            140,
+            24
+          ],
+          "offset": [
+            7,
+            0
+          ],
+          "layer": -6
+        }
+      },
+      {
+        "title": {
+          "type": "label",
+          "text": "Recipes",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [
+            7,
+            7
+          ],
+          "color": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "layer": -3,
+          "font_scale_factor": 1
+        }
+      },
+      {
+        "recipes_grid_bg": {
+          "type": "image",
+          "texture": "textures/ui/recipe_grid_bg",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [
+            128,
+            134
+          ],
+          "offset": [
+            20,
+            27
+          ],
+          "layer": -4
+        }
+      },
+      {
+        "recipes_grid_border": {
+          "type": "image",
+          "texture": "textures/ui/background_border",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [
+            128,
+            134
+          ],
+          "offset": [
+            20,
+            27
+          ],
+          "layer": 4
+        }
+      },
+      {
+        "recipes_scroll@common.scrolling_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [
+            142,
+            130
+          ],
+          "offset": [
+            13,
+            -2
+          ],
+          "$show_background": false,
+          "layer": -2,
+          "$scroll_size": [
+            4,
+            "100% - 4px"
+          ],
+          "$scrolling_pane_size": [
+            "100% + 6px",
+            "100% + 3px"
+          ],
+          "$scrolling_pane_offset": [
+            -2,
+            30
+          ],
+          "$scroll_view_port_size": [
+            "100% + 80px",
+            "100% + 3px"
+          ],
+          "$scroll_view_port_max_size": [
+            "100% + 80px",
+            "100% + 3px"
+          ],
+          "$scroll_view_port_offset": [
+            -44,
+            0
+          ],
+          "$scrolling_pane_size_touch": [
+            "100% + 6px",
+            "100% + 3px"
+          ],
+          "$scrolling_pane_offset_touch": [
+            0,
+            30
+          ],
+          "$scroll_view_port_size_touch": [
+            "100% + 80px",
+            "100% + 3px"
+          ],
+          "$scroll_view_port_max_size_touch": [
+            "100% + 80px",
+            "100% + 3px"
+          ],
+          "$scroll_view_port_offset_touch": [
+            -46,
+            0
+          ],
+          "$scroll_size_touch": [
+            4,
+            "100% - 4px"
+          ],
+          "$scroll_box_visible_touch": true,
+          "$use_touch_mode": false,
+          "$scrolling_content": "uc.relic_recipe_content",
+          "$scroll_track_image_control": "common.empty_image"
+        }
+      }
+    ]
+  },
+  "relic_recipes_connector": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [
+      12,
+      160
+    ],
+    "offset": [
+      -14,
+      0
+    ],
+    "layer": -20,
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "recipes_toggle_button",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible",
+        "resolve_sibling_scope": false
+      }
+    ],
+    "controls": [
+      {
+        "connector_bg": {
+          "type": "image",
+          "texture": "textures/ui/recipe_book_side_toggle_dark",
+          "size": [
+            12,
+            160
+          ],
+          "layer": 0
+        }
+      }
+    ]
+  }
+}

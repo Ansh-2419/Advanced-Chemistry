@@ -1,0 +1,45 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "utilitycraft:industrial_crusher"
+		},
+		"tags": [
+			"utilitycraft_workbench"
+		],
+		"pattern": [
+			"SBS",
+			"RCR",
+			"MAM"
+		],
+		"key": {
+			"A": {
+				"item": "utilitycraft:machine_case"
+			},
+			"R": {
+				"item": "utilitycraft:industrial_chip"
+			},
+			"S": {
+				"item": "utilitycraft:adamant_ingot"
+			},
+			"M": {
+				"item": "utilitycraft:hdpe_sheet"
+			},
+			"B": {
+				"item": "utilitycraft:energized_iron_block"
+			},
+			"C": {
+				"item": "utilitycraft:crusher"
+			}
+		},
+		"result": {
+			"item": "utilitycraft:industrial_crusher",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "utilitycraft:adamant_ingot"
+			}
+		]
+	}
+}
