@@ -1,14 +1,10 @@
 {
     "ui_defs": [
+        "ui/how_to_play_screen.json",
+
         "ui/multi/fluid_storage_monitor.json",
         "ui/multi/fuel_burner.json",
         "ui/multi/refinery.json",
-
-        "ui/recipes/chemical_reactor_recipes.json",
-        "ui/recipes/fermenter_recipes.json",
-        "ui/recipes/infuser.json",
-        "ui/recipes/polymerizer_recipes.json",
-        "ui/recipes/relic_synthesizer_recipes.json",
 
         "ui/tier_1/chemical_reactor.json",
         "ui/tier_1/fermenter.json",
@@ -16,8 +12,15 @@
         "ui/tier_1/polymerizer.json",
         "ui/tier_1/separator.json",
 
-        "ui/chest_screen.json",
-        "ui/how_to_play_screen.json",
+        "ui/ind/industrial_crusher.json",
+        "ui/ind/relic_synthesizer.json",
+
+        "ui/recipes/chemical_reactor_recipes.json",
+        "ui/recipes/fermenter_recipes.json",
+        "ui/recipes/infuser.json",
+        "ui/recipes/polymerizer_recipes.json",
+        "ui/recipes/relic_synthesizer_recipes.json",
+
         "ui/nuclear_processor.json"
     ]
 }
