@@ -75,8 +75,14 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
             /** @type {any} */ (event),
             CONFIG,
             {
-                initializeEntity(entity) { configureStorage(entity); },
-                onActivate({ entity })   { configureStorage(entity); },
+                initializeEntity(entity) {
+                    configureStorage(entity);
+                    ensureProgressDisplay(entity);
+                },
+                onActivate({ entity }) {
+                    configureStorage(entity);
+                    ensureProgressDisplay(entity);
+                },
                 successMessages() {
                     return [
                         "§a[Greenhouse] Structure online.",
@@ -102,6 +108,7 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
 
         const { energy, fertTank, waterTank } = configureStorage(machine.entity);
         const inv = machine.container;
+        ensureProgressDisplay(machine.entity);
 
         // ── Validate soil ─────────────────────────────────────────────────────
         const soilItem = inv.getItem(SOIL_SLOT);
@@ -172,6 +179,19 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
 });
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
+// Seed only an empty display slot; existing frames and stored processing progress stay intact.
+function ensureProgressDisplay(entity) {
+    const inventory = DoriosLib.entity.getInventory(entity);
+    if (!inventory || inventory.getItem(PROGRESS_SLOT)) return;
+
+    // Match displayProgress's modern arrow format without its shouldUpdateUI gate.
+    DoriosLib.entity.setNewItem(entity, {
+        slot: PROGRESS_SLOT,
+        typeId: "utilitycraft:progress_right_big_bar_00",
+        nameTag: "",
+    });
+}
+
 function configureStorage(entity) {
     const [fertTank, waterTank] = FluidStorage.initializeMultiple(entity, 2);
     if (fertTank.getCap()  !== FLUID_CAPACITY) fertTank.setCap(FLUID_CAPACITY);
