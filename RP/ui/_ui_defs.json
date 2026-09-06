@@ -5,6 +5,7 @@
         "ui/multi/fluid_storage_monitor.json",
         "ui/multi/fuel_burner.json",
         "ui/multi/refinery.json",
+        "ui/multi/greenhouse.json",
 
         "ui/tier_1/chemical_reactor.json",
         "ui/tier_1/fermenter.json",

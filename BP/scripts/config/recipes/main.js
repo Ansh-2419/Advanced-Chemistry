@@ -6,6 +6,8 @@
 import './added/insert_sieve.js';
 import './added/insert_infuser.js';
 import './added/insert_press.js';
+import './added/plants.js';
+import './added/bountifulCrops.generated.js';
 
 // ── Age of Chemical machine recipes ─────────────────────────
 import './machinery/fermenter.js';

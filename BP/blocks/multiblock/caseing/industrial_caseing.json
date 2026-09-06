@@ -1,0 +1,25 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "utilitycraft:industrial_caseing",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:geometry": "geometry.utilitycraft_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "industrial_caseing",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "tag:dorios:multiblock.case.greenhouse": {},
+            "tag:dorios:multiblock_component": {}
+        }
+    }
+}
