@@ -1,14 +1,20 @@
 /**
  * Fermenter recipes.
  *
- * Fields:
+ * Fields for single/dual input recipes:
  *   input:          { id, amount }              — primary item consumed
- *   secondaryInput? { id, amount }              — optional second item consumed (from any other input slot)
- *   fluid:          { type, amount }             — fluid produced
- *   energyCost:     number                       — DE per large batch
- *   seconds:        number                       — processing time
- *   byproduct?:     { id, amount, chance }       — optional item output
- *   batches:        { small, large }             — { size, seconds, fluidAmount }
+ *   secondaryInput? { id, amount }              — optional second item consumed
+ *   fluid:          { type, amount }            — fluid produced
+ *   energyCost:     number                      — DE cost
+ *   seconds:        number                      — processing time
+ *   byproduct?:     { id, amount, chance }      — optional item output
+ *   batches:        { small, large }            — { size, seconds, fluidAmount }
+ *
+ * Fields for 4-item recipes:
+ *   inputs:         [{ id, amount }, ...]       — all 4 items consumed
+ *   fluid:          { type, amount }            — fluid produced
+ *   energyCost:     number                      — DE cost
+ *   seconds:        number                      — processing time
  */
 
 const RECIPES = [
@@ -18,6 +24,7 @@ const RECIPES = [
         fluid: { type: "plant_oil", amount: 1200 },
         energyCost: 6400,
         seconds: 8,
+        byproduct: { id: "utilitycraft:compost", amount: 2, chance: 0.7 },
         batches: {
             small: { size: 8, seconds: 3, fluidAmount: 150 },
             large: { size: 64, seconds: 6, fluidAmount: 1200 }
@@ -29,6 +36,7 @@ const RECIPES = [
         fluid: { type: "plant_oil", amount: 1200 },
         energyCost: 6400,
         seconds: 8,
+        byproduct: { id: "utilitycraft:compost", amount: 2, chance: 0.7 },
         batches: {
             small: { size: 8, seconds: 3, fluidAmount: 150 },
             large: { size: 64, seconds: 6, fluidAmount: 1200 }
@@ -40,6 +48,7 @@ const RECIPES = [
         fluid: { type: "plant_oil", amount: 1200 },
         energyCost: 6400,
         seconds: 8,
+        byproduct: { id: "utilitycraft:compost", amount: 2, chance: 0.7 },
         batches: {
             small: { size: 8, seconds: 3, fluidAmount: 150 },
             large: { size: 64, seconds: 6, fluidAmount: 1200 }
@@ -50,7 +59,8 @@ const RECIPES = [
         input: { id: "minecraft:pumpkin_seeds", amount: 64 },
         fluid: { type: "plant_oil", amount: 1200 },
         energyCost: 6400,
-        seconds: 6,
+        seconds: 8,
+        byproduct: { id: "utilitycraft:compost", amount: 2, chance: 0.7 },
         batches: {
             small: { size: 8, seconds: 3, fluidAmount: 150 },
             large: { size: 64, seconds: 6, fluidAmount: 1200 }
@@ -101,6 +111,18 @@ const RECIPES = [
             small: { size: 8, seconds: 2, fluidAmount: 125 },
             large: { size: 64, seconds: 4, fluidAmount: 1000 }
         }
+    },
+    {
+        id: "utilitycraft:organic_growth_solution",
+        inputs: [
+            { id: "minecraft:bone_meal", amount: 12 },
+            { id: "utilitycraft:water_ball", amount: 1 },
+            { id: "utilitycraft:compost", amount: 12 },
+            { id: "minecraft:oak_sapling", amount: 4 }
+        ],
+        fluid: { type: "bio_growth_solution", amount: 1000 },
+        energyCost: 9800,
+        seconds: 4
     }
 ];
 
