@@ -113,14 +113,14 @@ const RECIPES = [
         }
     },
     {
-        id: "utilitycraft:organic_growth_solution",
+        id: "utilitycraft:bio_growth_solution",
         inputs: [
             { id: "minecraft:bone_meal", amount: 12 },
             { id: "utilitycraft:water_ball", amount: 1 },
             { id: "utilitycraft:compost", amount: 12 },
             { id: "minecraft:oak_sapling", amount: 4 }
         ],
-        fluid: { type: "bio_growth_solution", amount: 1000 },
+        fluid: { type: "bio_growth_solution", amount: 750 },
         energyCost: 9800,
         seconds: 4
     }
