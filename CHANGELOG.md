@@ -4,6 +4,8 @@
 
 ### CHANGED
 
+- Regenerated all 41 block renders with the vanilla preset and refreshed the in-game guide images, including the missing Industrial Crusher icon.
+
 - Moved the Greenhouse information tab to the top right using the Storage Drive layout, with an extended scrolling panel and machine information in English and Spanish. Added a separate close button inside the main panel’s top-right corner.
 
 - Centered the Greenhouse seed grid vertically and moved the soil slot beneath the progress arrow, clearing the Inventory label; lowered the arrow by eight pixels to refine its visual alignment.
