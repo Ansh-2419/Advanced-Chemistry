@@ -16,7 +16,7 @@ const nativeRecipes = [
         id:        'aoc:refine_crude_oil',
         input:     { type: 'crude_oil', amount: 1000 },
         output1:   { type: 'diesel',    amount: 350  },
-        output2:   { type: 'petrol',    amount: 300  },
+        output2:   { type: 'petroleum',    amount: 300  },
         output3:   { type: 'naphtha',   amount: 200  },
         energyCost: 12_000,
     }),
@@ -26,7 +26,7 @@ const nativeRecipes = [
         output1:   { type: 'thorium_solution',    amount: 250  },
         output2:   { type: 'phosphate_solution',    amount: 300  },
         output3:   { type: 'water',   amount: 450  },
-        energyCost: 12_000,
+        energyCost: 28_000,
     }),
 ];
 

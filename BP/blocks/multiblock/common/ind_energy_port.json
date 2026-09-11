@@ -1,0 +1,41 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "utilitycraft:ind_energy_port",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "utilitycraft:active": [0, 1]
+            }
+        },
+        "components": {
+            "minecraft:geometry": "geometry.utilitycraft_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "ind_energy_port",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2
+            },
+            "tag:dorios:link_node": {},
+            "tag:dorios:multiblock.case.greenhouse": {},
+            "tag:dorios:multiblock_component": {}
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('utilitycraft:active') == 1",
+                "components": {
+                    "minecraft:light_emission": 4,
+                    "tag:dorios:energy": {},
+                    "tag:dorios:link_node": {},
+                    "tag:dorios:multiblock.case.greenhouse": {},
+                    "tag:dorios:multiblock_component": {}
+                }
+            }
+        ]
+    }
+}

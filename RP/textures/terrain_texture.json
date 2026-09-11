@@ -201,6 +201,15 @@
         },
         "utilitycraft_steam_fluid": {
             "textures": "textures/entity/fluids/steam"
+        },
+      "ind_energy_port": {
+            "textures": "textures/blocks/caseing/ind_energy_port"
+        },
+        "ind_fluid_port": {
+            "textures": "textures/blocks/caseing/ind_fluid_port"
+        },
+        "ind_item_port": {
+            "textures": "textures/blocks/caseing/ind_item_port"
         }
     }
 }

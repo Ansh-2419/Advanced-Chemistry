@@ -114,6 +114,7 @@ export class ContainerSessionManager {
     if (!isValidEntity(entity) || !entityId) return false;
 
     openEntityIds.add(entityId);
+    try { entity.setProperty("utilitycraft:players", 1); } catch {}
     return true;
   }
 
@@ -132,6 +133,8 @@ export class ContainerSessionManager {
       if (session.entityId === entityId) playerSessions.delete(playerKey);
     }
 
+    const live = resolveEntity(entityId);
+    try { live?.setProperty("utilitycraft:players", 0); } catch {}
     return removed;
   }
 

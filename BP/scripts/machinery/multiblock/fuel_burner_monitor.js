@@ -9,7 +9,7 @@ import * as DoriosLib from "DoriosLib/index.js";
 
 // ── Fuel registry ─────────────────────────────────────────────────────────────
 const FUELS = {
-    petrol:  { energyPerMb: 48, burnRate: 20 },   // 48,000 KDe/bucket, Fast
+    petroleum:  { energyPerMb: 48, burnRate: 20 },   // 48,000 KDe/bucket, Fast
     diesel:  { energyPerMb: 72, burnRate: 10 },   // 72,000 KDe/bucket, Medium
     biofuel: { energyPerMb: 40, burnRate: 10 },   // 40,000 KDe/bucket, Medium
 };

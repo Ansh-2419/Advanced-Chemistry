@@ -154,6 +154,7 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
             },
         });
 
+        tank.type = tank.getType();
         updateHud(machine, recipe, tank, inputSlots, craftLimit.max);
         displayMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }]);
         machine.on();
