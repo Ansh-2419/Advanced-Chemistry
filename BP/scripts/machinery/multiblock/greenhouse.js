@@ -1,33 +1,33 @@
-import * as DoriosLib                        from "DoriosLib/index.js";
+import * as DoriosLib    from "DoriosLib/index.js";
 import {
     EnergyStorage,
     FluidStorage,
     Multiblock,
     MultiblockMachine,
-}                                            from "DoriosCore/index.js";
-import { plantsData }                        from "../../config/recipes/added/plants.js";
-import { formatFluidDisplayName }            from "./multiblock_helpers.js";
+    registerLinkNodeIO,
+}                        from "DoriosCore/index.js";
+import { greenhousePlantsData } from "../../config/greenhouse/plants.js";
+import { getProductivity }      from "../../config/greenhouse/fluids.js";
+import { formatFluidDisplayName } from "./multiblock_helpers.js";
 
 // ── Slot map ──────────────────────────────────────────────────────────────────
-const ENERGY_SLOT        = 0;
-const LABEL_SLOT         = 1;
-const PROGRESS_SLOT      = 2;
-const FERTILIZER_DISPLAY = 3;
-const WATER_DISPLAY      = 4;
-const SEED_SLOTS         = [5, 6, 7, 8];
-const SOIL_SLOT          = 9;
-const OUTPUT_SLOTS       = [10, 11, 12, 13, 14, 15, 16, 17, 18];
-const INVENTORY_SIZE     = 19;
+const ENERGY_SLOT    = 0;
+const LABEL_SLOT     = 1;
+const PROGRESS_SLOT  = 2;
+const FERT_DISPLAY   = 3;
+const GROWTH_DISPLAY = 4;
+const SEED_SLOTS     = [5, 6, 7, 8];
+const SOIL_SLOT      = 9;
+const OUTPUT_SLOTS   = [10, 11, 12, 13, 14, 15, 16, 17, 18];
+const INVENTORY_SIZE = 19;
 
-// ── Capacities ────────────────────────────────────────────────────────────────
-const FLUID_CAPACITY      = 64_000;
-const ENERGY_CAPACITY     = 200_000;
-const FERTILIZER_PER_SEED = 500;
-const WATER_PER_SEED      = 250;
-const EMPTY_FLUID         = "empty";
+// ── Constants ─────────────────────────────────────────────────────────────────
+const FLUID_CAPACITY  = 64_000;
+const ENERGY_CAPACITY = 200_000;
+const EMPTY           = "empty";
 
 // ── Soil registry ─────────────────────────────────────────────────────────────
-const acceptedSoils = {
+const SOILS = {
     "minecraft:dirt":           { cost: 2,    multi: 1 },
     "minecraft:grass_block":    { cost: 1.5,  multi: 1 },
     "utilitycraft:yellow_soil": { cost: 1,    multi: 1 },
@@ -36,15 +36,14 @@ const acceptedSoils = {
     "utilitycraft:black_soil":  { cost: 0.25, multi: 4 },
 };
 
-// ── Valid fertilizer fluids ───────────────────────────────────────────────────
-const FERTILIZER_TYPES = new Set([
-    "fertilizer_org",
-    "fertilizer_enriched",
-    "fertilizer_industrial",
-]);
+// ── Port requirements ─────────────────────────────────────────────────────────
+const PORT_REQ = {
+    energy: { min: 1, id: "utilitycraft:ind_energy_port", label: "Industrial Energy Port" },
+    fluid:  { min: 2, id: "utilitycraft:ind_fluid_port",  label: "Industrial Fluid Port"  },
+    item:   { min: 1, id: "utilitycraft:ind_item_port",   label: "Industrial Item Port"   },
+};
 
-// ── Config ────────────────────────────────────────────────────────────────────
-// 5x5x5 solid — edge: case blocks, interior (3x3x3=27): dorios:multiblock_component blocks
+// ── Multiblock config ─────────────────────────────────────────────────────────
 const CONFIG = {
     required_case: "dorios:multiblock.case.greenhouse",
     entity: {
@@ -58,13 +57,30 @@ const CONFIG = {
         fluid_cap:       FLUID_CAPACITY,
         fluid_types:     2,
     },
-    requirements: {
-        industrial_caseing: {
-            amount:  1,
-            warning: "§c[Greenhouse] Interior must be completely filled with industrial casing (5×5×5 solid).",
-        },
-    },
+    requirements: {},
 };
+
+// ── Link node IO ──────────────────────────────────────────────────────────────
+registerLinkNodeIO("utilitycraft:greenhouse_controller", {
+    liquids: {
+        anyInputIndices:  [0, 1],
+        anyOutputIndices: [],
+        inputs: [
+            { id: "any",    label: "Any Fluid Tank",       color: "§9", indices: [0, 1] },
+            { id: "fert",   label: "Fertilizer Tank",      color: "§a", indices: [0]    },
+            { id: "growth", label: "Growth Solution Tank", color: "§b", indices: [1]    },
+        ],
+        outputs: [],
+    },
+    items: {
+        anyInputSlots:  [],
+        anyOutputSlots: OUTPUT_SLOTS,
+        inputs:  [],
+        outputs: [
+            { id: "harvest", label: "Harvest Output", color: "§c", slots: OUTPUT_SLOTS },
+        ],
+    },
+});
 
 // ── Block component ───────────────────────────────────────────────────────────
 DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
@@ -76,22 +92,49 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
             CONFIG,
             {
                 initializeEntity(entity) {
-                    configureStorage(entity);
-                    ensureProgressDisplay(entity);
+                    initStorage(entity);
+                    initProgress(entity);
                 },
-                onActivate({ entity }) {
-                    configureStorage(entity);
-                    ensureProgressDisplay(entity);
+
+                onActivate({ entity, structure, player }) {
+                    const { min, max } = structure.bounds;
+                    const [sX, sY, sZ] = [max.x - min.x + 1, max.y - min.y + 1, max.z - min.z + 1];
+
+                    if (sX !== 5 || sY !== 5 || sZ !== 5) {
+                        player.sendMessage(`§c[Greenhouse] Must be 5×5×5. Detected: ${sX}×${sY}×${sZ}.`);
+                        return false;
+                    }
+
+                    const dim   = entity.dimension;
+                    const found = { energy: 0, fluid: 0, item: 0 };
+                    for (const tag of structure.inputBlocks) {
+                        const loc   = DoriosLib.linkNode.parseLinkNodeTag(tag);
+                        const block = loc && dim.getBlock(loc);
+                        if (!block) continue;
+                        if (block.typeId === PORT_REQ.energy.id) found.energy++;
+                        if (block.typeId === PORT_REQ.fluid.id)  found.fluid++;
+                        if (block.typeId === PORT_REQ.item.id)   found.item++;
+                    }
+
+                    for (const [key, req] of Object.entries(PORT_REQ)) {
+                        if (found[key] < req.min) {
+                            player.sendMessage(
+                                `§c[Greenhouse] Needs ${req.min}× §e${req.label}§c — found ${found[key]}.`
+                            );
+                            return false;
+                        }
+                    }
+
+                    initStorage(entity);
+                    initProgress(entity);
                 },
-                successMessages() {
-                    return [
-                        "§a[Greenhouse] Structure online.",
-                        "§75×5×5 solid industrial casing (no hollow interior).",
-                        `§7Fertilizer capacity: §b${FluidStorage.formatFluid(FLUID_CAPACITY)}`,
-                        `§7Water capacity:      §b${FluidStorage.formatFluid(FLUID_CAPACITY)}`,
-                        `§7Energy buffer:       §e${EnergyStorage.formatEnergyToText(ENERGY_CAPACITY)}`,
-                    ];
-                },
+
+                successMessages: [
+                    "§a[Greenhouse] Online — 5×5×5 confirmed.",
+                    "§7Ports: §e1 Energy  §92 Fluid  §a1 Item",
+                    `§7Fertilizer / Growth solution: §b${FluidStorage.formatFluid(FLUID_CAPACITY)} each`,
+                    `§7Energy buffer: §e${EnergyStorage.formatEnergyToText(ENERGY_CAPACITY)}`,
+                ],
             }
         );
     },
@@ -106,109 +149,97 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
         const machine = new MultiblockMachine(block, CONFIG);
         if (!machine.valid) return;
 
-        const { energy, fertTank, waterTank } = configureStorage(machine.entity);
+        const { energy, fertTank, growthTank } = initStorage(machine.entity);
         const inv = machine.container;
-        ensureProgressDisplay(machine.entity);
+        initProgress(machine.entity);
 
-        // ── Validate soil ─────────────────────────────────────────────────────
+        // ── Soil ──────────────────────────────────────────────────────────────
         const soilItem = inv.getItem(SOIL_SLOT);
-        const soil     = soilItem ? acceptedSoils[soilItem.typeId] : null;
-        if (!soil) return displayMachine(machine, energy, fertTank, waterTank, "No Valid Soil");
+        const soil     = soilItem ? SOILS[soilItem.typeId] : null;
+        if (!soil) return display(machine, energy, fertTank, growthTank, "No Valid Soil");
 
-        // ── Find seed + recipe ────────────────────────────────────────────────
-        let seedSlot = -1, recipe = null;
+        // ── Seed ──────────────────────────────────────────────────────────────
+        let recipe = null;
         for (const slot of SEED_SLOTS) {
             const item = inv.getItem(slot);
             if (!item) continue;
-            const r = plantsData[item.typeId];
-            if (r) { seedSlot = slot; recipe = r; break; }
+            recipe = greenhousePlantsData[item.typeId];
+            if (recipe) break;
         }
-        if (!recipe) return displayMachine(machine, energy, fertTank, waterTank, "No Seed");
-
-        // ── Validate fertilizer ───────────────────────────────────────────────
-        if (!FERTILIZER_TYPES.has(fertTank.getType()) || fertTank.get() < FERTILIZER_PER_SEED)
-            return displayMachine(machine, energy, fertTank, waterTank, "No Fertilizer");
-
-        // ── Validate water ────────────────────────────────────────────────────
-        if (waterTank.getType() !== "water" && waterTank.getType() !== EMPTY_FLUID)
-            return displayMachine(machine, energy, fertTank, waterTank, "Wrong Fluid (Water needed)");
-        if (waterTank.get() < WATER_PER_SEED)
-            return displayMachine(machine, energy, fertTank, waterTank, "No Water");
+        if (!recipe) return display(machine, energy, fertTank, growthTank, "No Seed");
 
         // ── Energy ────────────────────────────────────────────────────────────
         if (energy.get() <= 0)
-            return displayMachine(machine, energy, fertTank, waterTank, "No Energy");
+            return display(machine, energy, fertTank, growthTank, "No Energy");
 
-        // ── Progress ──────────────────────────────────────────────────────────
-        const energyCost = recipe.cost * soil.cost;
+        // ── Productivity ──────────────────────────────────────────────────────
+        const prod       = getProductivity(fertTank.getType(), growthTank.getType());
+        const energyCost = Math.max(1, Math.floor((recipe.cost * soil.cost) / prod.growthMultiplier));
+
         machine.setEnergyCost(energyCost);
-        let progress = machine.getProgress();
+        const progress = machine.getProgress();
 
         if (progress >= energyCost) {
-            recipe.drops.forEach(loot => {
-                if (Math.random() > loot.chance) return;
-                const qty = Array.isArray(loot.amount)
+            for (const loot of recipe.drops) {
+                if (Math.random() > loot.chance) continue;
+                const base = Array.isArray(loot.amount)
                     ? DoriosLib.math.randomInt(loot.amount[0], loot.amount[1])
                     : loot.amount;
-                DoriosLib.entity.tryAddItem(machine.entity, {
-                    item:   loot.item,
-                    amount: Math.max(1, Math.round(qty * soil.multi)),
-                });
-            });
+                const qty = loot.scaleWithYield === false
+                    ? base
+                    : Math.max(1, Math.round(base * soil.multi * prod.yieldMultiplier));
+                DoriosLib.entity.tryAddItem(machine.entity, { item: loot.item, amount: qty });
+            }
 
             machine.addProgress(-energyCost);
 
-            fertTank.consume(FERTILIZER_PER_SEED);
-            if (fertTank.get() <= 0) fertTank.setType(EMPTY_FLUID);
-
-            waterTank.consume(WATER_PER_SEED);
-            if (waterTank.get() <= 0) waterTank.setType(EMPTY_FLUID);
-
+            if (prod.fertConsumption > 0) {
+                fertTank.consume(prod.fertConsumption);
+                if (fertTank.get() <= 0) fertTank.setType(EMPTY);
+            }
+            if (prod.growthConsumption > 0) {
+                growthTank.consume(prod.growthConsumption);
+                if (growthTank.get() <= 0) growthTank.setType(EMPTY);
+            }
         } else {
             const spend = Math.min(energy.get(), machine.rate, energyCost - progress);
-            if (spend > 0) {
-                energy.consume(spend);
-                machine.addProgress(spend);
-            }
+            if (spend > 0) { energy.consume(spend); machine.addProgress(spend); }
         }
 
         machine.on();
         machine.displayProgress({ maxValue: energyCost, slot: PROGRESS_SLOT });
-        displayMachine(machine, energy, fertTank, waterTank, "Growing");
+        display(machine, energy, fertTank, growthTank, "Growing");
     },
 });
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
-// Seed only an empty display slot; existing frames and stored processing progress stay intact.
-function ensureProgressDisplay(entity) {
-    const inventory = DoriosLib.entity.getInventory(entity);
-    if (!inventory || inventory.getItem(PROGRESS_SLOT)) return;
+function initStorage(entity) {
+    const [fertTank, growthTank] = FluidStorage.initializeMultiple(entity, 2);
+    if (fertTank.getCap()   !== FLUID_CAPACITY) fertTank.setCap(FLUID_CAPACITY);
+    if (growthTank.getCap() !== FLUID_CAPACITY) growthTank.setCap(FLUID_CAPACITY);
+    const energy = new EnergyStorage(entity);
+    if (energy.getCap() !== ENERGY_CAPACITY) energy.setCap(ENERGY_CAPACITY);
+    return { energy, fertTank, growthTank };
+}
 
-    // Match displayProgress's modern arrow format without its shouldUpdateUI gate.
+function initProgress(entity) {
+    const inv = DoriosLib.entity.getInventory(entity);
+    if (!inv || inv.getItem(PROGRESS_SLOT)) return;
     DoriosLib.entity.setNewItem(entity, {
-        slot: PROGRESS_SLOT,
-        typeId: "utilitycraft:progress_right_big_bar_00",
+        slot:    PROGRESS_SLOT,
+        typeId:  "utilitycraft:progress_right_big_bar_00",
         nameTag: "",
     });
 }
 
-function configureStorage(entity) {
-    const [fertTank, waterTank] = FluidStorage.initializeMultiple(entity, 2);
-    if (fertTank.getCap()  !== FLUID_CAPACITY) fertTank.setCap(FLUID_CAPACITY);
-    if (waterTank.getCap() !== FLUID_CAPACITY) waterTank.setCap(FLUID_CAPACITY);
-    const energy = new EnergyStorage(entity);
-    if (energy.getCap() !== ENERGY_CAPACITY) energy.setCap(ENERGY_CAPACITY);
-    return { energy, fertTank, waterTank };
-}
-
-function displayMachine(machine, energy, fertTank, waterTank, status) {
+function display(machine, energy, fertTank, growthTank, status) {
     energy.display(ENERGY_SLOT);
-    fertTank.display(FERTILIZER_DISPLAY);
-    waterTank.display(WATER_DISPLAY);
+    fertTank.display(FERT_DISPLAY);
+    growthTank.display(GROWTH_DISPLAY);
     machine.setLabel([
-        `§r§6Greenhouse §7- §f${status}`,
+        `§r§6Greenhouse §7— §f${status}`,
         `§r§eEnergy:     §f${EnergyStorage.formatEnergyToText(energy.get())} / ${EnergyStorage.formatEnergyToText(energy.getCap())}`,
-        `§r§aFertilizer: §f${formatFluidDisplayName(fertTank.getType())} ${FluidStorage.formatFluid(fertTank.get())}`,
-        `§r§9Water:      §f${FluidStorage.formatFluid(waterTank.get())} / ${FluidStorage.formatFluid(waterTank.getCap())}`,
+        `§r§aFertilizer: §f${formatFluidDisplayName(fertTank.getType())}  ${FluidStorage.formatFluid(fertTank.get())}`,
+        `§r§bGrowth:     §f${formatFluidDisplayName(growthTank.getType())}  ${FluidStorage.formatFluid(growthTank.get())}`,
     ], LABEL_SLOT);
 }
