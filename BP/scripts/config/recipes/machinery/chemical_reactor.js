@@ -29,7 +29,21 @@ const nativeRecipes = [
         input:      { type: "naphtha",       amount: 1000 },
         output:     { type: "plastic_resin", amount: 750  },
         energyCost: 10_000,
-        seconds:    10,
+        seconds:    12,
+    }),
+  defineRecipe({
+        id:         "utilitycraft:sulfuric_from_reactive_fluid",
+        input:      { type: "reactive_fluid",       amount: 1000 },
+        output:     { type: "sulfuric_acid", amount: 750  },
+        energyCost: 10_000,
+        seconds:    8,
+    }),
+  defineRecipe({
+        id:         "utilitycraft: nitrogen_from_nitrate",
+        input:      { type: "nitrite_compound",       amount: 1000 },
+        output:     { type: "liquid_nitrogen", amount: 750  },
+        energyCost: 10_000,
+        seconds:    14,
     }),
 ];
 

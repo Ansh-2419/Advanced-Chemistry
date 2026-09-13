@@ -33,6 +33,7 @@ export const REGISTRATION_EVENT_IDS = Object.freeze({
   INFUSER_RECIPE: "utilitycraft:register_infuser_recipe",
   ITEM_DUCT_REGISTER: "item_ducts:register",
   ITEM_DUCT_UNREGISTER: "item_ducts:unregister",
+  LINK_NODE_IO: "dorios_link_node:register_io",
   MELTER_RECIPE: "utilitycraft:register_melter_recipe",
   MACHINE_UPGRADE: "utilitycraft:register_machine_upgrade",
   PLANT: "utilitycraft:register_plant",
@@ -166,6 +167,11 @@ export function registerMelterRecipe(payload) {
 /** @param {RegistrationPayload} payload */
 export function registerMachineUpgrade(payload) {
   enqueueRegistration(REGISTRATION_EVENT_IDS.MACHINE_UPGRADE, payload);
+}
+
+/** @param {{ blockTypeId: string, config: RegistrationPayload }} payload */
+export function registerLinkNodeIO(payload) {
+  enqueueRegistration(REGISTRATION_EVENT_IDS.LINK_NODE_IO, payload);
 }
 
 /** @param {RegistrationPayload} payload */
@@ -542,4 +548,3 @@ function assertMutable(installed) {
 function defaultErrorHandler(error, context) {
   console.warn(`[DoriosLib:${context}]`, error);
 }
-

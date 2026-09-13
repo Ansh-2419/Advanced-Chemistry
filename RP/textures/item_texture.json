@@ -740,447 +740,6 @@
         "utilitycraft:hydrocarbon_blend_48": {
             "textures": "textures/ui/fluid_bar/hydrocarbon_blend_bar/hydrocarbon_blend_bar_48"
         },
-        "utilitycraft:crude_oil_00": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_00"
-        },
-        "utilitycraft:crude_oil_01": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_01"
-        },
-        "utilitycraft:crude_oil_02": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_02"
-        },
-        "utilitycraft:crude_oil_03": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_03"
-        },
-        "utilitycraft:crude_oil_04": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_04"
-        },
-        "utilitycraft:crude_oil_05": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_05"
-        },
-        "utilitycraft:crude_oil_06": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_06"
-        },
-        "utilitycraft:crude_oil_07": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_07"
-        },
-        "utilitycraft:crude_oil_08": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_08"
-        },
-        "utilitycraft:crude_oil_09": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_09"
-        },
-        "utilitycraft:crude_oil_10": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_10"
-        },
-        "utilitycraft:crude_oil_11": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_11"
-        },
-        "utilitycraft:crude_oil_12": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_12"
-        },
-        "utilitycraft:crude_oil_13": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_13"
-        },
-        "utilitycraft:crude_oil_14": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_14"
-        },
-        "utilitycraft:crude_oil_15": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_15"
-        },
-        "utilitycraft:crude_oil_16": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_16"
-        },
-        "utilitycraft:crude_oil_17": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_17"
-        },
-        "utilitycraft:crude_oil_18": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_18"
-        },
-        "utilitycraft:crude_oil_19": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_19"
-        },
-        "utilitycraft:crude_oil_20": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_20"
-        },
-        "utilitycraft:crude_oil_21": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_21"
-        },
-        "utilitycraft:crude_oil_22": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_22"
-        },
-        "utilitycraft:crude_oil_23": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_23"
-        },
-        "utilitycraft:crude_oil_24": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_24"
-        },
-        "utilitycraft:crude_oil_25": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_25"
-        },
-        "utilitycraft:crude_oil_26": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_26"
-        },
-        "utilitycraft:crude_oil_27": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_27"
-        },
-        "utilitycraft:crude_oil_28": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_28"
-        },
-        "utilitycraft:crude_oil_29": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_29"
-        },
-        "utilitycraft:crude_oil_30": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_30"
-        },
-        "utilitycraft:crude_oil_31": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_31"
-        },
-        "utilitycraft:crude_oil_32": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_32"
-        },
-        "utilitycraft:crude_oil_33": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_33"
-        },
-        "utilitycraft:crude_oil_34": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_34"
-        },
-        "utilitycraft:crude_oil_35": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_35"
-        },
-        "utilitycraft:crude_oil_36": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_36"
-        },
-        "utilitycraft:crude_oil_37": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_37"
-        },
-        "utilitycraft:crude_oil_38": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_38"
-        },
-        "utilitycraft:crude_oil_39": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_39"
-        },
-        "utilitycraft:crude_oil_40": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_40"
-        },
-        "utilitycraft:crude_oil_41": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_41"
-        },
-        "utilitycraft:crude_oil_42": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_42"
-        },
-        "utilitycraft:crude_oil_43": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_43"
-        },
-        "utilitycraft:crude_oil_44": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_44"
-        },
-        "utilitycraft:crude_oil_45": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_45"
-        },
-        "utilitycraft:crude_oil_46": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_46"
-        },
-        "utilitycraft:crude_oil_47": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_47"
-        },
-        "utilitycraft:crude_oil_48": {
-            "textures": "textures/ui/fluid_bar/crude_oil_bar/crude_oil_bar_48"
-        },
-        "utilitycraft:diesel_00": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_00"
-        },
-        "utilitycraft:diesel_01": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_01"
-        },
-        "utilitycraft:diesel_02": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_02"
-        },
-        "utilitycraft:diesel_03": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_03"
-        },
-        "utilitycraft:diesel_04": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_04"
-        },
-        "utilitycraft:diesel_05": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_05"
-        },
-        "utilitycraft:diesel_06": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_06"
-        },
-        "utilitycraft:diesel_07": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_07"
-        },
-        "utilitycraft:diesel_08": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_08"
-        },
-        "utilitycraft:diesel_09": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_09"
-        },
-        "utilitycraft:diesel_10": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_10"
-        },
-        "utilitycraft:diesel_11": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_11"
-        },
-        "utilitycraft:diesel_12": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_12"
-        },
-        "utilitycraft:diesel_13": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_13"
-        },
-        "utilitycraft:diesel_14": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_14"
-        },
-        "utilitycraft:diesel_15": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_15"
-        },
-        "utilitycraft:diesel_16": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_16"
-        },
-        "utilitycraft:diesel_17": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_17"
-        },
-        "utilitycraft:diesel_18": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_18"
-        },
-        "utilitycraft:diesel_19": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_19"
-        },
-        "utilitycraft:diesel_20": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_20"
-        },
-        "utilitycraft:diesel_21": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_21"
-        },
-        "utilitycraft:diesel_22": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_22"
-        },
-        "utilitycraft:diesel_23": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_23"
-        },
-        "utilitycraft:diesel_24": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_24"
-        },
-        "utilitycraft:diesel_25": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_25"
-        },
-        "utilitycraft:diesel_26": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_26"
-        },
-        "utilitycraft:diesel_27": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_27"
-        },
-        "utilitycraft:diesel_28": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_28"
-        },
-        "utilitycraft:diesel_29": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_29"
-        },
-        "utilitycraft:diesel_30": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_30"
-        },
-        "utilitycraft:diesel_31": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_31"
-        },
-        "utilitycraft:diesel_32": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_32"
-        },
-        "utilitycraft:diesel_33": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_33"
-        },
-        "utilitycraft:diesel_34": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_34"
-        },
-        "utilitycraft:diesel_35": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_35"
-        },
-        "utilitycraft:diesel_36": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_36"
-        },
-        "utilitycraft:diesel_37": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_37"
-        },
-        "utilitycraft:diesel_38": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_38"
-        },
-        "utilitycraft:diesel_39": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_39"
-        },
-        "utilitycraft:diesel_40": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_40"
-        },
-        "utilitycraft:diesel_41": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_41"
-        },
-        "utilitycraft:diesel_42": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_42"
-        },
-        "utilitycraft:diesel_43": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_43"
-        },
-        "utilitycraft:diesel_44": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_44"
-        },
-        "utilitycraft:diesel_45": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_45"
-        },
-        "utilitycraft:diesel_46": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_46"
-        },
-        "utilitycraft:diesel_47": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_47"
-        },
-        "utilitycraft:diesel_48": {
-            "textures": "textures/ui/fluid_bar/diesel_bar/diesel_bar_48"
-        },
-        "utilitycraft:petrol_00": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_00"
-        },
-        "utilitycraft:petrol_01": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_01"
-        },
-        "utilitycraft:petrol_02": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_02"
-        },
-        "utilitycraft:petrol_03": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_03"
-        },
-        "utilitycraft:petrol_04": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_04"
-        },
-        "utilitycraft:petrol_05": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_05"
-        },
-        "utilitycraft:petrol_06": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_06"
-        },
-        "utilitycraft:petrol_07": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_07"
-        },
-        "utilitycraft:petrol_08": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_08"
-        },
-        "utilitycraft:petrol_09": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_09"
-        },
-        "utilitycraft:petrol_10": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_10"
-        },
-        "utilitycraft:petrol_11": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_11"
-        },
-        "utilitycraft:petrol_12": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_12"
-        },
-        "utilitycraft:petrol_13": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_13"
-        },
-        "utilitycraft:petrol_14": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_14"
-        },
-        "utilitycraft:petrol_15": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_15"
-        },
-        "utilitycraft:petrol_16": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_16"
-        },
-        "utilitycraft:petrol_17": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_17"
-        },
-        "utilitycraft:petrol_18": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_18"
-        },
-        "utilitycraft:petrol_19": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_19"
-        },
-        "utilitycraft:petrol_20": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_20"
-        },
-        "utilitycraft:petrol_21": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_21"
-        },
-        "utilitycraft:petrol_22": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_22"
-        },
-        "utilitycraft:petrol_23": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_23"
-        },
-        "utilitycraft:petrol_24": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_24"
-        },
-        "utilitycraft:petrol_25": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_25"
-        },
-        "utilitycraft:petrol_26": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_26"
-        },
-        "utilitycraft:petrol_27": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_27"
-        },
-        "utilitycraft:petrol_28": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_28"
-        },
-        "utilitycraft:petrol_29": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_29"
-        },
-        "utilitycraft:petrol_30": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_30"
-        },
-        "utilitycraft:petrol_31": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_31"
-        },
-        "utilitycraft:petrol_32": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_32"
-        },
-        "utilitycraft:petrol_33": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_33"
-        },
-        "utilitycraft:petrol_34": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_34"
-        },
-        "utilitycraft:petrol_35": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_35"
-        },
-        "utilitycraft:petrol_36": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_36"
-        },
-        "utilitycraft:petrol_37": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_37"
-        },
-        "utilitycraft:petrol_38": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_38"
-        },
-        "utilitycraft:petrol_39": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_39"
-        },
-        "utilitycraft:petrol_40": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_40"
-        },
-        "utilitycraft:petrol_41": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_41"
-        },
-        "utilitycraft:petrol_42": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_42"
-        },
-        "utilitycraft:petrol_43": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_43"
-        },
-        "utilitycraft:petrol_44": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_44"
-        },
-        "utilitycraft:petrol_45": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_45"
-        },
-        "utilitycraft:petrol_46": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_46"
-        },
-        "utilitycraft:petrol_47": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_47"
-        },
-        "utilitycraft:petrol_48": {
-            "textures": "textures/ui/fluid_bar/petrol_bar/petrol_bar_48"
-        },
         "duranium_ingot": {
             "textures": "textures/items/ingot/duranium_ingot"
         },
@@ -2426,7 +1985,6 @@
         "utilitycraft:bio_growth_solution_48": {
             "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_48"
         },
-
         "utilitycraft:nutrient_growth_solution_00": {
             "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_00"
         },
@@ -2574,7 +2132,6 @@
         "utilitycraft:nutrient_growth_solution_48": {
             "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_48"
         },
-
         "utilitycraft:advanced_growth_catalyst_00": {
             "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_00"
         },
@@ -2722,448 +2279,299 @@
         "utilitycraft:advanced_growth_catalyst_48": {
             "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_48"
         },
-        "utilitycraft:bio_growth_solution_00": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_00"
+        "utilitycraft:liquid_nitrogen_00": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_00"
         },
-        "utilitycraft:bio_growth_solution_01": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_01"
+        "utilitycraft:liquid_nitrogen_01": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_01"
         },
-        "utilitycraft:bio_growth_solution_02": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_02"
+        "utilitycraft:liquid_nitrogen_02": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_02"
         },
-        "utilitycraft:bio_growth_solution_03": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_03"
+        "utilitycraft:liquid_nitrogen_03": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_03"
         },
-        "utilitycraft:bio_growth_solution_04": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_04"
+        "utilitycraft:liquid_nitrogen_04": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_04"
         },
-        "utilitycraft:bio_growth_solution_05": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_05"
+        "utilitycraft:liquid_nitrogen_05": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_05"
         },
-        "utilitycraft:bio_growth_solution_06": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_06"
+        "utilitycraft:liquid_nitrogen_06": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_06"
         },
-        "utilitycraft:bio_growth_solution_07": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_07"
+        "utilitycraft:liquid_nitrogen_07": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_07"
         },
-        "utilitycraft:bio_growth_solution_08": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_08"
+        "utilitycraft:liquid_nitrogen_08": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_08"
         },
-        "utilitycraft:bio_growth_solution_09": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_09"
+        "utilitycraft:liquid_nitrogen_09": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_09"
         },
-        "utilitycraft:bio_growth_solution_10": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_10"
+        "utilitycraft:liquid_nitrogen_10": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_10"
         },
-        "utilitycraft:bio_growth_solution_11": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_11"
+        "utilitycraft:liquid_nitrogen_11": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_11"
         },
-        "utilitycraft:bio_growth_solution_12": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_12"
+        "utilitycraft:liquid_nitrogen_12": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_12"
         },
-        "utilitycraft:bio_growth_solution_13": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_13"
+        "utilitycraft:liquid_nitrogen_13": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_13"
         },
-        "utilitycraft:bio_growth_solution_14": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_14"
+        "utilitycraft:liquid_nitrogen_14": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_14"
         },
-        "utilitycraft:bio_growth_solution_15": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_15"
+        "utilitycraft:liquid_nitrogen_15": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_15"
         },
-        "utilitycraft:bio_growth_solution_16": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_16"
+        "utilitycraft:liquid_nitrogen_16": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_16"
         },
-        "utilitycraft:bio_growth_solution_17": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_17"
+        "utilitycraft:liquid_nitrogen_17": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_17"
         },
-        "utilitycraft:bio_growth_solution_18": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_18"
+        "utilitycraft:liquid_nitrogen_18": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_18"
         },
-        "utilitycraft:bio_growth_solution_19": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_19"
+        "utilitycraft:liquid_nitrogen_19": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_19"
         },
-        "utilitycraft:bio_growth_solution_20": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_20"
+        "utilitycraft:liquid_nitrogen_20": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_20"
         },
-        "utilitycraft:bio_growth_solution_21": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_21"
+        "utilitycraft:liquid_nitrogen_21": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_21"
         },
-        "utilitycraft:bio_growth_solution_22": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_22"
+        "utilitycraft:liquid_nitrogen_22": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_22"
         },
-        "utilitycraft:bio_growth_solution_23": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_23"
+        "utilitycraft:liquid_nitrogen_23": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_23"
         },
-        "utilitycraft:bio_growth_solution_24": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_24"
+        "utilitycraft:liquid_nitrogen_24": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_24"
         },
-        "utilitycraft:bio_growth_solution_25": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_25"
+        "utilitycraft:liquid_nitrogen_25": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_25"
         },
-        "utilitycraft:bio_growth_solution_26": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_26"
+        "utilitycraft:liquid_nitrogen_26": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_26"
         },
-        "utilitycraft:bio_growth_solution_27": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_27"
+        "utilitycraft:liquid_nitrogen_27": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_27"
         },
-        "utilitycraft:bio_growth_solution_28": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_28"
+        "utilitycraft:liquid_nitrogen_28": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_28"
         },
-        "utilitycraft:bio_growth_solution_29": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_29"
+        "utilitycraft:liquid_nitrogen_29": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_29"
         },
-        "utilitycraft:bio_growth_solution_30": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_30"
+        "utilitycraft:liquid_nitrogen_30": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_30"
         },
-        "utilitycraft:bio_growth_solution_31": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_31"
+        "utilitycraft:liquid_nitrogen_31": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_31"
         },
-        "utilitycraft:bio_growth_solution_32": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_32"
+        "utilitycraft:liquid_nitrogen_32": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_32"
         },
-        "utilitycraft:bio_growth_solution_33": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_33"
+        "utilitycraft:liquid_nitrogen_33": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_33"
         },
-        "utilitycraft:bio_growth_solution_34": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_34"
+        "utilitycraft:liquid_nitrogen_34": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_34"
         },
-        "utilitycraft:bio_growth_solution_35": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_35"
+        "utilitycraft:liquid_nitrogen_35": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_35"
         },
-        "utilitycraft:bio_growth_solution_36": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_36"
+        "utilitycraft:liquid_nitrogen_36": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_36"
         },
-        "utilitycraft:bio_growth_solution_37": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_37"
+        "utilitycraft:liquid_nitrogen_37": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_37"
         },
-        "utilitycraft:bio_growth_solution_38": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_38"
+        "utilitycraft:liquid_nitrogen_38": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_38"
         },
-        "utilitycraft:bio_growth_solution_39": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_39"
+        "utilitycraft:liquid_nitrogen_39": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_39"
         },
-        "utilitycraft:bio_growth_solution_40": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_40"
+        "utilitycraft:liquid_nitrogen_40": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_40"
         },
-        "utilitycraft:bio_growth_solution_41": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_41"
+        "utilitycraft:liquid_nitrogen_41": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_41"
         },
-        "utilitycraft:bio_growth_solution_42": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_42"
+        "utilitycraft:liquid_nitrogen_42": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_42"
         },
-        "utilitycraft:bio_growth_solution_43": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_43"
+        "utilitycraft:liquid_nitrogen_43": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_43"
         },
-        "utilitycraft:bio_growth_solution_44": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_44"
+        "utilitycraft:liquid_nitrogen_44": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_44"
         },
-        "utilitycraft:bio_growth_solution_45": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_45"
+        "utilitycraft:liquid_nitrogen_45": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_45"
         },
-        "utilitycraft:bio_growth_solution_46": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_46"
+        "utilitycraft:liquid_nitrogen_46": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_46"
         },
-        "utilitycraft:bio_growth_solution_47": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_47"
+        "utilitycraft:liquid_nitrogen_47": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_47"
         },
-        "utilitycraft:bio_growth_solution_48": {
-            "textures": "textures/ui/fluid_bar/bio_growth_solution/bio_growth_solution_48"
+        "utilitycraft:liquid_nitrogen_48": {
+            "textures": "textures/ui/fluid_bar/liquid_nitrogen_bar/liquid_nitrogen_frame_48"
         },
-
-        "utilitycraft:nutrient_growth_solution_00": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_00"
+        "utilitycraft:nitrite_compound_00": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_00"
         },
-        "utilitycraft:nutrient_growth_solution_01": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_01"
+        "utilitycraft:nitrite_compound_01": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_01"
         },
-        "utilitycraft:nutrient_growth_solution_02": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_02"
+        "utilitycraft:nitrite_compound_02": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_02"
         },
-        "utilitycraft:nutrient_growth_solution_03": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_03"
+        "utilitycraft:nitrite_compound_03": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_03"
         },
-        "utilitycraft:nutrient_growth_solution_04": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_04"
+        "utilitycraft:nitrite_compound_04": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_04"
         },
-        "utilitycraft:nutrient_growth_solution_05": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_05"
+        "utilitycraft:nitrite_compound_05": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_05"
         },
-        "utilitycraft:nutrient_growth_solution_06": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_06"
+        "utilitycraft:nitrite_compound_06": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_06"
         },
-        "utilitycraft:nutrient_growth_solution_07": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_07"
+        "utilitycraft:nitrite_compound_07": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_07"
         },
-        "utilitycraft:nutrient_growth_solution_08": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_08"
+        "utilitycraft:nitrite_compound_08": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_08"
         },
-        "utilitycraft:nutrient_growth_solution_09": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_09"
+        "utilitycraft:nitrite_compound_09": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_09"
         },
-        "utilitycraft:nutrient_growth_solution_10": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_10"
+        "utilitycraft:nitrite_compound_10": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_10"
         },
-        "utilitycraft:nutrient_growth_solution_11": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_11"
+        "utilitycraft:nitrite_compound_11": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_11"
         },
-        "utilitycraft:nutrient_growth_solution_12": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_12"
+        "utilitycraft:nitrite_compound_12": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_12"
         },
-        "utilitycraft:nutrient_growth_solution_13": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_13"
+        "utilitycraft:nitrite_compound_13": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_13"
         },
-        "utilitycraft:nutrient_growth_solution_14": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_14"
+        "utilitycraft:nitrite_compound_14": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_14"
         },
-        "utilitycraft:nutrient_growth_solution_15": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_15"
+        "utilitycraft:nitrite_compound_15": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_15"
         },
-        "utilitycraft:nutrient_growth_solution_16": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_16"
+        "utilitycraft:nitrite_compound_16": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_16"
         },
-        "utilitycraft:nutrient_growth_solution_17": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_17"
+        "utilitycraft:nitrite_compound_17": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_17"
         },
-        "utilitycraft:nutrient_growth_solution_18": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_18"
+        "utilitycraft:nitrite_compound_18": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_18"
         },
-        "utilitycraft:nutrient_growth_solution_19": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_19"
+        "utilitycraft:nitrite_compound_19": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_19"
         },
-        "utilitycraft:nutrient_growth_solution_20": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_20"
+        "utilitycraft:nitrite_compound_20": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_20"
         },
-        "utilitycraft:nutrient_growth_solution_21": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_21"
+        "utilitycraft:nitrite_compound_21": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_21"
         },
-        "utilitycraft:nutrient_growth_solution_22": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_22"
+        "utilitycraft:nitrite_compound_22": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_22"
         },
-        "utilitycraft:nutrient_growth_solution_23": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_23"
+        "utilitycraft:nitrite_compound_23": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_23"
         },
-        "utilitycraft:nutrient_growth_solution_24": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_24"
+        "utilitycraft:nitrite_compound_24": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_24"
         },
-        "utilitycraft:nutrient_growth_solution_25": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_25"
+        "utilitycraft:nitrite_compound_25": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_25"
         },
-        "utilitycraft:nutrient_growth_solution_26": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_26"
+        "utilitycraft:nitrite_compound_26": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_26"
         },
-        "utilitycraft:nutrient_growth_solution_27": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_27"
+        "utilitycraft:nitrite_compound_27": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_27"
         },
-        "utilitycraft:nutrient_growth_solution_28": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_28"
+        "utilitycraft:nitrite_compound_28": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_28"
         },
-        "utilitycraft:nutrient_growth_solution_29": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_29"
+        "utilitycraft:nitrite_compound_29": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_29"
         },
-        "utilitycraft:nutrient_growth_solution_30": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_30"
+        "utilitycraft:nitrite_compound_30": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_30"
         },
-        "utilitycraft:nutrient_growth_solution_31": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_31"
+        "utilitycraft:nitrite_compound_31": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_31"
         },
-        "utilitycraft:nutrient_growth_solution_32": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_32"
+        "utilitycraft:nitrite_compound_32": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_32"
         },
-        "utilitycraft:nutrient_growth_solution_33": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_33"
+        "utilitycraft:nitrite_compound_33": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_33"
         },
-        "utilitycraft:nutrient_growth_solution_34": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_34"
+        "utilitycraft:nitrite_compound_34": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_34"
         },
-        "utilitycraft:nutrient_growth_solution_35": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_35"
+        "utilitycraft:nitrite_compound_35": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_35"
         },
-        "utilitycraft:nutrient_growth_solution_36": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_36"
+        "utilitycraft:nitrite_compound_36": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_36"
         },
-        "utilitycraft:nutrient_growth_solution_37": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_37"
+        "utilitycraft:nitrite_compound_37": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_37"
         },
-        "utilitycraft:nutrient_growth_solution_38": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_38"
+        "utilitycraft:nitrite_compound_38": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_38"
         },
-        "utilitycraft:nutrient_growth_solution_39": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_39"
+        "utilitycraft:nitrite_compound_39": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_39"
         },
-        "utilitycraft:nutrient_growth_solution_40": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_40"
+        "utilitycraft:nitrite_compound_40": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_40"
         },
-        "utilitycraft:nutrient_growth_solution_41": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_41"
+        "utilitycraft:nitrite_compound_41": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_41"
         },
-        "utilitycraft:nutrient_growth_solution_42": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_42"
+        "utilitycraft:nitrite_compound_42": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_42"
         },
-        "utilitycraft:nutrient_growth_solution_43": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_43"
+        "utilitycraft:nitrite_compound_43": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_43"
         },
-        "utilitycraft:nutrient_growth_solution_44": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_44"
+        "utilitycraft:nitrite_compound_44": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_44"
         },
-        "utilitycraft:nutrient_growth_solution_45": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_45"
+        "utilitycraft:nitrite_compound_45": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_45"
         },
-        "utilitycraft:nutrient_growth_solution_46": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_46"
+        "utilitycraft:nitrite_compound_46": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_46"
         },
-        "utilitycraft:nutrient_growth_solution_47": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_47"
+        "utilitycraft:nitrite_compound_47": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_47"
         },
-        "utilitycraft:nutrient_growth_solution_48": {
-            "textures": "textures/ui/fluid_bar/nutrient_growth_solution/nutrient_growth_solution_48"
-        },
-
-        "utilitycraft:advanced_growth_catalyst_00": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_00"
-        },
-        "utilitycraft:advanced_growth_catalyst_01": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_01"
-        },
-        "utilitycraft:advanced_growth_catalyst_02": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_02"
-        },
-        "utilitycraft:advanced_growth_catalyst_03": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_03"
-        },
-        "utilitycraft:advanced_growth_catalyst_04": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_04"
-        },
-        "utilitycraft:advanced_growth_catalyst_05": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_05"
-        },
-        "utilitycraft:advanced_growth_catalyst_06": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_06"
-        },
-        "utilitycraft:advanced_growth_catalyst_07": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_07"
-        },
-        "utilitycraft:advanced_growth_catalyst_08": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_08"
-        },
-        "utilitycraft:advanced_growth_catalyst_09": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_09"
-        },
-        "utilitycraft:advanced_growth_catalyst_10": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_10"
-        },
-        "utilitycraft:advanced_growth_catalyst_11": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_11"
-        },
-        "utilitycraft:advanced_growth_catalyst_12": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_12"
-        },
-        "utilitycraft:advanced_growth_catalyst_13": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_13"
-        },
-        "utilitycraft:advanced_growth_catalyst_14": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_14"
-        },
-        "utilitycraft:advanced_growth_catalyst_15": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_15"
-        },
-        "utilitycraft:advanced_growth_catalyst_16": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_16"
-        },
-        "utilitycraft:advanced_growth_catalyst_17": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_17"
-        },
-        "utilitycraft:advanced_growth_catalyst_18": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_18"
-        },
-        "utilitycraft:advanced_growth_catalyst_19": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_19"
-        },
-        "utilitycraft:advanced_growth_catalyst_20": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_20"
-        },
-        "utilitycraft:advanced_growth_catalyst_21": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_21"
-        },
-        "utilitycraft:advanced_growth_catalyst_22": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_22"
-        },
-        "utilitycraft:advanced_growth_catalyst_23": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_23"
-        },
-        "utilitycraft:advanced_growth_catalyst_24": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_24"
-        },
-        "utilitycraft:advanced_growth_catalyst_25": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_25"
-        },
-        "utilitycraft:advanced_growth_catalyst_26": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_26"
-        },
-        "utilitycraft:advanced_growth_catalyst_27": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_27"
-        },
-        "utilitycraft:advanced_growth_catalyst_28": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_28"
-        },
-        "utilitycraft:advanced_growth_catalyst_29": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_29"
-        },
-        "utilitycraft:advanced_growth_catalyst_30": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_30"
-        },
-        "utilitycraft:advanced_growth_catalyst_31": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_31"
-        },
-        "utilitycraft:advanced_growth_catalyst_32": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_32"
-        },
-        "utilitycraft:advanced_growth_catalyst_33": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_33"
-        },
-        "utilitycraft:advanced_growth_catalyst_34": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_34"
-        },
-        "utilitycraft:advanced_growth_catalyst_35": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_35"
-        },
-        "utilitycraft:advanced_growth_catalyst_36": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_36"
-        },
-        "utilitycraft:advanced_growth_catalyst_37": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_37"
-        },
-        "utilitycraft:advanced_growth_catalyst_38": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_38"
-        },
-        "utilitycraft:advanced_growth_catalyst_39": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_39"
-        },
-        "utilitycraft:advanced_growth_catalyst_40": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_40"
-        },
-        "utilitycraft:advanced_growth_catalyst_41": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_41"
-        },
-        "utilitycraft:advanced_growth_catalyst_42": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_42"
-        },
-        "utilitycraft:advanced_growth_catalyst_43": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_43"
-        },
-        "utilitycraft:advanced_growth_catalyst_44": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_44"
-        },
-        "utilitycraft:advanced_growth_catalyst_45": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_45"
-        },
-        "utilitycraft:advanced_growth_catalyst_46": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_46"
-        },
-        "utilitycraft:advanced_growth_catalyst_47": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_47"
-        },
-        "utilitycraft:advanced_growth_catalyst_48": {
-            "textures": "textures/ui/fluid_bar/advanced_growth_catalyst/advanced_growth_catalyst_48"
+        "utilitycraft:nitrite_compound_48": {
+            "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_48"
         }
     }
 }

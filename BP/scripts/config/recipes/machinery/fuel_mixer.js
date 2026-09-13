@@ -25,6 +25,16 @@ const nativeFuelMixerRecipes = [
         energyCost: 6400,
         seconds: 10,
         description: "Mixes ethanol and plant oil into biofuel."
+    }),
+
+    defineFuelMixerRecipe({
+        id: "utilitycraft:nitrate_from_sulfuric_acid",
+        input1: { type: "fertilizer_org", amount: 1000 },
+        input2: { type: "sulfuric_acid", amount: 1000 },
+        output: { type: "nitrite_compound", amount: 500 },
+        energyCost: 6400,
+        seconds: 10,
+        description: "Mixes organic fertilizer and sulfuric acid into nitrate compound."
     })
 ];
 

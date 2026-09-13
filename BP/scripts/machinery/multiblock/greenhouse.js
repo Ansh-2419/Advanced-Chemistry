@@ -1,11 +1,12 @@
-import * as DoriosLib    from "DoriosLib/index.js";
+import { ItemStack }    from "@minecraft/server";
+import * as DoriosLib   from "DoriosLib/index.js";
 import {
     EnergyStorage,
     FluidStorage,
     Multiblock,
     MultiblockMachine,
     registerLinkNodeIO,
-}                        from "DoriosCore/index.js";
+}                       from "DoriosCore/index.js";
 import { greenhousePlantsData } from "../../config/greenhouse/plants.js";
 import { getProductivity }      from "../../config/greenhouse/fluids.js";
 import { formatFluidDisplayName } from "./multiblock_helpers.js";
@@ -158,57 +159,68 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
         const soil     = soilItem ? SOILS[soilItem.typeId] : null;
         if (!soil) return display(machine, energy, fertTank, growthTank, "No Valid Soil");
 
-        // ── Seed ──────────────────────────────────────────────────────────────
-        let recipe = null;
+        // ── Seeds — collect ALL active seed slots ─────────────────────────────
+        const activeSeeds = [];
         for (const slot of SEED_SLOTS) {
             const item = inv.getItem(slot);
             if (!item) continue;
-            recipe = greenhousePlantsData[item.typeId];
-            if (recipe) break;
+            const recipe = greenhousePlantsData[item.typeId];
+            if (recipe) activeSeeds.push(recipe);
         }
-        if (!recipe) return display(machine, energy, fertTank, growthTank, "No Seed");
+        if (activeSeeds.length === 0)
+            return display(machine, energy, fertTank, growthTank, "No Seeds");
+
+        // ── Output full check ─────────────────────────────────────────────────
+        if (isOutputFull(inv))
+            return display(machine, energy, fertTank, growthTank, "§cOutput Full");
 
         // ── Energy ────────────────────────────────────────────────────────────
         if (energy.get() <= 0)
             return display(machine, energy, fertTank, growthTank, "No Energy");
 
         // ── Productivity ──────────────────────────────────────────────────────
-        const prod       = getProductivity(fertTank.getType(), growthTank.getType());
-        const energyCost = Math.max(1, Math.floor((recipe.cost * soil.cost) / prod.growthMultiplier));
+        const prod = getProductivity(fertTank.getType(), growthTank.getType());
 
-        machine.setEnergyCost(energyCost);
+        const totalEnergyCost = activeSeeds.reduce((sum, recipe) =>
+            sum + Math.max(1, Math.floor((recipe.cost * soil.cost) / prod.growthMultiplier)), 0
+        );
+
+        machine.setEnergyCost(totalEnergyCost);
         const progress = machine.getProgress();
 
-        if (progress >= energyCost) {
-            for (const loot of recipe.drops) {
-                if (Math.random() > loot.chance) continue;
-                const base = Array.isArray(loot.amount)
-                    ? DoriosLib.math.randomInt(loot.amount[0], loot.amount[1])
-                    : loot.amount;
-                const qty = loot.scaleWithYield === false
-                    ? base
-                    : Math.max(1, Math.round(base * soil.multi * prod.yieldMultiplier));
-                DoriosLib.entity.tryAddItem(machine.entity, { item: loot.item, amount: qty });
+        if (progress >= totalEnergyCost) {
+            for (const recipe of activeSeeds) {
+                for (const loot of recipe.drops) {
+                    if (Math.random() > loot.chance) continue;
+                    const base = Array.isArray(loot.amount)
+                        ? DoriosLib.math.randomInt(loot.amount[0], loot.amount[1])
+                        : loot.amount;
+                    const qty = loot.scaleWithYield === false
+                        ? base
+                        : Math.max(1, Math.round(base * soil.multi * prod.yieldMultiplier));
+                    addToOutputSlots(inv, loot.item, qty);
+                }
             }
 
-            machine.addProgress(-energyCost);
+            machine.addProgress(-totalEnergyCost);
 
+            const seedCount = activeSeeds.length;
             if (prod.fertConsumption > 0) {
-                fertTank.consume(prod.fertConsumption);
+                fertTank.consume(prod.fertConsumption * seedCount);
                 if (fertTank.get() <= 0) fertTank.setType(EMPTY);
             }
             if (prod.growthConsumption > 0) {
-                growthTank.consume(prod.growthConsumption);
+                growthTank.consume(prod.growthConsumption * seedCount);
                 if (growthTank.get() <= 0) growthTank.setType(EMPTY);
             }
         } else {
-            const spend = Math.min(energy.get(), machine.rate, energyCost - progress);
+            const spend = Math.min(energy.get(), machine.rate, totalEnergyCost - progress);
             if (spend > 0) { energy.consume(spend); machine.addProgress(spend); }
         }
 
         machine.on();
-        machine.displayProgress({ maxValue: energyCost, slot: PROGRESS_SLOT });
-        display(machine, energy, fertTank, growthTank, "Growing");
+        machine.displayProgress({ maxValue: totalEnergyCost, slot: PROGRESS_SLOT });
+        display(machine, energy, fertTank, growthTank, `Growing ×${activeSeeds.length}`);
     },
 });
 
@@ -230,6 +242,41 @@ function initProgress(entity) {
         typeId:  "utilitycraft:progress_right_big_bar_00",
         nameTag: "",
     });
+}
+
+/** Returns true when every output slot is occupied and fully stacked. */
+function isOutputFull(container) {
+    for (const slot of OUTPUT_SLOTS) {
+        const item = container.getItem(slot);
+        if (!item) return false;
+        if (item.amount < item.maxAmount) return false;
+    }
+    return true;
+}
+
+/** Adds qty of typeId strictly into OUTPUT_SLOTS [10-18]. */
+function addToOutputSlots(container, typeId, qty) {
+    let remaining = qty;
+
+    for (const slot of OUTPUT_SLOTS) {
+        if (remaining <= 0) break;
+        const existing = container.getItem(slot);
+        if (!existing || existing.typeId !== typeId) continue;
+        const space = existing.maxAmount - existing.amount;
+        if (space <= 0) continue;
+        const add = Math.min(space, remaining);
+        existing.amount += add;
+        container.setItem(slot, existing);
+        remaining -= add;
+    }
+
+    for (const slot of OUTPUT_SLOTS) {
+        if (remaining <= 0) break;
+        if (container.getItem(slot)) continue;
+        const stack = new ItemStack(typeId, Math.min(remaining, 64));
+        container.setItem(slot, stack);
+        remaining -= stack.amount;
+    }
 }
 
 function display(machine, energy, fertTank, growthTank, status) {

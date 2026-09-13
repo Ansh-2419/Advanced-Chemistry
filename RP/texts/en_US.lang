@@ -7,14 +7,13 @@ ac:itemGroup.name.aoc_tank=Creative Tanks
 ac:itemGroup.name.endstone_generators=Endstone Generators
 
 ## ── Singleblock Machines ─────────────────────────────────────────────────────
-tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:chemical_reactor.name=Chemical Reactor\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-
+tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:chemical_reactor.name=Chemical Reactor\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 
 ## ── Industrial Generators ────────────────────────────────────────────────────
 tile.utilitycraft:ind_magmator.name=Industrial Magmator\n§o§9@UC: Advance Chemistry
@@ -26,6 +25,11 @@ tile.utilitycraft:ind_furnator.name=Industrial Furnator\n§o§9@UC: Advance Chem
 ## ── Multiblock Valves ────────────────────────────────────────────────────────
 tile.utilitycraft:fluid_valve.name=Fluid Valve\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:energy_valve.name=Energy Valve\n§o§9@UC: Advance Chemistry
+
+## ── Industrial Ports (Greenhouse) ────────────────────────────────────────────
+tile.utilitycraft:ind_energy_port.name=Industrial Energy Port\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_fluid_port.name=Industrial Fluid Port\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_item_port.name=Industrial Item Port\n§o§9@UC: Advance Chemistry
 
 ## ── Fluid Storage Multiblock ─────────────────────────────────────────────────
 tile.utilitycraft:fluid_storage_casing.name=Fluid Storage Casing\n§o§9@UC: Advance Chemistry
@@ -39,8 +43,9 @@ tile.utilitycraft:fuel_burner_monitor.name=Fuel Burner Monitor\n§o§9@UC: Advan
 tile.utilitycraft:refinery_monitor.name=Refinery Monitor\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:refinery_casing.name=Refinery Casing\n§o§9@UC: Advance Chemistry
 
-## Greenhouse
+## ── Greenhouse Multiblock ────────────────────────────────────────────────────
 tile.utilitycraft:greenhouse_controller.name=Greenhouse Controller\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:industrial_caseing.name=Industrial Casing\n§o§9@UC: Advance Chemistry
 
 ## ── Endstone Generators ──────────────────────────────────────────────────────
 tile.utilitycraft:endstone_gen_copper.name=Copper Endstone Generator\n§o§9@UC: Advance Chemistry
@@ -106,10 +111,13 @@ fluid.utilitycraft.naphtha=Naphtha
 fluid.utilitycraft.petrol=Petrol
 fluid.utilitycraft.diesel=Diesel
 fluid.utilitycraft.plastic_resin=Plastic Resin
+fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
 fluid.utilitycraft.fertilizer_org=Organic Fertilizer
 fluid.utilitycraft.fertilizer_enriched=Enriched Fertilizer
 fluid.utilitycraft.fertilizer_industrial=Industrial Fertilizer
-fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
+fluid.utilitycraft.bio_growth_solution=Bio Growth Solution
+fluid.utilitycraft.nutrient_growth_solution=Nutrient Growth Solution
+fluid.utilitycraft.advanced_growth_catalyst=Advanced Growth Catalyst
 
 ## ── Machine Info Panels ──────────────────────────────────────────────────────
 ui.aoc:info.nuclear_processor=Converts Thorium Concentrate into Actinide Solution.\n\nInput: 20 Thorium Concentrate\nOutput: 100 mB Actinide Solution\nEnergy: 50,000 KDe\n\nAccepted Upgrades:\n- Speed\n- Energy
@@ -120,9 +128,11 @@ ui.utilitycraft:info.chemical_reactor=Processes one or more fluid inputs into a 
 ui.aoc:info.polymerizer=Converts Plastic Resin into HDPE Pellets.\n\nInput: 250 mB Plastic Resin\nOutput: 1 HDPE Pellet\nEnergy: 10,000 KDe
 ui.aoc:info.industrial_crusher=Processes items through selectable output stages.\n\nInput: 2x2 item grid.\nOutput: 3x3 result grid.\n\nStages:\n- 1x: First breakdown\n- 2x: Second breakdown\n- 3x: Third breakdown\n\nAccepted Upgrades:\n- Speed\n- Energy
 ui.aoc:info.refinery=Processes one input fluid into up to three refinery products.\n\nMultiblock IO:\n- Fluid input: source tank\n- Fluid outputs: product tanks 1-3\n- Energy: accepted through energy valves
-ui.aoc:info.greenhouse=Grows crops using seeds, soil, energy, water, and fertilizer.\n\nSlots:\n- Four seed inputs\n- One soil slot below the arrow\n- Nine output slots\n\nEach harvest uses 500 mB of fertilizer and 250 mB of water. Accepts organic, enriched, or industrial fertilizer.\n\nAccepted soils: dirt, grass block, and yellow, red, blue, or black soil. Soil affects energy cost and crop yield.\n\nStorage:\n- Energy: 200,000 DE\n- Fertilizer: 64,000 mB\n- Water: 64,000 mB
+ui.aoc:info.greenhouse=Industrial 5×5×5 greenhouse that grows up to 4 crops simultaneously.\n\nSlots:\n- Seeds: 4 seed slots (mix any types)\n- Soil: 1 slot (affects speed & yield)\n- Output: 9 harvest slots\n\nFluids:\n- Fertilizer tank: boosts crop yield (optional)\n- Growth Solution tank: boosts processing speed (optional)\n\nSoils — cost / yield multiplier:\n  Dirt ×2 cost / ×1 yield\n  Grass Block ×1.5 / ×1\n  Yellow Soil ×1 / ×1\n  Red Soil ×0.75 / ×2\n  Blue Soil ×0.5 / ×3\n  Black Soil ×0.25 / ×4\n\nFertilizers:\n  Organic — ×1.10 yield, 100 mB/cycle\n  Enriched — ×1.25 yield, 80 mB/cycle\n  Industrial — ×1.50 yield, 60 mB/cycle\n\nGrowth Solutions:\n  Bio — ×1.20 speed, 100 mB/cycle\n  Nutrient — ×1.40 speed, 80 mB/cycle\n  Advanced Catalyst — ×1.70 speed, 60 mB/cycle\n\nRequires: 1 Industrial Energy Port, 2 Industrial Fluid Ports, 1 Industrial Item Port\nEnergy buffer: 200,000 DE
 ui.aoc:info.fuel_burner=Burns stored liquid fuel to generate §eDE§r.\n\nMultiblock IO:\n- Fluid input: fuel tank\n- Energy: exported through energy valves
 ui.aoc:info.fluid_storage=Stores up to seven fluids in independent tanks.\n\nMultiblock IO:\n- Each fluid valve can target Any Tank or a specific tank 1-7\n- Every tank supports input and output
+
+## ── IO Mode Descriptions ─────────────────────────────────────────────────────
 ui.aoc:io.fuel_mixer.liquids=IO Modes:\n§r- §9Input Tank 1\n§r- §9Input Tank 2\n§r- §cOutput Tank
 ui.aoc:io.fermenter.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cResidue Output
 ui.aoc:io.fermenter.liquids=IO Modes:\n§r- §cFluid Output
@@ -134,6 +144,8 @@ ui.aoc:io.polymerizer.liquids=IO Modes:\n§r- §9Resin Input
 ui.aoc:io.industrial_crusher.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cOutputs 1-9
 ui.aoc:io.nuclear_processor.items=IO Modes:\n§r- §9Inputs 1-4
 ui.aoc:io.nuclear_processor.liquids=IO Modes:\n§r- §9Fluid Input\n§r- §cFluid Output
+ui.aoc:io.greenhouse.liquids=IO Modes:\n§r- §9Any Fluid Tank (both)\n§r- §9Fertilizer Tank\n§r- §9Growth Solution Tank
+ui.aoc:io.greenhouse.items=IO Modes:\n§r- §cHarvest Output (slots 10-18)
 
 ## ── Creative Fluid Tanks ─────────────────────────────────────────────────────
 tile.utilitycraft:creative_ethanol_tank.name=Creative Ethanol Tank\n§o§9@UC: Advance Chemistry
@@ -148,6 +160,15 @@ tile.utilitycraft:creative_petrol_tank.name=Creative Petrol Tank\n§o§9@UC: Adv
 tile.utilitycraft:creative_naphtha_tank.name=Creative Naphtha Tank\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:creative_plastic_resin_tank.name=Creative Plastic Resin Tank\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Creative Hydrocarbon Blend Tank\n§o§9@UC: Advance Chemistry
+
+## ── Creative Agronomic Tanks ─────────────────────────────────────────────────
+tile.utilitycraft:creative_fertilizer_org_tank.name=Creative Organic Fertilizer Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_enriched_tank.name=Creative Enriched Fertilizer Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_industrial_tank.name=Creative Industrial Fertilizer Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_bio_growth_solution_tank.name=Creative Bio Growth Solution Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_nutrient_growth_solution_tank.name=Creative Nutrient Growth Solution Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_advanced_growth_catalyst_tank.name=Creative Advanced Growth Catalyst Tank\n§o§9@UC: Advance Chemistry
+
 ## ══════════════════════════════════════════════════════════
 ## Advance Chemistry — How To Play
 ## ══════════════════════════════════════════════════════════
@@ -232,11 +253,17 @@ howtoplay.aoc.multiblock.p_refinery=Processes §7Crude Oil§r into multiple refi
 howtoplay.aoc.multiblock.h_fluid_storage=Fluid Storage
 howtoplay.aoc.multiblock.p_fluid_storage=Large-capacity multiblock tank for storing one fluid type at a time.\n\n§aCapacity:§r Scales with structure size\n§7Requires:§r Fluid Storage Casings + Monitor\n\nConnect using §bFluid Valves§r on the monitor faces.
 
+howtoplay.aoc.multiblock.h_greenhouse=Industrial Greenhouse
+howtoplay.aoc.multiblock.p_greenhouse=A 5×5×5 industrial crop processor that grows up to §b4 seed types simultaneously§r.\n\n§lStructure:§r\n§7Outer shell:§r Industrial Casing + Industrial Ports\n§7Interior:§r hollow (the growing chamber)\n§7Controller:§r Greenhouse Controller\n\n§lRequired ports:§r\n§e1× Industrial Energy Port§r — powers the machine\n§92× Industrial Fluid Ports§r — fertilizer + growth solution input\n§a1× Industrial Item Port§r — harvest output\n\n§lFluids (both optional — machine runs without them):§r\n§aFertilizer§r boosts crop §lyield§r (×1.10 / ×1.25 / ×1.50)\n§bGrowth Solution§r boosts processing §lspeed§r (×1.20 / ×1.40 / ×1.70)\n\n§lSoil types (1 per chamber):§r\n§fDirt§r — base\n§aYellow Soil§r — ×1.0 yield\n§cRed Soil§r — ×2.0 yield\n§9Blue Soil§r — ×3.0 yield\n§8Black Soil§r — ×4.0 yield (fastest + most output)\n\n§7Output halts when all 9 harvest slots are full. Clear them to resume.§r
+
 howtoplay.aoc.multiblock.h_fluid_valve=Fluid Valve
 howtoplay.aoc.multiblock.p_fluid_valve=Controls fluid flow direction between machines and tanks.\n\nRight-click to cycle: §aInput§r → §cOutput§r → §7Disabled§r\nUse a §eWrench§r to set a fluid type filter.
 
 howtoplay.aoc.multiblock.h_energy_valve=Energy Valve
 howtoplay.aoc.multiblock.p_energy_valve=Controls §eDE§r flow direction between generators and machines.\n\nRight-click to set direction. Wrench to set a transfer rate limit.\n\n§7Use these to distribute power from generators without overloading connections.§r
+
+howtoplay.aoc.multiblock.h_ind_ports=Industrial Ports
+howtoplay.aoc.multiblock.p_ind_ports=Industrial ports are the exclusive connection points for the §bIndustrial Greenhouse§r multiblock. They replace standard valves for this structure.\n\n§eIndustrial Energy Port§r — accepts §eDE§r into the greenhouse\n§9Industrial Fluid Port§r — inputs fertilizer or growth solution; use a §eWrench§r to configure which tank each port targets\n§aIndustrial Item Port§r — exports harvested crops from the 9 output slots\n\n§7Standard fluid valves and energy valves are §cnot§r accepted by the greenhouse structure. Use industrial ports exclusively.§r
 
 ## ══════════════════════════════════════════════════════════
 ## GENERATORS

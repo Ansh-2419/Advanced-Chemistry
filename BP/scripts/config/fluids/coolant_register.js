@@ -1,10 +1,60 @@
+import { system } from "@minecraft/server";
 import * as DoriosLib from "DoriosLib/index.js";
 
-const coolantsRegister = {
-    "ethanol": {
-        efficiency: 1.75,
-        tier: 2
-    }
-}
+// Coolants owned by this pack (Advance Chemistry).
+export const coolantAdditions = {
+    liquid_nitrogen: {
+        efficiency: 2,
+        tier: 2,
+    },
+};
 
-DoriosLib.registry.registerCoolant(coolantsRegister);
+// Known coolant owned by Ascendant Technology. It is kept local so Advance Chemistry
+// machines remain compatible even if the remote registration is dispatched
+// after their first processing tick.
+const ascendantCoolants = {
+    cryofluid: {
+        efficiency: 1.75,
+        tier: 2,
+    },
+};
+
+// Known coolant owned by Heavy Machinery. It is kept local so Advance Chemistry
+// machines remain compatible even if the remote registration is dispatched
+// after their first processing tick.
+export const compatibleCoolants = {
+    saline_coolant: {
+        efficiency: 1.25,
+        tier: 1,
+    },
+};
+
+// Keep this map event-driven, matching UtilityCraft and Heavy Machinery.
+// UtilityCraft publishes Water, Heavy Machinery publishes Saline Coolant, and
+// this pack publishes liquid_nitrogen; every loaded pack receives the same registry.
+export const coolants = {
+    ...coolantAdditions,
+    ...ascendantCoolants,
+    ...compatibleCoolants,
+};
+
+DoriosLib.registry.registerCoolant(coolantAdditions);
+
+system.afterEvents.scriptEventReceive.subscribe(({ id, message }) => {
+    if (id !== DoriosLib.registry.REGISTRATION_EVENT_IDS.COOLANT) return;
+    try {
+        const payload = JSON.parse(message);
+        if (!payload || typeof payload !== "object" || Array.isArray(payload)) return;
+        for (const [fluidType, data] of Object.entries(payload)) {
+            if (!data || typeof data !== "object" || Array.isArray(data)) continue;
+            const efficiency = Number(data.efficiency);
+            if (!Number.isFinite(efficiency) || efficiency <= 0) continue;
+            coolants[fluidType] = {
+                efficiency,
+                tier: Number.isFinite(data.tier) ? Number(data.tier) : 0,
+            };
+        }
+    } catch (error) {
+        console.warn("[Advance chemistry] Failed to parse coolant registration:", error);
+    }
+});

@@ -202,7 +202,7 @@
         "utilitycraft_steam_fluid": {
             "textures": "textures/entity/fluids/steam"
         },
-      "ind_energy_port": {
+        "ind_energy_port": {
             "textures": "textures/blocks/caseing/ind_energy_port"
         },
         "ind_fluid_port": {
@@ -210,6 +210,21 @@
         },
         "ind_item_port": {
             "textures": "textures/blocks/caseing/ind_item_port"
+        },
+        "utilitycraft_liquid_nitrogen_fluid": {
+            "textures": "textures/entity/fluids/liquid_nitrogen"
+        },
+        "utilitycraft_nitrite_compound_fluid": {
+            "textures": "textures/entity/fluids/nitrite_compound"
+        },
+        "utilitycraft_bio_growth_solution_fluid": {
+            "textures": "textures/entity/fluids/bio_growth_solution"
+        },
+        "utilitycraft_advanced_growth_catalyst_fluid": {
+            "textures": "textures/entity/fluids/advanced_growth_catalyst"
+        },
+        "utilitycraft_nutrient_growth_solution_fluid": {
+            "textures": "textures/entity/fluids/nutrient_growth_solution"
         }
     }
 }
