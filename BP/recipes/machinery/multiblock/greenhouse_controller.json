@@ -1,0 +1,39 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:greenhouse_controller"
+        },
+        "tags": [
+            "utilitycraft_workbench"
+        ],
+        "pattern": [
+            "ABA",
+            "CDC",
+            "ABA"
+        ],
+        "key": {
+            "A": {
+                "item": "utilitycraft:adamant_ingot"
+            },
+            "D": {
+                "item": "utilitycraft:industrial_caseing"
+            },
+            "C": {
+                "item": "utilitycraft:hdpe_sheet"
+            },
+            "B": {
+                "item": "utilitycraft:industrial_chip"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:greenhouse_controller",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:industrial_caseing"
+            }
+        ]
+    }
+}

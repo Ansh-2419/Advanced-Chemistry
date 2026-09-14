@@ -1,0 +1,36 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:ind_energy_port"
+        },
+        "tags": [
+            "utilitycraft_workbench"
+        ],
+        "pattern": [
+            "ABA",
+            "BCB",
+            "ABA"
+        ],
+        "key": {
+            "A": {
+                "item": "utilitycraft:voltanium_Ingot"
+            },
+            "B": {
+                "item": "utilitycraft:hdpe_sheet"
+            },
+            "C": {
+                "item": "utilitycraft:energy_cable"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:ind_energy_port",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:voltanium_Ingot"
+            }
+        ]
+    }
+}

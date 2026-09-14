@@ -7,13 +7,13 @@ ac:itemGroup.name.aoc_tank=Creative Tanks
 ac:itemGroup.name.endstone_generators=Endstone Generators
 
 ## ── Singleblock Machines ─────────────────────────────────────────────────────
-tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:chemical_reactor.name=Chemical Reactor\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:chemical_reactor.name=Chemical Reactor\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 
 ## ── Industrial Generators ────────────────────────────────────────────────────
 tile.utilitycraft:ind_magmator.name=Industrial Magmator\n§o§9@UC: Advance Chemistry
@@ -82,6 +82,7 @@ item.utilitycraft:hdpe_pellet=HDPE Pellet\n§o§9@UC: Advance Chemistry
 item.utilitycraft:hdpe_sheet=HDPE Sheet\n§o§9@UC: Advance Chemistry
 item.utilitycraft:industrial_chip=Industrial Chip\n§o§9@UC: Advance Chemistry
 item.utilitycraft:adamant_ingot=Adamant Ingot\n§o§9@UC: Advance Chemistry
+item.utilitycraft:compost=Compost \n§o§9@UC: Advance Chemistry
 
 ## ── Voltanium Armor & Tools ──────────────────────────────────────────────────
 item.utilitycraft:voltanium_helmet=Voltanium Helmet\n§o§9@UC: Advance Chemistry

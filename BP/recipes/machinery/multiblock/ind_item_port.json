@@ -1,0 +1,39 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:ind_item_port"
+        },
+        "tags": [
+            "utilitycraft_workbench"
+        ],
+        "pattern": [
+            "ABA",
+            "CDC",
+            "ABA"
+        ],
+        "key": {
+            "A": {
+                "item": "utilitycraft:voltanium_Ingot"
+            },
+            "B": {
+                "item": "utilitycraft:item_conduit"
+            },
+            "C": {
+                "item": "utilitycraft:hdpe_sheet"
+            },
+            "D": {
+                "item": "utilitycraft:industrial_chip"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:ind_item_port",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:voltanium_Ingot"
+            }
+        ]
+    }
+}

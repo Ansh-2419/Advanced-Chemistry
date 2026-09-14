@@ -1,0 +1,39 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:industrial_caseing"
+        },
+        "tags": [
+            "utilitycraft_workbench"
+        ],
+        "pattern": [
+            "ABA",
+            "CDC",
+            "ABA"
+        ],
+        "key": {
+            "A": {
+                "item": "utilitycraft:voltanium_ingot"
+            },
+            "B": {
+                "item": "utilitycraft:hdpe_sheet"
+            },
+            "C": {
+                "item": "minecraft:glass"
+            },
+            "D": {
+                "item": "utilitycraft:machine_case"
+            }
+        },
+        "result": {
+            "item": "utilitycraft:industrial_caseing",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "utilitycraft:machine_case"
+            }
+        ]
+    }
+}
