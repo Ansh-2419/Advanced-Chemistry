@@ -8,7 +8,6 @@ import "./singleblock/separator.js";
 import "./singleblock/polymerizer.js";
 import "./singleblock/relic_synthesizer.js";
 import "./singleblock/industrial_crusher.js";
-import "./singleblock/nuclear_processor.js";
 
 //multiblock
 import "./multiblock/index.js";

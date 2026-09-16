@@ -1538,155 +1538,11 @@
         "utilitycraft:actinide_solution_48": {
             "textures": "textures/ui/fluid_bar/actinide_solution_bar/actinide_solution_bar_48"
         },
-        "utilitycraft:thorium_solution_00": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_00"
-        },
-        "utilitycraft:thorium_solution_01": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_01"
-        },
-        "utilitycraft:thorium_solution_02": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_02"
-        },
-        "utilitycraft:thorium_solution_03": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_03"
-        },
-        "utilitycraft:thorium_solution_04": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_04"
-        },
-        "utilitycraft:thorium_solution_05": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_05"
-        },
-        "utilitycraft:thorium_solution_06": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_06"
-        },
-        "utilitycraft:thorium_solution_07": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_07"
-        },
-        "utilitycraft:thorium_solution_08": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_08"
-        },
-        "utilitycraft:thorium_solution_09": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_09"
-        },
-        "utilitycraft:thorium_solution_10": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_10"
-        },
-        "utilitycraft:thorium_solution_11": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_11"
-        },
-        "utilitycraft:thorium_solution_12": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_12"
-        },
-        "utilitycraft:thorium_solution_13": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_13"
-        },
-        "utilitycraft:thorium_solution_14": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_14"
-        },
-        "utilitycraft:thorium_solution_15": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_15"
-        },
-        "utilitycraft:thorium_solution_16": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_16"
-        },
-        "utilitycraft:thorium_solution_17": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_17"
-        },
-        "utilitycraft:thorium_solution_18": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_18"
-        },
-        "utilitycraft:thorium_solution_19": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_19"
-        },
-        "utilitycraft:thorium_solution_20": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_20"
-        },
-        "utilitycraft:thorium_solution_21": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_21"
-        },
-        "utilitycraft:thorium_solution_22": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_22"
-        },
-        "utilitycraft:thorium_solution_23": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_23"
-        },
-        "utilitycraft:thorium_solution_24": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_24"
-        },
-        "utilitycraft:thorium_solution_25": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_25"
-        },
-        "utilitycraft:thorium_solution_26": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_26"
-        },
-        "utilitycraft:thorium_solution_27": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_27"
-        },
-        "utilitycraft:thorium_solution_28": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_28"
-        },
-        "utilitycraft:thorium_solution_29": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_29"
-        },
-        "utilitycraft:thorium_solution_30": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_30"
-        },
-        "utilitycraft:thorium_solution_31": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_31"
-        },
-        "utilitycraft:thorium_solution_32": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_32"
-        },
-        "utilitycraft:thorium_solution_33": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_33"
-        },
-        "utilitycraft:thorium_solution_34": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_34"
-        },
-        "utilitycraft:thorium_solution_35": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_35"
-        },
-        "utilitycraft:thorium_solution_36": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_36"
-        },
-        "utilitycraft:thorium_solution_37": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_37"
-        },
-        "utilitycraft:thorium_solution_38": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_38"
-        },
-        "utilitycraft:thorium_solution_39": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_39"
-        },
-        "utilitycraft:thorium_solution_40": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_40"
-        },
-        "utilitycraft:thorium_solution_41": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_41"
-        },
-        "utilitycraft:thorium_solution_42": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_42"
-        },
-        "utilitycraft:thorium_solution_43": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_43"
-        },
-        "utilitycraft:thorium_solution_44": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_44"
-        },
-        "utilitycraft:thorium_solution_45": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_45"
-        },
-        "utilitycraft:thorium_solution_46": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_46"
-        },
-        "utilitycraft:thorium_solution_47": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_47"
-        },
-        "utilitycraft:thorium_solution_48": {
-            "textures": "textures/ui/fluid_bar/thorium_solution_bar_48"
-        },
         "thorium_concentrate": {
             "textures": "textures/items/ingot/thorium_concentrate"
+        },
+        "thorium_chunk": {
+            "textures": "textures/items/ingot/thorium_chunk"
         },
         "adamant_mesh": {
             "textures": "textures/items/misc/adamant_mesh"
@@ -2572,6 +2428,447 @@
         },
         "utilitycraft:nitrite_compound_48": {
             "textures": "textures/ui/fluid_bar/nitrite_compound_bar/nitrite_compound_frame_48"
+        },
+        "utilitycraft:fissile_fuel_00": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_00"
+        },
+        "utilitycraft:fissile_fuel_01": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_01"
+        },
+        "utilitycraft:fissile_fuel_02": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_02"
+        },
+        "utilitycraft:fissile_fuel_03": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_03"
+        },
+        "utilitycraft:fissile_fuel_04": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_04"
+        },
+        "utilitycraft:fissile_fuel_05": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_05"
+        },
+        "utilitycraft:fissile_fuel_06": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_06"
+        },
+        "utilitycraft:fissile_fuel_07": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_07"
+        },
+        "utilitycraft:fissile_fuel_08": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_08"
+        },
+        "utilitycraft:fissile_fuel_09": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_09"
+        },
+        "utilitycraft:fissile_fuel_10": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_10"
+        },
+        "utilitycraft:fissile_fuel_11": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_11"
+        },
+        "utilitycraft:fissile_fuel_12": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_12"
+        },
+        "utilitycraft:fissile_fuel_13": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_13"
+        },
+        "utilitycraft:fissile_fuel_14": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_14"
+        },
+        "utilitycraft:fissile_fuel_15": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_15"
+        },
+        "utilitycraft:fissile_fuel_16": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_16"
+        },
+        "utilitycraft:fissile_fuel_17": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_17"
+        },
+        "utilitycraft:fissile_fuel_18": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_18"
+        },
+        "utilitycraft:fissile_fuel_19": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_19"
+        },
+        "utilitycraft:fissile_fuel_20": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_20"
+        },
+        "utilitycraft:fissile_fuel_21": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_21"
+        },
+        "utilitycraft:fissile_fuel_22": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_22"
+        },
+        "utilitycraft:fissile_fuel_23": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_23"
+        },
+        "utilitycraft:fissile_fuel_24": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_24"
+        },
+        "utilitycraft:fissile_fuel_25": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_25"
+        },
+        "utilitycraft:fissile_fuel_26": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_26"
+        },
+        "utilitycraft:fissile_fuel_27": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_27"
+        },
+        "utilitycraft:fissile_fuel_28": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_28"
+        },
+        "utilitycraft:fissile_fuel_29": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_29"
+        },
+        "utilitycraft:fissile_fuel_30": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_30"
+        },
+        "utilitycraft:fissile_fuel_31": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_31"
+        },
+        "utilitycraft:fissile_fuel_32": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_32"
+        },
+        "utilitycraft:fissile_fuel_33": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_33"
+        },
+        "utilitycraft:fissile_fuel_34": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_34"
+        },
+        "utilitycraft:fissile_fuel_35": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_35"
+        },
+        "utilitycraft:fissile_fuel_36": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_36"
+        },
+        "utilitycraft:fissile_fuel_37": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_37"
+        },
+        "utilitycraft:fissile_fuel_38": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_38"
+        },
+        "utilitycraft:fissile_fuel_39": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_39"
+        },
+        "utilitycraft:fissile_fuel_40": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_40"
+        },
+        "utilitycraft:fissile_fuel_41": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_41"
+        },
+        "utilitycraft:fissile_fuel_42": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_42"
+        },
+        "utilitycraft:fissile_fuel_43": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_43"
+        },
+        "utilitycraft:fissile_fuel_44": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_44"
+        },
+        "utilitycraft:fissile_fuel_45": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_45"
+        },
+        "utilitycraft:fissile_fuel_46": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_46"
+        },
+        "utilitycraft:fissile_fuel_47": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_47"
+        },
+        "utilitycraft:fissile_fuel_48": {
+            "textures": "textures/ui/fluid_bar/fissile_fuel_bar/fissile_fuel_frame_48"
+        },
+        "utilitycraft:nuclear_waste_00": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_00"
+        },
+        "utilitycraft:nuclear_waste_01": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_01"
+        },
+        "utilitycraft:nuclear_waste_02": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_02"
+        },
+        "utilitycraft:nuclear_waste_03": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_03"
+        },
+        "utilitycraft:nuclear_waste_04": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_04"
+        },
+        "utilitycraft:nuclear_waste_05": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_05"
+        },
+        "utilitycraft:nuclear_waste_06": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_06"
+        },
+        "utilitycraft:nuclear_waste_07": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_07"
+        },
+        "utilitycraft:nuclear_waste_08": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_08"
+        },
+        "utilitycraft:nuclear_waste_09": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_09"
+        },
+        "utilitycraft:nuclear_waste_10": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_10"
+        },
+        "utilitycraft:nuclear_waste_11": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_11"
+        },
+        "utilitycraft:nuclear_waste_12": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_12"
+        },
+        "utilitycraft:nuclear_waste_13": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_13"
+        },
+        "utilitycraft:nuclear_waste_14": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_14"
+        },
+        "utilitycraft:nuclear_waste_15": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_15"
+        },
+        "utilitycraft:nuclear_waste_16": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_16"
+        },
+        "utilitycraft:nuclear_waste_17": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_17"
+        },
+        "utilitycraft:nuclear_waste_18": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_18"
+        },
+        "utilitycraft:nuclear_waste_19": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_19"
+        },
+        "utilitycraft:nuclear_waste_20": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_20"
+        },
+        "utilitycraft:nuclear_waste_21": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_21"
+        },
+        "utilitycraft:nuclear_waste_22": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_22"
+        },
+        "utilitycraft:nuclear_waste_23": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_23"
+        },
+        "utilitycraft:nuclear_waste_24": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_24"
+        },
+        "utilitycraft:nuclear_waste_25": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_25"
+        },
+        "utilitycraft:nuclear_waste_26": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_26"
+        },
+        "utilitycraft:nuclear_waste_27": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_27"
+        },
+        "utilitycraft:nuclear_waste_28": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_28"
+        },
+        "utilitycraft:nuclear_waste_29": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_29"
+        },
+        "utilitycraft:nuclear_waste_30": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_30"
+        },
+        "utilitycraft:nuclear_waste_31": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_31"
+        },
+        "utilitycraft:nuclear_waste_32": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_32"
+        },
+        "utilitycraft:nuclear_waste_33": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_33"
+        },
+        "utilitycraft:nuclear_waste_34": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_34"
+        },
+        "utilitycraft:nuclear_waste_35": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_35"
+        },
+        "utilitycraft:nuclear_waste_36": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_36"
+        },
+        "utilitycraft:nuclear_waste_37": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_37"
+        },
+        "utilitycraft:nuclear_waste_38": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_38"
+        },
+        "utilitycraft:nuclear_waste_39": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_39"
+        },
+        "utilitycraft:nuclear_waste_40": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_40"
+        },
+        "utilitycraft:nuclear_waste_41": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_41"
+        },
+        "utilitycraft:nuclear_waste_42": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_42"
+        },
+        "utilitycraft:nuclear_waste_43": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_43"
+        },
+        "utilitycraft:nuclear_waste_44": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_44"
+        },
+        "utilitycraft:nuclear_waste_45": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_45"
+        },
+        "utilitycraft:nuclear_waste_46": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_46"
+        },
+        "utilitycraft:nuclear_waste_47": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_47"
+        },
+        "utilitycraft:nuclear_waste_48": {
+            "textures": "textures/ui/fluid_bar/nuclear_waste_bar/nuclear_waste_frame_48"
+        },
+        "utilitycraft:irradiated_fuel_00": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_00"
+        },
+        "utilitycraft:irradiated_fuel_01": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_01"
+        },
+        "utilitycraft:irradiated_fuel_02": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_02"
+        },
+        "utilitycraft:irradiated_fuel_03": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_03"
+        },
+        "utilitycraft:irradiated_fuel_04": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_04"
+        },
+        "utilitycraft:irradiated_fuel_05": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_05"
+        },
+        "utilitycraft:irradiated_fuel_06": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_06"
+        },
+        "utilitycraft:irradiated_fuel_07": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_07"
+        },
+        "utilitycraft:irradiated_fuel_08": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_08"
+        },
+        "utilitycraft:irradiated_fuel_09": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_09"
+        },
+        "utilitycraft:irradiated_fuel_10": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_10"
+        },
+        "utilitycraft:irradiated_fuel_11": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_11"
+        },
+        "utilitycraft:irradiated_fuel_12": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_12"
+        },
+        "utilitycraft:irradiated_fuel_13": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_13"
+        },
+        "utilitycraft:irradiated_fuel_14": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_14"
+        },
+        "utilitycraft:irradiated_fuel_15": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_15"
+        },
+        "utilitycraft:irradiated_fuel_16": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_16"
+        },
+        "utilitycraft:irradiated_fuel_17": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_17"
+        },
+        "utilitycraft:irradiated_fuel_18": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_18"
+        },
+        "utilitycraft:irradiated_fuel_19": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_19"
+        },
+        "utilitycraft:irradiated_fuel_20": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_20"
+        },
+        "utilitycraft:irradiated_fuel_21": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_21"
+        },
+        "utilitycraft:irradiated_fuel_22": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_22"
+        },
+        "utilitycraft:irradiated_fuel_23": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_23"
+        },
+        "utilitycraft:irradiated_fuel_24": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_24"
+        },
+        "utilitycraft:irradiated_fuel_25": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_25"
+        },
+        "utilitycraft:irradiated_fuel_26": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_26"
+        },
+        "utilitycraft:irradiated_fuel_27": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_27"
+        },
+        "utilitycraft:irradiated_fuel_28": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_28"
+        },
+        "utilitycraft:irradiated_fuel_29": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_29"
+        },
+        "utilitycraft:irradiated_fuel_30": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_30"
+        },
+        "utilitycraft:irradiated_fuel_31": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_31"
+        },
+        "utilitycraft:irradiated_fuel_32": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_32"
+        },
+        "utilitycraft:irradiated_fuel_33": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_33"
+        },
+        "utilitycraft:irradiated_fuel_34": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_34"
+        },
+        "utilitycraft:irradiated_fuel_35": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_35"
+        },
+        "utilitycraft:irradiated_fuel_36": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_36"
+        },
+        "utilitycraft:irradiated_fuel_37": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_37"
+        },
+        "utilitycraft:irradiated_fuel_38": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_38"
+        },
+        "utilitycraft:irradiated_fuel_39": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_39"
+        },
+        "utilitycraft:irradiated_fuel_40": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_40"
+        },
+        "utilitycraft:irradiated_fuel_41": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_41"
+        },
+        "utilitycraft:irradiated_fuel_42": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_42"
+        },
+        "utilitycraft:irradiated_fuel_43": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_43"
+        },
+        "utilitycraft:irradiated_fuel_44": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_44"
+        },
+        "utilitycraft:irradiated_fuel_45": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_45"
+        },
+        "utilitycraft:irradiated_fuel_46": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_46"
+        },
+        "utilitycraft:irradiated_fuel_47": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_47"
+        },
+        "utilitycraft:irradiated_fuel_48": {
+            "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_48"
         }
     }
 }

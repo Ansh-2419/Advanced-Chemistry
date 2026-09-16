@@ -22,11 +22,11 @@ const nativeRecipes = [
     }),
     defineRecipe({
         id:        'aoc:refine_thorium',
-        input:     { type: 'actinide_solution', amount: 1000 },
-        output1:   { type: 'thorium_solution',    amount: 250  },
-        output2:   { type: 'phosphate_solution',    amount: 300  },
-        output3:   { type: 'water',   amount: 450  },
-        energyCost: 28_000,
+        input:     { type: 'irradiated_fuel', amount: 1000 },
+        output1:   { type: 'fissile_fuel',    amount: 250  },
+        output2:   { type: 'phosphate_solution',    amount: 450  },
+        output3:   { type: 'nuclear_waste',   amount: 300  },
+        energyCost: 38_000,
     }),
 ];
 

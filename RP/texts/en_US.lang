@@ -7,13 +7,13 @@ ac:itemGroup.name.aoc_tank=Creative Tanks
 ac:itemGroup.name.endstone_generators=Endstone Generators
 
 ## ── Singleblock Machines ─────────────────────────────────────────────────────
-tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:chemical_reactor.name=Chemical Reactor\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades: \n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:chemical_reactor.name=Chemical Reactor\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 
 ## ── Industrial Generators ────────────────────────────────────────────────────
 tile.utilitycraft:ind_magmator.name=Industrial Magmator\n§o§9@UC: Advance Chemistry
@@ -82,7 +82,6 @@ item.utilitycraft:hdpe_pellet=HDPE Pellet\n§o§9@UC: Advance Chemistry
 item.utilitycraft:hdpe_sheet=HDPE Sheet\n§o§9@UC: Advance Chemistry
 item.utilitycraft:industrial_chip=Industrial Chip\n§o§9@UC: Advance Chemistry
 item.utilitycraft:adamant_ingot=Adamant Ingot\n§o§9@UC: Advance Chemistry
-item.utilitycraft:compost=Compost \n§o§9@UC: Advance Chemistry
 
 ## ── Voltanium Armor & Tools ──────────────────────────────────────────────────
 item.utilitycraft:voltanium_helmet=Voltanium Helmet\n§o§9@UC: Advance Chemistry
@@ -286,3 +285,32 @@ howtoplay.aoc.generators.p_thermo=Uses a temperature difference between hot and 
 
 howtoplay.aoc.generators.h_wind=Industrial Wind Turbine
 howtoplay.aoc.generators.p_wind=Generates §eDE§r from wind with no fuel cost.\n\nHigher placement can increase output.\n§aOutput:§r Low–medium DE (passive)\n§cInput:§r Wind
+
+## ── Nuclear Reactor Multiblock ───────────────────────────────────────────────
+tile.utilitycraft:nuclear_reactor_controller.name=Nuclear Reactor Controller
+§o§9@UC: Advance Chemistry
+entity.utilitycraft:nuclear_reactor_multiblock.name=Nuclear Reactor
+
+## ── Nuclear Reactor Fluids ───────────────────────────────────────────────────
+fluid.utilitycraft.liquified_thorium=Liquified Thorium
+fluid.utilitycraft.nuclear_waste=Nuclear Waste
+
+## ── Nuclear Reactor UI ───────────────────────────────────────────────────────
+ui.aoc:info.nuclear_reactor=3×3×3 nuclear fission reactor.
+
+Consumes §eLiquified Thorium§r and a §bcoolant§r to generate §eDE§r, with §2Nuclear Waste§r as a byproduct.
+
+Coolants and their speed multipliers:
+  §fWater §7— ×1.0 speed, 150 mB/cycle
+  §bSaline Coolant §7— ×1.5 speed, 100 mB/cycle
+  §3Liquid Nitrogen §7— ×2.0 speed, 60 mB/cycle
+
+Without coolant: ×0.5 speed, no fluid cost.
+
+Per reaction cycle:
+  §cThorium consumed: §f50 mB
+  §eEnergy produced:  §f50 000 DE
+  §2Waste produced:   §f10 mB
+
+Throttles automatically when energy buffer reaches 95%%.
+Requires: §92× Industrial Fluid Port  §e1× Industrial Energy Port

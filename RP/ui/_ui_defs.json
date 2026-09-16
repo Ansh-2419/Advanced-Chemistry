@@ -6,6 +6,7 @@
         "ui/multi/fuel_burner.json",
         "ui/multi/refinery.json",
         "ui/multi/greenhouse.json",
+        "ui/multi/nuclear_reactor.json",
 
         "ui/tier_1/chemical_reactor.json",
         "ui/tier_1/fermenter.json",
@@ -22,6 +23,5 @@
         "ui/recipes/polymerizer_recipes.json",
         "ui/recipes/relic_synthesizer_recipes.json",
 
-        "ui/nuclear_processor.json"
     ]
 }

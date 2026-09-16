@@ -225,6 +225,15 @@
         },
         "utilitycraft_nutrient_growth_solution_fluid": {
             "textures": "textures/entity/fluids/nutrient_growth_solution"
+        },
+        "nuclear_reactor_controller": {
+            "textures": "textures/blocks/multi_face/nuclear_reactor_controller"
+        },
+        "utilitycraft_liquified_thorium_fluid": {
+            "textures": "textures/entity/fluids/liquified_thorium"
+        },
+        "utilitycraft_nuclear_waste_fluid": {
+            "textures": "textures/entity/fluids/nuclear_waste"
         }
     }
 }

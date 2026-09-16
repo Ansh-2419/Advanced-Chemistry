@@ -47,7 +47,7 @@ const PORT_REQ = {
 
 // ── Multiblock config ─────────────────────────────────────────────────────────
 const CONFIG = {
-    required_case: "dorios:multiblock.case.greenhouse",
+    required_case: "dorios:multiblock.case.ind",
     entity: {
         identifier:     "utilitycraft:greenhouse_multiblock",
         name:           "greenhouse_controller",

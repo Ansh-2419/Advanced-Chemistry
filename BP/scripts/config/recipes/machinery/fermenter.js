@@ -47,14 +47,20 @@ const nativeRecipes = [
     }),
     defineRecipe({
         id: "utilitycraft:lava_from_lava_ball",
-        input:      { id: "utilitycraft:lava_ball", amount: 64 },
+        input:      { id: "utilitycraft:lava_ball", amount: 1 },
         fluid:      { type: "lava", amount: 1000 },
-        energyCost: 6400, seconds: 4,
+        energyCost: 6400, seconds: 2,
     }),
     defineRecipe({
         id: "utilitycraft:water_from_water_ball",
-        input:      { id: "utilitycraft:water_ball", amount: 64 },
+        input:      { id: "utilitycraft:water_ball", amount: 1 },
         fluid:      { type: "water", amount: 1000 },
+        energyCost: 6400, seconds: 2,
+    }),
+  defineRecipe({
+        id: "utilitycraft:liquified_thorium_from_thorium_chunk",
+        input:      { id: "utilitycraft:thorium_chunk", amount: 8 },
+        fluid:      { type: "liquified_thorium", amount: 1000 },
         energyCost: 6400, seconds: 4,
     }),
 
