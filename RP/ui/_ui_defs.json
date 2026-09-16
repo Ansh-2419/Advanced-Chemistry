@@ -21,7 +21,6 @@
         "ui/recipes/fermenter_recipes.json",
         "ui/recipes/infuser.json",
         "ui/recipes/polymerizer_recipes.json",
-        "ui/recipes/relic_synthesizer_recipes.json",
-
+        "ui/recipes/relic_synthesizer_recipes.json"
     ]
 }

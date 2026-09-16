@@ -1,8 +1,0 @@
-
-1)Nuclear Processor
-Converts the concentrated material from the Mesh into a special Nuclear Metal.
-It uses energy and a chemical reagent, making the first nuclear-processing stage
-feel industrial.
-
-
-2)

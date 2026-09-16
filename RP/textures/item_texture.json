@@ -2869,6 +2869,153 @@
         },
         "utilitycraft:irradiated_fuel_48": {
             "textures": "textures/ui/fluid_bar/irradiated_fuel_bar/irradiated_fuel_frame_48"
+        },
+        "utilitycraft:liquified_thorium_00": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_00"
+        },
+        "utilitycraft:liquified_thorium_01": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_01"
+        },
+        "utilitycraft:liquified_thorium_02": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_02"
+        },
+        "utilitycraft:liquified_thorium_03": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_03"
+        },
+        "utilitycraft:liquified_thorium_04": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_04"
+        },
+        "utilitycraft:liquified_thorium_05": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_05"
+        },
+        "utilitycraft:liquified_thorium_06": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_06"
+        },
+        "utilitycraft:liquified_thorium_07": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_07"
+        },
+        "utilitycraft:liquified_thorium_08": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_08"
+        },
+        "utilitycraft:liquified_thorium_09": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_09"
+        },
+        "utilitycraft:liquified_thorium_10": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_10"
+        },
+        "utilitycraft:liquified_thorium_11": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_11"
+        },
+        "utilitycraft:liquified_thorium_12": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_12"
+        },
+        "utilitycraft:liquified_thorium_13": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_13"
+        },
+        "utilitycraft:liquified_thorium_14": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_14"
+        },
+        "utilitycraft:liquified_thorium_15": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_15"
+        },
+        "utilitycraft:liquified_thorium_16": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_16"
+        },
+        "utilitycraft:liquified_thorium_17": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_17"
+        },
+        "utilitycraft:liquified_thorium_18": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_18"
+        },
+        "utilitycraft:liquified_thorium_19": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_19"
+        },
+        "utilitycraft:liquified_thorium_20": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_20"
+        },
+        "utilitycraft:liquified_thorium_21": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_21"
+        },
+        "utilitycraft:liquified_thorium_22": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_22"
+        },
+        "utilitycraft:liquified_thorium_23": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_23"
+        },
+        "utilitycraft:liquified_thorium_24": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_24"
+        },
+        "utilitycraft:liquified_thorium_25": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_25"
+        },
+        "utilitycraft:liquified_thorium_26": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_26"
+        },
+        "utilitycraft:liquified_thorium_27": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_27"
+        },
+        "utilitycraft:liquified_thorium_28": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_28"
+        },
+        "utilitycraft:liquified_thorium_29": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_29"
+        },
+        "utilitycraft:liquified_thorium_30": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_30"
+        },
+        "utilitycraft:liquified_thorium_31": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_31"
+        },
+        "utilitycraft:liquified_thorium_32": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_32"
+        },
+        "utilitycraft:liquified_thorium_33": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_33"
+        },
+        "utilitycraft:liquified_thorium_34": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_34"
+        },
+        "utilitycraft:liquified_thorium_35": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_35"
+        },
+        "utilitycraft:liquified_thorium_36": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_36"
+        },
+        "utilitycraft:liquified_thorium_37": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_37"
+        },
+        "utilitycraft:liquified_thorium_38": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_38"
+        },
+        "utilitycraft:liquified_thorium_39": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_39"
+        },
+        "utilitycraft:liquified_thorium_40": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_40"
+        },
+        "utilitycraft:liquified_thorium_41": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_41"
+        },
+        "utilitycraft:liquified_thorium_42": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_42"
+        },
+        "utilitycraft:liquified_thorium_43": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_43"
+        },
+        "utilitycraft:liquified_thorium_44": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_44"
+        },
+        "utilitycraft:liquified_thorium_45": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_45"
+        },
+        "utilitycraft:liquified_thorium_46": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_46"
+        },
+        "utilitycraft:liquified_thorium_47": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_47"
+        },
+        "utilitycraft:liquified_thorium_48": {
+            "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_48"
         }
     }
 }

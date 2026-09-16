@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.3.1 (Upcoming)
+## 0.5.0 (Upcoming)
 
 ### CHANGED
 

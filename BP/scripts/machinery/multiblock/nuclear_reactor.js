@@ -238,18 +238,19 @@ function updateLabel(reactor, energy, thoriumTank, coolantTank, wasteTank, statu
     const coolantType = coolantTank.getType();
     let speedLabel;
     if (coolantCfg) {
-        speedLabel = `§f${coolantCfg.label} §7(×${coolantCfg.speedMultiplier.toFixed(1)})`;
+        speedLabel = `§f${coolantCfg.label} §7x${coolantCfg.speedMultiplier.toFixed(1)}`;
     } else if (coolantType === EMPTY) {
-        speedLabel = `§7None §7(×${NO_COOLANT_DIVISOR} speed — add a coolant)`;
+        speedLabel = `§7None §c(add coolant)`;
     } else {
-        speedLabel = `§e${coolantType} §c(Unknown — ×${NO_COOLANT_DIVISOR} speed)`;
+        speedLabel = `§e${coolantType}\n§c Unknown x${NO_COOLANT_DIVISOR}`;
     }
 
     reactor.setLabel([
-        `§6Nuclear Reactor §7| ${status}`,
-        `§r§eThorium: §f${FL(thoriumTank.get())} §7/ §f${FL(thoriumTank.getCap())}`,
-        `§r§bCoolant: ${speedLabel}  §f${FL(coolantTank.get())}`,
-        `§r§2Waste:   §f${FL(wasteTank.get())} §7/ §f${FL(wasteTank.getCap())}`,
-        `§r§eEnergy:  §f${E(energy.get())} §7/ §f${E(energy.getCap())}`,
+        `§6Reactor §7| ${status}`,
+        `§eThorium:\n§f${FL(thoriumTank.get())}/${FL(thoriumTank.getCap())}`,
+        `§bCoolant:\n${speedLabel}`,
+        `§bAmount: §f${FL(coolantTank.get())}`,
+        `§2Waste:\n§f${FL(wasteTank.get())}/${FL(wasteTank.getCap())}`,
+        `§eEnergy:\n§f${E(energy.get())}/${E(energy.getCap())}`,
     ], LABEL_SLOT);
 }

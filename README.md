@@ -88,8 +88,8 @@ Voltanium tools cover every tool type including AIOT, Paxel, and Hammer.
 ## Requirements
 
 - Minecraft Bedrock **1.21+**
-- **[UtilityCraft](https://github.com/your-link-here) — required.** Advance Chemistry is an expansion, not a standalone mod. It adds onto UC's fluid and machine systems and will not function without it.
-- Holiday Creator Features + Beta APIs enabled
+- **[UtilityCraft](https://github.com/DoriosStudios/UtilityCraft) — required.** Advance Chemistry is an expansion, not a standalone mod. It adds onto UC's fluid and machine systems and will not function without it.
+- No Experimental feature Are Needed
 
 ---
 
