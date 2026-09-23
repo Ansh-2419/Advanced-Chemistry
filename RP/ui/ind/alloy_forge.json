@@ -1,0 +1,294 @@
+{
+  "namespace": "alloy_forge",
+
+  "input_1": {
+    "type": "input_panel",
+    "$slot_background_texture|default": "textures/ui/slots/input_9_slot",
+    "size": [18,18],
+    "controls": [
+      {
+        "item@common.container_item": {
+          "$cell_image_size": [18, 18],
+          "layer": 1
+        }
+      },
+      {
+        "slot_background": {
+          "type": "image",
+          "texture": "$slot_background_texture",
+          "size": [18, 18],
+          "layer": 4
+        }
+      }
+    ]
+  },
+  "input_2": {
+    "type": "input_panel",
+    "$slot_background_texture|default": "textures/ui/slots/input_2_slot",
+    "size": [16,16],
+    "controls": [
+      {
+        "item@common.container_item": {
+          "$cell_image_size": [16, 16],
+          "layer": 1
+        }
+      },
+      {
+        "slot_background": {
+          "type": "image",
+          "texture": "$slot_background_texture",
+          "size": [16, 16],
+          "layer": 4
+        }
+      }
+    ]
+  },
+  "input_3": {
+    "type": "input_panel",
+    "$slot_background_texture|default": "textures/ui/slots/input_4_slot",
+    "size": [18,18],
+    "controls": [
+      {
+        "item@common.container_item": {
+          "$cell_image_size": [18, 18],
+          "layer": 1
+        }
+      },
+      {
+        "slot_background": {
+          "type": "image",
+          "texture": "$slot_background_texture",
+          "size": [18, 18],
+          "layer": 4
+        }
+      }
+    ]
+  },
+  "input_4": {
+    "type": "input_panel",
+    "$slot_background_texture|default": "textures/ui/slots/input_8_slot",
+    "size": [20,20],
+    "controls": [
+      {
+        "item@common.container_item": {
+          "$cell_image_size": [20, 20],
+          "layer": 1
+        }
+      },
+      {
+        "slot_background": {
+          "type": "image",
+          "texture": "$slot_background_texture",
+          "size": [20, 20],
+          "layer": 4
+        }
+      }
+    ]
+  },
+
+  "output_slot": {
+    "type": "input_panel",
+    "$slot_background_texture|default": "textures/ui/slots/output_slot",
+    "size": [22, 22],
+    "controls": [
+      {
+        "item@common.container_item": {
+          "$cell_image_size": [22, 22],
+          "layer": 1
+        }
+      },
+      {
+        "slot_background": {
+          "type": "image",
+          "texture": "$slot_background_texture",
+          "size": [22, 22],
+          "layer": 4
+        }
+      }
+    ]
+  },
+
+  "forge_top": {
+    "type": "collection_panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "collection_name": "container_items",
+    "$item_collection_name": "container_items",
+    "size": [162, 72],
+    "offset": [-10, -40],
+    "$right_machine_tabs_name|default": "right_machine_tabs",
+    "$upgrade_toggle_control_name|default": "upgrade_toggle_button",
+    "$io_toggle_control_name|default": "io_toggle_button",
+    "$io_config_tabs_name|default": "io_config_tabs",
+    "$io_items_toggle_control_name|default": "io_items_toggle_button",
+    "$info_toggle_control_name|default": "info_toggle_button",
+    "controls": [
+      { "machine_name@uc.machine_name": {} },
+      { "panel@uc.machine_side_panel": {} },
+      {
+        "item_label@uc.text_label": {
+          "collection_index": 1,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [74, 140],
+          "$text_scale": 0.50,
+          "offset": [-78, 2]
+        }
+      },
+      {
+        "energy_bar@uc.energy_bar": {
+          "$has_bg": false,
+          "offset": [-72, 0]
+        }
+      },
+
+      // ── Top row ──────────────────────────────────────────────────────────
+      {
+        "in_tl@alloy_forge.input_2": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 3, "offset": [-34, 10], "layer": 2
+        }
+      },
+      {
+        "in_tc@alloy_forge.input_3": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 4, "offset": [-10, 8], "layer": 2
+        }
+      },
+      {
+        "in_tr@alloy_forge.input_2": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 5, "offset": [14, 10], "layer": 2
+        }
+      },
+
+      // ── Middle row ────────────────────────────────────────────────────────
+      {
+        "in_ml@alloy_forge.input_4": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 6, "offset": [-34, 28], "layer": 2
+        }
+      },
+      {
+        "in_centre@alloy_forge.input_1": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 7, "offset": [-10, 30], "layer": 2
+        }
+      },
+      {
+        "in_mr@alloy_forge.input_4": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 8, "offset": [14, 28], "layer": 2
+        }
+      },
+
+      // ── Bottom row ────────────────────────────────────────────────────────
+      {
+        "in_bl@alloy_forge.input_2": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 9, "offset": [-34, 48], "layer": 2
+        }
+      },
+      {
+        "in_bc@alloy_forge.input_3": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 10, "offset": [-10, 48], "layer": 2
+        }
+      },
+      {
+        "in_br@alloy_forge.input_2": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 11, "offset": [14, 48], "layer": 2
+        }
+      },
+
+      // ── Progress arrow → Output ───────────────────────────────────────────
+      {
+        "progress_arrow@uc.progress_display": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 2,
+          "offset": [38, 22]
+        }
+      },
+      {
+        "out_slot@alloy_forge.output_slot": {
+          "anchor_from": "top_middle", "anchor_to": "top_middle",
+          "collection_index": 12, "offset": [68, 30], "layer": 1
+        }
+      },
+
+      // ── Tabs ──────────────────────────────────────────────────────────────
+      {
+        "upgrades_tab@uc.upgrades_tab": {
+          "$right_machine_tabs_name": "$right_machine_tabs_name",
+          "$upgrade_toggle_control_name": "$upgrade_toggle_control_name",
+          "$upgrade_index_1": 13,
+          "$upgrade_index_2": 14
+        }
+      },
+      {
+        "io_tab@uc.io_tab": {
+          "$right_machine_tabs_name": "$right_machine_tabs_name",
+          "$io_toggle_control_name": "$io_toggle_control_name",
+          "$io_config_tabs_name": "$io_config_tabs_name",
+          "$io_items_toggle_control_name": "$io_items_toggle_control_name",
+          "$io_items_modes_description": "ui.aoc:io.alloy_forge.items",
+          "$has_item_io": true,
+          "$has_fluid_io": false,
+          "$io_items_default": true,
+          "$io_top_texture":    "textures/blocks/ind_up",
+          "$io_left_texture":   "textures/blocks/ind_side",
+          "$io_front_texture":  "textures/blocks/alloy_forge",
+          "$io_right_texture":  "textures/blocks/ind_side",
+          "$io_bottom_texture": "textures/blocks/ind_bottom",
+          "$io_back_texture":   "textures/blocks/ind_side",
+          "$io_item_top_index":    15,
+          "$io_item_left_index":   16,
+          "$io_item_front_index":  17,
+          "$io_item_right_index":  18,
+          "$io_item_bottom_index": 19,
+          "$io_item_back_index":   20
+        }
+      },
+      {
+        "info_tab@uc.info_tab": {
+          "$right_machine_tabs_name": "$right_machine_tabs_name",
+          "$info_toggle_control_name": "$info_toggle_control_name",
+          "$info_description": "ui.aoc:info.alloy_forge"
+        }
+      }
+    ]
+  },
+
+  "utility_panel": {
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      { "flying_item_renderer@common.flying_item_renderer": { "layer": 14 } },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      { "item_lock_notification_factory@common.item_lock_notification_factory": {} },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "controls": [
+            { "common_panel@common.common_panel": {} },
+            {
+              "chest_panel": {
+                "type": "panel",
+                "layer": 5,
+                "controls": [
+                  { "forge_top@alloy_forge.forge_top": {} },
+                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
+                  { "hotbar_grid@common.hotbar_grid_template": {} },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -11,3 +11,4 @@ import "./singleblock/industrial_crusher.js";
 
 //multiblock
 import "./multiblock/index.js";
+import "./singleblock/alloy_forge.js";

@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:adamant_helmet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "AAA",
+            "A A",
+            "   "
+        ],
+        "key": {
+            "A": {
+                "item": "utilitycraft:adamant_ingot"
+            }
+        },
+        "result": [
+            {
+                "item": "utilitycraft:adamant_helmet"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "utilitycraft:adamant_ingot"
+            }
+        ],
+        "priority": 0
+    }
+}

@@ -14,4 +14,4 @@ import './machinery/chemical_reactor.js';
 import './machinery/separator.js';
 import './machinery/crusher.js';
 import './machinery/relic_synthesizer.js';
-export * from './machinery/refinery.js';
+export * from './machinery/refinery.js';import './machinery/alloy_forge.js';

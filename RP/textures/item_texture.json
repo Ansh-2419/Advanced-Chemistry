@@ -755,6 +755,9 @@
         "v_sword": {
             "textures": "textures/items/tool/v_sword"
         },
+        "a_sword": {
+            "textures": "textures/items/tool/a_sword"
+        },
         "utilitycraft:voltanium_helmet": {
             "textures": "textures/items/armor/v_helmet"
         },
@@ -772,6 +775,12 @@
         },
         "hdpe_pellet": {
             "textures": "textures/items/misc/hdpe_pellet"
+        },
+        "plutonium_pellet": {
+            "textures": "textures/items/misc/plutonium_pellet"
+        },
+        "dead_star": {
+            "textures": "textures/items/misc/dead_star"
         },
         "compost": {
             "textures": "textures/items/misc/compost"
@@ -3016,6 +3025,18 @@
         },
         "utilitycraft:liquified_thorium_48": {
             "textures": "textures/ui/fluid_bar/liquified_thorium_bar/liquified_thorium_frame_48"
+        },
+        "utilitycraft:adamant_helmet": {
+            "textures": "textures/items/armor/adamant_helmet"
+        },
+        "utilitycraft:adamant_chestplate": {
+            "textures": "textures/items/armor/adamant_chestplate"
+        },
+        "utilitycraft:adamant_leggings": {
+            "textures": "textures/items/armor/adamant_leggings"
+        },
+        "utilitycraft:adamant_boots": {
+            "textures": "textures/items/armor/adamant_boots"
         }
     }
 }

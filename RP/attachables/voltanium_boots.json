@@ -8,18 +8,18 @@
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/armor/voltanium_layer_1",
+        "default": "textures/models/armor/voltanium_armor",
         "enchanted": "textures/misc/enchanted_actor_glint",
-        "baby": "textures/models/armor/voltanium_layer_1"
+        "baby": "textures/models/armor/voltanium_armor"
       },
       "geometry": {
-        "default": "geometry.humanoid.armor.boots",
-        "baby": "geometry.humanoid.baby.armor.boots"
+        "default": "geometry.boots_aetherium_armor",
+        "baby": "geometry.boots_aetherium_armor"
       },
       "scripts": {
         "parent_setup": "v.helmet_layer_visible = false;",
         "pre_animation": [
-          "v.use_baby_geo = q.is_baby && c.owning_entity->v.use_dedicated_baby_armor;"
+          "v.use_baby_geo = false;"
         ]
       },
       "render_controllers": [

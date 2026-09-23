@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:adamant_chestplate"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "A A",
+            "AAA",
+            "AAA"
+        ],
+        "key": {
+            "A": {
+                "item": "utilitycraft:adamant_ingot"
+            }
+        },
+        "result": [
+            {
+                "item": "utilitycraft:adamant_chestplate"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "utilitycraft:adamant_ingot"
+            }
+        ],
+        "priority": 0
+    }
+}

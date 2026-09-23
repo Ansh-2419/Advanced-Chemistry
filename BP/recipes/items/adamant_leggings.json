@@ -1,0 +1,32 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:adamant_leggings"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "AAA",
+            "A A",
+            "A A"
+        ],
+        "key": {
+            "A": {
+                "item": "utilitycraft:adamant_ingot"
+            }
+        },
+        "result": [
+            {
+                "item": "utilitycraft:adamant_leggings"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "utilitycraft:adamant_ingot"
+            }
+        ],
+        "priority": 0
+    }
+}

@@ -41,7 +41,7 @@
           "$has_bg": false,
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "offset": [-44, 0]
+          "offset": [-58, 0]
         }
       },
       {
@@ -50,7 +50,7 @@
           "$has_bg": false,
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "offset": [-22, 0]
+          "offset": [-36, 0]
         }
       },
       {
@@ -75,7 +75,7 @@
           "$has_bg": false,
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "offset": [54, 0]
+          "offset": [70, 2]
         }
       },
       {

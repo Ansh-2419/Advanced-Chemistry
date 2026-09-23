@@ -13,7 +13,7 @@ import { system } from "@minecraft/server";
 const nativeRecipes = [
     defineRecipe({
         id:          "ac:hdpe_pallet_from_plastic_resin",
-        input:       { type: "plastic_resin", amount: 500 },
+        input:       { type: "plastic_resin", amount: 250 },
         output:      { item: "utilitycraft:hdpe_pellet", count: 1 },
         energyCost:  10_000,
         seconds:     5,          // 100t ÷ 20t/s
@@ -25,7 +25,15 @@ const nativeRecipes = [
         output:      { item: "utilitycraft:lithium_dust", count: 1 },
         energyCost:  10_000,
         seconds:     5,          // 100t ÷ 20t/s
-        description: "Polymerises plastic resin into an HDPE pallet.",
+        description: "Polymerises reactive fluid into lithium dust.",
+    }),
+    defineRecipe({
+        id:          "ac:Plutonium_pellet_from_nuclear_waste",
+        input:       { type: "nuclear_waste", amount: 250 },
+        output:      { item: "utilitycraft:Plutonium_pellet", count: 1 },
+        energyCost:  50_000,
+        seconds:     5,          // 100t ÷ 20t/s
+        description: "Polymerises nuclear waste into Plutonium pellet.",
     })
 ];
 

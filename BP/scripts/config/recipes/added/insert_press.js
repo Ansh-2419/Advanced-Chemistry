@@ -4,6 +4,10 @@ const newRecipes = {
     "utilitycraft:hdpe_pellet": {
         output: "utilitycraft:hdpe_sheet",
         required: 2
+    },
+    "utilitycraftthorium_concentrate":{
+      output: "thorium_chunk",
+      required: 4
     }
 };
 

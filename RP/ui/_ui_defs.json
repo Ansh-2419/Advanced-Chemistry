@@ -7,6 +7,7 @@
         "ui/multi/refinery.json",
         "ui/multi/greenhouse.json",
         "ui/multi/nuclear_reactor.json",
+        "ui/multi/stellar_energy_reactor.json",
 
         "ui/tier_1/chemical_reactor.json",
         "ui/tier_1/fermenter.json",
@@ -16,6 +17,7 @@
 
         "ui/ind/industrial_crusher.json",
         "ui/ind/relic_synthesizer.json",
+        "ui/ind/alloy_forge.json",
 
         "ui/recipes/chemical_reactor_recipes.json",
         "ui/recipes/fermenter_recipes.json",

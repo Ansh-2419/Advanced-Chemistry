@@ -139,3 +139,10 @@ tile.utilitycraft:creative_steam_tank.name=Tanque Creativo de Vapor
 
 ## ── Missing Fluid Display Names ──────────────────────────────────────────────
 fluid.utilitycraft.hydrocarbon_blend=Mezcla de Hidrocarburos
+item.utilitycraft:adamant_helmet=Casco de Adamant
+
+item.utilitycraft:adamant_chestplate=Pechera de Adamant
+
+item.utilitycraft:adamant_leggings=Pantalones de Adamant
+
+item.utilitycraft:adamant_boots=Botas de Adamant

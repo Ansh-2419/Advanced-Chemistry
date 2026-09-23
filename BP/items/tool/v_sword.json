@@ -31,7 +31,7 @@
             "minecraft:repairable": {
                 "repair_items": [
                     {
-                        "items": ["minecraft:stick"],
+                        "items": ["utilitycraft:voltanium_ingot"],
                         "repair_amount": "context.other->q.remaining_durability + 0.05 * context.other->q.max_durability"
                     }
                 ]

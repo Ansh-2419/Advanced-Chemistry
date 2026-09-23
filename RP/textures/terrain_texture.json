@@ -154,6 +154,9 @@
         "refinery_monitor": {
             "textures": "textures/blocks/multi_face/refinery_monitor"
         },
+        "stellar_energy_reactor": {
+            "textures": "textures/blocks/multi_face/stellar_energy_reactor"
+        },
         "utilitycraft_biofuel_fluid": {
             "textures": "textures/entity/fluids/biofuel"
         },

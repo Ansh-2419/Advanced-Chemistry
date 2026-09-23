@@ -314,3 +314,18 @@ Per reaction cycle:
 
 Throttles automatically when energy buffer reaches 95%%.
 Requires: §92× Industrial Fluid Port  §e1× Industrial Energy Port
+
+## ── Stellar Energy Reactor ─────────────────────────────────────────────────
+tile.utilitycraft:stellar_energy_reactor_controller.name=Stellar Energy Reactor Controller\n§o§9@UC: Advance Chemistry
+entity.utilitycraft:stellar_energy_reactor_multiblock.name=Stellar Energy Reactor
+item.utilitycraft:dead_star.name=Dead Star
+ui.aoc:info.stellar_energy_reactor=3×3×3 multiblock generator that consumes Nether Stars and converts them into massive amounts of §eDE§r.\n\n§lSlots:\n§r- §aSlot 0 (left): §fNether Star input\n- §cSlot 1 (right): §fDead Star output\n\n§lCycle:\n§r- 1 Nether Star per 10s cycle\n- §e5,000,000 DE §rper star\n- §b20% chance§r of Dead Star byproduct\n\n§lBuffer: §r50 MDE\n\n§lRequires:\n§r1× Industrial Casing (structure)\n1× §eIndustrial Energy Port§r (energy export)
+howtoplay.aoc.multiblock.h_stellar_energy_reactor=Stellar Energy Reactor
+howtoplay.aoc.multiblock.p_stellar_energy_reactor=Burns §bNether Stars§r to generate massive amounts of §eDE§r with a §d20% chance§r of producing a §fDead Star§r byproduct.\n\n§lStructure:§r 3×3×3\n§7Outer shell:§r Industrial Casing\n§7Controller:§r Stellar Energy Reactor Controller\n\n§lRequired ports:§r\n§e1× Industrial Energy Port§r — exports generated DE\n\n§lStats:§r\n§a5,000,000 DE§r per Nether Star\n§b10-second§r cycle\n§d20%§r Dead Star chance per cycle\n§eBuffer: §r50 MDE
+item.utilitycraft:adamant_helmet=Adamant Helmet\n§o§9@UC: Advance Chemistry
+
+item.utilitycraft:adamant_chestplate=Adamant Chestplate\n§o§9@UC: Advance Chemistry
+
+item.utilitycraft:adamant_leggings=Adamant Leggings\n§o§9@UC: Advance Chemistry
+
+item.utilitycraft:adamant_boots=Adamant Boots\n§o§9@UC: Advance Chemistry
