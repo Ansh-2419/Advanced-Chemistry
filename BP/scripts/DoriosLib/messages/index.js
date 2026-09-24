@@ -56,4 +56,3 @@ export function printJson(player, title, value) {
     : `[Unserializable value: ${result.error.message}]`;
   for (const line of formatted.split("\n")) send(player, `§7${line}`);
 }
-

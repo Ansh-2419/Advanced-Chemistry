@@ -1,4 +1,3 @@
-import * as DoriosLib from "DoriosLib/index.js";
 // @ts-check
 
 import {
@@ -19,6 +18,8 @@ export const PARAMETER_TYPES = COMMAND_PARAMETER_TYPES;
 
 /** Script events exposed by UtilityCraft's runtime registries. */
 export const REGISTRATION_EVENT_IDS = Object.freeze({
+  ELECTROLYZER_RECIPE: "utilitycraft:register_electrolyzer_recipe",
+  CHEMICAL_CONVERTER_RECIPE: "utilitycraft:register_chemical_converter_recipe",
   AUTO_FISHER_DROP: "utilitycraft:register_autofisher_drop",
   BONSAI: "utilitycraft:register_bonsai",
   COOLANT: "utilitycraft:register_coolant",
@@ -159,6 +160,16 @@ export function unregisterItemDuctCompatibility(typeId) {
   enqueueRegistrationMessage(REGISTRATION_EVENT_IDS.ITEM_DUCT_UNREGISTER, typeId);
 }
 
+/**
+ * Publishes one controller's link-node IO definition to every loaded addon.
+ * Each DoriosCore runtime receives and installs the definition independently.
+ *
+ * @param {{blockTypeId:string,config:RegistrationPayload}} payload
+ */
+export function registerLinkNodeIO(payload) {
+  enqueueRegistration(REGISTRATION_EVENT_IDS.LINK_NODE_IO, payload);
+}
+
 /** @param {RegistrationPayload} payload */
 export function registerMelterRecipe(payload) {
   enqueueRegistration(REGISTRATION_EVENT_IDS.MELTER_RECIPE, payload);
@@ -167,11 +178,6 @@ export function registerMelterRecipe(payload) {
 /** @param {RegistrationPayload} payload */
 export function registerMachineUpgrade(payload) {
   enqueueRegistration(REGISTRATION_EVENT_IDS.MACHINE_UPGRADE, payload);
-}
-
-/** @param {{ blockTypeId: string, config: RegistrationPayload }} payload */
-export function registerLinkNodeIO(payload) {
-  enqueueRegistration(REGISTRATION_EVENT_IDS.LINK_NODE_IO, payload);
 }
 
 /** @param {RegistrationPayload} payload */
@@ -547,4 +553,14 @@ function assertMutable(installed) {
  */
 function defaultErrorHandler(error, context) {
   console.warn(`[DoriosLib:${context}]`, error);
+}
+
+/** Queue liquid/gas separation recipes for the Electrolyzer. */
+export function registerElectrolyzerRecipe(payload) {
+  enqueueRegistration(REGISTRATION_EVENT_IDS.ELECTROLYZER_RECIPE, payload);
+}
+
+/** Queue item/liquid/gas conversion recipes for the Chemical Converter. */
+export function registerChemicalConverterRecipe(payload) {
+  enqueueRegistration(REGISTRATION_EVENT_IDS.CHEMICAL_CONVERTER_RECIPE, payload);
 }

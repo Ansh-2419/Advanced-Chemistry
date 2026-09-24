@@ -25,4 +25,3 @@ export function isPlainObject(value) {
   const prototype = Object.getPrototypeOf(value);
   return prototype === Object.prototype || prototype === null;
 }
-

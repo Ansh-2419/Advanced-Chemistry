@@ -164,4 +164,3 @@ function cloneFaceConfig(config) {
   }
   return clone;
 }
-

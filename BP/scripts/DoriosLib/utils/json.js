@@ -84,4 +84,3 @@ export function clone(value) {
 function normalizeError(error) {
   return error instanceof Error ? error : new Error(String(error));
 }
-

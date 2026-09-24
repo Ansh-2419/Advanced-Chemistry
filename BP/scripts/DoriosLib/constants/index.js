@@ -132,4 +132,3 @@ export function isUnbreakableBlock(typeId) {
 export function isVanillaContainerBlock(typeId) {
   return VANILLA_CONTAINER_BLOCKS.includes(typeId);
 }
-

@@ -270,4 +270,3 @@ function parseVersion(value) {
   });
   return { core, prerelease: prereleaseRaw ? prereleaseRaw.split(".") : [] };
 }
-

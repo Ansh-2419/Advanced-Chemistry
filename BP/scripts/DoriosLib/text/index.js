@@ -53,4 +53,3 @@ export function formatIdentifier(identifier) {
     .map((word) => capitalizeFirst(word.toLowerCase()))
     .join(" ");
 }
-

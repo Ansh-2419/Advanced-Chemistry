@@ -20,4 +20,3 @@ export const SET_CONFIG_EVENT_ID = `${SCRIPT_EVENT_NAMESPACE}:set_config`;
 
 /** Canonical absolute directions used by complex item configurations. */
 export const DIRECTIONS = ["north", "south", "east", "west", "up", "down"];
-

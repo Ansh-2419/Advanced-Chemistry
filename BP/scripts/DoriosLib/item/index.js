@@ -44,4 +44,3 @@ export function create(options) {
 export function isType(typeId) {
   return ItemTypes.get(typeId) !== undefined;
 }
-

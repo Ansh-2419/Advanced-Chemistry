@@ -112,4 +112,3 @@ export function waitSeconds(seconds) {
 export function waitMinutes(minutes) {
   return waitSeconds(minutes * 60);
 }
-

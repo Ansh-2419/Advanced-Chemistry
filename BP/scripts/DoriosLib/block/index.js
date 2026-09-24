@@ -142,4 +142,3 @@ export function getEntity(block) {
 export function isType(typeId) {
   return BlockTypes.get(typeId) !== undefined;
 }
-

@@ -16,7 +16,7 @@ import { initialize as initializeDependencies } from "./dependencies/index.js";
 initializeDependencies(ADDON_METADATA, DEPENDENCY_OPTIONS);
 
 /** Current DoriosLib semantic version. */
-export const VERSION = "2.0.0";
+export const VERSION = "2.1.0";
 
 export * as block from "./block/index.js";
 export * as config from "./config.js";
@@ -33,4 +33,3 @@ export * as registry from "./registry/index.js";
 export * as text from "./text/index.js";
 export * as time from "./time/index.js";
 export * as utils from "./utils/index.js";
-

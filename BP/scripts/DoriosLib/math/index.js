@@ -183,4 +183,3 @@ export function integerToRoman(value) {
 function assertFiniteNumber(value, name) {
   if (!Number.isFinite(value)) throw new TypeError(`${name} must be a finite number`);
 }
-
