@@ -3,70 +3,62 @@ import {
     FluidStorage,
     Multiblock,
     MultiblockGenerator,
+    TemperatureStorage,
     registerLinkNodeIO,
 } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
-import { ItemStack } from "@minecraft/server";
 
-// ── Fuel registry — all fluids already present in Advance Chemistry ───────────
-// Each entry: energy per 1000 mB consumed, display label, min structure tier
 const FUELS = {
-    biofuel:          { energyPerBucket: 80_000,  label: "Biofuel",          tier: 1 },
-    ethanol:          { energyPerBucket: 60_000,  label: "Ethanol",          tier: 1 },
-    diesel:           { energyPerBucket: 120_000, label: "Diesel",           tier: 1 },
-    heavy_hydrocarbon:{ energyPerBucket: 150_000, label: "Heavy Hydrocarbon",tier: 2 },
-    fissile_fuel:     { energyPerBucket: 500_000, label: "Fissile Fuel",     tier: 2 },
+    biofuel:          { energyPerBucket: 80_000,  label: "Biofuel",           tier: 1, peakTempK: 1_400 },
+    ethanol:          { energyPerBucket: 60_000,  label: "Ethanol",           tier: 1, peakTempK: 1_200 },
+    diesel:           { energyPerBucket: 120_000, label: "Diesel",            tier: 1, peakTempK: 1_600 },
+    heavy_hydrocarbon:{ energyPerBucket: 150_000, label: "Heavy Hydrocarbon", tier: 2, peakTempK: 2_000 },
+    fissile_fuel:     { energyPerBucket: 500_000, label: "Fissile Fuel",      tier: 2, peakTempK: 4_200 },
 };
 const VALID_FUELS = new Set(Object.keys(FUELS));
 
-// ── Coolant registry ──────────────────────────────────────────────────────────
 const COOLANTS = {
-    water:          { speedMultiplier: 1.0, label: "Water"    },
-    saline_coolant: { speedMultiplier: 1.4, label: "Saline"   },
-    liquid_nitrogen:{ speedMultiplier: 2.0, label: "Liq. N₂" },
+    water:          { speedMultiplier: 1.0, label: "Water",   coolingK: 220 },
+    saline_coolant: { speedMultiplier: 1.4, label: "Saline",  coolingK: 320 },
+    liquid_nitrogen:{ speedMultiplier: 2.0, label: "Liq. N2", coolingK: 520 },
 };
 const VALID_COOLANTS    = new Set(Object.keys(COOLANTS));
-const COOLANT_PER_CYCLE = 2_000; // mB per cycle
-const NO_COOLANT_SPEED  = 0.4;   // 40% speed when running dry
+const COOLANT_PER_CYCLE = 2_000;
+const NO_COOLANT_SPEED  = 0.4;
 
-// ── Exhaust output ────────────────────────────────────────────────────────────
-const EXHAUST_TYPE      = "reactive_fluid"; // already in the mod (separator output)
-const EXHAUST_PER_CYCLE = 400;             // mB exhaust per cycle
+const EXHAUST_TYPE      = "reactive_fluid";
+const EXHAUST_PER_CYCLE = 400;
 
-// ── Cycle config ──────────────────────────────────────────────────────────────
-const FUEL_PER_CYCLE    = 1_000;   // mB per cycle (1 bucket)
-const BASE_CYCLE_TICKS  = 200;     // ticks at ×1.0 coolant speed
-const THROTTLE_AT       = 0.95;
-const ENERGY_PENALTY    = 0.25;    // 25% energy penalty per missing coolant bucket
-const FLUID_CAPACITY    = 64_000;
-const ENERGY_CAPACITY   = 10_000_000;
-const EMPTY             = "empty";
+const FUEL_PER_CYCLE   = 1_000;
+const BASE_CYCLE_TICKS = 200;
+const THROTTLE_AT      = 0.95;
+const ENERGY_PENALTY   = 0.25;
+const FLUID_CAPACITY   = 64_000;
+const ENERGY_CAPACITY  = 10_000_000;
+const EMPTY            = "empty";
 
-// ── Progress bar ──────────────────────────────────────────────────────────────
-const PROGRESS_FRAMES = 23;
-const PROGRESS_ITEM   = "utilitycraft:progress_right_big_bar";
+const AMBIENT_TEMP  = 300;
+const MAX_TEMP      = 5_000;
+const HEAT_CAPACITY = 8_000;
 
-// ── Slot map ──────────────────────────────────────────────────────────────────
-const SLOT_ENERGY   = 0;
-const SLOT_LABEL    = 1;
-const SLOT_PROGRESS = 2;
-const SLOT_FUEL     = 3;
-const SLOT_COOLANT  = 4;
-const SLOT_EXHAUST  = 5;
+const SLOT_ENERGY  = 0;
+const SLOT_LABEL   = 1;
+const SLOT_COOLANT = 2;
+const SLOT_FUEL    = 3;
+const SLOT_TEMP    = 4;
+const SLOT_EXHAUST = 5;
 
-// ── Dynamic property keys ─────────────────────────────────────────────────────
 const PROP_TICK = "ac:fr_tick";
+const PROP_TEMP = "ac:fr_temp";
 const LOCK_FUEL    = "ac:fr_tank0_locked";
 const LOCK_COOLANT = "ac:fr_tank1_locked";
 const LOCK_EXHAUST = "ac:fr_tank2_locked";
 
-// ── Port requirements ─────────────────────────────────────────────────────────
 const PORT_REQ = {
     fluid:  { min: 2, id: "utilitycraft:ind_fluid_port",  label: "Industrial Fluid Port"  },
     energy: { min: 1, id: "utilitycraft:ind_energy_port", label: "Industrial Energy Port" },
 };
 
-// ── Multiblock CONFIG ─────────────────────────────────────────────────────────
 const CONFIG = {
     required_case: "dorios:multiblock.case.ind",
     entity: {
@@ -75,7 +67,7 @@ const CONFIG = {
         inventory_size: 6,
     },
     generator: {
-        rate_speed_base: (FUELS.biofuel.energyPerBucket) / BASE_CYCLE_TICKS,
+        rate_speed_base: FUELS.biofuel.energyPerBucket / BASE_CYCLE_TICKS,
         energy_cap:      ENERGY_CAPACITY,
         fluid_cap:       FLUID_CAPACITY,
         fluid_types:     3,
@@ -83,7 +75,6 @@ const CONFIG = {
     requirements: {},
 };
 
-// ── Link-node IO (pipe / cable connections) ───────────────────────────────────
 registerLinkNodeIO("utilitycraft:fusion_reactor_controller", {
     liquids: {
         inputs:  [{ storageIndex: 0, label: "Fuel In"     },
@@ -95,7 +86,6 @@ registerLinkNodeIO("utilitycraft:fusion_reactor_controller", {
     },
 });
 
-// ── Block component ───────────────────────────────────────────────────────────
 DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
 
     onPlayerInteract(event) {
@@ -140,16 +130,17 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
                         }
                     }
 
+                    entity.setDynamicProperty(PROP_TEMP, AMBIENT_TEMP);
                     initStorage(entity);
                     lockTanks(entity);
                 },
 
                 successMessages: [
                     "§a[Fusion Reactor] Online — structure validated.",
-                    "§7Slot 0: §eFuel  §7(biofuel / ethanol / diesel / heavy_hydrocarbon / fissile_fuel)",
-                    "§7Slot 1: §bCoolant §7(water / saline / liquid_nitrogen)",
-                    "§7Slot 2: §cExhaust Out §7(reactive_fluid — pipe it away!)",
-                    "§eHigher-tier fuels produce more energy per bucket.",
+                    "§7Fuel: §ebiofuel / ethanol / diesel / heavy_hydrocarbon / fissile_fuel",
+                    "§7Coolant: §bwater / saline_coolant / liquid_nitrogen",
+                    "§7Exhaust: §creactive_fluid §7— pipe it away!",
+                    "§eHigher-tier fuels run hotter and produce more energy per bucket.",
                 ],
             }
         );
@@ -172,39 +163,45 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
         guardTank(coolantTank, VALID_COOLANTS);
         guardTank(exhaustTank, EXHAUST_TYPE);
 
-        // Always export buffered energy to the network
         energy.transferToNetwork(reactor.rate);
 
-        // ── Fuel check ────────────────────────────────────────────────────────
+        const temperature  = initTemperature(reactor.entity);
+        const currentTemp  = temperature.get();
+
         const fuelType = fuelTank.getType();
         const fuelCfg  = FUELS[fuelType] ?? null;
 
         if (!fuelCfg || fuelTank.get() < FUEL_PER_CYCLE) {
-            setProgress(reactor.entity, 0, 1);
-            display(reactor, energy, fuelTank, coolantTank, exhaustTank,
+            const cooled = stepTemperature(currentTemp, AMBIENT_TEMP);
+            temperature.set(cooled);
+            reactor.entity.setDynamicProperty(PROP_TEMP, cooled);
+            display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
                 fuelTank.get() <= 0 ? "§cNo Fuel" : "§cInvalid Fuel", null, 0, 1.0);
             return;
         }
 
-        // ── Buffer / exhaust checks ───────────────────────────────────────────
         if (energy.get() / Math.max(1, energy.getCap()) >= THROTTLE_AT) {
-            setProgress(reactor.entity, 0, 1);
-            display(reactor, energy, fuelTank, coolantTank, exhaustTank,
+            const cooled = stepTemperature(currentTemp, AMBIENT_TEMP);
+            temperature.set(cooled);
+            reactor.entity.setDynamicProperty(PROP_TEMP, cooled);
+            display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
                 "§6Buffer Full", fuelCfg, 0, 1.0);
             return;
         }
+
         if (exhaustTank.getFreeSpace() < EXHAUST_PER_CYCLE) {
-            setProgress(reactor.entity, 0, 1);
-            display(reactor, energy, fuelTank, coolantTank, exhaustTank,
+            const cooled = stepTemperature(currentTemp, AMBIENT_TEMP);
+            temperature.set(cooled);
+            reactor.entity.setDynamicProperty(PROP_TEMP, cooled);
+            display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
                 "§cExhaust Full", fuelCfg, 0, 1.0);
             return;
         }
 
-        // ── Coolant calculation ───────────────────────────────────────────────
         const coolantType = coolantTank.getType();
         const coolantCfg  = COOLANTS[coolantType] ?? null;
 
-        const availBuckets  = coolantType === EMPTY ? 0
+        const availBuckets   = coolantType === EMPTY ? 0
             : Math.min(2, Math.floor(coolantTank.get() / 1_000));
         const missingBuckets = 2 - availBuckets;
 
@@ -217,19 +214,21 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
         const energyOut  = Math.floor(fuelCfg.energyPerBucket * energyMult);
         const cycleTicks = Math.max(1, Math.floor(BASE_CYCLE_TICKS / speedMult));
 
-        // ── Tick counter ──────────────────────────────────────────────────────
+        const coolingK   = coolantCfg ? coolantCfg.coolingK * (availBuckets / 2) : 0;
+        const targetTemp = Math.max(AMBIENT_TEMP, fuelCfg.peakTempK - coolingK);
+        const newTemp    = stepTemperature(currentTemp, targetTemp);
+        temperature.set(newTemp);
+        reactor.entity.setDynamicProperty(PROP_TEMP, newTemp);
+
         const tick = ((reactor.entity.getDynamicProperty(PROP_TICK) ?? 0) + 1);
         reactor.entity.setDynamicProperty(PROP_TICK, tick % cycleTicks);
-        setProgress(reactor.entity, tick % cycleTicks, cycleTicks);
 
-        // ── Combustion pulse ──────────────────────────────────────────────────
         if (tick % cycleTicks === 0) {
             fuelTank.consume(FUEL_PER_CYCLE);
             if (fuelTank.get() <= 0) fuelTank.setType(fuelType);
 
             if (coolantCfg && availBuckets > 0) {
-                const toConsume = availBuckets * 1_000;
-                coolantTank.consume(toConsume);
+                coolantTank.consume(availBuckets * 1_000);
                 if (coolantTank.get() <= 0) coolantTank.setType(EMPTY);
             }
 
@@ -239,7 +238,6 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             exhaustTank.add(EXHAUST_PER_CYCLE);
         }
 
-        // ── Status string ─────────────────────────────────────────────────────
         let status;
         if (missingBuckets > 0 && availBuckets > 0) {
             status = `§eLow Coolant §7(-${missingBuckets * 25}% energy)`;
@@ -249,12 +247,10 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             status = "§aBurning";
         }
 
-        display(reactor, energy, fuelTank, coolantTank, exhaustTank,
+        display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
             status, fuelCfg, missingBuckets, energyMult);
     },
 });
-
-// ── Storage initialiser ───────────────────────────────────────────────────────
 
 function initStorage(entity) {
     const [fuelTank, coolantTank, exhaustTank] = FluidStorage.initializeMultiple(entity, 3);
@@ -266,7 +262,18 @@ function initStorage(entity) {
     return { energy, fuelTank, coolantTank, exhaustTank };
 }
 
-// ── Tank locks ────────────────────────────────────────────────────────────────
+function initTemperature(entity) {
+    const stored = Number(entity.getDynamicProperty(PROP_TEMP) ?? AMBIENT_TEMP);
+    return new TemperatureStorage(entity, 0, {
+        initialTemperature: stored,
+        heatCapacity: HEAT_CAPACITY,
+    });
+}
+
+function stepTemperature(current, target) {
+    const step = (target - current) / HEAT_CAPACITY * 200;
+    return Math.max(AMBIENT_TEMP, Math.min(MAX_TEMP, current + step));
+}
 
 function lockTanks(entity) {
     if (!entity.hasTag(LOCK_FUEL))    entity.addTag(LOCK_FUEL);
@@ -278,8 +285,6 @@ function lockTanks(entity) {
     }
 }
 
-// ── Guard (flush invalid fluid types) ────────────────────────────────────────
-
 function guardTank(tank, allowed) {
     const type = tank.getType();
     if (type === EMPTY) return;
@@ -289,26 +294,12 @@ function guardTank(tank, allowed) {
     if (!ok) { tank.set(0); tank.setType(EMPTY); }
 }
 
-// ── Progress bar ──────────────────────────────────────────────────────────────
-
-function setProgress(entity, tick, cycleTicks) {
-    const inv = entity.getComponent("minecraft:inventory")?.container;
-    if (!inv) return;
-    const frame    = Math.min(PROGRESS_FRAMES - 1,
-        Math.floor((tick / cycleTicks) * PROGRESS_FRAMES));
-    const frameStr = frame.toString().padStart(2, "0");
-    const item     = new ItemStack(`${PROGRESS_ITEM}_${frameStr}`, 1);
-    item.nameTag   = "§r";
-    inv.setItem(SLOT_PROGRESS, item);
-}
-
-// ── Display ───────────────────────────────────────────────────────────────────
-
-function display(reactor, energy, fuelTank, coolantTank, exhaustTank,
+function display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
                  status, fuelCfg, missingBuckets, energyMult) {
     energy.display(SLOT_ENERGY);
-    fuelTank.display(SLOT_FUEL);
     coolantTank.display(SLOT_COOLANT);
+    fuelTank.display(SLOT_FUEL);
+    temperature.display(SLOT_TEMP, { minimum: AMBIENT_TEMP, maximum: MAX_TEMP, force: true });
     exhaustTank.display(SLOT_EXHAUST);
 
     const FL = FluidStorage.formatFluid;
@@ -317,13 +308,14 @@ function display(reactor, energy, fuelTank, coolantTank, exhaustTank,
     const coolantType = coolantTank.getType();
     const coolantCfg  = COOLANTS[coolantType] ?? null;
     const coolantLine = coolantCfg
-        ? `§f${coolantCfg.label} ×${coolantCfg.speedMultiplier.toFixed(1)}`
+        ? `§f${coolantCfg.label} x${coolantCfg.speedMultiplier.toFixed(1)}`
         : coolantType === EMPTY ? "§7Empty" : `§e${coolantType} §c?`;
 
     const fuelLine = fuelCfg
         ? `§f${fuelCfg.label} §7(${E(fuelCfg.energyPerBucket)}/bucket)`
         : "§cNone";
 
+    const tempVal = temperature.get();
     const effLine = energyMult < 1
         ? `§cEff: ${Math.round(energyMult * 100)}%`
         : `§aEff: 100%`;
@@ -335,5 +327,6 @@ function display(reactor, energy, fuelTank, coolantTank, exhaustTank,
         `§bCoolant: ${coolantLine} §f${FL(coolantTank.get())}/${FL(coolantTank.getCap())}`,
         `§cExhaust: §f${FL(exhaustTank.get())}/${FL(exhaustTank.getCap())}`,
         `§eBuffer:  §f${E(energy.get())}/${E(energy.getCap())} ${effLine}`,
+        `§aTemp:    §f${tempVal.toFixed(0)}K`,
     ], SLOT_LABEL);
 }

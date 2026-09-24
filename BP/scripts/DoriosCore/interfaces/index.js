@@ -8,7 +8,6 @@ import {
   SLOT_CODE_RESET,
 } from "./constants.js";
 
-
 const interfaces = new Map();
 const blockInterfaces = new Map();
 const entityInterfaces = new Map();
@@ -528,6 +527,7 @@ export {
 } from "./linkNodeIO.js";
 export {
   DEFAULT_FLUID_IO_MODE,
+  DISABLED_FLUID_IO_MODE,
   FLUID_CONTAINER_FAMILY,
   FLUID_CONFIG_EVENT_NAMESPACE,
   FLUID_CONFIG_KEY,
@@ -549,6 +549,7 @@ export {
 } from "./fluidIO.js";
 export {
   DEFAULT_GAS_IO_MODE,
+  DISABLED_GAS_IO_MODE,
   GAS_CONTAINER_FAMILY,
   GAS_CONFIG_EVENT_NAMESPACE,
   GAS_CONFIG_KEY,

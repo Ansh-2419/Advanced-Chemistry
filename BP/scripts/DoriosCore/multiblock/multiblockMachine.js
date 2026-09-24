@@ -12,6 +12,7 @@ import {
 } from "../machinery/resourceLore.js";
 import { ActivationManager } from "./activationManager.js";
 import { DeactivationManager } from "./deactivationManager.js";
+import { EntityManager } from "./entityManager.js";
 import { StructureDetector } from "./structureDetection.js";
 import * as Utils from "../utils/entity.js";
 import * as Constants from "./constants.js";
@@ -39,7 +40,11 @@ export class MultiblockMachine extends BasicMachine {
    */
   constructor(block, config) {
     const configuredRate = config?.machine?.rate_speed_base ?? 0;
-    super(block, { rate: configuredRate, ignoreTick: config?.ignoreTick });
+    super(block, {
+      rate: configuredRate,
+      ignoreTick: config?.ignoreTick,
+      entityResolver: EntityManager.getControllerEntityFromBlock,
+    });
     this.configuredRate = configuredRate;
     if (!this.valid) return;
 
@@ -161,7 +166,7 @@ export class MultiblockMachine extends BasicMachine {
       successMessages,
     } = handlers;
     const { block, player } = e;
-    const entity = block.dimension.getEntitiesAtBlockLocation(block.location)[0];
+    const entity = EntityManager.getControllerEntityFromBlock(block);
     const mainHandTypeId = DoriosLib.entity.getEquipment(player, "Mainhand")?.typeId ?? "";
     if (mainHandTypeId === "utilitycraft:copy_paste_tool") return;
     const isUsingWrench = mainHandTypeId.includes("wrench");
@@ -200,7 +205,7 @@ export class MultiblockMachine extends BasicMachine {
    */
   static onDestroy(e) {
     const { block, brokenBlockPermutation, player, dimension: dim } = e;
-    const entity = dim.getEntitiesAtBlockLocation(block.location)[0];
+    const entity = EntityManager.getControllerEntityFromBlock(block, brokenBlockPermutation);
     if (!entity) return false;
 
     const blockItemId = brokenBlockPermutation.type.id;
@@ -268,7 +273,7 @@ export class MultiblockMachine extends BasicMachine {
     const { block, player } = e;
     const requirements = config.requirements ?? {};
 
-    DeactivationManager.deactivateMultiblock(block, player);
+    DeactivationManager.deactivateEntity(entity, player);
 
     const structure = await StructureDetector.detectFromController(e, config.required_case);
     if (!structure) return;
@@ -276,7 +281,7 @@ export class MultiblockMachine extends BasicMachine {
     const failure = this.validateRequirements(structure.components, requirements);
     if (failure) {
       player.sendMessage(failure.warning);
-      DeactivationManager.deactivateMultiblock(block, player);
+      DeactivationManager.deactivateEntity(entity, player);
       return;
     }
 
@@ -299,7 +304,7 @@ export class MultiblockMachine extends BasicMachine {
     if (onActivate) {
       const result = await onActivate(context);
       if (result === false) {
-        DeactivationManager.deactivateMultiblock(block, player);
+        DeactivationManager.deactivateEntity(entity, player);
         return;
       }
     }
@@ -460,21 +465,16 @@ export class MultiblockMachine extends BasicMachine {
     const speed = Math.max(0, components.speed_module | 0);
     const efficiency = Math.max(0, components.efficiency_module | 0);
 
-    const processAmount = 2 * processing;
-    const processingPenalty = 1 + 2.25 * (processing - 1);
-
-    const maxSpeedBonus = 999;
-    const speedK = 3200;
-    const speedMultiplier = 1 + (maxSpeedBonus * speed) / (speedK + speed);
-
-    const maxSpeedPenalty = 99;
-    const speedPenaltyK = 640;
-    const speedPenalty = 1 + (maxSpeedPenalty * speed) / (speedPenaltyK + speed);
-
-    const minEfficiency = 0.01;
-    const efficiencyRate = 0.15;
-    const efficiencyMultiplier =
-      minEfficiency + (1 - minEfficiency) * Math.exp(-efficiencyRate * efficiency);
+    // Square-root gains in both modules: doubling both doubles throughput.
+    // Round parallel lanes up and compensate the work rate to avoid free
+    // throughput at integer boundaries. Energy stays proportional to lanes.
+    const parallelGain = Math.sqrt(processing);
+    const processAmount = Math.ceil(2 * parallelGain);
+    const processingPenalty = processAmount / 2;
+    const speedMultiplier = Math.sqrt(Math.max(1, speed)) * (2 * parallelGain / processAmount);
+    const speedPenalty = 1;
+    // Efficiency saves up to 75% DE, without changing the work rate.
+    const efficiencyMultiplier = 0.25 + 0.75 * Math.exp(-0.15 * efficiency);
 
     return {
       raw: {
@@ -517,7 +517,7 @@ export class MultiblockMachine extends BasicMachine {
       ? (processingAmount / energyMultiplier) * 100
       : 0;
     const cost = Number.isFinite(data?.cost)
-      ? EnergyStorage.formatEnergyToText(data.cost)
+      ? EnergyStorage.formatEnergyToText(data.cost * energyMultiplier)
       : "---";
 
     return `§r§7Status: ${status}
