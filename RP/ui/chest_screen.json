@@ -174,7 +174,7 @@
         "value": [
           {
             "requires": "($temp_container_title = 'entity.utilitycraft:fusion_reactor_multiblock.name')",
-            "$screen_content": "fusion_reactor.utility_panel",
+            "$screen_content": "fusion_reactor.utilitycraft_panel",
             "$screen_bg_content": "common.screen_background"
           }
         ]
