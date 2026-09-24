@@ -8,6 +8,7 @@
         "ui/multi/greenhouse.json",
         "ui/multi/nuclear_reactor.json",
         "ui/multi/stellar_energy_reactor.json",
+        "ui/multi/fusion_reactor.json",
 
         "ui/tier_1/chemical_reactor.json",
         "ui/tier_1/fermenter.json",

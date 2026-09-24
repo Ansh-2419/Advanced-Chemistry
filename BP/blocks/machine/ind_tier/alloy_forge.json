@@ -101,11 +101,11 @@
                     "minecraft:light_emission": 10,
                     "minecraft:material_instances": {
                         "*": {
-                            "texture": "alloy_forge_on",
+                            "texture": "alloy_forge",
                             "render_method": "alpha_test"
                         },
                         "north": {
-                            "texture": "alloy_forge_on",
+                            "texture": "alloy_forge",
                             "render_method": "alpha_test"
                         },
                         "south": {

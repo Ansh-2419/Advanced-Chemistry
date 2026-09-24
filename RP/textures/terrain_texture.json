@@ -85,6 +85,9 @@
         "ind_crusher": {
             "textures": "textures/blocks/front/ind_crusher"
         },
+        "alloy_forge": {
+            "textures": "textures/blocks/front/alloy_forge"
+        },
         "polymerizer_north": {
             "textures": "textures/blocks/front/polymerizer_north"
         },
