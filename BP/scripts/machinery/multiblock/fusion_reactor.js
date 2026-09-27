@@ -1,9 +1,9 @@
 import {
     EnergyStorage,
     FluidStorage,
+    TemperatureStorage,
     Multiblock,
     MultiblockGenerator,
-    TemperatureStorage,
     registerLinkNodeIO,
 } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
@@ -22,24 +22,20 @@ const COOLANTS = {
     saline_coolant: { speedMultiplier: 1.4, label: "Saline",  coolingK: 320 },
     liquid_nitrogen:{ speedMultiplier: 2.0, label: "Liq. N2", coolingK: 520 },
 };
-const VALID_COOLANTS    = new Set(Object.keys(COOLANTS));
-const COOLANT_PER_CYCLE = 2_000;
-const NO_COOLANT_SPEED  = 0.4;
+const VALID_COOLANTS = new Set(Object.keys(COOLANTS));
 
 const EXHAUST_TYPE      = "reactive_fluid";
 const EXHAUST_PER_CYCLE = 400;
-
-const FUEL_PER_CYCLE   = 1_000;
-const BASE_CYCLE_TICKS = 200;
-const THROTTLE_AT      = 0.95;
-const ENERGY_PENALTY   = 0.25;
-const FLUID_CAPACITY   = 64_000;
-const ENERGY_CAPACITY  = 10_000_000;
-const EMPTY            = "empty";
+const FUEL_PER_CYCLE    = 1_000;
+const BASE_CYCLE_TICKS  = 200;
+const THROTTLE_AT       = 0.95;
+const ENERGY_PENALTY    = 0.25;
+const FLUID_CAPACITY    = 64_000;
+const ENERGY_CAPACITY   = 10_000_000;
+const EMPTY             = "empty";
 
 const AMBIENT_TEMP  = 300;
 const MAX_TEMP      = 5_000;
-const HEAT_CAPACITY = 8_000;
 
 const SLOT_ENERGY  = 0;
 const SLOT_LABEL   = 1;
@@ -48,8 +44,7 @@ const SLOT_FUEL    = 3;
 const SLOT_TEMP    = 4;
 const SLOT_EXHAUST = 5;
 
-const PROP_TICK = "ac:fr_tick";
-const PROP_TEMP = "ac:fr_temp";
+const PROP_TICK    = "ac:fr_tick";
 const LOCK_FUEL    = "ac:fr_tank0_locked";
 const LOCK_COOLANT = "ac:fr_tank1_locked";
 const LOCK_EXHAUST = "ac:fr_tank2_locked";
@@ -130,7 +125,7 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
                         }
                     }
 
-                    entity.setDynamicProperty(PROP_TEMP, AMBIENT_TEMP);
+                    // TemperatureStorage initialises from dynamic property on first use
                     initStorage(entity);
                     lockTanks(entity);
                 },
@@ -165,36 +160,33 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
 
         energy.transferToNetwork(reactor.rate);
 
-        const temperature  = initTemperature(reactor.entity);
-        const currentTemp  = temperature.get();
+        const tempStore  = new TemperatureStorage(reactor.entity, 0, { initialTemperature: AMBIENT_TEMP, heatCapacity: 8_000 });
+        let currentTemp  = tempStore.get();
 
         const fuelType = fuelTank.getType();
         const fuelCfg  = FUELS[fuelType] ?? null;
 
         if (!fuelCfg || fuelTank.get() < FUEL_PER_CYCLE) {
-            const cooled = stepTemperature(currentTemp, AMBIENT_TEMP);
-            temperature.set(cooled);
-            reactor.entity.setDynamicProperty(PROP_TEMP, cooled);
-            display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
-                fuelTank.get() <= 0 ? "§cNo Fuel" : "§cInvalid Fuel", null, 0, 1.0);
+            tempStore.transfer(AMBIENT_TEMP, 1, 0.025);
+            currentTemp = tempStore.get();
+            display(reactor, energy, fuelTank, coolantTank, exhaustTank, currentTemp,
+                fuelTank.get() <= 0 ? "§cNo Fuel" : "§cInvalid Fuel", null, 0, 1.0, tempStore);
             return;
         }
 
         if (energy.get() / Math.max(1, energy.getCap()) >= THROTTLE_AT) {
-            const cooled = stepTemperature(currentTemp, AMBIENT_TEMP);
-            temperature.set(cooled);
-            reactor.entity.setDynamicProperty(PROP_TEMP, cooled);
-            display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
-                "§6Buffer Full", fuelCfg, 0, 1.0);
+            tempStore.transfer(AMBIENT_TEMP, 1, 0.025);
+            currentTemp = tempStore.get();
+            display(reactor, energy, fuelTank, coolantTank, exhaustTank, currentTemp,
+                "§6Buffer Full", fuelCfg, 0, 1.0, tempStore);
             return;
         }
 
         if (exhaustTank.getFreeSpace() < EXHAUST_PER_CYCLE) {
-            const cooled = stepTemperature(currentTemp, AMBIENT_TEMP);
-            temperature.set(cooled);
-            reactor.entity.setDynamicProperty(PROP_TEMP, cooled);
-            display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
-                "§cExhaust Full", fuelCfg, 0, 1.0);
+            tempStore.transfer(AMBIENT_TEMP, 1, 0.025);
+            currentTemp = tempStore.get();
+            display(reactor, energy, fuelTank, coolantTank, exhaustTank, currentTemp,
+                "§cExhaust Full", fuelCfg, 0, 1.0, tempStore);
             return;
         }
 
@@ -205,10 +197,10 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             : Math.min(2, Math.floor(coolantTank.get() / 1_000));
         const missingBuckets = 2 - availBuckets;
 
-        const fullSpeed  = coolantCfg?.speedMultiplier ?? NO_COOLANT_SPEED;
+        const fullSpeed  = coolantCfg?.speedMultiplier ?? 0.4;
         const speedMult  = availBuckets === 0
-            ? NO_COOLANT_SPEED
-            : NO_COOLANT_SPEED + (fullSpeed - NO_COOLANT_SPEED) * (availBuckets / 2);
+            ? 0.4
+            : 0.4 + (fullSpeed - 0.4) * (availBuckets / 2);
 
         const energyMult = Math.max(0.25, 1 - missingBuckets * ENERGY_PENALTY);
         const energyOut  = Math.floor(fuelCfg.energyPerBucket * energyMult);
@@ -216,9 +208,8 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
 
         const coolingK   = coolantCfg ? coolantCfg.coolingK * (availBuckets / 2) : 0;
         const targetTemp = Math.max(AMBIENT_TEMP, fuelCfg.peakTempK - coolingK);
-        const newTemp    = stepTemperature(currentTemp, targetTemp);
-        temperature.set(newTemp);
-        reactor.entity.setDynamicProperty(PROP_TEMP, newTemp);
+        tempStore.transfer(targetTemp, 1, 0.025);
+        currentTemp = tempStore.get();
 
         const tick = ((reactor.entity.getDynamicProperty(PROP_TICK) ?? 0) + 1);
         reactor.entity.setDynamicProperty(PROP_TICK, tick % cycleTicks);
@@ -242,13 +233,13 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
         if (missingBuckets > 0 && availBuckets > 0) {
             status = `§eLow Coolant §7(-${missingBuckets * 25}% energy)`;
         } else if (availBuckets === 0) {
-            status = `§cNo Coolant §7(×${NO_COOLANT_SPEED} speed, -75% energy)`;
+            status = `§cNo Coolant §7(x${0.4} speed, -75% energy)`;
         } else {
             status = "§aBurning";
         }
 
-        display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
-            status, fuelCfg, missingBuckets, energyMult);
+        display(reactor, energy, fuelTank, coolantTank, exhaustTank, currentTemp,
+            status, fuelCfg, missingBuckets, energyMult, tempStore);
     },
 });
 
@@ -262,18 +253,7 @@ function initStorage(entity) {
     return { energy, fuelTank, coolantTank, exhaustTank };
 }
 
-function initTemperature(entity) {
-    const stored = Number(entity.getDynamicProperty(PROP_TEMP) ?? AMBIENT_TEMP);
-    return new TemperatureStorage(entity, 0, {
-        initialTemperature: stored,
-        heatCapacity: HEAT_CAPACITY,
-    });
-}
 
-function stepTemperature(current, target) {
-    const step = (target - current) / HEAT_CAPACITY * 200;
-    return Math.max(AMBIENT_TEMP, Math.min(MAX_TEMP, current + step));
-}
 
 function lockTanks(entity) {
     if (!entity.hasTag(LOCK_FUEL))    entity.addTag(LOCK_FUEL);
@@ -294,13 +274,13 @@ function guardTank(tank, allowed) {
     if (!ok) { tank.set(0); tank.setType(EMPTY); }
 }
 
-function display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperature,
-                 status, fuelCfg, missingBuckets, energyMult) {
+function display(reactor, energy, fuelTank, coolantTank, exhaustTank, temp,
+                 status, fuelCfg, missingBuckets, energyMult, tempStore) {
     energy.display(SLOT_ENERGY);
     coolantTank.display(SLOT_COOLANT);
     fuelTank.display(SLOT_FUEL);
-    temperature.display(SLOT_TEMP, { minimum: AMBIENT_TEMP, maximum: MAX_TEMP, force: true });
     exhaustTank.display(SLOT_EXHAUST);
+    if (tempStore) tempStore.display(SLOT_TEMP, { minimum: AMBIENT_TEMP, maximum: MAX_TEMP, force: true });
 
     const FL = FluidStorage.formatFluid;
     const E  = EnergyStorage.formatEnergyToText;
@@ -315,7 +295,6 @@ function display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperatur
         ? `§f${fuelCfg.label} §7(${E(fuelCfg.energyPerBucket)}/bucket)`
         : "§cNone";
 
-    const tempVal = temperature.get();
     const effLine = energyMult < 1
         ? `§cEff: ${Math.round(energyMult * 100)}%`
         : `§aEff: 100%`;
@@ -327,6 +306,6 @@ function display(reactor, energy, fuelTank, coolantTank, exhaustTank, temperatur
         `§bCoolant: ${coolantLine} §f${FL(coolantTank.get())}/${FL(coolantTank.getCap())}`,
         `§cExhaust: §f${FL(exhaustTank.get())}/${FL(exhaustTank.getCap())}`,
         `§eBuffer:  §f${E(energy.get())}/${E(energy.getCap())} ${effLine}`,
-        `§aTemp:    §f${tempVal.toFixed(0)}K`,
+        `§aTemp:    §f${temp.toFixed(0)}K`,
     ], SLOT_LABEL);
 }

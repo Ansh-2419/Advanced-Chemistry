@@ -61,6 +61,23 @@
         }
       },
       {
+        "uranium_border": {
+          "type": "image",
+          "texture": "textures/ui/liquid_border",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [
+            30,
+            6
+          ],
+          "size": [
+            16,
+            48
+          ],
+          "layer": 10
+        }
+      },
+      {
         "temperature@uc.item_display_hover_large": {
           "collection_index": 4,
           "anchor_from": "top_left",
@@ -203,7 +220,7 @@
       {
         "reactor_heading": {
           "type": "label",
-          "text": "ui.ac.fr.reactor_information",
+          "text": "ui.hm.nr.reactor_information",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -227,7 +244,7 @@
       {
         "tanks_heading": {
           "type": "label",
-          "text": "ui.ac.fr.tanks_information",
+          "text": "ui.hm.nr.tanks_information",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -285,7 +302,7 @@
       {
         "instructions": {
           "type": "label",
-          "text": "ui.ac.fr.control_hint",
+          "text": "ui.hm.nr.control_hint",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -560,7 +577,7 @@
       {
         "temperature_heading": {
           "type": "label",
-          "text": "ui.ac.fr.current_temperature",
+          "text": "ui.hm.nr.current_temperature",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -711,7 +728,7 @@
                 "controls": [
                   {
                     "reactor_title@chest.chest_label": {
-                      "text": "ui.ac.fr.title_reactor",
+                      "text": "ui.hm.nr.title_reactor",
                       "localize": true,
                       "offset": [
                         7,
@@ -730,7 +747,7 @@
                   },
                   {
                     "coolant_title@chest.chest_label": {
-                      "text": "ui.ac.fr.title_coolant",
+                      "text": "ui.hm.nr.title_coolant",
                       "localize": true,
                       "offset": [
                         7,
@@ -749,7 +766,7 @@
                   },
                   {
                     "control_title@chest.chest_label": {
-                      "text": "ui.ac.fr.title_control",
+                      "text": "ui.hm.nr.title_control",
                       "localize": true,
                       "offset": [
                         7,
@@ -768,7 +785,7 @@
                   },
                   {
                     "info_title@chest.chest_label": {
-                      "text": "ui.ac.fr.title_info",
+                      "text": "ui.hm.nr.title_info",
                       "localize": true,
                       "offset": [
                         7,
@@ -816,7 +833,7 @@
                       "$toggle_checked": "textures/ui/toggle_button/nuclear_general_checked",
                       "$toggle_unchecked_hover": "textures/ui/toggle_button/nuclear_general_unchecked_hover",
                       "$toggle_checked_hover": "textures/ui/toggle_button/nuclear_general_checked_hover",
-                      "$toggle_hover_text": "ui.ac.fr.tab_reactor",
+                      "$toggle_hover_text": "ui.hm.nr.tab_reactor",
                       "$toggle_hover_text_localize": true,
                       "$toggle_checked_hover_text_from_hover": true
                     }
@@ -865,7 +882,7 @@
                       "$toggle_checked": "textures/ui/toggle_button/fluid_checked",
                       "$toggle_unchecked_hover": "textures/ui/toggle_button/fluid_unchecked_hover",
                       "$toggle_checked_hover": "textures/ui/toggle_button/fluid_checked_hover",
-                      "$toggle_hover_text": "ui.ac.fr.tab_coolant",
+                      "$toggle_hover_text": "ui.hm.nr.tab_coolant",
                       "$toggle_hover_text_localize": true,
                       "$toggle_checked_hover_text_from_hover": true
                     }
@@ -914,7 +931,7 @@
                       "$toggle_checked": "textures/ui/toggle_button/nuclear_control_checked",
                       "$toggle_unchecked_hover": "textures/ui/toggle_button/nuclear_control_unchecked_hover",
                       "$toggle_checked_hover": "textures/ui/toggle_button/nuclear_control_checked_hover",
-                      "$toggle_hover_text": "ui.ac.fr.tab_control",
+                      "$toggle_hover_text": "ui.hm.nr.tab_control",
                       "$toggle_hover_text_localize": true,
                       "$toggle_checked_hover_text_from_hover": true
                     }
@@ -963,7 +980,7 @@
                       "$toggle_checked": "textures/ui/toggle_button/info_checked",
                       "$toggle_unchecked_hover": "textures/ui/toggle_button/info_unchecked_hover",
                       "$toggle_checked_hover": "textures/ui/toggle_button/info_checked_hover",
-                      "$toggle_hover_text": "ui.ac.fr.tab_info",
+                      "$toggle_hover_text": "ui.hm.nr.tab_info",
                       "$toggle_hover_text_localize": true,
                       "$toggle_checked_hover_text_from_hover": true
                     }
@@ -1106,7 +1123,7 @@
       {
         "reactor_description": {
           "type": "label",
-          "text": "ui.ac.fr.info_description",
+          "text": "ui.hm.nr.info_description",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1130,7 +1147,7 @@
       {
         "fuel_help": {
           "type": "label",
-          "text": "ui.ac.fr.info_fuel",
+          "text": "ui.hm.nr.info_fuel",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1170,7 +1187,7 @@
       {
         "enriched_details": {
           "type": "label",
-          "text": "ui.ac.fr.info_enriched",
+          "text": "ui.hm.nr.info_enriched",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1210,7 +1227,7 @@
       {
         "uranium_details": {
           "type": "label",
-          "text": "ui.ac.fr.info_uranium",
+          "text": "ui.hm.nr.info_uranium",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1234,7 +1251,7 @@
       {
         "energy_per_fu": {
           "type": "label",
-          "text": "ui.ac.fr.info_energy_per_fu",
+          "text": "ui.hm.nr.info_energy_per_fu",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1274,7 +1291,7 @@
       {
         "coolant_help": {
           "type": "label",
-          "text": "ui.ac.fr.info_coolant",
+          "text": "ui.hm.nr.info_coolant",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1314,7 +1331,7 @@
       {
         "control_help": {
           "type": "label",
-          "text": "ui.ac.fr.info_control",
+          "text": "ui.hm.nr.info_control",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1338,7 +1355,7 @@
       {
         "temperature_warning": {
           "type": "label",
-          "text": "ui.ac.fr.info_temperature_warning",
+          "text": "ui.hm.nr.info_temperature_warning",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1378,7 +1395,7 @@
       {
         "waste_help": {
           "type": "label",
-          "text": "ui.ac.fr.info_waste",
+          "text": "ui.hm.nr.info_waste",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1418,7 +1435,7 @@
       {
         "waste_warning": {
           "type": "label",
-          "text": "ui.ac.fr.info_waste_warning",
+          "text": "ui.hm.nr.info_waste_warning",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1457,7 +1474,7 @@
       {
         "coolant_requirement": {
           "type": "label",
-          "text": "ui.ac.fr.coolant_requirement",
+          "text": "ui.hm.nr.coolant_requirement",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1480,7 +1497,7 @@
       },
       {
         "coolant@uc.item_display_hover_large": {
-          "collection_index": 4,
+          "collection_index": 2,
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1529,7 +1546,7 @@
       {
         "heavy_water_name": {
           "type": "label",
-          "text": "ui.ac.fr.coolant_heavy_water",
+          "text": "ui.hm.nr.coolant_heavy_water",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1553,7 +1570,7 @@
       {
         "heavy_water_tier": {
           "type": "label",
-          "text": "ui.ac.fr.coolant_tier",
+          "text": "ui.hm.nr.coolant_tier",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1577,7 +1594,7 @@
       {
         "coolant_supply": {
           "type": "label",
-          "text": "ui.ac.fr.coolant_supply",
+          "text": "ui.hm.nr.coolant_supply",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1601,7 +1618,7 @@
       {
         "cooling_heading": {
           "type": "label",
-          "text": "ui.ac.fr.cooling_heading",
+          "text": "ui.hm.nr.cooling_heading",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1625,7 +1642,7 @@
       {
         "cooling_help": {
           "type": "label",
-          "text": "ui.ac.fr.cooling_help",
+          "text": "ui.hm.nr.cooling_help",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [
@@ -1665,7 +1682,7 @@
       {
         "cooling_warning": {
           "type": "label",
-          "text": "ui.ac.fr.cooling_warning",
+          "text": "ui.hm.nr.cooling_warning",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [

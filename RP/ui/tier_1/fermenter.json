@@ -1,3 +1,4 @@
+
 {
   "namespace": "fermenter",
 
@@ -140,7 +141,8 @@
           "$info_toggle_control_name": "$info_toggle_control_name",
           "$info_description": "ui.utilitycraft:info.fermenter"
         }
-      }
+      },
+      { "recipe_overlays@uc.fermenter_recipes_panel": {} }
     ]
   },
 

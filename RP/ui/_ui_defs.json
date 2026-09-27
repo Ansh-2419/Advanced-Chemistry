@@ -22,8 +22,10 @@
 
         "ui/recipes/chemical_reactor_recipes.json",
         "ui/recipes/fermenter_recipes.json",
+        "ui/recipes/fuel_mixer_recipes.json",
         "ui/recipes/infuser.json",
         "ui/recipes/polymerizer_recipes.json",
-        "ui/recipes/relic_synthesizer_recipes.json"
+        "ui/recipes/relic_synthesizer_recipes.json",
+        "ui/recipes/separator_recipes.json"
     ]
 }

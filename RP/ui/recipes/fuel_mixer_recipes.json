@@ -1,6 +1,6 @@
 {
   "namespace": "uc",
-  "cr_recipes_panel": {
+  "fm_recipes_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -21,7 +21,7 @@
     ],
     "controls": [
       {
-        "cr_0_preview": {
+        "fm_0_preview": {
           "type": "collection_panel",
           "size": [
             162,
@@ -32,7 +32,7 @@
           "bindings": [
             {
               "binding_type": "view",
-              "source_control_name": "cr_0_recipe",
+              "source_control_name": "fm_0_recipe",
               "source_property_name": "#toggle_state",
               "target_property_name": "#visible",
               "resolve_sibling_scope": false
@@ -45,33 +45,47 @@
                 "anchor_to": "top_left",
                 "offset": [
                   47,
+                  49
+                ],
+                "$recipe_icon": "textures/entity/fluids/ethanol",
+                "$toggle_control_name": "fm_0_fluid_in1",
+                "$toggle_name": "fm_0_fluid_in1",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_0.input1"
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  69,
+                  49
+                ],
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "$toggle_control_name": "fm_0_fluid_in2",
+                "$toggle_name": "fm_0_fluid_in2",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_0.input2"
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  129,
                   49
                 ],
                 "$recipe_icon": "textures/entity/fluids/biofuel",
-                "$toggle_control_name": "cr_0_fluid_in",
-                "$toggle_name": "cr_0_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_0.input"
-              }
-            },
-            {
-              "fluid_out@uc.fluid_recipe_ingredient": {
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  105,
-                  49
-                ],
-                "$recipe_icon": "textures/entity/fluids/hydrocarbon_slurry",
-                "$toggle_control_name": "cr_0_fluid_out",
-                "$toggle_name": "cr_0_fluid_out",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_0.output"
+                "$toggle_control_name": "fm_0_fluid_out",
+                "$toggle_name": "fm_0_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_0.output"
               }
             }
           ]
         }
       },
       {
-        "cr_1_preview": {
+        "fm_1_preview": {
           "type": "collection_panel",
           "size": [
             162,
@@ -82,7 +96,7 @@
           "bindings": [
             {
               "binding_type": "view",
-              "source_control_name": "cr_1_recipe",
+              "source_control_name": "fm_1_recipe",
               "source_property_name": "#toggle_state",
               "target_property_name": "#visible",
               "resolve_sibling_scope": false
@@ -97,10 +111,10 @@
                   47,
                   49
                 ],
-                "$recipe_icon": "textures/entity/fluids/heavy_hydrocarbon",
-                "$toggle_control_name": "cr_1_fluid_in",
-                "$toggle_name": "cr_1_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_1.input"
+                "$recipe_icon": "textures/entity/fluids/fertilizer_org",
+                "$toggle_control_name": "fm_1_fluid_in1",
+                "$toggle_name": "fm_1_fluid_in1",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_1.input1"
               }
             },
             {
@@ -108,149 +122,13 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  105,
-                  49
-                ],
-                "$recipe_icon": "textures/entity/fluids/crude_oil",
-                "$toggle_control_name": "cr_1_fluid_out",
-                "$toggle_name": "cr_1_fluid_out",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_1.output"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "cr_2_preview": {
-          "type": "collection_panel",
-          "size": [
-            162,
-            72
-          ],
-          "collection_name": "container_items",
-          "$item_collection_name": "container_items",
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "cr_2_recipe",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#visible",
-              "resolve_sibling_scope": false
-            }
-          ],
-          "controls": [
-            {
-              "fluid_out@uc.fluid_recipe_ingredient": {
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  47,
-                  49
-                ],
-                "$recipe_icon": "textures/entity/fluids/naphtha",
-                "$toggle_control_name": "cr_2_fluid_in",
-                "$toggle_name": "cr_2_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_2.input"
-              }
-            },
-            {
-              "fluid_out@uc.fluid_recipe_ingredient": {
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  105,
-                  49
-                ],
-                "$recipe_icon": "textures/entity/fluids/plastic_resin",
-                "$toggle_control_name": "cr_2_fluid_out",
-                "$toggle_name": "cr_2_fluid_out",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_2.output"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "cr_3_preview": {
-          "type": "collection_panel",
-          "size": [
-            162,
-            72
-          ],
-          "collection_name": "container_items",
-          "$item_collection_name": "container_items",
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "cr_3_recipe",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#visible",
-              "resolve_sibling_scope": false
-            }
-          ],
-          "controls": [
-            {
-              "fluid_out@uc.fluid_recipe_ingredient": {
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  47,
-                  49
-                ],
-                "$recipe_icon": "textures/entity/fluids/reactive_fluid",
-                "$toggle_control_name": "cr_3_fluid_in",
-                "$toggle_name": "cr_3_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_3.input"
-              }
-            },
-            {
-              "fluid_out@uc.fluid_recipe_ingredient": {
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  105,
+                  69,
                   49
                 ],
                 "$recipe_icon": "textures/entity/fluids/sulfuric_acid",
-                "$toggle_control_name": "cr_3_fluid_out",
-                "$toggle_name": "cr_3_fluid_out",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_3.output"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "cr_4_preview": {
-          "type": "collection_panel",
-          "size": [
-            162,
-            72
-          ],
-          "collection_name": "container_items",
-          "$item_collection_name": "container_items",
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "cr_4_recipe",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#visible",
-              "resolve_sibling_scope": false
-            }
-          ],
-          "controls": [
-            {
-              "fluid_out@uc.fluid_recipe_ingredient": {
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  47,
-                  49
-                ],
-                "$recipe_icon": "textures/entity/fluids/nitrite_compound",
-                "$toggle_control_name": "cr_4_fluid_in",
-                "$toggle_name": "cr_4_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_4.input"
+                "$toggle_control_name": "fm_1_fluid_in2",
+                "$toggle_name": "fm_1_fluid_in2",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_1.input2"
               }
             },
             {
@@ -258,13 +136,13 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  105,
+                  129,
                   49
                 ],
-                "$recipe_icon": "textures/entity/fluids/liquid_nitrogen",
-                "$toggle_control_name": "cr_4_fluid_out",
-                "$toggle_name": "cr_4_fluid_out",
-                "$toggle_hover_text": "ui.aoc:recipe.cr_4.output"
+                "$recipe_icon": "textures/entity/fluids/nitrite_compound",
+                "$toggle_control_name": "fm_1_fluid_out",
+                "$toggle_name": "fm_1_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_1.output"
               }
             }
           ]
@@ -272,7 +150,7 @@
       }
     ]
   },
-  "cr_recipes_buttons": {
+  "fm_recipes_buttons": {
     "type": "stack_panel",
     "anchor_from": "top_left",
     "anchor_to": "top_left",
@@ -296,12 +174,12 @@
           "controls": [
             {
               "r0@uc.recipe_toggle": {
-                "$toggle_name": "cr_recipes",
+                "$toggle_name": "fm_recipes",
                 "$toggle_index": 0,
-                "$toggle_control_name": "cr_0_recipe",
+                "$toggle_control_name": "fm_0_recipe",
                 "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.cr_0.summary",
-                "$recipe_icon": "textures/entity/fluids/hydrocarbon_slurry",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_0.summary",
+                "$recipe_icon": "textures/entity/fluids/biofuel",
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
@@ -312,64 +190,16 @@
             },
             {
               "r1@uc.recipe_toggle": {
-                "$toggle_name": "cr_recipes",
+                "$toggle_name": "fm_recipes",
                 "$toggle_index": 1,
-                "$toggle_control_name": "cr_1_recipe",
+                "$toggle_control_name": "fm_1_recipe",
                 "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.cr_1.summary",
-                "$recipe_icon": "textures/entity/fluids/crude_oil",
+                "$toggle_hover_text": "ui.aoc:recipe.fm_1.summary",
+                "$recipe_icon": "textures/entity/fluids/nitrite_compound",
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
                   21,
-                  0
-                ]
-              }
-            },
-            {
-              "r2@uc.recipe_toggle": {
-                "$toggle_name": "cr_recipes",
-                "$toggle_index": 2,
-                "$toggle_control_name": "cr_2_recipe",
-                "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.cr_2.summary",
-                "$recipe_icon": "textures/entity/fluids/plastic_resin",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  42,
-                  0
-                ]
-              }
-            },
-            {
-              "r3@uc.recipe_toggle": {
-                "$toggle_name": "cr_recipes",
-                "$toggle_index": 3,
-                "$toggle_control_name": "cr_3_recipe",
-                "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.cr_3.summary",
-                "$recipe_icon": "textures/entity/fluids/sulfuric_acid",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  63,
-                  0
-                ]
-              }
-            },
-            {
-              "r4@uc.recipe_toggle": {
-                "$toggle_name": "cr_recipes",
-                "$toggle_index": 4,
-                "$toggle_control_name": "cr_4_recipe",
-                "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.cr_4.summary",
-                "$recipe_icon": "textures/entity/fluids/liquid_nitrogen",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  84,
                   0
                 ]
               }
@@ -379,7 +209,7 @@
       }
     ]
   },
-  "cr_recipes_side_panel": {
+  "fm_recipes_side_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -553,13 +383,13 @@
           ],
           "$scroll_box_visible_touch": true,
           "$use_touch_mode": false,
-          "$scrolling_content": "uc.cr_recipes_buttons",
+          "$scrolling_content": "uc.fm_recipes_buttons",
           "$scroll_track_image_control": "common.empty_image"
         }
       }
     ]
   },
-  "cr_recipes_connector": {
+  "fm_recipes_connector": {
     "type": "panel",
     "anchor_from": "center",
     "anchor_to": "center",

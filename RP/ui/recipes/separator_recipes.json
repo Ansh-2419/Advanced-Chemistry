@@ -1,6 +1,6 @@
 {
   "namespace": "uc",
-  "poly_recipes_panel": {
+  "sep_recipes_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -21,7 +21,7 @@
     ],
     "controls": [
       {
-        "poly_0_preview": {
+        "sep_0_preview": {
           "type": "collection_panel",
           "size": [
             162,
@@ -32,7 +32,7 @@
           "bindings": [
             {
               "binding_type": "view",
-              "source_control_name": "poly_0_recipe",
+              "source_control_name": "sep_0_recipe",
               "source_property_name": "#toggle_state",
               "target_property_name": "#visible",
               "resolve_sibling_scope": false
@@ -40,71 +40,17 @@
           ],
           "controls": [
             {
-              "slot_1@uc.recipe_slot_overlay": {
-                "collection_index": 4,
-                "$slot_offset": [
-                  48,
-                  1
-                ],
-                "$slot_red_size": [
-                  16,
-                  16
-                ],
-                "$slot_item_texture": "textures/items/misc/hdpe_pellet",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
-              }
-            },
-            {
               "fluid_out@uc.fluid_recipe_ingredient": {
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  47,
+                  45,
                   49
                 ],
-                "$recipe_icon": "textures/entity/fluids/plastic_resin",
-                "$toggle_control_name": "poly_0_fluid_in",
-                "$toggle_name": "poly_0_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.poly_0.input"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "poly_1_preview": {
-          "type": "collection_panel",
-          "size": [
-            162,
-            72
-          ],
-          "collection_name": "container_items",
-          "$item_collection_name": "container_items",
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "poly_1_recipe",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#visible",
-              "resolve_sibling_scope": false
-            }
-          ],
-          "controls": [
-            {
-              "slot_1@uc.recipe_slot_overlay": {
-                "collection_index": 4,
-                "$slot_offset": [
-                  48,
-                  1
-                ],
-                "$slot_red_size": [
-                  16,
-                  16
-                ],
-                "$slot_item_texture": "textures/items/ingot/lithium_dust",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "$recipe_icon": "textures/entity/fluids/hydrocarbon_slurry",
+                "$toggle_control_name": "sep_0_fluid_in",
+                "$toggle_name": "sep_0_fluid_in",
+                "$toggle_hover_text": "ui.aoc:recipe.sep_0.input"
               }
             },
             {
@@ -112,65 +58,27 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
-                  47,
+                  119,
+                  49
+                ],
+                "$recipe_icon": "textures/entity/fluids/heavy_hydrocarbon",
+                "$toggle_control_name": "sep_0_fluid_out1",
+                "$toggle_name": "sep_0_fluid_out1",
+                "$toggle_hover_text": "ui.aoc:recipe.sep_0.output1"
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [
+                  141,
                   49
                 ],
                 "$recipe_icon": "textures/entity/fluids/reactive_fluid",
-                "$toggle_control_name": "poly_1_fluid_in",
-                "$toggle_name": "poly_1_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.poly_1.input"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "poly_2_preview": {
-          "type": "collection_panel",
-          "size": [
-            162,
-            72
-          ],
-          "collection_name": "container_items",
-          "$item_collection_name": "container_items",
-          "bindings": [
-            {
-              "binding_type": "view",
-              "source_control_name": "poly_2_recipe",
-              "source_property_name": "#toggle_state",
-              "target_property_name": "#visible",
-              "resolve_sibling_scope": false
-            }
-          ],
-          "controls": [
-            {
-              "slot_1@uc.recipe_slot_overlay": {
-                "collection_index": 4,
-                "$slot_offset": [
-                  48,
-                  1
-                ],
-                "$slot_red_size": [
-                  16,
-                  16
-                ],
-                "$slot_item_texture": "textures/items/misc/plutonium_pellet",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
-              }
-            },
-            {
-              "fluid_out@uc.fluid_recipe_ingredient": {
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  47,
-                  49
-                ],
-                "$recipe_icon": "textures/entity/fluids/nuclear_waste",
-                "$toggle_control_name": "poly_2_fluid_in",
-                "$toggle_name": "poly_2_fluid_in",
-                "$toggle_hover_text": "ui.aoc:recipe.poly_2.input"
+                "$toggle_control_name": "sep_0_fluid_out2",
+                "$toggle_name": "sep_0_fluid_out2",
+                "$toggle_hover_text": "ui.aoc:recipe.sep_0.output2"
               }
             }
           ]
@@ -178,7 +86,7 @@
       }
     ]
   },
-  "poly_recipes_buttons": {
+  "sep_recipes_buttons": {
     "type": "stack_panel",
     "anchor_from": "top_left",
     "anchor_to": "top_left",
@@ -202,48 +110,16 @@
           "controls": [
             {
               "r0@uc.recipe_toggle": {
-                "$toggle_name": "poly_recipes",
+                "$toggle_name": "sep_recipes",
                 "$toggle_index": 0,
-                "$toggle_control_name": "poly_0_recipe",
+                "$toggle_control_name": "sep_0_recipe",
                 "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.poly_0.summary",
-                "$recipe_icon": "textures/entity/fluids/plastic_resin",
+                "$toggle_hover_text": "ui.aoc:recipe.sep_0.summary",
+                "$recipe_icon": "textures/entity/fluids/hydrocarbon_slurry",
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
                   0,
-                  0
-                ]
-              }
-            },
-            {
-              "r1@uc.recipe_toggle": {
-                "$toggle_name": "poly_recipes",
-                "$toggle_index": 1,
-                "$toggle_control_name": "poly_1_recipe",
-                "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.poly_1.summary",
-                "$recipe_icon": "textures/entity/fluids/reactive_fluid",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  21,
-                  0
-                ]
-              }
-            },
-            {
-              "r2@uc.recipe_toggle": {
-                "$toggle_name": "poly_recipes",
-                "$toggle_index": 2,
-                "$toggle_control_name": "poly_2_recipe",
-                "$toggle_default_state": false,
-                "$toggle_hover_text": "ui.aoc:recipe.poly_2.summary",
-                "$recipe_icon": "textures/entity/fluids/nuclear_waste",
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
-                "offset": [
-                  42,
                   0
                 ]
               }
@@ -253,7 +129,7 @@
       }
     ]
   },
-  "poly_recipes_side_panel": {
+  "sep_recipes_side_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -427,13 +303,13 @@
           ],
           "$scroll_box_visible_touch": true,
           "$use_touch_mode": false,
-          "$scrolling_content": "uc.poly_recipes_buttons",
+          "$scrolling_content": "uc.sep_recipes_buttons",
           "$scroll_track_image_control": "common.empty_image"
         }
       }
     ]
   },
-  "poly_recipes_connector": {
+  "sep_recipes_connector": {
     "type": "panel",
     "anchor_from": "center",
     "anchor_to": "center",

@@ -65,10 +65,10 @@
       },
       {
         "input_slot@relic_synthesizer.relic_large_input_slot": {
-          "anchor_from": "top_middle",
-          "anchor_to": "top_middle",
+          "anchor_from": "center",
+          "anchor_to": "center",
           "collection_index": 3,
-          "offset": [-22, 22],
+          "offset": [-26, 20],
           "layer": 1
         }
       },

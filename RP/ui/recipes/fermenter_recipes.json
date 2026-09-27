@@ -1,23 +1,13 @@
 {
   "namespace": "uc",
-  "fermenter_plant_oil_strip@uc.liquid_recipe_strip": {
-    "$liquid_texture": "textures/entity/fluids/plant_oil"
-  },
-  "fermenter_ethanol_strip@uc.liquid_recipe_strip": {
-    "$liquid_texture": "textures/entity/fluids/ethanol"
-  },
-  "fermenter_fertilizer_strip@uc.liquid_recipe_strip": {
-    "$liquid_texture": "textures/entity/fluids/fertilizer_org"
-  },
-  "fermenter_recipe_content": {
-    "type": "stack_panel",
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "size": [
-      126,
-      "100%c"
-    ],
-    "orientation": "vertical",
+
+  "fermenter_recipes_panel": {
+    "type": "collection_panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [ 162, 72 ],
+    "collection_name": "container_items",
+    "$item_collection_name": "container_items",
     "bindings": [
       {
         "binding_type": "view",
@@ -28,86 +18,623 @@
       }
     ],
     "controls": [
+
       {
-        "header@uc.liquid_recipe_header": {}
-      },
-      {
-        "wheat_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_wheat",
-          "$input_item_name": "Wheat Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
-        }
-      },
-      {
-        "beetroot_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_beetroot",
-          "$input_item_name": "Beetroot Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
-        }
-      },
-      {
-        "melon_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_melon",
-          "$input_item_name": "Melon Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
-        }
-      },
-      {
-        "pumpkin_seeds_strip@uc.fermenter_plant_oil_strip": {
-          "$input_item_texture": "textures/items/seeds_pumpkin",
-          "$input_item_name": "Pumpkin Seeds \u00d764",
-          "$liquid_amount_text": "1,200 mB Plant Oil"
-        }
-      },
-      {
-        "sugarcane_strip@uc.fermenter_ethanol_strip": {
-          "$input_item_texture": "textures/items/reeds",
-          "$input_item_name": "Sugar Cane \u00d764",
-          "$liquid_amount_text": "1,200 mB Ethanol"
-        }
-      },
-      {
-        "bone_meal_strip@uc.fermenter_wide_recipe_strip": {
-          "$liquid_texture": "textures/entity/fluids/fertilizer_org",
-          "$input_item_texture": "textures/items/dye_powder_white",
-          "$input_item_name": "Bone Meal \u00d78 + Oak Leaves \u00d74",
-          "$liquid_amount_text": "500 mB Organic Fertilizer"
-        }
-      },
-      {
-        "addon_recipe_rows": {
-          "type": "stack_panel",
-          "size": [
-            126,
-            "100%c"
+        "fermenter_0_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_0_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
           ],
-          "orientation": "vertical",
-          "controls": []
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/seeds_wheat",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "$toggle_control_name": "fermenter_0_fluid_out",
+                "$toggle_name": "fermenter_0_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.plant_oil"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_1_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_1_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/seeds_beetroot",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "$toggle_control_name": "fermenter_1_fluid_out",
+                "$toggle_name": "fermenter_1_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.plant_oil"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_2_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_2_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/seeds_melon",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "$toggle_control_name": "fermenter_2_fluid_out",
+                "$toggle_name": "fermenter_2_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.plant_oil"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_3_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_3_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/seeds_pumpkin",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "$toggle_control_name": "fermenter_3_fluid_out",
+                "$toggle_name": "fermenter_3_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.plant_oil"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_4_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_4_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/reeds",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/ethanol",
+                "$toggle_control_name": "fermenter_4_fluid_out",
+                "$toggle_name": "fermenter_4_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.ethanol"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_5_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_5_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/misc/lavaball",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/static/images/lava_still_flipbook",
+                "$toggle_control_name": "fermenter_5_fluid_out",
+                "$toggle_name": "fermenter_5_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.lava"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_6_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_6_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/misc/waterball",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/static/images/water",
+                "$toggle_control_name": "fermenter_6_fluid_out",
+                "$toggle_name": "fermenter_6_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.water"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_7_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_7_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/ingot/thorium_chunk",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/liquified_thorium",
+                "$toggle_control_name": "fermenter_7_fluid_out",
+                "$toggle_name": "fermenter_7_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.liquified_thorium"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_8_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_8_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/dye_powder_white",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "slot_2@uc.recipe_slot_overlay": {
+                "collection_index": 4,
+                "$slot_offset": [ -6, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/blocks/oak_leaves",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/fertilizer_org",
+                "$toggle_control_name": "fermenter_8_fluid_out",
+                "$toggle_name": "fermenter_8_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.fertilizer_org"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "fermenter_9_preview": {
+          "type": "collection_panel",
+          "size": [ 162, 72 ],
+          "collection_name": "container_items",
+          "$item_collection_name": "container_items",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fermenter_9_recipe",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": false
+            }
+          ],
+          "controls": [
+            {
+              "slot_1@uc.recipe_slot_overlay": {
+                "collection_index": 3,
+                "$slot_offset": [ -26, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/dye_powder_white",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "slot_2@uc.recipe_slot_overlay": {
+                "collection_index": 4,
+                "$slot_offset": [ -6, -5 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/misc/waterball",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "slot_3@uc.recipe_slot_overlay": {
+                "collection_index": 5,
+                "$slot_offset": [ -26, 15 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/items/misc/compost",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "slot_4@uc.recipe_slot_overlay": {
+                "collection_index": 6,
+                "$slot_offset": [ -6, 15 ],
+                "$slot_red_size": [ 16, 16 ],
+                "$slot_item_texture": "textures/blocks/sapling_oak",
+                "$has_slot_hover": false,
+                "$has_slot_count": false
+              }
+            },
+            {
+              "fluid_out@uc.fluid_recipe_ingredient": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 121, 49 ],
+                "$recipe_icon": "textures/entity/fluids/bio_growth_solution",
+                "$toggle_control_name": "fermenter_9_fluid_out",
+                "$toggle_name": "fermenter_9_fluid_out",
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.output.bio_growth_solution"
+              }
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+
+  "fermenter_recipes_buttons": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 126, "100%c" ],
+    "offset": [ 0, -1 ],
+    "orientation": "vertical",
+    "controls": [
+      {
+        "row_0": {
+          "type": "panel",
+          "size": [ 126, 20 ],
+          "controls": [
+            {
+              "r0@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 0,
+                "$toggle_control_name": "fermenter_0_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.wheat_seeds",
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 0, 0 ]
+              }
+            },
+            {
+              "r1@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 1,
+                "$toggle_control_name": "fermenter_1_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.beetroot_seeds",
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 21, 0 ]
+              }
+            },
+            {
+              "r2@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 2,
+                "$toggle_control_name": "fermenter_2_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.melon_seeds",
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 42, 0 ]
+              }
+            },
+            {
+              "r3@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 3,
+                "$toggle_control_name": "fermenter_3_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.pumpkin_seeds",
+                "$recipe_icon": "textures/entity/fluids/plant_oil",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 63, 0 ]
+              }
+            },
+            {
+              "r4@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 4,
+                "$toggle_control_name": "fermenter_4_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.sugarcane",
+                "$recipe_icon": "textures/entity/fluids/ethanol",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 84, 0 ]
+              }
+            },
+            {
+              "r5@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 5,
+                "$toggle_control_name": "fermenter_5_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.lava_ball",
+                "$recipe_icon": "textures/entity/lava_fluid",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 105, 0 ]
+              }
+            }
+          ]
         }
       },
       {
-        "bottom_padding": {
+        "row_1": {
           "type": "panel",
-          "size": [
-            126,
-            8
+          "size": [ 126, 20 ],
+          "controls": [
+            {
+              "r6@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 6,
+                "$toggle_control_name": "fermenter_6_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.water_ball",
+                "$recipe_icon": "textures/entity/water_fluid",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 0, 0 ]
+              }
+            },
+            {
+              "r7@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 7,
+                "$toggle_control_name": "fermenter_7_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.thorium_chunk",
+                "$recipe_icon": "textures/entity/fluids/liquified_thorium",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 21, 0 ]
+              }
+            },
+            {
+              "r8@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 8,
+                "$toggle_control_name": "fermenter_8_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.organic_fertilizer",
+                "$recipe_icon": "textures/entity/fluids/fertilizer_org",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 42, 0 ]
+              }
+            },
+            {
+              "r9@uc.recipe_toggle": {
+                "$toggle_name": "fermenter_recipes",
+                "$toggle_index": 9,
+                "$toggle_control_name": "fermenter_9_recipe",
+                "$toggle_default_state": false,
+                "$toggle_hover_text": "ui.aoc:recipe.fermenter.growth_solution",
+                "$recipe_icon": "textures/entity/fluids/bio_growth_solution",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 63, 0 ]
+              }
+            }
           ]
         }
       }
     ]
   },
+
   "fermenter_recipes_side_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
-    "size": [
-      154,
-      166
-    ],
-    "offset": [
-      -91,
-      0
-    ],
+    "size": [ 154, 166 ],
+    "offset": [ -91, 0 ],
     "layer": 10,
     "collection_name": "container_items",
     "$item_collection_name": "container_items",
@@ -125,14 +652,8 @@
         "panel_bg": {
           "type": "image",
           "texture": "textures/ui/background/background_panel",
-          "size": [
-            140,
-            145
-          ],
-          "offset": [
-            7,
-            10.5
-          ],
+          "size": [ 140, 145 ],
+          "offset": [ 7, 10.5 ],
           "layer": -5
         }
       },
@@ -142,32 +663,19 @@
           "texture": "textures/ui/background/dark_top_tab",
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "size": [
-            140,
-            24
-          ],
-          "offset": [
-            7,
-            0
-          ],
+          "size": [ 140, 24 ],
+          "offset": [ 7, 0 ],
           "layer": -6
         }
       },
       {
         "title": {
           "type": "label",
-          "text": "Recipes",
+          "text": "ui.utilitycraft:recipes_panel.name",
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "offset": [
-            7,
-            7
-          ],
-          "color": [
-            0.9,
-            0.9,
-            0.9
-          ],
+          "offset": [ 7, 7 ],
+          "color": [ 0.9, 0.9, 0.9 ],
           "layer": -3,
           "font_scale_factor": 1
         }
@@ -178,14 +686,8 @@
           "texture": "textures/ui/recipe_grid_bg",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
-          "size": [
-            128,
-            134
-          ],
-          "offset": [
-            20,
-            27
-          ],
+          "size": [ 128, 134 ],
+          "offset": [ 20, 27 ],
           "layer": -4
         }
       },
@@ -195,14 +697,8 @@
           "texture": "textures/ui/background_border",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
-          "size": [
-            128,
-            134
-          ],
-          "offset": [
-            20,
-            27
-          ],
+          "size": [ 128, 134 ],
+          "offset": [ 20, 27 ],
           "layer": 4
         }
       },
@@ -210,84 +706,37 @@
         "recipes_scroll@common.scrolling_panel": {
           "anchor_from": "top_left",
           "anchor_to": "top_left",
-          "size": [
-            142,
-            130
-          ],
-          "offset": [
-            13,
-            -2
-          ],
+          "size": [ 142, 130 ],
+          "offset": [ 13, -2 ],
           "$show_background": false,
           "layer": -2,
-          "$scroll_size": [
-            4,
-            "100% - 4px"
-          ],
-          "$scrolling_pane_size": [
-            "100% + 6px",
-            "100% + 3px"
-          ],
-          "$scrolling_pane_offset": [
-            -2,
-            30
-          ],
-          "$scroll_view_port_size": [
-            "100% + 80px",
-            "100% + 3px"
-          ],
-          "$scroll_view_port_max_size": [
-            "100% + 80px",
-            "100% + 3px"
-          ],
-          "$scroll_view_port_offset": [
-            -44,
-            0
-          ],
-          "$scrolling_pane_size_touch": [
-            "100% + 6px",
-            "100% + 3px"
-          ],
-          "$scrolling_pane_offset_touch": [
-            0,
-            30
-          ],
-          "$scroll_view_port_size_touch": [
-            "100% + 80px",
-            "100% + 3px"
-          ],
-          "$scroll_view_port_max_size_touch": [
-            "100% + 80px",
-            "100% + 3px"
-          ],
-          "$scroll_view_port_offset_touch": [
-            -46,
-            0
-          ],
-          "$scroll_size_touch": [
-            4,
-            "100% - 4px"
-          ],
+          "$scroll_size": [ 4, "100% - 4px" ],
+          "$scrolling_pane_size": [ "100% + 6px", "100% + 3px" ],
+          "$scrolling_pane_offset": [ -2, 30 ],
+          "$scroll_view_port_size": [ "100% + 80px", "100% + 3px" ],
+          "$scroll_view_port_max_size": [ "100% + 80px", "100% + 3px" ],
+          "$scroll_view_port_offset": [ -44, 0 ],
+          "$scrolling_pane_size_touch": [ "100% + 6px", "100% + 3px" ],
+          "$scrolling_pane_offset_touch": [ 0, 30 ],
+          "$scroll_view_port_size_touch": [ "100% + 80px", "100% + 3px" ],
+          "$scroll_view_port_max_size_touch": [ "100% + 80px", "100% + 3px" ],
+          "$scroll_view_port_offset_touch": [ -46, 0 ],
+          "$scroll_size_touch": [ 4, "100% - 4px" ],
           "$scroll_box_visible_touch": true,
           "$use_touch_mode": false,
-          "$scrolling_content": "uc.fermenter_recipe_content",
+          "$scrolling_content": "uc.fermenter_recipes_buttons",
           "$scroll_track_image_control": "common.empty_image"
         }
       }
     ]
   },
+
   "fermenter_recipes_connector": {
     "type": "panel",
     "anchor_from": "center",
     "anchor_to": "center",
-    "size": [
-      12,
-      160
-    ],
-    "offset": [
-      -14,
-      0
-    ],
+    "size": [ 12, 160 ],
+    "offset": [ -14, 0 ],
     "layer": -20,
     "bindings": [
       {
@@ -303,129 +752,8 @@
         "connector_bg": {
           "type": "image",
           "texture": "textures/ui/recipe_book_side_toggle_dark",
-          "size": [
-            12,
-            160
-          ],
+          "size": [ 12, 160 ],
           "layer": 0
-        }
-      }
-    ]
-  },
-  "fermenter_wide_recipe_strip": {
-    "type": "panel",
-    "size": [
-      126,
-      18
-    ],
-    "$liquid_texture|default": "",
-    "$liquid_flipbook_uv|default": "",
-    "$input_item_texture|default": "",
-    "$input_item_name|default": "",
-    "$liquid_amount_text|default": "0 mB",
-    "controls": [
-      {
-        "background": {
-          "type": "image",
-          "texture": "textures/ui/gray_bg_border",
-          "anchor_from": "center",
-          "anchor_to": "center",
-          "size": [
-            126,
-            18
-          ],
-          "offset": [
-            54,
-            0
-          ],
-          "layer": -2
-        }
-      },
-      {
-        "liquid_icon": {
-          "type": "image",
-          "texture": "$liquid_texture",
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "size": [
-            14,
-            14
-          ],
-          "uv_size": [
-            16,
-            16
-          ],
-          "uv": "$liquid_flipbook_uv",
-          "offset": [
-            59,
-            2
-          ],
-          "layer": 1
-        }
-      },
-      {
-        "input_item_icon": {
-          "type": "image",
-          "texture": "$input_item_texture",
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          "size": [
-            14,
-            14
-          ],
-          "offset": [
-            78,
-            2
-          ],
-          "layer": 1
-        }
-      },
-      {
-        "input_item_name": {
-          "type": "label",
-          "text": "$input_item_name",
-          "anchor_from": "center",
-          "anchor_to": "center",
-          "size": [
-            72,
-            "default"
-          ],
-          "offset": [
-            47,
-            0
-          ],
-          "text_alignment": "left",
-          "color": [
-            0.3,
-            0.3,
-            0.3
-          ],
-          "font_scale_factor": 0.65,
-          "layer": 2
-        }
-      },
-      {
-        "amount": {
-          "type": "label",
-          "text": "$liquid_amount_text",
-          "anchor_from": "center",
-          "anchor_to": "center",
-          "size": [
-            34,
-            "default"
-          ],
-          "offset": [
-            106,
-            0
-          ],
-          "text_alignment": "center",
-          "color": [
-            0.3,
-            0.3,
-            0.3
-          ],
-          "font_scale_factor": 0.65,
-          "layer": 2
         }
       }
     ]

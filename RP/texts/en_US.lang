@@ -329,3 +329,94 @@ item.utilitycraft:adamant_chestplate=Adamant Chestplate\n§o§9@UC: Advance Chem
 item.utilitycraft:adamant_leggings=Adamant Leggings\n§o§9@UC: Advance Chemistry
 
 item.utilitycraft:adamant_boots=Adamant Boots\n§o§9@UC: Advance Chemistry
+
+ui.hm.nr.title_reactor=Fusion Reactor - General
+ui.hm.nr.title_coolant=Fusion Reactor - Coolant
+ui.hm.nr.title_control=Fusion Reactor - Control
+ui.hm.nr.title_info=Fusion Reactor - Info
+ui.hm.nr.tab_reactor=Reactor
+ui.hm.nr.tab_coolant=Coolant
+ui.hm.nr.tab_control=Control
+ui.hm.nr.tab_info=Info
+ui.hm.nr.reactor_information=Reactor
+ui.hm.nr.tanks_information=Resources
+ui.hm.nr.current_temperature=Current T:
+ui.hm.nr.control_hint=Opens the control panel to configure reactor settings.
+ui.hm.nr.coolant_requirement=Requires coolant. Water, Saline, or Liquid Nitrogen accepted.
+ui.hm.nr.coolant_heavy_water=Water / Saline / Liq. N2
+ui.hm.nr.coolant_tier=Available coolants
+ui.hm.nr.coolant_supply=Supply through Fluid Ports and Fluid Pipes set to Coolant Tank.
+ui.hm.nr.cooling_heading=How cooling works
+ui.hm.nr.cooling_help=Coolant absorbs reactor heat and is consumed while running. Keep a continuous supply.
+ui.hm.nr.cooling_warning=Higher-tier fuels run hotter. Use Liquid Nitrogen for maximum cooling.
+ui.hm.nr.info_title=Fusion Reactor Guide
+ui.hm.nr.info_description=The Fusion Reactor burns liquid fuels to generate Dorios Energy. Supply fuel, coolant, and drain exhaust continuously.
+ui.hm.nr.info_fuel=Fuel fills the Fuel Tank. Supported: Biofuel, Ethanol, Diesel, Heavy Hydrocarbon, Fissile Fuel. Higher-tier fuels produce far more energy per bucket.
+ui.hm.nr.info_coolant=Open the Coolant tab for accepted coolants, supply instructions, and cooling guidance. Missing coolant reduces efficiency.
+ui.hm.nr.info_control=Use the Control tab for reactor management options.
+ui.hm.nr.info_waste=Every combustion cycle produces Reactive Fluid exhaust. Drain it via Fluid Ports. Full exhaust tank pauses the reactor.
+ui.hm.nr.info_temperature_warning=Watch the temperature! Higher-tier fuels with insufficient coolant will drive the reactor to extreme temperatures.
+ui.hm.nr.info_waste_warning=Drain exhaust before dismantling. Keep exhaust flowing to avoid reaction stall.
+ui.hm.nr.info_energy_per_fu=Energy per bucket varies by fuel tier.\nFissile Fuel produces up to 500,000 DE/bucket.
+ui.hm.nr.info_uranium=Biofuel / Ethanol\nLow-tier fuel.\nClean and renewable.
+ui.hm.nr.info_enriched=Heavy Hydrocarbon / Fissile Fuel\nHigh-tier fuel.\nExtreme heat - use strong coolant.
+
+## ── Recipe UI — Fermenter ─────────────────────────────────────────────────────
+ui.aoc:recipe.fermenter.wheat_seeds=Wheat Seeds → Plant Oil
+ui.aoc:recipe.fermenter.beetroot_seeds=Beetroot Seeds → Plant Oil
+ui.aoc:recipe.fermenter.melon_seeds=Melon Seeds → Plant Oil
+ui.aoc:recipe.fermenter.pumpkin_seeds=Pumpkin Seeds → Plant Oil
+ui.aoc:recipe.fermenter.sugarcane=Sugar Cane → Ethanol
+ui.aoc:recipe.fermenter.lava_ball=Lava Ball → Lava
+ui.aoc:recipe.fermenter.water_ball=Water Ball → Water
+ui.aoc:recipe.fermenter.thorium_chunk=Thorium Chunk → Liquified Thorium
+ui.aoc:recipe.fermenter.organic_fertilizer=Bone Meal + Oak Leaves → Organic Fertilizer
+ui.aoc:recipe.fermenter.growth_solution=4 Inputs → Bio Growth Solution
+ui.aoc:recipe.fermenter.output.plant_oil=Output: Plant Oil
+ui.aoc:recipe.fermenter.output.ethanol=Output: Ethanol
+ui.aoc:recipe.fermenter.output.lava=Output: Lava
+ui.aoc:recipe.fermenter.output.water=Output: Water
+ui.aoc:recipe.fermenter.output.liquified_thorium=Output: Liquified Thorium
+ui.aoc:recipe.fermenter.output.fertilizer_org=Output: Organic Fertilizer
+ui.aoc:recipe.fermenter.output.bio_growth_solution=Output: Bio Growth Solution
+
+## ── Recipe UI — Chemical Reactor ─────────────────────────────────────────────
+ui.aoc:recipe.cr_0.summary=Biofuel → Hydrocarbon Slurry
+ui.aoc:recipe.cr_0.input=Input: Biofuel (1000 mB)
+ui.aoc:recipe.cr_0.output=Output: Hydrocarbon Slurry (750 mB)
+ui.aoc:recipe.cr_1.summary=Heavy Hydrocarbon → Crude Oil
+ui.aoc:recipe.cr_1.input=Input: Heavy Hydrocarbon (400 mB)
+ui.aoc:recipe.cr_1.output=Output: Crude Oil (250 mB)
+ui.aoc:recipe.cr_2.summary=Naphtha → Plastic Resin
+ui.aoc:recipe.cr_2.input=Input: Naphtha (1000 mB)
+ui.aoc:recipe.cr_2.output=Output: Plastic Resin (750 mB)
+ui.aoc:recipe.cr_3.summary=Reactive Fluid → Sulfuric Acid
+ui.aoc:recipe.cr_3.input=Input: Reactive Fluid (1000 mB)
+ui.aoc:recipe.cr_3.output=Output: Sulfuric Acid (750 mB)
+ui.aoc:recipe.cr_4.summary=Nitrite Compound → Liquid Nitrogen
+ui.aoc:recipe.cr_4.input=Input: Nitrite Compound (1000 mB)
+ui.aoc:recipe.cr_4.output=Output: Liquid Nitrogen (750 mB)
+
+## ── Recipe UI — Fuel Mixer ───────────────────────────────────────────────────
+ui.aoc:recipe.fm_0.summary=Ethanol + Plant Oil → Biofuel
+ui.aoc:recipe.fm_0.input1=Input: Ethanol (1000 mB)
+ui.aoc:recipe.fm_0.input2=Input: Plant Oil (1000 mB)
+ui.aoc:recipe.fm_0.output=Output: Biofuel (500 mB)
+ui.aoc:recipe.fm_1.summary=Organic Fertilizer + Sulfuric Acid → Nitrite Compound
+ui.aoc:recipe.fm_1.input1=Input: Organic Fertilizer (1000 mB)
+ui.aoc:recipe.fm_1.input2=Input: Sulfuric Acid (1000 mB)
+ui.aoc:recipe.fm_1.output=Output: Nitrite Compound (500 mB)
+
+## ── Recipe UI — Polymerizer ──────────────────────────────────────────────────
+ui.aoc:recipe.poly_0.summary=Plastic Resin → HDPE Pellet
+ui.aoc:recipe.poly_0.input=Input: Plastic Resin (250 mB)
+ui.aoc:recipe.poly_1.summary=Reactive Fluid → Lithium Dust
+ui.aoc:recipe.poly_1.input=Input: Reactive Fluid (250 mB)
+ui.aoc:recipe.poly_2.summary=Nuclear Waste → Plutonium Pellet
+ui.aoc:recipe.poly_2.input=Input: Nuclear Waste (250 mB)
+
+## ── Recipe UI — Separator ────────────────────────────────────────────────────
+ui.aoc:recipe.sep_0.summary=Hydrocarbon Slurry → Heavy Hydrocarbon + Reactive Fluid
+ui.aoc:recipe.sep_0.input=Input: Hydrocarbon Slurry (1000 mB)
+ui.aoc:recipe.sep_0.output1=Output: Heavy Hydrocarbon (600 mB)
+ui.aoc:recipe.sep_0.output2=Output: Reactive Fluid (350 mB)

@@ -1,15 +1,23 @@
 {
   "namespace": "chemical_reactor",
-
   "chemical_reactor_top": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
-    "size": [162, 72],
-    "offset": [-10, -40],
+    "size": [
+      162,
+      72
+    ],
+    "offset": [
+      -10,
+      -40
+    ],
     "collection_name": "container_items",
     "$item_collection_name": "container_items",
-    "$energy_bar_offset|default": [-72, 0],
+    "$energy_bar_offset|default": [
+      -72,
+      0
+    ],
     "$energy_bar_bg_texture|default": "textures/ui/toggle_button/left_bg",
     "$right_machine_tabs_name|default": "right_machine_tabs",
     "$upgrade_toggle_control_name|default": "upgrade_toggle_button",
@@ -19,16 +27,31 @@
     "$io_fluids_toggle_control_name|default": "io_fluids_toggle_button",
     "$info_toggle_control_name|default": "info_toggle_button",
     "controls": [
-      { "machine_name@uc.machine_name": { "$offset": [10, 0] } },
-      { "panel@uc.machine_side_panel": {} },
+      {
+        "machine_name@uc.machine_name": {
+          "$offset": [
+            10,
+            0
+          ]
+        }
+      },
+      {
+        "panel@uc.machine_side_panel": {}
+      },
       {
         "item_label@uc.text_label": {
           "collection_index": 1,
           "anchor_from": "top_left",
           "anchor_to": "top_left",
-          "size": [74, 140],
+          "size": [
+            74,
+            140
+          ],
           "$text_scale": 0.55,
-          "offset": [-78, 2]
+          "offset": [
+            -78,
+            2
+          ]
         }
       },
       {
@@ -42,23 +65,35 @@
         "fluid_bar_in@uc.fluid_bar": {
           "$collection_index": 4,
           "$has_bg": false,
-          "offset": [-38, 0]
+          "offset": [
+            -38,
+            0
+          ]
         }
       },
       {
         "progress_arrow@uc.progress_display": {
           "anchor_from": "top_middle",
           "anchor_to": "top_middle",
-          "offset": [2, 28],
+          "offset": [
+            2,
+            28
+          ],
           "collection_index": 2,
-          "size": [24, 24]
+          "size": [
+            24,
+            24
+          ]
         }
       },
       {
         "fluid_bar_out@uc.fluid_bar": {
           "$collection_index": 5,
           "$has_bg": false,
-          "offset": [20, 0]
+          "offset": [
+            20,
+            0
+          ]
         }
       },
       {
@@ -82,24 +117,24 @@
           "$has_fluid_io": true,
           "$io_items_default": false,
           "$io_fluids_default": true,
-          "$io_top_texture":    "textures/blocks/common/top",
-          "$io_left_texture":   "textures/blocks/common/side",
-          "$io_front_texture":  "textures/blocks/common/side",
-          "$io_right_texture":  "textures/blocks/common/side",
+          "$io_top_texture": "textures/blocks/common/top",
+          "$io_left_texture": "textures/blocks/common/side",
+          "$io_front_texture": "textures/blocks/common/side",
+          "$io_right_texture": "textures/blocks/common/side",
           "$io_bottom_texture": "textures/blocks/common/bottom",
-          "$io_back_texture":   "textures/blocks/common/south",
-          "$io_item_top_index":    10,
-          "$io_item_left_index":   11,
-          "$io_item_front_index":  12,
-          "$io_item_right_index":  13,
+          "$io_back_texture": "textures/blocks/common/south",
+          "$io_item_top_index": 10,
+          "$io_item_left_index": 11,
+          "$io_item_front_index": 12,
+          "$io_item_right_index": 13,
           "$io_item_bottom_index": 14,
-          "$io_item_back_index":   15,
-          "$io_fluid_top_index":   16,
-          "$io_fluid_left_index":  17,
+          "$io_item_back_index": 15,
+          "$io_fluid_top_index": 16,
+          "$io_fluid_left_index": 17,
           "$io_fluid_front_index": 18,
           "$io_fluid_right_index": 19,
-          "$io_fluid_bottom_index":20,
-          "$io_fluid_back_index":  21
+          "$io_fluid_bottom_index": 20,
+          "$io_fluid_back_index": 21
         }
       },
       {
@@ -111,14 +146,23 @@
       }
     ]
   },
-
   "utility_panel": {
     "type": "panel",
     "controls": [
-      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
-      { "flying_item_renderer@common.flying_item_renderer": { "layer": 14 } },
-      { "selected_item_details_factory@common.selected_item_details_factory": {} },
-      { "item_lock_notification_factory@common.item_lock_notification_factory": {} },
+      {
+        "container_gamepad_helpers@common.container_gamepad_helpers": {}
+      },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 14
+        }
+      },
+      {
+        "selected_item_details_factory@common.selected_item_details_factory": {}
+      },
+      {
+        "item_lock_notification_factory@common.item_lock_notification_factory": {}
+      },
       {
         "root_panel@common.root_panel": {
           "layer": 1,
@@ -128,8 +172,12 @@
                 "type": "panel",
                 "layer": 5,
                 "controls": [
-                  { "recipes_side_panel@uc.cr_recipes_side_panel": {} },
-                  { "recipes_connector@uc.cr_recipes_connector": {} },
+                  {
+                    "recipes_side_panel@uc.chemical_reactor_recipes_side_panel": {}
+                  },
+                  {
+                    "recipes_connector@uc.chemical_reactor_recipes_connector": {}
+                  },
                   {
                     "normal_content": {
                       "type": "panel",
@@ -143,28 +191,43 @@
                         }
                       ],
                       "controls": [
-                        { "common_panel@common.common_panel": { "$show_close_button": false } },
                         {
-                          "view_top_bar@uc.machine_recipe_view_top_bar": {
-                            "$machine_toggle_unchecked":       "textures/ui/toggle_button/tab_pressed",
-                            "$machine_toggle_checked":         "textures/ui/toggle_button/tab_pressed",
-                            "$machine_toggle_unchecked_hover": "textures/ui/toggle_button/tab_hover_pressed",
-                            "$machine_toggle_checked_hover":   "textures/ui/toggle_button/tab_hover_pressed",
-                            "$recipes_toggle_checked":         "textures/ui/toggle_button/tab",
-                            "$recipes_toggle_checked_hover":   "textures/ui/toggle_button/tab_hover"
+                          "common_panel@common.common_panel": {
+                            "$show_close_button": false
                           }
                         },
-                        { "chemical_reactor_top@chemical_reactor.chemical_reactor_top": {} },
-                        { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
-                        { "hotbar_grid@common.hotbar_grid_template": {} },
-                        { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                        {
+                          "view_top_bar@uc.machine_recipe_view_top_bar": {
+                            "$machine_toggle_unchecked": "textures/ui/toggle_button/tab_pressed",
+                            "$machine_toggle_checked": "textures/ui/toggle_button/tab_pressed",
+                            "$machine_toggle_unchecked_hover": "textures/ui/toggle_button/tab_hover_pressed",
+                            "$machine_toggle_checked_hover": "textures/ui/toggle_button/tab_hover_pressed",
+                            "$recipes_toggle_checked": "textures/ui/toggle_button/tab",
+                            "$recipes_toggle_checked_hover": "textures/ui/toggle_button/tab_hover"
+                          }
+                        },
+                        {
+                          "chemical_reactor_top@chemical_reactor.chemical_reactor_top": {}
+                        },
+                        {
+                          "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {}
+                        },
+                        {
+                          "hotbar_grid@common.hotbar_grid_template": {}
+                        },
+                        {
+                          "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {}
+                        }
                       ]
                     }
                   },
                   {
                     "recipes_content": {
                       "type": "panel",
-                      "offset": [76, 0],
+                      "offset": [
+                        76,
+                        0
+                      ],
                       "bindings": [
                         {
                           "binding_type": "view",
@@ -175,43 +238,60 @@
                         }
                       ],
                       "controls": [
-                        { "common_panel@common.common_panel": { "$show_close_button": false } },
+                        {
+                          "common_panel@common.common_panel": {
+                            "$show_close_button": false
+                          }
+                        },
                         {
                           "view_top_bar@uc.machine_recipe_view_top_bar": {
-                            "$machine_toggle_default_state":   false,
-                            "$recipes_toggle_default_state":   true,
-                            "$machine_toggle_checked":         "textures/ui/toggle_button/tab",
-                            "$machine_toggle_checked_hover":   "textures/ui/toggle_button/tab_hover",
-                            "$recipes_toggle_unchecked":       "textures/ui/toggle_button/tab_pressed",
-                            "$recipes_toggle_checked":         "textures/ui/toggle_button/tab_pressed",
+                            "$machine_toggle_default_state": false,
+                            "$recipes_toggle_default_state": true,
+                            "$machine_toggle_checked": "textures/ui/toggle_button/tab",
+                            "$machine_toggle_checked_hover": "textures/ui/toggle_button/tab_hover",
+                            "$recipes_toggle_unchecked": "textures/ui/toggle_button/tab_pressed",
+                            "$recipes_toggle_checked": "textures/ui/toggle_button/tab_pressed",
                             "$recipes_toggle_unchecked_hover": "textures/ui/toggle_button/tab_hover_pressed",
-                            "$recipes_toggle_checked_hover":   "textures/ui/toggle_button/tab_hover_pressed"
+                            "$recipes_toggle_checked_hover": "textures/ui/toggle_button/tab_hover_pressed"
                           }
                         },
                         {
                           "chemical_reactor_top@chemical_reactor.chemical_reactor_top": {
-                            "$energy_bar_offset":              [97, 64],
-                            "$energy_bar_bg_texture":          "textures/ui/toggle_button/right_bg",
-                            "$right_machine_tabs_name":        "right_machine_tabs_recipes",
-                            "$upgrade_toggle_control_name":    "upgrade_toggle_button_recipes",
-                            "$io_toggle_control_name":         "io_toggle_button_recipes",
-                            "$io_config_tabs_name":            "io_config_tabs_recipes",
-                            "$io_items_toggle_control_name":   "io_items_toggle_button_recipes",
-                            "$io_fluids_toggle_control_name":  "io_fluids_toggle_button_recipes",
-                            "$info_toggle_control_name":       "info_toggle_button_recipes"
+                            "$energy_bar_offset": [
+                              97,
+                              64
+                            ],
+                            "$energy_bar_bg_texture": "textures/ui/toggle_button/right_bg",
+                            "$right_machine_tabs_name": "right_machine_tabs_recipes",
+                            "$upgrade_toggle_control_name": "upgrade_toggle_button_recipes",
+                            "$io_toggle_control_name": "io_toggle_button_recipes",
+                            "$io_config_tabs_name": "io_config_tabs_recipes",
+                            "$io_items_toggle_control_name": "io_items_toggle_button_recipes",
+                            "$io_fluids_toggle_control_name": "io_fluids_toggle_button_recipes",
+                            "$info_toggle_control_name": "info_toggle_button_recipes"
                           }
                         },
-                        { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
-                        { "hotbar_grid@common.hotbar_grid_template": {} },
-                        { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                        {
+                          "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {}
+                        },
+                        {
+                          "hotbar_grid@common.hotbar_grid_template": {}
+                        },
+                        {
+                          "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {}
+                        }
                       ]
                     }
                   }
                 ]
               }
             },
-            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
-            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+            {
+              "inventory_selected_icon_button@common.inventory_selected_icon_button": {}
+            },
+            {
+              "gamepad_cursor@common.gamepad_cursor_button": {}
+            }
           ]
         }
       }
