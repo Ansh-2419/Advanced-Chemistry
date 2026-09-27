@@ -1,6 +1,6 @@
 {
   "namespace": "uc",
-  "cr_recipes_panel": {
+  "chemical_reactor_recipes_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -272,7 +272,7 @@
       }
     ]
   },
-  "cr_recipes_buttons": {
+  "chemical_reactor_recipes_buttons": {
     "type": "stack_panel",
     "anchor_from": "top_left",
     "anchor_to": "top_left",
@@ -379,7 +379,7 @@
       }
     ]
   },
-  "cr_recipes_side_panel": {
+  "chemical_reactor_recipes_side_panel": {
     "type": "collection_panel",
     "anchor_from": "center",
     "anchor_to": "center",
@@ -553,13 +553,13 @@
           ],
           "$scroll_box_visible_touch": true,
           "$use_touch_mode": false,
-          "$scrolling_content": "uc.cr_recipes_buttons",
+          "$scrolling_content": "uc.chemical_reactor_recipes_buttons",
           "$scroll_track_image_control": "common.empty_image"
         }
       }
     ]
   },
-  "cr_recipes_connector": {
+  "chemical_reactor_recipes_connector": {
     "type": "panel",
     "anchor_from": "center",
     "anchor_to": "center",

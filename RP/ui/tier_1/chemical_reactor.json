@@ -143,6 +143,9 @@
           "$info_toggle_control_name": "$info_toggle_control_name",
           "$info_description": "ui.utilitycraft:info.chemical_reactor"
         }
+      },
+      {
+        "recipe_overlays@uc.chemical_reactor_recipes_panel": {}
       }
     ]
   },
