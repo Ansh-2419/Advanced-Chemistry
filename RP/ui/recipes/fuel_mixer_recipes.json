@@ -125,7 +125,7 @@
                   69,
                   49
                 ],
-                "$recipe_icon": "textures/entity/fluids/sulfuric_acid",
+                "$recipe_icon": "textures/entity/sulfuric_acid_fluid",
                 "$toggle_control_name": "fm_1_fluid_in2",
                 "$toggle_name": "fm_1_fluid_in2",
                 "$toggle_hover_text": "ui.aoc:recipe.fm_1.input2"

@@ -57,7 +57,7 @@
         }
       },
       {
-        "fluid_bar_in@uc.fluid_bar": {
+        "fluid_bar_in@ac.input_bar_2": {
           "$collection_index": 3,
           "$has_bg": false,
           "offset": [

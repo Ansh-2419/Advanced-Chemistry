@@ -29,7 +29,7 @@
         }
       },
       {
-        "fluid_bar@uc.fluid_bar": {
+        "fluid_bar@uc.ac.output_bar_3": {
           "$collection_index": 10,
           "$has_bg": false,
           "offset": [36, 0]

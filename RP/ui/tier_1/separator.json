@@ -52,7 +52,7 @@
         }
       },
       {
-        "fluid_bar_in@uc.fluid_bar": {
+        "fluid_bar_in@ac.input_bar_2": {
           "$collection_index": 4,
           "$has_bg": false,
           "offset": [
@@ -77,7 +77,7 @@
         }
       },
       {
-        "bar_out1@uc.fluid_bar": {
+        "bar_out1@ac.output_bar_2": {
           "$collection_index": 5,
           "$has_bg": false,
           "offset": [
@@ -87,7 +87,7 @@
         }
       },
       {
-        "bar_out2@uc.fluid_bar": {
+        "bar_out2@ac.output_bar_3": {
           "$collection_index": 6,
           "$has_bg": false,
           "offset": [

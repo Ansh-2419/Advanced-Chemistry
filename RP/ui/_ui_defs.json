@@ -1,6 +1,7 @@
 {
     "ui_defs": [
         "ui/how_to_play_screen.json",
+        "ui/ac_core.json",
 
         "ui/multi/fluid_storage_monitor.json",
         "ui/multi/fuel_burner.json",
@@ -26,6 +27,7 @@
         "ui/recipes/infuser.json",
         "ui/recipes/polymerizer_recipes.json",
         "ui/recipes/relic_synthesizer_recipes.json",
-        "ui/recipes/separator_recipes.json"
+        "ui/recipes/separator_recipes.json",
+        "ui/recipes/alloy_forge_recipes.json"
     ]
 }
