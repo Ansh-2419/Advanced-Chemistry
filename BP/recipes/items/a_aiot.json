@@ -1,0 +1,62 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "utilitycraft:a_aiot"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "DSD",
+            "HPA",
+            "ZHD"
+        ],
+        "key": {
+            "D": {
+                "item": "utilitycraft:adamant_ingot"
+            },
+            "S": {
+                "item": "utilitycraft:a_sword"
+            },
+            "H": {
+                "item": "minecraft:string"
+            },
+            "P": {
+                "item": "utilitycraft:a_paxel"
+            },
+            "A": {
+                "item": "utilitycraft:a_hoe"
+            },
+            "Z": {
+                "item": "minecraft:stick"
+            }
+        },
+        "result": [
+            {
+                "item": "utilitycraft:a_aiot"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "utilitycraft:adamant_ingot"
+            },
+            {
+                "item": "utilitycraft:a_sword"
+            },
+            {
+                "item": "minecraft:string"
+            },
+            {
+                "item": "utilitycraft:a_paxel"
+            },
+            {
+                "item": "utilitycraft:a_hoe"
+            },
+            {
+                "item": "minecraft:stick"
+            }
+        ],
+        "priority": 0
+    }
+}

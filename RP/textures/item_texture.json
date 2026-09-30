@@ -3037,6 +3037,27 @@
         },
         "utilitycraft:adamant_boots": {
             "textures": "textures/items/armor/adamant_boots"
+                },
+        "a_pickaxe": {
+            "textures": "textures/items/tool/a_pickaxe"
+        },
+        "a_axe": {
+            "textures": "textures/items/tool/a_axe"
+        },
+        "a_shovel": {
+            "textures": "textures/items/tool/a_shovel"
+        },
+        "a_hoe": {
+            "textures": "textures/items/tool/a_hoe"
+        },
+        "a_hammer": {
+            "textures": "textures/items/tool/a_hammer"
+        },
+        "a_aiot": {
+            "textures": "textures/items/tool/a_aiot"
+        },
+        "a_paxel": {
+            "textures": "textures/items/tool/a_paxel"
         }
     }
 }

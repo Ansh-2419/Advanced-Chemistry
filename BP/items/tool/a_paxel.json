@@ -1,0 +1,68 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "utilitycraft:a_paxel",
+            "menu_category": {
+                "category": "equipment",
+                "group": "dorios:itemGroup.name.aiots"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:durability": {
+                "max_durability": 10200
+            },
+            "minecraft:enchantable": {
+                "value": 15,
+                "slot": "axe"
+            },
+            "minecraft:icon": "a_paxel",
+            "minecraft:display_name": {
+                "value": "Adamant Paxel"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "utilitycraft:adamant_ingot"
+                        ],
+                        "repair_amount": 900
+                    },
+                    {
+                        "items": [
+                            "utilitycraft:a_paxel"
+                        ],
+                        "repair_amount": 5100
+                    }
+                ]
+            },
+            "minecraft:damage": {
+                "value": 12
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_axe",
+                    "minecraft:is_pickaxe",
+                    "minecraft:netherite_tier",
+                    "minecraft:is_tool"
+                ]
+            },
+            "minecraft:fire_resistant": {
+                "value": true
+            },
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [
+                    {
+                        "speed": 22,
+                        "block": {
+                            "tags": "q.any_tag('minecraft:is_pickaxe_item_destructible','minecraft:is_shovel_item_destructible','minecraft:is_axe_item_destructible')"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
