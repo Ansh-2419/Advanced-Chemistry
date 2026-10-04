@@ -122,7 +122,7 @@
   },
   "output_slot": {
     "type": "input_panel",
-    "$slot_background_texture|default": "textures/ui/slots/output_slot",
+    "$slot_background_texture|default": "textures/ui/slots/output_5_slot",
     "size": [
       22,
       22
@@ -293,7 +293,7 @@
           "collection_index": 10,
           "offset": [
             -10,
-            50
+            48
           ],
           "layer": 2
         }

@@ -1,15 +1,13 @@
 {
   "namespace": "uc",
   "alloy_forge_recipes_panel": {
-    "type": "collection_panel",
-    "anchor_from": "center",
-    "anchor_to": "center",
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
     "size": [
       162,
       72
     ],
-    "collection_name": "container_items",
-    "$item_collection_name": "container_items",
     "bindings": [
       {
         "binding_type": "view",
@@ -22,13 +20,13 @@
     "controls": [
       {
         "af_0_preview": {
-          "type": "collection_panel",
+          "type": "panel",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
           "size": [
             162,
             72
           ],
-          "collection_name": "container_items",
-          "$item_collection_name": "container_items",
           "bindings": [
             {
               "binding_type": "view",
@@ -40,78 +38,323 @@
           ],
           "controls": [
             {
-              "slot_3@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -34,
-                  -26
-                ],
-                "$slot_red_size": [
+              "slot_3_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   16,
                   16
                 ],
-                "$slot_item_texture": "textures/items/ingot/duranium_ingot",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -34,
+                  10
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/duranium_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_4@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -10,
-                  -28
-                ],
-                "$slot_red_size": [
+              "slot_4_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   18,
                   18
                 ],
-                "$slot_item_texture": "textures/items/ingot/steel_ingot",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -10,
+                  8
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        18,
+                        18
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/duranium_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_6@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -34,
-                  -8
+              "slot_5_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  16,
+                  16
                 ],
-                "$slot_red_size": [
+                "offset": [
+                  14,
+                  10
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/ores/steel_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_6_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   20,
                   20
                 ],
-                "$slot_item_texture": "textures/items/ingot/lithium_dust",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -34,
+                  28
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        20,
+                        20
+                      ],
+                      "$slot_item_texture": "textures/items/ores/steel_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_7@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -10,
-                  -6
-                ],
-                "$slot_red_size": [
+              "slot_7_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   18,
                   18
                 ],
-                "$slot_item_texture": "textures/items/diamond",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -10,
+                  30
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        18,
+                        18
+                      ],
+                      "$slot_item_texture": "textures/items/plates/energized_iron_plate",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_12@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  68,
-                  -6
+              "slot_8_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  20,
+                  20
                 ],
-                "$slot_red_size": [
+                "offset": [
+                  14,
+                  28
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        20,
+                        20
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/lithium_dust",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_9_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  -34,
+                  50
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/lithium_dust",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_10_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  18,
+                  18
+                ],
+                "offset": [
+                  -10,
+                  48
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        18,
+                        18
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/lithium_dust",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_11_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  14,
+                  50
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/lithium_dust",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_12_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   22,
                   22
                 ],
-                "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  68,
+                  30
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        22,
+                        22
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             }
           ]
@@ -119,13 +362,13 @@
       },
       {
         "af_1_preview": {
-          "type": "collection_panel",
+          "type": "panel",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
           "size": [
             162,
             72
           ],
-          "collection_name": "container_items",
-          "$item_collection_name": "container_items",
           "bindings": [
             {
               "binding_type": "view",
@@ -137,78 +380,323 @@
           ],
           "controls": [
             {
-              "slot_3@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -34,
-                  -26
-                ],
-                "$slot_red_size": [
+              "slot_3_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   16,
                   16
                 ],
-                "$slot_item_texture": "textures/items/misc/hdpe_sheet",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -34,
+                  10
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/misc/hdpe_sheet",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_4@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -10,
-                  -28
-                ],
-                "$slot_red_size": [
+              "slot_4_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   18,
                   18
                 ],
-                "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -10,
+                  8
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        18,
+                        18
+                      ],
+                      "$slot_item_texture": "textures/items/misc/hdpe_sheet",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_6@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -34,
-                  -8
+              "slot_5_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  16,
+                  16
                 ],
-                "$slot_red_size": [
+                "offset": [
+                  14,
+                  10
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_6_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   20,
                   20
                 ],
-                "$slot_item_texture": "textures/items/heartofthesea",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -34,
+                  28
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        20,
+                        20
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_7@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  -10,
-                  -6
-                ],
-                "$slot_red_size": [
+              "slot_7_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   18,
                   18
                 ],
-                "$slot_item_texture": "textures/items/misc/industrial_chip",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  -10,
+                  30
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        18,
+                        18
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             },
             {
-              "slot_12@uc.recipe_slot_overlay": {
-                "$slot_offset": [
-                  68,
-                  -6
+              "slot_8_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  20,
+                  20
                 ],
-                "$slot_red_size": [
+                "offset": [
+                  14,
+                  28
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        20,
+                        20
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_9_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  -34,
+                  50
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/nautilus_core",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_10_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  18,
+                  18
+                ],
+                "offset": [
+                  -10,
+                  48
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        18,
+                        18
+                      ],
+                      "$slot_item_texture": "textures/items/dusts/netherite_dust",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_11_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
+                  16,
+                  16
+                ],
+                "offset": [
+                  14,
+                  50
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        16,
+                        16
+                      ],
+                      "$slot_item_texture": "textures/items/dusts/netherite_dust",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "slot_12_wrapper": {
+                "type": "panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "size": [
                   22,
                   22
                 ],
-                "$slot_item_texture": "textures/items/ingot/adamant_ingot",
-                "$has_slot_hover": false,
-                "$has_slot_count": false
+                "offset": [
+                  68,
+                  30
+                ],
+                "controls": [
+                  {
+                    "overlay@uc.recipe_slot_overlay": {
+                      "$slot_offset": [
+                        0,
+                        0
+                      ],
+                      "$slot_red_size": [
+                        22,
+                        22
+                      ],
+                      "$slot_item_texture": "textures/items/ingot/adamant_ingot",
+                      "$has_slot_hover": false,
+                      "$has_slot_count": false
+                    }
+                  }
+                ]
               }
             }
           ]

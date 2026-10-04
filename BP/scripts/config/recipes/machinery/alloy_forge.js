@@ -39,13 +39,13 @@ const nativeRecipes = [
         id:         "aoc:voltanium_alloy_ingot",
         inputs: [
             { id: "utilitycraft:duranium_ingot",     amount: 2 },
-            { id: "utilitycraft: steel_ingot",     amount: 2 },
+            { id: "utilitycraft:steel_ingot",     amount: 2 },
             { id: "utilitycraft:lithium_dust", amount: 4 },
-            { id: "minecraft:diamond",         amount: 1 },
+            { id: "utilitycraft:energized_iron_plate",         amount: 1 },
         ],
-        output:     { id: "utilitycraft:voltanium_ingot", count: 3 },
+        output:     { id: "utilitycraft:voltanium_ingot", count: 4 },
         energyCost: 150000,
-        seconds:    20,
+        seconds:    10,
     }),
 
     // ── Tier 2 — Adamant Mesh ────────────────────────────────────────────────
@@ -56,11 +56,11 @@ const nativeRecipes = [
             { id: "utilitycraft:hdpe_sheet",      amount: 2 },
             { id: "utilitycraft:voltanium_ingot", amount: 4 },
             { id: "minecraft:heart_of_the_sea",     amount: 1 },
-            { id: "utilitycraft:industrial_chip",  amount: 2 }
+            { id: "utilitycraft:netherite_dust",  amount: 2 }
         ],
-        output:     { id: "utilitycraft:adamant_ingot", count: 3 },
+        output:     { id: "utilitycraft:adamant_ingot", count: 4 },
         energyCost: 300000,
-        seconds:    30,
+        seconds:    10,
     }),
 
 ];
