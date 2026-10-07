@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "utilitycraft:voltanium",
+            "menu_category": { "category": "construction" }
+        },
+        "components": {
+            "minecraft:geometry": "geometry.utilitycraft_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "voltanium",
+                    "render_method": "opaque"
+                }
+            }
+        }
+    }
+}

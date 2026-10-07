@@ -1,0 +1,42 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "utilitycraft:alloy_forge"
+		},
+		"tags": [
+			"utilitycraft_workbench"
+		],
+		"pattern": [
+			"MBM",
+			"SCS",
+			"MAM"
+		],
+		"key": {
+			"A": {
+				"item": "utilitycraft:machine_case"
+			},
+			"S": {
+				"item": "utilitycraft:Duranium_ingot"
+			},
+			"M": {
+				"item": "utilitycraft:expert_chip"
+			},
+			"B": {
+				"item": "utilitycraft:energized_iron_block"
+			},
+			"C": {
+				"item": "utilitycraft:infuser"
+			}
+		},
+		"result": {
+			"item": "utilitycraft:alloy_forge",
+			"count": 1
+		},
+		"unlock": [
+			{
+				"item": "utilitycraft:Duranium_ingot"
+			}
+		]
+	}
+}

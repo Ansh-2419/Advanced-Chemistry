@@ -176,7 +176,7 @@
                 ],
                 "offset": [
                   -10,
-                  30
+                  28
                 ],
                 "controls": [
                   {
@@ -208,7 +208,7 @@
                 ],
                 "offset": [
                   14,
-                  28
+                  30
                 ],
                 "controls": [
                   {
@@ -550,7 +550,7 @@
                 ],
                 "offset": [
                   14,
-                  28
+                  30
                 ],
                 "controls": [
                   {
@@ -595,7 +595,7 @@
                         16,
                         16
                       ],
-                      "$slot_item_texture": "textures/items/nautilus_core",
+                      "$slot_item_texture": "textures/items/heartofthesea_closed",
                       "$has_slot_hover": false,
                       "$has_slot_count": false
                     }

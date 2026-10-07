@@ -420,3 +420,37 @@ ui.aoc:recipe.sep_0.summary=Hydrocarbon Slurry → Heavy Hydrocarbon + Reactive 
 ui.aoc:recipe.sep_0.input=Input: Hydrocarbon Slurry (1000 mB)
 ui.aoc:recipe.sep_0.output1=Output: Heavy Hydrocarbon (600 mB)
 ui.aoc:recipe.sep_0.output2=Output: Reactive Fluid (350 mB)
+
+# ── Machine entity names ─────────────────────────────────────────────────────
+entity.utilitycraft:alloy_forge.name=Alloy Forge
+entity.utilitycraft:nuclear_reactor_multiblock.name=Nuclear Reactor
+entity.utilitycraft:stellar_energy_reactor_multiblock.name=Stellar Energy Reactor
+entity.utilitycraft:fusion_reactor.name=Fusion Reactor
+
+# ── Tile (block item) names ──────────────────────────────────────────────────
+tile.utilitycraft:alloy_forge.name=Alloy Forge\\n§7- Accepted upgrades:\\n§a§7 §b§7\\n§o§9@UC: Advance Chemistry
+
+# ── Recipe hover text — Alloy Forge ──────────────────────────────────────────
+ui.aoc:recipe.alloy_forge.voltanium_alloy=Voltanium Alloy Ingot
+ui.aoc:recipe.alloy_forge.adamant_mesh=Adamant Mesh Alloy
+
+
+# ── IO tab labels ─────────────────────────────────────────────────────────────
+ui.aoc:io.alloy_forge.items=Items
+ui.aoc:io.chemical_reactor.items=Items
+ui.aoc:io.chemical_reactor.liquids=Liquids
+ui.aoc:io.fermenter.items=Items
+ui.aoc:io.fermenter.liquids=Liquids
+ui.aoc:io.fuel_mixer.liquids=Liquids
+ui.aoc:io.industrial_crusher.items=Items
+ui.aoc:io.polymerizer.items=Items
+ui.aoc:io.polymerizer.liquids=Liquids
+ui.aoc:io.relic_synthesizer.items=Items
+ui.aoc:io.separator.liquids=Liquids
+
+# ── Info tab descriptions ─────────────────────────────────────────────────────
+ui.aoc:info.alloy_forge=Alloy Forge\\n§7Combines up to 9 ingredient\\nstacks into advanced alloys.\\n§7Place ingredients in any slot.
+ui.aoc:info.industrial_crusher=Industrial Crusher\\n§7Crushes ores into dust\\nfor increased yield.
+ui.aoc:info.polymerizer=Polymerizer\\n§7Converts fluid into\\npolymer products.
+ui.aoc:info.relic_synthesizer=Relic Synthesizer\\n§7Synthesizes rare relics\\nfrom advanced components.
+"""

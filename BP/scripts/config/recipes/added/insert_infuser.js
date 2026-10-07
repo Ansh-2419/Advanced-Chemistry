@@ -15,14 +15,6 @@ const addedRecipes = {
         output: "utilitycraft:water_bucket_custom",
         required: 4
     },
-    "utilitycraft:lithium_dust|utilitycraft:steel_ingot": {
-        output: "utilitycraft:voltanium_ingot",
-        required: 4
-    },
-    "utilitycraft:hdpe_sheet|utilitycraft:voltanium_ingot": {
-        output: "utilitycraft:adamant_ingot",
-        required: 4
-    },
     "utilitycraft:adamant_ingot|utilitycraft:ultimate_chip": {
         output: "utilitycraft:industrial_chip",
         required: 4

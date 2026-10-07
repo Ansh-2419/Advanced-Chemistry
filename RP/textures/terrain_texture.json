@@ -240,6 +240,12 @@
         },
         "utilitycraft_nuclear_waste_fluid": {
             "textures": "textures/entity/fluids/nuclear_waste"
+        },
+        "adamant":{
+          "textures": "textures/blocks/ore/adamant"
+        },
+        "voltanium":{
+          "textures": "textures/blocks/ore/voltanium"
         }
     }
 }
