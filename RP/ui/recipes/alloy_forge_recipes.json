@@ -90,8 +90,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        18,
-                        18
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/duranium_ingot",
                       "$has_slot_hover": false,
@@ -144,7 +144,7 @@
                 ],
                 "offset": [
                   -34,
-                  28
+                  30
                 ],
                 "controls": [
                   {
@@ -154,8 +154,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        20,
-                        20
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ores/steel_ingot",
                       "$has_slot_hover": false,
@@ -176,7 +176,7 @@
                 ],
                 "offset": [
                   -10,
-                  28
+                  30
                 ],
                 "controls": [
                   {
@@ -186,8 +186,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        18,
-                        18
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/plates/energized_iron_plate",
                       "$has_slot_hover": false,
@@ -218,8 +218,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        20,
-                        20
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/lithium_dust",
                       "$has_slot_hover": false,
@@ -282,8 +282,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        18,
-                        18
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/lithium_dust",
                       "$has_slot_hover": false,
@@ -346,8 +346,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        22,
-                        22
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
                       "$has_slot_hover": false,
@@ -432,8 +432,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        18,
-                        18
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/misc/hdpe_sheet",
                       "$has_slot_hover": false,
@@ -496,8 +496,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        20,
-                        20
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
                       "$has_slot_hover": false,
@@ -528,8 +528,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        18,
-                        18
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
                       "$has_slot_hover": false,
@@ -560,8 +560,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        20,
-                        20
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/voltanium_ingot",
                       "$has_slot_hover": false,
@@ -624,8 +624,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        18,
-                        18
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/dusts/netherite_dust",
                       "$has_slot_hover": false,
@@ -688,8 +688,8 @@
                         0
                       ],
                       "$slot_red_size": [
-                        22,
-                        22
+                        16,
+                        16
                       ],
                       "$slot_item_texture": "textures/items/ingot/adamant_ingot",
                       "$has_slot_hover": false,

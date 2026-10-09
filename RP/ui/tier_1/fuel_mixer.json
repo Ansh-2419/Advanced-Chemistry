@@ -33,7 +33,7 @@
         }
       },
       {
-        "fluid_bar_1@ac.input_bar_1": {
+        "fluid_bar_1@ac.input_bar": {
           "$collection_index": 7,
           "$has_bg": false,
           "offset": [
