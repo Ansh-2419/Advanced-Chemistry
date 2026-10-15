@@ -36,7 +36,7 @@
         }
       },
       {
-        "biofuel_bar@uc.fluid_bar": {
+        "biofuel_bar@ac.fluid_bar": {
           "$collection_index": 2,
           "$has_bg": false,
           "offset": [30, 0]

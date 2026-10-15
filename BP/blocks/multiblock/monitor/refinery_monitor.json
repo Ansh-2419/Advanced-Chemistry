@@ -32,6 +32,7 @@
             "tag:dorios:fluid": {},
             "tag:dorios:energy": {},
             "tag:dorios:controller": {},
+            "tag:dorios:multiblock.controller": {},
             "tag:dorios:multiblock.case.refinery": {}
         },
         "permutations": [

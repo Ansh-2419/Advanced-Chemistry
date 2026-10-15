@@ -111,7 +111,7 @@
                   105,
                   49
                 ],
-                "$recipe_icon": "textures/entity/fluids/crude_oil",
+                "$recipe_icon": "textures/static/crude_oil",
                 "$toggle_control_name": "cr_1_fluid_out",
                 "$toggle_name": "cr_1_fluid_out",
                 "$toggle_hover_text": "ui.aoc:recipe.cr_1.output"
@@ -211,7 +211,7 @@
                   105,
                   49
                 ],
-                "$recipe_icon": "textures/entity/fluids/sulfuric_acid",
+                "$recipe_icon": "textures/static/sulfuric_acid",
                 "$toggle_control_name": "cr_3_fluid_out",
                 "$toggle_name": "cr_3_fluid_out",
                 "$toggle_hover_text": "ui.aoc:recipe.cr_3.output"
@@ -317,7 +317,7 @@
                 "$toggle_control_name": "cr_1_recipe",
                 "$toggle_default_state": false,
                 "$toggle_hover_text": "ui.aoc:recipe.cr_1.summary",
-                "$recipe_icon": "textures/entity/fluids/crude_oil",
+                "$recipe_icon": "textures/static/crude_oil",
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [
@@ -349,7 +349,7 @@
                 "$toggle_control_name": "cr_3_recipe",
                 "$toggle_default_state": false,
                 "$toggle_hover_text": "ui.aoc:recipe.cr_3.summary",
-                "$recipe_icon": "textures/entity/fluids/sulfuric_acid_fluid",
+                "$recipe_icon": "textures/static/sulfuric_acid_fluid",
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [

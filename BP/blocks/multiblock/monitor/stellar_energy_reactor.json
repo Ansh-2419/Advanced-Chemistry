@@ -28,7 +28,8 @@
             "minecraft:tick": { "interval_range": [4, 4] },
             "minecraft:destructible_by_mining": { "seconds_to_destroy": 3 },
             "minecraft:destructible_by_explosion": false,
-            "tag:dorios:controller": {}
+            "tag:dorios:controller": {},
+            "tag:dorios:multiblock.controller": {}
         },
         "permutations": [
             {
