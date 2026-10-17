@@ -39,7 +39,8 @@
                         },
                         "items": [
                             "utilitycraft:industrial_crusher",
-                            "utilitycraft:relic_synthesizer"
+                            "utilitycraft:relic_synthesizer",
+                            "utilitycraft:alloy_forge"
                         ]
                     },
                     {
@@ -80,8 +81,11 @@
                         "items": [
                             "utilitycraft:fluid_storage_monitor",
                             "utilitycraft:fuel_burner_monitor",
+                            "utilitycraft:refinery_monitor",
                             "utilitycraft:greenhouse_controller",
-                            "utilitycraft:refinery_monitor"
+                            "utilitycraft:stellar_energy_reactor_controller",
+                            "utilitycraft:nuclear_reactor_controller",
+                            "utilitycraft:fusion_reactor_controller"
                         ]
                     },
                     {
@@ -92,8 +96,8 @@
                         "items": [
                             "utilitycraft:fluid_storage_casing",
                             "utilitycraft:fuel_burner_casing",
-                            "utilitycraft:industrial_caseing",
-                            "utilitycraft:refinery_casing"
+                            "utilitycraft:refinery_casing",
+                            "utilitycraft:industrial_caseing"
                         ]
                     },
                     {

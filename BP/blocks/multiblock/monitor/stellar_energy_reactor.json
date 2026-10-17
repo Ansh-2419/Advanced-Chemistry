@@ -4,7 +4,7 @@
         "description": {
             "identifier": "utilitycraft:stellar_energy_reactor_controller",
             "menu_category": {
-                "category": "equipment"
+                "category": "construction"
             },
             "traits": {
                 "minecraft:placement_direction": {
@@ -18,7 +18,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*":     { "texture": "industrial_caseing",                      "render_method": "opaque" },
-                "north": { "texture": "stellar_energy_reactor",                  "render_method": "opaque" },
+                "north": { "texture": "stellar_energy_reactor_controller",                  "render_method": "opaque" },
                 "south": { "texture": "industrial_caseing",                      "render_method": "opaque" },
                 "east":  { "texture": "industrial_caseing",                      "render_method": "opaque" },
                 "west":  { "texture": "industrial_caseing",                      "render_method": "opaque" },

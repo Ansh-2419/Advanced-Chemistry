@@ -1,5 +1,6 @@
 {
     "namespace": "how_to_play",
+
     "how_to_play_selector_stack_panel/how_to_play_selector_pane": {
         "modifications": [
             {
@@ -9,10 +10,7 @@
                     {
                         "padding_aoc_00": {
                             "type": "panel",
-                            "size": [
-                                0,
-                                6
-                            ]
+                            "size": [ 0, 6 ]
                         }
                     },
                     {
@@ -21,34 +19,30 @@
                         }
                     },
                     {
-                        "aoc:getting_started_button@how_to_play.aoc:getting_started_button": {
+                        "aoc:introduction_button@how_to_play.aoc:introduction_button": {
                             "$toggle_group_forced_index": 401
                         }
                     },
                     {
-                        "aoc:tier1_machines_button@how_to_play.aoc:tier1_machines_button": {
+                        "aoc:machines_button@how_to_play.aoc:machines_button": {
                             "$toggle_group_forced_index": 402
                         }
                     },
                     {
-                        "aoc:industrial_machines_button@how_to_play.aoc:industrial_machines_button": {
+                        "aoc:items_button@how_to_play.aoc:items_button": {
                             "$toggle_group_forced_index": 403
                         }
                     },
                     {
-                        "aoc:multiblock_machines_button@how_to_play.aoc:multiblock_machines_button": {
+                        "aoc:multiblock_button@how_to_play.aoc:multiblock_button": {
                             "$toggle_group_forced_index": 404
-                        }
-                    },
-                    {
-                        "aoc:generators_button@how_to_play.aoc:generators_button": {
-                            "$toggle_group_forced_index": 405
                         }
                     }
                 ]
             }
         ]
     },
+
     "how_to_play_section_content_panels/general_tips_sections": {
         "modifications": [
             {
@@ -56,52 +50,46 @@
                 "operation": "insert_front",
                 "value": [
                     {
-                        "aoc:getting_started_section@how_to_play.aoc:getting_started_section": {}
+                        "aoc:introduction_section@how_to_play.aoc:introduction_section": {}
                     },
                     {
-                        "aoc:tier1_machines_section@how_to_play.aoc:tier1_machines_section": {}
+                        "aoc:machines_section@how_to_play.aoc:machines_section": {}
                     },
                     {
-                        "aoc:industrial_machines_section@how_to_play.aoc:industrial_machines_section": {}
+                        "aoc:items_section@how_to_play.aoc:items_section": {}
                     },
                     {
-                        "aoc:multiblock_machines_section@how_to_play.aoc:multiblock_machines_section": {}
-                    },
-                    {
-                        "aoc:generators_section@how_to_play.aoc:generators_section": {}
+                        "aoc:multiblock_section@how_to_play.aoc:multiblock_section": {}
                     }
                 ]
             }
         ]
     },
+
     "aoc_img_machine@how_to_play_common.image": {
         "anchor_from": "top_middle",
         "anchor_to": "top_middle",
-        "size": [
-            "150px",
-            "150px"
-        ]
+        "size": [ "150px", "150px" ]
     },
-    "aoc:getting_started_button@how_to_play_common.section_toggle_button": {
-        "$section_topic": "aoc:getting_started"
+
+    "aoc:introduction_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "aoc:introduction"
     },
-    "aoc:tier1_machines_button@how_to_play_common.section_toggle_button": {
-        "$section_topic": "aoc:tier1_machines"
+    "aoc:machines_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "aoc:machines"
     },
-    "aoc:industrial_machines_button@how_to_play_common.section_toggle_button": {
-        "$section_topic": "aoc:industrial_machines"
+    "aoc:items_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "aoc:items"
     },
-    "aoc:multiblock_machines_button@how_to_play_common.section_toggle_button": {
-        "$section_topic": "aoc:multiblock_machines"
+    "aoc:multiblock_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "aoc:multiblock"
     },
-    "aoc:generators_button@how_to_play_common.section_toggle_button": {
-        "$section_topic": "aoc:generators"
-    },
-    "aoc:getting_started_section@how_to_play_common.main_sections": {
+
+    "aoc:introduction_section@how_to_play_common.main_sections": {
         "bindings": [
             {
                 "binding_type": "view",
-                "source_control_name": "aoc:getting_started_button_toggle",
+                "source_control_name": "aoc:introduction_button_toggle",
                 "source_property_name": "#toggle_state",
                 "target_property_name": "#visible"
             }
@@ -109,46 +97,57 @@
         "controls": [
             {
                 "p1@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.getting_started.p1"
+                    "$text": "howtoplay.aoc.introduction.p1"
                 }
             },
             {
                 "h1@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.getting_started.h1"
+                    "$text": "howtoplay.aoc.introduction.h1"
                 }
             },
             {
                 "p2@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.getting_started.p2"
+                    "$text": "howtoplay.aoc.introduction.p2"
                 }
             },
             {
                 "h2@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.getting_started.h2"
+                    "$text": "howtoplay.aoc.introduction.h2"
                 }
             },
             {
                 "p3@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.getting_started.p3"
+                    "$text": "howtoplay.aoc.introduction.p3"
                 }
             },
             {
                 "h3@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.getting_started.h3"
+                    "$text": "howtoplay.aoc.introduction.h3"
                 }
             },
             {
                 "p4@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.getting_started.p4"
+                    "$text": "howtoplay.aoc.introduction.p4"
+                }
+            },
+            {
+                "h4@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.introduction.h4"
+                }
+            },
+            {
+                "p5@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.introduction.p5"
                 }
             }
         ]
     },
-    "aoc:tier1_machines_section@how_to_play_common.main_sections": {
+
+    "aoc:machines_section@how_to_play_common.main_sections": {
         "bindings": [
             {
                 "binding_type": "view",
-                "source_control_name": "aoc:tier1_machines_button_toggle",
+                "source_control_name": "aoc:machines_button_toggle",
                 "source_property_name": "#toggle_state",
                 "target_property_name": "#visible"
             }
@@ -156,7 +155,7 @@
         "controls": [
             {
                 "p_intro@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.tier1.intro"
+                    "$text": "howtoplay.aoc.machines.intro"
                 }
             },
             {
@@ -164,7 +163,7 @@
             },
             {
                 "h_ferm@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.tier1.h_fermenter"
+                    "$text": "howtoplay.aoc.machines.h_fermenter"
                 }
             },
             {
@@ -174,7 +173,7 @@
             },
             {
                 "p_ferm@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.tier1.p_fermenter"
+                    "$text": "howtoplay.aoc.machines.p_fermenter"
                 }
             },
             {
@@ -182,7 +181,7 @@
             },
             {
                 "h_fm@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.tier1.h_fuel_mixer"
+                    "$text": "howtoplay.aoc.machines.h_fuel_mixer"
                 }
             },
             {
@@ -192,7 +191,7 @@
             },
             {
                 "p_fm@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.tier1.p_fuel_mixer"
+                    "$text": "howtoplay.aoc.machines.p_fuel_mixer"
                 }
             },
             {
@@ -200,7 +199,7 @@
             },
             {
                 "h_cr@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.tier1.h_chemical_reactor"
+                    "$text": "howtoplay.aoc.machines.h_chemical_reactor"
                 }
             },
             {
@@ -210,7 +209,7 @@
             },
             {
                 "p_cr@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.tier1.p_chemical_reactor"
+                    "$text": "howtoplay.aoc.machines.p_chemical_reactor"
                 }
             },
             {
@@ -218,7 +217,7 @@
             },
             {
                 "h_sep@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.tier1.h_separator"
+                    "$text": "howtoplay.aoc.machines.h_separator"
                 }
             },
             {
@@ -228,7 +227,7 @@
             },
             {
                 "p_sep@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.tier1.p_separator"
+                    "$text": "howtoplay.aoc.machines.p_separator"
                 }
             },
             {
@@ -236,7 +235,7 @@
             },
             {
                 "h_poly@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.tier1.h_polymerizer"
+                    "$text": "howtoplay.aoc.machines.h_polymerizer"
                 }
             },
             {
@@ -246,32 +245,15 @@
             },
             {
                 "p_poly@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.tier1.p_polymerizer"
-                }
-            }
-        ]
-    },
-    "aoc:industrial_machines_section@how_to_play_common.main_sections": {
-        "bindings": [
-            {
-                "binding_type": "view",
-                "source_control_name": "aoc:industrial_machines_button_toggle",
-                "source_property_name": "#toggle_state",
-                "target_property_name": "#visible"
-            }
-        ],
-        "controls": [
-            {
-                "p_intro@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.industrial.intro"
+                    "$text": "howtoplay.aoc.machines.p_polymerizer"
                 }
             },
             {
-                "pad0@how_to_play_common.padding": {}
+                "pad5@how_to_play_common.padding": {}
             },
             {
                 "h_crush@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.industrial.h_crusher"
+                    "$text": "howtoplay.aoc.machines.h_crusher"
                 }
             },
             {
@@ -281,15 +263,15 @@
             },
             {
                 "p_crush@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.industrial.p_crusher"
+                    "$text": "howtoplay.aoc.machines.p_crusher"
                 }
             },
             {
-                "pad1@how_to_play_common.padding": {}
+                "pad6@how_to_play_common.padding": {}
             },
             {
                 "h_relic@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.industrial.h_relic"
+                    "$text": "howtoplay.aoc.machines.h_relic"
                 }
             },
             {
@@ -299,24 +281,126 @@
             },
             {
                 "p_relic@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.industrial.p_relic"
+                    "$text": "howtoplay.aoc.machines.p_relic"
+                }
+            },
+            {
+                "pad7@how_to_play_common.padding": {}
+            },
+            {
+                "h_alloy@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.machines.h_alloy_forge"
+                }
+            },
+            {
+                "img_alloy@how_to_play.aoc_img_machine": {
+                    "texture": "textures/ui/wiki/aoc/guide/alloy_forge"
+                }
+            },
+            {
+                "p_alloy@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.machines.p_alloy_forge"
                 }
             }
         ]
     },
-    "aoc:multiblock_machines_section@how_to_play_common.main_sections": {
+
+    "aoc:items_section@how_to_play_common.main_sections": {
         "bindings": [
             {
                 "binding_type": "view",
-                "source_control_name": "aoc:multiblock_machines_button_toggle",
+                "source_control_name": "aoc:items_button_toggle",
                 "source_property_name": "#toggle_state",
                 "target_property_name": "#visible"
             }
         ],
         "controls": [
             {
-                "p1@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.multiblock.p1"
+                "p_intro@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.items.intro"
+                }
+            },
+            {
+                "pad0@how_to_play_common.padding": {}
+            },
+            {
+                "h_ingr@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.items.h_ingredients"
+                }
+            },
+            {
+                "p_ingr@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.items.p_ingredients"
+                }
+            },
+            {
+                "pad1@how_to_play_common.padding": {}
+            },
+            {
+                "h_fluids@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.items.h_fluids"
+                }
+            },
+            {
+                "p_fluids@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.items.p_fluids"
+                }
+            },
+            {
+                "pad2@how_to_play_common.padding": {}
+            },
+            {
+                "h_va@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.items.h_voltanium_armor"
+                }
+            },
+            {
+                "p_va@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.items.p_voltanium_armor"
+                }
+            },
+            {
+                "pad3@how_to_play_common.padding": {}
+            },
+            {
+                "h_aa@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.items.h_adamant_armor"
+                }
+            },
+            {
+                "p_aa@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.items.p_adamant_armor"
+                }
+            },
+            {
+                "pad4@how_to_play_common.padding": {}
+            },
+            {
+                "h_vt@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.items.h_voltanium_tools"
+                }
+            },
+            {
+                "p_vt@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.items.p_voltanium_tools"
+                }
+            }
+        ]
+    },
+
+    "aoc:multiblock_section@how_to_play_common.main_sections": {
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "aoc:multiblock_button_toggle",
+                "source_property_name": "#toggle_state",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "p_intro@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.multiblock.intro"
                 }
             },
             {
@@ -377,8 +461,80 @@
                 "pad3@how_to_play_common.padding": {}
             },
             {
-                "h_fv@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.multiblock.h_fluid_valve"
+                "h_gh@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.multiblock.h_greenhouse"
+                }
+            },
+            {
+                "img_gh@how_to_play.aoc_img_machine": {
+                    "texture": "textures/ui/wiki/aoc/guide/greenhouse_controller"
+                }
+            },
+            {
+                "p_gh@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.multiblock.p_greenhouse"
+                }
+            },
+            {
+                "pad4@how_to_play_common.padding": {}
+            },
+            {
+                "h_nr@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.multiblock.h_nuclear_reactor"
+                }
+            },
+            {
+                "img_nr@how_to_play.aoc_img_machine": {
+                    "texture": "textures/ui/wiki/aoc/guide/nuclear_reactor"
+                }
+            },
+            {
+                "p_nr@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.multiblock.p_nuclear_reactor"
+                }
+            },
+            {
+                "pad5@how_to_play_common.padding": {}
+            },
+            {
+                "h_ser@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.multiblock.h_stellar_energy_reactor"
+                }
+            },
+            {
+                "img_ser@how_to_play.aoc_img_machine": {
+                    "texture": "textures/ui/wiki/aoc/guide/stellar_energy_reactor"
+                }
+            },
+            {
+                "p_ser@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.multiblock.p_stellar_energy_reactor"
+                }
+            },
+            {
+                "pad6@how_to_play_common.padding": {}
+            },
+            {
+                "h_fr@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.multiblock.h_fusion_reactor"
+                }
+            },
+            {
+                "img_fr@how_to_play.aoc_img_machine": {
+                    "texture": "textures/ui/wiki/aoc/guide/fusion_reactor"
+                }
+            },
+            {
+                "p_fr@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.multiblock.p_fusion_reactor"
+                }
+            },
+            {
+                "pad7@how_to_play_common.padding": {}
+            },
+            {
+                "h_valves@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.multiblock.h_valves"
                 }
             },
             {
@@ -387,133 +543,26 @@
                 }
             },
             {
-                "p_fv@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.multiblock.p_fluid_valve"
+                "p_valves@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.multiblock.p_valves"
                 }
             },
             {
-                "pad4@how_to_play_common.padding": {}
+                "pad8@how_to_play_common.padding": {}
             },
             {
-                "h_ev@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.multiblock.h_energy_valve"
+                "h_ports@how_to_play_common.header": {
+                    "$text": "howtoplay.aoc.multiblock.h_ind_ports"
                 }
             },
             {
-                "img_ev@how_to_play.aoc_img_machine": {
-                    "texture": "textures/ui/wiki/aoc/guide/energy_valve"
+                "img_ports@how_to_play.aoc_img_machine": {
+                    "texture": "textures/ui/wiki/aoc/guide/ind_energy_port"
                 }
             },
             {
-                "p_ev@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.multiblock.p_energy_valve"
-                }
-            }
-        ]
-    },
-    "aoc:generators_section@how_to_play_common.main_sections": {
-        "bindings": [
-            {
-                "binding_type": "view",
-                "source_control_name": "aoc:generators_button_toggle",
-                "source_property_name": "#toggle_state",
-                "target_property_name": "#visible"
-            }
-        ],
-        "controls": [
-            {
-                "p1@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.generators.p1"
-                }
-            },
-            {
-                "pad0@how_to_play_common.padding": {}
-            },
-            {
-                "h1@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.generators.h_furnator"
-                }
-            },
-            {
-                "img1@how_to_play.aoc_img_machine": {
-                    "texture": "textures/ui/wiki/aoc/guide/ind_furnator"
-                }
-            },
-            {
-                "p2@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.generators.p_furnator"
-                }
-            },
-            {
-                "pad1@how_to_play_common.padding": {}
-            },
-            {
-                "h2@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.generators.h_magmator"
-                }
-            },
-            {
-                "img2@how_to_play.aoc_img_machine": {
-                    "texture": "textures/ui/wiki/aoc/guide/ind_magmator"
-                }
-            },
-            {
-                "p3@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.generators.p_magmator"
-                }
-            },
-            {
-                "pad2@how_to_play_common.padding": {}
-            },
-            {
-                "h3@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.generators.h_solar"
-                }
-            },
-            {
-                "img3@how_to_play.aoc_img_machine": {
-                    "texture": "textures/ui/wiki/aoc/guide/ind_solar_panel"
-                }
-            },
-            {
-                "p4@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.generators.p_solar"
-                }
-            },
-            {
-                "pad3@how_to_play_common.padding": {}
-            },
-            {
-                "h4@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.generators.h_thermo"
-                }
-            },
-            {
-                "img4@how_to_play.aoc_img_machine": {
-                    "texture": "textures/ui/wiki/aoc/guide/ind_thermo_generator"
-                }
-            },
-            {
-                "p5@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.generators.p_thermo"
-                }
-            },
-            {
-                "pad4@how_to_play_common.padding": {}
-            },
-            {
-                "h5@how_to_play_common.header": {
-                    "$text": "howtoplay.aoc.generators.h_wind"
-                }
-            },
-            {
-                "img5@how_to_play.aoc_img_machine": {
-                    "texture": "textures/ui/wiki/aoc/guide/ind_wind_turbine"
-                }
-            },
-            {
-                "p6@how_to_play_common.paragraph": {
-                    "$text": "howtoplay.aoc.generators.p_wind"
+                "p_ports@how_to_play_common.paragraph": {
+                    "$text": "howtoplay.aoc.multiblock.p_ind_ports"
                 }
             }
         ]

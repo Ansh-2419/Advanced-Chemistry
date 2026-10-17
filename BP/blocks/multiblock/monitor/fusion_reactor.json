@@ -4,7 +4,7 @@
         "description": {
             "identifier": "utilitycraft:fusion_reactor_controller",
             "menu_category": {
-                "category": "equipment"
+                "category": "construction"
             },
             "traits": {
                 "minecraft:placement_direction": {

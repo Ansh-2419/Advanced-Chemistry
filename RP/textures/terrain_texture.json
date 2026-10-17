@@ -235,6 +235,12 @@
         "nuclear_reactor_controller": {
             "textures": "textures/blocks/multi_face/nuclear_reactor_controller"
         },
+        "fusion_reactor_controller": {
+            "textures": "textures/blocks/multi_face/fusion_reactor_controller"
+        },
+        "stellar_energy_reactor_controller": {
+            "textures": "textures/blocks/multi_face/stellar_energy_reactor_controller"
+        },
         "utilitycraft_liquified_thorium_fluid": {
             "textures": "textures/entity/fluids/liquified_thorium"
         },
