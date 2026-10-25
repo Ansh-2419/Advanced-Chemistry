@@ -4,9 +4,10 @@ import {
     Multiblock,
     MultiblockGenerator,
     registerLinkNodeIO,
-}                   from "DoriosCore/index.js";
+}from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
 import { ItemStack }  from "@minecraft/server";
+import { initFluidTanks, initEnergy, lockTankSlot, guardTank, validateStructure } from "../helper/helper.js";
 
 // ── Coolant registry ──────────────────────────────────────────────────────────
 // Each coolant provides a speed multiplier.
@@ -52,11 +53,9 @@ const COOLANT_SLOT  = 3;
 const THORIUM_SLOT  = 4;
 const WASTE_SLOT    = 5;
 
-// ── Port requirements ─────────────────────────────────────────────────────────
-const PORT_REQ = {
-    fluid:  { min: 2, id: "utilitycraft:ind_fluid_port",  label: "Industrial Fluid Port"  },
-    energy: { min: 1, id: "utilitycraft:ind_energy_port", label: "Industrial Energy Port" },
-};
+// ── Structure requirements ────────────────────────────────────────────────────
+const SIZE         = { x: 3, y: 3, z: 3 };
+const PORTS        = { energy: 1, fluid: 2 };
 
 // ── CONFIG ────────────────────────────────────────────────────────────────────
 const CONFIG = {
@@ -106,30 +105,9 @@ DoriosLib.registry.blockComponent("utilitycraft:nuclear_reactor_controller", {
                 },
 
                 onActivate({ entity, structure, player }) {
-                    const { min, max } = structure.bounds;
-                    const [sX, sY, sZ] = [max.x - min.x + 1, max.y - min.y + 1, max.z - min.z + 1];
-
-                    if (sX !== 3 || sY !== 3 || sZ !== 3) {
-                        player.sendMessage(`§c[Nuclear Reactor] Must be 3×3×3. Found: ${sX}×${sY}×${sZ}.`);
-                        return false;
-                    }
-
-                    const dim   = entity.dimension;
-                    const found = { fluid: 0, energy: 0 };
-                    for (const tag of structure.inputBlocks) {
-                        const loc   = DoriosLib.linkNode.parseLinkNodeTag(tag);
-                        const block = loc && dim.getBlock(loc);
-                        if (!block) continue;
-                        if (block.typeId === PORT_REQ.fluid.id)  found.fluid++;
-                        if (block.typeId === PORT_REQ.energy.id) found.energy++;
-                    }
-
-                    for (const [key, req] of Object.entries(PORT_REQ)) {
-                        if (found[key] < req.min) {
-                            player.sendMessage(`§c[Nuclear Reactor] Need ${req.min}x §e${req.label}§c, found ${found[key]}.`);
-                            return false;
-                        }
-                    }
+                    if (validateStructure(entity, structure, player, {
+                        name: "Nuclear Reactor", size: SIZE, ports: PORTS, noAir: true,
+                    })) return false;
 
                     initStorage(entity);
                     lockTanks(entity);
@@ -251,29 +229,14 @@ DoriosLib.registry.blockComponent("utilitycraft:nuclear_reactor_controller", {
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function initStorage(entity) {
-    const [thoriumTank, coolantTank, wasteTank] = FluidStorage.initializeMultiple(entity, 3);
-    if (thoriumTank.getCap() !== FLUID_CAPACITY) thoriumTank.setCap(FLUID_CAPACITY);
-    if (coolantTank.getCap() !== FLUID_CAPACITY) coolantTank.setCap(FLUID_CAPACITY);
-    if (wasteTank.getCap()   !== FLUID_CAPACITY) wasteTank.setCap(FLUID_CAPACITY);
-    const energy = new EnergyStorage(entity);
-    if (energy.getCap() !== ENERGY_CAPACITY) energy.setCap(ENERGY_CAPACITY);
+    const [thoriumTank, coolantTank, wasteTank] = initFluidTanks(entity, 3, FLUID_CAPACITY);
+    const energy = initEnergy(entity, ENERGY_CAPACITY);
     return { energy, thoriumTank, coolantTank, wasteTank };
 }
 
 function lockTanks(entity) {
-    if (!entity.hasTag(THORIUM_LOCK_TAG)) {
-        entity.addTag(THORIUM_LOCK_TAG);
-        const tag = entity.getTags().find(t => t.startsWith("fluid0Type:"));
-        if (!tag) entity.addTag(`fluid0Type:${THORIUM_TYPE}`);
-    }
-    if (!entity.hasTag(COOLANT_LOCK_TAG)) entity.addTag(COOLANT_LOCK_TAG);
-}
-
-function guardTank(tank, allowed) {
-    const type = tank.getType();
-    if (type === EMPTY) return;
-    const ok = typeof allowed === "string" ? type === allowed : allowed.has(type);
-    if (!ok) { tank.set(0); tank.setType(EMPTY); }
+    lockTankSlot(entity, THORIUM_LOCK_TAG, 0, THORIUM_TYPE);
+    lockTankSlot(entity, COOLANT_LOCK_TAG, 1, null);
 }
 
 function setProgress(entity, tick, cycleTicks) {

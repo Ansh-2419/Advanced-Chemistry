@@ -5,6 +5,7 @@ import {
 } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
 import { ItemStack } from "@minecraft/server";
+import { validateStructure } from "../helper/helper.js";
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const NETHER_STAR_ID   = "minecraft:nether_star";
@@ -27,10 +28,9 @@ const OUTPUT_SLOT      = 4;
 
 const TICK_PROP        = "ac:ser_tick";
 
-// ── Port requirements ─────────────────────────────────────────────────────────
-const PORT_REQ = {
-    energy: { min: 1, id: "utilitycraft:ind_energy_port", label: "Industrial Energy Port" },
-};
+// ── Structure requirements ────────────────────────────────────────────────────
+const SIZE  = { x: 3, y: 3, z: 3 };
+const PORTS = { energy: 1 };
 
 // ── CONFIG ────────────────────────────────────────────────────────────────────
 const CONFIG = {
@@ -61,31 +61,9 @@ DoriosLib.registry.blockComponent("utilitycraft:stellar_energy_reactor_controlle
                 },
 
                 onActivate({ entity, structure, player }) {
-                    const { min, max } = structure.bounds;
-                    const sX = max.x - min.x + 1;
-                    const sY = max.y - min.y + 1;
-                    const sZ = max.z - min.z + 1;
-
-                    if (sX !== 3 || sY !== 3 || sZ !== 3) {
-                        player.sendMessage(`§c[Stellar Energy Reactor] Must be 3×3×3. Found: ${sX}×${sY}×${sZ}.`);
-                        return false;
-                    }
-
-                    const dim   = entity.dimension;
-                    const found = { energy: 0 };
-                    for (const tag of structure.inputBlocks) {
-                        const loc   = DoriosLib.linkNode.parseLinkNodeTag(tag);
-                        const block = loc && dim.getBlock(loc);
-                        if (!block) continue;
-                        if (block.typeId === PORT_REQ.energy.id) found.energy++;
-                    }
-
-                    for (const [key, req] of Object.entries(PORT_REQ)) {
-                        if (found[key] < req.min) {
-                            player.sendMessage(`§c[Stellar Energy Reactor] Need ${req.min}x §e${req.label}§c, found ${found[key]}.`);
-                            return false;
-                        }
-                    }
+                    if (validateStructure(entity, structure, player, {
+                        name: "Stellar Energy Reactor", size: SIZE, ports: PORTS, noAir: true,
+                    })) return false;
 
                     initStorage(entity);
                 },

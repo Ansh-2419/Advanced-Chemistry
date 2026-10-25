@@ -107,7 +107,7 @@
       },
       {
         "exhaust@uc.item_display_hover_large": {
-          "collection_index": 5,
+          "collection_index": 21,
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [144, 5],

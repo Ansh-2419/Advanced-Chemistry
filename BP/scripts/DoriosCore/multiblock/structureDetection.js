@@ -254,6 +254,9 @@ export class StructureDetector {
             continue;
           }
 
+          // Allow solid interior casing blocks (fully solid multiblock support)
+          if (block?.hasTag(caseTag)) continue;
+
           if (block?.isLiquid) continue;
           return `x: ${x}, y: ${y}, z: ${z}`;
         }

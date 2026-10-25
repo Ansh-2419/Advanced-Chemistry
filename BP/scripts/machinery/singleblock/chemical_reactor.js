@@ -5,14 +5,17 @@ import {
     EMPTY_FLUID,
     processMachine,
     displayMachine,
+    failMachine,
     formatFluidType,
     getMachineEnergyCost,
     getMachineFluidCap,
     getTank,
+    hasNoEnergy,
     setupTanks,
     stopMachine,
+    consumeTank,
     tryUseFluidItemInSlot,
-} from "./machine_helpers.js";
+} from "../helper/machine_helpers.js";
 
 const FLUID_INPUT_CAPSULE = 3;
 const FLUID_DISPLAY_IN    = 4;
@@ -38,11 +41,9 @@ registerIOInterface("utilitycraft:chemical_reactor", {
 DoriosLib.registry.blockComponent("utilitycraft:chemical_reactor", {
     beforeOnPlayerPlace(event, { params: settings }) {
         if (!event.player) return;
-        const placementEvent = (event);
-        Machine.spawnEntity(placementEvent, settings, (entity) => {
+        Machine.spawnEntity(/** @type {any} */ (event), settings, (entity) => {
             const machine = new Machine(event.block, { ...settings, ignoreTick: true });
             if (!machine.valid) return;
-
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
             setupTanks(entity, fluidCap, [FLUID_DISPLAY_IN, FLUID_DISPLAY_OUT]);
@@ -69,32 +70,30 @@ DoriosLib.registry.blockComponent("utilitycraft:chemical_reactor", {
         tryUseFluidItemInSlot(machine.container, FLUID_INPUT_CAPSULE, machine.entity);
 
         const recipes = getChemicalReactorRecipes();
-        if (recipes.length === 0) return fail(machine, displays, "No Recipes");
+        if (recipes.length === 0) return failMachine(machine, displays, "No Recipes");
 
         const inputType = tankIn.getType();
-        if (inputType === EMPTY_FLUID) return fail(machine, displays, "No Input Fluid");
+        if (inputType === EMPTY_FLUID) return failMachine(machine, displays, "No Input Fluid");
 
         const recipe = recipes.find(entry => entry.input.type === inputType);
-        if (!recipe) return fail(machine, displays, "Wrong Fluid");
+        if (!recipe) return failMachine(machine, displays, "Wrong Fluid");
 
         const validation = validateRecipe(tankIn, tankOut, recipe);
-        if (!validation.ok) return fail(machine, displays, validation.reason);
+        if (!validation.ok) return failMachine(machine, displays, validation.reason);
 
         const craftLimit = getCraftLimit(tankIn, tankOut, recipe);
-        if (craftLimit.max <= 0) return fail(machine, displays, craftLimit.reason);
+        if (craftLimit.max <= 0) return failMachine(machine, displays, craftLimit.reason);
 
         const energyCost = getMachineEnergyCost(settings, recipe, DEFAULT_ENERGY_COST);
-        if (machine.energy.get() <= 0 && machine.getProgress() < energyCost)
-            return fail(machine, displays, "No Energy", { resetProgress: false });
+        if (hasNoEnergy(machine, energyCost))
+            return failMachine(machine, displays, "No Energy", { resetProgress: false });
 
         processMachine(machine, {
             energyCost,
             seconds:  recipe.seconds ?? 12,
             maxRuns:  craftLimit.max,
             craft: (runs) => {
-                tankIn.consume(recipe.input.amount * runs);
-                if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
-
+                consumeTank(tankIn, recipe.input.amount * runs);
                 if (hasFluidOutput(recipe)) {
                     if (tankOut.getType() === EMPTY_FLUID) tankOut.setType(recipe.output.type);
                     tankOut.add(recipe.output.amount * runs);
@@ -111,11 +110,6 @@ DoriosLib.registry.blockComponent("utilitycraft:chemical_reactor", {
         Machine.onDestroy(event);
     },
 });
-
-function fail(machine, displays, message, options) {
-    stopMachine(machine, message, options);
-    displayMachine(machine, displays);
-}
 
 function hasFluidOutput(recipe) {
     return (recipe.output?.amount ?? 0) > 0;

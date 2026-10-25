@@ -1,431 +1,326 @@
 ## Advance Chemistry — en_US.lang
+## Organized by localization category; keys and values preserved.
 
-## ── Item Groups ───────────────────────────────────────────────────────────────
-ac:itemGroup.name.machines=Petrochemical Machines
-ac:itemGroup.name.ind_machines=Industrial Machines
+## ── Creative Inventory Groups ──
 ac:itemGroup.name.aoc_tank=Creative Tanks
 ac:itemGroup.name.endstone_generators=Endstone Generators
+ac:itemGroup.name.ind_machines=Industrial Machines
+ac:itemGroup.name.machines=Petrochemical Machines
 
-## ── Singleblock Machines ─────────────────────────────────────────────────────
-tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+## ── Blocks and Machines ──
+tile.utilitycraft:alloy_forge.name=Alloy Forge\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:chemical_reactor.name=Chemical Reactor\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-
-## ── Industrial Generators ────────────────────────────────────────────────────
+tile.utilitycraft:creative_advanced_growth_catalyst_tank.name=Creative Advanced Growth Catalyst Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_bio_growth_solution_tank.name=Creative Bio Growth Solution Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_biofuel_tank.name=Creative Biofuel Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_crude_oil_tank.name=Creative Crude Oil Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_diesel_tank.name=Creative Diesel Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_ethanol_tank.name=Creative Ethanol Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_enriched_tank.name=Creative Enriched Fertilizer Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_industrial_tank.name=Creative Industrial Fertilizer Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_org_tank.name=Creative Organic Fertilizer Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_heavy_hydrocarbon_tank.name=Creative Heavy Hydrocarbon Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Creative Hydrocarbon Blend Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_hydrocarbon_slurry_tank.name=Creative Hydrocarbon Slurry Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_liquid_nitrogen_tank.name=Creative Liquid Nitrogen Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_naphtha_tank.name=Creative Naphtha Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_nitrite_compound_tank.name=Creative Nitrite Compound Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_nutrient_growth_solution_tank.name=Creative Nutrient Growth Solution Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_petrol_tank.name=Creative Petrol Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_plant_oil_tank.name=Creative Plant Oil Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_plastic_resin_tank.name=Creative Plastic Resin Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_reactive_fluid_tank.name=Creative Reactive Fluid Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_steam_tank.name=Creative Steam Tank\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_copper.name=Copper Endstone Generator\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_diamond.name=Diamond Endstone Generator\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_emerald.name=Emerald Endstone Generator\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_gold.name=Gold Endstone Generator\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_iron.name=Iron Endstone Generator\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_netherite.name=Netherite Endstone Generator\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:energy_valve.name=Energy Valve\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fermenter.name=Dissolution Chamber\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fluid_storage_casing.name=Fluid Storage Casing\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fluid_storage_monitor.name=Fluid Storage Monitor\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fluid_valve.name=Fluid Valve\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_burner_casing.name=Fuel Burner Casing\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_burner_monitor.name=Fuel Burner Monitor\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_mixer.name=Fluid Mixer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fusion_reactor.name=Fusion Reactor\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:greenhouse_controller.name=Greenhouse Controller\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_energy_port.name=Industrial Energy Port\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_fluid_port.name=Industrial Fluid Port\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_furnator.name=Industrial Furnator\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_item_port.name=Industrial Item Port\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_magmator.name=Industrial Magmator\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_solar_panel.name=Industrial Solar Panel\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_thermo_generator.name=Industrial Thermo Generator\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_wind_turbine.name=Industrial Wind Turbine\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:ind_furnator.name=Industrial Furnator\n§o§9@UC: Advance Chemistry
-
-## ── Multiblock Valves ────────────────────────────────────────────────────────
-tile.utilitycraft:fluid_valve.name=Fluid Valve\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:energy_valve.name=Energy Valve\n§o§9@UC: Advance Chemistry
-
-## ── Industrial Ports (Greenhouse) ────────────────────────────────────────────
-tile.utilitycraft:ind_energy_port.name=Industrial Energy Port\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:ind_fluid_port.name=Industrial Fluid Port\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:ind_item_port.name=Industrial Item Port\n§o§9@UC: Advance Chemistry
-
-## ── Fluid Storage Multiblock ─────────────────────────────────────────────────
-tile.utilitycraft:fluid_storage_casing.name=Fluid Storage Casing\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fluid_storage_monitor.name=Fluid Storage Monitor\n§o§9@UC: Advance Chemistry
-
-## ── Fuel Burner Multiblock ───────────────────────────────────────────────────
-tile.utilitycraft:fuel_burner_casing.name=Fuel Burner Casing\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fuel_burner_monitor.name=Fuel Burner Monitor\n§o§9@UC: Advance Chemistry
-
-## ── Refinery Multiblock ──────────────────────────────────────────────────────
-tile.utilitycraft:refinery_monitor.name=Refinery Monitor\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:refinery_casing.name=Refinery Casing\n§o§9@UC: Advance Chemistry
-
-## ── Greenhouse Multiblock ────────────────────────────────────────────────────
-tile.utilitycraft:greenhouse_controller.name=Greenhouse Controller\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:industrial_caseing.name=Industrial Casing\n§o§9@UC: Advance Chemistry
-
-## ── Nuclear Reactor Multiblock ───────────────────────────────────────────────
+tile.utilitycraft:industrial_crusher.name=Industrial Crusher\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:nuclear_reactor_controller.name=Nuclear Reactor Controller\n§o§9@UC: Advance Chemistry
-entity.utilitycraft:nuclear_reactor_multiblock.name=Nuclear Reactor
-
-## ── Stellar Energy Reactor ───────────────────────────────────────────────────
+tile.utilitycraft:polymerizer.name=Polymerizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:refinery_casing.name=Refinery Casing\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:refinery_monitor.name=Refinery Monitor\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:relic_synthesizer.name=Relic Synthesizer\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:separator.name=Separator\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:stellar_energy_reactor_controller.name=Stellar Energy Reactor Controller\n§o§9@UC: Advance Chemistry
-entity.utilitycraft:stellar_energy_reactor_multiblock.name=Stellar Energy Reactor
 
-## ── Fusion Reactor ───────────────────────────────────────────────────────────
-entity.utilitycraft:fusion_reactor.name=Fusion Reactor
-
-## ── Alloy Forge ──────────────────────────────────────────────────────────────
-tile.utilitycraft:alloy_forge.name=Alloy Forge\n§7- Accepted upgrades:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-
-## ── Endstone Generators ──────────────────────────────────────────────────────
-tile.utilitycraft:endstone_gen_copper.name=Copper Endstone Generator\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_iron.name=Iron Endstone Generator\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_gold.name=Gold Endstone Generator\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_diamond.name=Diamond Endstone Generator\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_emerald.name=Emerald Endstone Generator\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_netherite.name=Netherite Endstone Generator\n§o§9@UC: Advance Chemistry
-
-## ── UI Entity Names ──────────────────────────────────────────────────────────
-entity.utilitycraft:nuclear_processor.name=Nuclear Processor
-entity.utilitycraft:machine.name=Machine
-entity.utilitycraft:fermenter.name=Dissolution Chamber
-entity.utilitycraft:fuel_mixer.name=Fluid Mixer
+## ── Entity and Multiblock Names ──
+entity.utilitycraft:alloy_forge.name=Alloy Forge
 entity.utilitycraft:chemical_reactor.name=Chemical Reactor
-entity.utilitycraft:fuel_burner_monitor.name=Fuel Burner
+entity.utilitycraft:fermenter.name=Dissolution Chamber
 entity.utilitycraft:fluid_storage_monitor.name=Fluid Storage
-entity.utilitycraft:separator.name=Separator
-entity.utilitycraft:refinery_monitor.name=Refinery
+entity.utilitycraft:fuel_burner_monitor.name=Fuel Burner
+entity.utilitycraft:fuel_mixer.name=Fluid Mixer
+entity.utilitycraft:fusion_reactor.name=Fusion Reactor
 entity.utilitycraft:greenhouse_controller.name=Greenhouse
 entity.utilitycraft:greenhouse_multiblock.name=Greenhouse
-entity.utilitycraft:polymerizer.name=Polymerizer
 entity.utilitycraft:industrial_crusher.name=Industrial Crusher
+entity.utilitycraft:machine.name=Machine
+entity.utilitycraft:nuclear_processor.name=Nuclear Processor
+entity.utilitycraft:nuclear_reactor_multiblock.name=Nuclear Reactor
+entity.utilitycraft:polymerizer.name=Polymerizer
+entity.utilitycraft:refinery_monitor.name=Refinery
 entity.utilitycraft:relic_synthesizer.name=Relic Synthesizer
-entity.utilitycraft:alloy_forge.name=Alloy Forge
+entity.utilitycraft:separator.name=Separator
+entity.utilitycraft:stellar_energy_reactor_multiblock.name=Stellar Energy Reactor
 
-## ── Items ────────────────────────────────────────────────────────────────────
-item.utilitycraft:thorium_concentrate=Thorium Concentrate\n§o§9@UC: Advance Chemistry
+## ── Items, Tools and Armor ──
+item.utilitycraft:adamant_boots=Adamant Boots\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_chestplate=Adamant Chestplate\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_helmet=Adamant Helmet\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_ingot=Adamant Ingot\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_leggings=Adamant Leggings\n§o§9@UC: Advance Chemistry
 item.utilitycraft:adamant_mesh=Adamant Mesh\n§o§9@UC: Advance Chemistry
+item.utilitycraft:dead_star=Dead Star\n§o§9@UC: Advance Chemistry
 item.utilitycraft:duranium_ingot=Duranium Ingot\n§o§9@UC: Advance Chemistry
-item.utilitycraft:lithium_dust=Lithium Dust\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_ingot=Voltanium Ingot\n§o§9@UC: Advance Chemistry
-item.utilitycraft:water_bucket_custom=Witch Water Bucket\n§o§9@UC: Advance Chemistry
 item.utilitycraft:hdpe_pellet=HDPE Pellet\n§o§9@UC: Advance Chemistry
 item.utilitycraft:hdpe_sheet=HDPE Sheet\n§o§9@UC: Advance Chemistry
 item.utilitycraft:industrial_chip=Industrial Chip\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_ingot=Adamant Ingot\n§o§9@UC: Advance Chemistry
-item.utilitycraft:dead_star=Dead Star\n§o§9@UC: Advance Chemistry
-
-## ── Voltanium Armor & Tools ──────────────────────────────────────────────────
-item.utilitycraft:voltanium_helmet=Voltanium Helmet\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_chestplate=Voltanium Chestplate\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_leggings=Voltanium Leggings\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_boots=Voltanium Boots\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_sword=Voltanium Sword\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_pickaxe=Voltanium Pickaxe\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_axe=Voltanium Axe\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_shovel=Voltanium Shovel\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_hoe=Voltanium Hoe\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_hammer=Voltanium Hammer\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_paxel=Voltanium Paxel\n§o§9@UC: Advance Chemistry
+item.utilitycraft:lithium_dust=Lithium Dust\n§o§9@UC: Advance Chemistry
+item.utilitycraft:thorium_concentrate=Thorium Concentrate\n§o§9@UC: Advance Chemistry
 item.utilitycraft:v_aiot=Voltanium AIOT\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_axe=Voltanium Axe\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_hammer=Voltanium Hammer\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_hoe=Voltanium Hoe\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_paxel=Voltanium Paxel\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_pickaxe=Voltanium Pickaxe\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_shovel=Voltanium Shovel\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_sword=Voltanium Sword\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_boots=Voltanium Boots\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_chestplate=Voltanium Chestplate\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_helmet=Voltanium Helmet\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_ingot=Voltanium Ingot\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_leggings=Voltanium Leggings\n§o§9@UC: Advance Chemistry
+item.utilitycraft:water_bucket_custom=Witch Water Bucket\n§o§9@UC: Advance Chemistry
 
-## ── Adamant Armor & Tools ────────────────────────────────────────────────────
-item.utilitycraft:adamant_helmet=Adamant Helmet\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_chestplate=Adamant Chestplate\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_leggings=Adamant Leggings\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_boots=Adamant Boots\n§o§9@UC: Advance Chemistry
-
-## ── Fluid Display Names ──────────────────────────────────────────────────────
+## ── Fluid Names ──
 fluid.utilitycraft.actinide_solution=Actinide Solution
-fluid.utilitycraft.ethanol=Ethanol
+fluid.utilitycraft.advanced_growth_catalyst=Advanced Growth Catalyst
+fluid.utilitycraft.bio_growth_solution=Bio Growth Solution
 fluid.utilitycraft.biofuel=Biofuel
-fluid.utilitycraft.plant_oil=Plant Oil
-fluid.utilitycraft.reactive_fluid=Reactive Fluid
-fluid.utilitycraft.sulfuric_acid=Sulfuric Acid
 fluid.utilitycraft.crude_oil=Crude Oil
-fluid.utilitycraft.heavy_hydrocarbon=Heavy Hydrocarbon
-fluid.utilitycraft.hydrocarbon_slurry=Hydrocarbon Slurry
-fluid.utilitycraft.naphtha=Naphtha
-fluid.utilitycraft.petrol=Petrol
 fluid.utilitycraft.diesel=Diesel
-fluid.utilitycraft.plastic_resin=Plastic Resin
-fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
-fluid.utilitycraft.fertilizer_org=Organic Fertilizer
+fluid.utilitycraft.ethanol=Ethanol
 fluid.utilitycraft.fertilizer_enriched=Enriched Fertilizer
 fluid.utilitycraft.fertilizer_industrial=Industrial Fertilizer
-fluid.utilitycraft.bio_growth_solution=Bio Growth Solution
-fluid.utilitycraft.nutrient_growth_solution=Nutrient Growth Solution
-fluid.utilitycraft.advanced_growth_catalyst=Advanced Growth Catalyst
-fluid.utilitycraft.liquified_thorium=Liquified Thorium
-fluid.utilitycraft.nuclear_waste=Nuclear Waste
-fluid.utilitycraft.nitrite_compound=Nitrite Compound
+fluid.utilitycraft.fertilizer_org=Organic Fertilizer
+fluid.utilitycraft.heavy_hydrocarbon=Heavy Hydrocarbon
+fluid.utilitycraft.hydrocarbon_blend=Hydrocarbon Blend
+fluid.utilitycraft.hydrocarbon_slurry=Hydrocarbon Slurry
 fluid.utilitycraft.liquid_nitrogen=Liquid Nitrogen
+fluid.utilitycraft.liquified_thorium=Liquified Thorium
+fluid.utilitycraft.naphtha=Naphtha
+fluid.utilitycraft.nitrite_compound=Nitrite Compound
+fluid.utilitycraft.nuclear_waste=Nuclear Waste
+fluid.utilitycraft.nutrient_growth_solution=Nutrient Growth Solution
+fluid.utilitycraft.petrol=Petrol
+fluid.utilitycraft.plant_oil=Plant Oil
+fluid.utilitycraft.plastic_resin=Plastic Resin
+fluid.utilitycraft.reactive_fluid=Reactive Fluid
 fluid.utilitycraft.steam=Steam
+fluid.utilitycraft.sulfuric_acid=Sulfuric Acid
 
-## ── Machine Info Panels ──────────────────────────────────────────────────────
-ui.aoc:info.nuclear_processor=Converts Thorium Concentrate into Actinide Solution.\n\nInput: 20 Thorium Concentrate\nOutput: 100 mB Actinide Solution\nEnergy: 50,000 KDe\n\nAccepted Upgrades:\n- Speed\n- Energy
-ui.utilitycraft:info.fermenter=Converts organic inputs into fluids.\n\nSlots:\n- Inputs: seeds or sugar cane.\n- Fluid: produced liquid storage.\n- Output: optional residue.\n\nAccepted Upgrades:\n- Speed\n- Energy
-ui.utilitycraft:info.fuel_mixer=Mixes stored fluids into fuel blends.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: produced fuel.\n\nAccepted Upgrades:\n- Speed\n- Energy
-ui.utilitycraft:info.separator=Separates one fluid into two output fluids.\n\nStorage:\n- Input: source fluid.\n- Outputs: separated fluids.\n\nAccepted Upgrades:\n- Speed\n- Energy
-ui.utilitycraft:info.chemical_reactor=Processes one or more fluid inputs into a single main fluid product.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: main product.\n\nAccepted Upgrades:\n- Speed\n- Energy
-ui.aoc:info.polymerizer=Converts Plastic Resin into HDPE Pellets.\n\nInput: 250 mB Plastic Resin\nOutput: 1 HDPE Pellet\nEnergy: 10,000 KDe
-ui.aoc:info.industrial_crusher=Processes items through selectable output stages.\n\nInput: 2x2 item grid.\nOutput: 3x3 result grid.\n\nStages:\n- 1x: First breakdown\n- 2x: Second breakdown\n- 3x: Third breakdown\n\nAccepted Upgrades:\n- Speed\n- Energy
-ui.aoc:info.alloy_forge=Alloy Forge\n§7Combines ingredient stacks into advanced alloys.\n§7Place ingredients in any of the 9 input slots.
-ui.aoc:info.refinery=Processes one input fluid into up to three refinery products.\n\nMultiblock IO:\n- Fluid input: source tank\n- Fluid outputs: product tanks 1-3\n- Energy: accepted through energy valves
-ui.aoc:info.greenhouse=Industrial 5×5×5 greenhouse that grows up to 4 crops simultaneously.\n\nSlots:\n- Seeds: 4 seed slots (mix any types)\n- Soil: 1 slot (affects speed & yield)\n- Output: 9 harvest slots\n\nFluids:\n- Fertilizer tank: boosts crop yield (optional)\n- Growth Solution tank: boosts processing speed (optional)\n\nSoils — cost / yield multiplier:\n  Dirt ×2 cost / ×1 yield\n  Grass Block ×1.5 / ×1\n  Yellow Soil ×1 / ×1\n  Red Soil ×0.75 / ×2\n  Blue Soil ×0.5 / ×3\n  Black Soil ×0.25 / ×4\n\nFertilizers:\n  Organic — ×1.10 yield, 100 mB/cycle\n  Enriched — ×1.25 yield, 80 mB/cycle\n  Industrial — ×1.50 yield, 60 mB/cycle\n\nGrowth Solutions:\n  Bio — ×1.20 speed, 100 mB/cycle\n  Nutrient — ×1.40 speed, 80 mB/cycle\n  Advanced Catalyst — ×1.70 speed, 60 mB/cycle\n\nRequires: 1 Industrial Energy Port, 2 Industrial Fluid Ports, 1 Industrial Item Port\nEnergy buffer: 200,000 DE
-ui.aoc:info.fuel_burner=Burns stored liquid fuel to generate §eDE§r.\n\nMultiblock IO:\n- Fluid input: fuel tank\n- Energy: exported through energy valves
-ui.aoc:info.fluid_storage=Stores up to seven fluids in independent tanks.\n\nMultiblock IO:\n- Each fluid valve can target Any Tank or a specific tank 1-7\n- Every tank supports input and output
-ui.aoc:info.nuclear_reactor=3×3×3 nuclear fission reactor.\n\nConsumes §eLiquified Thorium§r and a §bcoolant§r to generate §eDE§r, with §2Nuclear Waste§r as a byproduct.\n\nCoolants and their speed multipliers:\n  §fWater §7— ×1.0 speed, 150 mB/cycle\n  §bSaline Coolant §7— ×1.5 speed, 100 mB/cycle\n  §3Liquid Nitrogen §7— ×2.0 speed, 60 mB/cycle\n\nWithout coolant: ×0.5 speed, no fluid cost.\n\nPer reaction cycle:\n  §cThorium consumed: §f50 mB\n  §eEnergy produced:  §f50 000 DE\n  §2Waste produced:   §f10 mB\n\nThrottles automatically when energy buffer reaches 95%%.\nRequires: §92× Industrial Fluid Port  §e1× Industrial Energy Port
-ui.aoc:info.stellar_energy_reactor=3×3×3 multiblock generator that consumes Nether Stars and converts them into massive amounts of §eDE§r.\n\n§lSlots:\n§r- §aSlot 0 (left): §fNether Star input\n- §cSlot 1 (right): §fDead Star output\n\n§lCycle:\n§r- 1 Nether Star per 10s cycle\n- §e5,000,000 DE §rper star\n- §b20% chance§r of Dead Star byproduct\n\n§lBuffer: §r50 MDE\n\n§lRequires:\n§r1× Industrial Casing (structure)\n1× §eIndustrial Energy Port§r (energy export)
-
-## ── IO Mode Descriptions ─────────────────────────────────────────────────────
-ui.aoc:io.fuel_mixer.liquids=IO Modes:\n§r- §9Input Tank 1\n§r- §9Input Tank 2\n§r- §cOutput Tank
-ui.aoc:io.fermenter.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cResidue Output
-ui.aoc:io.fermenter.liquids=IO Modes:\n§r- §cFluid Output
-ui.aoc:io.chemical_reactor.items=IO Modes:
-ui.aoc:io.chemical_reactor.liquids=IO Modes:\n§r- §9Fluid Inputs\n§r- §cProduct Output
-ui.aoc:io.separator.liquids=IO Modes:\n§r- §9Source Input\n§r- §cOutput Tank 1\n§r- §cOutput Tank 2
-ui.aoc:io.polymerizer.items=IO Modes:\n§r- §cPellet Output
-ui.aoc:io.polymerizer.liquids=IO Modes:\n§r- §9Resin Input
-ui.aoc:io.industrial_crusher.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cOutputs 1-9
-ui.aoc:io.nuclear_processor.items=IO Modes:\n§r- §9Inputs 1-4
-ui.aoc:io.nuclear_processor.liquids=IO Modes:\n§r- §9Fluid Input\n§r- §cFluid Output
-ui.aoc:io.greenhouse.liquids=IO Modes:\n§r- §9Any Fluid Tank (both)\n§r- §9Fertilizer Tank\n§r- §9Growth Solution Tank
-ui.aoc:io.greenhouse.items=IO Modes:\n§r- §cHarvest Output (slots 10-18)
-ui.aoc:io.alloy_forge.items=IO Modes:\n§r- §9Inputs (slots 3-11)\n§r- §cOutput (slot 12)
-ui.aoc:io.relic_synthesizer.items=IO Modes:\n§r- §9Fuel Input\n§r- §cOutput 1-9
-
-## ── Creative Fluid Tanks ─────────────────────────────────────────────────────
-tile.utilitycraft:creative_ethanol_tank.name=Creative Ethanol Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_plant_oil_tank.name=Creative Plant Oil Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_biofuel_tank.name=Creative Biofuel Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_hydrocarbon_slurry_tank.name=Creative Hydrocarbon Slurry Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_heavy_hydrocarbon_tank.name=Creative Heavy Hydrocarbon Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_reactive_fluid_tank.name=Creative Reactive Fluid Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_crude_oil_tank.name=Creative Crude Oil Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_diesel_tank.name=Creative Diesel Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_petrol_tank.name=Creative Petrol Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_naphtha_tank.name=Creative Naphtha Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_plastic_resin_tank.name=Creative Plastic Resin Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Creative Hydrocarbon Blend Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_steam_tank.name=Creative Steam Tank\n§o§9@UC: Advance Chemistry
-
-## ── Creative Agronomic Tanks ─────────────────────────────────────────────────
-tile.utilitycraft:creative_fertilizer_org_tank.name=Creative Organic Fertilizer Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_fertilizer_enriched_tank.name=Creative Enriched Fertilizer Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_fertilizer_industrial_tank.name=Creative Industrial Fertilizer Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_bio_growth_solution_tank.name=Creative Bio Growth Solution Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_nutrient_growth_solution_tank.name=Creative Nutrient Growth Solution Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_advanced_growth_catalyst_tank.name=Creative Advanced Growth Catalyst Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_liquid_nitrogen_tank.name=Creative Liquid Nitrogen Tank\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_nitrite_compound_tank.name=Creative Nitrite Compound Tank\n§o§9@UC: Advance Chemistry
-
-## ── Recipe UI — Fermenter ─────────────────────────────────────────────────────
-ui.aoc:recipe.fermenter.wheat_seeds=Wheat Seeds → Plant Oil
-ui.aoc:recipe.fermenter.beetroot_seeds=Beetroot Seeds → Plant Oil
-ui.aoc:recipe.fermenter.melon_seeds=Melon Seeds → Plant Oil
-ui.aoc:recipe.fermenter.pumpkin_seeds=Pumpkin Seeds → Plant Oil
-ui.aoc:recipe.fermenter.sugarcane=Sugar Cane → Ethanol
-ui.aoc:recipe.fermenter.lava_ball=Lava Ball → Lava
-ui.aoc:recipe.fermenter.water_ball=Water Ball → Water
-ui.aoc:recipe.fermenter.thorium_chunk=Thorium Chunk → Liquified Thorium
-ui.aoc:recipe.fermenter.organic_fertilizer=Bone Meal + Oak Leaves → Organic Fertilizer
-ui.aoc:recipe.fermenter.growth_solution=4 Inputs → Bio Growth Solution
-ui.aoc:recipe.fermenter.output.plant_oil=Output: Plant Oil
-ui.aoc:recipe.fermenter.output.ethanol=Output: Ethanol
-ui.aoc:recipe.fermenter.output.lava=Output: Lava
-ui.aoc:recipe.fermenter.output.water=Output: Water
-ui.aoc:recipe.fermenter.output.liquified_thorium=Output: Liquified Thorium
-ui.aoc:recipe.fermenter.output.fertilizer_org=Output: Organic Fertilizer
-ui.aoc:recipe.fermenter.output.bio_growth_solution=Output: Bio Growth Solution
-
-## ── Recipe UI — Chemical Reactor ─────────────────────────────────────────────
-ui.aoc:recipe.cr_0.summary=Biofuel → Hydrocarbon Slurry
-ui.aoc:recipe.cr_0.input=Input: Biofuel (1000 mB)
-ui.aoc:recipe.cr_0.output=Output: Hydrocarbon Slurry (750 mB)
-ui.aoc:recipe.cr_1.summary=Heavy Hydrocarbon → Crude Oil
-ui.aoc:recipe.cr_1.input=Input: Heavy Hydrocarbon (400 mB)
-ui.aoc:recipe.cr_1.output=Output: Crude Oil (250 mB)
-ui.aoc:recipe.cr_2.summary=Naphtha → Plastic Resin
-ui.aoc:recipe.cr_2.input=Input: Naphtha (1000 mB)
-ui.aoc:recipe.cr_2.output=Output: Plastic Resin (750 mB)
-ui.aoc:recipe.cr_3.summary=Reactive Fluid → Sulfuric Acid
-ui.aoc:recipe.cr_3.input=Input: Reactive Fluid (1000 mB)
-ui.aoc:recipe.cr_3.output=Output: Sulfuric Acid (750 mB)
-ui.aoc:recipe.cr_4.summary=Nitrite Compound → Liquid Nitrogen
-ui.aoc:recipe.cr_4.input=Input: Nitrite Compound (1000 mB)
-ui.aoc:recipe.cr_4.output=Output: Liquid Nitrogen (750 mB)
-
-## ── Recipe UI — Fuel Mixer ───────────────────────────────────────────────────
-ui.aoc:recipe.fm_0.summary=Ethanol + Plant Oil → Biofuel
-ui.aoc:recipe.fm_0.input1=Input: Ethanol (1000 mB)
-ui.aoc:recipe.fm_0.input2=Input: Plant Oil (1000 mB)
-ui.aoc:recipe.fm_0.output=Output: Biofuel (500 mB)
-ui.aoc:recipe.fm_1.summary=Organic Fertilizer + Sulfuric Acid → Nitrite Compound
-ui.aoc:recipe.fm_1.input1=Input: Organic Fertilizer (1000 mB)
-ui.aoc:recipe.fm_1.input2=Input: Sulfuric Acid (1000 mB)
-ui.aoc:recipe.fm_1.output=Output: Nitrite Compound (500 mB)
-
-## ── Recipe UI — Polymerizer ──────────────────────────────────────────────────
-ui.aoc:recipe.poly_0.summary=Plastic Resin → HDPE Pellet
-ui.aoc:recipe.poly_0.input=Input: Plastic Resin (250 mB)
-ui.aoc:recipe.poly_1.summary=Reactive Fluid → Lithium Dust
-ui.aoc:recipe.poly_1.input=Input: Reactive Fluid (250 mB)
-ui.aoc:recipe.poly_2.summary=Nuclear Waste → Plutonium Pellet
-ui.aoc:recipe.poly_2.input=Input: Nuclear Waste (250 mB)
-
-## ── Recipe UI — Separator ────────────────────────────────────────────────────
-ui.aoc:recipe.sep_0.summary=Hydrocarbon Slurry → Heavy Hydrocarbon + Reactive Fluid
-ui.aoc:recipe.sep_0.input=Input: Hydrocarbon Slurry (1000 mB)
-ui.aoc:recipe.sep_0.output1=Output: Heavy Hydrocarbon (600 mB)
-ui.aoc:recipe.sep_0.output2=Output: Reactive Fluid (350 mB)
-
-## ── Recipe UI — Alloy Forge ──────────────────────────────────────────────────
-ui.aoc:recipe.alloy_forge.voltanium_alloy=Voltanium Alloy Ingot
-ui.aoc:recipe.alloy_forge.adamant_mesh=Adamant Mesh Alloy
-
-## ── Fusion Reactor UI ────────────────────────────────────────────────────────
-ui.ac.fr.title_reactor=Fusion Reactor - General
-ui.ac.fr.title_coolant=Fusion Reactor - Coolant
-ui.ac.fr.title_control=Fusion Reactor - Control
-ui.ac.fr.title_info=Fusion Reactor - Info
-ui.ac.fr.tab_reactor=Reactor
-ui.ac.fr.tab_coolant=Coolant
-ui.ac.fr.tab_control=Control
-ui.ac.fr.tab_info=Info
-ui.ac.fr.reactor_information=Reactor
-ui.ac.fr.tanks_information=Resources
-ui.ac.fr.current_temperature=Current T:
+## ── User Interface ──
 ui.ac.fr.control_hint=Opens the control panel to configure reactor settings.
 ui.ac.fr.coolant_requirement=Requires coolant. Water, Saline, or Liquid Nitrogen accepted.
 ui.ac.fr.coolant_supply=Supply via Fluid Ports set to Coolant Tank. Needs 2 buckets/cycle.
 ui.ac.fr.cooling_heading=How cooling works
 ui.ac.fr.cooling_help=Coolant is consumed each cycle. Higher-tier fuels run hotter - ensure a continuous supply.
 ui.ac.fr.cooling_warning=Use Liquid Nitrogen for maximum cooling efficiency with high-tier fuels.
-ui.ac.fr.info_description=The Fusion Reactor burns liquid fuels to generate Dorios Energy. Supply fuel, coolant, and drain exhaust continuously.
-ui.ac.fr.info_fuel=Fuel fills the Fuel Tank. Supported: Biofuel, Ethanol, Diesel, Heavy Hydrocarbon, Fissile Fuel. Higher-tier fuels produce far more energy per bucket and run hotter.
-ui.ac.fr.info_energy_per_fuel=Energy per bucket varies by fuel tier.\nFissile Fuel produces up to 500,000 DE/bucket.
-ui.ac.fr.info_coolant=Open the Coolant tab for accepted coolants, supply instructions, and cooling guidance. Missing coolant reduces efficiency.
+ui.ac.fr.current_temperature=Current T:
 ui.ac.fr.info_control=Use the Control tab for reactor management and rate configuration.
-ui.ac.fr.info_temperature_warning=Watch the temperature! High-tier fuels with insufficient coolant will drive the reactor to extreme temperatures.
+ui.ac.fr.info_coolant=Open the Coolant tab for accepted coolants, supply instructions, and cooling guidance. Missing coolant reduces efficiency.
+ui.ac.fr.info_description=The Fusion Reactor burns liquid fuels to generate Dorios Energy. Supply fuel, coolant, and drain exhaust continuously.
+ui.ac.fr.info_energy_per_fuel=Energy per bucket varies by fuel tier.\nFissile Fuel produces up to 500,000 DE/bucket.
 ui.ac.fr.info_exhaust=Every combustion cycle produces Reactive Fluid exhaust. Drain it via Fluid Ports. A full exhaust tank pauses the reactor.
 ui.ac.fr.info_exhaust_warning=Drain exhaust before dismantling. Keep exhaust flowing to avoid reaction stall.
+ui.ac.fr.info_fuel=Fuel fills the Fuel Tank. Supported: Biofuel, Ethanol, Diesel, Heavy Hydrocarbon, Fissile Fuel. Higher-tier fuels produce far more energy per bucket and run hotter.
+ui.ac.fr.info_temperature_warning=Watch the temperature! High-tier fuels with insufficient coolant will drive the reactor to extreme temperatures.
+ui.ac.fr.reactor_information=Reactor
+ui.ac.fr.tab_control=Control
+ui.ac.fr.tab_coolant=Coolant
+ui.ac.fr.tab_info=Info
+ui.ac.fr.tab_reactor=Reactor
+ui.ac.fr.tanks_information=Resources
+ui.ac.fr.title_control=Fusion Reactor - Control
+ui.ac.fr.title_coolant=Fusion Reactor - Coolant
+ui.ac.fr.title_info=Fusion Reactor - Info
+ui.ac.fr.title_reactor=Fusion Reactor - General
+ui.aoc:info.alloy_forge=Alloy Forge\n§7Combines ingredient stacks into advanced alloys.\n§7Place ingredients in any of the 9 input slots.
+ui.aoc:info.fluid_storage=Stores up to seven fluids in independent tanks.\n\nMultiblock IO:\n- Each fluid valve can target Any Tank or a specific tank 1-7\n- Every tank supports input and output
+ui.aoc:info.fuel_burner=Burns stored liquid fuel to generate §eDE§r.\n\nMultiblock IO:\n- Fluid input: fuel tank\n- Energy: exported through energy valves
+ui.aoc:info.greenhouse=Industrial 5×5×5 greenhouse that grows up to 4 crops simultaneously.\n\nSlots:\n- Seeds: 4 seed slots (mix any types)\n- Soil: 1 slot (affects speed & yield)\n- Output: 9 harvest slots\n\nFluids:\n- Fertilizer tank: boosts crop yield (optional)\n- Growth Solution tank: boosts processing speed (optional)\n\nSoils — cost / yield multiplier:\n  Dirt ×2 cost / ×1 yield\n  Grass Block ×1.5 / ×1\n  Yellow Soil ×1 / ×1\n  Red Soil ×0.75 / ×2\n  Blue Soil ×0.5 / ×3\n  Black Soil ×0.25 / ×4\n\nFertilizers:\n  Organic — ×1.10 yield, 100 mB/cycle\n  Enriched — ×1.25 yield, 80 mB/cycle\n  Industrial — ×1.50 yield, 60 mB/cycle\n\nGrowth Solutions:\n  Bio — ×1.20 speed, 100 mB/cycle\n  Nutrient — ×1.40 speed, 80 mB/cycle\n  Advanced Catalyst — ×1.70 speed, 60 mB/cycle\n\nRequires: 1 Industrial Energy Port, 2 Industrial Fluid Ports, 1 Industrial Item Port\nEnergy buffer: 200,000 DE
+ui.aoc:info.industrial_crusher=Processes items through selectable output stages.\n\nInput: 2x2 item grid.\nOutput: 3x3 result grid.\n\nStages:\n- 1x: First breakdown\n- 2x: Second breakdown\n- 3x: Third breakdown\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.aoc:info.nuclear_processor=Converts Thorium Concentrate into Actinide Solution.\n\nInput: 20 Thorium Concentrate\nOutput: 100 mB Actinide Solution\nEnergy: 50,000 KDe\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.aoc:info.nuclear_reactor=3×3×3 nuclear fission reactor.\n\nConsumes §eLiquified Thorium§r and a §bcoolant§r to generate §eDE§r, with §2Nuclear Waste§r as a byproduct.\n\nCoolants and their speed multipliers:\n  §fWater §7— ×1.0 speed, 150 mB/cycle\n  §bSaline Coolant §7— ×1.5 speed, 100 mB/cycle\n  §3Liquid Nitrogen §7— ×2.0 speed, 60 mB/cycle\n\nWithout coolant: ×0.5 speed, no fluid cost.\n\nPer reaction cycle:\n  §cThorium consumed: §f50 mB\n  §eEnergy produced:  §f50 000 DE\n  §2Waste produced:   §f10 mB\n\nThrottles automatically when energy buffer reaches 95%%.\nRequires: §92× Industrial Fluid Port  §e1× Industrial Energy Port
+ui.aoc:info.polymerizer=Converts Plastic Resin into HDPE Pellets.\n\nInput: 250 mB Plastic Resin\nOutput: 1 HDPE Pellet\nEnergy: 10,000 KDe
+ui.aoc:info.refinery=Processes one input fluid into up to three refinery products.\n\nMultiblock IO:\n- Fluid input: source tank\n- Fluid outputs: product tanks 1-3\n- Energy: accepted through energy valves
+ui.aoc:info.stellar_energy_reactor=3×3×3 multiblock generator that consumes Nether Stars and converts them into massive amounts of §eDE§r.\n\n§lSlots:\n§r- §aSlot 0 (left): §fNether Star input\n- §cSlot 1 (right): §fDead Star output\n\n§lCycle:\n§r- 1 Nether Star per 10s cycle\n- §e5,000,000 DE §rper star\n- §b20% chance§r of Dead Star byproduct\n\n§lBuffer: §r50 MDE\n\n§lRequires:\n§r1× Industrial Casing (structure)\n1× §eIndustrial Energy Port§r (energy export)
+ui.aoc:io.alloy_forge.items=IO Modes:\n§r- §9Inputs (slots 3-11)\n§r- §cOutput (slot 12)
+ui.aoc:io.chemical_reactor.items=IO Modes:
+ui.aoc:io.chemical_reactor.liquids=IO Modes:\n§r- §9Fluid Inputs\n§r- §cProduct Output
+ui.aoc:io.fermenter.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cResidue Output
+ui.aoc:io.fermenter.liquids=IO Modes:\n§r- §cFluid Output
+ui.aoc:io.fuel_mixer.liquids=IO Modes:\n§r- §9Input Tank 1\n§r- §9Input Tank 2\n§r- §cOutput Tank
+ui.aoc:io.greenhouse.items=IO Modes:\n§r- §cHarvest Output (slots 10-18)
+ui.aoc:io.greenhouse.liquids=IO Modes:\n§r- §9Any Fluid Tank (both)\n§r- §9Fertilizer Tank\n§r- §9Growth Solution Tank
+ui.aoc:io.industrial_crusher.items=IO Modes:\n§r- §9Inputs 1-4\n§r- §cOutputs 1-9
+ui.aoc:io.nuclear_processor.items=IO Modes:\n§r- §9Inputs 1-4
+ui.aoc:io.nuclear_processor.liquids=IO Modes:\n§r- §9Fluid Input\n§r- §cFluid Output
+ui.aoc:io.polymerizer.items=IO Modes:\n§r- §cPellet Output
+ui.aoc:io.polymerizer.liquids=IO Modes:\n§r- §9Resin Input
+ui.aoc:io.relic_synthesizer.items=IO Modes:\n§r- §9Fuel Input\n§r- §cOutput 1-9
+ui.aoc:io.separator.liquids=IO Modes:\n§r- §9Source Input\n§r- §cOutput Tank 1\n§r- §cOutput Tank 2
+ui.aoc:recipe.alloy_forge.adamant_mesh=Adamant Mesh Alloy
+ui.aoc:recipe.alloy_forge.voltanium_alloy=Voltanium Alloy Ingot
+ui.aoc:recipe.cr_0.input=Input: Biofuel (1000 mB)
+ui.aoc:recipe.cr_0.output=Output: Hydrocarbon Slurry (750 mB)
+ui.aoc:recipe.cr_0.summary=Biofuel → Hydrocarbon Slurry
+ui.aoc:recipe.cr_1.input=Input: Heavy Hydrocarbon (400 mB)
+ui.aoc:recipe.cr_1.output=Output: Crude Oil (250 mB)
+ui.aoc:recipe.cr_1.summary=Heavy Hydrocarbon → Crude Oil
+ui.aoc:recipe.cr_2.input=Input: Naphtha (1000 mB)
+ui.aoc:recipe.cr_2.output=Output: Plastic Resin (750 mB)
+ui.aoc:recipe.cr_2.summary=Naphtha → Plastic Resin
+ui.aoc:recipe.cr_3.input=Input: Reactive Fluid (1000 mB)
+ui.aoc:recipe.cr_3.output=Output: Sulfuric Acid (750 mB)
+ui.aoc:recipe.cr_3.summary=Reactive Fluid → Sulfuric Acid
+ui.aoc:recipe.cr_4.input=Input: Nitrite Compound (1000 mB)
+ui.aoc:recipe.cr_4.output=Output: Liquid Nitrogen (750 mB)
+ui.aoc:recipe.cr_4.summary=Nitrite Compound → Liquid Nitrogen
+ui.aoc:recipe.fermenter.beetroot_seeds=Beetroot Seeds → Plant Oil
+ui.aoc:recipe.fermenter.growth_solution=4 Inputs → Bio Growth Solution
+ui.aoc:recipe.fermenter.lava_ball=Lava Ball → Lava
+ui.aoc:recipe.fermenter.melon_seeds=Melon Seeds → Plant Oil
+ui.aoc:recipe.fermenter.organic_fertilizer=Bone Meal + Oak Leaves → Organic Fertilizer
+ui.aoc:recipe.fermenter.output.bio_growth_solution=Output: Bio Growth Solution
+ui.aoc:recipe.fermenter.output.ethanol=Output: Ethanol
+ui.aoc:recipe.fermenter.output.fertilizer_org=Output: Organic Fertilizer
+ui.aoc:recipe.fermenter.output.lava=Output: Lava
+ui.aoc:recipe.fermenter.output.liquified_thorium=Output: Liquified Thorium
+ui.aoc:recipe.fermenter.output.plant_oil=Output: Plant Oil
+ui.aoc:recipe.fermenter.output.water=Output: Water
+ui.aoc:recipe.fermenter.pumpkin_seeds=Pumpkin Seeds → Plant Oil
+ui.aoc:recipe.fermenter.sugarcane=Sugar Cane → Ethanol
+ui.aoc:recipe.fermenter.thorium_chunk=Thorium Chunk → Liquified Thorium
+ui.aoc:recipe.fermenter.water_ball=Water Ball → Water
+ui.aoc:recipe.fermenter.wheat_seeds=Wheat Seeds → Plant Oil
+ui.aoc:recipe.fm_0.input1=Input: Ethanol (1000 mB)
+ui.aoc:recipe.fm_0.input2=Input: Plant Oil (1000 mB)
+ui.aoc:recipe.fm_0.output=Output: Biofuel (500 mB)
+ui.aoc:recipe.fm_0.summary=Ethanol + Plant Oil → Biofuel
+ui.aoc:recipe.fm_1.input1=Input: Organic Fertilizer (1000 mB)
+ui.aoc:recipe.fm_1.input2=Input: Sulfuric Acid (1000 mB)
+ui.aoc:recipe.fm_1.output=Output: Nitrite Compound (500 mB)
+ui.aoc:recipe.fm_1.summary=Organic Fertilizer + Sulfuric Acid → Nitrite Compound
+ui.aoc:recipe.poly_0.input=Input: Plastic Resin (250 mB)
+ui.aoc:recipe.poly_0.summary=Plastic Resin → HDPE Pellet
+ui.aoc:recipe.poly_1.input=Input: Reactive Fluid (250 mB)
+ui.aoc:recipe.poly_1.summary=Reactive Fluid → Lithium Dust
+ui.aoc:recipe.poly_2.input=Input: Nuclear Waste (250 mB)
+ui.aoc:recipe.poly_2.summary=Nuclear Waste → Plutonium Pellet
+ui.aoc:recipe.sep_0.input=Input: Hydrocarbon Slurry (1000 mB)
+ui.aoc:recipe.sep_0.output1=Output: Heavy Hydrocarbon (600 mB)
+ui.aoc:recipe.sep_0.output2=Output: Reactive Fluid (350 mB)
+ui.aoc:recipe.sep_0.summary=Hydrocarbon Slurry → Heavy Hydrocarbon + Reactive Fluid
+ui.utilitycraft:info.chemical_reactor=Processes one or more fluid inputs into a single main fluid product.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: main product.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.utilitycraft:info.fermenter=Converts organic inputs into fluids.\n\nSlots:\n- Inputs: seeds or sugar cane.\n- Fluid: produced liquid storage.\n- Output: optional residue.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.utilitycraft:info.fuel_mixer=Mixes stored fluids into fuel blends.\n\nStorage:\n- Inputs: recipe fluids.\n- Output: produced fuel.\n\nAccepted Upgrades:\n- Speed\n- Energy
+ui.utilitycraft:info.separator=Separates one fluid into two output fluids.\n\nStorage:\n- Input: source fluid.\n- Outputs: separated fluids.\n\nAccepted Upgrades:\n- Speed\n- Energy
 
-## ══════════════════════════════════════════════════════════
-## Advance Chemistry — How To Play
-## ══════════════════════════════════════════════════════════
-
-## ── Category & button text keys ──
-howtoplay.category.age_of_chemical=Advance Chemistry
+## ── In-Game Guide ──
+howtoplay.aoc.introduction.h1=Production Chain
+howtoplay.aoc.introduction.h2=Energy & Fluids
+howtoplay.aoc.introduction.h3=IO Interface
+howtoplay.aoc.introduction.h4=Generators
+howtoplay.aoc.introduction.p1=§bAdvance Chemistry§r is a chemistry and industrial addon built as an expansion of §6UtilityCraft§r.\n\nAll machines run on §eDE (Dorios Energy)§r — the shared energy system from UtilityCraft.\n\nThis addon was created by Rudransh (developer) and MasterAtib (texture designer).
+howtoplay.aoc.introduction.p2=The main processing flow:\n\n§b1.§r §aDissolution Chamber§r — converts organic inputs into §ePlant Oil§r, §aEthanol§r, or §2Organic Fertilizer§r\n§b2.§r §6Fluid Mixer§r — combines §aEthanol§r and §aPlant Oil§r into §6Biofuel§r\n§b3.§r §dChemical Reactor§r — processes fluids into §dHydrocarbon Slurry§r, §7Crude Oil§r, or §3Plastic Resin§r\n§b4.§r §bSeparator§r — separates §8Hydrocarbon Slurry§r into §7Heavy Hydrocarbon§r and §dReactive Fluid§r\n§b5.§r §cRefinery§r — processes §7Crude Oil§r into §cDiesel§r, §6Petrol§r, and §7Naphtha§r\n§b6.§r §3Polymerizer§r — converts §3Plastic Resin§r into §3HDPE Pellets§r
+howtoplay.aoc.introduction.p3=§eDE (Dorios Energy)§r is produced by the §bIndustrial Generators§r included in this addon.\n\nFluids are moved between machines using §bFluid Valves§r. Each machine has a §7fluid tank§r shown in its UI.\n\nUse the §7IO tab§r in each machine's UI to configure which face accepts inputs and which exports outputs — enabling full pipe and hopper automation.
+howtoplay.aoc.introduction.p4=Every machine has an §bIO tab§r. Switch to it and assign each face:\n\n§a● Input§r — accepts items or fluids\n§c● Output§r — exports items or fluids\n§7● Disabled§r — blocks all transfer\n\nThe §eUpgrades tab§r lets you insert §aSpeed§r and §bEnergy§r upgrade modules to improve throughput.
+howtoplay.aoc.introduction.p5=Industrial generators produce §eDE§r to power all machines. Choose based on your available fuel:\n\n§7Furnator§r — burns solid fuel (coal, wood). Best early-game.\n§7Magmator§r — burns lava. Mid-game power.\n§7Solar Panel§r — passive sunlight power. Zero fuel cost.\n§7Thermo Generator§r — hot + cold fluid differential. High output.\n§7Wind Turbine§r — passive wind power. Higher placement = more output.
+howtoplay.aoc.items.h_adamant_armor=Adamant Armor
+howtoplay.aoc.items.h_fluids=Obtainable Fluids
+howtoplay.aoc.items.h_ingredients=Key Ingredients
+howtoplay.aoc.items.h_voltanium_armor=Voltanium Armor
+howtoplay.aoc.items.h_voltanium_tools=Voltanium Tools
+howtoplay.aoc.items.intro=Key items, crafting recipes, and armor stats for Advance Chemistry. Most advanced materials require machines from this addon to produce.
+howtoplay.aoc.items.p_adamant_armor=The §5top-tier§r armor set. Crafted at the §bcrafting table§r using §5Adamant Ingots§r (standard armor shapes).\n\n§lStats:§r\n§7Helmet§r      — Protection: §a5§r  Durability: §e6 000§r  Enchantability: 30\n§7Chestplate§r  — Protection: §a13§r Durability: §e6 400§r  Enchantability: 30\n§7Leggings§r    — Protection: §a10§r Durability: §e6 200§r  Enchantability: 30\n§7Boots§r       — Protection: §a5§r  Durability: §e6 000§r  Enchantability: 30\n§7Full Set§r    — Total Protection: §a33§r\n\n§7Repaired with: Adamant Ingot (restores 25%% durability)\n§7Supports armor trims.
+howtoplay.aoc.items.p_fluids=§aPlant Oil§r — Dissolution Chamber from seeds.\n§aEthanol§r — Dissolution Chamber from Sugar Cane.\n§6Biofuel§r — Fluid Mixer: Ethanol + Plant Oil.\n§8Hydrocarbon Slurry§r — Chemical Reactor from Biofuel.\n§7Heavy Hydrocarbon§r — Separator output from Hydrocarbon Slurry.\n§dReactive Fluid§r — Separator output from Hydrocarbon Slurry.\n§7Crude Oil§r — Chemical Reactor from Heavy Hydrocarbon.\n§cDiesel§r · §6Petrol§r · §7Naphtha§r — Refinery from Crude Oil.\n§3Plastic Resin§r — Chemical Reactor from Naphtha.\n§cSulfuric Acid§r — Chemical Reactor from Reactive Fluid.\n§bNitrite Compound§r — Fluid Mixer: Organic Fertilizer + Sulfuric Acid.\n§3Liquid Nitrogen§r — Chemical Reactor from Nitrite Compound.\n§eLiquified Thorium§r — Dissolution Chamber from Thorium Chunk.
+howtoplay.aoc.items.p_ingredients=§eHDPE Pellet§r — Polymerize 250 mB Plastic Resin. Used in HDPE Sheets.\n§eHDPE Sheet§r — Craft 4 HDPE Pellets into a sheet (crafting table). Used in Adamant Mesh.\n§eLithium Dust§r — Polymerize 250 mB Reactive Fluid. Used in Voltanium Alloy Ingots.\n§eIndustrial Chip§r — Crafted from refined materials. Used in advanced machine recipes.\n§eDuranium Ingot§r — Smelted from Duranium Ore. Core ingredient for Voltanium alloy.\n§eVoltanium Ingot§r — Produced by the Alloy Forge. Required for Adamant and Voltanium equipment.\n§eAdamant Ingot§r — Produced by the Alloy Forge (top-tier). Required for Adamant armor.\n§eAdamant Mesh§r — Crafted from Adamant Ingots. Used in advanced machine components.\n§eThorium Concentrate§r — Processed in the Dissolution Chamber → Liquified Thorium → Nuclear Reactor fuel.
+howtoplay.aoc.items.p_voltanium_armor=Crafted at the §bcrafting table§r using §6Voltanium Ingots§r (standard armor shapes).\n\n§lStats:§r\n§7Helmet§r      — Protection: §a4§r  Durability: §e4 221§r  Enchantability: 25\n§7Chestplate§r  — Protection: §a12§r Durability: §e4 776§r  Enchantability: 25\n§7Leggings§r    — Protection: §a9§r  Durability: §e4 665§r  Enchantability: 25\n§7Boots§r       — Protection: §a4§r  Durability: §e4 443§r  Enchantability: 25\n§7Full Set§r    — Total Protection: §a29§r\n\n§7Repaired with: Voltanium Ingot (restores 25%% durability)\n§7Supports armor trims.
+howtoplay.aoc.items.p_voltanium_tools=All Voltanium tools are crafted at the §bcrafting table§r using §6Voltanium Ingots§r with standard tool patterns:\n\n§eSword§r · §ePickaxe§r · §eAxe§r · §eShovel§r · §eHoe§r · §eHammer§r (3×3 area mine)\n§ePaxel§r (Pickaxe + Axe + Shovel combined) · §eAIOT§r (all tools combined)\n\nHigh durability and mining speed. Compatible with standard Minecraft enchantments.
+howtoplay.aoc.machines.h_alloy_forge=Alloy Forge
+howtoplay.aoc.machines.h_chemical_reactor=Chemical Reactor
+howtoplay.aoc.machines.h_crusher=Industrial Crusher
+howtoplay.aoc.machines.h_fermenter=Dissolution Chamber
+howtoplay.aoc.machines.h_fuel_mixer=Fluid Mixer
+howtoplay.aoc.machines.h_polymerizer=Polymerizer
+howtoplay.aoc.machines.h_relic=Relic Synthesizer
+howtoplay.aoc.machines.h_separator=Separator
+howtoplay.aoc.machines.intro=All singleblock and industrial machines are defined here. Each requires §eDE§r and processes items or fluids. Use the §bIO tab§r on each machine to configure automation.
+howtoplay.aoc.machines.p_alloy_forge=Combines up to 9 ingredient stacks into §badvanced alloys§r. Inputs are §lunordered§r — place items in any slot.\n\n§eDE cost:§r 150 000 – 300 000 per craft  §7Time:§r 10 seconds\n\n§lRecipes:§r\n\n§6Voltanium Alloy Ingot§r ×4:\n  §7Duranium Ingot§r ×2 + §7Steel Ingot§r ×2 + §eLithium Dust§r ×4 + §7Energized Iron Plate§r ×1\n  Cost: 150 000 DE\n\n§5Adamant Ingot§r ×4:\n  §3HDPE Sheet§r ×2 + §6Voltanium Ingot§r ×4 + §bHeart of the Sea§r ×1 + §7Netherite Dust§r ×2\n  Cost: 300 000 DE
+howtoplay.aoc.machines.p_chemical_reactor=Processes one or more §bfluid inputs§r into a single §bmain fluid output§r.\n\n§eDE cost:§r 8 400 – 10 000 per craft  §7Time:§r 10 – 12 seconds\n\n§lRecipes:§r\n\n§6Biofuel§r 1 000 mB → §8Hydrocarbon Slurry§r 750 mB §7(9 600 DE)\n§7Heavy Hydrocarbon§r 400 mB → §7Crude Oil§r 250 mB §7(8 400 DE)\n§7Naphtha§r 1 000 mB → §3Plastic Resin§r 750 mB §7(10 000 DE)\n§dReactive Fluid§r 1 000 mB → §cSulfuric Acid§r 750 mB §7(10 000 DE)\n§bNitrite Compound§r 1 000 mB → §3Liquid Nitrogen§r 750 mB §7(10 000 DE)
+howtoplay.aoc.machines.p_crusher=Processes items through §b3 selectable output stages§r. Each stage produces a different breakdown result.\n\n§eDE cost:§r 2 000 per craft  §7Time:§r 2 seconds\n\nInput: 2×2 item grid. Output: 3×3 result grid.\n\n§7Use the stage selector in the UI to choose the output. For example:\n§fCobblestone§r → Stage 1: Gravel | Stage 2: Dirt | Stage 3: Sand
+howtoplay.aoc.machines.p_fermenter=Converts organic items into §bfluids§r through fermentation.\n\n§eDE cost:§r 6 400 – 7 800 per batch  §7Time:§r 6 – 10 seconds\n\n§lRecipes:§r\n\n§eWheat / Beetroot / Melon / Pumpkin Seeds§r ×64 → §aPlant Oil§r 1 200 mB\n§eSugar Cane§r ×64 → §aEthanol§r 1 200 mB §740% chance§r §fSugar§r ×15\n§eBone Meal§r ×8 + §eOak Leaves§r ×4 → §aOrganic Fertilizer§r 500 mB\n\nSmaller batches (×8 seeds) produce proportionally less fluid.
+howtoplay.aoc.machines.p_fuel_mixer=Blends two §bfluid inputs§r into a single §boutput fluid§r.\n\n§eDE cost:§r 6 400 per craft  §7Time:§r 10 seconds\n\n§lRecipes:§r\n\n§aEthanol§r 1 000 mB + §aPlant Oil§r 1 000 mB → §6Biofuel§r 500 mB\n§2Organic Fertilizer§r 1 000 mB + §cSulfuric Acid§r 1 000 mB → §bNitrite Compound§r 500 mB\n\nBoth fluid tanks must be filled before processing begins.
+howtoplay.aoc.machines.p_polymerizer=Converts §bfluids§r into §bsolid products§r under pressure.\n\n§eDE cost:§r 10 000 per craft  §7Time:§r 5 seconds\n\n§lRecipes:§r\n\n§3Plastic Resin§r 250 mB → §3HDPE Pellet§r ×1\n§dReactive Fluid§r 250 mB → §eLithium Dust§r ×1\n§2Nuclear Waste§r 250 mB → §5Plutonium Pellet§r ×1
+howtoplay.aoc.machines.p_relic=Uses the current §bdimension§r to determine which §5armor trim templates§r can be recovered.\n\n§eDE cost:§r 25 000 – 80 000 per craft  §7Time:§r 20 seconds\n\n§lDimension pools:§r\n\n§2Overworld§r — Fuel: §bDiamond ×1§r — 25 000 DE\n§fSentry§r 25% · §fCoast§r 20% · §fDune§r 18% · §fWild§r 15% · §fWayfinder§r 10% · §fShaper§r 7% · §fHost§r 5%\n\n§cNether§r — Fuel: §bNetherite Ingot ×1§r — 50 000 DE\n§fRib§r 30% · §fSnout§r 25% · §fBolt/Raiser§r 15% · §fCoast§r 10% · §fDune§r 10% · §fSentry§r 10%\n\n§5End§r — Fuel: §bNetherite Ingot ×1§r — 60 000 DE\n§fSpire§r 35% · §fSilence§r 20% · §fWard§r 15% · §fVex§r 10% · §fEye§r 10% · §fTide§r 5% · §fFlow§r 5%\n\n§lSpecial:§r §bNetherite Ingot ×2§r (any dimension) → §6Smithing Table§r §7(guaranteed, 80 000 DE)
+howtoplay.aoc.machines.p_separator=Separates one §bfluid input§r into §btwo fluid outputs§r.\n\n§eDE cost:§r 8 000 per craft\n\n§lRecipe:§r\n\n§8Hydrocarbon Slurry§r 1 000 mB → §7Heavy Hydrocarbon§r 600 mB + §dReactive Fluid§r 350 mB
+howtoplay.aoc.multiblock.h_fluid_storage=Fluid Storage
+howtoplay.aoc.multiblock.h_fuel_burner=Fuel Burner
+howtoplay.aoc.multiblock.h_fusion_reactor=Fusion Reactor
+howtoplay.aoc.multiblock.h_greenhouse=Industrial Greenhouse
+howtoplay.aoc.multiblock.h_ind_ports=Industrial Ports
+howtoplay.aoc.multiblock.h_nuclear_reactor=Nuclear Reactor
+howtoplay.aoc.multiblock.h_refinery=Refinery
+howtoplay.aoc.multiblock.h_stellar_energy_reactor=Stellar Energy Reactor
+howtoplay.aoc.multiblock.h_valves=Fluid Valve & Energy Valve
+howtoplay.aoc.multiblock.intro=Multiblock machines are large structures made of §bcasings§r controlled by a §bmonitor§r or §bcontroller§r. Right-click the monitor/controller with a §eWrench§r to activate. Pipe fluids and energy through §bFluid Valves§r and §bEnergy Valves§r.
+howtoplay.aoc.multiblock.p_fluid_storage=Large-capacity multiblock tank for storing up to §b7 independent fluid types§r simultaneously.\n\n§aCapacity:§r Scales with structure size\n§lTanks:§r Tanks 1–7, each independently accessible\n\n§lStructure:§r Fluid Storage Casings + Fluid Storage Monitor\n§7IO:§r Each Fluid Valve on the monitor can target Any Tank or a specific tank (1–7). Both input and output are supported on every tank.\n\n§7Use Fluid Valves to pipe fluids in and out. Right-click a valve with a Wrench to filter by fluid type.
+howtoplay.aoc.multiblock.p_fuel_burner=Burns §bfluid fuels§r to generate large amounts of §eDE§r.\n\n§cAccepted fuels:§r Biofuel, Diesel, Petrol\n§aOutput:§r High DE generation\n\n§lStructure:§r Fuel Burner Casings + Fuel Burner Monitor\n§7Activate:§r Right-click monitor with Wrench\n§7IO:§r Fluid valve for fuel input, Energy valve for DE export.
+howtoplay.aoc.multiblock.p_fusion_reactor=Burns §bliquid fuels§r at high temperature to generate §eDE§r. Requires continuous fuel, coolant supply, and exhaust drainage.\n\n§lSupported fuels:§r Biofuel, Ethanol, Diesel, Heavy Hydrocarbon, Fissile Fuel\n§7Higher-tier fuels produce far more DE per bucket but run much hotter.\n\n§lCoolants:§r Water, Saline Coolant, Liquid Nitrogen\n§7Insufficient coolant reduces efficiency and raises temperature.\n\n§lExhaust:§r Reactive Fluid produced each cycle. Drain via Fluid Ports.\n§7A full exhaust tank pauses the reactor — keep it flowing.\n\n§lFuel tiers:§r\n  §aBiofuel / Ethanol§r — low tier, clean and renewable\n  §cHeavy Hydrocarbon / Fissile Fuel§r — high tier, extreme heat, use Liquid Nitrogen
+howtoplay.aoc.multiblock.p_greenhouse=A §b5×5×5§r industrial crop processor that grows up to §b4 seed types simultaneously§r.\n\n§lStructure:§r\n§7Outer shell:§r Industrial Casing + Industrial Ports\n§7Interior:§r hollow (growing chamber)\n§7Controller:§r Greenhouse Controller\n\n§lRequired ports:§r\n§e1× Industrial Energy Port§r — powers the machine\n§92× Industrial Fluid Ports§r — fertilizer + growth solution input\n§a1× Industrial Item Port§r — harvest output\n\n§lFertilizers §7(optional):§r\n  Organic — ×1.10 yield, 100 mB/cycle\n  Enriched — ×1.25 yield, 80 mB/cycle\n  Industrial — ×1.50 yield, 60 mB/cycle\n\n§lGrowth Solutions §7(optional):§r\n  Bio — ×1.20 speed, 100 mB/cycle\n  Nutrient — ×1.40 speed, 80 mB/cycle\n  Advanced Catalyst — ×1.70 speed, 60 mB/cycle\n\n§lSoil types:§r\n§fDirt§r — base  §aYellow§r — ×1.0 yield  §cRed§r — ×2.0  §9Blue§r — ×3.0  §8Black§r — ×4.0\n\n§7Output halts when all 9 harvest slots are full.
+howtoplay.aoc.multiblock.p_ind_ports=Exclusive connection points for the §bIndustrial Greenhouse§r and §bNuclear Reactor§r multiblocks. They replace standard valves for these structures.\n\n§eIndustrial Energy Port§r — accepts or exports §eDE§r\n§9Industrial Fluid Port§r — inputs or outputs fluids; use a §eWrench§r to configure which tank each port targets\n§aIndustrial Item Port§r — exports harvested crops from the 9 output slots\n\n§7Standard fluid valves and energy valves are §cnot§r accepted by these multiblocks.
+howtoplay.aoc.multiblock.p_nuclear_reactor=§c3×3×3§r nuclear fission reactor. Consumes §eLiquified Thorium§r and a §bcoolant§r to produce §eDE§r, with §2Nuclear Waste§r as a byproduct.\n\n§lCoolants:§r\n  §fWater§r — ×1.0 speed, 150 mB/cycle\n  §bSaline Coolant§r — ×1.5 speed, 100 mB/cycle\n  §3Liquid Nitrogen§r — ×2.0 speed, 60 mB/cycle\n  §7No coolant§r — ×0.5 speed\n\n§lPer cycle:§r\n  §cThorium:§r 50 mB consumed\n  §eDE:§r 50 000 produced\n  §2Waste:§r 10 mB produced\n\n§lStructure:§r 3×3×3 Industrial Casing + Nuclear Reactor Controller\n§lPorts:§r §92× Industrial Fluid Port§r (thorium in, waste out), §e1× Industrial Energy Port§r (DE export)\n§7Throttles automatically at 95%% buffer capacity.
+howtoplay.aoc.multiblock.p_refinery=Processes §7Crude Oil§r into multiple refined products simultaneously.\n\n§eDE cost:§r 12 000 per craft\n\n§lRecipe:§r\n§7Crude Oil§r 1 000 mB → §cDiesel§r 350 mB + §6Petrol§r 300 mB + §7Naphtha§r 200 mB\n\n§lStructure:§r Refinery Casings + Refinery Monitor\n§7Activate:§r Right-click monitor with Wrench\n§7IO:§r 1 fluid valve for crude oil input, 3 fluid valves for product outputs, energy valve for DE.
+howtoplay.aoc.multiblock.p_stellar_energy_reactor=Burns §bNether Stars§r to generate massive amounts of §eDE§r, with a §d20% chance§r of producing a §fDead Star§r byproduct.\n\n§lStats:§r\n§a5,000,000 DE§r per Nether Star\n§b10-second§r cycle time\n§d20%%§r Dead Star byproduct chance\n§eBuffer:§r 50 MDE\n\n§lStructure:§r 3×3×3 Industrial Casing + Stellar Energy Reactor Controller\n§lPorts:§r §e1× Industrial Energy Port§r (DE export)\n\n§7Input: Nether Stars (left slot). Dead Stars appear in right output slot.
+howtoplay.aoc.multiblock.p_valves=§bFluid Valve§r — Controls fluid flow between machines and tanks.\nRight-click to cycle: §aInput§r → §cOutput§r → §7Disabled§r\nUse a §eWrench§r to set a fluid type filter.\n\n§bEnergy Valve§r — Controls §eDE§r flow between generators and machines.\nRight-click to set direction. Wrench to set a transfer rate limit.\n§7Use these to distribute power from generators without overloading connections.
 howtoplay.aoc:introduction=Introduction
 howtoplay.aoc:introduction.title=Advance Chemistry - Introduction
-howtoplay.aoc:machines=Machines
-howtoplay.aoc:machines.title=Advance Chemistry - Machines
 howtoplay.aoc:items=Items
 howtoplay.aoc:items.title=Advance Chemistry - Items
+howtoplay.aoc:machines=Machines
+howtoplay.aoc:machines.title=Advance Chemistry - Machines
 howtoplay.aoc:multiblock=Multiblock
 howtoplay.aoc:multiblock.title=Advance Chemistry - Multiblock
+howtoplay.category.age_of_chemical=Advance Chemistry
 
-## ══════════════════════════════════════════════════════════
-## CATEGORY 1 — INTRODUCTION
-## ══════════════════════════════════════════════════════════
 
-howtoplay.aoc.introduction.p1=§bAdvance Chemistry§r is a chemistry and industrial addon built as an expansion of §6UtilityCraft§r.\n\nAll machines run on §eDE (Dorios Energy)§r — the shared energy system from UtilityCraft.\n\nThis addon was created by Rudransh (developer) and MasterAtib (texture designer).
-howtoplay.aoc.introduction.h1=Production Chain
-howtoplay.aoc.introduction.p2=The main processing flow:\n\n§b1.§r §aDissolution Chamber§r — converts organic inputs into §ePlant Oil§r, §aEthanol§r, or §2Organic Fertilizer§r\n§b2.§r §6Fluid Mixer§r — combines §aEthanol§r and §aPlant Oil§r into §6Biofuel§r\n§b3.§r §dChemical Reactor§r — processes fluids into §dHydrocarbon Slurry§r, §7Crude Oil§r, or §3Plastic Resin§r\n§b4.§r §bSeparator§r — separates §8Hydrocarbon Slurry§r into §7Heavy Hydrocarbon§r and §dReactive Fluid§r\n§b5.§r §cRefinery§r — processes §7Crude Oil§r into §cDiesel§r, §6Petrol§r, and §7Naphtha§r\n§b6.§r §3Polymerizer§r — converts §3Plastic Resin§r into §3HDPE Pellets§r
-howtoplay.aoc.introduction.h2=Energy & Fluids
-howtoplay.aoc.introduction.p3=§eDE (Dorios Energy)§r is produced by the §bIndustrial Generators§r included in this addon.\n\nFluids are moved between machines using §bFluid Valves§r. Each machine has a §7fluid tank§r shown in its UI.\n\nUse the §7IO tab§r in each machine's UI to configure which face accepts inputs and which exports outputs — enabling full pipe and hopper automation.
-howtoplay.aoc.introduction.h3=IO Interface
-howtoplay.aoc.introduction.p4=Every machine has an §bIO tab§r. Switch to it and assign each face:\n\n§a● Input§r — accepts items or fluids\n§c● Output§r — exports items or fluids\n§7● Disabled§r — blocks all transfer\n\nThe §eUpgrades tab§r lets you insert §aSpeed§r and §bEnergy§r upgrade modules to improve throughput.
-howtoplay.aoc.introduction.h4=Generators
-howtoplay.aoc.introduction.p5=Industrial generators produce §eDE§r to power all machines. Choose based on your available fuel:\n\n§7Furnator§r — burns solid fuel (coal, wood). Best early-game.\n§7Magmator§r — burns lava. Mid-game power.\n§7Solar Panel§r — passive sunlight power. Zero fuel cost.\n§7Thermo Generator§r — hot + cold fluid differential. High output.\n§7Wind Turbine§r — passive wind power. Higher placement = more output.
+## ── Creative Catalogue Groups ───────────────────────────────────────────────
+ac:itemGroup.name.multiblock_monitors=Multiblock Monitors
+ac:itemGroup.name.multiblock_casings=Multiblock Casings
+ac:itemGroup.name.multiblock_ports=Multiblock Ports
 
-## ══════════════════════════════════════════════════════════
-## CATEGORY 2 — MACHINES
-## ══════════════════════════════════════════════════════════
-
-howtoplay.aoc.machines.intro=All singleblock and industrial machines are defined here. Each requires §eDE§r and processes items or fluids. Use the §bIO tab§r on each machine to configure automation.
-
-## Dissolution Chamber
-howtoplay.aoc.machines.h_fermenter=Dissolution Chamber
-howtoplay.aoc.machines.p_fermenter=Converts organic items into §bfluids§r through fermentation.\n\n§eDE cost:§r 6 400 – 7 800 per batch  §7Time:§r 6 – 10 seconds\n\n§lRecipes:§r\n\n§eWheat / Beetroot / Melon / Pumpkin Seeds§r ×64 → §aPlant Oil§r 1 200 mB\n§eSugar Cane§r ×64 → §aEthanol§r 1 200 mB §740% chance§r §fSugar§r ×15\n§eBone Meal§r ×8 + §eOak Leaves§r ×4 → §aOrganic Fertilizer§r 500 mB\n\nSmaller batches (×8 seeds) produce proportionally less fluid.
-
-## Fluid Mixer
-howtoplay.aoc.machines.h_fuel_mixer=Fluid Mixer
-howtoplay.aoc.machines.p_fuel_mixer=Blends two §bfluid inputs§r into a single §boutput fluid§r.\n\n§eDE cost:§r 6 400 per craft  §7Time:§r 10 seconds\n\n§lRecipes:§r\n\n§aEthanol§r 1 000 mB + §aPlant Oil§r 1 000 mB → §6Biofuel§r 500 mB\n§2Organic Fertilizer§r 1 000 mB + §cSulfuric Acid§r 1 000 mB → §bNitrite Compound§r 500 mB\n\nBoth fluid tanks must be filled before processing begins.
-
-## Chemical Reactor
-howtoplay.aoc.machines.h_chemical_reactor=Chemical Reactor
-howtoplay.aoc.machines.p_chemical_reactor=Processes one or more §bfluid inputs§r into a single §bmain fluid output§r.\n\n§eDE cost:§r 8 400 – 10 000 per craft  §7Time:§r 10 – 12 seconds\n\n§lRecipes:§r\n\n§6Biofuel§r 1 000 mB → §8Hydrocarbon Slurry§r 750 mB §7(9 600 DE)\n§7Heavy Hydrocarbon§r 400 mB → §7Crude Oil§r 250 mB §7(8 400 DE)\n§7Naphtha§r 1 000 mB → §3Plastic Resin§r 750 mB §7(10 000 DE)\n§dReactive Fluid§r 1 000 mB → §cSulfuric Acid§r 750 mB §7(10 000 DE)\n§bNitrite Compound§r 1 000 mB → §3Liquid Nitrogen§r 750 mB §7(10 000 DE)
-
-## Separator
-howtoplay.aoc.machines.h_separator=Separator
-howtoplay.aoc.machines.p_separator=Separates one §bfluid input§r into §btwo fluid outputs§r.\n\n§eDE cost:§r 8 000 per craft\n\n§lRecipe:§r\n\n§8Hydrocarbon Slurry§r 1 000 mB → §7Heavy Hydrocarbon§r 600 mB + §dReactive Fluid§r 350 mB
-
-## Polymerizer
-howtoplay.aoc.machines.h_polymerizer=Polymerizer
-howtoplay.aoc.machines.p_polymerizer=Converts §bfluids§r into §bsolid products§r under pressure.\n\n§eDE cost:§r 10 000 per craft  §7Time:§r 5 seconds\n\n§lRecipes:§r\n\n§3Plastic Resin§r 250 mB → §3HDPE Pellet§r ×1\n§dReactive Fluid§r 250 mB → §eLithium Dust§r ×1\n§2Nuclear Waste§r 250 mB → §5Plutonium Pellet§r ×1
-
-## Industrial Crusher
-howtoplay.aoc.machines.h_crusher=Industrial Crusher
-howtoplay.aoc.machines.p_crusher=Processes items through §b3 selectable output stages§r. Each stage produces a different breakdown result.\n\n§eDE cost:§r 2 000 per craft  §7Time:§r 2 seconds\n\nInput: 2×2 item grid. Output: 3×3 result grid.\n\n§7Use the stage selector in the UI to choose the output. For example:\n§fCobblestone§r → Stage 1: Gravel | Stage 2: Dirt | Stage 3: Sand
-
-## Relic Synthesizer
-howtoplay.aoc.machines.h_relic=Relic Synthesizer
-howtoplay.aoc.machines.p_relic=Uses the current §bdimension§r to determine which §5armor trim templates§r can be recovered.\n\n§eDE cost:§r 25 000 – 80 000 per craft  §7Time:§r 20 seconds\n\n§lDimension pools:§r\n\n§2Overworld§r — Fuel: §bDiamond ×1§r — 25 000 DE\n§fSentry§r 25% · §fCoast§r 20% · §fDune§r 18% · §fWild§r 15% · §fWayfinder§r 10% · §fShaper§r 7% · §fHost§r 5%\n\n§cNether§r — Fuel: §bNetherite Ingot ×1§r — 50 000 DE\n§fRib§r 30% · §fSnout§r 25% · §fBolt/Raiser§r 15% · §fCoast§r 10% · §fDune§r 10% · §fSentry§r 10%\n\n§5End§r — Fuel: §bNetherite Ingot ×1§r — 60 000 DE\n§fSpire§r 35% · §fSilence§r 20% · §fWard§r 15% · §fVex§r 10% · §fEye§r 10% · §fTide§r 5% · §fFlow§r 5%\n\n§lSpecial:§r §bNetherite Ingot ×2§r (any dimension) → §6Smithing Table§r §7(guaranteed, 80 000 DE)
-
-## Alloy Forge
-howtoplay.aoc.machines.h_alloy_forge=Alloy Forge
-howtoplay.aoc.machines.p_alloy_forge=Combines up to 9 ingredient stacks into §badvanced alloys§r. Inputs are §lunordered§r — place items in any slot.\n\n§eDE cost:§r 150 000 – 300 000 per craft  §7Time:§r 10 seconds\n\n§lRecipes:§r\n\n§6Voltanium Alloy Ingot§r ×4:\n  §7Duranium Ingot§r ×2 + §7Steel Ingot§r ×2 + §eLithium Dust§r ×4 + §7Energized Iron Plate§r ×1\n  Cost: 150 000 DE\n\n§5Adamant Ingot§r ×4:\n  §3HDPE Sheet§r ×2 + §6Voltanium Ingot§r ×4 + §bHeart of the Sea§r ×1 + §7Netherite Dust§r ×2\n  Cost: 300 000 DE
-
-## ══════════════════════════════════════════════════════════
-## CATEGORY 3 — ITEMS
-## ══════════════════════════════════════════════════════════
-
-howtoplay.aoc.items.intro=Key items, crafting recipes, and armor stats for Advance Chemistry. Most advanced materials require machines from this addon to produce.
-
-## Key Ingredients
-howtoplay.aoc.items.h_ingredients=Key Ingredients
-howtoplay.aoc.items.p_ingredients=§eHDPE Pellet§r — Polymerize 250 mB Plastic Resin. Used in HDPE Sheets.\n§eHDPE Sheet§r — Craft 4 HDPE Pellets into a sheet (crafting table). Used in Adamant Mesh.\n§eLithium Dust§r — Polymerize 250 mB Reactive Fluid. Used in Voltanium Alloy Ingots.\n§eIndustrial Chip§r — Crafted from refined materials. Used in advanced machine recipes.\n§eDuranium Ingot§r — Smelted from Duranium Ore. Core ingredient for Voltanium alloy.\n§eVoltanium Ingot§r — Produced by the Alloy Forge. Required for Adamant and Voltanium equipment.\n§eAdamant Ingot§r — Produced by the Alloy Forge (top-tier). Required for Adamant armor.\n§eAdamant Mesh§r — Crafted from Adamant Ingots. Used in advanced machine components.\n§eThorium Concentrate§r — Processed in the Dissolution Chamber → Liquified Thorium → Nuclear Reactor fuel.
-
-## Fluids
-howtoplay.aoc.items.h_fluids=Obtainable Fluids
-howtoplay.aoc.items.p_fluids=§aPlant Oil§r — Dissolution Chamber from seeds.\n§aEthanol§r — Dissolution Chamber from Sugar Cane.\n§6Biofuel§r — Fluid Mixer: Ethanol + Plant Oil.\n§8Hydrocarbon Slurry§r — Chemical Reactor from Biofuel.\n§7Heavy Hydrocarbon§r — Separator output from Hydrocarbon Slurry.\n§dReactive Fluid§r — Separator output from Hydrocarbon Slurry.\n§7Crude Oil§r — Chemical Reactor from Heavy Hydrocarbon.\n§cDiesel§r · §6Petrol§r · §7Naphtha§r — Refinery from Crude Oil.\n§3Plastic Resin§r — Chemical Reactor from Naphtha.\n§cSulfuric Acid§r — Chemical Reactor from Reactive Fluid.\n§bNitrite Compound§r — Fluid Mixer: Organic Fertilizer + Sulfuric Acid.\n§3Liquid Nitrogen§r — Chemical Reactor from Nitrite Compound.\n§eLiquified Thorium§r — Dissolution Chamber from Thorium Chunk.
-
-## Voltanium Armor
-howtoplay.aoc.items.h_voltanium_armor=Voltanium Armor
-howtoplay.aoc.items.p_voltanium_armor=Crafted at the §bcrafting table§r using §6Voltanium Ingots§r (standard armor shapes).\n\n§lStats:§r\n§7Helmet§r      — Protection: §a4§r  Durability: §e4 221§r  Enchantability: 25\n§7Chestplate§r  — Protection: §a12§r Durability: §e4 776§r  Enchantability: 25\n§7Leggings§r    — Protection: §a9§r  Durability: §e4 665§r  Enchantability: 25\n§7Boots§r       — Protection: §a4§r  Durability: §e4 443§r  Enchantability: 25\n§7Full Set§r    — Total Protection: §a29§r\n\n§7Repaired with: Voltanium Ingot (restores 25%% durability)\n§7Supports armor trims.
-
-## Adamant Armor
-howtoplay.aoc.items.h_adamant_armor=Adamant Armor
-howtoplay.aoc.items.p_adamant_armor=The §5top-tier§r armor set. Crafted at the §bcrafting table§r using §5Adamant Ingots§r (standard armor shapes).\n\n§lStats:§r\n§7Helmet§r      — Protection: §a5§r  Durability: §e6 000§r  Enchantability: 30\n§7Chestplate§r  — Protection: §a13§r Durability: §e6 400§r  Enchantability: 30\n§7Leggings§r    — Protection: §a10§r Durability: §e6 200§r  Enchantability: 30\n§7Boots§r       — Protection: §a5§r  Durability: §e6 000§r  Enchantability: 30\n§7Full Set§r    — Total Protection: §a33§r\n\n§7Repaired with: Adamant Ingot (restores 25%% durability)\n§7Supports armor trims.
-
-## Voltanium Tools
-howtoplay.aoc.items.h_voltanium_tools=Voltanium Tools
-howtoplay.aoc.items.p_voltanium_tools=All Voltanium tools are crafted at the §bcrafting table§r using §6Voltanium Ingots§r with standard tool patterns:\n\n§eSword§r · §ePickaxe§r · §eAxe§r · §eShovel§r · §eHoe§r · §eHammer§r (3×3 area mine)\n§ePaxel§r (Pickaxe + Axe + Shovel combined) · §eAIOT§r (all tools combined)\n\nHigh durability and mining speed. Compatible with standard Minecraft enchantments.
-
-## ══════════════════════════════════════════════════════════
-## CATEGORY 4 — MULTIBLOCK
-## ══════════════════════════════════════════════════════════
-
-howtoplay.aoc.multiblock.intro=Multiblock machines are large structures made of §bcasings§r controlled by a §bmonitor§r or §bcontroller§r. Right-click the monitor/controller with a §eWrench§r to activate. Pipe fluids and energy through §bFluid Valves§r and §bEnergy Valves§r.
-
-## Fuel Burner
-howtoplay.aoc.multiblock.h_fuel_burner=Fuel Burner
-howtoplay.aoc.multiblock.p_fuel_burner=Burns §bfluid fuels§r to generate large amounts of §eDE§r.\n\n§cAccepted fuels:§r Biofuel, Diesel, Petrol\n§aOutput:§r High DE generation\n\n§lStructure:§r Fuel Burner Casings + Fuel Burner Monitor\n§7Activate:§r Right-click monitor with Wrench\n§7IO:§r Fluid valve for fuel input, Energy valve for DE export.
-
-## Refinery
-howtoplay.aoc.multiblock.h_refinery=Refinery
-howtoplay.aoc.multiblock.p_refinery=Processes §7Crude Oil§r into multiple refined products simultaneously.\n\n§eDE cost:§r 12 000 per craft\n\n§lRecipe:§r\n§7Crude Oil§r 1 000 mB → §cDiesel§r 350 mB + §6Petrol§r 300 mB + §7Naphtha§r 200 mB\n\n§lStructure:§r Refinery Casings + Refinery Monitor\n§7Activate:§r Right-click monitor with Wrench\n§7IO:§r 1 fluid valve for crude oil input, 3 fluid valves for product outputs, energy valve for DE.
-
-## Fluid Storage
-howtoplay.aoc.multiblock.h_fluid_storage=Fluid Storage
-howtoplay.aoc.multiblock.p_fluid_storage=Large-capacity multiblock tank for storing up to §b7 independent fluid types§r simultaneously.\n\n§aCapacity:§r Scales with structure size\n§lTanks:§r Tanks 1–7, each independently accessible\n\n§lStructure:§r Fluid Storage Casings + Fluid Storage Monitor\n§7IO:§r Each Fluid Valve on the monitor can target Any Tank or a specific tank (1–7). Both input and output are supported on every tank.\n\n§7Use Fluid Valves to pipe fluids in and out. Right-click a valve with a Wrench to filter by fluid type.
-
-## Industrial Greenhouse
-howtoplay.aoc.multiblock.h_greenhouse=Industrial Greenhouse
-howtoplay.aoc.multiblock.p_greenhouse=A §b5×5×5§r industrial crop processor that grows up to §b4 seed types simultaneously§r.\n\n§lStructure:§r\n§7Outer shell:§r Industrial Casing + Industrial Ports\n§7Interior:§r hollow (growing chamber)\n§7Controller:§r Greenhouse Controller\n\n§lRequired ports:§r\n§e1× Industrial Energy Port§r — powers the machine\n§92× Industrial Fluid Ports§r — fertilizer + growth solution input\n§a1× Industrial Item Port§r — harvest output\n\n§lFertilizers §7(optional):§r\n  Organic — ×1.10 yield, 100 mB/cycle\n  Enriched — ×1.25 yield, 80 mB/cycle\n  Industrial — ×1.50 yield, 60 mB/cycle\n\n§lGrowth Solutions §7(optional):§r\n  Bio — ×1.20 speed, 100 mB/cycle\n  Nutrient — ×1.40 speed, 80 mB/cycle\n  Advanced Catalyst — ×1.70 speed, 60 mB/cycle\n\n§lSoil types:§r\n§fDirt§r — base  §aYellow§r — ×1.0 yield  §cRed§r — ×2.0  §9Blue§r — ×3.0  §8Black§r — ×4.0\n\n§7Output halts when all 9 harvest slots are full.
-
-## Nuclear Reactor
-howtoplay.aoc.multiblock.h_nuclear_reactor=Nuclear Reactor
-howtoplay.aoc.multiblock.p_nuclear_reactor=§c3×3×3§r nuclear fission reactor. Consumes §eLiquified Thorium§r and a §bcoolant§r to produce §eDE§r, with §2Nuclear Waste§r as a byproduct.\n\n§lCoolants:§r\n  §fWater§r — ×1.0 speed, 150 mB/cycle\n  §bSaline Coolant§r — ×1.5 speed, 100 mB/cycle\n  §3Liquid Nitrogen§r — ×2.0 speed, 60 mB/cycle\n  §7No coolant§r — ×0.5 speed\n\n§lPer cycle:§r\n  §cThorium:§r 50 mB consumed\n  §eDE:§r 50 000 produced\n  §2Waste:§r 10 mB produced\n\n§lStructure:§r 3×3×3 Industrial Casing + Nuclear Reactor Controller\n§lPorts:§r §92× Industrial Fluid Port§r (thorium in, waste out), §e1× Industrial Energy Port§r (DE export)\n§7Throttles automatically at 95%% buffer capacity.
-
-## Stellar Energy Reactor
-howtoplay.aoc.multiblock.h_stellar_energy_reactor=Stellar Energy Reactor
-howtoplay.aoc.multiblock.p_stellar_energy_reactor=Burns §bNether Stars§r to generate massive amounts of §eDE§r, with a §d20% chance§r of producing a §fDead Star§r byproduct.\n\n§lStats:§r\n§a5,000,000 DE§r per Nether Star\n§b10-second§r cycle time\n§d20%%§r Dead Star byproduct chance\n§eBuffer:§r 50 MDE\n\n§lStructure:§r 3×3×3 Industrial Casing + Stellar Energy Reactor Controller\n§lPorts:§r §e1× Industrial Energy Port§r (DE export)\n\n§7Input: Nether Stars (left slot). Dead Stars appear in right output slot.
-
-## Fusion Reactor
-howtoplay.aoc.multiblock.h_fusion_reactor=Fusion Reactor
-howtoplay.aoc.multiblock.p_fusion_reactor=Burns §bliquid fuels§r at high temperature to generate §eDE§r. Requires continuous fuel, coolant supply, and exhaust drainage.\n\n§lSupported fuels:§r Biofuel, Ethanol, Diesel, Heavy Hydrocarbon, Fissile Fuel\n§7Higher-tier fuels produce far more DE per bucket but run much hotter.\n\n§lCoolants:§r Water, Saline Coolant, Liquid Nitrogen\n§7Insufficient coolant reduces efficiency and raises temperature.\n\n§lExhaust:§r Reactive Fluid produced each cycle. Drain via Fluid Ports.\n§7A full exhaust tank pauses the reactor — keep it flowing.\n\n§lFuel tiers:§r\n  §aBiofuel / Ethanol§r — low tier, clean and renewable\n  §cHeavy Hydrocarbon / Fissile Fuel§r — high tier, extreme heat, use Liquid Nitrogen
-
-## Valves & Ports
-howtoplay.aoc.multiblock.h_valves=Fluid Valve & Energy Valve
-howtoplay.aoc.multiblock.p_valves=§bFluid Valve§r — Controls fluid flow between machines and tanks.\nRight-click to cycle: §aInput§r → §cOutput§r → §7Disabled§r\nUse a §eWrench§r to set a fluid type filter.\n\n§bEnergy Valve§r — Controls §eDE§r flow between generators and machines.\nRight-click to set direction. Wrench to set a transfer rate limit.\n§7Use these to distribute power from generators without overloading connections.
-
-## Industrial Ports
-howtoplay.aoc.multiblock.h_ind_ports=Industrial Ports
-howtoplay.aoc.multiblock.p_ind_ports=Exclusive connection points for the §bIndustrial Greenhouse§r and §bNuclear Reactor§r multiblocks. They replace standard valves for these structures.\n\n§eIndustrial Energy Port§r — accepts or exports §eDE§r\n§9Industrial Fluid Port§r — inputs or outputs fluids; use a §eWrench§r to configure which tank each port targets\n§aIndustrial Item Port§r — exports harvested crops from the 9 output slots\n\n§7Standard fluid valves and energy valves are §cnot§r accepted by these multiblocks.
+## ── Fusion Reactor Controller
+tile.utilitycraft:fusion_reactor_controller.name=Fusion Reactor Controller\n§o§9@UC: Advance Chemistry

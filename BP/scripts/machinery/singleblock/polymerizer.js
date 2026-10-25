@@ -6,23 +6,18 @@ import {
     addItemToSlot,
     processMachine,
     displayMachine,
+    failMachine,
     formatFluidType,
     getMachineEnergyCost,
     getMachineFluidCap,
     getTank,
+    hasNoEnergy,
     setupTanks,
-    stopMachine,
-} from "./machine_helpers.js";
+    consumeTank,
+    formatItemId,
+    getOutputSlotSpace,
+} from "../helper/machine_helpers.js";
 
-// ── Slot layout ───────────────────────────────────────────────────────────────
-// 0   Energy display
-// 1   Label display
-// 2   Progress display    
-// 3   Fluid display (in)     
-// 4   Item output slot    
-// 5–6  Upgrade slots
-// 7–12  IO item slots
-// 13–18 IO fluid slots
 const FLUID_DISPLAY_IN = 3;
 const OUTPUT_SLOT      = 4;
 const IO_ITEM_SLOTS    = [7, 12];
@@ -34,7 +29,7 @@ const DEFAULT_FLUID_CAP   = 16_000;
 registerIOInterface("utilitycraft:polymerizer", {
     liquids: {
         buttonSlots: IO_FLUID_SLOTS,
-        anyInputIndices: [0],
+        anyInputIndices:  [0],
         anyOutputIndices: [],
         modes: [
             { id: "disabled" },
@@ -43,7 +38,7 @@ registerIOInterface("utilitycraft:polymerizer", {
     },
     items: {
         buttonSlots: IO_ITEM_SLOTS,
-        anyInputSlots: [],
+        anyInputSlots:  [],
         anyOutputSlots: [OUTPUT_SLOT],
         modes: [
             { id: "disabled" },
@@ -53,14 +48,11 @@ registerIOInterface("utilitycraft:polymerizer", {
 });
 
 DoriosLib.registry.blockComponent("utilitycraft:polymerizer", {
-    /** @param {import("@minecraft/server").BlockComponentPlayerPlaceBeforeEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     beforeOnPlayerPlace(event, { params: settings }) {
         if (!event.player) return;
-        const placementEvent = /** @type {import("DoriosCore/index.js").PlacementEventLike} */ (event);
-        Machine.spawnEntity(placementEvent, settings, (entity) => {
+        Machine.spawnEntity(/** @type {any} */ (event), settings, (entity) => {
             const machine = new Machine(event.block, { ...settings, ignoreTick: true });
             if (!machine.valid) return;
-
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
             setupTanks(entity, fluidCap, [FLUID_DISPLAY_IN]);
@@ -68,7 +60,6 @@ DoriosLib.registry.blockComponent("utilitycraft:polymerizer", {
         });
     },
 
-    /** @param {import("@minecraft/server").BlockComponentTickEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     onTick({ block }, { params: settings }) {
         if (!globalThis.worldLoaded) return;
 
@@ -82,37 +73,36 @@ DoriosLib.registry.blockComponent("utilitycraft:polymerizer", {
         const displays = [{ tank: tankIn, slot: FLUID_DISPLAY_IN }];
 
         const recipes = getPolymerizerRecipes();
-        if (recipes.length === 0) return fail(machine, displays, "No Recipes");
+        if (recipes.length === 0) return failMachine(machine, displays, "No Recipes");
 
         const inputType = tankIn.getType();
-        if (inputType === EMPTY_FLUID) return fail(machine, displays, "No Input Fluid");
+        if (inputType === EMPTY_FLUID) return failMachine(machine, displays, "No Input Fluid");
 
         const recipe = recipes.find(r => r.input.type === inputType);
-        if (!recipe) return fail(machine, displays, `Wrong Fluid: ${formatFluidType(inputType)}`);
+        if (!recipe) return failMachine(machine, displays, `Wrong Fluid: ${formatFluidType(inputType)}`);
 
-        if (tankIn.get() < recipe.input.amount) return fail(machine, displays, "Not Enough Fluid");
+        if (tankIn.get() < recipe.input.amount)
+            return failMachine(machine, displays, "Not Enough Fluid");
 
-        const outputSpace = getOutputItemSpace(machine, recipe.output.item);
-        if (outputSpace <= 0) return fail(machine, displays, "Output Full");
+        const outputSpace = getOutputSlotSpace(machine.container, [OUTPUT_SLOT], recipe.output.item);
+        if (outputSpace <= 0) return failMachine(machine, displays, "Output Full");
 
         const craftLimit = Math.min(
             Math.floor(tankIn.get() / recipe.input.amount),
             outputSpace,
         );
-        if (craftLimit <= 0) return fail(machine, displays, "Output Full");
+        if (craftLimit <= 0) return failMachine(machine, displays, "Output Full");
 
         const energyCost = getMachineEnergyCost(settings, recipe, DEFAULT_ENERGY_COST);
-        if (machine.energy.get() <= 0 && machine.getProgress() < energyCost) {
-            return fail(machine, displays, "No Energy", { resetProgress: false });
-        }
+        if (hasNoEnergy(machine, energyCost))
+            return failMachine(machine, displays, "No Energy", { resetProgress: false });
 
         processMachine(machine, {
             energyCost,
             seconds: recipe.seconds ?? 5,
             maxRuns: craftLimit,
             craft: (runs) => {
-                tankIn.consume(recipe.input.amount * runs);
-                if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
+                consumeTank(tankIn, recipe.input.amount * runs);
                 addItemToSlot(machine.container, OUTPUT_SLOT, recipe.output.item, recipe.output.count * runs);
             },
         });
@@ -127,25 +117,11 @@ DoriosLib.registry.blockComponent("utilitycraft:polymerizer", {
     },
 });
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function fail(machine, displays, message, options) {
-    stopMachine(machine, message, options);
-    displayMachine(machine, displays);
-}
-
-function getOutputItemSpace(machine, typeId) {
-    const slot = machine.container.getItem(OUTPUT_SLOT);
-    if (!slot) return 64;
-    if (slot.typeId !== typeId) return 0;
-    return Math.max(0, (slot.maxAmount ?? 64) - slot.amount);
-}
-
 function updateHud(machine, recipe, tankIn, queued) {
     machine.setLabel([
         `§r§6Polymerizer`,
         `§r§bInput:  §f${formatFluidType(recipe.input.type)} §7${FluidStorage.formatFluid(tankIn.get())} / ${FluidStorage.formatFluid(tankIn.getCap())}`,
-        `§r§aOutput: §f${recipe.output.item.split(":")[1] ?? recipe.output.item} ×${recipe.output.count}`,
+        `§r§aOutput: §f${formatItemId(recipe.output.item)} ×${recipe.output.count}`,
         `§r§cCost:   §f${EnergyStorage.formatEnergyToText(machine.getEnergyCost())}`,
         `§r§7Queued: §f${queued}`,
     ]);

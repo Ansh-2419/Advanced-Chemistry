@@ -1,342 +1,273 @@
 ## Advance Chemistry — es_ES.lang
+## Organized by localization category; keys and values preserved.
 
-## ── Item Groups ───────────────────────────────────────────────────────────────
-ac:itemGroup.name.machines=Máquinas Petroquímicas
-ac:itemGroup.name.ind_machines=Máquinas Industriales
+## ── Creative Inventory Groups ──
 ac:itemGroup.name.aoc_tank=Tanques Creativos
 ac:itemGroup.name.endstone_generators=Generadores de Endstone
+ac:itemGroup.name.ind_machines=Máquinas Industriales
+ac:itemGroup.name.machines=Máquinas Petroquímicas
 
-## ── Singleblock Machines ─────────────────────────────────────────────────────
-tile.utilitycraft:fermenter.name=Cámara de Disolución\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fuel_mixer.name=Mezclador de Fluidos\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+## ── Blocks and Machines ──
+tile.utilitycraft:alloy_forge.name=Forja de Aleaciones\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:chemical_reactor.name=Reactor Químico\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:separator.name=Separador\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:polymerizer.name=Polimerizador\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:industrial_crusher.name=Trituradora Industrial\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:relic_synthesizer.name=Sintetizador de Reliquias\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-
-## ── Industrial Generators ────────────────────────────────────────────────────
+tile.utilitycraft:creative_advanced_growth_catalyst_tank.name=Tanque Creativo de Catalizador de Crecimiento Avanzado\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_bio_growth_solution_tank.name=Tanque Creativo de Solución de Crecimiento Bio\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_biofuel_tank.name=Tanque Creativo de Biocombustible\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_crude_oil_tank.name=Tanque Creativo de Petróleo Crudo\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_diesel_tank.name=Tanque Creativo de Diésel\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_ethanol_tank.name=Tanque Creativo de Etanol\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_enriched_tank.name=Tanque Creativo de Fertilizante Enriquecido\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_industrial_tank.name=Tanque Creativo de Fertilizante Industrial\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_fertilizer_org_tank.name=Tanque Creativo de Fertilizante Orgánico\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_heavy_hydrocarbon_tank.name=Tanque Creativo de Hidrocarburo Pesado\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Tanque Creativo de Mezcla de Hidrocarburos\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_hydrocarbon_slurry_tank.name=Tanque Creativo de Suspensión de Hidrocarburos\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_liquid_nitrogen_tank.name=Tanque Creativo de Nitrógeno Líquido\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_naphtha_tank.name=Tanque Creativo de Nafta\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_nitrite_compound_tank.name=Tanque Creativo de Compuesto de Nitrito\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_nutrient_growth_solution_tank.name=Tanque Creativo de Solución de Crecimiento Nutritiva\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_petrol_tank.name=Tanque Creativo de Gasolina\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_plant_oil_tank.name=Tanque Creativo de Aceite Vegetal\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_plastic_resin_tank.name=Tanque Creativo de Resina Plástica\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_reactive_fluid_tank.name=Tanque Creativo de Fluido Reactivo\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:creative_steam_tank.name=Tanque Creativo de Vapor\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_copper.name=Generador de Endstone de Cobre\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_diamond.name=Generador de Endstone de Diamante\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_emerald.name=Generador de Endstone de Esmeralda\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_gold.name=Generador de Endstone de Oro\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_iron.name=Generador de Endstone de Hierro\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:endstone_gen_netherite.name=Generador de Endstone de Netherite\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:energy_valve.name=Válvula de Energía\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fermenter.name=Cámara de Disolución\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fluid_storage_casing.name=Carcasa de Almacenamiento de Fluidos\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fluid_storage_monitor.name=Monitor de Almacenamiento de Fluidos\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fluid_valve.name=Válvula de Fluidos\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_burner_casing.name=Carcasa del Quemador de Combustible\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_burner_monitor.name=Monitor del Quemador de Combustible\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:fuel_mixer.name=Mezclador de Fluidos\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:greenhouse_controller.name=Controlador de Invernadero\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_energy_port.name=Puerto de Energía Industrial\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_fluid_port.name=Puerto de Fluidos Industrial\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_furnator.name=Horno Industrial\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:ind_item_port.name=Puerto de Objetos Industrial\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_magmator.name=Magmador Industrial\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_solar_panel.name=Panel Solar Industrial\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_thermo_generator.name=Generador Termoeléctrico Industrial\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:ind_wind_turbine.name=Turbina Eólica Industrial\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:ind_furnator.name=Horno Industrial\n§o§9@UC: Advance Chemistry
-
-## ── Multiblock Valves ────────────────────────────────────────────────────────
-tile.utilitycraft:fluid_valve.name=Válvula de Fluidos\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:energy_valve.name=Válvula de Energía\n§o§9@UC: Advance Chemistry
-
-## ── Industrial Ports ─────────────────────────────────────────────────────────
-tile.utilitycraft:ind_energy_port.name=Puerto de Energía Industrial\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:ind_fluid_port.name=Puerto de Fluidos Industrial\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:ind_item_port.name=Puerto de Objetos Industrial\n§o§9@UC: Advance Chemistry
-
-## ── Fluid Storage Multiblock ─────────────────────────────────────────────────
-tile.utilitycraft:fluid_storage_casing.name=Carcasa de Almacenamiento de Fluidos\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fluid_storage_monitor.name=Monitor de Almacenamiento de Fluidos\n§o§9@UC: Advance Chemistry
-
-## ── Fuel Burner Multiblock ───────────────────────────────────────────────────
-tile.utilitycraft:fuel_burner_casing.name=Carcasa del Quemador de Combustible\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:fuel_burner_monitor.name=Monitor del Quemador de Combustible\n§o§9@UC: Advance Chemistry
-
-## ── Refinery Multiblock ──────────────────────────────────────────────────────
-tile.utilitycraft:refinery_monitor.name=Monitor de Refinería\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:refinery_casing.name=Carcasa de Refinería\n§o§9@UC: Advance Chemistry
-
-## ── Greenhouse Multiblock ────────────────────────────────────────────────────
-tile.utilitycraft:greenhouse_controller.name=Controlador de Invernadero\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:industrial_caseing.name=Carcasa Industrial\n§o§9@UC: Advance Chemistry
-
-## ── Nuclear Reactor ──────────────────────────────────────────────────────────
+tile.utilitycraft:industrial_crusher.name=Trituradora Industrial\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:nuclear_reactor_controller.name=Controlador del Reactor Nuclear\n§o§9@UC: Advance Chemistry
-entity.utilitycraft:nuclear_reactor_multiblock.name=Reactor Nuclear
-
-## ── Stellar Energy Reactor ───────────────────────────────────────────────────
+tile.utilitycraft:polymerizer.name=Polimerizador\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:refinery_casing.name=Carcasa de Refinería\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:refinery_monitor.name=Monitor de Refinería\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:relic_synthesizer.name=Sintetizador de Reliquias\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
+tile.utilitycraft:separator.name=Separador\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
 tile.utilitycraft:stellar_energy_reactor_controller.name=Controlador del Reactor de Energía Estelar\n§o§9@UC: Advance Chemistry
-entity.utilitycraft:stellar_energy_reactor_multiblock.name=Reactor de Energía Estelar
 
-## ── Fusion Reactor ───────────────────────────────────────────────────────────
-entity.utilitycraft:fusion_reactor.name=Reactor de Fusión
-
-## ── Alloy Forge ──────────────────────────────────────────────────────────────
-tile.utilitycraft:alloy_forge.name=Forja de Aleaciones\n§7- Mejoras aceptadas:\n§a§7 §b§7\n§o§9@UC: Advance Chemistry
-
-## ── Endstone Generators ──────────────────────────────────────────────────────
-tile.utilitycraft:endstone_gen_copper.name=Generador de Endstone de Cobre\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_iron.name=Generador de Endstone de Hierro\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_gold.name=Generador de Endstone de Oro\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_diamond.name=Generador de Endstone de Diamante\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_emerald.name=Generador de Endstone de Esmeralda\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:endstone_gen_netherite.name=Generador de Endstone de Netherite\n§o§9@UC: Advance Chemistry
-
-## ── UI Entity Names ──────────────────────────────────────────────────────────
-entity.utilitycraft:nuclear_processor.name=Procesador Nuclear
-entity.utilitycraft:machine.name=Máquina
-entity.utilitycraft:fermenter.name=Cámara de Disolución
-entity.utilitycraft:fuel_mixer.name=Mezclador de Fluidos
+## ── Entity and Multiblock Names ──
+entity.utilitycraft:alloy_forge.name=Forja de Aleaciones
 entity.utilitycraft:chemical_reactor.name=Reactor Químico
-entity.utilitycraft:fuel_burner_monitor.name=Quemador de Combustible
+entity.utilitycraft:fermenter.name=Cámara de Disolución
 entity.utilitycraft:fluid_storage_monitor.name=Almacenamiento de Fluidos
-entity.utilitycraft:separator.name=Separador
-entity.utilitycraft:refinery_monitor.name=Refinería
+entity.utilitycraft:fuel_burner_monitor.name=Quemador de Combustible
+entity.utilitycraft:fuel_mixer.name=Mezclador de Fluidos
+entity.utilitycraft:fusion_reactor.name=Reactor de Fusión
 entity.utilitycraft:greenhouse_controller.name=Invernadero
 entity.utilitycraft:greenhouse_multiblock.name=Invernadero
-entity.utilitycraft:polymerizer.name=Polimerizador
 entity.utilitycraft:industrial_crusher.name=Trituradora Industrial
+entity.utilitycraft:machine.name=Máquina
+entity.utilitycraft:nuclear_processor.name=Procesador Nuclear
+entity.utilitycraft:nuclear_reactor_multiblock.name=Reactor Nuclear
+entity.utilitycraft:polymerizer.name=Polimerizador
+entity.utilitycraft:refinery_monitor.name=Refinería
 entity.utilitycraft:relic_synthesizer.name=Sintetizador de Reliquias
-entity.utilitycraft:alloy_forge.name=Forja de Aleaciones
+entity.utilitycraft:separator.name=Separador
+entity.utilitycraft:stellar_energy_reactor_multiblock.name=Reactor de Energía Estelar
 
-## ── Items ────────────────────────────────────────────────────────────────────
-item.utilitycraft:thorium_concentrate=Concentrado de Torio\n§o§9@UC: Advance Chemistry
+## ── Items, Tools and Armor ──
+item.utilitycraft:adamant_boots=Botas de Adamant\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_chestplate=Pechera de Adamant\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_helmet=Casco de Adamant\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_ingot=Lingote de Adamant\n§o§9@UC: Advance Chemistry
+item.utilitycraft:adamant_leggings=Pantalones de Adamant\n§o§9@UC: Advance Chemistry
 item.utilitycraft:adamant_mesh=Malla de Adamant\n§o§9@UC: Advance Chemistry
+item.utilitycraft:dead_star=Estrella Muerta\n§o§9@UC: Advance Chemistry
 item.utilitycraft:duranium_ingot=Lingote de Duranio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:lithium_dust=Polvo de Litio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_ingot=Lingote de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:water_bucket_custom=Cubo de Agua de Bruja\n§o§9@UC: Advance Chemistry
 item.utilitycraft:hdpe_pellet=Gránulo de HDPE\n§o§9@UC: Advance Chemistry
 item.utilitycraft:hdpe_sheet=Lámina de HDPE\n§o§9@UC: Advance Chemistry
 item.utilitycraft:industrial_chip=Chip Industrial\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_ingot=Lingote de Adamant\n§o§9@UC: Advance Chemistry
-item.utilitycraft:dead_star=Estrella Muerta\n§o§9@UC: Advance Chemistry
-
-## ── Voltanium Armor & Tools ──────────────────────────────────────────────────
-item.utilitycraft:voltanium_helmet=Casco de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_chestplate=Pechera de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_leggings=Grebas de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:voltanium_boots=Botas de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_sword=Espada de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_pickaxe=Pico de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_axe=Hacha de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_shovel=Pala de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_hoe=Azada de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_hammer=Martillo de Voltanio\n§o§9@UC: Advance Chemistry
-item.utilitycraft:v_paxel=Paxel de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:lithium_dust=Polvo de Litio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:thorium_concentrate=Concentrado de Torio\n§o§9@UC: Advance Chemistry
 item.utilitycraft:v_aiot=AIOT de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_axe=Hacha de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_hammer=Martillo de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_hoe=Azada de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_paxel=Paxel de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_pickaxe=Pico de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_shovel=Pala de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:v_sword=Espada de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_boots=Botas de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_chestplate=Pechera de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_helmet=Casco de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_ingot=Lingote de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:voltanium_leggings=Grebas de Voltanio\n§o§9@UC: Advance Chemistry
+item.utilitycraft:water_bucket_custom=Cubo de Agua de Bruja\n§o§9@UC: Advance Chemistry
 
-## ── Adamant Armor ────────────────────────────────────────────────────────────
-item.utilitycraft:adamant_helmet=Casco de Adamant\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_chestplate=Pechera de Adamant\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_leggings=Pantalones de Adamant\n§o§9@UC: Advance Chemistry
-item.utilitycraft:adamant_boots=Botas de Adamant\n§o§9@UC: Advance Chemistry
-
-## ── Fluid Display Names ──────────────────────────────────────────────────────
+## ── Fluid Names ──
 fluid.utilitycraft.actinide_solution=Solución de Actínidos
-fluid.utilitycraft.ethanol=Etanol
+fluid.utilitycraft.advanced_growth_catalyst=Catalizador de Crecimiento Avanzado
+fluid.utilitycraft.bio_growth_solution=Solución de Crecimiento Bio
 fluid.utilitycraft.biofuel=Biocombustible
-fluid.utilitycraft.plant_oil=Aceite Vegetal
-fluid.utilitycraft.reactive_fluid=Fluido Reactivo
-fluid.utilitycraft.sulfuric_acid=Ácido Sulfúrico
 fluid.utilitycraft.crude_oil=Petróleo Crudo
-fluid.utilitycraft.heavy_hydrocarbon=Hidrocarburo Pesado
-fluid.utilitycraft.hydrocarbon_slurry=Suspensión de Hidrocarburos
-fluid.utilitycraft.naphtha=Nafta
-fluid.utilitycraft.petrol=Gasolina
 fluid.utilitycraft.diesel=Diésel
-fluid.utilitycraft.plastic_resin=Resina Plástica
-fluid.utilitycraft.hydrocarbon_blend=Mezcla de Hidrocarburos
-fluid.utilitycraft.fertilizer_org=Fertilizante Orgánico
+fluid.utilitycraft.ethanol=Etanol
 fluid.utilitycraft.fertilizer_enriched=Fertilizante Enriquecido
 fluid.utilitycraft.fertilizer_industrial=Fertilizante Industrial
-fluid.utilitycraft.bio_growth_solution=Solución de Crecimiento Bio
-fluid.utilitycraft.nutrient_growth_solution=Solución de Crecimiento Nutritiva
-fluid.utilitycraft.advanced_growth_catalyst=Catalizador de Crecimiento Avanzado
-fluid.utilitycraft.liquified_thorium=Torio Licuado
-fluid.utilitycraft.nuclear_waste=Residuos Nucleares
-fluid.utilitycraft.nitrite_compound=Compuesto de Nitrito
+fluid.utilitycraft.fertilizer_org=Fertilizante Orgánico
+fluid.utilitycraft.heavy_hydrocarbon=Hidrocarburo Pesado
+fluid.utilitycraft.hydrocarbon_blend=Mezcla de Hidrocarburos
+fluid.utilitycraft.hydrocarbon_slurry=Suspensión de Hidrocarburos
 fluid.utilitycraft.liquid_nitrogen=Nitrógeno Líquido
+fluid.utilitycraft.liquified_thorium=Torio Licuado
+fluid.utilitycraft.naphtha=Nafta
+fluid.utilitycraft.nitrite_compound=Compuesto de Nitrito
+fluid.utilitycraft.nuclear_waste=Residuos Nucleares
+fluid.utilitycraft.nutrient_growth_solution=Solución de Crecimiento Nutritiva
+fluid.utilitycraft.petrol=Gasolina
+fluid.utilitycraft.plant_oil=Aceite Vegetal
+fluid.utilitycraft.plastic_resin=Resina Plástica
+fluid.utilitycraft.reactive_fluid=Fluido Reactivo
 fluid.utilitycraft.steam=Vapor
+fluid.utilitycraft.sulfuric_acid=Ácido Sulfúrico
 
-## ── Machine Info Panels ──────────────────────────────────────────────────────
-ui.aoc:info.nuclear_processor=Convierte Concentrado de Torio en Solución de Actínidos.\n\nEntrada: 20 Concentrado de Torio\nSalida: 100 mB Solución de Actínidos\nEnergía: 50.000 KDe\n\nMejoras aceptadas:\n- Velocidad\n- Energía
-ui.utilitycraft:info.fermenter=Convierte materiales orgánicos en fluidos.\n\nRanuras:\n- Entradas: semillas o caña de azúcar.\n- Fluido: almacenamiento del líquido producido.\n- Salida: residuo opcional.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
-ui.utilitycraft:info.fuel_mixer=Mezcla fluidos almacenados para crear mezclas de combustible.\n\nAlmacenamiento:\n- Entradas: fluidos de la receta.\n- Salida: combustible producido.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
-ui.utilitycraft:info.separator=Separa un fluido en dos fluidos de salida.\n\nAlmacenamiento:\n- Entrada: fluido de origen.\n- Salidas: fluidos separados.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
-ui.utilitycraft:info.chemical_reactor=Procesa fluidos para crear productos químicos.\n\nAlmacenamiento:\n- Entradas: fluidos de la receta.\n- Salida: producto principal.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
-ui.aoc:info.polymerizer=Convierte Resina Plástica en Gránulos de HDPE.\n\nEntrada: 250 mB de Resina Plástica\nSalida: 1 Gránulo de HDPE\nEnergía: 10.000 KDe
-ui.aoc:info.industrial_crusher=Tritura objetos en varias etapas de salida seleccionables.\n\nEntrada: cuadrícula 2×2.\nSalida: cuadrícula 3×3.\n\nEtapas:\n- 1×: Primera descomposición\n- 2×: Segunda descomposición\n- 3×: Tercera descomposición\n\nMejoras aceptadas:\n- Velocidad\n- Energía
-ui.aoc:info.alloy_forge=Forja de Aleaciones\n§7Combina hasta 9 pilas de ingredientes en aleaciones avanzadas.\n§7Coloca los ingredientes en cualquier ranura.
-ui.aoc:info.refinery=Procesa un fluido de entrada en hasta tres productos de refinería.\n\nE/S del multibloque:\n- Entrada de fluido: tanque de origen\n- Salidas de fluido: tanques de productos 1-3\n- Energía: aceptada mediante válvulas de energía
-ui.aoc:info.greenhouse=Invernadero industrial 5×5×5 que cultiva hasta 4 tipos de semillas simultáneamente.\n\nRanuras:\n- Semillas: 4 ranuras\n- Suelo: 1 ranura\n- Salida: 9 ranuras de cosecha\n\nFertilizantes (opcionales):\n  Orgánico — ×1.10 rendimiento, 100 mB/ciclo\n  Enriquecido — ×1.25 rendimiento, 80 mB/ciclo\n  Industrial — ×1.50 rendimiento, 60 mB/ciclo\n\nSoluciones de crecimiento (opcionales):\n  Bio — ×1.20 velocidad, 100 mB/ciclo\n  Nutritiva — ×1.40 velocidad, 80 mB/ciclo\n  Catalizador Avanzado — ×1.70 velocidad, 60 mB/ciclo\n\nRequiere: 1 Puerto Energía, 2 Puertos Fluidos, 1 Puerto Objetos\nBuffer: 200.000 DE
-ui.aoc:info.fuel_burner=Quema combustible líquido almacenado para generar §eDE§r.\n\nE/S del multibloque:\n- Entrada de fluido: tanque de combustible\n- Energía: exportada mediante válvulas de energía
-ui.aoc:info.fluid_storage=Almacena hasta siete fluidos en tanques independientes.\n\nE/S del multibloque:\n- Cada válvula de fluido puede dirigirse a Cualquier Tanque o a un tanque específico (1-7)\n- Cada tanque admite entrada y salida
-ui.aoc:info.nuclear_reactor=Reactor de fisión nuclear 3×3×3.\n\nConsume §eTorio Licuado§r y un §benfriante§r para generar §eDE§r, produciendo §2Residuos Nucleares§r.\n\nEnfriantes:\n  §fAgua§r — ×1.0 velocidad, 150 mB/ciclo\n  §bEnfriante Salino§r — ×1.5 velocidad, 100 mB/ciclo\n  §3Nitrógeno Líquido§r — ×2.0 velocidad, 60 mB/ciclo\n\nSin enfriante: ×0.5 velocidad.\n\nPor ciclo:\n  §cTorio consumido: §f50 mB\n  §eEnergía producida: §f50.000 DE\n  §2Residuos producidos: §f10 mB\n\nRequiere: §92× Puerto de Fluidos Industrial  §e1× Puerto de Energía Industrial
-ui.aoc:info.stellar_energy_reactor=Generador 3×3×3 que consume Estrellas del Nether y produce grandes cantidades de §eDE§r.\n\n§lRanuras:\n§r- §aRanura 0 (izquierda): §fEntrada de Estrellas del Nether\n- §cRanura 1 (derecha): §fSalida de Estrellas Muertas\n\n§lCiclo:\n§r- 1 Estrella del Nether por ciclo de 10s\n- §e5.000.000 DE §rpor estrella\n- §b20%% de probabilidad§r de Estrella Muerta\n\n§lBuffer: §r50 MDE\n\n§lRequiere:\n§r1× Carcasa Industrial\n1× §ePuerto de Energía Industrial§r
-
-## ── IO Mode Descriptions ─────────────────────────────────────────────────────
-ui.aoc:io.fuel_mixer.liquids=Modos de E/S:\n§r- §9Tanque de Entrada 1\n§r- §9Tanque de Entrada 2\n§r- §cTanque de Salida
-ui.aoc:io.fermenter.items=Modos de E/S:\n§r- §9Entradas 1-4\n§r- §cSalida de Residuos
-ui.aoc:io.fermenter.liquids=Modos de E/S:\n§r- §cSalida de Fluido
-ui.aoc:io.chemical_reactor.items=Modos de E/S:
-ui.aoc:io.chemical_reactor.liquids=Modos de E/S:\n§r- §9Entradas de Fluido\n§r- §cSalida del Producto
-ui.aoc:io.separator.liquids=Modos de E/S:\n§r- §9Entrada de Origen\n§r- §cTanque de Salida 1\n§r- §cTanque de Salida 2
-ui.aoc:io.polymerizer.items=Modos de E/S:\n§r- §cSalida de Gránulos
-ui.aoc:io.polymerizer.liquids=Modos de E/S:\n§r- §9Entrada de Resina
-ui.aoc:io.industrial_crusher.items=Modos de E/S:\n§r- §9Entradas 1-4\n§r- §cSalidas 1-9
-ui.aoc:io.nuclear_processor.items=Modos de E/S:\n§r- §9Entradas 1-4
-ui.aoc:io.nuclear_processor.liquids=Modos de E/S:\n§r- §9Entrada de Fluido\n§r- §cSalida de Fluido
-ui.aoc:io.greenhouse.liquids=Modos de E/S:\n§r- §9Cualquier Tanque de Fluido\n§r- §9Tanque de Fertilizante\n§r- §9Tanque de Solución de Crecimiento
-ui.aoc:io.greenhouse.items=Modos de E/S:\n§r- §cSalida de Cosecha (ranuras 10-18)
-ui.aoc:io.alloy_forge.items=Modos de E/S:\n§r- §9Entradas (ranuras 3-11)\n§r- §cSalida (ranura 12)
-ui.aoc:io.relic_synthesizer.items=Modos de E/S:\n§r- §9Combustible de Entrada\n§r- §cSalida 1-9
-
-## ── Creative Fluid Tanks ─────────────────────────────────────────────────────
-tile.utilitycraft:creative_ethanol_tank.name=Tanque Creativo de Etanol\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_plant_oil_tank.name=Tanque Creativo de Aceite Vegetal\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_biofuel_tank.name=Tanque Creativo de Biocombustible\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_hydrocarbon_slurry_tank.name=Tanque Creativo de Suspensión de Hidrocarburos\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_heavy_hydrocarbon_tank.name=Tanque Creativo de Hidrocarburo Pesado\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_reactive_fluid_tank.name=Tanque Creativo de Fluido Reactivo\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_crude_oil_tank.name=Tanque Creativo de Petróleo Crudo\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_diesel_tank.name=Tanque Creativo de Diésel\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_petrol_tank.name=Tanque Creativo de Gasolina\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_naphtha_tank.name=Tanque Creativo de Nafta\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_plastic_resin_tank.name=Tanque Creativo de Resina Plástica\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_hydrocarbon_blend_tank.name=Tanque Creativo de Mezcla de Hidrocarburos\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_steam_tank.name=Tanque Creativo de Vapor\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_fertilizer_org_tank.name=Tanque Creativo de Fertilizante Orgánico\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_fertilizer_enriched_tank.name=Tanque Creativo de Fertilizante Enriquecido\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_fertilizer_industrial_tank.name=Tanque Creativo de Fertilizante Industrial\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_bio_growth_solution_tank.name=Tanque Creativo de Solución de Crecimiento Bio\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_nutrient_growth_solution_tank.name=Tanque Creativo de Solución de Crecimiento Nutritiva\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_advanced_growth_catalyst_tank.name=Tanque Creativo de Catalizador de Crecimiento Avanzado\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_liquid_nitrogen_tank.name=Tanque Creativo de Nitrógeno Líquido\n§o§9@UC: Advance Chemistry
-tile.utilitycraft:creative_nitrite_compound_tank.name=Tanque Creativo de Compuesto de Nitrito\n§o§9@UC: Advance Chemistry
-
-## ── Fusion Reactor UI ────────────────────────────────────────────────────────
-ui.ac.fr.title_reactor=Reactor de Fusión - General
-ui.ac.fr.title_coolant=Reactor de Fusión - Enfriante
-ui.ac.fr.title_control=Reactor de Fusión - Control
-ui.ac.fr.title_info=Reactor de Fusión - Información
-ui.ac.fr.tab_reactor=Reactor
-ui.ac.fr.tab_coolant=Enfriante
-ui.ac.fr.tab_control=Control
-ui.ac.fr.tab_info=Info
-ui.ac.fr.reactor_information=Reactor
-ui.ac.fr.tanks_information=Recursos
-ui.ac.fr.current_temperature=Temperatura actual:
+## ── User Interface ──
 ui.ac.fr.control_hint=Abre el panel de control para configurar los ajustes del reactor.
 ui.ac.fr.coolant_requirement=Requiere enfriante. Se acepta Agua, Salina o Nitrógeno Líquido.
 ui.ac.fr.coolant_supply=Suministrar mediante Puertos de Fluidos. Necesita 2 cubos/ciclo.
 ui.ac.fr.cooling_heading=Cómo funciona el enfriamiento
 ui.ac.fr.cooling_help=El enfriante se consume en cada ciclo. Los combustibles de alto nivel generan más calor.
 ui.ac.fr.cooling_warning=Usa Nitrógeno Líquido para máxima eficiencia de enfriamiento con combustibles de alto nivel.
-ui.ac.fr.info_description=El Reactor de Fusión quema combustibles líquidos para generar Energía Dorios. Suministra combustible, enfriante y drena los gases continuamente.
-ui.ac.fr.info_fuel=El combustible llena el Tanque de Combustible. Soportados: Biocombustible, Etanol, Diésel, Hidrocarburo Pesado, Combustible Fisible.
-ui.ac.fr.info_energy_per_fuel=La energía por cubo varía según el nivel del combustible.\nEl Combustible Fisible produce hasta 500.000 DE/cubo.
-ui.ac.fr.info_coolant=Consulta la pestaña Enfriante para ver los enfriantes aceptados e instrucciones de suministro.
+ui.ac.fr.current_temperature=Temperatura actual:
 ui.ac.fr.info_control=Usa la pestaña Control para la gestión del reactor.
-ui.ac.fr.info_temperature_warning=¡Vigila la temperatura! Los combustibles de alto nivel con enfriante insuficiente pueden llevar el reactor a temperaturas extremas.
+ui.ac.fr.info_coolant=Consulta la pestaña Enfriante para ver los enfriantes aceptados e instrucciones de suministro.
+ui.ac.fr.info_description=El Reactor de Fusión quema combustibles líquidos para generar Energía Dorios. Suministra combustible, enfriante y drena los gases continuamente.
+ui.ac.fr.info_energy_per_fuel=La energía por cubo varía según el nivel del combustible.\nEl Combustible Fisible produce hasta 500.000 DE/cubo.
 ui.ac.fr.info_exhaust=Cada ciclo de combustión produce Fluido Reactivo como gas de escape. Drénalo mediante Puertos de Fluidos.
 ui.ac.fr.info_exhaust_warning=Drena los gases antes de desmantelar. Mantén el flujo para evitar la detención de la reacción.
+ui.ac.fr.info_fuel=El combustible llena el Tanque de Combustible. Soportados: Biocombustible, Etanol, Diésel, Hidrocarburo Pesado, Combustible Fisible.
+ui.ac.fr.info_temperature_warning=¡Vigila la temperatura! Los combustibles de alto nivel con enfriante insuficiente pueden llevar el reactor a temperaturas extremas.
+ui.ac.fr.reactor_information=Reactor
+ui.ac.fr.tab_control=Control
+ui.ac.fr.tab_coolant=Enfriante
+ui.ac.fr.tab_info=Info
+ui.ac.fr.tab_reactor=Reactor
+ui.ac.fr.tanks_information=Recursos
+ui.ac.fr.title_control=Reactor de Fusión - Control
+ui.ac.fr.title_coolant=Reactor de Fusión - Enfriante
+ui.ac.fr.title_info=Reactor de Fusión - Información
+ui.ac.fr.title_reactor=Reactor de Fusión - General
+ui.aoc:info.alloy_forge=Forja de Aleaciones\n§7Combina hasta 9 pilas de ingredientes en aleaciones avanzadas.\n§7Coloca los ingredientes en cualquier ranura.
+ui.aoc:info.fluid_storage=Almacena hasta siete fluidos en tanques independientes.\n\nE/S del multibloque:\n- Cada válvula de fluido puede dirigirse a Cualquier Tanque o a un tanque específico (1-7)\n- Cada tanque admite entrada y salida
+ui.aoc:info.fuel_burner=Quema combustible líquido almacenado para generar §eDE§r.\n\nE/S del multibloque:\n- Entrada de fluido: tanque de combustible\n- Energía: exportada mediante válvulas de energía
+ui.aoc:info.greenhouse=Invernadero industrial 5×5×5 que cultiva hasta 4 tipos de semillas simultáneamente.\n\nRanuras:\n- Semillas: 4 ranuras\n- Suelo: 1 ranura\n- Salida: 9 ranuras de cosecha\n\nFertilizantes (opcionales):\n  Orgánico — ×1.10 rendimiento, 100 mB/ciclo\n  Enriquecido — ×1.25 rendimiento, 80 mB/ciclo\n  Industrial — ×1.50 rendimiento, 60 mB/ciclo\n\nSoluciones de crecimiento (opcionales):\n  Bio — ×1.20 velocidad, 100 mB/ciclo\n  Nutritiva — ×1.40 velocidad, 80 mB/ciclo\n  Catalizador Avanzado — ×1.70 velocidad, 60 mB/ciclo\n\nRequiere: 1 Puerto Energía, 2 Puertos Fluidos, 1 Puerto Objetos\nBuffer: 200.000 DE
+ui.aoc:info.industrial_crusher=Tritura objetos en varias etapas de salida seleccionables.\n\nEntrada: cuadrícula 2×2.\nSalida: cuadrícula 3×3.\n\nEtapas:\n- 1×: Primera descomposición\n- 2×: Segunda descomposición\n- 3×: Tercera descomposición\n\nMejoras aceptadas:\n- Velocidad\n- Energía
+ui.aoc:info.nuclear_processor=Convierte Concentrado de Torio en Solución de Actínidos.\n\nEntrada: 20 Concentrado de Torio\nSalida: 100 mB Solución de Actínidos\nEnergía: 50.000 KDe\n\nMejoras aceptadas:\n- Velocidad\n- Energía
+ui.aoc:info.nuclear_reactor=Reactor de fisión nuclear 3×3×3.\n\nConsume §eTorio Licuado§r y un §benfriante§r para generar §eDE§r, produciendo §2Residuos Nucleares§r.\n\nEnfriantes:\n  §fAgua§r — ×1.0 velocidad, 150 mB/ciclo\n  §bEnfriante Salino§r — ×1.5 velocidad, 100 mB/ciclo\n  §3Nitrógeno Líquido§r — ×2.0 velocidad, 60 mB/ciclo\n\nSin enfriante: ×0.5 velocidad.\n\nPor ciclo:\n  §cTorio consumido: §f50 mB\n  §eEnergía producida: §f50.000 DE\n  §2Residuos producidos: §f10 mB\n\nRequiere: §92× Puerto de Fluidos Industrial  §e1× Puerto de Energía Industrial
+ui.aoc:info.polymerizer=Convierte Resina Plástica en Gránulos de HDPE.\n\nEntrada: 250 mB de Resina Plástica\nSalida: 1 Gránulo de HDPE\nEnergía: 10.000 KDe
+ui.aoc:info.refinery=Procesa un fluido de entrada en hasta tres productos de refinería.\n\nE/S del multibloque:\n- Entrada de fluido: tanque de origen\n- Salidas de fluido: tanques de productos 1-3\n- Energía: aceptada mediante válvulas de energía
+ui.aoc:info.stellar_energy_reactor=Generador 3×3×3 que consume Estrellas del Nether y produce grandes cantidades de §eDE§r.\n\n§lRanuras:\n§r- §aRanura 0 (izquierda): §fEntrada de Estrellas del Nether\n- §cRanura 1 (derecha): §fSalida de Estrellas Muertas\n\n§lCiclo:\n§r- 1 Estrella del Nether por ciclo de 10s\n- §e5.000.000 DE §rpor estrella\n- §b20%% de probabilidad§r de Estrella Muerta\n\n§lBuffer: §r50 MDE\n\n§lRequiere:\n§r1× Carcasa Industrial\n1× §ePuerto de Energía Industrial§r
+ui.aoc:io.alloy_forge.items=Modos de E/S:\n§r- §9Entradas (ranuras 3-11)\n§r- §cSalida (ranura 12)
+ui.aoc:io.chemical_reactor.items=Modos de E/S:
+ui.aoc:io.chemical_reactor.liquids=Modos de E/S:\n§r- §9Entradas de Fluido\n§r- §cSalida del Producto
+ui.aoc:io.fermenter.items=Modos de E/S:\n§r- §9Entradas 1-4\n§r- §cSalida de Residuos
+ui.aoc:io.fermenter.liquids=Modos de E/S:\n§r- §cSalida de Fluido
+ui.aoc:io.fuel_mixer.liquids=Modos de E/S:\n§r- §9Tanque de Entrada 1\n§r- §9Tanque de Entrada 2\n§r- §cTanque de Salida
+ui.aoc:io.greenhouse.items=Modos de E/S:\n§r- §cSalida de Cosecha (ranuras 10-18)
+ui.aoc:io.greenhouse.liquids=Modos de E/S:\n§r- §9Cualquier Tanque de Fluido\n§r- §9Tanque de Fertilizante\n§r- §9Tanque de Solución de Crecimiento
+ui.aoc:io.industrial_crusher.items=Modos de E/S:\n§r- §9Entradas 1-4\n§r- §cSalidas 1-9
+ui.aoc:io.nuclear_processor.items=Modos de E/S:\n§r- §9Entradas 1-4
+ui.aoc:io.nuclear_processor.liquids=Modos de E/S:\n§r- §9Entrada de Fluido\n§r- §cSalida de Fluido
+ui.aoc:io.polymerizer.items=Modos de E/S:\n§r- §cSalida de Gránulos
+ui.aoc:io.polymerizer.liquids=Modos de E/S:\n§r- §9Entrada de Resina
+ui.aoc:io.relic_synthesizer.items=Modos de E/S:\n§r- §9Combustible de Entrada\n§r- §cSalida 1-9
+ui.aoc:io.separator.liquids=Modos de E/S:\n§r- §9Entrada de Origen\n§r- §cTanque de Salida 1\n§r- §cTanque de Salida 2
+ui.utilitycraft:info.chemical_reactor=Procesa fluidos para crear productos químicos.\n\nAlmacenamiento:\n- Entradas: fluidos de la receta.\n- Salida: producto principal.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
+ui.utilitycraft:info.fermenter=Convierte materiales orgánicos en fluidos.\n\nRanuras:\n- Entradas: semillas o caña de azúcar.\n- Fluido: almacenamiento del líquido producido.\n- Salida: residuo opcional.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
+ui.utilitycraft:info.fuel_mixer=Mezcla fluidos almacenados para crear mezclas de combustible.\n\nAlmacenamiento:\n- Entradas: fluidos de la receta.\n- Salida: combustible producido.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
+ui.utilitycraft:info.separator=Separa un fluido en dos fluidos de salida.\n\nAlmacenamiento:\n- Entrada: fluido de origen.\n- Salidas: fluidos separados.\n\nMejoras aceptadas:\n- Velocidad\n- Energía
 
-## ══════════════════════════════════════════════════════════
-## Advance Chemistry — Cómo Jugar
-## ══════════════════════════════════════════════════════════
-
-howtoplay.category.age_of_chemical=Advance Chemistry
+## ── In-Game Guide ──
+howtoplay.aoc.introduction.h1=Cadena de Producción
+howtoplay.aoc.introduction.h2=Energía y Fluidos
+howtoplay.aoc.introduction.h3=Interfaz E/S
+howtoplay.aoc.introduction.h4=Generadores
+howtoplay.aoc.introduction.p1=§bAdvance Chemistry§r es un complemento de química e industria, expansión de §6UtilityCraft§r.\n\nTodas las máquinas funcionan con §eDE (Energía Dorios)§r — el sistema de energía compartido de UtilityCraft.\n\nEste complemento fue creado por Rudransh (desarrollador) y MasterAtib (diseñador de texturas).
+howtoplay.aoc.introduction.p2=El flujo principal de procesamiento:\n\n§b1.§r §aCámara de Disolución§r — convierte materiales orgánicos en §eAceite Vegetal§r, §aEtanol§r o §2Fertilizante Orgánico§r\n§b2.§r §6Mezclador de Fluidos§r — combina §aEtanol§r y §aAceite Vegetal§r en §6Biocombustible§r\n§b3.§r §dReactor Químico§r — procesa fluidos en §8Suspensión de Hidrocarburos§r, §7Petróleo Crudo§r o §3Resina Plástica§r\n§b4.§r §bSeparador§r — separa §8Suspensión de Hidrocarburos§r en §7Hidrocarburo Pesado§r y §dFluido Reactivo§r\n§b5.§r §cRefinería§r — procesa §7Petróleo Crudo§r en §cDiésel§r, §6Gasolina§r y §7Nafta§r\n§b6.§r §3Polimerizador§r — convierte §3Resina Plástica§r en §3Gránulos de HDPE§r
+howtoplay.aoc.introduction.p3=La §eDE (Energía Dorios)§r es producida por los §bGeneradores Industriales§r de este complemento.\n\nLos fluidos se mueven entre máquinas usando §bVálvulas de Fluidos§r. Cada máquina tiene un §7tanque de fluido§r visible en su interfaz.\n\nUsa la §7pestaña E/S§r de cada máquina para configurar qué cara acepta entradas y cuál exporta salidas.
+howtoplay.aoc.introduction.p4=Cada máquina tiene una §bpestaña E/S§r. Asigna cada cara:\n\n§a● Entrada§r — acepta objetos o fluidos\n§c● Salida§r — exporta objetos o fluidos\n§7● Desactivado§r — bloquea toda transferencia\n\nLa §ePestaña de Mejoras§r permite insertar módulos de §aVelocidad§r y §bEnergía§r.
+howtoplay.aoc.introduction.p5=Los generadores industriales producen §eDE§r para alimentar todas las máquinas:\n\n§7Horno Industrial§r — quema combustible sólido. Ideal para el inicio.\n§7Magmador§r — usa lava. Potencia media.\n§7Panel Solar§r — energía solar pasiva. Sin coste de combustible.\n§7Generador Termoeléctrico§r — diferencia de temperatura. Alta producción.\n§7Turbina Eólica§r — energía eólica pasiva. Mayor altura = más producción.
+howtoplay.aoc.items.h_adamant_armor=Armadura de Adamant
+howtoplay.aoc.items.h_fluids=Fluidos Obtenibles
+howtoplay.aoc.items.h_ingredients=Ingredientes Clave
+howtoplay.aoc.items.h_voltanium_armor=Armadura de Voltanio
+howtoplay.aoc.items.h_voltanium_tools=Herramientas de Voltanio
+howtoplay.aoc.items.intro=Objetos clave, recetas de elaboración y estadísticas de armadura para Advance Chemistry.
+howtoplay.aoc.items.p_adamant_armor=La armadura §5de nivel superior§r. Elaborada con §5Lingotes de Adamant§r.\n\n§lEstadísticas:§r\n§7Casco§r        — Protección: §a5§r  Durabilidad: §e6.000§r  Encantabilidad: 30\n§7Pechera§r      — Protección: §a13§r Durabilidad: §e6.400§r  Encantabilidad: 30\n§7Grebas§r       — Protección: §a10§r Durabilidad: §e6.200§r  Encantabilidad: 30\n§7Botas§r        — Protección: §a5§r  Durabilidad: §e6.000§r  Encantabilidad: 30\n§7Conjunto completo§r — Protección total: §a33§r\n\n§7Reparar con: Lingote de Adamant. Admite guarniciones.
+howtoplay.aoc.items.p_fluids=§aAceite Vegetal§r — Cámara de Disolución con semillas.\n§aEtanol§r — Cámara de Disolución con Caña de Azúcar.\n§6Biocombustible§r — Mezclador: Etanol + Aceite Vegetal.\n§8Suspensión de Hidrocarburos§r — Reactor Químico desde Biocombustible.\n§7Hidrocarburo Pesado§r — Separador desde Suspensión.\n§dFluido Reactivo§r — Separador desde Suspensión.\n§7Petróleo Crudo§r — Reactor Químico desde Hidrocarburo Pesado.\n§cDiésel§r · §6Gasolina§r · §7Nafta§r — Refinería desde Petróleo Crudo.\n§3Resina Plástica§r — Reactor Químico desde Nafta.\n§cÁcido Sulfúrico§r — Reactor Químico desde Fluido Reactivo.\n§bCompuesto de Nitrito§r — Mezclador: Fertilizante Orgánico + Ácido Sulfúrico.\n§3Nitrógeno Líquido§r — Reactor Químico desde Compuesto de Nitrito.
+howtoplay.aoc.items.p_ingredients=§eGránulo de HDPE§r — Polimerizador con 250 mB de Resina Plástica.\n§eLámina de HDPE§r — 4 Gránulos de HDPE en la mesa de elaboración.\n§ePolvo de Litio§r — Polimerizador con 250 mB de Fluido Reactivo.\n§eLingote de Duranio§r — Fundido de mineral de Duranio. Base para aleación de Voltanio.\n§eLingote de Voltanio§r — Producido por la Forja de Aleaciones.\n§eLingote de Adamant§r — Producido por la Forja de Aleaciones (nivel superior).\n§eMalla de Adamant§r — Elaborada con Lingotes de Adamant.
+howtoplay.aoc.items.p_voltanium_armor=Elaborada en la §bmesa de elaboración§r con §6Lingotes de Voltanio§r.\n\n§lEstadísticas:§r\n§7Casco§r        — Protección: §a4§r  Durabilidad: §e4.221§r  Encantabilidad: 25\n§7Pechera§r      — Protección: §a12§r Durabilidad: §e4.776§r  Encantabilidad: 25\n§7Grebas§r       — Protección: §a9§r  Durabilidad: §e4.665§r  Encantabilidad: 25\n§7Botas§r        — Protección: §a4§r  Durabilidad: §e4.443§r  Encantabilidad: 25\n§7Conjunto completo§r — Protección total: §a29§r\n\n§7Reparar con: Lingote de Voltanio. Admite guarniciones.
+howtoplay.aoc.items.p_voltanium_tools=Todas elaboradas en la §bmesa de elaboración§r con §6Lingotes de Voltanio§r:\n\n§eEspada§r · §ePico§r · §eHacha§r · §ePala§r · §eAzada§r · §eMartillo§r (mina área 3×3)\n§ePaxel§r (Pico + Hacha + Pala) · §eAIOT§r (todas las herramientas combinadas)
+howtoplay.aoc.machines.h_alloy_forge=Forja de Aleaciones
+howtoplay.aoc.machines.h_chemical_reactor=Reactor Químico
+howtoplay.aoc.machines.h_crusher=Trituradora Industrial
+howtoplay.aoc.machines.h_fermenter=Cámara de Disolución
+howtoplay.aoc.machines.h_fuel_mixer=Mezclador de Fluidos
+howtoplay.aoc.machines.h_polymerizer=Polimerizador
+howtoplay.aoc.machines.h_relic=Sintetizador de Reliquias
+howtoplay.aoc.machines.h_separator=Separador
+howtoplay.aoc.machines.intro=Todas las máquinas de bloque simple e industriales se describen aquí. Cada una consume §eDE§r y procesa objetos o fluidos. Usa la §bpestaña E/S§r para configurar la automatización.
+howtoplay.aoc.machines.p_alloy_forge=Combina hasta 9 pilas de ingredientes en §baleaciones avanzadas§r. Las entradas son §ldesordenadas§r.\n\n§eDE:§r 150.000 – 300.000  §7Tiempo:§r 10 segundos\n\n§lRecetas:§r\n\n§6Lingote de Aleación de Voltanio§r ×4:\n  §7Lingote de Duranio§r ×2 + §7Lingote de Acero§r ×2 + §ePolvo de Litio§r ×4 + §7Placa de Hierro Energizado§r ×1\n  150.000 DE\n\n§5Lingote de Adamant§r ×4:\n  §3Lámina de HDPE§r ×2 + §6Lingote de Voltanio§r ×4 + §bCorazón del Mar§r ×1 + §7Polvo de Netherite§r ×2\n  300.000 DE
+howtoplay.aoc.machines.p_chemical_reactor=Procesa fluidos en un §bproducto fluido principal§r.\n\n§eDE:§r 8.400 – 10.000 por elaboración  §7Tiempo:§r 10 – 12 segundos\n\n§lRecetas:§r\n\n§6Biocombustible§r 1.000 mB → §8Suspensión de Hidrocarburos§r 750 mB\n§7Hidrocarburo Pesado§r 400 mB → §7Petróleo Crudo§r 250 mB\n§7Nafta§r 1.000 mB → §3Resina Plástica§r 750 mB\n§dFluido Reactivo§r 1.000 mB → §cÁcido Sulfúrico§r 750 mB\n§bCompuesto de Nitrito§r 1.000 mB → §3Nitrógeno Líquido§r 750 mB
+howtoplay.aoc.machines.p_crusher=Procesa objetos en §b3 etapas de salida seleccionables§r.\n\n§eDE:§r 2.000 por elaboración  §7Tiempo:§r 2 segundos\n\nEntrada: cuadrícula 2×2. Salida: cuadrícula 3×3.\n§7Ejemplo: §fPiedra§r → Etapa 1: Grava | Etapa 2: Tierra | Etapa 3: Arena
+howtoplay.aoc.machines.p_fermenter=Convierte objetos orgánicos en §bfluidos§r mediante fermentación.\n\n§eDE:§r 6.400 – 7.800 por lote  §7Tiempo:§r 6 – 10 segundos\n\n§lRecetas:§r\n\n§eSemillas de Trigo/Remolacha/Melón/Calabaza§r ×64 → §aAceite Vegetal§r 1.200 mB\n§eCaña de Azúcar§r ×64 → §aEtanol§r 1.200 mB §740%%§r §fAzúcar§r ×15\n§eHarina de Hueso§r ×8 + §eHojas de Roble§r ×4 → §aFertilizante Orgánico§r 500 mB
+howtoplay.aoc.machines.p_fuel_mixer=Mezcla dos §bfluidos§r en un §bfluido de salida§r.\n\n§eDE:§r 6.400 por elaboración  §7Tiempo:§r 10 segundos\n\n§lRecetas:§r\n\n§aEtanol§r 1.000 mB + §aAceite Vegetal§r 1.000 mB → §6Biocombustible§r 500 mB\n§2Fertilizante Orgánico§r 1.000 mB + §cÁcido Sulfúrico§r 1.000 mB → §bCompuesto de Nitrito§r 500 mB
+howtoplay.aoc.machines.p_polymerizer=Convierte §bfluidos§r en §bproductos sólidos§r a presión.\n\n§eDE:§r 10.000 por elaboración  §7Tiempo:§r 5 segundos\n\n§lRecetas:§r\n\n§3Resina Plástica§r 250 mB → §3Gránulo de HDPE§r ×1\n§dFluido Reactivo§r 250 mB → §ePolvo de Litio§r ×1\n§2Residuos Nucleares§r 250 mB → §5Pellet de Plutonio§r ×1
+howtoplay.aoc.machines.p_relic=Recupera §5plantillas de guarnición de armadura§r según la dimensión actual.\n\n§eDE:§r 25.000 – 80.000  §7Tiempo:§r 20 segundos\n\n§2Overworld§r — Combustible: §bDiamante ×1§r — 25.000 DE\n§cNether§r — Combustible: §bLingote de Netherite ×1§r — 50.000 DE\n§5End§r — Combustible: §bLingote de Netherite ×1§r — 60.000 DE\n§lEspecial:§r §bNetherite ×2§r → §6Mesa de Herrería§r §7(garantizado, 80.000 DE)
+howtoplay.aoc.machines.p_separator=Separa un §bfluido de entrada§r en §bdos fluidos de salida§r.\n\n§eDE:§r 8.000 por elaboración\n\n§lReceta:§r\n\n§8Suspensión de Hidrocarburos§r 1.000 mB → §7Hidrocarburo Pesado§r 600 mB + §dFluido Reactivo§r 350 mB
+howtoplay.aoc.multiblock.h_fluid_storage=Almacenamiento de Fluidos
+howtoplay.aoc.multiblock.h_fuel_burner=Quemador de Combustible
+howtoplay.aoc.multiblock.h_fusion_reactor=Reactor de Fusión
+howtoplay.aoc.multiblock.h_greenhouse=Invernadero Industrial
+howtoplay.aoc.multiblock.h_ind_ports=Puertos Industriales
+howtoplay.aoc.multiblock.h_nuclear_reactor=Reactor Nuclear
+howtoplay.aoc.multiblock.h_refinery=Refinería
+howtoplay.aoc.multiblock.h_stellar_energy_reactor=Reactor de Energía Estelar
+howtoplay.aoc.multiblock.h_valves=Válvula de Fluidos y Válvula de Energía
+howtoplay.aoc.multiblock.intro=Los multibloques son grandes estructuras de §bcarcasas§r controladas por un §bmonitor§r o §bcontrolador§r. Haz clic derecho con una §eLlave Inglesa§r para activarlos.
+howtoplay.aoc.multiblock.p_fluid_storage=Tanque multibloque de gran capacidad para almacenar hasta §b7 tipos de fluidos independientes§r.\n\n§lEstructura:§r Carcasas de Almacenamiento + Monitor de Almacenamiento\n§7E/S:§r Cada Válvula de Fluido puede dirigirse a Cualquier Tanque o a un tanque específico (1–7). Cada tanque admite entrada y salida.
+howtoplay.aoc.multiblock.p_fuel_burner=Quema §bcombustibles líquidos§r para generar grandes cantidades de §eDE§r.\n\n§cCombustibles:§r Biocombustible, Diésel, Gasolina\n§lEstructura:§r Carcasas del Quemador + Monitor del Quemador\n§7E/S:§r Válvula de fluido para combustible, Válvula de energía para exportar DE.
+howtoplay.aoc.multiblock.p_fusion_reactor=Quema §bcombustibles líquidos§r a alta temperatura para generar §eDE§r. Requiere suministro continuo de combustible, enfriante y drenaje de gases.\n\n§lCombustibles:§r Biocombustible, Etanol, Diésel, Hidrocarburo Pesado, Combustible Fisible\n§lEnfriantes:§r Agua, Enfriante Salino, Nitrógeno Líquido\n§lGases:§r Fluido Reactivo — drenar mediante Puertos de Fluidos. Tanque lleno pausa el reactor.
+howtoplay.aoc.multiblock.p_greenhouse=Procesador de cultivos §b5×5×5§r que cultiva hasta §b4 tipos de semillas simultáneamente§r.\n\n§lEstructura:§r Carcasa Industrial + Puertos + Controlador de Invernadero\n§lPuertos requeridos:§r §e1× Puerto de Energía§r · §92× Puertos de Fluidos§r · §a1× Puerto de Objetos§r\n\n§lFertilizantes §7(opcionales):§r\n  Orgánico ×1.10 | Enriquecido ×1.25 | Industrial ×1.50\n\n§lSoluciones de crecimiento §7(opcionales):§r\n  Bio ×1.20 | Nutritiva ×1.40 | Catalizador Avanzado ×1.70\n\n§lTipos de suelo:§r Tierra · Amarillo ×1.0 · Rojo ×2.0 · Azul ×3.0 · Negro ×4.0
+howtoplay.aoc.multiblock.p_ind_ports=Puntos de conexión exclusivos para el §bInvernadero Industrial§r y el §bReactor Nuclear§r.\n\n§ePuerto de Energía Industrial§r — acepta o exporta §eDE§r\n§9Puerto de Fluidos Industrial§r — entradas o salidas de fluidos\n§aPuerto de Objetos Industrial§r — exporta cosechas de las 9 ranuras de salida\n\n§7Las válvulas estándar §cno§r son aceptadas por estas estructuras.
+howtoplay.aoc.multiblock.p_nuclear_reactor=Reactor de fisión §c3×3×3§r. Consume §eTorio Licuado§r y §benfriante§r para producir §eDE§r y §2Residuos Nucleares§r.\n\n§lEnfriantes:§r Agua ×1.0 | Salina ×1.5 | Nitrógeno Líquido ×2.0 | Sin enfriante ×0.5\n§lPor ciclo:§r Torio 50 mB consumido · §e50.000 DE§r producidos · Residuos 10 mB\n§lEstructura:§r 3×3×3 Carcasa Industrial + Controlador\n§lPuertos:§r §92× Puerto de Fluidos§r · §e1× Puerto de Energía§r
+howtoplay.aoc.multiblock.p_refinery=Procesa §7Petróleo Crudo§r en múltiples productos refinados.\n\n§eDE:§r 12.000 por elaboración\n\n§lReceta:§r\n§7Petróleo Crudo§r 1.000 mB → §cDiésel§r 350 mB + §6Gasolina§r 300 mB + §7Nafta§r 200 mB\n\n§lEstructura:§r Carcasas de Refinería + Monitor de Refinería\n§7E/S:§r 1 válvula de fluido para entrada, 3 para salidas, válvula de energía para DE.
+howtoplay.aoc.multiblock.p_stellar_energy_reactor=Quema §bEstrellas del Nether§r para generar §emillones de DE§r con §d20%%§r de probabilidad de §fEstrella Muerta§r.\n\n§a5.000.000 DE§r por Estrella del Nether · Ciclo de §b10 segundos§r · Buffer §e50 MDE§r\n§lEstructura:§r 3×3×3 Carcasa Industrial + Controlador\n§lPuertos:§r §e1× Puerto de Energía Industrial§r
+howtoplay.aoc.multiblock.p_valves=§bVálvula de Fluidos§r — Controla el flujo de fluidos.\nClic derecho para cambiar: §aEntrada§r → §cSalida§r → §7Desactivado§r\nLlave Inglesa para filtrar por tipo de fluido.\n\n§bVálvula de Energía§r — Controla el flujo de §eDE§r.\nClic derecho para establecer dirección. Llave Inglesa para límite de transferencia.
 howtoplay.aoc:introduction=Introducción
 howtoplay.aoc:introduction.title=Advance Chemistry - Introducción
-howtoplay.aoc:machines=Máquinas
-howtoplay.aoc:machines.title=Advance Chemistry - Máquinas
 howtoplay.aoc:items=Objetos
 howtoplay.aoc:items.title=Advance Chemistry - Objetos
+howtoplay.aoc:machines=Máquinas
+howtoplay.aoc:machines.title=Advance Chemistry - Máquinas
 howtoplay.aoc:multiblock=Multibloques
 howtoplay.aoc:multiblock.title=Advance Chemistry - Multibloques
+howtoplay.category.age_of_chemical=Advance Chemistry
 
-## ══════════════════════════════════════════════════════════
-## CATEGORÍA 1 — INTRODUCCIÓN
-## ══════════════════════════════════════════════════════════
 
-howtoplay.aoc.introduction.p1=§bAdvance Chemistry§r es un complemento de química e industria, expansión de §6UtilityCraft§r.\n\nTodas las máquinas funcionan con §eDE (Energía Dorios)§r — el sistema de energía compartido de UtilityCraft.\n\nEste complemento fue creado por Rudransh (desarrollador) y MasterAtib (diseñador de texturas).
-howtoplay.aoc.introduction.h1=Cadena de Producción
-howtoplay.aoc.introduction.p2=El flujo principal de procesamiento:\n\n§b1.§r §aCámara de Disolución§r — convierte materiales orgánicos en §eAceite Vegetal§r, §aEtanol§r o §2Fertilizante Orgánico§r\n§b2.§r §6Mezclador de Fluidos§r — combina §aEtanol§r y §aAceite Vegetal§r en §6Biocombustible§r\n§b3.§r §dReactor Químico§r — procesa fluidos en §8Suspensión de Hidrocarburos§r, §7Petróleo Crudo§r o §3Resina Plástica§r\n§b4.§r §bSeparador§r — separa §8Suspensión de Hidrocarburos§r en §7Hidrocarburo Pesado§r y §dFluido Reactivo§r\n§b5.§r §cRefinería§r — procesa §7Petróleo Crudo§r en §cDiésel§r, §6Gasolina§r y §7Nafta§r\n§b6.§r §3Polimerizador§r — convierte §3Resina Plástica§r en §3Gránulos de HDPE§r
-howtoplay.aoc.introduction.h2=Energía y Fluidos
-howtoplay.aoc.introduction.p3=La §eDE (Energía Dorios)§r es producida por los §bGeneradores Industriales§r de este complemento.\n\nLos fluidos se mueven entre máquinas usando §bVálvulas de Fluidos§r. Cada máquina tiene un §7tanque de fluido§r visible en su interfaz.\n\nUsa la §7pestaña E/S§r de cada máquina para configurar qué cara acepta entradas y cuál exporta salidas.
-howtoplay.aoc.introduction.h3=Interfaz E/S
-howtoplay.aoc.introduction.p4=Cada máquina tiene una §bpestaña E/S§r. Asigna cada cara:\n\n§a● Entrada§r — acepta objetos o fluidos\n§c● Salida§r — exporta objetos o fluidos\n§7● Desactivado§r — bloquea toda transferencia\n\nLa §ePestaña de Mejoras§r permite insertar módulos de §aVelocidad§r y §bEnergía§r.
-howtoplay.aoc.introduction.h4=Generadores
-howtoplay.aoc.introduction.p5=Los generadores industriales producen §eDE§r para alimentar todas las máquinas:\n\n§7Horno Industrial§r — quema combustible sólido. Ideal para el inicio.\n§7Magmador§r — usa lava. Potencia media.\n§7Panel Solar§r — energía solar pasiva. Sin coste de combustible.\n§7Generador Termoeléctrico§r — diferencia de temperatura. Alta producción.\n§7Turbina Eólica§r — energía eólica pasiva. Mayor altura = más producción.
+## ── Creative Catalogue Groups ───────────────────────────────────────────────
+ac:itemGroup.name.multiblock_monitors=Monitores de Multibloque
+ac:itemGroup.name.multiblock_casings=Carcasas de Multibloque
+ac:itemGroup.name.multiblock_ports=Puertos de Multibloque
 
-## ══════════════════════════════════════════════════════════
-## CATEGORÍA 2 — MÁQUINAS
-## ══════════════════════════════════════════════════════════
-
-howtoplay.aoc.machines.intro=Todas las máquinas de bloque simple e industriales se describen aquí. Cada una consume §eDE§r y procesa objetos o fluidos. Usa la §bpestaña E/S§r para configurar la automatización.
-
-howtoplay.aoc.machines.h_fermenter=Cámara de Disolución
-howtoplay.aoc.machines.p_fermenter=Convierte objetos orgánicos en §bfluidos§r mediante fermentación.\n\n§eDE:§r 6.400 – 7.800 por lote  §7Tiempo:§r 6 – 10 segundos\n\n§lRecetas:§r\n\n§eSemillas de Trigo/Remolacha/Melón/Calabaza§r ×64 → §aAceite Vegetal§r 1.200 mB\n§eCaña de Azúcar§r ×64 → §aEtanol§r 1.200 mB §740%%§r §fAzúcar§r ×15\n§eHarina de Hueso§r ×8 + §eHojas de Roble§r ×4 → §aFertilizante Orgánico§r 500 mB
-
-howtoplay.aoc.machines.h_fuel_mixer=Mezclador de Fluidos
-howtoplay.aoc.machines.p_fuel_mixer=Mezcla dos §bfluidos§r en un §bfluido de salida§r.\n\n§eDE:§r 6.400 por elaboración  §7Tiempo:§r 10 segundos\n\n§lRecetas:§r\n\n§aEtanol§r 1.000 mB + §aAceite Vegetal§r 1.000 mB → §6Biocombustible§r 500 mB\n§2Fertilizante Orgánico§r 1.000 mB + §cÁcido Sulfúrico§r 1.000 mB → §bCompuesto de Nitrito§r 500 mB
-
-howtoplay.aoc.machines.h_chemical_reactor=Reactor Químico
-howtoplay.aoc.machines.p_chemical_reactor=Procesa fluidos en un §bproducto fluido principal§r.\n\n§eDE:§r 8.400 – 10.000 por elaboración  §7Tiempo:§r 10 – 12 segundos\n\n§lRecetas:§r\n\n§6Biocombustible§r 1.000 mB → §8Suspensión de Hidrocarburos§r 750 mB\n§7Hidrocarburo Pesado§r 400 mB → §7Petróleo Crudo§r 250 mB\n§7Nafta§r 1.000 mB → §3Resina Plástica§r 750 mB\n§dFluido Reactivo§r 1.000 mB → §cÁcido Sulfúrico§r 750 mB\n§bCompuesto de Nitrito§r 1.000 mB → §3Nitrógeno Líquido§r 750 mB
-
-howtoplay.aoc.machines.h_separator=Separador
-howtoplay.aoc.machines.p_separator=Separa un §bfluido de entrada§r en §bdos fluidos de salida§r.\n\n§eDE:§r 8.000 por elaboración\n\n§lReceta:§r\n\n§8Suspensión de Hidrocarburos§r 1.000 mB → §7Hidrocarburo Pesado§r 600 mB + §dFluido Reactivo§r 350 mB
-
-howtoplay.aoc.machines.h_polymerizer=Polimerizador
-howtoplay.aoc.machines.p_polymerizer=Convierte §bfluidos§r en §bproductos sólidos§r a presión.\n\n§eDE:§r 10.000 por elaboración  §7Tiempo:§r 5 segundos\n\n§lRecetas:§r\n\n§3Resina Plástica§r 250 mB → §3Gránulo de HDPE§r ×1\n§dFluido Reactivo§r 250 mB → §ePolvo de Litio§r ×1\n§2Residuos Nucleares§r 250 mB → §5Pellet de Plutonio§r ×1
-
-howtoplay.aoc.machines.h_crusher=Trituradora Industrial
-howtoplay.aoc.machines.p_crusher=Procesa objetos en §b3 etapas de salida seleccionables§r.\n\n§eDE:§r 2.000 por elaboración  §7Tiempo:§r 2 segundos\n\nEntrada: cuadrícula 2×2. Salida: cuadrícula 3×3.\n§7Ejemplo: §fPiedra§r → Etapa 1: Grava | Etapa 2: Tierra | Etapa 3: Arena
-
-howtoplay.aoc.machines.h_relic=Sintetizador de Reliquias
-howtoplay.aoc.machines.p_relic=Recupera §5plantillas de guarnición de armadura§r según la dimensión actual.\n\n§eDE:§r 25.000 – 80.000  §7Tiempo:§r 20 segundos\n\n§2Overworld§r — Combustible: §bDiamante ×1§r — 25.000 DE\n§cNether§r — Combustible: §bLingote de Netherite ×1§r — 50.000 DE\n§5End§r — Combustible: §bLingote de Netherite ×1§r — 60.000 DE\n§lEspecial:§r §bNetherite ×2§r → §6Mesa de Herrería§r §7(garantizado, 80.000 DE)
-
-howtoplay.aoc.machines.h_alloy_forge=Forja de Aleaciones
-howtoplay.aoc.machines.p_alloy_forge=Combina hasta 9 pilas de ingredientes en §baleaciones avanzadas§r. Las entradas son §ldesordenadas§r.\n\n§eDE:§r 150.000 – 300.000  §7Tiempo:§r 10 segundos\n\n§lRecetas:§r\n\n§6Lingote de Aleación de Voltanio§r ×4:\n  §7Lingote de Duranio§r ×2 + §7Lingote de Acero§r ×2 + §ePolvo de Litio§r ×4 + §7Placa de Hierro Energizado§r ×1\n  150.000 DE\n\n§5Lingote de Adamant§r ×4:\n  §3Lámina de HDPE§r ×2 + §6Lingote de Voltanio§r ×4 + §bCorazón del Mar§r ×1 + §7Polvo de Netherite§r ×2\n  300.000 DE
-
-## ══════════════════════════════════════════════════════════
-## CATEGORÍA 3 — OBJETOS
-## ══════════════════════════════════════════════════════════
-
-howtoplay.aoc.items.intro=Objetos clave, recetas de elaboración y estadísticas de armadura para Advance Chemistry.
-
-howtoplay.aoc.items.h_ingredients=Ingredientes Clave
-howtoplay.aoc.items.p_ingredients=§eGránulo de HDPE§r — Polimerizador con 250 mB de Resina Plástica.\n§eLámina de HDPE§r — 4 Gránulos de HDPE en la mesa de elaboración.\n§ePolvo de Litio§r — Polimerizador con 250 mB de Fluido Reactivo.\n§eLingote de Duranio§r — Fundido de mineral de Duranio. Base para aleación de Voltanio.\n§eLingote de Voltanio§r — Producido por la Forja de Aleaciones.\n§eLingote de Adamant§r — Producido por la Forja de Aleaciones (nivel superior).\n§eMalla de Adamant§r — Elaborada con Lingotes de Adamant.
-
-howtoplay.aoc.items.h_fluids=Fluidos Obtenibles
-howtoplay.aoc.items.p_fluids=§aAceite Vegetal§r — Cámara de Disolución con semillas.\n§aEtanol§r — Cámara de Disolución con Caña de Azúcar.\n§6Biocombustible§r — Mezclador: Etanol + Aceite Vegetal.\n§8Suspensión de Hidrocarburos§r — Reactor Químico desde Biocombustible.\n§7Hidrocarburo Pesado§r — Separador desde Suspensión.\n§dFluido Reactivo§r — Separador desde Suspensión.\n§7Petróleo Crudo§r — Reactor Químico desde Hidrocarburo Pesado.\n§cDiésel§r · §6Gasolina§r · §7Nafta§r — Refinería desde Petróleo Crudo.\n§3Resina Plástica§r — Reactor Químico desde Nafta.\n§cÁcido Sulfúrico§r — Reactor Químico desde Fluido Reactivo.\n§bCompuesto de Nitrito§r — Mezclador: Fertilizante Orgánico + Ácido Sulfúrico.\n§3Nitrógeno Líquido§r — Reactor Químico desde Compuesto de Nitrito.
-
-howtoplay.aoc.items.h_voltanium_armor=Armadura de Voltanio
-howtoplay.aoc.items.p_voltanium_armor=Elaborada en la §bmesa de elaboración§r con §6Lingotes de Voltanio§r.\n\n§lEstadísticas:§r\n§7Casco§r        — Protección: §a4§r  Durabilidad: §e4.221§r  Encantabilidad: 25\n§7Pechera§r      — Protección: §a12§r Durabilidad: §e4.776§r  Encantabilidad: 25\n§7Grebas§r       — Protección: §a9§r  Durabilidad: §e4.665§r  Encantabilidad: 25\n§7Botas§r        — Protección: §a4§r  Durabilidad: §e4.443§r  Encantabilidad: 25\n§7Conjunto completo§r — Protección total: §a29§r\n\n§7Reparar con: Lingote de Voltanio. Admite guarniciones.
-
-howtoplay.aoc.items.h_adamant_armor=Armadura de Adamant
-howtoplay.aoc.items.p_adamant_armor=La armadura §5de nivel superior§r. Elaborada con §5Lingotes de Adamant§r.\n\n§lEstadísticas:§r\n§7Casco§r        — Protección: §a5§r  Durabilidad: §e6.000§r  Encantabilidad: 30\n§7Pechera§r      — Protección: §a13§r Durabilidad: §e6.400§r  Encantabilidad: 30\n§7Grebas§r       — Protección: §a10§r Durabilidad: §e6.200§r  Encantabilidad: 30\n§7Botas§r        — Protección: §a5§r  Durabilidad: §e6.000§r  Encantabilidad: 30\n§7Conjunto completo§r — Protección total: §a33§r\n\n§7Reparar con: Lingote de Adamant. Admite guarniciones.
-
-howtoplay.aoc.items.h_voltanium_tools=Herramientas de Voltanio
-howtoplay.aoc.items.p_voltanium_tools=Todas elaboradas en la §bmesa de elaboración§r con §6Lingotes de Voltanio§r:\n\n§eEspada§r · §ePico§r · §eHacha§r · §ePala§r · §eAzada§r · §eMartillo§r (mina área 3×3)\n§ePaxel§r (Pico + Hacha + Pala) · §eAIOT§r (todas las herramientas combinadas)
-
-## ══════════════════════════════════════════════════════════
-## CATEGORÍA 4 — MULTIBLOQUES
-## ══════════════════════════════════════════════════════════
-
-howtoplay.aoc.multiblock.intro=Los multibloques son grandes estructuras de §bcarcasas§r controladas por un §bmonitor§r o §bcontrolador§r. Haz clic derecho con una §eLlave Inglesa§r para activarlos.
-
-howtoplay.aoc.multiblock.h_fuel_burner=Quemador de Combustible
-howtoplay.aoc.multiblock.p_fuel_burner=Quema §bcombustibles líquidos§r para generar grandes cantidades de §eDE§r.\n\n§cCombustibles:§r Biocombustible, Diésel, Gasolina\n§lEstructura:§r Carcasas del Quemador + Monitor del Quemador\n§7E/S:§r Válvula de fluido para combustible, Válvula de energía para exportar DE.
-
-howtoplay.aoc.multiblock.h_refinery=Refinería
-howtoplay.aoc.multiblock.p_refinery=Procesa §7Petróleo Crudo§r en múltiples productos refinados.\n\n§eDE:§r 12.000 por elaboración\n\n§lReceta:§r\n§7Petróleo Crudo§r 1.000 mB → §cDiésel§r 350 mB + §6Gasolina§r 300 mB + §7Nafta§r 200 mB\n\n§lEstructura:§r Carcasas de Refinería + Monitor de Refinería\n§7E/S:§r 1 válvula de fluido para entrada, 3 para salidas, válvula de energía para DE.
-
-howtoplay.aoc.multiblock.h_fluid_storage=Almacenamiento de Fluidos
-howtoplay.aoc.multiblock.p_fluid_storage=Tanque multibloque de gran capacidad para almacenar hasta §b7 tipos de fluidos independientes§r.\n\n§lEstructura:§r Carcasas de Almacenamiento + Monitor de Almacenamiento\n§7E/S:§r Cada Válvula de Fluido puede dirigirse a Cualquier Tanque o a un tanque específico (1–7). Cada tanque admite entrada y salida.
-
-howtoplay.aoc.multiblock.h_greenhouse=Invernadero Industrial
-howtoplay.aoc.multiblock.p_greenhouse=Procesador de cultivos §b5×5×5§r que cultiva hasta §b4 tipos de semillas simultáneamente§r.\n\n§lEstructura:§r Carcasa Industrial + Puertos + Controlador de Invernadero\n§lPuertos requeridos:§r §e1× Puerto de Energía§r · §92× Puertos de Fluidos§r · §a1× Puerto de Objetos§r\n\n§lFertilizantes §7(opcionales):§r\n  Orgánico ×1.10 | Enriquecido ×1.25 | Industrial ×1.50\n\n§lSoluciones de crecimiento §7(opcionales):§r\n  Bio ×1.20 | Nutritiva ×1.40 | Catalizador Avanzado ×1.70\n\n§lTipos de suelo:§r Tierra · Amarillo ×1.0 · Rojo ×2.0 · Azul ×3.0 · Negro ×4.0
-
-howtoplay.aoc.multiblock.h_nuclear_reactor=Reactor Nuclear
-howtoplay.aoc.multiblock.p_nuclear_reactor=Reactor de fisión §c3×3×3§r. Consume §eTorio Licuado§r y §benfriante§r para producir §eDE§r y §2Residuos Nucleares§r.\n\n§lEnfriantes:§r Agua ×1.0 | Salina ×1.5 | Nitrógeno Líquido ×2.0 | Sin enfriante ×0.5\n§lPor ciclo:§r Torio 50 mB consumido · §e50.000 DE§r producidos · Residuos 10 mB\n§lEstructura:§r 3×3×3 Carcasa Industrial + Controlador\n§lPuertos:§r §92× Puerto de Fluidos§r · §e1× Puerto de Energía§r
-
-howtoplay.aoc.multiblock.h_stellar_energy_reactor=Reactor de Energía Estelar
-howtoplay.aoc.multiblock.p_stellar_energy_reactor=Quema §bEstrellas del Nether§r para generar §emillones de DE§r con §d20%%§r de probabilidad de §fEstrella Muerta§r.\n\n§a5.000.000 DE§r por Estrella del Nether · Ciclo de §b10 segundos§r · Buffer §e50 MDE§r\n§lEstructura:§r 3×3×3 Carcasa Industrial + Controlador\n§lPuertos:§r §e1× Puerto de Energía Industrial§r
-
-howtoplay.aoc.multiblock.h_fusion_reactor=Reactor de Fusión
-howtoplay.aoc.multiblock.p_fusion_reactor=Quema §bcombustibles líquidos§r a alta temperatura para generar §eDE§r. Requiere suministro continuo de combustible, enfriante y drenaje de gases.\n\n§lCombustibles:§r Biocombustible, Etanol, Diésel, Hidrocarburo Pesado, Combustible Fisible\n§lEnfriantes:§r Agua, Enfriante Salino, Nitrógeno Líquido\n§lGases:§r Fluido Reactivo — drenar mediante Puertos de Fluidos. Tanque lleno pausa el reactor.
-
-howtoplay.aoc.multiblock.h_valves=Válvula de Fluidos y Válvula de Energía
-howtoplay.aoc.multiblock.p_valves=§bVálvula de Fluidos§r — Controla el flujo de fluidos.\nClic derecho para cambiar: §aEntrada§r → §cSalida§r → §7Desactivado§r\nLlave Inglesa para filtrar por tipo de fluido.\n\n§bVálvula de Energía§r — Controla el flujo de §eDE§r.\nClic derecho para establecer dirección. Llave Inglesa para límite de transferencia.
-
-howtoplay.aoc.multiblock.h_ind_ports=Puertos Industriales
-howtoplay.aoc.multiblock.p_ind_ports=Puntos de conexión exclusivos para el §bInvernadero Industrial§r y el §bReactor Nuclear§r.\n\n§ePuerto de Energía Industrial§r — acepta o exporta §eDE§r\n§9Puerto de Fluidos Industrial§r — entradas o salidas de fluidos\n§aPuerto de Objetos Industrial§r — exporta cosechas de las 9 ranuras de salida\n\n§7Las válvulas estándar §cno§r son aceptadas por estas estructuras.
+## ── Fusion Reactor Controller
+tile.utilitycraft:fusion_reactor_controller.name=Controlador del Reactor de Fusión\n§o§9@UC: Advance Chemistry

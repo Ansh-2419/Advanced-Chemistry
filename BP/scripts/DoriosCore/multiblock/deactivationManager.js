@@ -141,7 +141,17 @@ export class DeactivationManager {
    * @returns {import("@minecraft/server").Entity | undefined} Removed controller entity, if one was found.
    */
   static handleBreakController(block, player, emptyBlocksConfig, controllerPermutation = block?.permutation) {
-    const entity = EntityManager.getControllerEntityFromBlock(block, controllerPermutation);
+    // First try the normal permutation-tag lookup (works in beforePlayerBreak).
+    let entity = EntityManager.getControllerEntityFromBlock(block, controllerPermutation);
+
+    // Fallback: in onPlayerBreak the block is already air so the tag check
+    // fails. Search for any active multiblock entity at this location instead.
+    if (!isMultiblockEntity(entity)) {
+      entity = block?.dimension
+        ?.getEntitiesAtBlockLocation(block.location)
+        .find(isMultiblockEntity);
+    }
+
     if (!isMultiblockEntity(entity)) return;
 
     DeactivationManager.deactivateEntity(entity, player, emptyBlocksConfig);

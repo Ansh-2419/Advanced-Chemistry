@@ -5,32 +5,34 @@ import {
     EMPTY_FLUID,
     processMachine,
     displayMachine,
+    failMachine,
     formatFluidType,
     getMachineEnergyCost,
     getMachineFluidCap,
     getTank,
+    hasNoEnergy,
     setupTanks,
-    stopMachine,
+    consumeTank,
     tryUseFluidItemInSlot,
-} from "./machine_helpers.js";
+} from "../helper/machine_helpers.js";
 
 const FLUID_INPUT_CAPSULE = 3;
-const FLUID_DISPLAY_IN = 4;
-const FLUID_DISPLAY_OUT1 = 5;
-const FLUID_DISPLAY_OUT2 = 6;
-const IO_FLUID_SLOTS = [9, 14];
+const FLUID_DISPLAY_IN    = 4;
+const FLUID_DISPLAY_OUT1  = 5;
+const FLUID_DISPLAY_OUT2  = 6;
+const IO_FLUID_SLOTS      = [9, 14];
 
 const DEFAULT_ENERGY_COST = 6400;
-const DEFAULT_FLUID_CAP = 128000;
+const DEFAULT_FLUID_CAP   = 128000;
 
 registerIOInterface("utilitycraft:separator", {
     liquids: {
         buttonSlots: IO_FLUID_SLOTS,
-        anyInputIndices: [0],
+        anyInputIndices:  [0],
         anyOutputIndices: [1, 2],
         modes: [
             { id: "disabled" },
-            { id: "input_1", inputIndices: [0] },
+            { id: "input_1",  inputIndices:  [0] },
             { id: "output_1", outputIndices: [1] },
             { id: "output_2", outputIndices: [2] },
         ],
@@ -38,14 +40,11 @@ registerIOInterface("utilitycraft:separator", {
 });
 
 DoriosLib.registry.blockComponent("utilitycraft:separator", {
-    /** @param {import("@minecraft/server").BlockComponentPlayerPlaceBeforeEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     beforeOnPlayerPlace(event, { params: settings }) {
         if (!event.player) return;
-        const placementEvent = /** @type {import("DoriosCore/index.js").PlacementEventLike} */ (event);
-        Machine.spawnEntity(placementEvent, settings, (entity) => {
+        Machine.spawnEntity(/** @type {any} */ (event), settings, (entity) => {
             const machine = new Machine(event.block, { ...settings, ignoreTick: true });
             if (!machine.valid) return;
-
             const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
             machine.setEnergyCost(settings.machine?.energy_cost ?? DEFAULT_ENERGY_COST);
             setupTanks(entity, fluidCap, [
@@ -57,7 +56,6 @@ DoriosLib.registry.blockComponent("utilitycraft:separator", {
         });
     },
 
-    /** @param {import("@minecraft/server").BlockComponentTickEvent} event @param {{params: import("DoriosCore/index.js").MachineSettings}} context */
     onTick({ block }, { params: settings }) {
         if (!globalThis.worldLoaded) return;
 
@@ -66,12 +64,12 @@ DoriosLib.registry.blockComponent("utilitycraft:separator", {
 
         machine.processIO();
 
-        const fluidCap = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
-        const tankIn = getTank(machine.entity, 0, fluidCap);
-        const tankOut1 = getTank(machine.entity, 1, fluidCap);
-        const tankOut2 = getTank(machine.entity, 2, fluidCap);
-        const displays = [
-            { tank: tankIn, slot: FLUID_DISPLAY_IN },
+        const fluidCap  = getMachineFluidCap(settings, DEFAULT_FLUID_CAP);
+        const tankIn    = getTank(machine.entity, 0, fluidCap);
+        const tankOut1  = getTank(machine.entity, 1, fluidCap);
+        const tankOut2  = getTank(machine.entity, 2, fluidCap);
+        const displays  = [
+            { tank: tankIn,   slot: FLUID_DISPLAY_IN   },
             { tank: tankOut1, slot: FLUID_DISPLAY_OUT1 },
             { tank: tankOut2, slot: FLUID_DISPLAY_OUT2 },
         ];
@@ -79,32 +77,30 @@ DoriosLib.registry.blockComponent("utilitycraft:separator", {
         tryUseFluidItemInSlot(machine.container, FLUID_INPUT_CAPSULE, machine.entity);
 
         const recipes = getSeparatorRecipes();
-        if (recipes.length === 0) return fail(machine, displays, "No Recipes");
+        if (recipes.length === 0) return failMachine(machine, displays, "No Recipes");
 
         const inputType = tankIn.getType();
-        if (inputType === EMPTY_FLUID) return fail(machine, displays, "No Input Fluid");
+        if (inputType === EMPTY_FLUID) return failMachine(machine, displays, "No Input Fluid");
 
         const recipe = recipes.find(entry => entry.input.type === inputType);
-        if (!recipe) return fail(machine, displays, "Wrong Fluid");
+        if (!recipe) return failMachine(machine, displays, "Wrong Fluid");
 
         const validation = validateOutputs(tankIn, tankOut1, tankOut2, recipe);
-        if (!validation.ok) return fail(machine, displays, validation.reason);
+        if (!validation.ok) return failMachine(machine, displays, validation.reason);
 
         const craftLimit = getCraftLimit(tankIn, tankOut1, tankOut2, recipe);
-        if (craftLimit.max <= 0) return fail(machine, displays, craftLimit.reason);
+        if (craftLimit.max <= 0) return failMachine(machine, displays, craftLimit.reason);
 
         const energyCost = getMachineEnergyCost(settings, recipe, DEFAULT_ENERGY_COST);
-        if (machine.energy.get() <= 0 && machine.getProgress() < energyCost) {
-            return fail(machine, displays, "No Energy", { resetProgress: false });
-        }
+        if (hasNoEnergy(machine, energyCost))
+            return failMachine(machine, displays, "No Energy", { resetProgress: false });
 
         processMachine(machine, {
             energyCost,
             seconds: recipe.seconds ?? 8,
             maxRuns: craftLimit.max,
             craft: (runs) => {
-                tankIn.consume(recipe.input.amount * runs);
-                if (tankIn.get() <= 0) tankIn.setType(EMPTY_FLUID);
+                consumeTank(tankIn, recipe.input.amount * runs);
 
                 if (tankOut1.getType() === EMPTY_FLUID) tankOut1.setType(recipe.output1.type);
                 tankOut1.add(recipe.output1.amount * runs);
@@ -124,22 +120,15 @@ DoriosLib.registry.blockComponent("utilitycraft:separator", {
     },
 });
 
-function fail(machine, displays, message, options) {
-    stopMachine(machine, message, options);
-    displayMachine(machine, displays);
-}
-
 function validateOutputs(tankIn, tankOut1, tankOut2, recipe) {
     if (tankIn.get() < recipe.input.amount) return { ok: false, reason: "Not Enough Input" };
 
     const out1Type = tankOut1.getType();
     const out2Type = tankOut2.getType();
-    if (out1Type !== EMPTY_FLUID && out1Type !== recipe.output1.type) {
+    if (out1Type !== EMPTY_FLUID && out1Type !== recipe.output1.type)
         return { ok: false, reason: "Out 1 Blocked" };
-    }
-    if (out2Type !== EMPTY_FLUID && out2Type !== recipe.output2.type) {
+    if (out2Type !== EMPTY_FLUID && out2Type !== recipe.output2.type)
         return { ok: false, reason: "Out 2 Blocked" };
-    }
     if (tankOut1.getFreeSpace() <= 0) return { ok: false, reason: "Heavy HC Full" };
     if (tankOut2.getFreeSpace() <= 0) return { ok: false, reason: "Reactive Full" };
 
@@ -148,8 +137,8 @@ function validateOutputs(tankIn, tankOut1, tankOut2, recipe) {
 
 function getCraftLimit(tankIn, tankOut1, tankOut2, recipe) {
     const inputRuns = Math.floor(tankIn.get() / recipe.input.amount);
-    const out1Runs = Math.floor(tankOut1.getFreeSpace() / recipe.output1.amount);
-    const out2Runs = Math.floor(tankOut2.getFreeSpace() / recipe.output2.amount);
+    const out1Runs  = Math.floor(tankOut1.getFreeSpace() / recipe.output1.amount);
+    const out2Runs  = Math.floor(tankOut2.getFreeSpace() / recipe.output2.amount);
     const max = Math.min(inputRuns, out1Runs, out2Runs);
 
     if (max > 0) return { max };

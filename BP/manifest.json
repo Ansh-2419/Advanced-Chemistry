@@ -1,5 +1,4 @@
 
-
 {
   "format_version": 2,
   "header": {
@@ -7,7 +6,7 @@
     "description": "Advanced Chemistry Behavior Pack",
     "uuid": "7c8b9a44-53a6-4c8e-bcc3-7c4c9d6d4f11",
     "version": [0, 1, 0],
-    "min_engine_version": [1, 21, 60]
+    "min_engine_version": [1, 21, 120]
   },
   "modules": [
     {

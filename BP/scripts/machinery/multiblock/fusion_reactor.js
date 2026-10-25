@@ -7,16 +7,17 @@ import {
     InterfaceManager,
     registerLinkNodeIO,
 } from "DoriosCore/index.js";
+import { world } from "@minecraft/server";
+import { initFluidTanks, initEnergy, lockTankSlot, guardTank, validateStructure } from "../helper/helper.js";
 import * as DoriosLib from "DoriosLib/index.js";
-import { NUCLEAR_THERMAL, getNuclearHeatCapacity, getNuclearEfficiency, simulateNuclearReactor } from "./nuclearSimulation.js";
+import { NUCLEAR_THERMAL, getNuclearHeatCapacity, getNuclearEfficiency, simulateNuclearReactor } from "../helper/nuclearSimulation.js";
 import {
     formatReactorOnTime,
     setReactorRunning,
     spawnReactorVentSmoke,
     synchronizeReactorTimer,
-} from "./reactorRuntime.js";
+} from "../helper/reactorRuntime.js";
 
-// ── Fuel registry ─────────────────────────────────────────────────────────────
 const FUELS = {
     biofuel:           { energyPerBucket: 80_000,  label: "Biofuel",           tier: 1, peakTempK: 1_400 },
     ethanol:           { energyPerBucket: 60_000,  label: "Ethanol",           tier: 1, peakTempK: 1_200 },
@@ -26,7 +27,6 @@ const FUELS = {
 };
 const VALID_FUELS = new Set(Object.keys(FUELS));
 
-// ── Coolant registry ──────────────────────────────────────────────────────────
 const COOLANTS = {
     water:           { speedMultiplier: 1.0, label: "Water",   coolingK: 220, efficiency: 0.6 },
     saline_coolant:  { speedMultiplier: 1.4, label: "Saline",  coolingK: 320, efficiency: 0.8 },
@@ -34,76 +34,97 @@ const COOLANTS = {
 };
 const VALID_COOLANTS = new Set(Object.keys(COOLANTS));
 
-// ── Thermal config ────────────────────────────────────────────────────────────
-/**
- * All temperature-related tuning lives here so it can be read by both the
- * nuclearSimulation loop (efficiency curve) and the display helpers (ranges).
- */
 const THERMAL_CONFIG = {
     ambientTemperatureK:      300,
     maximumTemperatureK:      5_000,
     overheatWarningK:         4_200,
     meltdownTemperatureK:     5_000,
-
     minimumEfficiency:        0.10,
     maximumEfficiency:        0.95,
     idealTemperatureFraction: 0.50,
     efficiencyGamma:          5,
     coldEfficiencyAlpha:      1.6,
     hotEfficiencyAlpha:       1.2,
-
-    // Fuel consumption: 1 000 mB per cycle at base speed.
     fuelPerCycle:             1_000,
-    // Energy per mB of fuel (at 100 % efficiency).
-    // The per-bucket values in FUELS are used for the display only;
-    // the simulation treats all fuels identically here and scales with
-    // the bucket energy via energyPerFuelMb derived below per-tick.
 };
 
-// ── Cycle constants ───────────────────────────────────────────────────────────
-const EXHAUST_TYPE      = "reactive_fluid";
-const EXHAUST_PER_CYCLE = 400;           // mB
-const BASE_CYCLE_TICKS  = 200;
-const THROTTLE_AT       = 0.95;
-const ENERGY_PENALTY    = 0.25;          // per missing coolant bucket
-const FLUID_CAPACITY    = 64_000;
-const ENERGY_CAPACITY   = 10_000_000;
-const EMPTY             = "empty";
-
-// Coolant: 2 buckets required per cycle.
+const EXHAUST_TYPE           = "reactive_fluid";
+const EXHAUST_PER_CYCLE      = 400;
+const BASE_CYCLE_TICKS       = 200;
+const THROTTLE_AT            = 0.95;
+const ENERGY_PENALTY         = 0.25;
+const FLUID_CAPACITY         = 256_000;
+const ENERGY_CAPACITY        = 10_000_000;
+const EMPTY                  = "empty";
 const COOLANT_BUCKETS_REQUIRED = 2;
 
-// ── Slot map ──────────────────────────────────────────────────────────────────
 const SLOT_ENERGY  = 0;
 const SLOT_LABEL   = 1;
 const SLOT_COOLANT = 2;
 const SLOT_FUEL    = 3;
 const SLOT_TEMP    = 4;
-const SLOT_EXHAUST = 5;
-// Power button lives at the dedicated slot the UI sends — separate from display slots.
-// HM uses slot 5 for the power button; we keep it the same so the UI $index matches.
 const SLOT_POWER   = 5;
+const SLOT_EXHAUST = 21;
 
-// ── Dynamic-property keys ─────────────────────────────────────────────────────
-const PROP_TICK       = "ac:fr_tick";
-const PROP_DATA       = "ac:fr_data";
-const LOCK_FUEL       = "ac:fr_tank0_locked";
-const LOCK_COOLANT    = "ac:fr_tank1_locked";
-const LOCK_EXHAUST    = "ac:fr_tank2_locked";
+const PROP_TICK    = "ac:fr_tick";
+const PROP_DATA    = "ac:fr_data";
+const LOCK_FUEL    = "ac:fr_tank0_locked";
+const LOCK_COOLANT = "ac:fr_tank1_locked";
+const LOCK_EXHAUST = "ac:fr_tank2_locked";
 
-// ── Keypad / control panel slots ──────────────────────────────────────────────
-// These mirror the $index values in fusion_reactor.json's control_page exactly.
-const SLOT_RATE_INPUT  = 6;   // display item that shows the typed number
-const SLOT_RATE_ACCEPT = 18;  // ✓ enter
-const SLOT_RATE_CANCEL = 19;  // ✗ cancel / reset
-const SLOT_RATE_DELETE = 20;  // ← backspace
-const RATE_KEYPAD_BY_SLOT = {
+const SLOT_RATE_INPUT       = 6;
+const SLOT_RATE_ACCEPT      = 18;
+const SLOT_RATE_CANCEL      = 19;
+const SLOT_RATE_DELETE      = 20;
+const SLOT_RATE_CURRENT     = 23;
+const SLOT_RATE_RECOMMENDED = 25;
+const RATE_INPUT_ITEM       = "utilitycraft:arrow_indicator_90";
+const RATE_KEYPAD_BY_SLOT   = {
     7: "7", 8: "8", 9: "9",
     10: "4", 11: "5", 12: "6",
     13: "1", 14: "2", 15: "3",
     16: ".", 17: "0",
 };
-const RATE_INPUT_ITEM  = "utilitycraft:arrow_right_0";
+
+
+
+const INITIAL_DATA = {
+    state:       "off",
+    startedAtMs: 0,
+    temperature: THERMAL_CONFIG.ambientTemperatureK,
+    warning:     "§eStopped",
+};
+
+const CONFIG = {
+    required_case: "dorios:multiblock.case.ind",
+    entity: {
+        identifier:     "utilitycraft:fusion_reactor_multiblock",
+        name:           "fusion_reactor_multiblock",
+        inventory_size: 26,
+    },
+    generator: {
+        rate_speed_base: FUELS.biofuel.energyPerBucket / BASE_CYCLE_TICKS,
+        energy_cap:      ENERGY_CAPACITY,
+        fluid_cap:       FLUID_CAPACITY,
+        fluid_types:     3,
+    },
+    requirements: {},
+};
+
+registerLinkNodeIO("utilitycraft:fusion_reactor_controller", {
+    liquids: {
+        anyInputIndices:  [0, 1],
+        anyOutputIndices: [2],
+        inputs: [
+            { id: "fuel",    label: "Fuel In",    color: "§e", indices: [0]    },
+            { id: "coolant", label: "Coolant In", color: "§b", indices: [1]    },
+            { id: "any_in",  label: "Any Input",  color: "§9", indices: [0, 1] },
+        ],
+        outputs: [
+            { id: "exhaust", label: "Exhaust Out", color: "§c", indices: [2] },
+        ],
+    },
+});
 
 // ── Keypad helpers ────────────────────────────────────────────────────────────
 
@@ -142,15 +163,14 @@ function applyBurnRate(entity) {
     data.rate    = rate;
     saveReactorData(entity, data);
     setRateInputText(entity, String(rate));
-    // Update the "current rate" display item (slot 23 — same index as HM).
     DoriosLib.entity.setNewItem(entity, {
-        slot:    23,
-        typeId:  "utilitycraft:arrow_indicator_90",
+        slot:    SLOT_RATE_CURRENT,
+        typeId:  RATE_INPUT_ITEM,
         nameTag: `§r§7Fuel Rate: §f${rate} mB/t`,
     });
 }
 
-// ── InterfaceManager registration ─────────────────────────────────────────────
+// ── InterfaceManager ──────────────────────────────────────────────────────────
 
 const FR_INTERFACE_ID = "ac:fusion_reactor_controls";
 
@@ -178,7 +198,6 @@ const fusionReactorButtons = {
     },
 };
 
-// Register a handler for every keypad digit.
 for (const slot of Object.keys(RATE_KEYPAD_BY_SLOT).map(Number)) {
     fusionReactorButtons[`keypad_${slot}`] = {
         slot,
@@ -190,54 +209,18 @@ InterfaceManager.registerInterface(FR_INTERFACE_ID, { buttons: fusionReactorButt
 InterfaceManager.linkBlockInterface("utilitycraft:fusion_reactor_controller", FR_INTERFACE_ID);
 InterfaceManager.linkEntityInterface("utilitycraft:fusion_reactor_multiblock", FR_INTERFACE_ID);
 
-// ── Port requirements ─────────────────────────────────────────────────────────
-const PORT_REQ = {
-    fluid:  { min: 2, id: "utilitycraft:ind_fluid_port",  label: "Industrial Fluid Port"  },
-    energy: { min: 1, id: "utilitycraft:ind_energy_port", label: "Industrial Energy Port" },
-};
-
-// ── Runtime data defaults ─────────────────────────────────────────────────────
-const INITIAL_DATA = {
-    state:       "off",
-    startedAtMs: 0,
-    temperature: THERMAL_CONFIG.ambientTemperatureK,
-    warning:     "§eStopped",
-};
-
-// ── Generator CONFIG ──────────────────────────────────────────────────────────
-const CONFIG = {
-    required_case: "dorios:multiblock.case.ind",
-    entity: {
-        identifier:     "utilitycraft:fusion_reactor_multiblock",
-        name:           "fusion_reactor_multiblock",
-        inventory_size: 26,
-    },
-    generator: {
-        rate_speed_base: FUELS.biofuel.energyPerBucket / BASE_CYCLE_TICKS,
-        energy_cap:      ENERGY_CAPACITY,
-        fluid_cap:       FLUID_CAPACITY,
-        fluid_types:     3,
-    },
-    requirements: {},
-};
-
-// ── Link node IO ──────────────────────────────────────────────────────────────
-registerLinkNodeIO("utilitycraft:fusion_reactor_controller", {
-    liquids: {
-        inputs:  [
-            { storageIndex: 0, label: "Fuel In"     },
-            { storageIndex: 1, label: "Coolant In"  },
-        ],
-        outputs: [
-            { storageIndex: 2, label: "Exhaust Out" },
-        ],
-    },
-    energy: {
-        outputs: [{ label: "Energy Out" }],
-    },
+world.afterEvents.entityContainerOpened.subscribe(({ entity }) => {
+    if (entity?.typeId !== "utilitycraft:fusion_reactor_multiblock") return;
+    const label = entity.getComponent("inventory")?.container
+        ?.getItem(SLOT_RATE_INPUT)?.nameTag ?? "";
+    if (!label.includes("mB/t")) {
+        const data = getReactorData(entity);
+        setRateInputText(entity, String(data.rate ?? 0));
+    }
 });
 
 // ── Block component ───────────────────────────────────────────────────────────
+
 DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
 
     onPlayerInteract(event) {
@@ -254,44 +237,16 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
                 },
 
                 onActivate({ entity, structure, player }) {
-                    const { min, max } = structure.bounds;
-                    const sX = max.x - min.x + 1;
-                    const sY = max.y - min.y + 1;
-                    const sZ = max.z - min.z + 1;
 
-                    if (sX < 3 || sY < 3 || sZ < 3) {
-                        player.sendMessage(
-                            `§c[Fusion Reactor] Minimum size 3×3×3. Found: ${sX}×${sY}×${sZ}.`
-                        );
-                        return false;
-                    }
-
-                    const dim   = entity.dimension;
-                    const found = { fluid: 0, energy: 0 };
-                    for (const tag of structure.inputBlocks) {
-                        const loc   = DoriosLib.linkNode.parseLinkNodeTag(tag);
-                        const block = loc && dim.getBlock(loc);
-                        if (!block) continue;
-                        if (block.typeId === PORT_REQ.fluid.id)  found.fluid++;
-                        if (block.typeId === PORT_REQ.energy.id) found.energy++;
-                    }
-
-                    for (const [key, req] of Object.entries(PORT_REQ)) {
-                        if (found[key] < req.min) {
-                            player.sendMessage(
-                                `§c[Fusion Reactor] Need ${req.min}x §e${req.label}§c, found ${found[key]}.`
-                            );
-                            return false;
-                        }
-                    }
+                    if (validateStructure(entity, structure, player, {
+                        name: "Fusion Reactor", minSize: { x: 3, y: 3, z: 3 }, ports: { energy: 1, fluid: 2 },
+                    })) return false;
 
                     initStorage(entity);
                     lockTanks(entity);
                     setRateInputText(entity, "0");
                     InterfaceManager.ensureEntityInterfaces(entity);
 
-                    // Persist structure heat capacity so the simulation can use
-                    // the correct thermal mass after a world reload.
                     const heatCapacity = getNuclearHeatCapacity(structure.bounds);
                     const data = getReactorData(entity);
                     data.heatCapacity = heatCapacity;
@@ -331,14 +286,11 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
         guardTank(coolantTank, VALID_COOLANTS);
         guardTank(exhaustTank, EXHAUST_TYPE);
 
-        // Transfer buffered energy to network.
         energy.transferToNetwork(reactor.rate);
 
-        // Load reactor state (persisted between ticks).
         const data = getReactorData(reactor.entity);
         synchronizeReactorTimer(data);
 
-        // ── Temperature storage ──────────────────────────────────────────────
         const heatCapacity = data.heatCapacity ?? NUCLEAR_THERMAL.baseHeatCapacity;
         const tempStore = new TemperatureStorage(reactor.entity, 0, {
             initialTemperature: THERMAL_CONFIG.ambientTemperatureK,
@@ -347,9 +299,17 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
         if (tempStore.getHeatCapacity() !== heatCapacity) tempStore.setHeatCapacity(heatCapacity);
         let currentTemp = tempStore.get();
 
-        // ── Throttle check ───────────────────────────────────────────────────
+        if (data.state === "off") {
+            tempStore.transfer(THERMAL_CONFIG.ambientTemperatureK, 1, 0.025);
+            currentTemp = tempStore.get();
+            data.temperature = currentTemp;
+            saveReactorData(reactor.entity, data);
+            display(reactor, energy, fuelTank, coolantTank, exhaustTank, currentTemp,
+                "§eStopped", null, 0, 1.0, tempStore);
+            return;
+        }
+
         if (energy.get() / Math.max(1, energy.getCap()) >= THROTTLE_AT) {
-            // Cool passively when throttled.
             tempStore.transfer(THERMAL_CONFIG.ambientTemperatureK, 1, 0.025);
             currentTemp = tempStore.get();
             display(reactor, energy, fuelTank, coolantTank, exhaustTank, currentTemp,
@@ -358,7 +318,6 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             return;
         }
 
-        // ── Fuel check ───────────────────────────────────────────────────────
         const fuelType = fuelTank.getType();
         const fuelCfg  = FUELS[fuelType] ?? null;
 
@@ -371,7 +330,6 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             return;
         }
 
-        // ── Exhaust check ────────────────────────────────────────────────────
         if (exhaustTank.getFreeSpace() < EXHAUST_PER_CYCLE) {
             tempStore.transfer(THERMAL_CONFIG.ambientTemperatureK, 1, 0.025);
             currentTemp = tempStore.get();
@@ -381,9 +339,8 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             return;
         }
 
-        // ── Coolant ──────────────────────────────────────────────────────────
-        const coolantType = coolantTank.getType();
-        const coolantCfg  = COOLANTS[coolantType] ?? null;
+        const coolantType  = coolantTank.getType();
+        const coolantCfg   = COOLANTS[coolantType] ?? null;
         const availBuckets = coolantType === EMPTY ? 0
             : Math.min(COOLANT_BUCKETS_REQUIRED, Math.floor(coolantTank.get() / 1_000));
         const missingBuckets = COOLANT_BUCKETS_REQUIRED - availBuckets;
@@ -392,21 +349,17 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
         const speedMult  = availBuckets === 0
             ? 0.4
             : 0.4 + (fullSpeed - 0.4) * (availBuckets / COOLANT_BUCKETS_REQUIRED);
-        const energyMult = Math.max(0.25, 1 - missingBuckets * ENERGY_PENALTY);
+        const energyMult      = Math.max(0.25, 1 - missingBuckets * ENERGY_PENALTY);
         const energyPerFuelMb = (fuelCfg.energyPerBucket / 1_000) * energyMult;
 
-        // Coolant heat budget: how much heat the coolant absorbs this tick.
         const coolantEfficiency = coolantCfg?.efficiency ?? 0;
         const coolantBudgetHU   = availBuckets > 0
             ? availBuckets * 1_000 * NUCLEAR_THERMAL.coolantHeatPerMb * coolantEfficiency
             : 0;
-
-        // Active coolant conductance from the available buckets.
         const conductance = availBuckets > 0
             ? availBuckets * NUCLEAR_THERMAL.coolantConductance
             : 0;
 
-        // ── Physics simulation ───────────────────────────────────────────────
         const simResult = simulateNuclearReactor(
             {
                 temperature:       currentTemp,
@@ -425,7 +378,6 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             }
         );
 
-        // ── Apply results ────────────────────────────────────────────────────
         const cycleTicks = Math.max(1, Math.floor(BASE_CYCLE_TICKS / speedMult));
         const tick = ((reactor.entity.getDynamicProperty(PROP_TICK) ?? 0) + 1);
         reactor.entity.setDynamicProperty(PROP_TICK, tick % cycleTicks);
@@ -444,15 +396,12 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             if (exhaustTank.getType() === EMPTY) exhaustTank.setType(EXHAUST_TYPE);
             exhaustTank.add(EXHAUST_PER_CYCLE);
 
-            // Emit vent smoke while running and coolant is present.
             if (availBuckets > 0) spawnReactorVentSmoke(reactor.entity);
         }
 
-        // Apply the simulated temperature (uses the physics result directly).
         tempStore.set(simResult.temperature);
         currentTemp = simResult.temperature;
 
-        // ── Overheat / meltdown ──────────────────────────────────────────────
         if (simResult.meltdown) {
             data.warning = "§cCore meltdown!";
             setReactorRunning(data, false);
@@ -469,7 +418,6 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
             return;
         }
 
-        // ── Status label ─────────────────────────────────────────────────────
         let status;
         if (currentTemp >= THERMAL_CONFIG.overheatWarningK) {
             status = "§4Overheating!";
@@ -484,7 +432,6 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
                 : `§eBurning §7(eff: ${Math.round(eff * 100)}%)`;
         }
 
-        // Persist runtime state.
         data.temperature = currentTemp;
         data.onTime = formatReactorOnTime(data);
         saveReactorData(reactor.entity, data);
@@ -494,47 +441,31 @@ DoriosLib.registry.blockComponent("utilitycraft:fusion_reactor_controller", {
     },
 });
 
-// ── Storage helpers ───────────────────────────────────────────────────────────
+// ── Storage ───────────────────────────────────────────────────────────────────
 
 function initStorage(entity) {
-    const [fuelTank, coolantTank, exhaustTank] = FluidStorage.initializeMultiple(entity, 3);
-    if (fuelTank.getCap()    !== FLUID_CAPACITY) fuelTank.setCap(FLUID_CAPACITY);
-    if (coolantTank.getCap() !== FLUID_CAPACITY) coolantTank.setCap(FLUID_CAPACITY);
-    if (exhaustTank.getCap() !== FLUID_CAPACITY) exhaustTank.setCap(FLUID_CAPACITY);
-    const energy = new EnergyStorage(entity);
-    if (energy.getCap() !== ENERGY_CAPACITY) energy.setCap(ENERGY_CAPACITY);
+    const [fuelTank, coolantTank, exhaustTank] = initFluidTanks(entity, 3, FLUID_CAPACITY);
+    const energy = initEnergy(entity, ENERGY_CAPACITY);
     return { energy, fuelTank, coolantTank, exhaustTank };
 }
 
 function lockTanks(entity) {
-    if (!entity.hasTag(LOCK_FUEL))    entity.addTag(LOCK_FUEL);
-    if (!entity.hasTag(LOCK_COOLANT)) entity.addTag(LOCK_COOLANT);
-    if (!entity.hasTag(LOCK_EXHAUST)) {
-        entity.addTag(LOCK_EXHAUST);
-        if (!entity.getTags().find(t => t.startsWith("fluid2Type:")))
-            entity.addTag(`fluid2Type:${EXHAUST_TYPE}`);
-    }
+    lockTankSlot(entity, LOCK_FUEL,    0, null);
+    lockTankSlot(entity, LOCK_COOLANT, 1, null);
+    lockTankSlot(entity, LOCK_EXHAUST, 2, EXHAUST_TYPE);
 }
 
-function guardTank(tank, allowed) {
-    const type = tank.getType();
-    if (type === EMPTY) return;
-    const ok = typeof allowed === "string" ? type === allowed : allowed.has(type);
-    if (!ok) { tank.set(0); tank.setType(EMPTY); }
-}
-
-// ── Reactor data persistence ──────────────────────────────────────────────────
+// ── Reactor data ──────────────────────────────────────────────────────────────
 
 function initReactorData(entity) {
-    const existing = entity.getDynamicProperty(PROP_DATA);
-    if (!existing) saveReactorData(entity, { ...INITIAL_DATA });
+    if (!entity.getDynamicProperty(PROP_DATA)) saveReactorData(entity, { ...INITIAL_DATA });
 }
 
 function getReactorData(entity) {
     try {
         const raw = entity.getDynamicProperty(PROP_DATA);
         if (raw) return { ...INITIAL_DATA, ...JSON.parse(raw) };
-    } catch { /* fall through */ }
+    } catch { }
     return { ...INITIAL_DATA };
 }
 
@@ -579,7 +510,6 @@ function display(reactor, energy, fuelTank, coolantTank, exhaustTank, temp,
         : `§aEff: 100%`;
 
     const eff = getNuclearEfficiency(temp, THERMAL_CONFIG);
-    const thermalLine = `§7Thermal eff: §f${Math.round(eff * 100)}%`;
 
     reactor.setLabel([
         `§6Fusion Reactor §7| ${status}`,
@@ -588,6 +518,19 @@ function display(reactor, energy, fuelTank, coolantTank, exhaustTank, temp,
         `§bCoolant:  ${coolantLine} §f${FL(coolantTank.get())}/${FL(coolantTank.getCap())}`,
         `§cExhaust:  §f${FL(exhaustTank.get())}/${FL(exhaustTank.getCap())}`,
         `§eBuffer:   §f${E(energy.get())}/${E(energy.getCap())} ${effLine}`,
-        `§aTemp:     §f${temp.toFixed(0)} K  ${thermalLine}`,
+        `§aTemp:     §f${temp.toFixed(0)} K  §7Thermal eff: §f${Math.round(eff * 100)}%`,
     ], SLOT_LABEL);
+
+    const data    = getReactorData(reactor.entity);
+    const recRate = (THERMAL_CONFIG.fuelPerCycle / BASE_CYCLE_TICKS).toFixed(1);
+    DoriosLib.entity.setNewItem(reactor.entity, {
+        slot:    SLOT_RATE_RECOMMENDED,
+        typeId:  RATE_INPUT_ITEM,
+        nameTag: `§r§7Rec. Rate: §f${recRate} mB/t`,
+    });
+    DoriosLib.entity.setNewItem(reactor.entity, {
+        slot:    SLOT_RATE_CURRENT,
+        typeId:  RATE_INPUT_ITEM,
+        nameTag: `§r§7Fuel Rate: §f${data.rate ?? 0} mB/t`,
+    });
 }

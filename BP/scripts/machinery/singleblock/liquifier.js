@@ -5,16 +5,19 @@ import {
     EMPTY_FLUID,
     addItemToSlot,
     displayMachine,
+    failMachine,
     formatFluidType,
+    formatItemId,
     getMachineEnergyCost,
     getMachineFluidCap,
     getTank,
+    hasNoEnergy,
     processMachine,
     removeItemsFromSlot,
     setupTanks,
     stopMachine,
     tryUseFluidItemInSlot,
-} from "./machine_helpers.js";
+} from "../helper/machine_helpers.js";
 
 const INPUT_SLOTS        = [3, 4, 5, 6];
 const FLUID_SLOT         = 9;
@@ -76,7 +79,7 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
         tryUseFluidItemInSlot(machine.container, FLUID_SLOT, machine.entity);
 
         const recipes = resolveRecipes(block, settings);
-        if (recipes.length === 0) return fail(machine, tank, "No Recipes");
+        if (recipes.length === 0) return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }], "No Recipes");
 
         // ── Try multi-input recipes first (any length 2-4 via `inputs` array) ──
         const multiResult = findMultiInputRecipe(machine, recipes);
@@ -86,9 +89,9 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
         if (multiResult?.partial) {
             // Player has started a multi-input recipe but is missing items
             const missingStr = multiResult.missingItems
-                .map(m => `${m.id.split(":")[1]} ×${m.amount}`)
+                .map(m => `${formatItemId(m.id)} ×${m.amount}`)
                 .join(", ");
-            return fail(machine, tank, `Need: ${missingStr}`);
+            return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }], `Need: ${missingStr}`);
         }
 
         if (multiResult) {
@@ -96,18 +99,18 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
         } else {
             // ── Fall back to single / dual input ───────────────────────────────
             const active = getActiveInput(machine, recipes);
-            if (!active.stack) return fail(machine, tank, "Insert Item");
+            if (!active.stack) return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }], "Insert Item");
 
             const recipe = pickRecipeForStack(recipes, active.stack);
-            if (!recipe) return fail(machine, tank, "Missing Items");
+            if (!recipe) return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }], "Missing Items");
 
             const secondary    = recipe.secondaryInput;
             const secSlotIndex = secondary
                 ? findItemInSlots(machine, secondary.id, secondary.amount, active.slot)
                 : -1;
             if (secondary && secSlotIndex === -1)
-                return fail(machine, tank,
-                    `Also need: ${secondary.id.split(":")[1]} ×${secondary.amount}`);
+                return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }],
+                    `Also need: ${formatItemId(secondary.id)} ×${secondary.amount}`);
 
             recipeData = {
                 recipe,
@@ -125,19 +128,19 @@ DoriosLib.registry.blockComponent("utilitycraft:fermenter", {
         const tankType  = tank.getType();
 
         if (tankType !== EMPTY_FLUID && tankType !== fluidType)
-            return fail(machine, tank,
+            return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }],
                 `Wrong Fluid\n§7Need ${formatFluidType(fluidType)}`);
 
         const residueSlot = machine.container.getItem(RESIDUE_SLOT);
         const craftLimit  = getCraftLimit(machine.container, tank, recipe, inputSlots, residueSlot);
         if (craftLimit.max <= 0)
-            return fail(machine, tank, craftLimit.reason ?? "Missing Items");
+            return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }], craftLimit.reason ?? "Missing Items");
 
         const energyCost = getMachineEnergyCost(settings, recipe, DEFAULT_ENERGY_COST);
         machine.setEnergyCost(energyCost);
 
-        if (machine.energy.get() <= 0 && machine.getProgress() < energyCost)
-            return fail(machine, tank, "No Energy", { resetProgress: false });
+        if (hasNoEnergy(machine, energyCost))
+            return failMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }], "No Energy", { resetProgress: false });
 
         processMachine(machine, {
             energyCost,
@@ -306,7 +309,7 @@ function updateHud(machine, recipe, tank, inputSlots, queued) {
     const fluidType  = recipe.fluid.type ?? DEFAULT_FLUID_TYPE;
     const inputLabel = Array.isArray(recipe.inputs)
         ? `${recipe.inputs.length}-ingredient recipe`
-        : recipe.input?.id?.split(":")[1] ?? "Unknown";
+        : recipe.input?.id ? formatItemId(recipe.input.id) : "Unknown";
 
     machine.setLabel([
         "§6Fermenter",
@@ -318,9 +321,4 @@ function updateHud(machine, recipe, tank, inputSlots, queued) {
         `§7Queued: §f${queued}`,
         `§7Time:   §f${recipe.seconds ?? "-"}s`,
     ]);
-}
-
-function fail(machine, tank, message, options) {
-    stopMachine(machine, message, options);
-    displayMachine(machine, [{ tank, slot: FLUID_DISPLAY_SLOT }]);
 }

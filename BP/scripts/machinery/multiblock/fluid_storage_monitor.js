@@ -5,38 +5,41 @@ import {
     registerLinkNodeIO,
 } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
-import { formatFluidDisplayName } from "./multiblock_helpers.js";
+import { initFluidTanks, validateStructure, formatFluidDisplayName } from "../helper/helper.js";
 
-const TANK_COUNT = 7;
+const MIN_SIZE = { x: 3, y: 3, z: 3 };
+const PORTS    = { fluid: 2 };
+
+const TANK_COUNT             = 7;
 const CAPACITY_PER_AIR_BLOCK = 64_000;
-const DISPLAY_SLOTS = [0, 1, 2, 3, 4, 5, 6];
-const LABEL_SLOT = 7;
-const CAPACITY_PROPERTY = "ac:fluid_storage_capacity";
+const DISPLAY_SLOTS          = [0, 1, 2, 3, 4, 5, 6];
+const LABEL_SLOT             = 7;
+const CAPACITY_PROPERTY      = "ac:fluid_storage_capacity";
 
 const CONFIG = {
     required_case: "dorios:multiblock.case.fluid_storage",
     entity: {
-        identifier: "utilitycraft:fluid_storage_multiblock",
-        name: "fluid_storage_monitor",
+        identifier:     "utilitycraft:fluid_storage_multiblock",
+        name:           "fluid_storage_monitor",
         inventory_size: 8,
     },
     machine: {
         rate_speed_base: 0,
-        energy_cap: 0,
+        energy_cap:      0,
     },
     requirements: {},
 };
 
 const ALL_TANK_INDICES = Array.from({ length: TANK_COUNT }, (_, index) => index);
-const TANK_GROUPS = ALL_TANK_INDICES.map(index => ({
-    id: `tank_${index + 1}`,
-    label: `Tank ${index + 1}`,
+const TANK_GROUPS      = ALL_TANK_INDICES.map(index => ({
+    id:      `tank_${index + 1}`,
+    label:   `Tank ${index + 1}`,
     indices: [index],
 }));
 
 registerLinkNodeIO("utilitycraft:fluid_storage_monitor", {
     liquids: {
-        anyInputIndices: ALL_TANK_INDICES,
+        anyInputIndices:  ALL_TANK_INDICES,
         anyOutputIndices: ALL_TANK_INDICES,
         inputs: [
             { id: "any_tank", label: "Any Tank", color: "§9", indices: ALL_TANK_INDICES },
@@ -57,17 +60,22 @@ DoriosLib.registry.blockComponent("utilitycraft:fluid_storage_monitor", {
             initializeEntity(entity) {
                 configureTanks(entity, CAPACITY_PER_AIR_BLOCK);
             },
-            onActivate({ entity, structure }) {
+
+            onActivate({ entity, structure, player }) {
+                if (validateStructure(entity, structure, player, {
+                    name: "Fluid Storage", minSize: MIN_SIZE, ports: PORTS, portType: "normal",
+                })) return false;
                 const capacity = getStructureCapacity(structure);
                 configureTanks(entity, capacity);
                 entity.setDynamicProperty(CAPACITY_PROPERTY, capacity);
             },
+
             successMessages({ structure }) {
                 const capacity = getStructureCapacity(structure);
                 return [
-                    "\u00A7a[Fluid Storage] Structure online.",
-                    `\u00A77Capacity per tank: \u00A7b${FluidStorage.formatFluid(capacity)}`,
-                    `\u00A77Total capacity: \u00A7b${FluidStorage.formatFluid(capacity * TANK_COUNT)}`,
+                    "§a[Fluid Storage] Structure online.",
+                    `§7Capacity per tank: §b${FluidStorage.formatFluid(capacity)}`,
+                    `§7Total capacity:    §b${FluidStorage.formatFluid(capacity * TANK_COUNT)}`,
                 ];
             },
         });
@@ -95,26 +103,23 @@ DoriosLib.registry.blockComponent("utilitycraft:fluid_storage_monitor", {
 function getStructureCapacity(structure) {
     return Math.max(1, structure.components?.air ?? 0) * CAPACITY_PER_AIR_BLOCK;
 }
+
 function configureTanks(entity, capacity) {
-    const tanks = FluidStorage.initializeMultiple(entity, TANK_COUNT);
-    for (const tank of tanks) {
-        if (tank.getCap() !== capacity) tank.setCap(capacity);
-    }
-    return tanks;
+    return initFluidTanks(entity, TANK_COUNT, capacity);
 }
 
 function updateLabel(machine, tanks) {
-    const stored = tanks.reduce((total, tank) => total + tank.get(), 0);
+    const stored   = tanks.reduce((total, tank) => total + tank.get(), 0);
     const capacity = tanks.reduce((total, tank) => total + tank.getCap(), 0);
     const contents = tanks
-        .filter((tank) => tank.get() > 0 && tank.getType() !== "empty")
-        .map((tank) =>
-            `\u00A7r\u00A7b${formatFluidDisplayName(tank.getType())} \u00A7f${FluidStorage.formatFluid(tank.get())}`
+        .filter(tank => tank.get() > 0 && tank.getType() !== "empty")
+        .map(tank =>
+            `§r§b${formatFluidDisplayName(tank.getType())} §f${FluidStorage.formatFluid(tank.get())}`
         );
 
     machine.setLabel([
-        "\u00A7r\u00A76Fluid Storage \u00A7aOnline",
-        `\u00A7r\u00A77Stored: \u00A7f${FluidStorage.formatFluid(stored)} / ${FluidStorage.formatFluid(capacity)}`,
-        ...(contents.length > 0 ? contents : ["\u00A7r\u00A78All tanks empty"]),
+        "§r§6Fluid Storage §aOnline",
+        `§r§7Stored: §f${FluidStorage.formatFluid(stored)} / ${FluidStorage.formatFluid(capacity)}`,
+        ...(contents.length > 0 ? contents : ["§r§8All tanks empty"]),
     ], LABEL_SLOT);
 }

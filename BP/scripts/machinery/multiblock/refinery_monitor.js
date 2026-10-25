@@ -1,3 +1,4 @@
+import { initFluidTanks, initEnergy, validateStructure, formatFluidDisplayName } from "../helper/helper.js";
 import {
     EnergyStorage,
     FluidStorage,
@@ -7,7 +8,10 @@ import {
 } from "DoriosCore/index.js";
 import * as DoriosLib from "DoriosLib/index.js";
 import { getRefineryRecipes } from "../../config/recipes/machinery/refinery.js";
-import { formatFluidDisplayName } from "./multiblock_helpers.js";
+
+// ── Structure requirements ────────────────────────────────────────────────────
+const MIN_SIZE = { x: 3, y: 3, z: 3 };
+const PORTS    = { energy: 1, fluid: 2 };
 
 const ENERGY_SLOT = 0;
 const LABEL_SLOT = 1;
@@ -58,7 +62,10 @@ DoriosLib.registry.blockComponent("utilitycraft:refinery_monitor", {
             initializeEntity(entity) {
                 configureStorage(entity);
             },
-            onActivate({ entity }) {
+            onActivate({ entity, structure, player }) {
+                    if (validateStructure(entity, structure, player, {
+                        name: "Refinery", minSize: MIN_SIZE, ports: PORTS, portType: "normal", noAir: true,
+                    })) return false;
                 configureStorage(entity);
             },
             successMessages() {
@@ -101,10 +108,7 @@ DoriosLib.registry.blockComponent("utilitycraft:refinery_monitor", {
 });
 
 function configureStorage(entity) {
-    const tanks = FluidStorage.initializeMultiple(entity, 4);
-    for (const tank of tanks) {
-        if (tank.getCap() !== FLUID_CAPACITY) tank.setCap(FLUID_CAPACITY);
-    }
+    const tanks = initFluidTanks(entity, 4, FLUID_CAPACITY);
 
     const recipe = getRefineryRecipes()[0];
     if (recipe) {
@@ -119,8 +123,7 @@ function configureStorage(entity) {
         });
     }
 
-    const energy = new EnergyStorage(entity);
-    if (energy.getCap() !== ENERGY_CAPACITY) energy.setCap(ENERGY_CAPACITY);
+    const energy = initEnergy(entity, ENERGY_CAPACITY);
 
     return {
         energy,

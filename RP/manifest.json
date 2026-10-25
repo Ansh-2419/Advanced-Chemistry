@@ -2,8 +2,8 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Advanced Chemistry RP",
-    "description": "Advanced Chemistry Resource Pack with Vibrant Visuals support",
+    "name": "Advanced Chemistry",
+    "description": "Advanced Chemistry v0.5.0 - Requires UtilityCraft 3.5.0+",
     "uuid": "a5d2c6f8-4e7b-4f19-bb6e-8c3d9f2a1e55",
     "version": [0, 5, 0],
     "min_engine_version": [1, 21, 120]
@@ -11,11 +11,14 @@
   "modules": [
     {
       "type": "resources",
-      "uuid": "d83f1a65-7b29-4e40-9c52-a6f018bd347e",
-      "version": [0, 5, 0]
+      "uuid": "f9e1b7c3-2d84-4a56-a0c9-7e5d3f8b1a22",
+      "version": [1, 0, 0]
     }
   ],
-  "capabilities": [
-    "pbr"
+  "dependencies": [
+    {
+      "uuid": "7c8b9a44-53a6-4c8e-bcc3-7c4c9d6d4f11",
+      "version": [0, 1, 0]
+    }
   ]
 }

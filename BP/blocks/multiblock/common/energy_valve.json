@@ -7,7 +7,10 @@
                 "category": "construction"
             },
             "states": {
-                "utilitycraft:active": [0, 1]
+                "utilitycraft:active": [
+                    0,
+                    1
+                ]
             }
         },
         "components": {
@@ -22,7 +25,6 @@
                 "seconds_to_destroy": 1
             },
             "tag:dorios:link_node": {},
-            "tag:dorios:multiblock.case.fluid_storage": {},
             "tag:dorios:multiblock.case.fuel_burner": {},
             "tag:dorios:multiblock.case.refinery": {}
         },
@@ -33,7 +35,6 @@
                     "minecraft:light_emission": 4,
                     "tag:dorios:energy": {},
                     "tag:dorios:link_node": {},
-                    "tag:dorios:multiblock.case.fluid_storage": {},
                     "tag:dorios:multiblock.case.fuel_burner": {},
                     "tag:dorios:multiblock.case.refinery": {}
                 }

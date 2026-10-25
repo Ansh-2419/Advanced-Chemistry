@@ -1,16 +1,16 @@
 import { ItemStack }    from "@minecraft/server";
-import * as DoriosLib   from "DoriosLib/index.js";
-import {
+import{
     EnergyStorage,
     FluidStorage,
     Multiblock,
     MultiblockMachine,
     registerLinkNodeIO,
 }                       from "DoriosCore/index.js";
+import * as DoriosLib   from "DoriosLib/index.js";
+import { initFluidTanks, initEnergy, validateStructure, formatFluidDisplayName } from "../helper/helper.js";
 import { greenhousePlantsData }               from "../../config/greenhouse/plants.js";
 import { getProductivity, VALID_FERTILIZERS,
          VALID_GROWTH_FLUIDS }                from "../../config/greenhouse/fluids.js";
-import { formatFluidDisplayName }             from "./multiblock_helpers.js";
 
 // ── Slot map ──────────────────────────────────────────────────────────────────
 const ENERGY_SLOT    = 0;
@@ -38,12 +38,9 @@ const SOILS = {
     "utilitycraft:black_soil":  { cost: 0.25, multi: 4, label: "Black Soil"  },
 };
 
-// ── Port requirements ─────────────────────────────────────────────────────────
-const PORT_REQ = {
-    energy: { min: 1, id: "utilitycraft:ind_energy_port", label: "Industrial Energy Port" },
-    fluid:  { min: 2, id: "utilitycraft:ind_fluid_port",  label: "Industrial Fluid Port"  },
-    item:   { min: 1, id: "utilitycraft:ind_item_port",   label: "Industrial Item Port"   },
-};
+// ── Structure requirements ────────────────────────────────────────────────────
+const SIZE  = { x: 5, y: 5, z: 5 };
+const PORTS = { energy: 1, fluid: 2, item: 1 };
 
 // ── Multiblock config ─────────────────────────────────────────────────────────
 const CONFIG = {
@@ -99,33 +96,9 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
                 },
 
                 onActivate({ entity, structure, player }) {
-                    const { min, max } = structure.bounds;
-                    const [sX, sY, sZ] = [max.x - min.x + 1, max.y - min.y + 1, max.z - min.z + 1];
-
-                    if (sX !== 5 || sY !== 5 || sZ !== 5) {
-                        player.sendMessage(`§c[Greenhouse] Must be 5×5×5. Detected: ${sX}×${sY}×${sZ}.`);
-                        return false;
-                    }
-
-                    const dim   = entity.dimension;
-                    const found = { energy: 0, fluid: 0, item: 0 };
-                    for (const tag of structure.inputBlocks) {
-                        const loc   = DoriosLib.linkNode.parseLinkNodeTag(tag);
-                        const block = loc && dim.getBlock(loc);
-                        if (!block) continue;
-                        if (block.typeId === PORT_REQ.energy.id) found.energy++;
-                        if (block.typeId === PORT_REQ.fluid.id)  found.fluid++;
-                        if (block.typeId === PORT_REQ.item.id)   found.item++;
-                    }
-
-                    for (const [key, req] of Object.entries(PORT_REQ)) {
-                        if (found[key] < req.min) {
-                            player.sendMessage(
-                                `§c[Greenhouse] Needs ${req.min}× §e${req.label}§c — found ${found[key]}.`
-                            );
-                            return false;
-                        }
-                    }
+                    if (validateStructure(entity, structure, player, {
+                        name: "Greenhouse", size: SIZE, ports: PORTS, noAir: true,
+                    })) return false;
 
                     initStorage(entity);
                     initProgress(entity);
@@ -241,11 +214,8 @@ DoriosLib.registry.blockComponent("utilitycraft:greenhouse_controller", {
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function initStorage(entity) {
-    const [tank0, tank1] = FluidStorage.initializeMultiple(entity, 2);
-    if (tank0.getCap() !== FLUID_CAPACITY) tank0.setCap(FLUID_CAPACITY);
-    if (tank1.getCap() !== FLUID_CAPACITY) tank1.setCap(FLUID_CAPACITY);
-    const energy = new EnergyStorage(entity);
-    if (energy.getCap() !== ENERGY_CAPACITY) energy.setCap(ENERGY_CAPACITY);
+    const [tank0, tank1] = initFluidTanks(entity, 2, FLUID_CAPACITY);
+    const energy = initEnergy(entity, ENERGY_CAPACITY);
     return { energy, tank0, tank1 };
 }
 
