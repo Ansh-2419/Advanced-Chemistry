@@ -15,6 +15,7 @@
                 }
             },
             "states": {
+                "utilitycraft:has_selection": [true, false],
                 "utilitycraft:on": [
                     false,
                     true
@@ -95,6 +96,7 @@
             }
         },
         "permutations": [
+            {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}},
             {
                 "condition": "q.block_state('utilitycraft:on') == true",
                 "components": {

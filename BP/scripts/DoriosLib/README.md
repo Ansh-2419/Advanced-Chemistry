@@ -35,6 +35,23 @@ DoriosLib.entity.setEquipment(player, {
 });
 ```
 
+Player-relative entities can be attached to one shared one-tick tracking
+manager. Starting the same entity again updates its target and options:
+
+```js
+DoriosLib.entity.startPlayerTracking(entity, player, {
+  anchor: "head",
+  viewOffset: 0.5,
+  velocityFactor: 5,
+});
+
+DoriosLib.entity.stopPlayerTracking(entity);
+```
+
+Stopping an attachment does not remove the entity. Invalid entities and
+players are discarded automatically, and the shared interval is released when
+no attachments remain.
+
 Items can be created independently:
 
 ```js
@@ -265,13 +282,18 @@ They belong to the interface registry that translates a visual choice such as
 `input_1` into the input/output slot arrays persisted for that face.
 
 Fallback lists are explicit security boundaries declared by the interface
-registration. A call without `face` uses `anyInputSlots` or `anyOutputSlots`;
-DoriosLib never derives them from the currently configured faces.
+registration. A call without `face`, or through a face in passive `default`
+mode, uses `anyInputSlots` or `anyOutputSlots`. A `disabled` face exposes no
+slots. DoriosLib never derives fallback lists from configured faces.
 
 ```js
-const automaticInputs = DoriosLib.container.getInputSlots(entity);
-const northInputs = DoriosLib.container.getInputSlots(entity, {
+const fallbackInputs = DoriosLib.container.getInputSlots(entity);
+const passiveNorthInputs = DoriosLib.container.getInputSlots(entity, {
   face: "north",
+});
+const activeNorthInputs = DoriosLib.container.getInputSlots(entity, {
+  face: "north",
+  automatic: true,
 });
 ```
 
@@ -312,4 +334,3 @@ const moved = DoriosLib.container.transfer(source, {
 For non-adjacent networks, `sourceFace` and `targetFace` can be supplied
 independently. `targetSlots` narrows the destination but can never bypass the
 slots allowed by the target configuration.
-

@@ -337,4 +337,3 @@ function isResource(value) {
 function isOperation(value) {
   return value === "input" || value === "output";
 }
-

@@ -19,3 +19,8 @@
 - Initialized the Greenhouse progress arrow for new controllers and restored it when missing on existing controllers, including while idle, without resetting accumulated progress.
 
 - Added Greenhouse UI, controller block, and multiblock entity display names in English and both supported Spanish locales so the machine title no longer shows its localization key.
+
+## UI/UX
+
+- Machines, generators, and multiblock controllers now use UtilityCraft's shared selection outlines: standing targets the inventory entity, while sneaking restores block selection for mining.
+- Requires UtilityCraft 3.6.1 or newer for the updated container selection behavior.

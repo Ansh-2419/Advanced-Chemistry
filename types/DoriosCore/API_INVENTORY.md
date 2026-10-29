@@ -23,7 +23,7 @@ module such as `ADDONNAME_CORE` or `ExampleCore`.
 
 ## Runtime exports
 
-The following 103 names are resolvable from `DoriosCore/index.js`. The audit
+The following 108 names are resolvable from `DoriosCore/index.js`. The audit
 tool verifies that every name is declared by `index.d.ts` and appears exactly
 once in this section.
 
@@ -32,11 +32,13 @@ once in this section.
 | Area | Classification | Runtime exports | Template coverage |
 | --- | --- | --- | --- |
 | Machinery foundation | Primary | `BasicMachine`, `Machine`, `Generator`, `EnergyStorage`, `FluidStorage`, `GasStorage`, `MachineUpgradeRegistry` | Normal machines, active/passive generators, liquid/gas machinery, and ExampleCore subclasses |
+| Item energy storage | Primary | `ItemEnergyStorage` | Durability-backed charge storage for tagged items; callers persist modified stacks |
+| Thermal storage and simulation | Primary | `TemperatureStorage`, `advanceTemperature` | Persistent temperature, thermal capacity, fixed-reservoir heat exchange, and the shared 32-frame temperature bar |
 | Runtime helpers | Primary / Advanced | `Rotation`, `TickScheduler`, `OutputTracker`, `resolveItemContainerAt` | Rotatable machines, scheduler-aware ticks, IO targets, and multiblock ports |
 | IO authoring | Primary | `registerIOInterface`, `registerIOInterfaceForBlockTag`, `ensureBlockIOInterface`, `hasRegisteredIOInterface`, `IOInterface`, `registerLinkNodeIO`, `getLinkNodeIODefinition`, `openLinkNodeIOForm` | Machine face controls and multiblock link-node routing |
 | Container UI interfaces | Advanced | `InterfaceManager`, `encodeInterfaceSlot`, `decodeInterfaceSlot`, `stripInterfaceSlotCode` | Shared IO buttons and custom entity-container buttons |
-| Fluid IO documents | Advanced | `DEFAULT_FLUID_IO_MODE`, `FLUID_CONFIG_VERSION`, `FLUID_CONFIG_KEY`, `FLUID_CONTAINER_FAMILY`, `FLUID_CONFIG_EVENT_NAMESPACE`, `SET_FLUID_CONFIG_EVENT_ID`, `registerFluidIODefinition`, `getFluidIODefinition`, `ensureFluidIOConfig`, `setFluidConfig`, `getFluidConfig`, `getFluidConfigRevision`, `getFluidStatus`, `getInputFluidIndices`, `getOutputFluidIndices`, `getFluidIODirectionMode`, `cycleFluidIODirectionMode`, `normalizeFluidConfig`, `cloneFluidConfig` | Used underneath registerIOInterface; document for custom routing systems |
-| Gas IO documents | Advanced | `DEFAULT_GAS_IO_MODE`, `GAS_CONFIG_VERSION`, `GAS_CONFIG_KEY`, `GAS_CONTAINER_FAMILY`, `GAS_CONFIG_EVENT_NAMESPACE`, `SET_GAS_CONFIG_EVENT_ID`, `registerGasIODefinition`, `getGasIODefinition`, `ensureGasIOConfig`, `setGasConfig`, `getGasConfig`, `getGasConfigRevision`, `getGasStatus`, `getInputGasIndices`, `getOutputGasIndices`, `getGasIODirectionMode`, `cycleGasIODirectionMode`, `normalizeGasConfig`, `cloneGasConfig` | Used underneath registerIOInterface; document for custom routing systems |
+| Fluid IO documents | Advanced | `DEFAULT_FLUID_IO_MODE`, `DISABLED_FLUID_IO_MODE`, `FLUID_CONFIG_VERSION`, `FLUID_CONFIG_KEY`, `FLUID_CONTAINER_FAMILY`, `FLUID_CONFIG_EVENT_NAMESPACE`, `SET_FLUID_CONFIG_EVENT_ID`, `registerFluidIODefinition`, `getFluidIODefinition`, `ensureFluidIOConfig`, `setFluidConfig`, `getFluidConfig`, `getFluidConfigRevision`, `getFluidStatus`, `getInputFluidIndices`, `getOutputFluidIndices`, `getFluidIODirectionMode`, `cycleFluidIODirectionMode`, `normalizeFluidConfig`, `cloneFluidConfig` | Used underneath registerIOInterface; document for custom routing systems |
+| Gas IO documents | Advanced | `DEFAULT_GAS_IO_MODE`, `DISABLED_GAS_IO_MODE`, `GAS_CONFIG_VERSION`, `GAS_CONFIG_KEY`, `GAS_CONTAINER_FAMILY`, `GAS_CONFIG_EVENT_NAMESPACE`, `SET_GAS_CONFIG_EVENT_ID`, `registerGasIODefinition`, `getGasIODefinition`, `ensureGasIOConfig`, `setGasConfig`, `getGasConfig`, `getGasConfigRevision`, `getGasStatus`, `getInputGasIndices`, `getOutputGasIndices`, `getGasIODirectionMode`, `cycleGasIODirectionMode`, `normalizeGasConfig`, `cloneGasConfig` | Used underneath registerIOInterface; document for custom routing systems |
 | Fluid container adapters | Advanced | `resolveFluidContainer`, `resolveFluidContainerAt`, `getFluidInputIndices`, `getFluidOutputIndices`, `getFluidContainerRevision`, `transferFluid`, `insertFluid`, `getFluidStorage` | Liquid washer, liquid generator, and liquid ports |
 | Gas container adapters | Advanced | `resolveGasContainer`, `resolveGasContainerAt`, `getGasInputIndices`, `getGasOutputIndices`, `getGasContainerRevision`, `transferGas`, `insertGas`, `getGasStorage` | Gas reactor, gas turbine, and gas ports |
 | Resource item lore | Advanced | `RESOURCE_LORE_MARKERS`, `buildEnergyLoreLine`, `buildFluidLoreLine`, `buildGasLoreLine`, `createResourceLore`, `parseResourceLore`, `getResourcesFromItem`, `restoreResourceSnapshot` | Machine placement/destruction and stored-resource restoration |
@@ -82,6 +84,9 @@ must be documented alongside the runtime member that accepts or returns them.
 - Scheduler, buttons, and sessions: `SchedulerProfileConfig`, `ContainerSession`,
   `ContainerSessionEntry`, `ButtonPressEvent`, `ButtonPressCallback`,
   `ButtonDefinition`, `ButtonWatcher`.
+- Thermal storage and simulation: `ThermalContact`, `ThermalStepOptions`,
+  `TemperatureStepOptions`, `TemperatureStepResult`, `TemperatureStorageOptions`,
+  `TemperatureDisplayOptions`.
 - Multiblocks: `DetectedStructure`, `ActivationContext`,
   `MachineActivationContext`, `InteractionHandlers`, `MachineStats`,
   `MultiblockStructureDetector`, `MultiblockActivationManager`,
@@ -116,4 +121,3 @@ reachable through an exported object such as `Multiblock`.
    lore, scheduler/output tracking, and protocol constants.
 4. Compatibility reference: legacy button watcher APIs and migration to
    `InterfaceManager`/`registerIOInterface` where applicable.
-

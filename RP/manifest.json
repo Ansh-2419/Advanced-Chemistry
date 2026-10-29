@@ -3,7 +3,7 @@
   "format_version": 2,
   "header": {
     "name": "Advanced Chemistry",
-    "description": "Advanced Chemistry v0.5.0 - Requires UtilityCraft 3.5.0+",
+    "description": "Advanced Chemistry v0.5.0 - Requires UtilityCraft 3.6.1+",
     "uuid": "a5d2c6f8-4e7b-4f19-bb6e-8c3d9f2a1e55",
     "version": [0, 5, 0],
     "min_engine_version": [1, 21, 120]
