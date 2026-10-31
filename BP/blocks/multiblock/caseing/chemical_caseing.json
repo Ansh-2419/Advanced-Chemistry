@@ -2,21 +2,24 @@
     "format_version": "1.21.100",
     "minecraft:block": {
         "description": {
-            "identifier": "utilitycraft:fluid_storage_casing",
-            "menu_category": { "category": "construction" }
+            "identifier": "utilitycraft:chemical_caseing",
+            "menu_category": {
+                "category": "construction"
+            }
         },
         "components": {
             "minecraft:geometry": "geometry.utilitycraft_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "reactor_casing",
+                    "texture": "reactor_caseing",
                     "render_method": "opaque"
                 }
             },
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 1
+                "seconds_to_destroy": 3
             },
-            "tag:dorios:multiblock.case.fluid_storage": {}
+            "tag:dorios:multiblock.case.chem": {},
+            "tag:dorios:multiblock_component": {}
         }
     }
 }

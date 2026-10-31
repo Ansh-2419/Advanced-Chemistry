@@ -2,7 +2,7 @@
     "format_version": "1.20.80",
     "minecraft:recipe_shaped": {
         "description": {
-            "identifier": "utilitycraft:fuel_burner_casing"
+            "identifier": "utilitycraft:chemical_caseing "
         },
         "tags": ["utilitycraft_workbench"],
         "pattern": ["ABA", "BRB", "ABA"],
@@ -18,7 +18,7 @@
             }
         },
         "result": {
-            "item": "utilitycraft:fuel_burner_casing",
+            "item": "utilitycraft:chemical_caseing ",
             "count": 1
         },
         "unlock": [

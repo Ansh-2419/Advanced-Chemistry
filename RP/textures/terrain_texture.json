@@ -31,12 +31,6 @@
         "reactor_caseing": {
             "textures": "textures/blocks/caseing/reactor_caseing"
         },
-        "reactor_casing": {
-            "textures": "textures/blocks/caseing/reactor_casing"
-        },
-        "refinery_caseing": {
-            "textures": "textures/blocks/caseing/refinery_caseing"
-        },
         "industrial_caseing": {
             "textures": "textures/blocks/caseing/industrial_caseing"
         },

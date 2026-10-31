@@ -17,7 +17,7 @@ const LABEL_SLOT             = 7;
 const CAPACITY_PROPERTY      = "ac:fluid_storage_capacity";
 
 const CONFIG = {
-    required_case: "dorios:multiblock.case.fluid_storage",
+    required_case: "dorios:multiblock.case.chem",
     entity: {
         identifier:     "utilitycraft:fluid_storage_multiblock",
         name:           "fluid_storage_monitor",

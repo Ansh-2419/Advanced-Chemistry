@@ -19,13 +19,12 @@
                 }
             },
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 1
+                "seconds_to_destroy": 2
             },
             "utilitycraft:link_node_io": {},
             "tag:dorios:link_node": {},
-            "tag:dorios:multiblock.case.fluid_storage": {},
-            "tag:dorios:multiblock.case.fuel_burner": {},
-            "tag:dorios:multiblock.case.refinery": {}
+            "tag:dorios:multiblock.case.chem": {},
+            "tag:dorios:multiblock_component": {}
         },
         "permutations": [
             {
@@ -34,9 +33,8 @@
                     "minecraft:light_emission": 4,
                     "tag:dorios:fluid": {},
                     "tag:dorios:link_node": {},
-                    "tag:dorios:multiblock.case.fluid_storage": {},
-                    "tag:dorios:multiblock.case.fuel_burner": {},
-                    "tag:dorios:multiblock.case.refinery": {}
+                    "tag:dorios:multiblock.case.chem": {},
+                    "tag:dorios:multiblock_component": {}
                 }
             }
         ]

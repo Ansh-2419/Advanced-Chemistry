@@ -24,7 +24,7 @@ const ENERGY_CAPACITY = 400_000;
 const BASE_RATE = 100;
 
 const CONFIG = {
-    required_case: "dorios:multiblock.case.refinery",
+    required_case: "dorios:multiblock.case.chem",
     entity: {
         identifier: "utilitycraft:refinery_multiblock",
         name: "refinery_monitor",

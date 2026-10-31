@@ -33,7 +33,7 @@
             "tag:dorios:fluid": {},
             "tag:dorios:controller": {},
             "tag:dorios:multiblock.controller": {},
-            "tag:dorios:multiblock.case.fluid_storage": {}
+            "tag:dorios:multiblock.case.chem": {}
         },
         "permutations": [
             {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}},

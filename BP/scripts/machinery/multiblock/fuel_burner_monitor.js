@@ -44,7 +44,7 @@ const FLUID_SLOT        = 2;
 const LIFETIME_PROPERTY = "ac:fuel_burner_lifetime";
 
 const CONFIG = {
-    required_case: "dorios:multiblock.case.fuel_burner",
+    required_case: "dorios:multiblock.case.chem",
     entity: {
         identifier:        "utilitycraft:fuel_burner_multiblock",
         name:              "fuel_burner_monitor",

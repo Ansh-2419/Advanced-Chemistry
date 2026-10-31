@@ -18,12 +18,12 @@
             }
         },
         "result": {
-            "item": "utilitycraft:fuel_burner_monitor",
+            "item": "utilitycraft:chemical_caseing",
             "count": 1
         },
         "unlock": [
             {
-                "item": "utilitycraft:Duranium_ingot"
+                "item": "utilitycraft:chemical_caseing"
             }
         ]
     }

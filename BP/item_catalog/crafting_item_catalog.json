@@ -90,13 +90,11 @@
                     },
                     {
                         "group_identifier": {
-                            "icon": "utilitycraft:refinery_casing",
+                            "icon": "utilitycraft:industrial_caseing",
                             "name": "ac:itemGroup.name.multiblock_casings"
                         },
                         "items": [
-                            "utilitycraft:fluid_storage_casing",
-                            "utilitycraft:fuel_burner_casing",
-                            "utilitycraft:refinery_casing",
+                            "utilitycraft:chemical_caseing",
                             "utilitycraft:industrial_caseing"
                         ]
                     },

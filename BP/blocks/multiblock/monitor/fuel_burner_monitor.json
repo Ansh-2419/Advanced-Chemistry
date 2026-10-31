@@ -33,7 +33,7 @@
             "tag:dorios:energy": {},
             "tag:dorios:controller": {},
             "tag:dorios:multiblock.controller": {},
-            "tag:dorios:multiblock.case.fuel_burner": {}
+            "tag:dorios:multiblock.case.chem": {}
         },
         "permutations": [
             {"condition":"!q.block_state('utilitycraft:has_selection')","components":{"minecraft:selection_box":false}},
